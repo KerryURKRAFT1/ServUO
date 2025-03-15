@@ -3860,6 +3860,7 @@ m_Stream.Write( (int) renderMode );
 			m_Stream.Write((byte)beheld.GetPacketFlags());
 			m_Stream.Write((byte)Notoriety.Compute(beholder, beheld));
 
+
 			for (int i = 0; i < eq.Count; ++i)
 			{
 				Item item = eq[i];

@@ -164,6 +164,16 @@ namespace Server.Mobiles
 						return;
 					}
 
+
+					// Aggiungi la verifica per i vendor qui
+					if (m_Mobile.AI == AIType.AI_Vendor || m_Mobile.GetType().Name == "BaseVendor" || m_Mobile.GetType().Name == "AIVendor")
+					{
+						Console.WriteLine("OnClick: Target is Vendor (BaseVendor o AIVendor), disabilitando il menu contestuale");
+						return;
+					}
+        
+
+
 					switch (m_Order)
 					{
 						case OrderType.Follow:
@@ -220,13 +230,13 @@ namespace Server.Mobiles
 				// Debug: verifica il tipo di AI
 				if (m_Mobile.AI == AIType.AI_Vendor)
 				{
-					Console.WriteLine("GetContextMenuEntries: m_Mobile has AI type AI_Vendor"); // Istruzione di debug
+
 					// Non aggiungere voci di menu per disabilitare il menu contestuale sui vendor
 					return;
 				}
 				else
 				{
-					Console.WriteLine("GetContextMenuEntries: m_Mobile does NOT have AI type AI_Vendor"); // Istruzione di debug
+					
 				}
     
 

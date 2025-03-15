@@ -1645,11 +1645,12 @@ namespace Server.Network
 
 		
 		// prova di stle renaissance
-		private static bool m_SingleClickProps = false;
+		private static bool m_SingleClickProps;
 
-		//public static bool SingleClickProps { get { return m_SingleClickProps; } set { m_SingleClickProps = value; } }
+		public static bool SingleClickProps { get { return m_SingleClickProps; } set { m_SingleClickProps = value; } }
 
 
+			/*
 			public static bool SingleClickProps
 			{
 				get
@@ -1663,6 +1664,7 @@ namespace Server.Network
 					Console.WriteLine("m_SingleClickProps (set): " + m_SingleClickProps); // Istruzione di debug
 				}
 			}
+			*/
 
 		
 			public static void LookReq(NetState state, PacketReader pvSrc)
@@ -1676,24 +1678,24 @@ namespace Server.Network
 
         if (m != null && from.CanSee(m) && Utility.InUpdateRange(from, m))
         {
-            Console.WriteLine("Clicked on Mobile: " + m.Name);
-            Console.WriteLine("m_SingleClickProps before check: " + m_SingleClickProps);
+			/* MODIFICHIAMO 
 
             // Determina se il mobile è un vendor basato sul nome del tipo
             bool isVendor = (m.GetType().Name == "BaseVendor" || m.GetType().Name == "AIVendor");
 
             if (isVendor)
             {
-                Console.WriteLine("Clicked Mobile is a Vendor: " + m.Name);
+                
                 // Non chiamare OnSingleClick per i vendor.
                 return;
             }
             else
             {
-                Console.WriteLine("Clicked Mobile is NOT a Vendor: " + m.Name);
+                
             }
+			*/
 
-            // Se non è vendor, procede con la logica del singolo click
+            
             if (m_SingleClickProps)
             {
                 // m.OnAosSingleClick(from);
@@ -1702,12 +1704,12 @@ namespace Server.Network
             {
                 if (from.Region.OnSingleClick(from, m))
                 {
-                    Console.WriteLine("OnSingleClick called for Mobile: " + m.Name);
-                    // m.OnSingleClick(from);
+
+                     m.OnSingleClick(from);
                 }
             }
         }
-    }
+    
 }
 			else if (s.IsItem)
 			{

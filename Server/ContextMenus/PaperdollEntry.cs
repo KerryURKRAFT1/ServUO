@@ -14,6 +14,7 @@ namespace Server.ContextMenus
 			: base(6123, 18)
 		{
 			m_Mobile = m;
+
 		}
 
 		public override void OnClick()

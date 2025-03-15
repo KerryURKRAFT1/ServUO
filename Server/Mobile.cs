@@ -27,6 +27,7 @@ using Server.Mobiles;
 using Server.Network;
 using Server.Prompts;
 using Server.Targeting;
+
 #endregion
 
 namespace Server
@@ -2785,27 +2786,93 @@ namespace Server
 		protected virtual void OnTargetChange()
 		{ }
 
-		public ContextMenu ContextMenu
-		{
-			get { return m_ContextMenu; }
-			set
-			{
-				m_ContextMenu = value;
+public ContextMenu ContextMenu
+{
+	get { return m_ContextMenu; }
+	set
+	{
+		m_ContextMenu = value;
 
-				if (m_ContextMenu != null && m_NetState != null)
-				{
-					// Old packet is preferred until assistants catch up
-					if (m_NetState.NewHaven && m_ContextMenu.RequiresNewPacket)
-					{
-						Send(new DisplayContextMenu(m_ContextMenu));
-					}
-					else
-					{
-						Send(new DisplayContextMenuOld(m_ContextMenu));
-					}
-				}
+		if (m_ContextMenu != null && m_NetState != null)
+		{
+			// Old packet is preferred until assistants catch up
+			if (m_NetState.NewHaven && m_ContextMenu.RequiresNewPacket)
+			{
+				Send(new DisplayContextMenu(m_ContextMenu));
 			}
-		}
+			else
+			{
+				//Send(new DisplayContextMenuOld(m_ContextMenu));  
+				//  AGGIORNATO PER RENAISSANCE
+
+				// CODICE PER VISUALIZZARE IL NOME SOPRA IL PERSONAGGIO STILE RENAISSANCE 
+					/* TEST DA CANCELLARE
+
+
+                Mobile targetMobile = m_ContextMenu.Target as Mobile;
+
+                if (targetMobile != null)
+                {
+                    string name = targetMobile.Name ?? string.Empty;
+                    string prefix = "";
+                    string suffix = "";
+
+                    // Mostra il titolo di fama se il mobile è un player o umano con abbastanza fama
+                    if (targetMobile.ShowFameTitle && (targetMobile.Player || targetMobile.Body.IsHuman) && targetMobile.Fame >= 10000)
+                    {
+                        prefix = targetMobile.Female ? "Lady" : "Lord";
+                    }
+
+                    // Se il mobile ha un titolo, aggiungilo
+                    if (targetMobile.ClickTitle && !string.IsNullOrEmpty(targetMobile.Title))
+                    {
+                        suffix = targetMobile.Title;
+                    }
+
+                    // Applica eventuali suffissi aggiuntivi
+                    suffix = targetMobile.ApplyNameSuffix(suffix);
+
+                    // Combina il nome con prefisso e suffisso
+                    string val = "";
+                    if (!string.IsNullOrEmpty(prefix) && !string.IsNullOrEmpty(suffix))
+                    {
+                        val = prefix + " " + name + " " + suffix;
+                    }
+                    else if (!string.IsNullOrEmpty(prefix))
+                    {
+                        val = prefix + " " + name;
+                    }
+                    else if (!string.IsNullOrEmpty(suffix))
+                    {
+                        val = name + " " + suffix;
+                    }
+                    else
+                    {
+                        val = name;
+                    }
+
+                    // Ottieni il colore corretto per il nome
+                    int hue = targetMobile.NameHue != -1 
+                        ? targetMobile.NameHue 
+                        : Notoriety.GetHue(Notoriety.Compute(this, targetMobile));
+
+                    // Mostra il nome sopra la testa del mobile
+                    // -- > targetMobile.PrivateOverheadMessage(MessageType.Label, hue, m_AsciiClickMessage, val, m_NetState);
+                }
+                else
+                {
+                    // Gestisci il caso in cui m_ContextMenu.Target non è un Mobile
+                    // Puoi anche loggare un errore o fare altre azioni se necessario
+                }
+
+
+
+			*/
+			} 
+			
+		} 
+	} 
+}
 
 		public virtual bool CheckContextMenuDisplay(IEntity target)
 		{
@@ -7461,9 +7528,10 @@ namespace Server
 							if (ObjectPropertyList.Enabled)
 							{
 								ns.Send(m.OPLPacket);
-
-								//foreach ( Item item in m.m_Items )
-								//	ns.Send( item.OPLPacket );
+								
+								// test per renaissance
+								foreach ( Item item in m.m_Items )
+								ns.Send( item.OPLPacket );
 							}
 						}
 					}
@@ -8763,6 +8831,7 @@ namespace Server
 						{
 							state.Send(OPLPacket);
 
+								// DA CONTROLLARE PER RENAISSANCE
 							//foreach ( Item item in m_Items )
 							//	state.Send( item.OPLPacket );
 						}
@@ -9937,8 +10006,8 @@ namespace Server
 									{
 										m.m_NetState.Send(OPLPacket);
 
-										//foreach ( Item item in m_Items )
-										//	m.m_NetState.Send( item.OPLPacket );
+										foreach ( Item item in m_Items )
+											m.m_NetState.Send( item.OPLPacket );
 									}
 								}
 
@@ -11027,8 +11096,8 @@ namespace Server
 				sendUpdate = true;
 				sendIncoming = true;
 			}
-
-			/*if ( (delta & MobileDelta.Hue) != 0 )
+/*
+			if ( (delta & MobileDelta.Hue) != 0 )
 			{
 			sendNonlocalIncoming = true;
 			sendUpdate = true;
@@ -12156,27 +12225,34 @@ namespace Server
 					{
 						type = "";
 					}
-
+					
 					string text = String.Format(title.Length <= 0 ? "[{1}]{2}" : "[{0}, {1}]{2}", title, guild.Abbreviation, type);
-
 					PrivateOverheadMessage(MessageType.Regular, SpeechHue, true, text, from.NetState);
+					
 				}
 			}
 
 			int hue;
 
+			// Colore nome vendor modificato
+
 			if (m_NameHue != -1)
 			{
-				hue = m_NameHue;
+				hue = 89;
+				//hue = m_NameHue;
+				Console.WriteLine("Nome hue applicato: " + hue);
 			}
 			else if (IsStaff())
 			{
 				hue = 11;
+				Console.WriteLine("Staff, colore cambiato a 11");
 			}
 			else
 			{
 				hue = Notoriety.GetHue(Notoriety.Compute(from, this));
+				Console.WriteLine("Notoriety hue applicato: " + hue);
 			}
+
 
 			string name = Name;
 
@@ -12221,6 +12297,7 @@ namespace Server
 			}
 
 			PrivateOverheadMessage(MessageType.Label, hue, m_AsciiClickMessage, val, from.NetState);
+
 		}
 
 		public bool CheckSkill(SkillName skill, double minSkill, double maxSkill)

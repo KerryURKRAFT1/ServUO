@@ -9,7 +9,10 @@ using System.Collections.Generic;
 #endregion
 
 namespace Server.Mobiles
+
 {
+
+
 	public class BuyItemStateComparer : IComparer<BuyItemState>
 	{
 		public int Compare(BuyItemState l, BuyItemState r)

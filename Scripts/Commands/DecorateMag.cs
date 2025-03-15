@@ -42,8 +42,8 @@ namespace Server.Commands
 
             m_Mobile.SendMessage("Generating world decoration, please wait.");
 
-            Generate("Data/Decoration/RuinedMaginciaTram", Map.Trammel);
-            Generate("Data/Decoration/RuinedMaginciaFel", Map.Felucca);
+            //Generate("Data/Decoration/RuinedMaginciaTram", Map.Trammel);
+            //Generate("Data/Decoration/RuinedMaginciaFel", Map.Felucca);
 
             m_Mobile.SendMessage("World generating complete. {0} items were generated.", m_Count);
         }

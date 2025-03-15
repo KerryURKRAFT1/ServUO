@@ -2010,6 +2010,15 @@ namespace Server.ContextMenus
 		{
 			m_Vendor = vendor;
 			Enabled = vendor.CheckVendorAccess(from);
+
+			// Aggiungi la verifica per disabilitare il menu contestuale
+            //if (m_Vendor.GetType().Name == "BaseVendor" || m_Vendor.GetType().Name == "AIVendor")
+            //{
+            //    System.Console.WriteLine("VendorBuyEntry: il target è un vendor, disabilitando il menu contestuale");
+            //    Enabled = false; // Disabilita il menu contestuale
+            //}
+
+
 		}
 
 		public override void OnClick()
@@ -2027,6 +2036,14 @@ namespace Server.ContextMenus
 		{
 			m_Vendor = vendor;
 			Enabled = vendor.CheckVendorAccess(from);
+
+
+			// Aggiungi la verifica per disabilitare il menu contestuale
+            //if (m_Vendor.GetType().Name == "BaseVendor" || m_Vendor.GetType().Name == "AIVendor")
+            //{
+            //    System.Console.WriteLine("VendorSellEntry: il target è un vendor, disabilitando il menu contestuale");
+            //    Enabled = false; // Disabilita il menu contestuale
+           // }
 		}
 
 		public override void OnClick()
