@@ -1,7 +1,8 @@
+using System;
 using Server.Gumps;
 using Server.Mobiles;
-using Server.Items;
 using Server.Engines.Craft;
+using Server.Items;
 
 namespace Server.Engines.Craft
 {
@@ -15,83 +16,40 @@ namespace Server.Engines.Craft
 
             AddPage(0);
 
-            // Sfondo rettangolare nero
-            AddBackground(0, 0, 400, 300, 5054);
+            // Utilizzo immagine 2320 come layout principale del gump
+            AddImage(0, 0, 2320);
 
-            // Titolo
-            AddLabel(150, 20, 0, "Crafting Menu (Pre-AoS)");
+            // Recupero lingotti di ferro (Iron)
+            int ironIngotCount = from.Backpack.GetAmount(typeof(IronIngot));
 
-            // Mostra le categorie basate sui materiali disponibili
-            AddCategories(from);
+            // Controllo dei materiali e visualizzazione delle categorie nella banda nera
+            int x = 70; // Posizione iniziale orizzontale nella banda nera
+            int y = 320; // Coordinata Y fissa nella banda nera
 
-            // Pulsante per chiudere il menu
-            AddButton(40, 200, 4005, 4007, 0, GumpButtonType.Reply, 0); // Pulsante Cancel
-            AddLabel(80, 200, 0, "Annulla");
-        }
-
-        private void AddCategories(Mobile from)
-        {
-            int y = 60; // Posizione verticale iniziale
-
-            foreach (CraftGroup group in _craftSystem.CraftGroups)
+            // Aggiunge categorie solo se ci sono lingotti di ferro
+            if (ironIngotCount > 0)
             {
-                bool hasEnoughMaterials = false;
+                // Categoria: Armi (icona spada)
+                AddImage(x, y, 5110); // ID immagine: spada
+                x += 80; // Sposta verso destra
 
-                // Controlla gli oggetti nel gruppo
-                foreach (CraftItem item in group.CraftItems)
-                {
-                    if (HasMaterials(from, item))
-                    {
-                        hasEnoughMaterials = true;
-                        break;
-                    }
-                }
+                // Categoria: Armature (icona armatura)
+                AddImage(x, y, 5109); // ID immagine: armatura
+                x += 80;
 
-                // Mostra la categoria solo se ha materiali sufficienti
-                if (hasEnoughMaterials)
-                {
-                    AddButton(40, y, 4005, 4007, group.GroupID, GumpButtonType.Reply, 0); // Pulsante categoria
-                    AddLabel(80, y, 0, group.Name); // Nome categoria
-                    y += 40; // Sposta in basso per il prossimo pulsante
-                }
+                // Categoria: Strumenti (icona strumento generica)
+                AddImage(x, y, 5120); // ID immagine: strumento
             }
-        }
-
-        private bool HasMaterials(Mobile from, CraftItem item)
-        {
-            foreach (CraftRes res in item.Resources)
+            else
             {
-                int count = from.Backpack.GetAmount(res.ItemType); // Ottieni quantità disponibile nello zaino
-                if (count < res.Amount)
-                {
-                    return false; // Non ci sono abbastanza materiali
-                }
+                AddLabel(100, y, 1153, "Non ci sono lingotti di ferro.");
             }
-            return true; // Materiali sufficienti
         }
 
         public override void OnResponse(Server.Network.NetState sender, RelayInfo info)
         {
             Mobile from = sender.Mobile;
-
-            if (info.ButtonID == 0) // Annulla
-            {
-                from.SendMessage("Hai chiuso il menu di crafting.");
-                return;
-            }
-
-            CraftGroup selectedGroup = _craftSystem.GetGroupByID(info.ButtonID);
-
-            if (selectedGroup != null)
-            {
-                from.SendMessage("Hai selezionato la categoria: " + selectedGroup.Name);
-                // Qui possiamo aprire un sotto-menu per il gruppo selezionato
-                from.SendGump(new CraftGroupGump(from, _craftSystem, selectedGroup));
-            }
-            else
-            {
-                from.SendMessage("Categoria non valida.");
-            }
+            from.SendMessage("La gestione della selezione delle categorie verrà implementata successivamente.");
         }
     }
 }

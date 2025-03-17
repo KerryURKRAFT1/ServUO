@@ -45,9 +45,9 @@ namespace Server.Engines.Craft
 
             switch (info.ButtonID)
             {
-                case 1: // Pre-AoS Menu
+                    case 1: // Pre-AoS Menu
                     from.SendMessage("Apertura del menu Classic (Pre-AoS)."); // Debug
-                    ShowPreAoSMenu(from);
+                    from.SendGump(new ClassicCraftGump(from, tool.CraftSystem)); // Apri direttamente il ClassicCraftGump
                     break;
 
                 case 2: // AoS Menu
@@ -70,16 +70,6 @@ namespace Server.Engines.Craft
             }
         }
 
-        private void ShowPreAoSMenu(Mobile from)
-        {
-            from.SendMessage("Costruzione del menu Classic avviata."); // Debug
 
-            Gump gump = new Gump(50, 50);
-            gump.AddPage(0);
-            gump.AddBackground(0, 0, 300, 200, 5054);
-            gump.AddLabel(90, 20, 0, "Classic Crafting Menu");
-
-            from.SendGump(gump);
-        }
     }
 }
