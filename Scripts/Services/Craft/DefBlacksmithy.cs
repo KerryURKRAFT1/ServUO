@@ -97,6 +97,12 @@ namespace Server.Engines.Craft
             */
         }
 
+            /// <summary>
+            /// PROVA DI CODICE
+            /// </summary>
+
+
+
         private static readonly Type typeofAnvil = typeof(AnvilAttribute);
         private static readonly Type typeofForge = typeof(ForgeAttribute);
 
@@ -265,6 +271,8 @@ namespace Server.Engines.Craft
             return 1044154; // You create the item.
         }
 
+
+        
         public override void InitCraftList()
         {
             /*
@@ -983,6 +991,7 @@ namespace Server.Engines.Craft
 			CanAlter = Core.SA;
         }
     }
+    
 
     public class ForgeAttribute : Attribute
     { }

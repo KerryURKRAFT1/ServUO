@@ -40,7 +40,7 @@ namespace Server
 			AccountGold.Enabled = false;
 			AccountGold.ConvertOnBank = false;
 			AccountGold.ConvertOnTrade = false;
-			VirtualCheck.UseEditGump = false; // Facoltativo, se vuoi evitare UI moderne
+			VirtualCheck.UseEditGump = true; // Facoltativo, se vuoi evitare UI moderne
 
 			ObjectPropertyList.Enabled = false; // Disabilita il menu a comparsa sui vendor
  			PacketHandlers.SingleClickProps = false; // Disabilita il menu automatico sui vendor

@@ -2,6 +2,8 @@ using System;
 using Server.Engines.Craft;
 using Server.Network;
 using Server.Mobiles;
+using Server.Gumps; // Aggiungere questa direttiva using
+
 
 namespace Server.Items
 {
@@ -182,6 +184,9 @@ namespace Server.Items
             }
         }
         */
+
+
+        /*
                         // NEW VERSION DOUBLE CLICK
                 public override void OnDoubleClick(Mobile from)
         {
@@ -209,8 +214,34 @@ namespace Server.Items
                 from.SendLocalizedMessage(1042001); // That must be in your pack for you to use it.
             }
         }
+*/
 
+public override void OnDoubleClick(Mobile from)
+{
+    if (this.IsChildOf(from.Backpack) || this.Parent == from)
+    {
+        from.SendMessage("Apertura del menu di selezione avviata."); // Debug
+        CraftSystem system = this.CraftSystem;
 
+        int num = system.CanCraft(from, this, null);
+
+        if (num > 0 && (num != 1044267 || !Core.SE)) // Blacksmithing shows the gump regardless of proximity of an anvil and forge after SE
+        {
+            from.SendMessage("Errore nel crafting, messaggio: " + num); // Debug
+            from.SendLocalizedMessage(num);
+        }
+        else
+        {
+            from.SendMessage("Mostro il menu di selezione."); // Debug
+            from.SendGump(new CraftSelectionGump(from, this)); // Mostra il Gump di selezione
+        }
+    }
+    else
+    {
+        from.SendMessage("Il martello deve essere nel tuo zaino per usarlo."); // Debug
+        from.SendLocalizedMessage(1042001); // That must be in your pack for you to use it.
+    }
+}
 
 
       
