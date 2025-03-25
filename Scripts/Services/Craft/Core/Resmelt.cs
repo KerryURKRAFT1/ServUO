@@ -24,7 +24,7 @@ namespace Server.Engines.Craft
 
             if (num > 0 && num != 1044267)
             {
-                from.SendGump(new CraftGump(from, craftSystem, tool, num));
+                from.SendGump(new CraftGump(from, craftSystem, tool, num, CraftGump.CraftPage.None, isPreAoS));
             }
             else
             {
@@ -65,7 +65,7 @@ namespace Server.Engines.Craft
                             num = 1044265; // You must be near a forge.
                     }
 
-                    from.SendGump(new CraftGump(from, this.m_CraftSystem, this.m_Tool, num));
+                    from.SendGump(new CraftGump(from, this.m_CraftSystem, this.m_Tool, num, CraftGump.CraftPage.None, m_IsPreAoS));
                 }
                 else
                 {
@@ -103,8 +103,6 @@ namespace Server.Engines.Craft
                             break; // You melt the item down into ingots.
                     }
 
-                    from.SendGump(new CraftGump(from, this.m_CraftSystem, this.m_Tool, message));
-
                     // Dopo lo smelting, aprire il menu corretto (Pre-AoS o AoS)
                     if (m_Tool != null && m_Tool.Deleted)
                     {
@@ -119,11 +117,11 @@ namespace Server.Engines.Craft
 
                     if (m_IsPreAoS)
                     {
-                        from.SendMenu(new NewCraftingMenu(from, m_CraftSystem, m_Tool, 0));
+                        from.SendMenu(new NewCraftingMenu(from, m_CraftSystem, m_Tool, message, m_IsPreAoS));
                     }
                     else
                     {
-                        from.SendGump(new CraftGump(from, m_CraftSystem, m_Tool, message));
+                        from.SendGump(new CraftGump(from, m_CraftSystem, m_Tool, message, CraftGump.CraftPage.None, m_IsPreAoS));
                     }
                 }
             }

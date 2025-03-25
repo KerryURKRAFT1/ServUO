@@ -14,6 +14,7 @@ namespace Server.Engines.Craft
         private readonly CraftSystem m_CraftSystem;
         private readonly BaseTool m_Tool;
         private readonly int m_Message;
+        private readonly bool isPreAoS; // Aggiungi questa linea
 
         public NewCraftingMenu(Mobile from, CraftSystem craftSystem, BaseTool tool, int message, bool isPreAoS)
             : base("Select a category to craft:", GetCraftCategories())
@@ -22,7 +23,7 @@ namespace Server.Engines.Craft
             m_CraftSystem = craftSystem;
             m_Tool = tool;
             m_Message = message;
-            m.isPreAoS = isPreAoS;
+            this.isPreAoS = isPreAoS;
 
             if (m_Message != 0)
             {
@@ -51,12 +52,12 @@ namespace Server.Engines.Craft
                 case 0: // Repair
                     //Repair.Do(m_From, m_CraftSystem, m_Tool);
                     // AGGIORNATO PER RENAISSANCE
-                    Repair.Do(from, craftSystem, tool, isPreAoS); // Aggiungi isPreAoS come parametro appropriato
+                    Repair.Do(m_From, m_CraftSystem, m_Tool, isPreAoS); // Aggiungi isPreAoS come parametro appropriato
                     break;
                 case 1: // Smelt
                     //Resmelt.Do(m_From, m_CraftSystem, m_Tool);
                     // AGGIORNATO PER RENAISSANCE
-                    Resmelt.Do(from, craftSystem, tool, isPreAoS); // Aggiungi isPreAoS come parametro appropriato
+                    Resmelt.Do(m_From, m_CraftSystem, m_Tool, isPreAoS); // Aggiungi isPreAoS come parametro appropriato
                     break;
                 case 2: // Shields
                     m_From.SendMenu(new ShieldsMenu(m_From, m_CraftSystem, m_Tool));

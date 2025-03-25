@@ -11,8 +11,8 @@ namespace Server.Engines.Craft
         private readonly Mobile m_From;
         private readonly CraftSystem m_CraftSystem;
         private readonly BaseTool m_Tool;
-
         private readonly CraftPage m_Page;
+        private readonly bool isPreAoS;
 
         private const int LabelHue = 0x480;
         private const int LabelColor = 0x7FFF;
@@ -39,16 +39,17 @@ namespace Server.Engines.Craft
 
         
         public CraftGump(Mobile from, CraftSystem craftSystem, BaseTool tool, object notice)
-            : this(from, craftSystem, tool, notice, CraftPage.None)
+            : this(from, craftSystem, tool, notice, CraftPage.None, false)
         {
         }
 
-        public CraftGump(Mobile from, CraftSystem craftSystem, BaseTool tool, object notice, CraftPage page) : base(40, 40)
+        public CraftGump(Mobile from, CraftSystem craftSystem, BaseTool tool, object notice, CraftPage page, bool isPreAoS) : base(40, 40)
         {
             this.m_From = from;
             this.m_CraftSystem = craftSystem;
             this.m_Tool = tool;
             this.m_Page = page;
+            this.isPreAoS = isPreAoS;
 
             CraftContext context = craftSystem.GetContext(from);
 
@@ -604,14 +605,19 @@ namespace Server.Engines.Craft
 
                             if (this.m_From.Skills[system.MainSkill].Base < res.RequiredSkill)
                             {
-                                this.m_From.SendGump(new CraftGump(this.m_From, system, this.m_Tool, res.Message));
+                                //this.m_From.SendGump(new CraftGump(this.m_From, system, this.m_Tool, res.Message));
+                                // aggiornato per renaissance
+                                this.m_From.SendGump(new CraftGump(this.m_From, system, this.m_Tool, res.Message, this.m_Page, this.isPreAoS));
+
                             }
                             else
                             {
                                 if (context != null)
                                     context.LastResourceIndex = index;
 
-                                this.m_From.SendGump(new CraftGump(this.m_From, system, this.m_Tool, null));
+                                //this.m_From.SendGump(new CraftGump(this.m_From, system, this.m_Tool, null));
+                                // aggiornato per renaissance
+                                this.m_From.SendGump(new CraftGump(this.m_From, system, this.m_Tool, null, this.m_Page, this.isPreAoS));
                             }
                         }
                         else if (this.m_Page == CraftPage.PickResource2 && index >= 0 && index < system.CraftSubRes2.Count)
@@ -622,14 +628,18 @@ namespace Server.Engines.Craft
 
                             if (this.m_From.Skills[system.MainSkill].Base < res.RequiredSkill)
                             {
-                                this.m_From.SendGump(new CraftGump(this.m_From, system, this.m_Tool, res.Message));
+                                //this.m_From.SendGump(new CraftGump(this.m_From, system, this.m_Tool, res.Message));
+                                // aggiornato per renaissance
+                                this.m_From.SendGump(new CraftGump(this.m_From, system, this.m_Tool, res.Message, this.m_Page, this.isPreAoS));
                             }
                             else
                             {
                                 if (context != null)
                                     context.LastResourceIndex2 = index;
 
-                                this.m_From.SendGump(new CraftGump(this.m_From, system, this.m_Tool, null));
+                                //this.m_From.SendGump(new CraftGump(this.m_From, system, this.m_Tool, null));
+                                // aggiornato per renaissance
+                                this.m_From.SendGump(new CraftGump(this.m_From, system, this.m_Tool, null, this.m_Page, this.isPreAoS));
                             }
                         }
 
@@ -642,8 +652,9 @@ namespace Server.Engines.Craft
                             case 0: // Resource selection
                                 {
                                     if (system.CraftSubRes.Init)
-                                        this.m_From.SendGump(new CraftGump(this.m_From, system, this.m_Tool, null, CraftPage.PickResource));
-
+                                        //this.m_From.SendGump(new CraftGump(this.m_From, system, this.m_Tool, null, CraftPage.PickResource));
+                                        // aggiornato per renaissance
+                                        this.m_From.SendGump(new CraftGump(this.m_From, system, this.m_Tool, null, CraftPage.PickResource, this.isPreAoS));
                                     break;
                                 }
                             case 1: // Smelt item
@@ -651,7 +662,7 @@ namespace Server.Engines.Craft
                                     if (system.Resmelt)
                                         //Resmelt.Do(this.m_From, system, this.m_Tool);
                                         // AGGIORNATO PER RENAISSANCE 
-                                        Resmelt.Do(from, craftSystem, tool, isPreAoS); // Aggiungi isPreAoS come parametro appropriato
+                                        Resmelt.Do(m_From, m_CraftSystem, m_Tool, isPreAoS); // Aggiungi isPreAoS come parametro appropriato
 
                                     break;
                                 }
@@ -665,8 +676,10 @@ namespace Server.Engines.Craft
                                     if (item != null)
                                         this.CraftItem(item);
                                     else
-                                        this.m_From.SendGump(new CraftGump(this.m_From, this.m_CraftSystem, this.m_Tool, 1044165, this.m_Page)); // You haven't made anything yet.
-
+                                        //this.m_From.SendGump(new CraftGump(this.m_From, this.m_CraftSystem, this.m_Tool, 1044165, this.m_Page)); // You haven't made anything yet.
+                                        // modificato per renaissance
+                                        this.m_From.SendGump(new CraftGump(this.m_From, this.m_CraftSystem, this.m_Tool, 1044165, this.m_Page, this.isPreAoS));
+                                        
                                     break;
                                 }
                             case 3: // Last 10
@@ -686,7 +699,9 @@ namespace Server.Engines.Craft
 
                                     context.DoNotColor = !context.DoNotColor;
 
-                                    this.m_From.SendGump(new CraftGump(this.m_From, this.m_CraftSystem, this.m_Tool, null, this.m_Page));
+                                    //this.m_From.SendGump(new CraftGump(this.m_From, this.m_CraftSystem, this.m_Tool, null, this.m_Page));
+                                    // aggiornato per renaissance 
+                                    this.m_From.SendGump(new CraftGump(this.m_From, this.m_CraftSystem, this.m_Tool, null, this.m_Page, this.isPreAoS));
 
                                     break;
                                 }
@@ -695,7 +710,7 @@ namespace Server.Engines.Craft
                                     if (system.Repair)
                                         //Repair.Do(this.m_From, system, this.m_Tool);
                                         //AGGIORNATO PER RENAISSANCE
-                                        Repair.Do(from, craftSystem, tool, isPreAoS); // Aggiungi isPreAoS come parametro appropriato
+                                        Repair.Do(m_From, m_CraftSystem, m_Tool, isPreAoS); // Aggiungi isPreAoS come parametro appropriato
 
                                     break;
                                 }
@@ -717,15 +732,18 @@ namespace Server.Engines.Craft
                                             break;
                                     }
 
-                                    this.m_From.SendGump(new CraftGump(this.m_From, this.m_CraftSystem, this.m_Tool, null, this.m_Page));
+                                    //this.m_From.SendGump(new CraftGump(this.m_From, this.m_CraftSystem, this.m_Tool, null, this.m_Page));
+                                    // aggiornato per renaissance
+                                    this.m_From.SendGump(new CraftGump(this.m_From, this.m_CraftSystem, this.m_Tool, null, this.m_Page, this.isPreAoS));
 
                                     break;
                                 }
                             case 7: // Resource selection 2
                                 {
                                     if (system.CraftSubRes2.Init)
-                                        this.m_From.SendGump(new CraftGump(this.m_From, system, this.m_Tool, null, CraftPage.PickResource2));
-
+                                        //this.m_From.SendGump(new CraftGump(this.m_From, system, this.m_Tool, null, CraftPage.PickResource2));
+                                        // aggiornato per renaissance
+                                        this.m_From.SendGump(new CraftGump(this.m_From, system, this.m_Tool, null, CraftPage.PickResource2, this.isPreAoS));
                                     break;
                                 }
                             case 8: // Enhance item
@@ -763,7 +781,9 @@ namespace Server.Engines.Craft
                                             break;
                                     }
 
-                                    this.m_From.SendGump(new CraftGump(this.m_From, this.m_CraftSystem, this.m_Tool, null, this.m_Page));
+                                    //this.m_From.SendGump(new CraftGump(this.m_From, this.m_CraftSystem, this.m_Tool, null, this.m_Page));
+                                    // aggionrato per renaissance
+                                    this.m_From.SendGump(new CraftGump(this.m_From, this.m_CraftSystem, this.m_Tool, null, this.m_Page, this.isPreAoS));
 
                                     break;
                                 }
