@@ -16,6 +16,7 @@ namespace Server.Engines.Craft
         {
         }
 
+/*
         public static void Do(Mobile from, CraftSystem craftSystem, BaseTool tool)
         {
             from.Target = new InternalTarget(craftSystem, tool);
@@ -47,6 +48,49 @@ namespace Server.Engines.Craft
                 this.m_CraftSystem = craftSystem;
                 this.m_Deed = deed;
             }
+
+*/
+
+        public static void Do(Mobile from, CraftSystem craftSystem, BaseTool tool, bool isPreAoS)
+        {
+            from.Target = new InternalTarget(craftSystem, tool, isPreAoS);
+            from.SendLocalizedMessage(1044276); // Target an item to repair.
+        }
+
+        public static void Do(Mobile from, CraftSystem craftSystem, RepairDeed deed, bool isPreAoS)
+        {
+            from.Target = new InternalTarget(craftSystem, deed, isPreAoS);
+            from.SendLocalizedMessage(1044276); // Target an item to repair.
+        }
+
+        private class InternalTarget : Target
+        {
+            private readonly CraftSystem m_CraftSystem;
+            private readonly BaseTool m_Tool;
+            private readonly RepairDeed m_Deed;
+            private readonly bool m_IsPreAoS;
+
+            public InternalTarget(CraftSystem craftSystem, BaseTool tool, bool isPreAoS)
+                : base(2, false, TargetFlags.None)
+            {
+                this.m_CraftSystem = craftSystem;
+                this.m_Tool = tool;
+                this.m_IsPreAoS = isPreAoS;
+            }
+
+            public InternalTarget(CraftSystem craftSystem, RepairDeed deed, bool isPreAoS)
+                : base(2, false, TargetFlags.None)
+            {
+                this.m_CraftSystem = craftSystem;
+                this.m_Deed = deed;
+                this.m_IsPreAoS = isPreAoS;
+            }
+            /// <summary>
+            /// FINE DEL MENU PRE AOS
+            /// </summary>
+            /// <param name="state"></param>
+
+
 
             private static void EndGolemRepair(object state)
             {
@@ -662,7 +706,9 @@ namespace Server.Engines.Craft
                 if (!usingDeed)
                 {
                     CraftContext context = this.m_CraftSystem.GetContext(from);
-                    from.SendGump(new CraftGump(from, this.m_CraftSystem, this.m_Tool, number));
+                    //from.SendGump(new CraftGump(from, this.m_CraftSystem, this.m_Tool, number));
+                     // Aggiungi il richiamo a NewCraftingMenu qui per RENAISSANCE
+                    from.SendMenu(new NewCraftingMenu(from, this.m_CraftSystem, this.m_Tool, number));
                 }
                 else
                 {

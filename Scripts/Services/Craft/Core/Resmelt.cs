@@ -1,6 +1,7 @@
 using System;
 using Server.Items;
 using Server.Targeting;
+using Server.Gumps;
 
 namespace Server.Engines.Craft
 {
@@ -17,7 +18,7 @@ namespace Server.Engines.Craft
         {
         }
 
-        public static void Do(Mobile from, CraftSystem craftSystem, BaseTool tool)
+        public static void Do(Mobile from, CraftSystem craftSystem, BaseTool tool, bool isPreAoS)
         {
             int num = craftSystem.CanCraft(from, tool, null);
 
@@ -27,7 +28,7 @@ namespace Server.Engines.Craft
             }
             else
             {
-                from.Target = new InternalTarget(craftSystem, tool);
+                from.Target = new InternalTarget(craftSystem, tool, isPreAoS);
                 from.SendLocalizedMessage(1044273); // Target an item to recycle.
             }
         }
@@ -35,12 +36,15 @@ namespace Server.Engines.Craft
         private class InternalTarget : Target
         {
             private readonly CraftSystem m_CraftSystem;
-            private readonly BaseTool m_Tool;
-            public InternalTarget(CraftSystem craftSystem, BaseTool tool)
+            private BaseTool m_Tool;
+            private readonly bool m_IsPreAoS;
+
+            public InternalTarget(CraftSystem craftSystem, BaseTool tool, bool isPreAoS)
                 : base(2, false, TargetFlags.None)
             {
                 this.m_CraftSystem = craftSystem;
                 this.m_Tool = tool;
+                this.m_IsPreAoS = isPreAoS;
             }
 
             protected override void OnTarget(Mobile from, object targeted)
@@ -52,7 +56,7 @@ namespace Server.Engines.Craft
                     if (num == 1044267)
                     {
                         bool anvil, forge;
-			
+
                         DefBlacksmithy.CheckAnvilAndForge(from, 2, out anvil, out forge);
 
                         if (!anvil)
@@ -60,7 +64,7 @@ namespace Server.Engines.Craft
                         else if (!forge)
                             num = 1044265; // You must be near a forge.
                     }
-					
+
                     from.SendGump(new CraftGump(from, this.m_CraftSystem, this.m_Tool, num));
                 }
                 else
@@ -85,7 +89,7 @@ namespace Server.Engines.Craft
                         isStoreBought = false;
                     }
 
-                    switch ( result )
+                    switch (result)
                     {
                         default:
                         case SmeltResult.Invalid:
@@ -98,8 +102,29 @@ namespace Server.Engines.Craft
                             message = isStoreBought ? 500418 : 1044270;
                             break; // You melt the item down into ingots.
                     }
-					
+
                     from.SendGump(new CraftGump(from, this.m_CraftSystem, this.m_Tool, message));
+
+                    // Dopo lo smelting, aprire il menu corretto (Pre-AoS o AoS)
+                    if (m_Tool != null && m_Tool.Deleted)
+                    {
+                        m_Tool = null;
+                    }
+
+                    if (m_Tool == null)
+                    {
+                        from.SendLocalizedMessage(1044038); // You have worn out your tool!
+                        return;
+                    }
+
+                    if (m_IsPreAoS)
+                    {
+                        from.SendMenu(new NewCraftingMenu(from, m_CraftSystem, m_Tool, 0));
+                    }
+                    else
+                    {
+                        from.SendGump(new CraftGump(from, m_CraftSystem, m_Tool, message));
+                    }
                 }
             }
 
@@ -130,7 +155,7 @@ namespace Server.Engines.Craft
 
                     double difficulty = 0.0;
 
-                    switch ( resource )
+                    switch (resource)
                     {
                         case CraftResource.DullCopper:
                             difficulty = 65.0;

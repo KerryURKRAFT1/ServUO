@@ -20,24 +20,30 @@ namespace Server.Engines.Craft
 
         public bool Locked { get { return AutoCraftTimer.HasTimer(m_From); } }
 
-        private enum CraftPage
+        public enum CraftPage
         {
             None,
             PickResource,
             PickResource2
         }
 
-        /*public CraftGump( Mobile from, CraftSystem craftSystem, BaseTool tool ): this( from, craftSystem, -1, -1, tool, null )
-        {
-        }*/
+        //public CraftGump( Mobile from, CraftSystem craftSystem, BaseTool tool ): this( from, craftSystem, -1, -1, tool, null )
+        //{
+        //}
 
+
+        //public CraftGump(Mobile from, CraftSystem craftSystem, BaseTool tool, object notice, CraftPage page) : base(40, 40)
+        //{
+        //}
+
+
+        
         public CraftGump(Mobile from, CraftSystem craftSystem, BaseTool tool, object notice)
             : this(from, craftSystem, tool, notice, CraftPage.None)
         {
         }
 
-        private CraftGump(Mobile from, CraftSystem craftSystem, BaseTool tool, object notice, CraftPage page)
-            : base(40, 40)
+        public CraftGump(Mobile from, CraftSystem craftSystem, BaseTool tool, object notice, CraftPage page) : base(40, 40)
         {
             this.m_From = from;
             this.m_CraftSystem = craftSystem;
@@ -643,7 +649,9 @@ namespace Server.Engines.Craft
                             case 1: // Smelt item
                                 {
                                     if (system.Resmelt)
-                                        Resmelt.Do(this.m_From, system, this.m_Tool);
+                                        //Resmelt.Do(this.m_From, system, this.m_Tool);
+                                        // AGGIORNATO PER RENAISSANCE 
+                                        Resmelt.Do(from, craftSystem, tool, isPreAoS); // Aggiungi isPreAoS come parametro appropriato
 
                                     break;
                                 }
@@ -685,7 +693,9 @@ namespace Server.Engines.Craft
                             case 5: // Repair item
                                 {
                                     if (system.Repair)
-                                        Repair.Do(this.m_From, system, this.m_Tool);
+                                        //Repair.Do(this.m_From, system, this.m_Tool);
+                                        //AGGIORNATO PER RENAISSANCE
+                                        Repair.Do(from, craftSystem, tool, isPreAoS); // Aggiungi isPreAoS come parametro appropriato
 
                                     break;
                                 }

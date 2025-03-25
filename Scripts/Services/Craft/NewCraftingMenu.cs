@@ -4,302 +4,223 @@ using Server.Network;
 using Server.Engines.Craft;
 using Server.Items;
 using Server.Mobiles;
-using Server.Menus;
+using Server.Menus.ItemLists;
 
 namespace Server.Engines.Craft
 {
-    public class NewCraftingMenu : Gump, IMenu // Assicurati che IMenu sia definito nel namespace corretto
+    public class NewCraftingMenu : ItemListMenu
     {
         private readonly Mobile m_From;
         private readonly CraftSystem m_CraftSystem;
         private readonly BaseTool m_Tool;
+        private readonly int m_Message;
 
-        public NewCraftingMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-            : base(50, 50)
+        public NewCraftingMenu(Mobile from, CraftSystem craftSystem, BaseTool tool, int message, bool isPreAoS)
+            : base("Select a category to craft:", GetCraftCategories())
         {
             m_From = from;
             m_CraftSystem = craftSystem;
             m_Tool = tool;
+            m_Message = message;
+            m.isPreAoS = isPreAoS;
 
-            AddPage(0);
-            AddBackground(0, 0, 300, 400, 5054);
-
-            AddLabel(100, 20, 1152, "Select a category to craft:");
-
-            var categories = GetCraftCategories();
-            for (int i = 0; i < categories.Length; i++)
+            if (m_Message != 0)
             {
-                AddButton(50, 50 + (i * 30), 4005, 4007, i + 1, GumpButtonType.Reply, 0);
-                AddLabel(85, 50 + (i * 30), 1152, categories[i]);
+                from.SendLocalizedMessage(m_Message);
             }
         }
 
-        private static string[] GetCraftCategories()
+        private static ItemListEntry[] GetCraftCategories()
         {
-            return new string[]
+            return new ItemListEntry[]
             {
-                "Repair",
-                "Smelt",
-                "Shields",
-                "Armor",
-                "Weapons",
-                "Special Armor",
-                "Special Weapon"
+                new ItemListEntry("Repair", 4015),
+                new ItemListEntry("Smelt", 4017),
+                new ItemListEntry("Shields", 7026),
+                new ItemListEntry("Armor", 5141),
+                new ItemListEntry("Weapons", 5049),
+                new ItemListEntry("Special Armor", 5384),
+                new ItemListEntry("Special Weapon", 5183)
             };
         }
 
-        public override void OnResponse(NetState state, RelayInfo info)
+        public override void OnResponse(NetState state, int index)
         {
-            switch (info.ButtonID - 1)
+            switch (index)
             {
                 case 0: // Repair
-                    //Repair.Do(m_From, m_CraftSystem, m_Tool, this);
+                    //Repair.Do(m_From, m_CraftSystem, m_Tool);
+                    // AGGIORNATO PER RENAISSANCE
+                    Repair.Do(from, craftSystem, tool, isPreAoS); // Aggiungi isPreAoS come parametro appropriato
                     break;
                 case 1: // Smelt
-                   // Resmelt.Do(m_From, m_CraftSystem, m_Tool, this);
+                    //Resmelt.Do(m_From, m_CraftSystem, m_Tool);
+                    // AGGIORNATO PER RENAISSANCE
+                    Resmelt.Do(from, craftSystem, tool, isPreAoS); // Aggiungi isPreAoS come parametro appropriato
                     break;
                 case 2: // Shields
-                    m_From.SendGump(new ShieldsMenu(m_From, m_CraftSystem, m_Tool));
+                    m_From.SendMenu(new ShieldsMenu(m_From, m_CraftSystem, m_Tool));
                     break;
                 case 3: // Armor
-                    m_From.SendGump(new ArmorMenu(m_From, m_CraftSystem, m_Tool));
+                    m_From.SendMenu(new ArmorMenu(m_From, m_CraftSystem, m_Tool));
                     break;
                 case 4: // Weapons
-                    m_From.SendGump(new WeaponsMenu(m_From, m_CraftSystem, m_Tool));
+                    m_From.SendMenu(new WeaponsMenu(m_From, m_CraftSystem, m_Tool));
                     break;
                 case 5: // Special Armor
-                    m_From.SendGump(new SpecialArmorMenu(m_From, m_CraftSystem, m_Tool));
+                    m_From.SendMenu(new SpecialArmorMenu(m_From, m_CraftSystem, m_Tool));
                     break;
                 case 6: // Special Weapon
-                    m_From.SendGump(new SpecialWeaponsMenu(m_From, m_CraftSystem, m_Tool));
+                    m_From.SendMenu(new SpecialWeaponsMenu(m_From, m_CraftSystem, m_Tool));
                     break;
             }
         }
 
-        public void OnCancel(NetState state)
-        {
-            // Implement cancel logic if needed
-        }
-
-        public int EntryLength
-        {
-            get { return 7; }
-        }
-
-        void IMenu.OnResponse(NetState state, int index)
-        {
-            //OnResponse(state, new RelayInfo(index, null));
-        }
-
-        public class ShieldsMenu : Gump
+        public class ShieldsMenu : ItemListMenu
         {
             private readonly Mobile m_From;
             private readonly CraftSystem m_CraftSystem;
             private readonly BaseTool m_Tool;
 
             public ShieldsMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base(50, 50)
+                : base("Select a shield to craft:", GetShields())
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
                 m_Tool = tool;
-
-                AddPage(0);
-                AddBackground(0, 0, 300, 400, 5054);
-
-                AddLabel(100, 20, 1152, "Select a shield to craft:");
-
-                var shields = GetShields(craftSystem);
-                for (int i = 0; i < shields.Length; i++)
-                {
-                    AddButton(50, 50 + (i * 30), 4005, 4007, i + 1, GumpButtonType.Reply, 0);
-                    AddLabel(85, 50 + (i * 30), 1152, shields[i]);
-                }
             }
 
-            private static string[] GetShields(CraftSystem craftSystem)
+            private static ItemListEntry[] GetShields()
             {
-                return new string[]
+                return new ItemListEntry[]
                 {
-                    "Buckler",
-                    "Bronze Shield",
-                    "Heater Shield",
-                    "Metal Shield",
-                    "Metal Kite Shield",
-                    "Wooden Kite Shield",
-                    "Chaos Shield",
-                    "Order Shield"
+                    new ItemListEntry("Buckler", 7026),
+                    new ItemListEntry("Bronze Shield", 7030),
+                    new ItemListEntry("Heater Shield", 7029),
+                    new ItemListEntry("Metal Shield", 7031),
+                    new ItemListEntry("Metal Kite Shield", 7028),
+                    new ItemListEntry("Wooden Kite Shield", 7032),
+                    new ItemListEntry("Chaos Shield", 7033),
+                    new ItemListEntry("Order Shield", 7034)
                 };
             }
 
-            public override void OnResponse(NetState state, RelayInfo info)
+            public override void OnResponse(NetState state, int index)
             {
-                int index = info.ButtonID - 1;
-                if (index >= 0 && index < GetShields(m_CraftSystem).Length)
-                {
-                    // Implement the logic to craft the selected shield
-                }
+                // Implement the logic to craft the selected shield
             }
         }
 
-        public class ArmorMenu : Gump
+        public class ArmorMenu : ItemListMenu
         {
             private readonly Mobile m_From;
             private readonly CraftSystem m_CraftSystem;
             private readonly BaseTool m_Tool;
 
             public ArmorMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base(50, 50)
+                : base("Select an armor category:", GetArmorCategories())
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
                 m_Tool = tool;
-
-                AddPage(0);
-                AddBackground(0, 0, 300, 400, 5054);
-
-                AddLabel(100, 20, 1152, "Select an armor category:");
-
-                var armors = GetArmorCategories();
-                for (int i = 0; i < armors.Length; i++)
-                {
-                    AddButton(50, 50 + (i * 30), 4005, 4007, i + 1, GumpButtonType.Reply, 0);
-                    AddLabel(85, 50 + (i * 30), 1152, armors[i]);
-                }
             }
 
-            private static string[] GetArmorCategories()
+            private static ItemListEntry[] GetArmorCategories()
             {
-                return new string[]
+                return new ItemListEntry[]
                 {
-                    "Ringmail",
-                    "Chainmail",
-                    "Platemail"
+                    new ItemListEntry("Ringmail", 5141),
+                    new ItemListEntry("Chainmail", 5055),
+                    new ItemListEntry("Platemail", 5142)
                 };
             }
 
-            public override void OnResponse(NetState state, RelayInfo info)
+            public override void OnResponse(NetState state, int index)
             {
                 // Implement the logic to open the submenus for each armor category
             }
         }
 
-        public class WeaponsMenu : Gump
+        public class WeaponsMenu : ItemListMenu
         {
             private readonly Mobile m_From;
             private readonly CraftSystem m_CraftSystem;
             private readonly BaseTool m_Tool;
 
             public WeaponsMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base(50, 50)
+                : base("Select a weapon to craft:", GetWeapons())
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
                 m_Tool = tool;
-
-                AddPage(0);
-                AddBackground(0, 0, 300, 400, 5054);
-
-                AddLabel(100, 20, 1152, "Select a weapon to craft:");
-
-                var weapons = GetWeapons(craftSystem);
-                for (int i = 0; i < weapons.Length; i++)
-                {
-                    AddButton(50, 50 + (i * 30), 4005, 4007, i + 1, GumpButtonType.Reply, 0);
-                    AddLabel(85, 50 + (i * 30), 1152, weapons[i]);
-                }
             }
 
-            private static string[] GetWeapons(CraftSystem craftSystem)
+            private static ItemListEntry[] GetWeapons()
             {
-                return new string[]
+                return new ItemListEntry[]
                 {
-                    "Sword",
-                    "Axe"
+                    new ItemListEntry("Sword", 5049),
+                    new ItemListEntry("Axe", 5050)
                 };
             }
 
-            public override void OnResponse(NetState state, RelayInfo info)
+            public override void OnResponse(NetState state, int index)
             {
                 // Implement the logic to craft the selected weapon
             }
         }
 
-        public class SpecialArmorMenu : Gump
+        public class SpecialArmorMenu : ItemListMenu
         {
             private readonly Mobile m_From;
             private readonly CraftSystem m_CraftSystem;
             private readonly BaseTool m_Tool;
 
             public SpecialArmorMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base(50, 50)
+                : base("Select a special armor to craft:", GetSpecialArmors())
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
                 m_Tool = tool;
-
-                AddPage(0);
-                AddBackground(0, 0, 300, 400, 5054);
-
-                AddLabel(100, 20, 1152, "Select a special armor to craft:");
-
-                var armors = GetSpecialArmors(craftSystem);
-                for (int i = 0; i < armors.Length; i++)
-                {
-                    AddButton(50, 50 + (i * 30), 4005, 4007, i + 1, GumpButtonType.Reply, 0);
-                    AddLabel(85, 50 + (i * 30), 1152, armors[i]);
-                }
             }
 
-            private static string[] GetSpecialArmors(CraftSystem craftSystem)
+            private static ItemListEntry[] GetSpecialArmors()
             {
-                return new string[]
+                return new ItemListEntry[]
                 {
-                    "Dragon Armor"
+                    new ItemListEntry("Dragon Armor", 5141)
                 };
             }
 
-            public override void OnResponse(NetState state, RelayInfo info)
+            public override void OnResponse(NetState state, int index)
             {
                 // Implement the logic to craft the selected special armor
             }
         }
 
-        public class SpecialWeaponsMenu : Gump
+        public class SpecialWeaponsMenu : ItemListMenu
         {
             private readonly Mobile m_From;
             private readonly CraftSystem m_CraftSystem;
             private readonly BaseTool m_Tool;
 
             public SpecialWeaponsMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base(50, 50)
+                : base("Select a special weapon to craft:", GetSpecialWeapons())
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
                 m_Tool = tool;
-
-                AddPage(0);
-                AddBackground(0, 0, 300, 400, 5054);
-
-                AddLabel(100, 20, 1152, "Select a special weapon to craft:");
-
-                var weapons = GetSpecialWeapons(craftSystem);
-                for (int i = 0; i < weapons.Length; i++)
-                {
-                    AddButton(50, 50 + (i * 30), 4005, 4007, i + 1, GumpButtonType.Reply, 0);
-                    AddLabel(85, 50 + (i * 30), 1152, weapons[i]);
-                }
             }
 
-            private static string[] GetSpecialWeapons(CraftSystem craftSystem)
+            private static ItemListEntry[] GetSpecialWeapons()
             {
-                return new string[]
+                return new ItemListEntry[]
                 {
-                    "Magical Sword"
+                    new ItemListEntry("Magical Sword", 5049)
                 };
             }
 
-            public override void OnResponse(NetState state, RelayInfo info)
+            public override void OnResponse(NetState state, int index)
             {
                 // Implement the logic to craft the selected special weapon
             }
