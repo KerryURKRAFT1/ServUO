@@ -43,6 +43,7 @@ namespace Server.Engines.Craft
         {
         }
 
+
         public CraftGump(Mobile from, CraftSystem craftSystem, BaseTool tool, object notice, CraftPage page, bool isPreAoS) : base(40, 40)
         {
             this.m_From = from;
@@ -493,7 +494,7 @@ namespace Server.Engines.Craft
                         type = res.GetAt(resIndex).ItemType;
                 }
 
-                this.m_CraftSystem.CreateItem(this.m_From, item.ItemType, type, this.m_Tool, item);
+                this.m_CraftSystem.CreateItem(this.m_From, item.ItemType, type, this.m_Tool, item, isPreAoS);
             }
         }
 
@@ -532,7 +533,9 @@ namespace Server.Engines.Craft
                         if (index >= 0 && index < groups.Count)
                         {
                             context.LastGroupIndex = index;
-                            this.m_From.SendGump(new CraftGump(this.m_From, system, this.m_Tool, null));
+                            //this.m_From.SendGump(new CraftGump(this.m_From, system, this.m_Tool, null));
+                            // aggiornato per renaissance
+                            this.m_From.SendGump(new CraftGump(this.m_From, system, this.m_Tool, null, CraftPage.None, this.isPreAoS));
                         }
 
                         break;
@@ -566,7 +569,10 @@ namespace Server.Engines.Craft
                             CraftGroup group = groups.GetAt(groupIndex);
 
                             if (index >= 0 && index < group.CraftItems.Count)
-                                this.m_From.SendGump(new CraftGumpItem(this.m_From, system, group.CraftItems.GetAt(index), this.m_Tool));
+                            {}
+                                //this.m_From.SendGump(new CraftGumpItem(this.m_From, system, group.CraftItems.GetAt(index), this.m_Tool));
+                                // aggIornato per renaissance
+                                //this.m_From.SendGump(new CraftGumpItem(this.m_From, system, group.CraftItems.GetAt(index), this.m_Tool, this.isPreAoS));
                         }
 
                         break;
@@ -591,7 +597,9 @@ namespace Server.Engines.Craft
                         List<CraftItem> lastTen = context.Items;
 
                         if (index >= 0 && index < lastTen.Count)
-                            this.m_From.SendGump(new CraftGumpItem(this.m_From, system, lastTen[index], this.m_Tool));
+                            //this.m_From.SendGump(new CraftGumpItem(this.m_From, system, lastTen[index], this.m_Tool));
+                            // aggiornato per renaissance
+                            this.m_From.SendGump(new CraftGumpItem(this.m_From, system, lastTen[index], this.m_Tool, this.isPreAoS));
 
                         break;
                     }

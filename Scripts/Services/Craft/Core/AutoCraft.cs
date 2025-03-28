@@ -12,19 +12,21 @@ namespace Server.Engines.Craft
         private CraftSystem m_CraftSystem;
         private CraftItem m_CraftItem;
         private BaseTool m_Tool;
+        private bool isPreAoS;
 
-        public MakeNumberCraftPrompt(Mobile from, CraftSystem system, CraftItem item, BaseTool tool)
+        public MakeNumberCraftPrompt(Mobile from, CraftSystem system, CraftItem item, BaseTool tool, bool isPreAoS)
         {
             m_From = from;
             m_CraftSystem = system;
             m_CraftItem = item;
             m_Tool = tool;
+            this.isPreAoS = isPreAoS;
         }
 
         public override void OnCancel(Mobile from)
         {
             m_From.SendLocalizedMessage(501806); //Request cancelled.
-            from.SendGump(new CraftGump(m_From, m_CraftSystem, m_Tool, null));
+            from.SendGump(new CraftGump(m_From, m_CraftSystem, m_Tool, null, CraftGump.CraftPage.None, isPreAoS));
         }
 
         public override void OnResponse(Mobile from, string text)
@@ -39,7 +41,7 @@ namespace Server.Engines.Craft
             else
             {
                 AutoCraftTimer.EndTimer(from);
-                new AutoCraftTimer(m_From, m_CraftSystem, m_CraftItem, m_Tool, amount, TimeSpan.FromSeconds(m_CraftSystem.Delay * m_CraftSystem.MaxCraftEffect + 0.5), TimeSpan.FromSeconds(m_CraftSystem.Delay * m_CraftSystem.MaxCraftEffect + 0.5));
+                new AutoCraftTimer(m_From, m_CraftSystem, m_CraftItem, m_Tool, amount, TimeSpan.FromSeconds(m_CraftSystem.Delay * m_CraftSystem.MaxCraftEffect + 0.5), TimeSpan.FromSeconds(m_CraftSystem.Delay * m_CraftSystem.MaxCraftEffect + 0.5), isPreAoS);
 
                 CraftContext context = m_CraftSystem.GetContext(from);
 
@@ -50,7 +52,7 @@ namespace Server.Engines.Craft
 
         public void ResendGump()
         {
-            m_From.SendGump(new CraftGump(m_From, m_CraftSystem, m_Tool, null));
+            m_From.SendGump(new CraftGump(m_From, m_CraftSystem, m_Tool, null, CraftGump.CraftPage.None, isPreAoS));
         }
     }
 
@@ -67,11 +69,12 @@ namespace Server.Engines.Craft
         private int m_Success;
         private int m_Ticks;
         private Type m_TypeRes;
+        private bool isPreAoS;
 
         public int Amount { get { return m_Amount; } }
         public int Attempts { get { return m_Success; } }
 
-        public AutoCraftTimer(Mobile from, CraftSystem system, CraftItem item, BaseTool tool, int amount, TimeSpan delay, TimeSpan interval)
+        public AutoCraftTimer(Mobile from, CraftSystem system, CraftItem item, BaseTool tool, int amount, TimeSpan delay, TimeSpan interval, bool isPreAoS)
             : base(delay, interval)
         {
             m_From = from;
@@ -81,6 +84,7 @@ namespace Server.Engines.Craft
             m_Amount = amount;
             m_Ticks = 0;
             m_Success = 0;
+            this.isPreAoS = isPreAoS;
 
             CraftContext context = m_CraftSystem.GetContext(m_From);
 
@@ -98,7 +102,7 @@ namespace Server.Engines.Craft
             this.Start();
         }
 
-        public AutoCraftTimer(Mobile from, CraftSystem system, CraftItem item, BaseTool tool, int amount) : this(from,system,item,tool,amount,TimeSpan.FromSeconds(2.5), TimeSpan.FromSeconds(2.5))
+        public AutoCraftTimer(Mobile from, CraftSystem system, CraftItem item, BaseTool tool, int amount, bool isPreAoS) : this(from, system, item, tool, amount, TimeSpan.FromSeconds(2.5), TimeSpan.FromSeconds(2.5), isPreAoS)
         {
         }
 
@@ -126,7 +130,7 @@ namespace Server.Engines.Craft
             if (m_From.HasGump(typeof(CraftGumpItem)))
                 m_From.CloseGump(typeof(CraftGumpItem));
 
-            m_CraftSystem.CreateItem(m_From, m_CraftItem.ItemType, m_TypeRes, m_Tool, m_CraftItem);
+            m_CraftSystem.CreateItem(m_From, m_CraftItem.ItemType, m_TypeRes, m_Tool, m_CraftItem, isPreAoS);
         }
 
         public static void EndTimer(Mobile from)

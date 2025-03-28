@@ -267,7 +267,7 @@ namespace Server.Engines.Craft
             return true;
         }
 
-        public void CreateItem(Mobile from, Type type, Type typeRes, BaseTool tool, CraftItem realCraftItem)
+        public void CreateItem(Mobile from, Type type, Type typeRes, BaseTool tool, CraftItem realCraftItem, bool isPreAoS)
         { 
             // Verify if the type is in the list of the craftable item
             CraftItem craftItem = this.m_CraftItems.SearchFor(type);
@@ -277,6 +277,18 @@ namespace Server.Engines.Craft
                 // Test code: items like sextant parts can be crafted either directly from ingots, or from different parts
                 realCraftItem.Craft(from, this, typeRes, tool);
                 //craftItem.Craft( from, this, typeRes, tool );
+
+                // codice per renaissance
+                if (isPreAoS)
+                {
+                    from.SendMenu(new NewCraftingMenu(from, this, tool, 0, true));
+                }
+                else
+                {
+                    from.SendMenu(new NewCraftingMenu(from, this, tool, 0, false));
+                }
+                
+
             }
         }
 

@@ -3,6 +3,7 @@ using Server.Gumps;
 using Server.Items;
 using Server.Mobiles;
 using Server.Network;
+using Server.Engines.Craft;
 
 namespace Server.Engines.Craft
 {
@@ -23,13 +24,16 @@ namespace Server.Engines.Craft
 
         private int m_OtherCount;
 
-        public CraftGumpItem(Mobile from, CraftSystem craftSystem, CraftItem craftItem, BaseTool tool)
+        private readonly bool isPreAoS;
+
+        public CraftGumpItem(Mobile from, CraftSystem craftSystem, CraftItem craftItem, BaseTool tool, bool isPreAoS)
             : base(40, 40)
         {
             this.m_From = from;
             this.m_CraftSystem = craftSystem;
             this.m_CraftItem = craftItem;
             this.m_Tool = tool;
+            this.isPreAoS = isPreAoS;
 
             from.CloseGump(typeof(CraftGump));
             from.CloseGump(typeof(CraftGumpItem));
@@ -267,7 +271,8 @@ namespace Server.Engines.Craft
             {
                 case 0: // Back Button
                     {
-                        CraftGump craftGump = new CraftGump(this.m_From, this.m_CraftSystem, this.m_Tool, null);
+                
+                        CraftGump craftGump = new CraftGump(this.m_From, this.m_CraftSystem, this.m_Tool, null, CraftGump.CraftPage.None, this.isPreAoS);
                         this.m_From.SendGump(craftGump);
                         break;
                     }
@@ -277,7 +282,7 @@ namespace Server.Engines.Craft
 
                         if (num > 0)
                         {
-                            this.m_From.SendGump(new CraftGump(this.m_From, this.m_CraftSystem, this.m_Tool, num));
+                            this.m_From.SendGump(new CraftGump(this.m_From, this.m_CraftSystem, this.m_Tool, num,  CraftGump.CraftPage.None, this.isPreAoS));
                         }
                         else
                         {
@@ -294,17 +299,17 @@ namespace Server.Engines.Craft
                                     type = res.GetAt(resIndex).ItemType;
                             }
 
-                            this.m_CraftSystem.CreateItem(this.m_From, this.m_CraftItem.ItemType, type, this.m_Tool, this.m_CraftItem);
+                            this.m_CraftSystem.CreateItem(this.m_From, this.m_CraftItem.ItemType, type, this.m_Tool, this.m_CraftItem, isPreAoS);
                         }
                         break;
                     }
                 case 2: //Make Number
-                    m_From.Prompt = new MakeNumberCraftPrompt(m_From, m_CraftSystem, m_CraftItem, m_Tool);
+                    m_From.Prompt = new MakeNumberCraftPrompt(m_From, m_CraftSystem, m_CraftItem, m_Tool, this.isPreAoS);
                     m_From.SendLocalizedMessage(1112576); //Please type the amount you wish to create(1 - 100): <Escape to cancel>
                     break;
                 case 3: //Make Max
                     AutoCraftTimer.EndTimer(m_From);
-                    new AutoCraftTimer(m_From, m_CraftSystem, m_CraftItem, m_Tool, 9999, TimeSpan.FromSeconds(m_CraftSystem.Delay * m_CraftSystem.MaxCraftEffect + 0.5), TimeSpan.FromSeconds(m_CraftSystem.Delay * m_CraftSystem.MaxCraftEffect + 0.5));
+                    new AutoCraftTimer(m_From, m_CraftSystem, m_CraftItem, m_Tool, 9999, TimeSpan.FromSeconds(m_CraftSystem.Delay * m_CraftSystem.MaxCraftEffect + 0.5), TimeSpan.FromSeconds(m_CraftSystem.Delay * m_CraftSystem.MaxCraftEffect + 0.5), this.isPreAoS);
                     break;
             }
         }

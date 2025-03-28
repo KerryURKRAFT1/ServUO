@@ -145,7 +145,11 @@ namespace Server.Items
         public override void OnDoubleClick(Mobile from)
         {
             if (this.Check(from))
-                Repair.Do(from, RepairSkillInfo.GetInfo(this.m_Skill).System, this);
+                //Repair.Do(from, RepairSkillInfo.GetInfo(this.m_Skill).System, this);
+                // MODIFICATO PER RENAISSANCE
+                //Repair.Do(from, RepairSkillInfo.GetInfo(this.m_Skill).System, this, isPreAoS); // Aggiungi isPreAoS come parametro appropriato
+                Repair.Do(from, RepairSkillInfo.GetInfo(this.m_Skill).System, this, true);
+                
         }
 
         public bool Check(Mobile from)

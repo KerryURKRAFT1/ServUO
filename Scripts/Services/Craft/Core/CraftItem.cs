@@ -1428,6 +1428,7 @@ namespace Server.Engines.Craft
 			{
 				if (tool != null && !tool.Deleted && tool.UsesRemaining > 0)
 				{
+
 					from.SendGump(new CraftGump(from, craftSystem, tool, badCraft));
 				}
 				else
@@ -1786,7 +1787,19 @@ namespace Server.Engines.Craft
 				}
 				else if (tool != null && !tool.Deleted && tool.UsesRemaining > 0)
 				{
-					from.SendGump(new CraftGump(from, craftSystem, tool, num));
+					//from.SendGump(new CraftGump(from, craftSystem, tool, num));
+					 // Inizio modifica per renaissance
+					Console.WriteLine("CraftSystem type: " + craftSystem.GetType().Name); // Aggiungi questa linea per il debug
+
+					if (craftSystem.GetType().Name == "DefClassicBlacksmithy")
+					{
+						from.SendMenu(new NewCraftingMenu(from, craftSystem, tool, 0, true)); // Passa true per isPreAoS
+					}
+					else
+					{
+						from.SendGump(new CraftGump(from, craftSystem, tool, num));
+					}
+					// Fine modifica
 				}
 				else if (num > 0)
 				{
@@ -1797,6 +1810,7 @@ namespace Server.Engines.Craft
 			{
 				if (tool != null && !tool.Deleted && tool.UsesRemaining > 0)
 				{
+					        
 					from.SendGump(new CraftGump(from, craftSystem, tool, 1044153));
 				}
 				else
@@ -1856,7 +1870,7 @@ namespace Server.Engines.Craft
 				}
 				else if (num > 0)
 				{
-					from.SendLocalizedMessage(num);
+					from.SendLocalizedMessage(num); // YOU CREATE THE item
 				}
 			}
 		}

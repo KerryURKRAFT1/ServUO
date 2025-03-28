@@ -179,6 +179,15 @@ namespace Server.Engines.Craft
         {
             int index;
 
+            // Configurazione delle ricette per vari scudi con IronIngot
+            index = AddCraft(typeof(BronzeShield), "Shields", "Bronze Shield", 30.0, 80.0, typeof(IronIngot), "Iron Ingot", 10, "You do not have sufficient metal to make that.");
+            index = AddCraft(typeof(Buckler), "Shields", "Buckler", 20.0, 70.0, typeof(IronIngot), "Iron Ingot", 8, "You do not have sufficient metal to make that.");
+            index = AddCraft(typeof(HeaterShield), "Shields", "Heater Shield", 40.0, 90.0, typeof(IronIngot), "Iron Ingot", 12, "You do not have sufficient metal to make that.");
+            index = AddCraft(typeof(MetalKiteShield), "Shields", "Metal Kite Shield", 35.0, 85.0, typeof(IronIngot), "Iron Ingot", 10, "You do not have sufficient metal to make that.");
+            index = AddCraft(typeof(WoodenKiteShield), "Shields", "Wooden Kite Shield", 25.0, 75.0, typeof(IronIngot), "Iron Ingot", 6, "You do not have sufficient metal to make that.");
+            index = AddCraft(typeof(MetalShield), "Shields", "Metal Shield", 45.0, 95.0, typeof(IronIngot), "Iron Ingot", 15, "You do not have sufficient metal to make that.");
+
+            // Configurazione esistente
             #region Metal Armor
             #region Ringmail
             AddCraft(typeof(RingmailGloves), 1111704, 1025099, 12.0, 62.0, typeof(IronIngot), 1044036, 10, 1044037);
