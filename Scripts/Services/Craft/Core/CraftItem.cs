@@ -1485,6 +1485,7 @@ namespace Server.Engines.Craft
 			}
 
 			bool toolBroken = false;
+			bool failed = false;
 
 			int ignored = 1;
 			int endquality = 1;
@@ -1787,10 +1788,7 @@ namespace Server.Engines.Craft
 				}
 				else if (tool != null && !tool.Deleted && tool.UsesRemaining > 0)
 				{
-					//from.SendGump(new CraftGump(from, craftSystem, tool, num));
-					 // Inizio modifica per renaissance
-					Console.WriteLine("CraftSystem type: " + craftSystem.GetType().Name); // Aggiungi questa linea per il debug
-
+					            
 					if (craftSystem.GetType().Name == "DefClassicBlacksmithy")
 					{
 						from.SendMenu(new NewCraftingMenu(from, craftSystem, tool, 0, true)); // Passa true per isPreAoS
@@ -1799,7 +1797,28 @@ namespace Server.Engines.Craft
 					{
 						from.SendGump(new CraftGump(from, craftSystem, tool, num));
 					}
+					
+					//from.SendGump(new CraftGump(from, craftSystem, tool, num));
+					 // Inizio modifica per renaissance
+					Console.WriteLine("CraftSystem type: " + craftSystem.GetType().Name); // Aggiungi questa linea per il debug
+
+
+
+
+					//if (craftSystem.GetType().Name == "DefClassicBlacksmithy")
+					
+					//{
+					//	from.SendMenu(new NewCraftingMenu(from, craftSystem, tool, 0, true)); // Passa true per isPreAoS
+					//}
+					//else
+					//{
+					//	from.SendGump(new CraftGump(from, craftSystem, tool, num));
+					//}
+
 					// Fine modifica
+
+
+
 				}
 				else if (num > 0)
 				{
@@ -1846,6 +1865,14 @@ namespace Server.Engines.Craft
 
                     AutoCraftTimer.EndTimer(from);
 
+					// Inizio modifica per riaprire il menu pre-AoS in caso di fallimento
+					if (craftSystem.GetType().Name == "DefClassicBlacksmithy")
+					{
+						from.SendMenu(new NewCraftingMenu(from, craftSystem, tool, 0, true)); // Passa true per isPreAoS
+						return;
+					}
+					// Fine modifica
+
 					return;
 				}
 
@@ -1862,16 +1889,30 @@ namespace Server.Engines.Craft
 				}
 
 				// SkillCheck failed.
+				failed = true;
+
 				int num = craftSystem.PlayEndingEffect(from, true, true, toolBroken, endquality, false, this);
 
 				if (tool != null && !tool.Deleted && tool.UsesRemaining > 0)
 				{
-					from.SendGump(new CraftGump(from, craftSystem, tool, num));
+					if (!(craftSystem is DefClassicBlacksmithy) || !failed)
+            		{
+               		 from.SendGump(new CraftGump(from, craftSystem, tool, num));
+            		}
 				}
 				else if (num > 0)
 				{
 					from.SendLocalizedMessage(num); // YOU CREATE THE item
 				}
+
+				// Inizio modifica per riaprire il menu pre-AoS in caso di fallimento
+				if (craftSystem.GetType().Name == "DefClassicBlacksmithy")
+				{
+					from.SendMenu(new NewCraftingMenu(from, craftSystem, tool, 0, true)); // Passa true per isPreAoS
+					return;
+				}
+				// Fine modifica
+
 			}
 		}
 

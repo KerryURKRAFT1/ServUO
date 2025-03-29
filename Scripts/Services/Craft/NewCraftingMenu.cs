@@ -341,72 +341,177 @@ namespace Server.Engines.Craft
                 }
             }
 
-            private class PlatemailMenu : ItemListMenu
+    private class PlatemailMenu : ItemListMenu
+    {
+        private readonly Mobile m_From;
+        private readonly CraftSystem m_CraftSystem;
+        private readonly BaseTool m_Tool;
+        private readonly bool isPreAoS;
+
+        // PLATEMAIL MENU        
+        public PlatemailMenu(Mobile from, CraftSystem craftSystem, BaseTool tool, bool isPreAoS)
+            : base("Select a platemail item to craft:", GetPlatemailItems(from, craftSystem))
+        {
+            m_From = from;
+            m_CraftSystem = craftSystem;
+            m_Tool = tool;
+            this.isPreAoS = isPreAoS;
+        }
+
+        private static ItemListEntry[] GetPlatemailItems(Mobile from, CraftSystem craftSystem)
+        {
+            List<ItemListEntry> entries = new List<ItemListEntry>();
+
+            ItemListEntryWithType[] allPlatemail = new ItemListEntryWithType[]
             {
-                private readonly Mobile m_From;
-                private readonly CraftSystem m_CraftSystem;
-                private readonly BaseTool m_Tool;
-                private readonly bool isPreAoS;
+                new ItemListEntryWithType("Plate Arms", typeof(PlateArms), 5143),
+                new ItemListEntryWithType("Plate Gloves", typeof(PlateGloves), 5144),
+                new ItemListEntryWithType("Plate Gorget", typeof(PlateGorget), 5139),
+                new ItemListEntryWithType("Plate Legs", typeof(PlateLegs), 5146),
+                new ItemListEntryWithType("Plate Chest", typeof(PlateChest), 5142),
+                new ItemListEntryWithType("Female Plate Chest", typeof(FemalePlateChest), 7172)
+            };
 
-                public PlatemailMenu(Mobile from, CraftSystem craftSystem, BaseTool tool, bool isPreAoS)
-                    : base("Select a platemail item to craft:", GetPlatemailItems())
-                {
-                    m_From = from;
-                    m_CraftSystem = craftSystem;
-                    m_Tool = tool;
-                    this.isPreAoS = isPreAoS;
-                }
+            foreach (ItemListEntryWithType entry in allPlatemail)
+            {
+                CraftItem craftItem = craftSystem.CraftItems.SearchFor(entry.ItemType);
 
-                private static ItemListEntry[] GetPlatemailItems()
+                if (craftItem != null)
                 {
-                    return new ItemListEntry[]
+                    bool hasRequiredSkill = false;
+                    foreach (CraftSkill skill in craftItem.Skills)
                     {
-                        new ItemListEntry("Plate Arms", 5143),
-                        new ItemListEntry("Plate Gloves", 5144),
-                        new ItemListEntry("Plate Gorget", 5139),
-                        new ItemListEntry("Plate Legs", 5146),
-                        new ItemListEntry("Plate Chest", 5142),
-                        new ItemListEntry("Female Plate Chest", 7172)
-                    };
-                }
+                        if (from.Skills[skill.SkillToMake].Value >= skill.MinSkill)
+                        {
+                            hasRequiredSkill = true;
+                            break;
+                        }
+                    }
 
-                public override void OnResponse(NetState state, int index)
-                {
-                    // Implement the logic to craft the selected platemail item
+                    if (hasRequiredSkill)
+                    {
+                        bool hasMaterials = true;
+                        foreach (CraftRes craftRes in craftItem.Resources)
+                        {
+                            if (from.Backpack.GetAmount(craftRes.ItemType) < craftRes.Amount)
+                            {
+                                hasMaterials = false;
+                                break;
+                            }
+                        }
+
+                        if (hasMaterials)
+                        {
+                            entries.Add(entry);
+                        }
+                    }
                 }
             }
 
-            private class ChainmailMenu : ItemListMenu
+            return entries.ToArray();
+        }
+
+        public override void OnResponse(NetState state, int index)
+        {
+            var itemType = ((ItemListEntryWithType)GetPlatemailItems(m_From, m_CraftSystem)[index]).ItemType;
+            CraftItem craftItem = m_CraftSystem.CraftItems.SearchFor(itemType);
+
+            if (craftItem != null)
             {
-                private readonly Mobile m_From;
-                private readonly CraftSystem m_CraftSystem;
-                private readonly BaseTool m_Tool;
-                private readonly bool isPreAoS;
+                craftItem.Craft(m_From, m_CraftSystem, null, m_Tool); // Updated to use 4 parameters
+            }
+            else
+            {
+                m_From.SendMessage("The selected item cannot be crafted.");
+            }
+        }
+    }
+            // CHAINMAIL MENU
 
-                public ChainmailMenu(Mobile from, CraftSystem craftSystem, BaseTool tool, bool isPreAoS)
-                    : base("Select a chainmail item to craft:", GetChainmailItems())
-                {
-                    m_From = from;
-                    m_CraftSystem = craftSystem;
-                    m_Tool = tool;
-                    this.isPreAoS = isPreAoS;
-                }
 
-                private static ItemListEntry[] GetChainmailItems()
+    private class ChainmailMenu : ItemListMenu
+    {
+        private readonly Mobile m_From;
+        private readonly CraftSystem m_CraftSystem;
+        private readonly BaseTool m_Tool;
+        private readonly bool isPreAoS;
+
+        public ChainmailMenu(Mobile from, CraftSystem craftSystem, BaseTool tool, bool isPreAoS)
+            : base("Select a chainmail item to craft:", GetChainmailItems(from, craftSystem))
+        {
+            m_From = from;
+            m_CraftSystem = craftSystem;
+            m_Tool = tool;
+            this.isPreAoS = isPreAoS;
+        }
+
+        private static ItemListEntry[] GetChainmailItems(Mobile from, CraftSystem craftSystem)
+        {
+            List<ItemListEntry> entries = new List<ItemListEntry>();
+
+            ItemListEntryWithType[] allChainmail = new ItemListEntryWithType[]
+            {
+                new ItemListEntryWithType("Chain Coif", typeof(ChainCoif), 5051),
+                new ItemListEntryWithType("Chain Legs", typeof(ChainLegs), 5054),
+                new ItemListEntryWithType("Chain Chest", typeof(ChainChest), 5055)
+            };
+
+            foreach (ItemListEntryWithType entry in allChainmail)
+            {
+                CraftItem craftItem = craftSystem.CraftItems.SearchFor(entry.ItemType);
+
+                if (craftItem != null)
                 {
-                    return new ItemListEntry[]
+                    bool hasRequiredSkill = false;
+                    foreach (CraftSkill skill in craftItem.Skills)
                     {
-                        new ItemListEntry("Chain Coif", 1025051),
-                        new ItemListEntry("Chain Legs", 1025054),
-                        new ItemListEntry("Chain Chest", 1025055)
-                    };
-                }
+                        if (from.Skills[skill.SkillToMake].Value >= skill.MinSkill)
+                        {
+                            hasRequiredSkill = true;
+                            break;
+                        }
+                    }
 
-                public override void OnResponse(NetState state, int index)
-                {
-                    // Implement the logic to craft the selected chainmail item
+                    if (hasRequiredSkill)
+                    {
+                        bool hasMaterials = true;
+                        foreach (CraftRes craftRes in craftItem.Resources)
+                        {
+                            if (from.Backpack.GetAmount(craftRes.ItemType) < craftRes.Amount)
+                            {
+                                hasMaterials = false;
+                                break;
+                            }
+                        }
+
+                        if (hasMaterials)
+                        {
+                            entries.Add(entry);
+                        }
+                    }
                 }
             }
+
+            return entries.ToArray();
+        }
+
+        public override void OnResponse(NetState state, int index)
+        {
+            var itemType = ((ItemListEntryWithType)GetChainmailItems(m_From, m_CraftSystem)[index]).ItemType;
+            CraftItem craftItem = m_CraftSystem.CraftItems.SearchFor(itemType);
+
+            if (craftItem != null)
+            {
+                craftItem.Craft(m_From, m_CraftSystem, null, m_Tool); // Updated to use 4 parameters
+            }
+            else
+            {
+                m_From.SendMessage("The selected item cannot be crafted.");
+            }
+        }
+    }
+
+            // RINGMAIL MENU
 
             private class RingmailMenu : ItemListMenu
             {
@@ -416,7 +521,7 @@ namespace Server.Engines.Craft
                 private readonly bool isPreAoS;
 
                 public RingmailMenu(Mobile from, CraftSystem craftSystem, BaseTool tool, bool isPreAoS)
-                    : base("Select a ringmail item to craft:", GetRingmailItems())
+                    : base("Select a ringmail item to craft:", GetRingmailItems(from, craftSystem))
                 {
                     m_From = from;
                     m_CraftSystem = craftSystem;
@@ -424,33 +529,84 @@ namespace Server.Engines.Craft
                     this.isPreAoS = isPreAoS;
                 }
 
-                private static ItemListEntry[] GetRingmailItems()
+                private static ItemListEntry[] GetRingmailItems(Mobile from, CraftSystem craftSystem)
                 {
-                    return new ItemListEntry[]
+                    List<ItemListEntry> entries = new List<ItemListEntry>();
+
+                    ItemListEntryWithType[] allRingmail = new ItemListEntryWithType[]
                     {
-                        new ItemListEntry("Ringmail Gloves", 1025099),
-                        new ItemListEntry("Ringmail Legs", 1025104),
-                        new ItemListEntry("Ringmail Arms", 1025103),
-                        new ItemListEntry("Ringmail Chest", 1025100)
+                        new ItemListEntryWithType("Ringmail Gloves", typeof(RingmailGloves), 5099),
+                        new ItemListEntryWithType("Ringmail Legs", typeof(RingmailLegs), 5104),
+                        new ItemListEntryWithType("Ringmail Arms", typeof(RingmailArms), 5103),
+                        new ItemListEntryWithType("Ringmail Chest", typeof(RingmailChest), 5100)
                     };
+
+                    foreach (ItemListEntryWithType entry in allRingmail)
+                    {
+                        CraftItem craftItem = craftSystem.CraftItems.SearchFor(entry.ItemType);
+
+                        if (craftItem != null)
+                        {
+                            bool hasRequiredSkill = false;
+                            foreach (CraftSkill skill in craftItem.Skills)
+                            {
+                                if (from.Skills[skill.SkillToMake].Value >= skill.MinSkill)
+                                {
+                                    hasRequiredSkill = true;
+                                    break;
+                                }
+                            }
+
+                            if (hasRequiredSkill)
+                            {
+                                bool hasMaterials = true;
+                                foreach (CraftRes craftRes in craftItem.Resources)
+                                {
+                                    if (from.Backpack.GetAmount(craftRes.ItemType) < craftRes.Amount)
+                                    {
+                                        hasMaterials = false;
+                                        break;
+                                    }
+                                }
+
+                                if (hasMaterials)
+                                {
+                                    entries.Add(entry);
+                                }
+                            }
+                        }
+                    }
+
+                    return entries.ToArray();
                 }
 
                 public override void OnResponse(NetState state, int index)
                 {
-                    // Implement the logic to craft the selected ringmail item
+                    var itemType = ((ItemListEntryWithType)GetRingmailItems(m_From, m_CraftSystem)[index]).ItemType;
+                    CraftItem craftItem = m_CraftSystem.CraftItems.SearchFor(itemType);
+
+                    if (craftItem != null)
+                    {
+                        craftItem.Craft(m_From, m_CraftSystem, null, m_Tool); // Updated to use 4 parameters
+                    }
+                    else
+                    {
+                        m_From.SendMessage("The selected item cannot be crafted.");
+                    }
                 }
             }
+
+            // HELMETS MENU
 
             private class HelmetsMenu : ItemListMenu
             {
                 private readonly Mobile m_From;
                 private readonly CraftSystem m_CraftSystem;
                 private readonly BaseTool m_Tool;
-
                 private readonly bool isPreAoS;
 
                 public HelmetsMenu(Mobile from, CraftSystem craftSystem, BaseTool tool, bool isPreAoS)
-                    : base("Select a helmet to craft:", GetHelmetsItems())
+                    : base("Select a helmet to craft:", GetHelmetsItems(from, craftSystem))
                 {
                     m_From = from;
                     m_CraftSystem = craftSystem;
@@ -458,250 +614,382 @@ namespace Server.Engines.Craft
                     this.isPreAoS = isPreAoS;
                 }
 
-                private static ItemListEntry[] GetHelmetsItems()
+                private static ItemListEntry[] GetHelmetsItems(Mobile from, CraftSystem craftSystem)
                 {
-                    return new ItemListEntry[]
+                    List<ItemListEntry> entries = new List<ItemListEntry>();
+
+                    ItemListEntryWithType[] allHelmets = new ItemListEntryWithType[]
                     {
-                        new ItemListEntry("Bascinet", 1025132),
-                        new ItemListEntry("Close Helm", 1025128),
-                        new ItemListEntry("Helmet", 1025130),
-                        new ItemListEntry("Norse Helm", 1025134),
-                        new ItemListEntry("Plate Helm", 1025138)
+                        new ItemListEntryWithType("Bascinet", typeof(Bascinet), 5132),
+                        new ItemListEntryWithType("Close Helm", typeof(CloseHelm), 5128),
+                        new ItemListEntryWithType("Helmet", typeof(Helmet), 5130),
+                        new ItemListEntryWithType("Norse Helm", typeof(NorseHelm), 5134),
+                        new ItemListEntryWithType("Plate Helm", typeof(PlateHelm), 5138)
                     };
+
+                    foreach (ItemListEntryWithType entry in allHelmets)
+                    {
+                        CraftItem craftItem = craftSystem.CraftItems.SearchFor(entry.ItemType);
+
+                        if (craftItem != null)
+                        {
+                            bool hasRequiredSkill = false;
+                            foreach (CraftSkill skill in craftItem.Skills)
+                            {
+                                if (from.Skills[skill.SkillToMake].Value >= skill.MinSkill)
+                                {
+                                    hasRequiredSkill = true;
+                                    break;
+                                }
+                            }
+
+                            if (hasRequiredSkill)
+                            {
+                                bool hasMaterials = true;
+                                foreach (CraftRes craftRes in craftItem.Resources)
+                                {
+                                    if (from.Backpack.GetAmount(craftRes.ItemType) < craftRes.Amount)
+                                    {
+                                        hasMaterials = false;
+                                        break;
+                                    }
+                                }
+
+                                if (hasMaterials)
+                                {
+                                    entries.Add(entry);
+                                }
+                            }
+                        }
+                    }
+
+                    return entries.ToArray();
                 }
 
                 public override void OnResponse(NetState state, int index)
                 {
-                    // Implement the logic to craft the selected helmet
+                    var itemType = ((ItemListEntryWithType)GetHelmetsItems(m_From, m_CraftSystem)[index]).ItemType;
+                    CraftItem craftItem = m_CraftSystem.CraftItems.SearchFor(itemType);
+
+                    if (craftItem != null)
+                    {
+                        craftItem.Craft(m_From, m_CraftSystem, null, m_Tool); // Updated to use 4 parameters
+                    }
+                    else
+                    {
+                        m_From.SendMessage("The selected item cannot be crafted.");
+                    }
                 }
             }
         }
 
-        public class WeaponsMenu : ItemListMenu
+        // inizio sezione armi
+        /// <summary>
+        /// ////////////////
+        /// </summary>
+        /// 
+// Classe per il menu delle armi
+// Classe per il menu delle armi
+// Classe per il menu delle armi
+public class WeaponsMenu : ItemListMenu
+{
+    private readonly Mobile m_From;
+    private readonly CraftSystem m_CraftSystem;
+    private readonly BaseTool m_Tool;
+    private readonly bool isPreAoS;
+
+    public WeaponsMenu(Mobile from, CraftSystem craftSystem, BaseTool tool, bool isPreAoS)
+        : base("Select a weapon category:", GetWeaponsCategories())
+    {
+        m_From = from;
+        m_CraftSystem = craftSystem;
+        m_Tool = tool;
+        this.isPreAoS = isPreAoS;
+    }
+
+    private static ItemListEntry[] GetWeaponsCategories()
+    {
+        return new ItemListEntry[]
         {
-            private readonly Mobile m_From;
-            private readonly CraftSystem m_CraftSystem;
-            private readonly BaseTool m_Tool;
+            new ItemListEntry("Swords and Blades", 5050),
+            new ItemListEntry("Axes", 3911),
+            new ItemListEntry("Maces and Hammers", 3932),
+            new ItemListEntry("Spears and Forks", 3719),
+            new ItemListEntry("Polearms", 5183)
+        };
+    }
 
-            private readonly bool isPreAoS;
-
-            public WeaponsMenu(Mobile from, CraftSystem craftSystem, BaseTool tool, bool isPreAoS)
-                : base("Select a weapon category:", GetWeaponsCategories())
-            {
-                m_From = from;
-                m_CraftSystem = craftSystem;
-                m_Tool = tool;
-                this.isPreAoS = isPreAoS;
-            }
-
-            private static ItemListEntry[] GetWeaponsCategories()
-            {
-                return new ItemListEntry[]
-                {
-                    new ItemListEntry("Swords and Blades", 5050),
-                    new ItemListEntry("Axes", 3911),
-                    new ItemListEntry("Maces and Hammers", 3932),
-                    new ItemListEntry("Spears and Forks", 3719),
-                    new ItemListEntry("Polearms", 5183)
-                };
-            }
-
-            public override void OnResponse(NetState state, int index)
-            {
-                switch (index)
-                {
-                    case 0: // Swords and Blades
-                        m_From.SendMenu(new SwordsAndBladesMenu(m_From, m_CraftSystem, m_Tool));
-                        break;
-                    case 1: // Axes
-                        m_From.SendMenu(new AxesMenu(m_From, m_CraftSystem, m_Tool));
-                        break;
-                    case 2: // Maces and Hammers
-                        m_From.SendMenu(new MacesAndHammersMenu(m_From, m_CraftSystem, m_Tool));
-                        break;
-                    case 3: // Spears and Forks
-                        m_From.SendMenu(new SpearsAndForksMenu(m_From, m_CraftSystem, m_Tool));
-                        break;
-                    case 4: // Pole Arms
-                        m_From.SendMenu(new PolearmsMenu(m_From, m_CraftSystem, m_Tool));
-                        break;    
-                }
-            }
-
-            private class SwordsAndBladesMenu : ItemListMenu
-            {
-                private readonly Mobile m_From;
-                private readonly CraftSystem m_CraftSystem;
-                private readonly BaseTool m_Tool;
-
-                public SwordsAndBladesMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                    : base("Select a sword or blade to craft:", GetSwordsAndBladesItems())
-                {
-                    m_From = from;
-                    m_CraftSystem = craftSystem;
-                    m_Tool = tool;
-                }
-
-                private static ItemListEntry[] GetSwordsAndBladesItems()
-                {
-                    return new ItemListEntry[]
-                    {
-                        new ItemListEntry("Broadsword", 3934),
-                        new ItemListEntry("Cutlass", 5185),
-                        new ItemListEntry("Dagger", 3921),
-                        new ItemListEntry("Katana", 5119),
-                        new ItemListEntry("Kryss", 5121),
-                        new ItemListEntry("Longsword", 3937),
-                        new ItemListEntry("Scimitar", 5046),
-                        new ItemListEntry("Viking Sword", 5049)
-                    };
-                }
-
-                public override void OnResponse(NetState state, int index)
-                {
-                    // Implement the logic to craft the selected sword or blade
-                }
-            }
-
-            private class AxesMenu : ItemListMenu
-            {
-                private readonly Mobile m_From;
-                private readonly CraftSystem m_CraftSystem;
-                private readonly BaseTool m_Tool;
-
-                public AxesMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                    : base("Select an axe to craft:", GetAxesItems())
-                {
-                    m_From = from;
-                    m_CraftSystem = craftSystem;
-                    m_Tool = tool;
-                }
-
-                private static ItemListEntry[] GetAxesItems()
-                {
-                    return new ItemListEntry[]
-                    {
-                        new ItemListEntry("Axe", 3913),
-                        new ItemListEntry("Battle Axe", 3911),
-                        new ItemListEntry("Double Axe", 3915),
-                        new ItemListEntry("Executioner's Axe", 3909),
-                        new ItemListEntry("Large Battle Axe", 5115),
-                        new ItemListEntry("Two-Handed Axe", 5187),
-                        new ItemListEntry("War Axe", 5040)
-                    };
-                }
-
-                public override void OnResponse(NetState state, int index)
-                {
-                    // Implement the logic to craft the selected axe
-                }
-            }
-
-            private class MacesAndHammersMenu : ItemListMenu
-            {
-                private readonly Mobile m_From;
-                private readonly CraftSystem m_CraftSystem;
-                private readonly BaseTool m_Tool;
-
-                public MacesAndHammersMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                    : base("Select a mace or hammer to craft:", GetMacesAndHammersItems())
-                {
-                    m_From = from;
-                    m_CraftSystem = craftSystem;
-                    m_Tool = tool;
-                }
-
-                private static ItemListEntry[] GetMacesAndHammersItems()
-                {
-                    return new ItemListEntry[]
-                    {
-                        new ItemListEntry("Hammer Pick", 5181),
-                        new ItemListEntry("Mace", 3932),
-                        new ItemListEntry("Maul", 5179),
-                        new ItemListEntry("Smith Hammer", 5092),
-                        new ItemListEntry("War Hammer", 5177),
-                        new ItemListEntry("War Mace", 5127)
-
-                    };
-                }
-
-                public override void OnResponse(NetState state, int index)
-                {
-                    // Implement the logic to craft the selected mace or hammer
-                }
-            }
-
-            private class SpearsAndForksMenu : ItemListMenu
-            {
-                private readonly Mobile m_From;
-                private readonly CraftSystem m_CraftSystem;
-                private readonly BaseTool m_Tool;
-
-                public SpearsAndForksMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                    : base("Select a spear or fork to craft:", GetSpearsAndForksItems())
-                {
-                    m_From = from;
-                    m_CraftSystem = craftSystem;
-                    m_Tool = tool;
-                }
-
-                private static ItemListEntry[] GetSpearsAndForksItems()
-                {
-                    return new ItemListEntry[]
-                    {
-                        new ItemListEntry("Short Spear", 5123),
-                        new ItemListEntry("Spear", 3938),
-                        new ItemListEntry("War Fork", 5125)
-                    };
-                }
-
-                public override void OnResponse(NetState state, int index)
-                {
-                    // Implement the logic to craft the selected spear or fork
-                }
-            }
-            private class PolearmsMenu : ItemListMenu
-            {
-                private readonly Mobile m_From;
-                private readonly CraftSystem m_CraftSystem;
-                private readonly BaseTool m_Tool;
-
-                public PolearmsMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                    : base("Select a Polearms to craft:", GetPolearmsItems())
-                {
-                    m_From = from;
-                    m_CraftSystem = craftSystem;
-                    m_Tool = tool;
-                }
-
-                private static ItemListEntry[] GetPolearmsItems()
-                {
-                    return new ItemListEntry[]
-                    {
-                        new ItemListEntry("Bardiche", 3917),
-                        new ItemListEntry("Halberd", 5182)
-                    };
-                }
-
-                public override void OnResponse(NetState state, int index)
-                {
-                    // Implement the logic to craft the selected spear or fork
-                }
-            }
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public override void OnResponse(NetState state, int index)
+    {
+        switch (index)
+        {
+            case 0: // Swords and Blades
+                m_From.SendMenu(new SwordsAndBladesMenu(m_From, m_CraftSystem, m_Tool, isPreAoS));
+                break;
+            case 1: // Axes
+                m_From.SendMenu(new AxesMenu(m_From, m_CraftSystem, m_Tool, isPreAoS));
+                break;
+            case 2: // Maces and Hammers
+                m_From.SendMenu(new MacesAndHammersMenu(m_From, m_CraftSystem, m_Tool, isPreAoS));
+                break;
+            case 3: // Spears and Forks
+                m_From.SendMenu(new SpearsAndForksMenu(m_From, m_CraftSystem, m_Tool, isPreAoS));
+                break;
+            case 4: // Pole Arms
+                m_From.SendMenu(new PolearmsMenu(m_From, m_CraftSystem, m_Tool, isPreAoS));
+                break;
         }
+    }
+
+    private class SwordsAndBladesMenu : ItemListMenu
+    {
+        private readonly Mobile m_From;
+        private readonly CraftSystem m_CraftSystem;
+        private readonly BaseTool m_Tool;
+        private readonly bool isPreAoS;
+
+        public SwordsAndBladesMenu(Mobile from, CraftSystem craftSystem, BaseTool tool, bool isPreAoS)
+            : base("Select a sword or blade to craft:", GetSwordsAndBladesItems())
+        {
+            m_From = from;
+            m_CraftSystem = craftSystem;
+            m_Tool = tool;
+            this.isPreAoS = isPreAoS;
+        }
+
+        private static ItemListEntryWithType[] GetSwordsAndBladesItems()
+        {
+            return new ItemListEntryWithType[]
+            {
+                new ItemListEntryWithType("Broadsword", typeof(Broadsword), 3934),
+                new ItemListEntryWithType("Cutlass", typeof(Cutlass), 5185),
+                new ItemListEntryWithType("Dagger", typeof(Dagger), 3921),
+                new ItemListEntryWithType("Katana", typeof(Katana), 5119),
+                new ItemListEntryWithType("Kryss", typeof(Kryss), 5121),
+                new ItemListEntryWithType("Longsword", typeof(Longsword), 3937),
+                new ItemListEntryWithType("Scimitar", typeof(Scimitar), 5046),
+                new ItemListEntryWithType("Viking Sword", typeof(VikingSword), 5049)
+            };
+        }
+
+        public override void OnResponse(NetState state, int index)
+        {
+            var items = GetSwordsAndBladesItems();
+            if (index >= 0 && index < items.Length)
+            {
+                var itemType = items[index].ItemType;
+                CraftItem craftItem = m_CraftSystem.CraftItems.SearchFor(itemType);
+
+                if (craftItem != null)
+                {
+                    craftItem.Craft(m_From, m_CraftSystem, null, m_Tool);
+                }
+                else
+                {
+                    m_From.SendMessage("The selected item cannot be crafted.");
+                }
+            }
+        }
+        
+    }
+
+    private class AxesMenu : ItemListMenu
+    {
+        private readonly Mobile m_From;
+        private readonly CraftSystem m_CraftSystem;
+        private readonly BaseTool m_Tool;
+        private readonly bool isPreAoS;
+
+        public AxesMenu(Mobile from, CraftSystem craftSystem, BaseTool tool, bool isPreAoS)
+            : base("Select an axe to craft:", GetAxesItems())
+        {
+            m_From = from;
+            m_CraftSystem = craftSystem;
+            m_Tool = tool;
+            this.isPreAoS = isPreAoS;
+        }
+
+        private static ItemListEntryWithType[] GetAxesItems()
+        {
+            return new ItemListEntryWithType[]
+            {
+                new ItemListEntryWithType("Axe", typeof(Axe), 3913),
+                new ItemListEntryWithType("Battle Axe", typeof(BattleAxe), 3911),
+                new ItemListEntryWithType("Double Axe", typeof(DoubleAxe), 3915),
+                new ItemListEntryWithType("Executioner's Axe", typeof(ExecutionersAxe), 3909),
+                new ItemListEntryWithType("Large Battle Axe", typeof(LargeBattleAxe), 5115),
+                new ItemListEntryWithType("Two-Handed Axe", typeof(TwoHandedAxe), 5187),
+                new ItemListEntryWithType("War Axe", typeof(WarAxe), 5040)
+            };
+        }
+
+        public override void OnResponse(NetState state, int index)
+        {
+            var items = GetAxesItems();
+            if (index >= 0 && index < items.Length)
+            {
+                var itemType = items[index].ItemType;
+                CraftItem craftItem = m_CraftSystem.CraftItems.SearchFor(itemType);
+
+                if (craftItem != null)
+                {
+                    craftItem.Craft(m_From, m_CraftSystem, null, m_Tool);
+                }
+                else
+                {
+                    m_From.SendMessage("The selected item cannot be crafted.");
+                }
+            }
+        }
+    }
+
+    private class MacesAndHammersMenu : ItemListMenu
+    {
+        private readonly Mobile m_From;
+        private readonly CraftSystem m_CraftSystem;
+        private readonly BaseTool m_Tool;
+        private readonly bool isPreAoS;
+
+        public MacesAndHammersMenu(Mobile from, CraftSystem craftSystem, BaseTool tool, bool isPreAoS)
+            : base("Select a mace or hammer to craft:", GetMacesAndHammersItems())
+        {
+            m_From = from;
+            m_CraftSystem = craftSystem;
+            m_Tool = tool;
+            this.isPreAoS = isPreAoS;
+        }
+
+        private static ItemListEntryWithType[] GetMacesAndHammersItems()
+        {
+            return new ItemListEntryWithType[]
+            {
+                new ItemListEntryWithType("Hammer Pick", typeof(HammerPick), 5181),
+                new ItemListEntryWithType("Mace", typeof(Mace), 3932),
+                new ItemListEntryWithType("Maul", typeof(Maul), 5179),
+                new ItemListEntryWithType("Smith Hammer", typeof(SmithHammer), 5092),
+                new ItemListEntryWithType("War Hammer", typeof(WarHammer), 5177),
+                new ItemListEntryWithType("War Mace", typeof(WarMace), 5127)
+            };
+        }
+
+        public override void OnResponse(NetState state, int index)
+        {
+            var items = GetMacesAndHammersItems();
+            if (index >= 0 && index < items.Length)
+            {
+                var itemType = items[index].ItemType;
+                CraftItem craftItem = m_CraftSystem.CraftItems.SearchFor(itemType);
+
+                if (craftItem != null)
+                {
+                    craftItem.Craft(m_From, m_CraftSystem, null, m_Tool);
+                }
+                else
+                {
+                    m_From.SendMessage("The selected item cannot be crafted.");
+                }
+            }
+        }
+    }
+
+    private class SpearsAndForksMenu : ItemListMenu
+    {
+        private readonly Mobile m_From;
+        private readonly CraftSystem m_CraftSystem;
+        private readonly BaseTool m_Tool;
+        private readonly bool isPreAoS;
+
+        public SpearsAndForksMenu(Mobile from, CraftSystem craftSystem, BaseTool tool, bool isPreAoS)
+            : base("Select a spear or fork to craft:", GetSpearsAndForksItems())
+        {
+            m_From = from;
+            m_CraftSystem = craftSystem;
+            m_Tool = tool;
+            this.isPreAoS = isPreAoS;
+        }
+
+        private static ItemListEntryWithType[] GetSpearsAndForksItems()
+        {
+            return new ItemListEntryWithType[]
+            {
+                new ItemListEntryWithType("Short Spear", typeof(ShortSpear), 5123),
+                new ItemListEntryWithType("Spear", typeof(Spear), 3938),
+                new ItemListEntryWithType("War Fork", typeof(WarFork), 5125)
+            };
+        }
+
+        public override void OnResponse(NetState state, int index)
+        {
+            var items = GetSpearsAndForksItems();
+            if (index >= 0 && index < items.Length)
+            {
+                var itemType = items[index].ItemType;
+                CraftItem craftItem = m_CraftSystem.CraftItems.SearchFor(itemType);
+
+                if (craftItem != null)
+                {
+                    craftItem.Craft(m_From, m_CraftSystem, null, m_Tool);
+                }
+                else
+                {
+                    m_From.SendMessage("The selected item cannot be crafted.");
+                }
+            }
+        }
+    }
+
+    private class PolearmsMenu : ItemListMenu
+    {
+        private readonly Mobile m_From;
+        private readonly CraftSystem m_CraftSystem;
+        private readonly BaseTool m_Tool;
+        private readonly bool isPreAoS;
+
+        public PolearmsMenu(Mobile from, CraftSystem craftSystem, BaseTool tool, bool isPreAoS)
+            : base("Select a polearm to craft:", GetPolearmsItems())
+        {
+            m_From = from;
+            m_CraftSystem = craftSystem;
+            m_Tool = tool;
+            this.isPreAoS = isPreAoS;
+        }
+
+        private static ItemListEntryWithType[] GetPolearmsItems()
+        {
+            return new ItemListEntryWithType[]
+            {
+                new ItemListEntryWithType("Bardiche", typeof(Bardiche), 3917),
+                new ItemListEntryWithType("Halberd", typeof(Halberd), 5182)
+            };
+        }
+
+        public override void OnResponse(NetState state, int index)
+        {
+            var items = GetPolearmsItems();
+            if (index >= 0 && index < items.Length)
+            {
+                var itemType = items[index].ItemType;
+                CraftItem craftItem = m_CraftSystem.CraftItems.SearchFor(itemType);
+
+                if (craftItem != null)
+                {
+                    craftItem.Craft(m_From, m_CraftSystem, null, m_Tool);
+                }
+                else
+                {
+                    m_From.SendMessage("The selected item cannot be crafted.");
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+// sezione special armor
 
         public class SpecialArmorMenu : ItemListMenu
         {

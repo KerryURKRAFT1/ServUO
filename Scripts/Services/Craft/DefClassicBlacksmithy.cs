@@ -146,7 +146,14 @@ namespace Server.Engines.Craft
             {
                 from.SendLocalizedMessage(1044038); // You have worn out your tool
             }
-
+                        // Inizio modifica per riaprire il menu pre-AoS in caso di fallimento
+                        // Inizio modifica per riaprire il menu pre-AoS in caso di fallimento
+                        if (this.GetType().Name == "DefClassicBlacksmithy")
+                        {
+                            from.SendMenu(new NewCraftingMenu(from, this, null, 0, true)); // Passa true per isPreAoS
+                        }
+                        // Fine modifica
+                        
             if (failed)
             {
                 if (lostMaterial)
@@ -187,37 +194,80 @@ namespace Server.Engines.Craft
             index = AddCraft(typeof(WoodenKiteShield), "Shields", "Wooden Kite Shield", 25.0, 75.0, typeof(IronIngot), "Iron Ingot", 6, "You do not have sufficient metal to make that.");
             index = AddCraft(typeof(MetalShield), "Shields", "Metal Shield", 45.0, 95.0, typeof(IronIngot), "Iron Ingot", 15, "You do not have sufficient metal to make that.");
 
+            // Configurazione delle ricette per varie armi con IronIngot
+            #region Bladed
+            AddCraft(typeof(Broadsword), "Weapons", "Broadsword", 35.4, 85.4, typeof(IronIngot), "Iron Ingot", 10, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(Cutlass), "Weapons", "Cutlass", 24.3, 74.3, typeof(IronIngot), "Iron Ingot", 8, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(Dagger), "Weapons", "Dagger", -0.4, 49.6, typeof(IronIngot), "Iron Ingot", 3, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(Katana), "Weapons", "Katana", 44.1, 94.1, typeof(IronIngot), "Iron Ingot", 8, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(Kryss), "Weapons", "Kryss", 36.7, 86.7, typeof(IronIngot), "Iron Ingot", 8, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(Longsword), "Weapons", "Longsword", 28.0, 78.0, typeof(IronIngot), "Iron Ingot", 12, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(Scimitar), "Weapons", "Scimitar", 31.7, 81.7, typeof(IronIngot), "Iron Ingot", 10, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(VikingSword), "Weapons", "Viking Sword", 24.3, 74.3, typeof(IronIngot), "Iron Ingot", 14, "You do not have sufficient metal to make that.");
+            #endregion
+
+            #region Axes
+            AddCraft(typeof(Axe), "Weapons", "Axe", 25.0, 75.0, typeof(IronIngot), "Iron Ingot", 14, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(BattleAxe), "Weapons", "Battle Axe", 30.0, 80.0, typeof(IronIngot), "Iron Ingot", 18, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(DoubleAxe), "Weapons", "Double Axe", 35.0, 85.0, typeof(IronIngot), "Iron Ingot", 20, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(ExecutionersAxe), "Weapons", "Executioner's Axe", 40.0, 90.0, typeof(IronIngot), "Iron Ingot", 22, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(LargeBattleAxe), "Weapons", "Large Battle Axe", 45.0, 95.0, typeof(IronIngot), "Iron Ingot", 24, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(TwoHandedAxe), "Weapons", "Two-Handed Axe", 50.0, 100.0, typeof(IronIngot), "Iron Ingot", 26, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(WarAxe), "Weapons", "War Axe", 55.0, 105.0, typeof(IronIngot), "Iron Ingot", 28, "You do not have sufficient metal to make that.");
+            #endregion
+
+            #region Maces and Hammers
+            AddCraft(typeof(HammerPick), "Weapons", "Hammer Pick", 35.0, 85.0, typeof(IronIngot), "Iron Ingot", 20, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(Mace), "Weapons", "Mace", 25.0, 75.0, typeof(IronIngot), "Iron Ingot", 15, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(Maul), "Weapons", "Maul", 30.0, 80.0, typeof(IronIngot), "Iron Ingot", 18, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(SmithHammer), "Weapons", "Smith Hammer", 20.0, 70.0, typeof(IronIngot), "Iron Ingot", 10, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(WarHammer), "Weapons", "War Hammer", 40.0, 90.0, typeof(IronIngot), "Iron Ingot", 22, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(WarMace), "Weapons", "War Mace", 45.0, 95.0, typeof(IronIngot), "Iron Ingot", 24, "You do not have sufficient metal to make that.");
+            #endregion
+
+            #region Spears and Forks
+            AddCraft(typeof(ShortSpear), "Weapons", "Short Spear", 35.0, 85.0, typeof(IronIngot), "Iron Ingot", 20, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(Spear), "Weapons", "Spear", 40.0, 90.0, typeof(IronIngot), "Iron Ingot", 22, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(WarFork), "Weapons", "War Fork", 45.0, 95.0, typeof(IronIngot), "Iron Ingot", 24, "You do not have sufficient metal to make that.");
+            #endregion
+
+            #region Polearms
+            AddCraft(typeof(Bardiche), "Weapons", "Bardiche", 50.0, 100.0, typeof(IronIngot), "Iron Ingot", 26, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(Halberd), "Weapons", "Halberd", 55.0, 105.0, typeof(IronIngot), "Iron Ingot", 28, "You do not have sufficient metal to make that.");
+            #endregion
+
+            // Configurazione esistente
             // Configurazione esistente
             #region Metal Armor
             #region Ringmail
-            AddCraft(typeof(RingmailGloves), 1111704, 1025099, 12.0, 62.0, typeof(IronIngot), 1044036, 10, 1044037);
-            AddCraft(typeof(RingmailLegs), 1111704, 1025104, 19.4, 69.4, typeof(IronIngot), 1044036, 16, 1044037);
-            AddCraft(typeof(RingmailArms), 1111704, 1025103, 16.9, 66.9, typeof(IronIngot), 1044036, 14, 1044037);
-            AddCraft(typeof(RingmailChest), 1111704, 1025100, 21.9, 71.9, typeof(IronIngot), 1044036, 18, 1044037);
+            AddCraft(typeof(RingmailGloves), "Armor", "Ringmail Gloves", 12.0, 62.0, typeof(IronIngot), "Iron Ingot", 10, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(RingmailLegs), "Armor", "Ringmail Legs", 19.4, 69.4, typeof(IronIngot), "Iron Ingot", 16, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(RingmailArms), "Armor", "Ringmail Arms", 16.9, 66.9, typeof(IronIngot), "Iron Ingot", 14, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(RingmailChest), "Armor", "Ringmail Chest", 21.9, 71.9, typeof(IronIngot), "Iron Ingot", 18, "You do not have sufficient metal to make that.");
             #endregion
 
             #region Chainmail
-            AddCraft(typeof(ChainCoif), 1111704, 1025051, 14.5, 64.5, typeof(IronIngot), 1044036, 10, 1044037);
-            AddCraft(typeof(ChainLegs), 1111704, 1025054, 36.7, 86.7, typeof(IronIngot), 1044036, 18, 1044037);
-            AddCraft(typeof(ChainChest), 1111704, 1025055, 39.1, 89.1, typeof(IronIngot), 1044036, 20, 1044037);
+            AddCraft(typeof(ChainCoif), "Armor", "Chain Coif", 14.5, 64.5, typeof(IronIngot), "Iron Ingot", 10, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(ChainLegs), "Armor", "Chain Legs", 36.7, 86.7, typeof(IronIngot), "Iron Ingot", 18, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(ChainChest), "Armor", "Chain Chest", 39.1, 89.1, typeof(IronIngot), "Iron Ingot", 20, "You do not have sufficient metal to make that.");
             #endregion
 
             #region Platemail
-            AddCraft(typeof(PlateArms), 1111704, 1025136, 66.3, 116.3, typeof(IronIngot), 1044036, 18, 1044037);
-            AddCraft(typeof(PlateGloves), 1111704, 1025140, 58.9, 108.9, typeof(IronIngot), 1044036, 12, 1044037);
-            AddCraft(typeof(PlateGorget), 1111704, 1025139, 56.4, 106.4, typeof(IronIngot), 1044036, 10, 1044037);
-            AddCraft(typeof(PlateLegs), 1111704, 1025137, 68.8, 118.8, typeof(IronIngot), 1044036, 20, 1044037);
-            AddCraft(typeof(PlateChest), 1111704, 1046431, 75.0, 125.0, typeof(IronIngot), 1044036, 25, 1044037);
-            AddCraft(typeof(FemalePlateChest), 1111704, 1046430, 44.1, 94.1, typeof(IronIngot), 1044036, 20, 1044037);
+            AddCraft(typeof(PlateArms), "Armor", "Plate Arms", 66.3, 116.3, typeof(IronIngot), "Iron Ingot", 18, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(PlateGloves), "Armor", "Plate Gloves", 58.9, 108.9, typeof(IronIngot), "Iron Ingot", 12, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(PlateGorget), "Armor", "Plate Gorget", 56.4, 106.4, typeof(IronIngot), "Iron Ingot", 10, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(PlateLegs), "Armor", "Plate Legs", 68.8, 118.8, typeof(IronIngot), "Iron Ingot", 20, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(PlateChest), "Armor", "Plate Chest", 75.0, 125.0, typeof(IronIngot), "Iron Ingot", 25, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(FemalePlateChest), "Armor", "Female Plate Chest", 44.1, 94.1, typeof(IronIngot), "Iron Ingot", 20, "You do not have sufficient metal to make that.");
             #endregion
             #endregion
 
             #region Helmets
-            AddCraft(typeof(Bascinet), 1011079, 1025132, 8.3, 58.3, typeof(IronIngot), 1044036, 15, 1044037);
-            AddCraft(typeof(CloseHelm), 1011079, 1025128, 37.9, 87.9, typeof(IronIngot), 1044036, 15, 1044037);
-            AddCraft(typeof(Helmet), 1011079, 1025130, 37.9, 87.9, typeof(IronIngot), 1044036, 15, 1044037);
-            AddCraft(typeof(NorseHelm), 1011079, 1025134, 37.9, 87.9, typeof(IronIngot), 1044036, 15, 1044037);
-            AddCraft(typeof(PlateHelm), 1011079, 1025138, 62.6, 112.6, typeof(IronIngot), 1044036, 15, 1044037);
+            AddCraft(typeof(Bascinet), "Helmets", "Bascinet", 8.3, 58.3, typeof(IronIngot), "Iron Ingot", 15, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(CloseHelm), "Helmets", "Close Helm", 37.9, 87.9, typeof(IronIngot), "Iron Ingot", 15, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(Helmet), "Helmets", "Helmet", 37.9, 87.9, typeof(IronIngot), "Iron Ingot", 15, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(NorseHelm), "Helmets", "Norse Helm", 37.9, 87.9, typeof(IronIngot), "Iron Ingot", 15, "You do not have sufficient metal to make that.");
+            AddCraft(typeof(PlateHelm), "Helmets", "Plate Helm", 62.6, 112.6, typeof(IronIngot), "Iron Ingot", 15, "You do not have sufficient metal to make that.");
             #endregion
 
             // Continua a implementare la logica di crafting per altre categorie come Armi e Strumenti
