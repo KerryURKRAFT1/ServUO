@@ -142,22 +142,26 @@ namespace Server.Engines.Craft
         public override int PlayEndingEffect(
             Mobile from, bool failed, bool lostMaterial, bool toolBroken, int quality, bool makersMark, CraftItem item)
         {
+                //if (this.GetType().Name == "DefClassicBlacksmithy")
+                //{
+                //from.SendMenu(new NewCraftingMenu(from, this, null, 0, true)); // Passa true per isPreAoS
+                //}
+              
             if (toolBroken)
             {
                 from.SendLocalizedMessage(1044038); // You have worn out your tool
+
             }
-                        // Inizio modifica per riaprire il menu pre-AoS in caso di fallimento
-                        // Inizio modifica per riaprire il menu pre-AoS in caso di fallimento
-                        if (this.GetType().Name == "DefClassicBlacksmithy")
-                        {
-                            from.SendMenu(new NewCraftingMenu(from, this, null, 0, true)); // Passa true per isPreAoS
-                        }
-                        // Fine modifica
-                        
+
+                
+
+
+
             if (failed)
             {
                 if (lostMaterial)
                 {
+
                     return 1044043; // You failed to create the item, and some of your materials are lost.
                 }
 
@@ -271,6 +275,21 @@ namespace Server.Engines.Craft
             #endregion
 
             // Continua a implementare la logica di crafting per altre categorie come Armi e Strumenti
+
+                    // Imposta il materiale sovrascrivibile di base
+            SetSubRes(typeof(IronIngot), 1044022); 
+
+            // Aggiungi materiali alternativi
+            AddSubRes(typeof(IronIngot), 1044022, 00.0, 1044036, 1044267);
+            AddSubRes(typeof(DullCopperIngot), 1044023, 65.0, 1044036, 1044268);
+            AddSubRes(typeof(ShadowIronIngot), 1044024, 70.0, 1044036, 1044268);
+            AddSubRes(typeof(CopperIngot), 1044025, 75.0, 1044036, 1044268);
+            AddSubRes(typeof(BronzeIngot), 1044026, 80.0, 1044036, 1044268);
+            AddSubRes(typeof(GoldIngot), 1044027, 85.0, 1044036, 1044268);
+            AddSubRes(typeof(AgapiteIngot), 1044028, 90.0, 1044036, 1044268);
+            AddSubRes(typeof(VeriteIngot), 1044029, 95.0, 1044036, 1044268);
+            AddSubRes(typeof(ValoriteIngot), 1044030, 99.0, 1044036, 1044268);
+
         }
     }
 }
