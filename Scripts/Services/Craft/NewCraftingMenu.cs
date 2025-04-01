@@ -1020,6 +1020,7 @@ public class WeaponsMenu : ItemListMenu
 // sezione special armor
 
 
+
 public class SpecialArmorMenu : ItemListMenu
 {
     private readonly Mobile m_From;
@@ -1034,7 +1035,6 @@ public class SpecialArmorMenu : ItemListMenu
         m_CraftSystem = craftSystem;
         m_Tool = tool;
         this.isPreAoS = isPreAoS;
-        Console.WriteLine("SpecialArmorMenu instantiated with material.");
     }
 
     private static ItemListEntryWithType[] GetSpecialArmors(Mobile from, CraftSystem craftSystem)
@@ -1067,22 +1067,20 @@ public class SpecialArmorMenu : ItemListMenu
 
     public override void OnResponse(NetState state, int index)
     {
-        Console.WriteLine("SpecialArmorMenu.OnResponse called with index: " + index);
         var items = GetSpecialArmors(m_From, m_CraftSystem);
         if (index >= 0 && index < items.Length)
         {
             string selectedMaterial = items[index].Name;
-            Console.WriteLine("Selected Material: " + selectedMaterial + ", Index: " + index);
             m_From.SendMenu(new ArmorItemsMenu(m_From, m_CraftSystem, m_Tool, selectedMaterial, isPreAoS));
-            Console.WriteLine("Sent ArmorItemsMenu with selected material: " + selectedMaterial + ", Index: " + index);
         }
         else
         {
             m_From.SendMessage("Invalid selection.");
-            Console.WriteLine("Invalid selection: index out of range");
         }
     }
 }
+
+
 
 
 
@@ -1091,74 +1089,76 @@ public class SpecialArmorMenu : ItemListMenu
 /// </summary>
 
 
-            public class SpecialWeaponsMenu : ItemListMenu
+
+public class SpecialWeaponsMenu : ItemListMenu
+{
+    private readonly Mobile m_From;
+    private readonly CraftSystem m_CraftSystem;
+    private readonly BaseTool m_Tool;
+    private readonly bool isPreAoS;
+
+    public SpecialWeaponsMenu(Mobile from, CraftSystem craftSystem, BaseTool tool, bool isPreAoS)
+        : base("Select a special weapon material:", GetSpecialWeaponMaterials(from, craftSystem))
+    {
+        m_From = from;
+        m_CraftSystem = craftSystem;
+        m_Tool = tool;
+        this.isPreAoS = isPreAoS;
+        Console.WriteLine("SpecialWeaponsMenu instantiated with material.");
+    }
+
+    private static ItemListEntryWithType[] GetSpecialWeaponMaterials(Mobile from, CraftSystem craftSystem)
+    {
+        List<ItemListEntryWithType> entries = new List<ItemListEntryWithType>();
+        Container pack = from.Backpack;
+
+        ItemListEntryWithType[] allSpecialWeapons = new ItemListEntryWithType[]
+        {
+            new ItemListEntryWithType("Dull Copper Weapon", typeof(DullCopperIngot), 5183),
+            new ItemListEntryWithType("Shadow Iron Weapon", typeof(ShadowIronIngot), 5183),
+            new ItemListEntryWithType("Copper Weapon", typeof(CopperIngot), 5183),
+            new ItemListEntryWithType("Bronze Weapon", typeof(BronzeIngot), 5183),
+            new ItemListEntryWithType("Gold Weapon", typeof(GoldIngot), 5183),
+            new ItemListEntryWithType("Agapite Weapon", typeof(AgapiteIngot), 5183),
+            new ItemListEntryWithType("Verite Weapon", typeof(VeriteIngot), 5183),
+            new ItemListEntryWithType("Valorite Weapon", typeof(ValoriteIngot), 5183)
+        };
+
+        foreach (ItemListEntryWithType entry in allSpecialWeapons)
+        {
+            if (pack.FindItemByType(entry.ItemType) != null)
             {
-                private readonly Mobile m_From;
-                private readonly CraftSystem m_CraftSystem;
-                private readonly BaseTool m_Tool;
-                private readonly bool isPreAoS;
-
-                public SpecialWeaponsMenu(Mobile from, CraftSystem craftSystem, BaseTool tool, bool isPreAoS)
-                    : base("Select a special weapon material:", GetSpecialWeaponMaterials(from, craftSystem))
-                {
-                    m_From = from;
-                    m_CraftSystem = craftSystem;
-                    m_Tool = tool;
-                    this.isPreAoS = isPreAoS;
-                    Console.WriteLine("SpecialWeaponsMenu instantiated with material.");
-                }
-
-                private static ItemListEntry[] GetSpecialWeaponMaterials(Mobile from, CraftSystem craftSystem)
-                {
-                    List<ItemListEntry> entries = new List<ItemListEntry>();
-
-                    Container pack = from.Backpack;
-
-                    if (pack != null)
-                    {
-                        if (pack.FindItemByType(typeof(DullCopperIngot)) != null)
-                            entries.Add(new ItemListEntry("Dull Copper Weapon", 5183));
-                        if (pack.FindItemByType(typeof(ShadowIronIngot)) != null)
-                            entries.Add(new ItemListEntry("Shadow Iron Weapon", 5183));
-                        if (pack.FindItemByType(typeof(CopperIngot)) != null)
-                            entries.Add(new ItemListEntry("Copper Weapon", 5183));
-                        if (pack.FindItemByType(typeof(BronzeIngot)) != null)
-                            entries.Add(new ItemListEntry("Bronze Weapon", 5183));
-                        if (pack.FindItemByType(typeof(GoldIngot)) != null)
-                            entries.Add(new ItemListEntry("Gold Weapon", 5183));
-                        if (pack.FindItemByType(typeof(AgapiteIngot)) != null)
-                            entries.Add(new ItemListEntry("Agapite Weapon", 5183));
-                        if (pack.FindItemByType(typeof(VeriteIngot)) != null)
-                            entries.Add(new ItemListEntry("Verite Weapon", 5183));
-                        if (pack.FindItemByType(typeof(ValoriteIngot)) != null)
-                            entries.Add(new ItemListEntry("Valorite Weapon", 5183));
-                    }
-
-                    return entries.ToArray();
-                }
-
-                public override void OnResponse(NetState state, int index)
-                {
-                    Console.WriteLine("SpecialWeaponsMenu.OnResponse called with index: " + index);
-                    var items = GetSpecialWeaponMaterials(m_From, m_CraftSystem);
-                    if (index >= 0 && index < items.Length)
-                    {
-                        string selectedMaterial = items[index].Name;
-                        Console.WriteLine("Selected Material: " + selectedMaterial);
-                        m_From.SendMenu(new WeaponItemsMenu(m_From, m_CraftSystem, m_Tool, selectedMaterial, isPreAoS));
-                        Console.WriteLine("Sent WeaponItemsMenu with selected material: " + selectedMaterial);
-                    }
-                    else
-                    {
-                        m_From.SendMessage("Invalid selection.");
-                    }
-                }
+                entries.Add(entry);
             }
+        }
+
+        return entries.ToArray();
+    }
+
+    public override void OnResponse(NetState state, int index)
+    {
+        Console.WriteLine("SpecialWeaponsMenu.OnResponse called with index: " + index);
+        var items = GetSpecialWeaponMaterials(m_From, m_CraftSystem);
+        if (index >= 0 && index < items.Length)
+        {
+            string selectedMaterial = items[index].Name;
+            Console.WriteLine("Selected Material: " + selectedMaterial);
+            m_From.SendMenu(new WeaponItemsMenu(m_From, m_CraftSystem, m_Tool, selectedMaterial, isPreAoS));
+            Console.WriteLine("Sent WeaponItemsMenu with selected material: " + selectedMaterial);
+        }
+        else
+        {
+            m_From.SendMessage("Invalid selection.");
+        }
+    }
+}
+
 
 
 
 ///////// 
 ///
+
 
 
 
@@ -1171,28 +1171,18 @@ public class ArmorItemsMenu : ItemListMenu
     private readonly bool isPreAoS;
 
     public ArmorItemsMenu(Mobile from, CraftSystem craftSystem, BaseTool tool, string material, bool isPreAoS)
-        : base("Select " + material + " item to craft:", GetArmorItems(from, craftSystem, material))
+        : base("Select " + material + " item to craft:", GetArmorItems())
     {
         m_From = from;
         m_CraftSystem = craftSystem;
         m_Tool = tool;
         m_Material = material;
         this.isPreAoS = isPreAoS;
-        Console.WriteLine("ArmorItemsMenu instantiated with material: " + material);
     }
 
-    private static ItemListEntryWithType[] GetArmorItems(Mobile from, CraftSystem craftSystem, string material)
+    private static ItemListEntryWithType[] GetArmorItems()
     {
-        List<ItemListEntryWithType> entries = new List<ItemListEntryWithType>();
-        Type materialType = GetMaterialType(material);
-
-        if (materialType == null)
-        {
-            Console.WriteLine("Material type not found for material: " + material);
-            return entries.ToArray();
-        }
-
-        ItemListEntryWithType[] allArmorItems = new ItemListEntryWithType[]
+        return new ItemListEntryWithType[]
         {
             new ItemListEntryWithType("Plate Chest", typeof(PlateChest), 5142),
             new ItemListEntryWithType("Plate Legs", typeof(PlateLegs), 5146),
@@ -1200,56 +1190,6 @@ public class ArmorItemsMenu : ItemListMenu
             new ItemListEntryWithType("Shield", typeof(MetalKiteShield), 7028),
             new ItemListEntryWithType("Bronze Shield", typeof(BronzeShield), 7026),
         };
-
-        Console.WriteLine("Populating armor items for material: " + material);
-
-        foreach (ItemListEntryWithType entry in allArmorItems)
-        {
-            CraftItem craftItem = craftSystem.CraftItems.SearchFor(entry.ItemType);
-            Console.WriteLine("Checking craft item: " + entry.Name);
-
-            if (craftItem != null)
-            {
-                foreach (CraftRes craftRes in craftItem.Resources)
-                {
-                    Console.WriteLine("Checking craft resource: " + craftRes.ItemType.Name + " for item: " + entry.Name);
-                    if (craftRes.ItemType == materialType)
-                    {
-                        Console.WriteLine("Resource match found: " + craftRes.ItemType.Name + " for item: " + entry.Name);
-                        bool hasRequiredSkill = false;
-                        foreach (CraftSkill skill in craftItem.Skills)
-                        {
-                            if (from.Skills[skill.SkillToMake].Value >= skill.MinSkill)
-                            {
-                                hasRequiredSkill = true;
-                                break;
-                            }
-                        }
-
-                        if (hasRequiredSkill)
-                        {
-                            bool hasMaterials = true;
-                            foreach (CraftRes res in craftItem.Resources)
-                            {
-                                if (from.Backpack.GetAmount(res.ItemType) < res.Amount)
-                                {
-                                    hasMaterials = false;
-                                    break;
-                                }
-                            }
-
-                            if (hasMaterials)
-                            {
-                                entries.Add(new ItemListEntryWithType(entry.Name + " (" + material + ")", entry.ItemType, entry.ItemID));
-                                Console.WriteLine("Added entry: " + entry.Name + " (" + material + ")");
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        return entries.ToArray();
     }
 
     private static Type GetMaterialType(string material)
@@ -1279,38 +1219,73 @@ public class ArmorItemsMenu : ItemListMenu
 
     public override void OnResponse(NetState state, int index)
     {
-        Console.WriteLine("ArmorItemsMenu.OnResponse called with index: " + index);
-        var items = GetArmorItems(m_From, m_CraftSystem, m_Material);
+        var items = GetArmorItems();
         if (index >= 0 && index < items.Length)
         {
             var itemType = items[index].ItemType;
-            Console.WriteLine("Selected Item Type: " + itemType + ", Index: " + index);
+            var materialType = GetMaterialType(m_Material);
+            if (materialType == null)
+            {
+                m_From.SendMessage("Invalid material type.");
+                return;
+            }
+
             CraftItem craftItem = m_CraftSystem.CraftItems.SearchFor(itemType);
 
             if (craftItem != null)
             {
-                // Trova il materiale selezionato
-                Type materialType = GetMaterialType(m_Material);
+                bool hasMaterials = true;
+                foreach (CraftRes res in craftItem.Resources)
+                {
+                    if (m_From.Backpack.GetAmount(res.ItemType) < res.Amount)
+                    {
+                        hasMaterials = false;
+                        break;
+                    }
+                }
 
-                // Crea una nuova istanza di CustomCraft
-                CustomCraft customCraft = new CustomCraft(m_From, craftItem, m_CraftSystem, materialType, m_Tool, 0);
-                customCraft.EndCraftAction();
-                
-                Console.WriteLine("Crafted item: " + itemType + " with material: " + m_Material + ", Index: " + index);
+                if (hasMaterials)
+                {
+                    // Remove the required materials from player's backpack
+                    foreach (CraftRes res in craftItem.Resources)
+                    {
+                        Item item = m_From.Backpack.FindItemByType(res.ItemType);
+                        if (item != null)
+                        {
+                            item.Consume(res.Amount);
+                        }
+                    }
+
+                    // Craft the item
+                    craftItem.Craft(m_From, m_CraftSystem, materialType, m_Tool); // Pass the material type to the Craft method
+                    m_From.SendMessage("You have crafted a " + items[index].Name + " using " + m_Material + ".");
+
+                    //Item craftedItem = craftItem.CraftItem(m_From, m_CraftSystem, materialType, m_Tool);
+
+                    // Customizing the name based on the material
+                    //if (craftedItem != null)
+                    //{
+                    //    craftedItem.Name = m_Material + " " + items[index].Name;
+                    //    m_From.SendMessage("You have crafted a " + craftedItem.Name + ".");
+                    //}
+                }
+                else
+                {
+                    m_From.SendMessage("You do not have the necessary materials.");
+                }
             }
             else
             {
                 m_From.SendMessage("The selected item cannot be crafted.");
-                Console.WriteLine("Craft item not found: " + itemType + ", Index: " + index);
             }
         }
         else
         {
             m_From.SendMessage("Invalid selection.");
-            Console.WriteLine("Invalid selection: index out of range");
         }
     }
 }
+
 
 
 /////////   WEAPON MENU
@@ -1326,22 +1301,18 @@ public class WeaponItemsMenu : ItemListMenu
     private readonly bool isPreAoS;
 
     public WeaponItemsMenu(Mobile from, CraftSystem craftSystem, BaseTool tool, string material, bool isPreAoS)
-        : base("Select " + material + " item to craft:", GetWeaponItems(from, craftSystem, material))
+        : base("Select " + material + " item to craft:", GetWeaponItems())
     {
         m_From = from;
         m_CraftSystem = craftSystem;
         m_Tool = tool;
         m_Material = material;
         this.isPreAoS = isPreAoS;
-        Console.WriteLine("WeaponItemsMenu instantiated with material: " + material);
     }
 
-    private static ItemListEntryWithType[] GetWeaponItems(Mobile from, CraftSystem craftSystem, string material)
+    private static ItemListEntryWithType[] GetWeaponItems()
     {
-        List<ItemListEntryWithType> entries = new List<ItemListEntryWithType>();
-        Type materialType = GetMaterialType(material);
-
-        ItemListEntryWithType[] allWeaponItems = new ItemListEntryWithType[]
+        return new ItemListEntryWithType[]
         {
             new ItemListEntryWithType("Broadsword", typeof(Broadsword), 3934),
             new ItemListEntryWithType("Cutlass", typeof(Cutlass), 5185),
@@ -1352,78 +1323,26 @@ public class WeaponItemsMenu : ItemListMenu
             new ItemListEntryWithType("Scimitar", typeof(Scimitar), 5046),
             new ItemListEntryWithType("Viking Sword", typeof(VikingSword), 5049)
         };
-
-        foreach (ItemListEntryWithType entry in allWeaponItems)
-        {
-            CraftItem craftItem = craftSystem.CraftItems.SearchFor(entry.ItemType);
-
-            if (craftItem != null)
-            {
-                foreach (CraftRes craftRes in craftItem.Resources)
-                {
-                    if (craftRes.ItemType == materialType)
-                    {
-                        bool hasRequiredSkill = false;
-                        foreach (CraftSkill skill in craftItem.Skills)
-                        {
-                            if (from.Skills[skill.SkillToMake].Value >= skill.MinSkill)
-                            {
-                                hasRequiredSkill = true;
-                                break;
-                            }
-                        }
-
-                        if (hasRequiredSkill)
-                        {
-                            bool hasMaterials = true;
-                            foreach (CraftRes res in craftItem.Resources)
-                            {
-                                if (from.Backpack.GetAmount(res.ItemType) < res.Amount)
-                                {
-                                    hasMaterials = false;
-                                    break;
-                                }
-                            }
-
-                            if (hasMaterials)
-                            {
-                                entries.Add(entry);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        return entries.ToArray();
     }
 
     private static Type GetMaterialType(string material)
     {
         switch (material)
         {
-            case "Dull Copper Armor":
             case "Dull Copper Weapon":
                 return typeof(DullCopperIngot);
-            case "Shadow Iron Armor":
             case "Shadow Iron Weapon":
                 return typeof(ShadowIronIngot);
-            case "Copper Armor":
             case "Copper Weapon":
                 return typeof(CopperIngot);
-            case "Bronze Armor":
             case "Bronze Weapon":
                 return typeof(BronzeIngot);
-            case "Gold Armor":
             case "Gold Weapon":
                 return typeof(GoldIngot);
-            case "Agapite Armor":
             case "Agapite Weapon":
                 return typeof(AgapiteIngot);
-            case "Verite Armor":
             case "Verite Weapon":
                 return typeof(VeriteIngot);
-            case "Valorite Armor":
             case "Valorite Weapon":
                 return typeof(ValoriteIngot);
             default:
@@ -1433,18 +1352,67 @@ public class WeaponItemsMenu : ItemListMenu
 
     public override void OnResponse(NetState state, int index)
     {
-        Console.WriteLine("WeaponItemsMenu.OnResponse called with index: " + index);
-        var itemType = ((ItemListEntryWithType)GetWeaponItems(m_From, m_CraftSystem, m_Material)[index]).ItemType;
-        Console.WriteLine("Selected Item Type: " + itemType);
-        CraftItem craftItem = m_CraftSystem.CraftItems.SearchFor(itemType);
-
-        if (craftItem != null)
+        var items = GetWeaponItems();
+        if (index >= 0 && index < items.Length)
         {
-            craftItem.Craft(m_From, m_CraftSystem, null, m_Tool); // Updated to use 4 parameters
+            var itemType = items[index].ItemType;
+            var materialType = GetMaterialType(m_Material);
+            Console.WriteLine("material: " + m_Material);
+            if (materialType == null)
+            {
+                m_From.SendMessage("Invalid material type.");
+                return;
+            }
+
+            CraftItem craftItem = m_CraftSystem.CraftItems.SearchFor(itemType);
+
+            if (craftItem != null)
+            {
+                bool hasMaterials = true;
+                foreach (CraftRes res in craftItem.Resources)
+                {
+                    if (m_From.Backpack.GetAmount(res.ItemType) < res.Amount)
+                    {
+                        hasMaterials = false;
+                        break;
+                    }
+                }
+
+                if (hasMaterials)
+                {
+                    // Remove the required materials from player's backpack
+                    foreach (CraftRes res in craftItem.Resources)
+                    {
+                        Item item = m_From.Backpack.FindItemByType(res.ItemType);
+                        if (item != null)
+                        {
+                            item.Consume(res.Amount);
+                        }
+                    }
+
+                    // Craft the item
+                    craftItem.Craft(m_From, m_CraftSystem, materialType, m_Tool); // Pass the material type to the Craft method
+                    m_From.SendMessage("You have crafted a " + items[index].Name + " using " + m_Material + ".");
+
+                            //BaseWeapon craftedItem = (BaseWeapon)craftItem.CraftItem(m_From, m_CraftSystem, materialType, m_Tool); // Pass the material type to the Craft method
+                            //craftedItem.SetMaterialHue(materialType); // Set the hue based on the material
+                            //m_From.SendMessage("You have crafted a " + items[index].Name + " using " + m_Material + ".");
+
+
+                }
+                else
+                {
+                    m_From.SendMessage("You do not have the necessary materials.");
+                }
+            }
+            else
+            {
+                m_From.SendMessage("The selected item cannot be crafted.");
+            }
         }
         else
         {
-            m_From.SendMessage("The selected item cannot be crafted.");
+            m_From.SendMessage("Invalid selection.");
         }
     }
 }
