@@ -9,15 +9,15 @@ using Server.Menus.ItemLists;
 
 namespace Server.Engines.Craft
 {
-    public class ItemListEntryWithType : ItemListEntry
-    {
-        public Type ItemType { get; set; }
+    //public class ItemListEntryWithType : ItemListEntry
+    //{
+      //  public Type ItemType { get; set; }
 
-        public ItemListEntryWithType(string name, Type itemType, int itemID) : base(name, itemID)
-        {
-            ItemType = itemType;
-        }
-    }
+        //public ItemListEntryWithType(string name, Type itemType, int itemID) : base(name, itemID)
+        //{
+        //    ItemType = itemType;
+        //}
+    //}
 
     public class NewCraftingMenu : ItemListMenu
     {
