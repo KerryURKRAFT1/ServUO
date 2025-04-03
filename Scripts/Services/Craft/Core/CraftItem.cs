@@ -1805,11 +1805,18 @@ namespace Server.Engines.Craft
 
 
 
+					
 					if (craftSystem.GetType().Name == "DefClassicBlacksmithy")
 					
 					{
 						from.SendMenu(new NewCraftingMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
 					}
+					else if (craftSystem.GetType().Name == "DefClassicCarpentry")
+					
+					{
+						from.SendMenu(new NewCarpentryMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+					}
+
 					else
 					{
 						from.SendGump(new CraftGump(from, craftSystem, tool, num));
@@ -1905,12 +1912,20 @@ namespace Server.Engines.Craft
 					from.SendLocalizedMessage(num); // YOU CREATE THE item
 				}
 
-				// Inizio modifica per riaprire il menu pre-AoS in caso di fallimento
+				// Inizio modifica per riaprire il menu pre-AoS PER LE VARIE SKILL in caso di fallimento
 				if (craftSystem.GetType().Name == "DefClassicBlacksmithy")
 				{
 					from.SendMenu(new NewCraftingMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
 					return;
 				}
+				else if (craftSystem.GetType().Name == "DefClassicCarpentry")
+					
+				{
+					from.SendMenu(new NewCarpentryMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+					return;
+				}
+
+
 				// Fine modifica
 
 			}

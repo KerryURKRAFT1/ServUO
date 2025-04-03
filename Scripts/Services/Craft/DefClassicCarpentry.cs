@@ -80,8 +80,16 @@ namespace Server.Engines.Craft
 
         public override void InitCraftList()
         {
-            //int index = -1;
-             int index;
+            int index = -1;
+            //int index;
+
+
+            // Other Items
+            //if (Core.Expansion >= Expansion.UOR)
+            //{
+                //index = this.AddCraft(typeof(Board), 1044294, 1027127, 0.0, 0.0, typeof(Log), 1044466, 1, 1044465);
+                //Console.WriteLine("Added Board with index: " + index); // Debug message
+            //}
 
             // Example of Carpentry items excluding ML, SA, SE expansions.
 
@@ -176,10 +184,10 @@ namespace Server.Engines.Craft
             this.AddCraft(typeof(DartBoardSouthDeed), 1044290, 1044325, 15.7, 40.7, typeof(Board), 1044041, 5, 1044351);
             this.AddCraft(typeof(DartBoardEastDeed), 1044290, 1044326, 15.7, 40.7, typeof(Board), 1044041, 5, 1044351);
             this.AddCraft(typeof(BallotBoxDeed), 1044290, 1044327, 47.3, 72.3, typeof(Board), 1044041, 5, 1044351);
-            index = this.AddCraft(typeof(PentagramDeed), 1044290, 1044328, 100.0, 125.0, typeof(Board), 1044041, 100, 1044351);
+            index = this.AddCraft(typeof(PentagramDeed), 1044290, 1044328, 100.0, 100.0, typeof(Board), 1044041, 100, 1044351);
             this.AddSkill(index, SkillName.Magery, 75.0, 80.0);
             this.AddRes(index, typeof(IronIngot), 1044036, 40, 1044037);
-            index = this.AddCraft(typeof(AbbatoirDeed), 1044290, 1044329, 100.0, 125.0, typeof(Board), 1044041, 100, 1044351);
+            index = this.AddCraft(typeof(AbbatoirDeed), 1044290, 1044329, 100.0, 100.0, typeof(Board), 1044041, 100, 1044351);
             this.AddSkill(index, SkillName.Magery, 50.0, 55.0);
             this.AddRes(index, typeof(IronIngot), 1044036, 40, 1044037);
 
