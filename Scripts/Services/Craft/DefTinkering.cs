@@ -778,6 +778,9 @@ namespace Server.Engines.Craft
         }
     }
 
+
+    /*
+
     public abstract class TrapCraft : CustomCraft
     {
         private LockableContainer m_Container;
@@ -946,4 +949,7 @@ namespace Server.Engines.Craft
         {
         }
     }
+
+
+    */
 }
