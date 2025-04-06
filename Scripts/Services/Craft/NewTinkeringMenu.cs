@@ -958,11 +958,11 @@ namespace Server.Engines.Craft
                     new ItemListEntryWithType("Dart Trap", typeof(DartTrapCraft), 4396),
                     new ItemListEntryWithType("Poison Trap", typeof(PoisonTrapCraft), 4593),
                     new ItemListEntryWithType("Explosion Trap", typeof(ExplosionTrapCraft), 4597),
-                    new ItemListEntryWithType("Faction Gas Trap Deed", typeof(FactionGasTrapDeed), 4598),
-                    new ItemListEntryWithType("Faction Explosion Trap Deed", typeof(FactionExplosionTrapDeed), 4599),
-                    new ItemListEntryWithType("Faction Saw Trap Deed", typeof(FactionSawTrapDeed), 4600),
-                    new ItemListEntryWithType("Faction Spike Trap Deed", typeof(FactionSpikeTrapDeed), 4601),
-                    new ItemListEntryWithType("Faction Trap Removal Kit", typeof(FactionTrapRemovalKit), 6445)
+                    //new ItemListEntryWithType("Faction Gas Trap Deed", typeof(FactionGasTrapDeed), 4598),
+                    //new ItemListEntryWithType("Faction Explosion Trap Deed", typeof(FactionExplosionTrapDeed), 4599),
+                    //new ItemListEntryWithType("Faction Saw Trap Deed", typeof(FactionSawTrapDeed), 4600),
+                    //new ItemListEntryWithType("Faction Spike Trap Deed", typeof(FactionSpikeTrapDeed), 4601),
+                    //new ItemListEntryWithType("Faction Trap Removal Kit", typeof(FactionTrapRemovalKit), 6445)
                 };
 
                 foreach (ItemListEntryWithType entry in allTraps)
@@ -1048,7 +1048,7 @@ namespace Server.Engines.Craft
             private readonly BaseTool m_Tool;
 
             public LightMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select a trap to craft:", GetCraftItems(from, craftSystem))
+                : base("Select a Light Source to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -1148,7 +1148,7 @@ namespace Server.Engines.Craft
             private readonly BaseTool m_Tool;
 
             public DecoMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select a trap to craft:", GetCraftItems(from, craftSystem))
+                : base("Select a Decorative Item to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -1161,6 +1161,14 @@ namespace Server.Engines.Craft
 
                 ItemListEntryWithType[] allDeco = new ItemListEntryWithType[]
                 {
+                    new ItemListEntryWithType("Decorative Armor", typeof(DartTrapCraft), 5384),
+                    new ItemListEntryWithType("Decorative Armor", typeof(PoisonTrapCraft), 5402),
+                    new ItemListEntryWithType("Decorative Weapon", typeof(DecorativeAxeNorth), 5473),
+                    new ItemListEntryWithType("Decorative Weapon", typeof(DecorativeAxeWest), 5474),
+                    new ItemListEntryWithType("Decorative Weapon", typeof(DecorativeDAxeNorth), 5480),
+                    new ItemListEntryWithType("Decorative Weapon", typeof(DecorativeDAxeWest), 5482),
+                    new ItemListEntryWithType("Decorative Weapon", typeof(DecorativeSwordNorth), 5477),
+                    new ItemListEntryWithType("Decorative Weapon", typeof(DecorativeSwordWest), 5478),
 
                 };
 
