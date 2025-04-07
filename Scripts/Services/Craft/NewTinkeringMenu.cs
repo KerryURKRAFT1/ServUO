@@ -117,7 +117,7 @@ namespace Server.Engines.Craft
             }
             if (DecoMenu.HasCraftableItems(from, craftSystem))
             {
-                categories.Add(new ItemListEntry("Decorative", 7867));
+                categories.Add(new ItemListEntry("Decorative Armor Weapon", 7867));
             }
 
             return categories.ToArray();
@@ -156,7 +156,7 @@ namespace Server.Engines.Craft
                     case "Traps":
                         m_From.SendMenu(new TrapsMenu(m_From, m_CraftSystem, m_Tool));
                         break;
-                    case "LightSource":
+                    case "Lightsource":
                         m_From.SendMenu(new LightMenu(m_From, m_CraftSystem, m_Tool));
                         break;
                     case "Decorative Armor Weapon":
@@ -1063,8 +1063,8 @@ namespace Server.Engines.Craft
                 {
                     new ItemListEntryWithType("Lantern", typeof(Lantern), 2597),
                     new ItemListEntryWithType("Heating Stand", typeof(HeatingStand), 6217),
-                    new ItemListEntryWithType("Brazier", typeof(FactionSpikeTrapDeed), 3633),
-                    new ItemListEntryWithType("Brazier Tall", typeof(FactionTrapRemovalKit), 3570)
+                    new ItemListEntryWithType("Brazier", typeof(Brazier), 3633),
+                    new ItemListEntryWithType("Brazier Tall", typeof(BrazierTall), 6570)
                 };
 
                 foreach (ItemListEntryWithType entry in allLight)
@@ -1161,15 +1161,14 @@ namespace Server.Engines.Craft
 
                 ItemListEntryWithType[] allDeco = new ItemListEntryWithType[]
                 {
-                    new ItemListEntryWithType("Decorative Armor", typeof(DartTrapCraft), 5384),
-                    new ItemListEntryWithType("Decorative Armor", typeof(PoisonTrapCraft), 5402),
+                    //new ItemListEntryWithType("Decorative Armor", typeof(DartTrapCraft), 5384),
+                    //new ItemListEntryWithType("Decorative Armor", typeof(PoisonTrapCraft), 5402),
                     new ItemListEntryWithType("Decorative Weapon", typeof(DecorativeAxeNorth), 5473),
                     new ItemListEntryWithType("Decorative Weapon", typeof(DecorativeAxeWest), 5474),
                     new ItemListEntryWithType("Decorative Weapon", typeof(DecorativeDAxeNorth), 5480),
                     new ItemListEntryWithType("Decorative Weapon", typeof(DecorativeDAxeWest), 5482),
                     new ItemListEntryWithType("Decorative Weapon", typeof(DecorativeSwordNorth), 5477),
-                    new ItemListEntryWithType("Decorative Weapon", typeof(DecorativeSwordWest), 5478),
-
+                    new ItemListEntryWithType("Decorative Weapon", typeof(DecorativeSwordWest), 5478)
                 };
 
                 foreach (ItemListEntryWithType entry in allDeco)
