@@ -38,19 +38,26 @@ namespace Server.Engines.Craft
             if (m_CraftSystem.GetType() == typeof(DefTinkering))
             {
                 m_CraftSystem = DefClassictTinkering.CraftSystem;
-                Console.WriteLine("Using CraftSystem of type: " + m_CraftSystem.GetType().Name);
             }
             else
             {
                 Console.WriteLine("Using CraftSystem alternatio of type: " + m_CraftSystem.GetType().Name);
             }
+
+          
+           
             // Verifica dei materiali
             if (!HasRequiredMaterials(from, craftSystem))
             {
                 from.SendMessage("You do not have the necessary materials to craft any items.");
                 return;
             }
+
         }
+
+
+
+
 
         private static bool HasRequiredMaterials(Mobile from, CraftSystem craftSystem)
         {
@@ -93,7 +100,7 @@ namespace Server.Engines.Craft
             }
             if (MultiMenu.HasCraftableItems(from, craftSystem))
             {
-                categories.Add(new ItemListEntry("Multi Component", 4230));
+                categories.Add(new ItemListEntry("Multi Component", 4171));
             }
             if (MiscMenu.HasCraftableItems(from, craftSystem))
             {
@@ -107,9 +114,13 @@ namespace Server.Engines.Craft
             {
                 categories.Add(new ItemListEntry("Tavern Types", 4013));
             }
+            if (WoodItemsMenu.HasCraftableItems(from, craftSystem))
+            {
+                categories.Add(new ItemListEntry("Wood Items", 4173));
+            }
             if (TrapsMenu.HasCraftableItems(from, craftSystem))
             {
-                categories.Add(new ItemListEntry("Traps", 4343));
+                categories.Add(new ItemListEntry("Traps", 4407));
             }
             if (LightMenu.HasCraftableItems(from, craftSystem))
             {
@@ -117,9 +128,9 @@ namespace Server.Engines.Craft
             }
             if (DecoMenu.HasCraftableItems(from, craftSystem))
             {
-                categories.Add(new ItemListEntry("Decorative Armor Weapon", 7867));
+                categories.Add(new ItemListEntry("Decorative", 5384));
             }
-
+            
             return categories.ToArray();
         }
 
@@ -153,13 +164,16 @@ namespace Server.Engines.Craft
                     case "Tavern Types":
                         m_From.SendMenu(new TaverntypesMenu(m_From, m_CraftSystem, m_Tool));
                         break;
+                    case "Wood Items":
+                        m_From.SendMenu(new WoodItemsMenu(m_From, m_CraftSystem, m_Tool));
+                        break;
                     case "Traps":
                         m_From.SendMenu(new TrapsMenu(m_From, m_CraftSystem, m_Tool));
                         break;
                     case "Lightsource":
                         m_From.SendMenu(new LightMenu(m_From, m_CraftSystem, m_Tool));
                         break;
-                    case "Decorative Armor Weapon":
+                    case "Decorative":
                         m_From.SendMenu(new DecoMenu(m_From, m_CraftSystem, m_Tool));
                         break;
                     default:
@@ -317,6 +331,8 @@ namespace Server.Engines.Craft
                     new ItemListEntryWithType("Sextant Parts", typeof(SextantParts), 4185),
                     new ItemListEntryWithType("Barrel Hoops", typeof(BarrelHoops), 7607),
                     new ItemListEntryWithType("Hinge", typeof(Hinge), 4181),
+                    new ItemListEntryWithType("Keg", typeof(Keg), 3711),
+
                     //new ItemListEntryWithType("Bola Ball", typeof(BolaBall), 3699),
                     //new ItemListEntryWithType("Jeweled Filigree", typeof(JeweledFiligree), 2894)
                 };
@@ -541,6 +557,10 @@ namespace Server.Engines.Craft
 
                 ItemListEntryWithType[] allMulti = new ItemListEntryWithType[]
                 {
+                    new ItemListEntryWithType("AxleGears", typeof(AxleGears), 4177),
+                    new ItemListEntryWithType("ClockRight", typeof(ClockRight), 4171),
+                    new ItemListEntryWithType("ClockLeft", typeof(ClockLeft), 4172),
+                    new ItemListEntryWithType("PotionKeg", typeof(PotionKeg), 6464)
 
                 };
 
@@ -927,11 +947,112 @@ namespace Server.Engines.Craft
         }
 
 
+/// <summary>
+/// //////// WOOD ITEMS
+/// </summary>
+/// 
 
-    
+        public class WoodItemsMenu : ItemListMenu
+        {
+            private readonly Mobile m_From;
+            private readonly CraftSystem m_CraftSystem;
+            private readonly BaseTool m_Tool;
+
+            public WoodItemsMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
+                : base("Select a items to craft:", GetCraftItems(from, craftSystem))
+            {
+                m_From = from;
+                m_CraftSystem = craftSystem;
+                m_Tool = tool;
+            }
+
+            private static ItemListEntry[] GetCraftItems(Mobile from, CraftSystem craftSystem)
+            {
+                List<ItemListEntry> items = new List<ItemListEntry>();
+
+                ItemListEntryWithType[] allWoodItems = new ItemListEntryWithType[]
+                {
+                    // inserire item
+                    new ItemListEntryWithType("Jointing Plane", typeof(JointingPlane), 4144),
+                    new ItemListEntryWithType("Moulding Plane", typeof(MouldingPlane), 4140),
+                    new ItemListEntryWithType("Smoothing Plane", typeof(SmoothingPlane), 4146),
+                    new ItemListEntryWithType("Clock Frame", typeof(ClockFrame), 4173),
+                    new ItemListEntryWithType("Axle", typeof(Axle), 4187),
+                    new ItemListEntryWithType("Rolling Pin", typeof(RollingPin), 4163),
+                };
+
+                foreach (ItemListEntryWithType entry in allWoodItems)
+                {
+                    CraftItem craftItem = craftSystem.CraftItems.SearchFor(entry.ItemType);
+
+                    if (craftItem != null)
+                    {
+                        bool hasRequiredSkill = false;
+                        foreach (CraftSkill skill in craftItem.Skills)
+                        {
+                            if (from.Skills[skill.SkillToMake].Value >= skill.MinSkill)
+                            {
+                                hasRequiredSkill = true;
+                                break;
+                            }
+                        }
+
+                        if (hasRequiredSkill)
+                        {
+                            bool hasMaterials = true;
+                            foreach (CraftRes craftRes in craftItem.Resources)
+                            {
+                                if (from.Backpack.GetAmount(craftRes.ItemType) < craftRes.Amount)
+                                {
+                                    hasMaterials = false;
+                                    break;
+                                }
+                            }
+
+                            if (hasMaterials)
+                            {
+                                items.Add(entry);
+                            }
+                        }
+                    }
+                }
+
+                return items.ToArray();
+            }
+
+            public override void OnResponse(NetState state, int index)
+            {
+                var items = GetCraftItems(m_From, m_CraftSystem);
+                if (index >= 0 && index < items.Length)
+                {
+                    var itemType = ((ItemListEntryWithType)items[index]).ItemType;
+                    CraftItem craftItem = m_CraftSystem.CraftItems.SearchFor(itemType);
+
+                    if (craftItem != null)
+                    {
+                        craftItem.Craft(m_From, m_CraftSystem, null, m_Tool);
+                    }
+                    else
+                    {
+                        m_From.SendMessage("The selected item cannot be crafted.");
+                    }
+                }
+                else
+                {
+                    m_From.SendMessage("Invalid selection.");
+                }
+            }
+
+            public static bool HasCraftableItems(Mobile from, CraftSystem craftSystem)
+            {
+                var items = GetCraftItems(from, craftSystem);
+                return items.Length > 0;
+            }
+        }
+
 
 /// <summary>
-/// ////////
+/// //////// traps menu
 /// </summary>
 /// 
 
@@ -955,9 +1076,9 @@ namespace Server.Engines.Craft
 
                 ItemListEntryWithType[] allTraps = new ItemListEntryWithType[]
                 {
-                    new ItemListEntryWithType("Dart Trap", typeof(DartTrapCraft), 4396),
-                    new ItemListEntryWithType("Poison Trap", typeof(PoisonTrapCraft), 4593),
-                    new ItemListEntryWithType("Explosion Trap", typeof(ExplosionTrapCraft), 4597),
+                    new ItemListEntryWithType("Dart Trap", typeof(DartTrapCraft), 4398),
+                    new ItemListEntryWithType("Poison Trap", typeof(PoisonTrapCraft), 4414),
+                    new ItemListEntryWithType("Explosion Trap", typeof(ExplosionTrapCraft), 4347),
                     //new ItemListEntryWithType("Faction Gas Trap Deed", typeof(FactionGasTrapDeed), 4598),
                     //new ItemListEntryWithType("Faction Explosion Trap Deed", typeof(FactionExplosionTrapDeed), 4599),
                     //new ItemListEntryWithType("Faction Saw Trap Deed", typeof(FactionSawTrapDeed), 4600),
@@ -1064,7 +1185,7 @@ namespace Server.Engines.Craft
                     new ItemListEntryWithType("Lantern", typeof(Lantern), 2597),
                     new ItemListEntryWithType("Heating Stand", typeof(HeatingStand), 6217),
                     new ItemListEntryWithType("Brazier", typeof(Brazier), 3633),
-                    new ItemListEntryWithType("Brazier Tall", typeof(BrazierTall), 6570)
+                    new ItemListEntryWithType("Brazier Tall", typeof(BrazierTall), 6570),
                 };
 
                 foreach (ItemListEntryWithType entry in allLight)
@@ -1153,6 +1274,8 @@ namespace Server.Engines.Craft
                 m_From = from;
                 m_CraftSystem = craftSystem;
                 m_Tool = tool;
+                
+
             }
 
             private static ItemListEntry[] GetCraftItems(Mobile from, CraftSystem craftSystem)
@@ -1161,20 +1284,19 @@ namespace Server.Engines.Craft
 
                 ItemListEntryWithType[] allDeco = new ItemListEntryWithType[]
                 {
-                    //new ItemListEntryWithType("Decorative Armor", typeof(DartTrapCraft), 5384),
-                    //new ItemListEntryWithType("Decorative Armor", typeof(PoisonTrapCraft), 5402),
-                    new ItemListEntryWithType("Decorative Weapon", typeof(DecorativeAxeNorth), 5473),
-                    new ItemListEntryWithType("Decorative Weapon", typeof(DecorativeAxeWest), 5474),
-                    new ItemListEntryWithType("Decorative Weapon", typeof(DecorativeDAxeNorth), 5480),
-                    new ItemListEntryWithType("Decorative Weapon", typeof(DecorativeDAxeWest), 5482),
-                    new ItemListEntryWithType("Decorative Weapon", typeof(DecorativeSwordNorth), 5477),
-                    new ItemListEntryWithType("Decorative Weapon", typeof(DecorativeSwordWest), 5478)
+                    new ItemListEntryWithType("Decorative Axe North", typeof(DecorativeAxeNorth), 5473),
+                    new ItemListEntryWithType("Decorative Axe West", typeof(DecorativeAxeWest), 5474),
+                    new ItemListEntryWithType("Decorative D Axe North", typeof(DecorativeDAxeNorth), 5480),
+                    new ItemListEntryWithType("Decorative D Axe West", typeof(DecorativeDAxeWest), 5482),
+                    new ItemListEntryWithType("Decorative SwordNorth", typeof(DecorativeSwordNorth), 5477),
+                    new ItemListEntryWithType("Decorative SwordWest", typeof(DecorativeSwordWest), 5478)
+
                 };
 
                 foreach (ItemListEntryWithType entry in allDeco)
                 {
                     CraftItem craftItem = craftSystem.CraftItems.SearchFor(entry.ItemType);
-
+                    
                     if (craftItem != null)
                     {
                         bool hasRequiredSkill = false;
@@ -1203,8 +1325,9 @@ namespace Server.Engines.Craft
                             {
                                 items.Add(entry);
                             }
+                        
                         }
-                    }
+                     }  
                 }
 
                 return items.ToArray();

@@ -292,6 +292,8 @@ namespace Server.Engines.Craft
             }
         }
 
+
+
         public int AddCraft(Type typeItem, TextDefinition group, TextDefinition name, double minSkill, double maxSkill, Type typeRes, TextDefinition nameRes, int amount)
         {
             return this.AddCraft(typeItem, group, name, this.MainSkill, minSkill, maxSkill, typeRes, nameRes, amount, "");

@@ -195,6 +195,8 @@ namespace Server.Engines.Craft
             AddCraft(typeof(BarrelHoops), 1044047, 1024321, -15.0, 35.0, typeof(IronIngot), 1044036, 5, 1044037);
             AddCraft(typeof(Hinge), 1044047, 1024181, 5.0, 55.0, typeof(IronIngot), 1044036, 2, 1044037);
             AddCraft(typeof(BolaBall), 1044047, 1023699, 45.0, 95.0, typeof(IronIngot), 1044036, 10, 1044037);
+            AddCraft(typeof(Keg), 1044047, 1023699, 65.0, 100.0, typeof(Board), 1044036, 12, 1044037);
+
             #endregion
 
             #region Utensils
@@ -243,15 +245,15 @@ namespace Server.Engines.Craft
             #region Traps
             // Dart Trap
             index = this.AddCraft(typeof(DartTrapCraft), 1044052, 1024396, 30.0, 80.0, typeof(IronIngot), 1044036, 1, 1044037);
-            this.AddRes(index, typeof(Bolt), 1044570, 1, 1044253);
+            AddRes(index, typeof(Bolt), 1044570, 1, 1044253);
 
             // Poison Trap
             index = this.AddCraft(typeof(PoisonTrapCraft), 1044052, 1044593, 30.0, 80.0, typeof(IronIngot), 1044036, 1, 1044037);
-            this.AddRes(index, typeof(BasePoisonPotion), 1044571, 1, 1044253);
+            AddRes(index, typeof(BasePoisonPotion), 1044571, 1, 1044253);
 
             // Explosion Trap
             index = this.AddCraft(typeof(ExplosionTrapCraft), 1044052, 1044597, 55.0, 105.0, typeof(IronIngot), 1044036, 1, 1044037);
-            this.AddRes(index, typeof(BaseExplosionPotion), 1044569, 1, 1044253);
+            AddRes(index, typeof(BaseExplosionPotion), 1044569, 1, 1044253);
             // other trap
             //AddCraft(typeof(FactionGasTrapDeed), 1044052, 1044598, 65.0, 115.0, typeof(Silver), 1044572, Core.AOS ? 250 : 1000, 1044253);
             //AddCraft(typeof(FactionExplosionTrapDeed), 1044052, 1044599, 65.0, 115.0, typeof(Silver), 1044572, Core.AOS ? 250 : 1000, 1044253);
@@ -261,14 +263,27 @@ namespace Server.Engines.Craft
             #endregion
 
             #region Multi-Component Items
-            AddCraft(typeof(AxleGears), 1044051, 1024177, 0.0, 0.0, typeof(Axle), 1044169, 1, 1044253);
-            AddCraft(typeof(ClockParts), 1044051, 1024175, 0.0, 0.0, typeof(AxleGears), 1044170, 1, 1044253);
+            index = this.AddCraft(typeof(AxleGears), 1044051, 1024177, 0.0, 0.0, typeof(Axle), 1044169, 1, 1044253);
+            AddRes(index, typeof(Gears), 1044569, 1, 1044253);   
+
+            // CRAFT FOR CLOCK RIGHT 
+            index = this.AddCraft(typeof(ClockRight), 1044051, 1044257, 0.0, 0.0, typeof(ClockFrame), 1044174, 1, 1044253);
+            AddRes(index, typeof(AxleGears), 1044569, 1, 1044253);   
+            AddRes(index, typeof(RollingPin), 1044569, 1, 1044253);   
+            AddRes(index, typeof(ClockParts), 1044569, 1, 1044253);    
+            // CRAFT FOR CLOCK LEFT
+            index = this.AddCraft(typeof(ClockLeft), 1044051, 1044256, 0.0, 0.0, typeof(ClockFrame), 1044174, 1, 1044253);
+            AddRes(index, typeof(AxleGears), 1044569, 1, 1044253);   
+            AddRes(index, typeof(RollingPin), 1044569, 1, 1044253);   
+            AddRes(index, typeof(ClockParts), 1044569, 1, 1044253);    
+
+            /////
+
+            //AddCraft(typeof(ClockParts), 1044051, 1024175, 0.0, 0.0, typeof(AxleGears), 1044170, 1, 1044253);
             AddCraft(typeof(SextantParts), 1044051, 1024185, 0.0, 0.0, typeof(AxleGears), 1044170, 1, 1044253);
-            AddCraft(typeof(ClockRight), 1044051, 1044257, 0.0, 0.0, typeof(ClockFrame), 1044174, 1, 1044253);
-            AddCraft(typeof(ClockLeft), 1044051, 1044256, 0.0, 0.0, typeof(ClockFrame), 1044174, 1, 1044253);
             AddCraft(typeof(Sextant), 1044051, 1024183, 0.0, 0.0, typeof(SextantParts), 1044175, 1, 1044253);
             //AddCraft(typeof(Bola), 1044051, 1046441, 60.0, 80.0, typeof(BolaBall), 1046440, 4, 1042613);
-            AddCraft(typeof(PotionKeg), 1044051, 1044258, 75.0, 100.0, typeof(Keg), 1044255, 1, 1044253);
+            index = this.AddCraft(typeof(PotionKeg), 1044051, 1044258, 75.0, 100.0, typeof(Keg), 1044255, 1, 1044253);
             AddRes(index, typeof(Bottle), 1044250, 10, 1044253);
             AddRes(index, typeof(BarrelLid), 1044251, 1, 1044253);
             AddRes(index, typeof(BarrelTap), 1044252, 1, 1044253);
@@ -332,6 +347,10 @@ namespace Server.Engines.Craft
 
     public abstract class TrapCraft : CustomCraft
     {
+
+
+
+
         private LockableContainer m_Container;
 
         public LockableContainer Container
@@ -351,16 +370,24 @@ namespace Server.Engines.Craft
 
         private int Verify(LockableContainer container)
         {
+
+
             if (container == null || container.KeyValue == 0)
                 return 1005638; // You can only trap lockable chests.
+
+                from.SendMenu(new NewTinkeringMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
             if (this.From.Map != container.Map || !this.From.InRange(container.GetWorldLocation(), 2))
                 return 500446; // That is too far away.
+                from.SendMenu(new NewTinkeringMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
             if (!container.Movable)
                 return 502944; // You cannot trap this item because it is locked down.
+                from.SendMenu(new NewTinkeringMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
             if (!container.IsAccessibleTo(this.From))
                 return 502946; // That belongs to someone else.
+                from.SendMenu(new NewTinkeringMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
             if (container.Locked)
                 return 502943; // You can only trap an unlocked object.
+                from.SendMenu(new NewTinkeringMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
             if (container.TrapType != TrapType.None)
                 return 502945; // You can only place one trap on an object at a time.
 

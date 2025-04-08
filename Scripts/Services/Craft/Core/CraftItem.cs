@@ -1816,6 +1816,12 @@ namespace Server.Engines.Craft
 					{
 						from.SendMenu(new NewCarpentryMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
 					}
+					else if (craftSystem.GetType().Name == "DefClassictTinkering")
+					
+					{
+						from.SendMenu(new NewTinkeringMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+					}
+
 
 					else
 					{
@@ -1922,6 +1928,12 @@ namespace Server.Engines.Craft
 					
 				{
 					from.SendMenu(new NewCarpentryMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+					return;
+				}
+				else if (craftSystem.GetType().Name == "DefClassicTinkering")
+					
+				{
+					from.SendMenu(new NewTinkeringMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
 					return;
 				}
 

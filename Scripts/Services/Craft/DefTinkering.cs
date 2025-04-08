@@ -628,6 +628,24 @@ namespace Server.Engines.Craft
 
             #endregion
 
+            #region Light Source
+            AddCraft(typeof(Brazier), 1044048, 1024097, 30.0, 70.0, typeof(IronIngot), 1044036, 12, 1044037);
+            AddCraft(typeof(BrazierTall), 1044048, 1024097, 40.0, 70.0, typeof(IronIngot), 1044036, 15, 1044037);
+            #endregion
+
+            #region Decorative Weapon Armor
+            AddCraft(typeof(DecorativeAxeNorth), 1044052, 1024396, 70.0, 80.0, typeof(IronIngot), 1044036, 20, 1044037);
+            AddCraft(typeof(DecorativeAxeWest), 1044052, 1044593, 70.0, 80.0, typeof(IronIngot), 1044036, 20, 1044037);
+            AddCraft(typeof(DecorativeDAxeNorth), 1044052, 1024396, 80.0, 80.0, typeof(IronIngot), 1044036, 40, 1044037);
+            AddCraft(typeof(DecorativeDAxeWest), 1044052, 1044593, 80.0, 80.0, typeof(IronIngot), 1044036, 40, 1044037);
+            AddCraft(typeof(DecorativeSwordNorth), 1044052, 1024396, 80.0, 80.0, typeof(IronIngot), 1044036, 40, 1044037);
+            AddCraft(typeof(DecorativeSwordWest), 1044052, 1044593, 80.0, 80.0, typeof(IronIngot), 1044036, 40, 1044037);
+            #endregion
+
+
+
+
+
             #region Traps
             // Dart Trap
             index = this.AddCraft(typeof(DartTrapCraft), 1044052, 1024396, 30.0, 80.0, typeof(IronIngot), 1044036, 1, 1044037);
@@ -777,6 +795,9 @@ namespace Server.Engines.Craft
             this.CanAlter = Core.SA;
         }
     }
+
+
+
 
 
     /*
