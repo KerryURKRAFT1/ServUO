@@ -21,8 +21,10 @@ namespace Server.Engines.Craft
         private readonly bool m_isPreAoS;
 
         public NewTinkeringMenu(Mobile from, CraftSystem craftSystem, BaseTool tool, int message, bool isPreAoS)
-            : base("Select a category to craft:", GetCraftCategories(from, craftSystem))
+            : base("Select a category to craft:", GetCraftCategories(from, craftSystem))           
         {
+
+
             m_From = from;
             m_CraftSystem = craftSystem;
             m_Tool = tool;
@@ -43,18 +45,17 @@ namespace Server.Engines.Craft
             {
                 Console.WriteLine("Using CraftSystem alternatio of type: " + m_CraftSystem.GetType().Name);
             }
-
           
-           
+            
             // Verifica dei materiali
             if (!HasRequiredMaterials(from, craftSystem))
             {
                 from.SendMessage("You do not have the necessary materials to craft any items.");
-                return;
+
+                //return;
             }
 
         }
-
 
 
 
@@ -79,8 +80,36 @@ namespace Server.Engines.Craft
                 }
             }
 
+            
             return false;
         }
+
+
+
+  
+        /// <summary>
+        /// // Check from TOOL 
+        /// </summary>
+
+
+            public static void CreateMenu(Mobile from, CraftSystem craftSystem, BaseTool tool, int message, bool isPreAoS)
+            {
+                var categories = GetCraftCategories(from, craftSystem);
+
+                // Se l'array delle categorie è vuoto, non creare il menu
+                if (categories.Length == 0)
+                {
+                    from.SendMessage("You do not have the necessary materials to craft any items.");
+                    return; // Non mostrare il menu
+                }
+
+                // Altrimenti, crea il menu normalmente
+                from.SendMenu(new NewTinkeringMenu(from, craftSystem, tool, message, isPreAoS));
+            }
+
+
+
+
 
         private static ItemListEntry[] GetCraftCategories(Mobile from, CraftSystem craftSystem)
         {
@@ -137,9 +166,11 @@ namespace Server.Engines.Craft
         public override void OnResponse(NetState state, int index)
         {
             var categories = GetCraftCategories(m_From, m_CraftSystem);
+            
             if (index >= 0 && index < categories.Length)
             {
                 var category = categories[index].Name;
+
 
                 switch (category)
                 {
@@ -663,6 +694,8 @@ namespace Server.Engines.Craft
 
                 ItemListEntryWithType[] allMisc = new ItemListEntryWithType[]
                 {
+                    new ItemListEntryWithType("Metal Box", typeof(MetalBox), 2472),
+                    new ItemListEntryWithType("Metal Chest", typeof(MetalChest), 3708),
                     new ItemListEntryWithType("Key Ring", typeof(KeyRing), 4113),
                     new ItemListEntryWithType("Candelabra", typeof(Candelabra), 2599),
                     new ItemListEntryWithType("Scales", typeof(Scales), 6225),
@@ -909,6 +942,7 @@ namespace Server.Engines.Craft
                             {
                                 items.Add(entry);
                             }
+
                         }
                     }
                 }
@@ -970,6 +1004,7 @@ namespace Server.Engines.Craft
             {
                 List<ItemListEntry> items = new List<ItemListEntry>();
 
+                
                 ItemListEntryWithType[] allWoodItems = new ItemListEntryWithType[]
                 {
                     // inserire item
@@ -1011,10 +1046,15 @@ namespace Server.Engines.Craft
 
                             if (hasMaterials)
                             {
+
                                 items.Add(entry);
                             }
+
+                        
                         }
+
                     }
+
                 }
 
                 return items.ToArray();

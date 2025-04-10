@@ -1825,7 +1825,7 @@ namespace Server.Engines.Craft
 
 					else
 					{
-						from.SendGump(new CraftGump(from, craftSystem, tool, num));
+						//from.SendGump(new CraftGump(from, craftSystem, tool, num));
 					}
 
 					// Fine modifica

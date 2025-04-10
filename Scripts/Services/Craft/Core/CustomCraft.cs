@@ -11,6 +11,8 @@ namespace Server.Engines.Craft
         private readonly Type m_TypeRes;
         private readonly BaseTool m_Tool;
         private readonly int m_Quality;
+
+
         public CustomCraft(Mobile from, CraftItem craftItem, CraftSystem craftSystem, Type typeRes, BaseTool tool, int quality)
         {
             this.m_From = from;
@@ -63,6 +65,10 @@ namespace Server.Engines.Craft
                 return this.m_Quality;
             }
         }
+
+
+
+
         public abstract void EndCraftAction();
 
         public abstract Item CompleteCraft(out int message);

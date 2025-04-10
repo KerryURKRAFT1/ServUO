@@ -229,7 +229,7 @@ namespace Server.Engines.Craft
             this.AddCraft(typeof(MouldingPlane), 1044042, 1024140, 0.0, 50.0, typeof(Board), 1044041, 4, 1044351);
             this.AddCraft(typeof(SmoothingPlane), 1044042, 1024146, 0.0, 50.0, typeof(Board), 1044041, 4, 1044351);
             this.AddCraft(typeof(ClockFrame), 1044042, 1024173, 0.0, 50.0, typeof(Board), 1044041, 6, 1044351);
-            this.AddCraft(typeof(Axle), 1044042, 1024187, -25.0, 25.0, typeof(Board), 1044041, 2, 1044351);
+            this.AddCraft(typeof(Axle), 1044042, 1024187, 0.0, 25.0, typeof(Board), 1044041, 2, 1044351);
             this.AddCraft(typeof(RollingPin), 1044042, 1024163, 0.0, 50.0, typeof(Board), 1044041, 5, 1044351);
 
             #region High Seas
@@ -367,7 +367,7 @@ namespace Server.Engines.Craft
             this.AddCraft(typeof(BarrelTap), 1044047, 1024100, 35.0, 85.0, typeof(IronIngot), 1044036, 2, 1044037);
             this.AddCraft(typeof(Springs), 1044047, 1024189, 5.0, 55.0, typeof(IronIngot), 1044036, 2, 1044037);
             this.AddCraft(typeof(SextantParts), 1044047, 1024185, 30.0, 80.0, typeof(IronIngot), 1044036, 4, 1044037);
-            this.AddCraft(typeof(BarrelHoops), 1044047, 1024321, -15.0, 35.0, typeof(IronIngot), 1044036, 5, 1044037);
+            this.AddCraft(typeof(BarrelHoops), 1044047, 1024321, 0.0, 35.0, typeof(IronIngot), 1044036, 5, 1044037);
             this.AddCraft(typeof(Hinge), 1044047, 1024181, 5.0, 55.0, typeof(IronIngot), 1044036, 2, 1044037);
             this.AddCraft(typeof(BolaBall), 1044047, 1023699, 45.0, 95.0, typeof(IronIngot), 1044036, 10, 1044037);
             
@@ -397,6 +397,8 @@ namespace Server.Engines.Craft
             #endregion
 
             #region Misc
+            AddCraft(typeof(MetalBox), 1044050, 1024113, 10.0, 60.0, typeof(IronIngot), 1044036, 5, 1044037);
+            AddCraft(typeof(MetalChest), 1044050, 1022599, 55.0, 105.0, typeof(IronIngot), 1044036, 20, 1044037);
             this.AddCraft(typeof(KeyRing), 1044050, 1024113, 10.0, 60.0, typeof(IronIngot), 1044036, 2, 1044037);
             this.AddCraft(typeof(Candelabra), 1044050, 1022599, 55.0, 105.0, typeof(IronIngot), 1044036, 4, 1044037);
             this.AddCraft(typeof(Scales), 1044050, 1026225, 60.0, 110.0, typeof(IronIngot), 1044036, 4, 1044037);
@@ -628,6 +630,17 @@ namespace Server.Engines.Craft
 
             #endregion
 
+
+            #region Tavern Types
+            AddCraft(typeof(PewterMug), 1044048, 1024097, 10.0, 60.0, typeof(IronIngot), 1044036, 2, 1044037);
+            AddCraft(typeof(Pitcher), 1044048, 1024097, 10.0, 60.0, typeof(IronIngot), 1044036, 2, 1044037);
+            AddCraft(typeof(DecoSpittoon), 1044048, 1024097, 10.0, 60.0, typeof(IronIngot), 1044036, 2, 1044037);
+            AddCraft(typeof(Backgammon), 1044050, 1024113, 15.0, 60.0, typeof(Board), 1044036, 5, 1044037);
+            AddCraft(typeof(Chessboard), 1044050, 1022599, 15.0, 60.0, typeof(Board), 1044036, 3, 1044037);
+            AddCraft(typeof(Dices), 1044050, 1022599, 5.0, 30.0, typeof(Board), 1044036, 2, 1044037);
+            #endregion
+
+            
             #region Light Source
             AddCraft(typeof(Brazier), 1044048, 1024097, 30.0, 70.0, typeof(IronIngot), 1044036, 12, 1044037);
             AddCraft(typeof(BrazierTall), 1044048, 1024097, 40.0, 70.0, typeof(IronIngot), 1044036, 15, 1044037);

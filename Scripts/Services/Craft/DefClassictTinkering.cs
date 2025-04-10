@@ -68,7 +68,7 @@ namespace Server.Engines.Craft
                 public override void PlayCraftEffect(Mobile from)
         {
             // no sound
-            //from.PlaySound( 0x241 );
+            from.PlaySound( 0x241 );
         }
 
         public override int PlayEndingEffect(Mobile from, bool failed, bool lostMaterial, bool toolBroken, int quality, bool makersMark, CraftItem item)
@@ -154,8 +154,12 @@ namespace Server.Engines.Craft
             AddCraft(typeof(MouldingPlane), 1044042, 1024140, 0.0, 50.0, typeof(Board), 1044041, 4, 1044351);
             AddCraft(typeof(SmoothingPlane), 1044042, 1024146, 0.0, 50.0, typeof(Board), 1044041, 4, 1044351);
             AddCraft(typeof(ClockFrame), 1044042, 1024173, 0.0, 50.0, typeof(Board), 1044041, 6, 1044351);
-            AddCraft(typeof(Axle), 1044042, 1024187, -25.0, 25.0, typeof(Board), 1044041, 2, 1044351);
+            AddCraft(typeof(Axle), 1044042, 1024187, 0.0, 25.0, typeof(Board), 1044041, 2, 1044351);
             AddCraft(typeof(RollingPin), 1044042, 1024163, 0.0, 50.0, typeof(Board), 1044041, 5, 1044351);
+            //KEG
+            index = this.AddCraft(typeof(Keg), 1044047, 1023699, 65.0, 100.0, typeof(Board), 1044036, 12, 1044037);
+            AddRes(index, typeof(BarrelStaves), 1044250, 2, 1044253);
+            AddRes(index, typeof(BarrelLid), 1044250, 1, 1044253);
             #endregion
 
             #region Tools
@@ -195,7 +199,7 @@ namespace Server.Engines.Craft
             AddCraft(typeof(BarrelHoops), 1044047, 1024321, -15.0, 35.0, typeof(IronIngot), 1044036, 5, 1044037);
             AddCraft(typeof(Hinge), 1044047, 1024181, 5.0, 55.0, typeof(IronIngot), 1044036, 2, 1044037);
             AddCraft(typeof(BolaBall), 1044047, 1023699, 45.0, 95.0, typeof(IronIngot), 1044036, 10, 1044037);
-            AddCraft(typeof(Keg), 1044047, 1023699, 65.0, 100.0, typeof(Board), 1044036, 12, 1044037);
+
 
             #endregion
 
@@ -214,6 +218,8 @@ namespace Server.Engines.Craft
             #endregion
 
             #region Misc
+            AddCraft(typeof(MetalBox), 1044050, 1024113, 10.0, 60.0, typeof(IronIngot), 1044036, 5, 1044037);
+            AddCraft(typeof(MetalChest), 1044050, 1022599, 55.0, 105.0, typeof(IronIngot), 1044036, 20, 1044037);
             AddCraft(typeof(KeyRing), 1044050, 1024113, 10.0, 60.0, typeof(IronIngot), 1044036, 2, 1044037);
             AddCraft(typeof(Candelabra), 1044050, 1022599, 55.0, 105.0, typeof(IronIngot), 1044036, 4, 1044037);
             AddCraft(typeof(Scales), 1044050, 1026225, 60.0, 110.0, typeof(IronIngot), 1044036, 4, 1044037);
@@ -283,7 +289,7 @@ namespace Server.Engines.Craft
             AddCraft(typeof(SextantParts), 1044051, 1024185, 0.0, 0.0, typeof(AxleGears), 1044170, 1, 1044253);
             AddCraft(typeof(Sextant), 1044051, 1024183, 0.0, 0.0, typeof(SextantParts), 1044175, 1, 1044253);
             //AddCraft(typeof(Bola), 1044051, 1046441, 60.0, 80.0, typeof(BolaBall), 1046440, 4, 1042613);
-            index = this.AddCraft(typeof(PotionKeg), 1044051, 1044258, 75.0, 100.0, typeof(Keg), 1044255, 1, 1044253);
+            index = this.AddCraft(typeof(PotionKeg), 1044051, 1044258, 75.0, 100.0, typeof(Keg), 1044255, 1, 1044253);;
             AddRes(index, typeof(Bottle), 1044250, 10, 1044253);
             AddRes(index, typeof(BarrelLid), 1044251, 1, 1044253);
             AddRes(index, typeof(BarrelTap), 1044252, 1, 1044253);
@@ -312,6 +318,10 @@ namespace Server.Engines.Craft
 
             #region Resources
             SetSubRes(typeof(IronIngot), 1044022);
+            SetSubRes(typeof(Board), 1072643);
+
+
+            AddSubRes(typeof(Board), 1072643, 00.0, 1044041, 1072652);
 
             AddSubRes(typeof(IronIngot), 1044022, 00.0, 1044036, 1044267);
             AddSubRes(typeof(DullCopperIngot), 1044023, 65.0, 1044036, 1044268);
@@ -352,6 +362,11 @@ namespace Server.Engines.Craft
 
 
         private LockableContainer m_Container;
+        private Mobile m_From;
+        private CraftSystem m_CraftSystem;
+        private BaseTool m_Tool;
+        private int m_Message;
+        private int m_num;
 
         public LockableContainer Container
         {
@@ -366,31 +381,59 @@ namespace Server.Engines.Craft
         public TrapCraft(Mobile from, CraftItem craftItem, CraftSystem craftSystem, Type typeRes, BaseTool tool, int quality)
             : base(from, craftItem, craftSystem, typeRes, tool, quality)
         {
+
+            this.m_From = from;
+            this.m_CraftSystem = craftSystem;
+            this.m_Tool = tool;
+
+
         }
 
         private int Verify(LockableContainer container)
         {
 
-
             if (container == null || container.KeyValue == 0)
-                return 1005638; // You can only trap lockable chests.
-
-                from.SendMenu(new NewTinkeringMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+            {
+                //return 1005638; // You can only trap lockable chests.
+                m_num = 1005638;
+                Console.WriteLine("Verify failed: container is null or KeyValue is 0");
+                m_From.SendMenu(new NewTinkeringMenu(m_From, m_CraftSystem, m_Tool, m_num, true)); // Passa true per isPreAoS
+                return -1 ;  
+            }
             if (this.From.Map != container.Map || !this.From.InRange(container.GetWorldLocation(), 2))
+            {
+                //return 500446; // That is too far away.
+                m_num = 500446;
+                m_From.SendMenu(new NewTinkeringMenu(m_From, m_CraftSystem, m_Tool, m_num, true)); // Passa true per isPreAoS
                 return 500446; // That is too far away.
-                from.SendMenu(new NewTinkeringMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+            }
             if (!container.Movable)
+            {
+                //return 502944; // You cannot trap this item because it is locked down.
+                m_num = 502944;
+                m_From.SendMenu(new NewTinkeringMenu(m_From, m_CraftSystem, m_Tool, m_num, true)); // Passa true per isPreAoS
                 return 502944; // You cannot trap this item because it is locked down.
-                from.SendMenu(new NewTinkeringMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+            }
             if (!container.IsAccessibleTo(this.From))
+            {
+                m_num = 502946;
+                //return 502946; // That belongs to someone else.
+                m_From.SendMenu(new NewTinkeringMenu(m_From, m_CraftSystem, m_Tool, m_num, true)); // Passa true per isPreAoS
                 return 502946; // That belongs to someone else.
-                from.SendMenu(new NewTinkeringMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+            }
             if (container.Locked)
+            {
+                //return 502943; // You can only trap an unlocked object.
+                m_num = 502943;
+                m_From.SendMenu(new NewTinkeringMenu(m_From, m_CraftSystem, m_Tool, m_num, true)); // Passa true per isPreAoS
                 return 502943; // You can only trap an unlocked object.
-                from.SendMenu(new NewTinkeringMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+            }
             if (container.TrapType != TrapType.None)
+            {
+                m_num = 502945;
+                m_From.SendMenu(new NewTinkeringMenu(m_From, m_CraftSystem, m_Tool, m_num, true)); // Passa true per isPreAoS
                 return 502945; // You can only place one trap on an object at a time.
-
+            }
             return 0;
         }
 
@@ -398,6 +441,32 @@ namespace Server.Engines.Craft
         {
             LockableContainer container = target as LockableContainer;
 
+
+            int verifyResult = Verify(container);
+
+            if (verifyResult == -1)
+            {
+                message = m_num;
+                
+                Console.WriteLine("Acquire failed: Verify returned -1, message: " + message);
+
+                return false;
+                //return false;
+            }
+
+            if (verifyResult > 0)
+            {
+                message = verifyResult;
+                Console.WriteLine("Acquire failed: Verify returned > 0, message: " + message);
+                return false;
+            }
+
+            this.m_Container = container;
+            message = 0;
+            Console.WriteLine("Acquire succeeded, result: " + message);
+            return true;
+
+            /*
             message = this.Verify(container);
 
             if (message > 0)
@@ -409,6 +478,7 @@ namespace Server.Engines.Craft
                 this.m_Container = container;
                 return true;
             }
+            */
         }
 
         public override void EndCraftAction()
@@ -449,17 +519,31 @@ namespace Server.Engines.Craft
                 BaseTool tool = this.m_TrapCraft.Tool;
 
                 if (tool != null && !tool.Deleted && tool.UsesRemaining > 0)
-                    from.SendGump(new CraftGump(from, this.m_TrapCraft.CraftSystem, tool, message));
+                {
+                    //from.SendGump(new CraftGump(from, this.m_TrapCraft.CraftSystem, tool, message));
+                }
                 else if (message > 0)
+                {
                     from.SendLocalizedMessage(message);
+                }
             }
         }
 
         public override Item CompleteCraft(out int message)
         {
-            message = this.Verify(this.Container);
+            //message = this.Verify(this.Container);
+            int verifyResult = Verify(this.Container);
 
-            if (message == 0)
+
+            if (verifyResult == -1)
+            {
+                message = m_num; // Messaggio di errore dalla verifica
+                Console.WriteLine("CompleteCraft failed: Verify returned -1, message: " + message);
+                return null; // Restituisce immediatamente, evitando il consumo dei materiali
+            }
+
+            //if (message == 0)
+            if (verifyResult == 0) // Successo della verifica
             {
                 int trapLevel = (int)(this.From.Skills.Tinkering.Value / 10);
 
@@ -470,9 +554,18 @@ namespace Server.Engines.Craft
 
                 message = 1005639; // Trap is disabled until you lock the chest.
             }
+                else
+            {
+                message = verifyResult; // Messaggio di errore dalla verifica
+                Console.WriteLine("CompleteCraft failed: Verify returned > 0, message: " + message);
+                return null; // Restituisce immediatamente, evitando il consumo dei materiali
+            }
+
 
             return null;
         }
+
+
     }
 
     [CraftItemID(0x1BFC)]
@@ -486,8 +579,9 @@ namespace Server.Engines.Craft
             }
         }
 
-        public DartTrapCraft(Mobile from, CraftItem craftItem, CraftSystem craftSystem, Type typeRes, BaseTool tool, int quality)
-            : base(from, craftItem, craftSystem, typeRes, tool, quality)
+        public DartTrapCraft(Mobile from, CraftItem craftItem, CraftSystem craftSystem, Type typeRes, BaseTool tool, int quality )
+            : base(from, craftItem, craftSystem, typeRes, tool, quality )
+           
         {
         }
     }
@@ -520,7 +614,7 @@ namespace Server.Engines.Craft
             }
         }
 
-        public ExplosionTrapCraft(Mobile from, CraftItem craftItem, CraftSystem craftSystem, Type typeRes, BaseTool tool, int quality)
+        public ExplosionTrapCraft(Mobile from, CraftItem craftItem, CraftSystem craftSystem, Type typeRes, BaseTool tool, int quality )
             : base(from, craftItem, craftSystem, typeRes, tool, quality)
         {
         }
