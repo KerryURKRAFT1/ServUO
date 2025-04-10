@@ -1821,6 +1821,11 @@ namespace Server.Engines.Craft
 					{
 						from.SendMenu(new NewTinkeringMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
 					}
+					else if (craftSystem.GetType().Name == "DefClassictTailoring")
+					
+					{
+						from.SendMenu(new NewTailoringMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+					}
 
 
 					else
