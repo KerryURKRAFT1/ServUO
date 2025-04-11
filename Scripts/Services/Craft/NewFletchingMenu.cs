@@ -35,6 +35,7 @@ namespace Server.Engines.Craft
             if (m_CraftSystem.GetType() == typeof(DefBowFletching))
             {
                 m_CraftSystem = DefClassicBowFletching.CraftSystem;
+                Console.WriteLine("CraftSystem switched to" + m_CraftSystem.GetType().Name);
             }
             else
             {
@@ -119,6 +120,9 @@ namespace Server.Engines.Craft
             if (BowsMenu.HasCraftableItems(from, craftSystem))
             {
                 categories.Add(new ItemListEntry("Bow", 5042));
+                Console.WriteLine("[DEBUG] Opening BowsMenu");
+                Console.WriteLine("Using CraftSystem alternatio of type: " + craftSystem.GetType().Name);
+                                
             }
             if (CrossbowMenu.HasCraftableItems(from, craftSystem))
             {
@@ -492,6 +496,7 @@ public class ShaftMenu : ItemListMenu
                 ItemListEntryWithType[] allBows = new ItemListEntryWithType[]
                 {
                     new ItemListEntryWithType("Bow", typeof(Bow), 5042)
+                    
                 };
 
                 foreach (ItemListEntryWithType entry in allBows)

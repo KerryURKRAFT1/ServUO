@@ -89,13 +89,13 @@ namespace Server.Engines.Craft
             }
         }
 
-        public override CraftECA ECA
-        {
-            get
-            {
-                return CraftECA.FiftyPercentChanceMinusTenPercent;
-            }
-        }
+        //public override CraftECA ECA
+        //{
+          //  get
+            //{
+              //  return CraftECA.FiftyPercentChanceMinusTenPercent;
+            //}
+        //}
 
         public override void InitCraftList()
         {

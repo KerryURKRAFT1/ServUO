@@ -1,5 +1,7 @@
 using System;
 using Server.Items;
+using Server.Mobiles;
+using Server.Targeting;
 
 namespace Server.Engines.Craft
 {
@@ -37,13 +39,13 @@ namespace Server.Engines.Craft
             }
         }
 
-        public override CraftECA ECA
-        {
-            get
-            {
-                return CraftECA.ChanceMinusSixtyToFourtyFive;
-            }
-        }
+        //public override CraftECA ECA
+        //{
+         //   get
+           // {
+             //   return CraftECA.ChanceMinusSixtyToFourtyFive;
+           // }
+        //}
 
         public override double GetChanceAtMin(CraftItem item)
         {
@@ -286,6 +288,7 @@ namespace Server.Engines.Craft
             this.Repair = Core.AOS;
             this.CanEnhance = Core.ML;
 			this.CanAlter = Core.SA;
+
         }
     }
 }

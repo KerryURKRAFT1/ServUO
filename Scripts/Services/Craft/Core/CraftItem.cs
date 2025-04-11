@@ -1826,6 +1826,11 @@ namespace Server.Engines.Craft
 					{
 						from.SendMenu(new NewTailoringMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
 					}
+					else if (craftSystem.GetType().Name == "DefClassicBowFletching")
+					
+					{
+						from.SendMenu(new NewFletchingMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+					}
 
 
 					else
@@ -1929,16 +1934,30 @@ namespace Server.Engines.Craft
 					from.SendMenu(new NewCraftingMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
 					return;
 				}
+				// CARPENTRY
 				else if (craftSystem.GetType().Name == "DefClassicCarpentry")
-					
 				{
 					from.SendMenu(new NewCarpentryMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
 					return;
 				}
+								// TINKERING
 				else if (craftSystem.GetType().Name == "DefClassicTinkering")
-					
 				{
 					from.SendMenu(new NewTinkeringMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+					return;
+				}
+								// TAILORIN
+				else if (craftSystem.GetType().Name == "DefClassicTailoring")
+					
+				{
+					from.SendMenu(new NewTailoringMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+					return;
+				}
+								// BOWER
+				else if (craftSystem.GetType().Name == "DefClassicBowFletching")
+							// BOWER
+				{
+					from.SendMenu(new NewFletchingMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
 					return;
 				}
 
