@@ -232,7 +232,10 @@ namespace Server.Engines.Craft
             this.AddCraft(typeof(LeatherChest), 1015293, 1025068, 70.5, 95.5, typeof(Leather), 1044462, 12, 1044463);
             #endregion
             #endregion
-
+            // LEATHER BAG MISC
+            this.AddCraft(typeof(Pouch), 1015293, 1025061, 20, 50, typeof(Leather), 1044462, 2, 1044463);
+            this.AddCraft(typeof(Bag), 1015293, 1025067, 50, 70, typeof(Leather), 1044462, 4, 1044463);
+            this.AddCraft(typeof(Backpack), 1015293, 1025068, 65, 80, typeof(Leather), 1044462, 10, 1044463);
 
             #region Studded Armor
             this.AddCraft(typeof(StuddedGorget), 1015300, 1025078, 78.8, 103.8, typeof(Leather), 1044462, 6, 1044463);

@@ -88,7 +88,7 @@ namespace Server.Engines.Craft
 
   
         /// <summary>
-        /// // Check from TOOL 
+        /// // Controlla dal tool i materiali
         /// </summary>
 
 
