@@ -1831,7 +1831,11 @@ namespace Server.Engines.Craft
 					{
 						from.SendMenu(new NewFletchingMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
 					}
-
+					else if (craftSystem.GetType().Name == "DefClassicAlchemy")
+					
+					{
+						from.SendMenu(new NewAlchemyMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+					}
 
 					else
 					{
@@ -1948,16 +1952,20 @@ namespace Server.Engines.Craft
 				}
 								// TAILORIN
 				else if (craftSystem.GetType().Name == "DefClassicTailoring")
-					
 				{
 					from.SendMenu(new NewTailoringMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
 					return;
 				}
 								// BOWER
-				else if (craftSystem.GetType().Name == "DefClassicBowFletching")
-							// BOWER
+				else if (craftSystem.GetType().Name == "DefClassicBowFletching")			
 				{
 					from.SendMenu(new NewFletchingMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+					return;
+				}
+				// alchemy
+				else if (craftSystem.GetType().Name == "DefClassicAlchemy")			
+				{
+					from.SendMenu(new NewAlchemyMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
 					return;
 				}
 
