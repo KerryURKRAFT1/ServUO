@@ -53,6 +53,7 @@ namespace Server.Engines.Craft
             else if (!BaseTool.CheckAccessible(tool, from))
                 return 1044263; // The tool must be on your person to use.
 
+
             return 0;
         }
 
@@ -152,17 +153,21 @@ namespace Server.Engines.Craft
 
 
             // Toxic
-            index = AddCraft(typeof(LesserPoisonPotion), 1116350, 1044548, -5.0, 45.0, typeof(Nightshade), 1044358, 1, 1044366);
-            AddRes(index, typeof(Bottle), 1044529, 1, 500315);
+            index = this.AddCraft(typeof(LesserPoisonPotion), 1116350, 1044548, -5.0, 45.0, typeof(Nightshade), 1044358, 1, 1044366);
+            this.AddSkill(index, SkillName.Poisoning, -1.0, 60.0);
+            this.AddRes(index, typeof(Bottle), 1044529, 1, 500315);
 
-            index = AddCraft(typeof(PoisonPotion), 1116350, 1044549, 15.0, 65.0, typeof(Nightshade), 1044358, 2, 1044366);
-            AddRes(index, typeof(Bottle), 1044529, 1, 500315);
+            index = this.AddCraft(typeof(PoisonPotion), 1116350, 1044549, 15.0, 65.0, typeof(Nightshade), 1044358, 2, 1044366);
+            this.AddSkill(index, SkillName.Poisoning, 30.0, 70.0);
+            this.AddRes(index, typeof(Bottle), 1044529, 1, 500315);
 
-            index = AddCraft(typeof(GreaterPoisonPotion), 1116350, 1044550, 55.0, 105.0, typeof(Nightshade), 1044358, 4, 1044366);
-            AddRes(index, typeof(Bottle), 1044529, 1, 500315);
+            index = this.AddCraft(typeof(GreaterPoisonPotion), 1116350, 1044550, 55.0, 100.0, typeof(Nightshade), 1044358, 4, 1044366);
+            this.AddSkill(index, SkillName.Poisoning, 60.0, 100.0);
+            this.AddRes(index, typeof(Bottle), 1044529, 1, 500315);
 
-            index = AddCraft(typeof(DeadlyPoisonPotion), 1116350, 1044551, 90.0, 140.0, typeof(Nightshade), 1044358, 8, 1044366);
-            AddRes(index, typeof(Bottle), 1044529, 1, 500315);
+            index = this.AddCraft(typeof(DeadlyPoisonPotion), 1116350, 1044551, 90.0, 110.0, typeof(Nightshade), 1044358, 8, 1044366);
+            this.AddSkill(index, SkillName.Poisoning, 95.0, 100.0);
+            this.AddRes(index, typeof(Bottle), 1044529, 1, 500315);
 
             // Explosive
             index = AddCraft(typeof(LesserExplosionPotion), 1116351, 1044555, 5.0, 55.0, typeof(SulfurousAsh), 1044359, 3, 1044367);

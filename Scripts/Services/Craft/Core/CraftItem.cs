@@ -1836,6 +1836,11 @@ namespace Server.Engines.Craft
 					{
 						from.SendMenu(new NewAlchemyMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
 					}
+					else if (craftSystem.GetType().Name == "DefClassicInscription")
+					
+					{
+						from.SendMenu(new NewInscriptionMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+					}
 
 					else
 					{
@@ -1856,12 +1861,12 @@ namespace Server.Engines.Craft
 			{
 				if (tool != null && !tool.Deleted && tool.UsesRemaining > 0)
 				{
-					        
-					from.SendGump(new CraftGump(from, craftSystem, tool, 1044153));
+					  // NON  HAI ABBASTANZA SKILL      
+					//from.SendGump(new CraftGump(from, craftSystem, tool, 1044153));
 				}
 				else
 				{
-					from.SendLocalizedMessage(1044153); // You don't have the required skills to attempt this item.
+					//from.SendLocalizedMessage(1044153); // You don't have the required skills to attempt this item.
 				}
 
                 AutoCraftTimer.EndTimer(from);
@@ -1968,6 +1973,14 @@ namespace Server.Engines.Craft
 					from.SendMenu(new NewAlchemyMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
 					return;
 				}
+				else if (craftSystem.GetType().Name == "DefClassicInscription")			
+				{
+					from.SendMenu(new NewInscriptionMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+					return;
+				}
+
+
+				
 
 
 				// Fine modifica
