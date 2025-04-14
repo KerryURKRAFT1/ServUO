@@ -30,6 +30,7 @@ namespace Server.Items
             get
             {
                 return DefTinkering.CraftSystem;
+
             }
         }
         public override void Serialize(GenericWriter writer)
@@ -73,6 +74,7 @@ namespace Server.Items
             get
             {
                 return DefTinkering.CraftSystem;
+
             }
         }
         public override void Serialize(GenericWriter writer)

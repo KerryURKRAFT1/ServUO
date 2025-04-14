@@ -2,8 +2,7 @@ using System;
 using Server.Engines.Craft;
 using Server.Network;
 using Server.Mobiles;
-using Server.Gumps; // Aggiungere questa direttiva using
-
+using Server.Gumps;
 
 namespace Server.Items
 {
@@ -155,8 +154,6 @@ namespace Server.Items
             base.OnSingleClick(from);
         }
 
-            // old version
-            /*
         public override void OnDoubleClick(Mobile from)
         {
             if (this.IsChildOf(from.Backpack) || this.Parent == from)
@@ -165,17 +162,50 @@ namespace Server.Items
 
                 int num = system.CanCraft(from, this, null);
 
-                if (num > 0 && (num != 1044267 || !Core.SE)) // Blacksmithing shows the gump regardless of proximity of an anvil and forge after SE
+                if (num > 0 && (num != 1044267 || !Core.SE))
                 {
                     from.SendLocalizedMessage(num);
                 }
                 else
                 {
-                    CraftContext context = system.GetContext(from);
-                    // MODIFICHE PER RENAISSANCE
+            
+                    // Apri direttamente il menu appropriato in base al sistema di crafting del tool
+                    
+                    if (system == DefCarpentry.CraftSystem)
+                    {
+                        from.SendMenu(new NewCarpentryMenu(from, system, this, 0, true));
 
-                    from.SendGump(new CraftSelectionGump(from, this)); // Mostra il Gump di selezione
-                    //from.SendGump(new CraftGump(from, system, this, null));
+                    }
+                    else if (system == DefTinkering.CraftSystem)
+                    {
+                        NewTinkeringMenu.CreateMenu(from, system, this, 0, true);
+                        //from.SendMenu(new NewTinkeringMenu(from, system, this, 0, true));
+                    }
+                    else if (system == DefTailoring.CraftSystem)
+                    {
+                        NewTailoringMenu.CreateMenu(from, system, this, 0, true);
+                    }
+                    else if (system == DefBlacksmithy.CraftSystem)
+                    {
+                        from.SendMenu(new NewCraftingMenu(from, system, this, 0, true));
+                    }
+                    else if (system == DefBowFletching.CraftSystem)
+                    {
+                        NewFletchingMenu.CreateMenu(from, system, this, 0, true);
+                    }
+                    else if (system == DefAlchemy.CraftSystem)
+                    {
+                        NewAlchemyMenu.CreateMenu(from, system, this, 0, true);
+                    }
+                    else if (system == DefInscription.CraftSystem)
+                    {
+                        NewInscriptionMenu.CreateMenu(from, system, this, 0, true);
+                    }
+                    else
+                    {
+                        from.SendMessage("Sistema di crafting non supportato."); // Messaggio di fallback per sistemi non supportati
+                    }
+
                 }
             }
             else
@@ -183,72 +213,6 @@ namespace Server.Items
                 from.SendLocalizedMessage(1042001); // That must be in your pack for you to use it.
             }
         }
-        */
-
-
-        /*
-                        // NEW VERSION DOUBLE CLICK
-                public override void OnDoubleClick(Mobile from)
-        {
-            if (this.IsChildOf(from.Backpack) || this.Parent == from)
-            {
-                from.SendMessage("Apertura del menu di selezione avviata."); // Debug
-                CraftSystem system = this.CraftSystem;
-
-                int num = system.CanCraft(from, this, null);
-
-                if (num > 0 && (num != 1044267 || !Core.SE)) // Blacksmithing shows the gump regardless of proximity of an anvil and forge after SE
-                {
-                    from.SendMessage("Errore nel crafting, messaggio: " + num); // Debug
-                    from.SendLocalizedMessage(num);
-                }
-                else
-                {
-                    from.SendMessage("Mostro il menu di selezione."); // Debug
-                    from.SendGump(new CraftSelectionGump(from, this)); // Mostra il Gump di selezione
-                }
-            }
-            else
-            {
-                from.SendMessage("Il martello deve essere nel tuo zaino per usarlo."); // Debug
-                from.SendLocalizedMessage(1042001); // That must be in your pack for you to use it.
-            }
-        }
-*/
-
-public override void OnDoubleClick(Mobile from)
-{
-    if (this.IsChildOf(from.Backpack) || this.Parent == from)
-    {
-        from.SendMessage("Apertura del menu di selezione avviata."); // Debug
-        CraftSystem system = this.CraftSystem;
-
-        int num = system.CanCraft(from, this, null);
-
-        if (num > 0 && (num != 1044267 || !Core.SE)) // Blacksmithing shows the gump regardless of proximity of an anvil and forge after SE
-        {
-            from.SendMessage("Errore nel crafting, messaggio: " + num); // Debug
-            from.SendLocalizedMessage(num);
-        }
-        else
-        {
-            from.SendMessage("Mostro il menu di selezione."); // Debug
-            from.SendGump(new CraftSelectionGump(from, this)); // Mostra il Gump di selezione
-        }
-    }
-    else
-    {
-        from.SendMessage("Il martello deve essere nel tuo zaino per usarlo."); // Debug
-        from.SendLocalizedMessage(1042001); // That must be in your pack for you to use it.
-    }
-}
-
-
-      
-
-
-
-
 
         public override void Serialize(GenericWriter writer)
         {
@@ -268,7 +232,7 @@ public override void OnDoubleClick(Mobile from)
 
             int version = reader.ReadInt();
 
-            switch ( version )
+            switch (version)
             {
                 case 1:
                     {

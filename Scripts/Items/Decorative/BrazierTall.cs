@@ -1,8 +1,9 @@
 using System;
+using Server.Engines.Craft;
 
 namespace Server.Items
 {
-    public class BrazierTall : BaseLight
+    public class BrazierTall : BaseLight, ICraftable
     {
         [Constructable]
         public BrazierTall()
@@ -38,5 +39,13 @@ namespace Server.Items
             base.Deserialize(reader);
             int version = reader.ReadInt();
         }
+        public int OnCraft(int quality, bool makersMark, Mobile from, CraftSystem craftSystem, Type typeRes, BaseTool tool, CraftItem craftItem, int resHue)
+        {
+            Movable = true; // Imposta Movable su true solo quando l'oggetto viene craftato
+
+            return 1;
+        }
+
+
     }
 }

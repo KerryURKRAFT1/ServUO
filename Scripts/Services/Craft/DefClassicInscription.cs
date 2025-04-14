@@ -65,8 +65,18 @@ namespace Server.Engines.Craft
                     bool hasSpell = (book != null && book.HasSpell(scroll.SpellID));
 
                     scroll.Delete();
+                    //////
+                    if (!hasSpell)
+                    {
+                        from.SendLocalizedMessage(1042404); // You don't have that spell!
+                        return -1; // Indica un errore generico senza attivare un gump.
+                    }
 
-                    return (hasSpell ? 0 : 1042404); // null : You don't have that spell!
+                        return 0; // Il giocatore ha la spell nel suo spellbook.
+
+
+
+                    //return (hasSpell ? 0 : 1042404); // null : You don't have that spell!
                 }
                 else if (o is Item)
                 {

@@ -3091,7 +3091,7 @@ namespace Server.Items
 				for (int i = 0; i < extraBlood; i++)
 				{
 					new Blood().MoveToWorld(
-						new Point3D(defender.X + Utility.RandomMinMax(-1, 1), defender.Y + Utility.RandomMinMax(-1, 1), defender.Z),
+						new Point3D(defender.X + Utility.RandomMinMax(0, 1), defender.Y + Utility.RandomMinMax(0, 1), defender.Z),
 						defender.Map);
 				}
 			}
@@ -5759,6 +5759,98 @@ namespace Server.Items
 			{
 				typeRes = craftItem.Resources.GetAt(0).ItemType;
 			}
+
+
+		/////////////////////////////////////
+		////CORE UPR
+
+
+if (Core.UOR && tool is BaseTool)
+{
+    CraftResource thisResource = CraftResources.GetFromType(typeRes);
+    string materialName = "";
+
+    
+
+
+    switch (thisResource)
+    {
+        case CraftResource.DullCopper:
+            materialName = "Dull Copper";
+            Identified = true;
+            DurabilityLevel = WeaponDurabilityLevel.Durable;
+            AccuracyLevel = WeaponAccuracyLevel.Accurate;
+            Hue = 2419; // Colore specifico per Dull Copper
+            break;
+        case CraftResource.ShadowIron:
+            materialName = "Shadow Iron";
+            Identified = true;
+            DurabilityLevel = WeaponDurabilityLevel.Durable;
+            DamageLevel = WeaponDamageLevel.Ruin;
+            Hue = 2406; // Colore specifico per Shadow Iron
+            break;
+        case CraftResource.Copper:
+            materialName = "Copper";
+            Identified = true;
+            DurabilityLevel = WeaponDurabilityLevel.Fortified;
+            DamageLevel = WeaponDamageLevel.Ruin;
+            AccuracyLevel = WeaponAccuracyLevel.Surpassingly;
+            Hue = 2413; // Colore specifico per Copper
+            break;
+        case CraftResource.Bronze:
+            materialName = "Bronze";
+            Identified = true;
+            DurabilityLevel = WeaponDurabilityLevel.Fortified;
+            DamageLevel = WeaponDamageLevel.Might;
+            AccuracyLevel = WeaponAccuracyLevel.Surpassingly;
+            Hue = 2418; // Colore specifico per Bronze
+            break;
+        case CraftResource.Gold:
+            materialName = "Gold";
+            Identified = true;
+            DurabilityLevel = WeaponDurabilityLevel.Indestructible;
+            DamageLevel = WeaponDamageLevel.Force;
+            AccuracyLevel = WeaponAccuracyLevel.Eminently;
+            Hue = 2213; // Colore specifico per Gold
+			
+            break;
+        case CraftResource.Agapite:
+            materialName = "Agapite";
+            Identified = true;
+            DurabilityLevel = WeaponDurabilityLevel.Indestructible;
+            DamageLevel = WeaponDamageLevel.Power;
+            AccuracyLevel = WeaponAccuracyLevel.Eminently;
+            Hue = 2425; // Colore specifico per Agapite
+            break;
+        case CraftResource.Verite:
+            materialName = "Verite";
+            Identified = true;
+            DurabilityLevel = WeaponDurabilityLevel.Indestructible;
+            DamageLevel = WeaponDamageLevel.Vanq;
+            AccuracyLevel = WeaponAccuracyLevel.Exceedingly;
+            Hue = 2207; // Colore specifico per Verite
+            break;
+        case CraftResource.Valorite:
+            materialName = "Valorite";
+            Identified = true;
+            DurabilityLevel = WeaponDurabilityLevel.Indestructible;
+            DamageLevel = WeaponDamageLevel.Vanq;
+            AccuracyLevel = WeaponAccuracyLevel.Supremely;
+            Hue = 2219; // Colore specifico per Valorite
+            break;
+        default:
+            Identified = true;
+            break;
+    }
+
+}
+
+
+
+//////////// FINE CORE UOR
+///
+
+
 
 			if (Core.AOS)
 			{

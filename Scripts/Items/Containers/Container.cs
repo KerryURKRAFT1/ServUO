@@ -6,6 +6,7 @@ using Server.Multis;
 using Server.Network;
 using Server.Accounting;
 using System.Linq;
+using Server.Engines.Craft;
 
 namespace Server.Items
 {
@@ -374,7 +375,7 @@ namespace Server.Items
         }
     }
 
-    public class Backpack : BaseContainer, IDyable
+    public class Backpack : BaseContainer, IDyable, ICraftable
     {
         [Constructable]
         public Backpack()
@@ -437,9 +438,16 @@ namespace Server.Items
             if (version == 0 && this.ItemID == 0x9B2)
                 this.ItemID = 0xE75;
         }
+
+        public int OnCraft(int quality, bool makersMark, Mobile from, CraftSystem craftSystem, Type typeRes, BaseTool tool, CraftItem craftItem, int resHue)
+        {
+            Movable = true; // Imposta Movable su true solo quando l'oggetto viene craftato
+
+            return 1;
+        }
     }
 
-    public class Pouch : TrapableContainer
+    public class Pouch : TrapableContainer, ICraftable
     {
         [Constructable]
         public Pouch()
@@ -466,6 +474,14 @@ namespace Server.Items
 
             int version = reader.ReadInt();
         }
+
+        public int OnCraft(int quality, bool makersMark, Mobile from, CraftSystem craftSystem, Type typeRes, BaseTool tool, CraftItem craftItem, int resHue)
+        {
+            Movable = true; // Imposta Movable su true solo quando l'oggetto viene craftato
+
+            return 1;
+        }
+
     }
 
     public abstract class BaseBagBall : BaseContainer, IDyable
@@ -562,7 +578,7 @@ namespace Server.Items
         }
     }
 
-    public class Bag : BaseContainer, IDyable
+    public class Bag : BaseContainer, IDyable, ICraftable
     {
         [Constructable]
         public Bag()
@@ -599,6 +615,13 @@ namespace Server.Items
 
             int version = reader.ReadInt();
         }
+
+        public int OnCraft(int quality, bool makersMark, Mobile from, CraftSystem craftSystem, Type typeRes, BaseTool tool, CraftItem craftItem, int resHue)
+        {
+            Movable = true; // Imposta Movable su true solo quando l'oggetto viene craftato
+
+            return 1;
+        }
     }
 
     public class Barrel : BaseContainer
@@ -633,7 +656,7 @@ namespace Server.Items
         }
     }
 
-    public class Keg : BaseContainer
+    public class Keg : BaseContainer, ICraftable
     {
         [Constructable]
         public Keg()
@@ -659,6 +682,12 @@ namespace Server.Items
             base.Deserialize(reader);
 
             int version = reader.ReadInt();
+        }
+        public int OnCraft(int quality, bool makersMark, Mobile from, CraftSystem craftSystem, Type typeRes, BaseTool tool, CraftItem craftItem, int resHue)
+        {
+            Movable = true; // Imposta Movable su true solo quando l'oggetto viene craftato
+
+            return 1;
         }
     }
 
@@ -855,7 +884,7 @@ namespace Server.Items
 
     [DynamicFliping]
     [Flipable(0x9A8, 0xE80)]
-    public class MetalBox : LockableContainer
+    public class MetalBox : LockableContainer, ICraftable
     {
         [Constructable]
         public MetalBox()
@@ -888,7 +917,7 @@ namespace Server.Items
 
     [DynamicFliping]
     [Flipable(0x9AB, 0xE7C)]
-    public class MetalChest : LockableContainer
+    public class MetalChest : LockableContainer, ICraftable
     {
         [Constructable]
         public MetalChest()

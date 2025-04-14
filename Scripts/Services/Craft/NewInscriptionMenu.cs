@@ -1011,6 +1011,15 @@ public class FifthCirclenMenu : ItemListMenu
 
                     if (craftItem != null)
                     {
+
+                            // Controlli di null prima di chiamare Craft
+                            if (m_From == null || m_CraftSystem == null || m_Tool == null)
+                            {
+                                Console.WriteLine("DEBUG: Uno o più parametri sono null in OnResponse.");
+                                m_From.SendMessage("Errore interno: impossibile eseguire il crafting.");
+                                return;
+                            }
+
                         craftItem.Craft(m_From, m_CraftSystem, null, m_Tool);
                     }
                     else

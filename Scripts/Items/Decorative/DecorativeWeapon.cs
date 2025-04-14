@@ -1,4 +1,5 @@
 using System;
+using Server.Engines.Craft;
 
 namespace Server.Items
 {
@@ -63,7 +64,7 @@ namespace Server.Items
     }
 
     [FlipableAttribute(0x1560, 0x1561, 0x1562, 0x1563)] 
-    public class DecorativeAxeNorth : Item
+    public class DecorativeAxeNorth : Item, ICraftable
     {
         [Constructable]
         public DecorativeAxeNorth()
@@ -90,10 +91,16 @@ namespace Server.Items
 
             int version = reader.ReadInt();
         }
+        public int OnCraft(int quality, bool makersMark, Mobile from, CraftSystem craftSystem, Type typeRes, BaseTool tool, CraftItem craftItem, int resHue)
+        {
+            Movable = true; // Imposta Movable su true solo quando l'oggetto viene craftato
+            return 1;
+        }
+
     }
 
     [FlipableAttribute(0x1562, 0x1563, 0x1560, 0x1561)] 
-    public class DecorativeAxeWest : Item
+    public class DecorativeAxeWest : Item, ICraftable
     {
         [Constructable]
         public DecorativeAxeWest()
@@ -120,9 +127,18 @@ namespace Server.Items
 
             int version = reader.ReadInt();
         }
+
+        public int OnCraft(int quality, bool makersMark, Mobile from, CraftSystem craftSystem, Type typeRes, BaseTool tool, CraftItem craftItem, int resHue)
+        {
+            Movable = true; // Imposta Movable su true solo quando l'oggetto viene craftato
+            return 1;
+        }
+
+
+
     }
 
-    public class DecorativeSwordNorth : Item
+    public class DecorativeSwordNorth : Item, ICraftable
     {
         private InternalItem m_Item;
         [Constructable]
@@ -177,6 +193,12 @@ namespace Server.Items
             this.m_Item = reader.ReadItem() as InternalItem;
         }
 
+                public int OnCraft(int quality, bool makersMark, Mobile from, CraftSystem craftSystem, Type typeRes, BaseTool tool, CraftItem craftItem, int resHue)
+        {
+            Movable = true; // Imposta Movable su true solo quando l'oggetto viene craftato
+            return 1;
+        }
+
         private class InternalItem : Item
         {
             private DecorativeSwordNorth m_Item;
@@ -191,6 +213,12 @@ namespace Server.Items
             public InternalItem(Serial serial)
                 : base(serial)
             {
+            }
+
+            public int OnCraft(int quality, bool makersMark, Mobile from, CraftSystem craftSystem, Type typeRes, BaseTool tool, CraftItem craftItem, int resHue)
+             {
+            Movable = true; // Imposta Movable su true solo quando l'oggetto viene craftato
+            return 1;
             }
 
             public override void OnLocationChange(Point3D oldLocation)
@@ -233,7 +261,7 @@ namespace Server.Items
         }
     }
 
-    public class DecorativeSwordWest : Item
+    public class DecorativeSwordWest : Item, ICraftable
     {
         private InternalItem m_Item;
         [Constructable]
@@ -286,6 +314,12 @@ namespace Server.Items
             int version = reader.ReadInt();
 
             this.m_Item = reader.ReadItem() as InternalItem;
+        }
+
+        public int OnCraft(int quality, bool makersMark, Mobile from, CraftSystem craftSystem, Type typeRes, BaseTool tool, CraftItem craftItem, int resHue)
+        {
+            Movable = true; // Imposta Movable su true solo quando l'oggetto viene craftato
+            return 1;
         }
 
         private class InternalItem : Item
@@ -344,7 +378,7 @@ namespace Server.Items
         }
     }
 
-    public class DecorativeDAxeNorth : Item
+    public class DecorativeDAxeNorth : Item, ICraftable
     {
         private InternalItem m_Item;
         [Constructable]
@@ -397,6 +431,13 @@ namespace Server.Items
             int version = reader.ReadInt();
 
             this.m_Item = reader.ReadItem() as InternalItem;
+        }
+
+        public int OnCraft(int quality, bool makersMark, Mobile from, CraftSystem craftSystem, Type typeRes, BaseTool tool, CraftItem craftItem, int resHue)
+        {
+            Movable = true; // Imposta Movable su true solo quando l'oggetto viene craftato
+
+            return 1;
         }
 
         private class InternalItem : Item
@@ -455,7 +496,7 @@ namespace Server.Items
         }
     }
 
-    public class DecorativeDAxeWest : Item
+    public class DecorativeDAxeWest : Item, ICraftable
     {
         private InternalItem m_Item;
         [Constructable]
@@ -508,6 +549,13 @@ namespace Server.Items
             int version = reader.ReadInt();
 
             this.m_Item = reader.ReadItem() as InternalItem;
+        }
+
+        
+        public int OnCraft(int quality, bool makersMark, Mobile from, CraftSystem craftSystem, Type typeRes, BaseTool tool, CraftItem craftItem, int resHue)
+        {
+            Movable = true; // Imposta Movable su true solo quando l'oggetto viene craftato
+            return 1;
         }
 
         private class InternalItem : Item

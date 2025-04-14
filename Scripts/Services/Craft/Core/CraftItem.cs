@@ -282,7 +282,8 @@ namespace Server.Engines.Craft
 
                 if (from.Mana < Mana)
                 {
-                    message = "You lack the required mana to make that.";
+					from.SendMessage("You lack the required mana to make that");
+                    //message = "You lack the required mana to make that.";
                     return false;
                 }
 				else
@@ -1289,6 +1290,135 @@ namespace Server.Engines.Craft
 
 		public void Craft(Mobile from, CraftSystem craftSystem, Type typeRes, BaseTool tool)
 		{
+
+				// SE IL CORE è UOR
+				/////////////////
+				/// 
+				// SE IL CORE è UOR
+				if (Core.UOR) // Se il core è configurato come "UOR"
+				{
+					// Controlli di null per prevenire crash
+					if (from == null)
+					{
+						Console.WriteLine("DEBUG: 'from' è null nel metodo Craft.");
+						return;
+					}
+
+					if (craftSystem == null)
+					{
+						from.SendMessage("Errore: Il sistema di crafting non è valido.");
+						return;
+					}
+
+					if (tool == null)
+					{
+						from.SendMessage("Errore: Non hai un attrezzo valido per eseguire il crafting.");
+						return;
+					}
+
+					// Controllo iniziale: verifica se il giocatore ha abbastanza attributi (Mana, Hits, Stamina)
+					object message = null;
+					if (!ConsumeAttributes(from, ref message, false))
+					{
+						// Invia solo un messaggio al giocatore
+						from.SendMessage(message is int ? ((int)message).ToString() : message.ToString());
+						return; // Interrompi il processo se gli attributi non sono sufficienti
+					}
+
+					// Solo ora blocca altre azioni con BeginAction
+					if (!from.BeginAction(typeof(CraftSystem)))
+					{
+						from.SendMessage("Devi aspettare prima di eseguire un'altra azione.");
+						return;
+					}
+
+					if (RequiredExpansion != Expansion.None && !Core.UOR)
+					{
+						from.EndAction(typeof(CraftSystem));
+						from.SendMessage("L'espansione richiesta non è disponibile per creare questo oggetto.");
+						return;
+					}
+
+					bool allRequiredSkills = true;
+					double chance = GetSuccessChance(from, typeRes, craftSystem, false, ref allRequiredSkills);
+
+					if (!allRequiredSkills || chance < 0.0)
+					{
+						from.EndAction(typeof(CraftSystem));
+						from.SendMessage("Non hai le abilità necessarie per creare questo oggetto.");
+						return;
+					}
+
+					int badCraft = craftSystem.CanCraft(from, tool, m_Type);
+
+					if (badCraft > 0)
+					{
+						from.EndAction(typeof(CraftSystem));
+						from.SendMessage("Errore durante il crafting: " + badCraft);
+						return;
+					}
+
+					int resHue = 0;
+					int maxAmount = 0;
+
+					if (!ConsumeRes(from, typeRes, craftSystem, ref resHue, ref maxAmount, ConsumeType.None, ref message))
+					{
+						from.EndAction(typeof(CraftSystem));
+						from.SendMessage(message is int ? ((int)message).ToString() : message.ToString());
+						return;
+					}
+
+					if (!ConsumeAttributes(from, ref message, false))
+					{
+						from.EndAction(typeof(CraftSystem));
+						from.SendMessage(message is int ? ((int)message).ToString() : message.ToString());
+						return;
+					}
+
+					if (m_Type == null)
+					{
+						from.EndAction(typeof(CraftSystem));
+						from.SendMessage("Non hai letto il manuale di vita meccanica. Parlare con Sutek potrebbe aiutarti!");
+						return;
+					}
+
+					if (RequiredExpansion == Expansion.SE && !Core.SE)
+					{
+						from.EndAction(typeof(CraftSystem));
+						from.SendMessage("Non hai imparato l'arte della tessitura di cestini. Forse studiare un libro potrebbe aiutarti!");
+						return;
+					}
+
+					if (RequiredExpansion == Expansion.ML && !Core.ML)
+					{
+						from.EndAction(typeof(CraftSystem));
+						from.SendMessage("Devi imparare questa ricetta da una pergamena.");
+						return;
+					}
+
+					CraftContext context = craftSystem.GetContext(from);
+
+					if (context != null)
+					{
+						context.OnMade(this);
+					}
+
+					// Calcola il tempo necessario per completare la creazione
+					int iMin = craftSystem.MinCraftEffect;
+					int iMax = (craftSystem.MaxCraftEffect - iMin) + 1;
+					int iRandom = Utility.Random(iMax);
+					iRandom += iMin + 1;
+
+					// Avvia il timer per la creazione dell'oggetto
+					new InternalTimer(from, craftSystem, this, typeRes, tool, iRandom).Start();
+					return; // Termina il metodo esplicitamente
+				}
+
+				else
+				{
+
+			//attuale codice
+			///////////
 			if (from.BeginAction(typeof(CraftSystem)))
 			{
 				if (RequiredExpansion == Expansion.None ||
@@ -1339,6 +1469,8 @@ namespace Server.Engines.Craft
                                                 iRandom += iMin + 1;
                                                 new InternalTimer(from, craftSystem, this, typeRes, tool, iRandom).Start();
                                                 return;
+												
+											
                                             }
                                             else
                                             {
@@ -1396,6 +1528,9 @@ namespace Server.Engines.Craft
 			}
 
             AutoCraftTimer.EndTimer(from);
+
+			// GRAFA FINE SEZIONE UOR
+			}
 		}
 
 		private object RequiredExpansionMessage(Expansion expansion)
