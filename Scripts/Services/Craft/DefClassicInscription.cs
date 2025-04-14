@@ -69,7 +69,7 @@ namespace Server.Engines.Craft
                     if (!hasSpell)
                     {
                         from.SendLocalizedMessage(1042404); // You don't have that spell!
-                        return -1; // Indica un errore generico senza attivare un gump.
+                        return 1042404; // Indica un errore generico senza attivare un gump.
                     }
 
                         return 0; // Il giocatore ha la spell nel suo spellbook.

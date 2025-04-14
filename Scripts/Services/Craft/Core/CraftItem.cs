@@ -282,8 +282,8 @@ namespace Server.Engines.Craft
 
                 if (from.Mana < Mana)
                 {
-					from.SendMessage("You lack the required mana to make that");
-                    //message = "You lack the required mana to make that.";
+					//from.SendMessage("You lack the required mana to make that");
+                    message = "You lack the required mana to make that.";
                     return false;
                 }
 				else
@@ -320,6 +320,56 @@ namespace Server.Engines.Craft
 
 			return true;
 		}
+
+		public bool ConsumeAttributesForUOR(Mobile from, bool consume)
+		{
+			bool consumMana = false;
+			bool consumHits = false;
+			bool consumStam = false;
+
+			if (Hits > 0 && from.Hits < Hits)
+			{
+				from.SendMessage("You lack the required hit points to make that.");
+				return false;
+			}
+			else
+			{
+				consumHits = consume;
+			}
+
+			if (Mana > 0)
+			{
+				if (from.Mana < Mana)
+				{
+					from.SendMessage("You lack the required mana to make that.");
+					return false;
+				}
+				else
+				{
+					consumMana = consume;
+				}
+			}
+
+			if (Stam > 0 && from.Stam < Stam)
+			{
+				from.SendMessage("You lack the required stamina to make that.");
+				return false;
+			}
+			else
+			{
+				consumStam = consume;
+			}
+
+			if (consumMana) from.Mana -= Mana;
+			if (consumHits) from.Hits -= Hits;
+			if (consumStam) from.Stam -= Stam;
+
+			return true;
+		}
+
+
+
+
 
 		#region Tables
 		private static readonly int[] m_HeatSources = new[]
@@ -1316,13 +1366,13 @@ namespace Server.Engines.Craft
 						return;
 					}
 
-					// Controllo iniziale: verifica se il giocatore ha abbastanza attributi (Mana, Hits, Stamina)
+
 					object message = null;
-					if (!ConsumeAttributes(from, ref message, false))
+					// Controllo iniziale degli attributi senza l'uso di `message`
+					if (!ConsumeAttributesForUOR(from, false))
 					{
-						// Invia solo un messaggio al giocatore
-						from.SendMessage(message is int ? ((int)message).ToString() : message.ToString());
-						return; // Interrompi il processo se gli attributi non sono sufficienti
+						from.SendMessage("Non hai abbastanza attributi per creare questo oggetto.");
+						return;
 					}
 
 					// Solo ora blocca altre azioni con BeginAction
@@ -1368,10 +1418,10 @@ namespace Server.Engines.Craft
 						return;
 					}
 
-					if (!ConsumeAttributes(from, ref message, false))
+					if (!ConsumeAttributesForUOR(from, true))
 					{
 						from.EndAction(typeof(CraftSystem));
-						from.SendMessage(message is int ? ((int)message).ToString() : message.ToString());
+						from.SendMessage("Errore nel consumo degli attributi.");
 						return;
 					}
 
