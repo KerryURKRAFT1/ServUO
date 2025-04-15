@@ -257,6 +257,7 @@ namespace Server.Engines.Craft
 
 		public bool ConsumeAttributes(Mobile from, ref object message, bool consume)
 		{
+		
 			bool consumMana = false;
 			bool consumHits = false;
 			bool consumStam = false;
@@ -284,6 +285,7 @@ namespace Server.Engines.Craft
                 {
 					//from.SendMessage("You lack the required mana to make that");
                     message = "You lack the required mana to make that.";
+					Console.WriteLine("DEBUG: 'APPARE QUESTA LINEA DEL MANA.");
                     return false;
                 }
 				else
@@ -341,6 +343,7 @@ namespace Server.Engines.Craft
 			{
 				if (from.Mana < Mana)
 				{
+					Console.WriteLine("DEBUG: 'MESSAGGIO 4.");
 					from.SendMessage("You lack the required mana to make that.");
 					return false;
 				}
@@ -1347,6 +1350,7 @@ namespace Server.Engines.Craft
 				// SE IL CORE è UOR
 				if (Core.UOR) // Se il core è configurato come "UOR"
 				{
+					Console.WriteLine("DEBUG: parte UOR.");
 					// Controlli di null per prevenire crash
 					if (from == null)
 					{
@@ -1414,7 +1418,8 @@ namespace Server.Engines.Craft
 					if (!ConsumeRes(from, typeRes, craftSystem, ref resHue, ref maxAmount, ConsumeType.None, ref message))
 					{
 						from.EndAction(typeof(CraftSystem));
-						from.SendMessage(message is int ? ((int)message).ToString() : message.ToString());
+						from.SendMessage("CONSUMA RISORSE");
+						//from.SendMessage(message is int ? ((int)message).ToString() : message.ToString());
 						return;
 					}
 
@@ -1471,6 +1476,7 @@ namespace Server.Engines.Craft
 			///////////
 			if (from.BeginAction(typeof(CraftSystem)))
 			{
+				Console.WriteLine("DEBUG: parte anche la parte di codice NON UOR.");
 				if (RequiredExpansion == Expansion.None ||
 					(from.NetState != null && from.NetState.SupportsExpansion(RequiredExpansion)))
 				{
@@ -1506,10 +1512,12 @@ namespace Server.Engines.Craft
 
                                             if (ConsumeAttributes(from, ref message, false))
                                             {
+												Console.WriteLine("DEBUG: parte anche la parte di codice NON UOR.  ConsumeAttributes");
                                                 CraftContext context = craftSystem.GetContext(from);
 
                                                 if (context != null)
                                                 {
+													Console.WriteLine("DEBUG: parte anche la parte di codice NON UOR.  context");
                                                     context.OnMade(this);
                                                 }
 
@@ -1575,6 +1583,7 @@ namespace Server.Engines.Craft
 			else
 			{
 				from.SendLocalizedMessage(500119); // You must wait to perform another action
+				Console.WriteLine("DEBUG: parte anche la parte di codice NON UOR. ANOTHER ACTION");
 			}
 
             AutoCraftTimer.EndTimer(from);
@@ -1634,14 +1643,17 @@ namespace Server.Engines.Craft
 			{
 				if (tool != null && !tool.Deleted && tool.UsesRemaining > 0)
 				{
+					Console.WriteLine("DEBUG: 'MESSAGGIO 1.");
 					from.SendGump(new CraftGump(from, craftSystem, tool, checkMessage));
 				}
 				else if (checkMessage is int && (int)checkMessage > 0)
 				{
+					Console.WriteLine("DEBUG: 'MESSAGGIO 2.");
 					from.SendLocalizedMessage((int)checkMessage);
 				}
 				else if (checkMessage is string)
 				{
+					Console.WriteLine("DEBUG: 'MESSAGGIO 3.");
 					from.SendMessage((string)checkMessage);
 				}
 
