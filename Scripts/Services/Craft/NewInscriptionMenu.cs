@@ -27,12 +27,16 @@ namespace Server.Engines.Craft
             m_Message = message;
             m_isPreAoS = isPreAoS;
 
+            
+            Console.WriteLine("DEBUG: Utilizzo del CraftSystem:" + craftSystem.GetType().Name);
+
             if (m_Message != 0)
             {
                 from.SendLocalizedMessage(m_Message);
             }
 
-            if (m_CraftSystem.GetType() == typeof(DefInscription))
+            //if (m_CraftSystem.GetType() == typeof(DefInscription))
+            if (m_CraftSystem.GetType() == typeof(DefInscription) && (Core.AOS || Core.UOR))
             {
                 m_CraftSystem = DefClassicInscription.CraftSystem;
 

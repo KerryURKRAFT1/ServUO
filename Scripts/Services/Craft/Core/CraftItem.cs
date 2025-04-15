@@ -257,7 +257,7 @@ namespace Server.Engines.Craft
 
 		public bool ConsumeAttributes(Mobile from, ref object message, bool consume)
 		{
-		
+			Console.WriteLine("DEBUG: Entrato in ConsumeAttributes dal contesto: " + Environment.StackTrace);
 			bool consumMana = false;
 			bool consumHits = false;
 			bool consumStam = false;
@@ -325,6 +325,7 @@ namespace Server.Engines.Craft
 
 		public bool ConsumeAttributesForUOR(Mobile from, bool consume)
 		{
+			Console.WriteLine("DEBUG: Entrato in ConsumeAttributesForUOR dal contesto: " + Environment.StackTrace);
 			bool consumMana = false;
 			bool consumHits = false;
 			bool consumStam = false;
@@ -1351,6 +1352,11 @@ namespace Server.Engines.Craft
 				if (Core.UOR) // Se il core è configurato come "UOR"
 				{
 					Console.WriteLine("DEBUG: parte UOR.");
+					Console.WriteLine("DEBUG: Core.UOR=" + Core.UOR + ", CraftSystem=" + craftSystem.GetType().Name);
+
+
+
+					
 					// Controlli di null per prevenire crash
 					if (from == null)
 					{
@@ -1373,6 +1379,7 @@ namespace Server.Engines.Craft
 
 					object message = null;
 					// Controllo iniziale degli attributi senza l'uso di `message`
+
 					if (!ConsumeAttributesForUOR(from, false))
 					{
 						from.SendMessage("Non hai abbastanza attributi per creare questo oggetto.");
@@ -1455,6 +1462,7 @@ namespace Server.Engines.Craft
 
 					if (context != null)
 					{
+						Console.WriteLine("CONTEXT.");
 						context.OnMade(this);
 					}
 
@@ -1616,6 +1624,31 @@ namespace Server.Engines.Craft
 			BaseTool tool,
 			CustomCraft customCraft)
 		{
+
+
+			Console.WriteLine("DEBUG: Entrato in CompleteCraft.");
+
+			// Controllo per UOR
+			if (Core.UOR)
+			{
+				Console.WriteLine("DEBUG: Flusso UOR in CompleteCraft.");
+				if (!ConsumeAttributesForUOR(from, true))
+				{
+					from.SendMessage("Errore nel consumo degli attributi specifici per UOR.");
+					return;
+				}
+			}
+			else
+			{
+				Console.WriteLine("DEBUG: Flusso Non-UOR in CompleteCraft.");
+				object message = null;
+				if (!ConsumeAttributes(from, ref message, true))
+				{
+					from.SendMessage(message is int ? ((int)message).ToString() : message.ToString());
+					return;
+				}
+			}
+
 			int badCraft = craftSystem.CanCraft(from, tool, m_Type);
 
 			if (badCraft > 0)
