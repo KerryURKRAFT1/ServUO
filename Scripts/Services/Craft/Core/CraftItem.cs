@@ -1349,132 +1349,101 @@ namespace Server.Engines.Craft
 				/////////////////
 				/// 
 				// SE IL CORE è UOR
-				if (Core.UOR) // Se il core è configurato come "UOR"
+				if (Core.UOR)
 				{
-					Console.WriteLine("DEBUG: parte UOR.");
-					Console.WriteLine("DEBUG: Core.UOR=" + Core.UOR + ", CraftSystem=" + craftSystem.GetType().Name);
-
-
-
-					
-					// Controlli di null per prevenire crash
-					if (from == null)
+					if (from.BeginAction(typeof(CraftSystem))) // Controlla se l'azione può essere iniziata
 					{
-						Console.WriteLine("DEBUG: 'from' è null nel metodo Craft.");
-						return;
-					}
+						Console.WriteLine("DEBUG: parte anche la parte di codice UOR.");
+						
+						if (RequiredExpansion == Expansion.None || 
+							(from.NetState != null && from.NetState.SupportsExpansion(RequiredExpansion))) // Controlla l'espansione richiesta
+						{
+							bool allRequiredSkills = true;
+							double chance = GetSuccessChance(from, typeRes, craftSystem, false, ref allRequiredSkills); // Verifica le abilità necessarie
 
-					if (craftSystem == null)
+							if (allRequiredSkills && chance >= 0.0) // Se le abilità sono sufficienti
+							{
+								if (Recipe == null || !(from is PlayerMobile) || ((PlayerMobile)from).HasRecipe(Recipe)) // Controlla la ricetta
+								{
+									if (!RequiresBasketWeaving || (from is PlayerMobile && ((PlayerMobile)from).BasketWeaving)) // Controlla Basket Weaving
+									{
+										if (!RequiresMechanicalLife || (from is PlayerMobile && ((PlayerMobile)from).MechanicalLife)) // Controlla Mechanical Life
+										{
+											int badCraft = craftSystem.CanCraft(from, tool, m_Type); // Controlla se l'oggetto può essere craftato
+
+											if (badCraft <= 0) // Se non ci sono errori
+											{
+												if (RequiresResTarget && NeedsResTarget(from, craftSystem)) // Controlla se è necessario scegliere una risorsa
+												{
+													from.Target = new ChooseResTarget(from, this, craftSystem, typeRes, tool);
+													from.SendMessage("Choose the resource you would like to use.");
+													return;
+												}
+
+												int resHue = 0;
+												int maxAmount = 0;
+												object message = null;
+
+												if (ConsumeRes(from, typeRes, craftSystem, ref resHue, ref maxAmount, ConsumeType.None, ref message)) // Consuma le risorse
+												{
+													CraftContext context = craftSystem.GetContext(from);
+
+													if (context != null)
+													{
+														Console.WriteLine("DEBUG: Context OnMade chiamato.");
+														context.OnMade(this);
+													}
+
+													// Avvia il timer per completare il crafting
+													int iMin = craftSystem.MinCraftEffect;
+													int iMax = (craftSystem.MaxCraftEffect - iMin) + 1;
+													int iRandom = Utility.Random(iMax) + iMin + 1;
+
+													new InternalTimer(from, craftSystem, this, typeRes, tool, iRandom).Start();
+													return; // Termina il metodo
+												}
+												else
+												{
+													from.SendMessage("Non hai abbastanza risorse per creare questo oggetto.");
+												}
+											}
+											else
+											{
+												from.SendMessage("Errore durante il crafting: " + badCraft);
+											}
+										}
+										else
+										{
+											from.SendMessage("Non hai letto il manuale di vita meccanica. Parlare con Sutek potrebbe aiutarti!");
+										}
+									}
+									else
+									{
+										from.SendMessage("Non hai imparato l'arte della tessitura di cestini. Forse studiare un libro potrebbe aiutarti!");
+									}
+								}
+								else
+								{
+									from.SendMessage("Devi imparare questa ricetta da una pergamena.");
+								}
+							}
+							else
+							{
+								from.SendMessage("Non hai le abilità necessarie per creare questo oggetto.");
+							}
+						}
+						else
+						{
+							from.SendMessage("L'espansione richiesta non è disponibile per creare questo oggetto.");
+						}
+
+						from.EndAction(typeof(CraftSystem)); // Termina l'azione in caso di errore
+					}
+					else
 					{
-						from.SendMessage("Errore: Il sistema di crafting non è valido.");
-						return;
+						from.SendLocalizedMessage(500119); // "You must wait to perform another action"
+						Console.WriteLine("DEBUG: Azione non consentita.");
 					}
-
-					if (tool == null)
-					{
-						from.SendMessage("Errore: Non hai un attrezzo valido per eseguire il crafting.");
-						return;
-					}
-
-
-					object message = null;
-					// Controllo iniziale degli attributi senza l'uso di `message`
-
-					if (!ConsumeAttributesForUOR(from, false))
-					{
-						from.SendMessage("Non hai abbastanza attributi per creare questo oggetto.");
-						return;
-					}
-
-					// Solo ora blocca altre azioni con BeginAction
-					if (!from.BeginAction(typeof(CraftSystem)))
-					{
-						from.SendMessage("Devi aspettare prima di eseguire un'altra azione.");
-						return;
-					}
-
-					if (RequiredExpansion != Expansion.None && !Core.UOR)
-					{
-						from.EndAction(typeof(CraftSystem));
-						from.SendMessage("L'espansione richiesta non è disponibile per creare questo oggetto.");
-						return;
-					}
-
-					bool allRequiredSkills = true;
-					double chance = GetSuccessChance(from, typeRes, craftSystem, false, ref allRequiredSkills);
-
-					if (!allRequiredSkills || chance < 0.0)
-					{
-						from.EndAction(typeof(CraftSystem));
-						from.SendMessage("Non hai le abilità necessarie per creare questo oggetto.");
-						return;
-					}
-
-					int badCraft = craftSystem.CanCraft(from, tool, m_Type);
-
-					if (badCraft > 0)
-					{
-						from.EndAction(typeof(CraftSystem));
-						from.SendMessage("Errore durante il crafting: " + badCraft);
-						return;
-					}
-
-					int resHue = 0;
-					int maxAmount = 0;
-
-					if (!ConsumeRes(from, typeRes, craftSystem, ref resHue, ref maxAmount, ConsumeType.None, ref message))
-					{
-						from.EndAction(typeof(CraftSystem));
-						from.SendMessage("CONSUMA RISORSE");
-						//from.SendMessage(message is int ? ((int)message).ToString() : message.ToString());
-						return;
-					}
-
-					if (!ConsumeAttributesForUOR(from, true))
-					{
-						from.EndAction(typeof(CraftSystem));
-						from.SendMessage("Errore nel consumo degli attributi.");
-						return;
-					}
-
-					if (m_Type == null)
-					{
-						from.EndAction(typeof(CraftSystem));
-						from.SendMessage("Non hai letto il manuale di vita meccanica. Parlare con Sutek potrebbe aiutarti!");
-						return;
-					}
-
-					if (RequiredExpansion == Expansion.SE && !Core.SE)
-					{
-						from.EndAction(typeof(CraftSystem));
-						from.SendMessage("Non hai imparato l'arte della tessitura di cestini. Forse studiare un libro potrebbe aiutarti!");
-						return;
-					}
-
-					if (RequiredExpansion == Expansion.ML && !Core.ML)
-					{
-						from.EndAction(typeof(CraftSystem));
-						from.SendMessage("Devi imparare questa ricetta da una pergamena.");
-						return;
-					}
-
-					CraftContext context = craftSystem.GetContext(from);
-
-					if (context != null)
-					{
-						Console.WriteLine("CONTEXT.");
-						context.OnMade(this);
-					}
-
-					// Calcola il tempo necessario per completare la creazione
-					int iMin = craftSystem.MinCraftEffect;
-					int iMax = (craftSystem.MaxCraftEffect - iMin) + 1;
-					int iRandom = Utility.Random(iMax);
-					iRandom += iMin + 1;
-
-					// Avvia il timer per la creazione dell'oggetto
-					new InternalTimer(from, craftSystem, this, typeRes, tool, iRandom).Start();
-					return; // Termina il metodo esplicitamente
 				}
 
 				else
@@ -1624,30 +1593,6 @@ namespace Server.Engines.Craft
 			BaseTool tool,
 			CustomCraft customCraft)
 		{
-
-
-			Console.WriteLine("DEBUG: Entrato in CompleteCraft.");
-
-			// Controllo per UOR
-			if (Core.UOR)
-			{
-				Console.WriteLine("DEBUG: Flusso UOR in CompleteCraft.");
-				if (!ConsumeAttributesForUOR(from, true))
-				{
-					from.SendMessage("Errore nel consumo degli attributi specifici per UOR.");
-					return;
-				}
-			}
-			else
-			{
-				Console.WriteLine("DEBUG: Flusso Non-UOR in CompleteCraft.");
-				object message = null;
-				if (!ConsumeAttributes(from, ref message, true))
-				{
-					from.SendMessage(message is int ? ((int)message).ToString() : message.ToString());
-					return;
-				}
-			}
 
 			int badCraft = craftSystem.CanCraft(from, tool, m_Type);
 
@@ -2019,18 +1964,6 @@ namespace Server.Engines.Craft
 				else if (tool != null && !tool.Deleted && tool.UsesRemaining > 0)
 				{
 					            
-					//if (craftSystem.GetType().Name == "DefClassicBlacksmithy")
-					//{
-					//	from.SendMenu(new NewCraftingMenu(from, craftSystem, tool, 0, true)); // Passa true per isPreAoS
-					//}
-					//else
-					//{
-					//	from.SendGump(new CraftGump(from, craftSystem, tool, num));
-					//}
-
-					//from.SendGump(new CraftGump(from, craftSystem, tool, num));
-					 // Inizio modifica per renaissance
-					//Console.WriteLine("CraftSystem type: " + craftSystem.GetType().Name); // Aggiungi questa linea per il debug
 
 
 
