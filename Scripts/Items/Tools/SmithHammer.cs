@@ -31,7 +31,9 @@ namespace Server.Items
         {
             get
             {
-                return DefBlacksmithy.CraftSystem;
+                //return DefBlacksmithy.CraftSystem;
+                return DefClassicBlacksmithy.CraftSystem;
+                
             }
         }
         public override void Serialize(GenericWriter writer)

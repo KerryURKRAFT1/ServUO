@@ -706,13 +706,10 @@ namespace Server.Engines.Craft
                 if (!usingDeed)
                 {
                     CraftContext context = this.m_CraftSystem.GetContext(from);
-                    //from.SendGump(new CraftGump(from, this.m_CraftSystem, this.m_Tool, number));
-                     // Aggiungi il richiamo a NewCraftingMenu qui per RENAISSANCE
-                    //from.SendMenu(new NewCraftingMenu(from, this.m_CraftSystem, this.m_Tool, number));
-                    //from.SendMenu(new NewCraftingMenu(from, this.m_CraftSystem, this.m_Tool, number, this.m_IsPreAoS));
+
                     if (this.m_IsPreAoS)
                     {
-                        from.SendMenu(new NewCraftingMenu(from, this.m_CraftSystem, this.m_Tool, number, this.m_IsPreAoS));
+                        from.SendMenu(new NewBlacksmithyMenu(from, this.m_CraftSystem, this.m_Tool, number, this.m_IsPreAoS));
                     }
                     else
                     {

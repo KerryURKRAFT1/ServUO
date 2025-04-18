@@ -142,26 +142,15 @@ namespace Server.Engines.Craft
         public override int PlayEndingEffect(
             Mobile from, bool failed, bool lostMaterial, bool toolBroken, int quality, bool makersMark, CraftItem item)
         {
-                //if (this.GetType().Name == "DefClassicBlacksmithy")
-                //{
-                //from.SendMenu(new NewCraftingMenu(from, this, null, 0, true)); // Passa true per isPreAoS
-                //}
-              
             if (toolBroken)
             {
                 from.SendLocalizedMessage(1044038); // You have worn out your tool
-
             }
-
-                
-
-
 
             if (failed)
             {
                 if (lostMaterial)
                 {
-
                     return 1044043; // You failed to create the item, and some of your materials are lost.
                 }
 

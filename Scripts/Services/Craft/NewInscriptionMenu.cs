@@ -9,6 +9,8 @@ using Server.Menus.ItemLists;
 
 namespace Server.Engines.Craft
 {
+
+
     public class NewInscriptionMenu : ItemListMenu
     {
         private readonly Mobile m_From;
@@ -28,7 +30,7 @@ namespace Server.Engines.Craft
             m_isPreAoS = isPreAoS;
 
             
-            Console.WriteLine("DEBUG: Utilizzo del CraftSystem:" + craftSystem.GetType().Name);
+            
 
             if (m_Message != 0)
             {
@@ -43,16 +45,16 @@ namespace Server.Engines.Craft
             }
             else
             {
-                Console.WriteLine("Using CraftSystem alternatio of type: " + m_CraftSystem.GetType().Name);
+                //Console.WriteLine("Using CraftSystem alternatio of type: " + m_CraftSystem.GetType().Name);
             }
 
                         // Verifica dei materiali
-            if (!HasRequiredMaterials(from, craftSystem))
-            {
-                from.SendMessage("You do not have the necessary materials to craft any items.");
+            //if (!HasRequiredMaterials(from, craftSystem))
+            //{
+              //  from.SendMessage("You do not have the necessary materials to craft any items.");
 
                 //return;
-            }
+            //}
 
 
         }
@@ -66,6 +68,7 @@ namespace Server.Engines.Craft
                 {
                     if (from.Backpack.GetAmount(craftRes.ItemType) < craftRes.Amount)
                     {
+                        
                         hasMaterials = false;
                         break;
                     }
@@ -80,6 +83,25 @@ namespace Server.Engines.Craft
             
             return false;
         }
+
+
+                /// <summary>
+        /// Metodo wrapper per verificare i materiali e aprire il menu se i materiali sono sufficienti.
+        /// </summary>
+        public static void OpenMenuWithMaterialCheck(Mobile from, CraftSystem craftSystem, BaseTool tool, int message, bool isPreAoS)
+        {
+            // Verifica dei materiali
+            if (!HasRequiredMaterials(from, craftSystem))
+            {
+                from.SendMessage("You do not have the necessary materials to craft any items.");
+                return;
+            }
+
+            // Se i materiali sono sufficienti, apri il menu
+            from.SendMenu(new NewInscriptionMenu(from, craftSystem, tool, message, isPreAoS));
+        }
+
+        
 
 
         /// <summary>
@@ -863,19 +885,19 @@ public class FifthCirclenMenu : ItemListMenu
                     {
                                    
     
-                        bool hasAllRequiredSkills = true;
+                        bool hasRequiredSkills = true;
                         foreach (CraftSkill skill in craftItem.Skills)
                         {
                            
                             if (from.Skills[skill.SkillToMake].Value < skill.MinSkill ) //skill.MinSkill
                             {
-                                hasAllRequiredSkills = false;
+                                hasRequiredSkills = false;
                                 break;
                             }
         
                         }
 
-                        if (hasAllRequiredSkills)
+                        if (hasRequiredSkills)
                         {
                             bool hasMaterials = true;
                             foreach (CraftRes craftRes in craftItem.Resources)
@@ -943,7 +965,7 @@ public class FifthCirclenMenu : ItemListMenu
             private readonly BaseTool m_Tool;
 
             public EighthCirclenMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select a Potion to craft:", GetCraftItems(from, craftSystem))
+                : base("Select a scroll to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;

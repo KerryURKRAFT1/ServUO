@@ -5010,7 +5010,8 @@ namespace Server.Mobiles
                     {
                         XmlParagon.AddChest(this, treasureLevel);
                     }
-                    else if (/*(Map == Map.Felucca || Map == Map.Trammel) &&*/TreasureMapChance >= Utility.RandomDouble())
+                    //else if (/*(Map == Map.Felucca || Map == Map.Trammel) &&*/TreasureMapChance >= Utility.RandomDouble())
+                    else if (TreasureMap.GetLootChance(treasureLevel) >= Utility.RandomDouble()) // Usa GetLootChance
                     {
                         PackItem(new TreasureMap(treasureLevel, Map));
                     }

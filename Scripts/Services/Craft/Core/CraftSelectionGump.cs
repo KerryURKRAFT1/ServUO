@@ -49,7 +49,7 @@ namespace Server.Engines.Craft
                 case 1: // Pre-AoS Menu
                     from.SendMessage("Apertura del menu Classic (Pre-AoS)."); // Debug
                     
-                    from.SendMenu(new NewCraftingMenu(from, tool.CraftSystem, tool, 0, true)); // Passa true per isPreAoS
+                    from.SendMenu(new NewBlacksmithyMenu(from, tool.CraftSystem, tool, 0, true)); // Passa true per isPreAoS
                     break;
 
                 case 2: // AoS Menu

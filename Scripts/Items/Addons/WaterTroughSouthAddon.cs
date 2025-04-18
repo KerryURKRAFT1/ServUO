@@ -4,6 +4,9 @@ namespace Server.Items
 {
     public class WaterTroughSouthAddon : BaseAddon, IWaterSource
     {
+
+        
+
         [Constructable]
         public WaterTroughSouthAddon()
         {
@@ -23,6 +26,10 @@ namespace Server.Items
                 return new WaterTroughSouthDeed();
             }
         }
+
+
+
+
         public int Quantity
         {
             get
@@ -33,6 +40,10 @@ namespace Server.Items
             {
             }
         }
+
+        
+
+
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

@@ -29,7 +29,14 @@ namespace Server.Items
         {
             get
             {
-                return DefInscription.CraftSystem;
+                if (Core.UOR)
+                {
+                    return DefClassicInscription.CraftSystem;
+                }
+                else
+                {
+                    return DefInscription.CraftSystem;
+                }
             }
         }
         public override int LabelNumber

@@ -281,11 +281,11 @@ namespace Server.Engines.Craft
                 // codice per renaissance
                 if (isPreAoS)
                 {
-                    from.SendMenu(new NewCraftingMenu(from, this, tool, 0, true));
+                    from.SendMenu(new NewBlacksmithyMenu(from, this, tool, 0, true));
                 }
                 else
                 {
-                    from.SendMenu(new NewCraftingMenu(from, this, tool, 0, false));
+                    from.SendMenu(new NewBlacksmithyMenu(from, this, tool, 0, false));
                 }
                 
 

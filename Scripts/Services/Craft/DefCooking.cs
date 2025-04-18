@@ -112,8 +112,10 @@ namespace Server.Engines.Craft
             index = this.AddCraft(typeof(SackFlour), 1044495, 1024153, 0.0, 100.0, typeof(WheatSheaf), 1044489, 2, 1044490);
             this.SetNeedMill(index, true);
 
-            index = this.AddCraft(typeof(Dough), 1044495, 1024157, 0.0, 100.0, typeof(SackFlour), 1044468, 1, 1044253);
-            this.AddRes(index, typeof(BaseBeverage), 1046458, 1, 1044253);
+            index = this.AddCraft(typeof(Dough), 1044495, 1024157, 0.0, 100.0, typeof(BowlFlour), 1044468, 1, 1044253);
+            //index = this.AddCraft(typeof(Dough), 1044495, 1024157, 0.0, 100.0, typeof(SackFlour), 1044468, 1, 1044253);
+            //this.AddRes(index, typeof(BaseBeverage), 1046458, 1, 1044253);
+            //this.AddRes(index, typeof(Pitcher), 1046458, 1, 1044253);
 
             index = this.AddCraft(typeof(SweetDough), 1044495, 1041340, 0.0, 100.0, typeof(Dough), 1044469, 1, 1044253);
             this.AddRes(index, typeof(JarHoney), 1044472, 1, 1044253);

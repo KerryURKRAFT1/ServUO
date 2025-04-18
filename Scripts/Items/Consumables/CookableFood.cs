@@ -58,8 +58,8 @@ namespace Server.Items
                     }
             }
         }
-
-        #if false
+            // CODICE COTTURA CIBI UOR
+        //#if false
 		public override void OnDoubleClick( Mobile from )
 		{
 			if ( !Movable )
@@ -67,7 +67,7 @@ namespace Server.Items
 
 			from.Target = new InternalTarget( this );
 		}
-        #endif
+        //#endif
 
         public static bool IsHeatSource(object targeted)
         {

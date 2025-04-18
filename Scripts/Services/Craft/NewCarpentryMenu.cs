@@ -59,6 +59,25 @@ public class NewCarpentryMenu : ItemListMenu
         
     }
 
+
+                /// <summary>
+        /// Metodo wrapper per verificare i materiali e aprire il menu se i materiali sono sufficienti.
+        /// </summary>
+        public static void OpenMenuWithMaterialCheck(Mobile from, CraftSystem craftSystem, BaseTool tool, int message, bool isPreAoS)
+        {
+            // Verifica dei materiali
+            if (!HasRequiredMaterials(from, craftSystem))
+            {
+                from.SendMessage("You do not have the necessary materials to craft any items.");
+                return;
+            }
+
+            // Se i materiali sono sufficienti, apri il menu
+            from.SendMenu(new NewInscriptionMenu(from, craftSystem, tool, message, isPreAoS));
+        }
+
+
+
     // class to check materials
     private static bool HasRequiredMaterials(Mobile from, CraftSystem craftSystem)
 {

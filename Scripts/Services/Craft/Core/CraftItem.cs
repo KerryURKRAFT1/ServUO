@@ -257,7 +257,7 @@ namespace Server.Engines.Craft
 
 		public bool ConsumeAttributes(Mobile from, ref object message, bool consume)
 		{
-			Console.WriteLine("DEBUG: Entrato in ConsumeAttributes dal contesto: " + Environment.StackTrace);
+			//Console.WriteLine("DEBUG: Entrato in ConsumeAttributes dal contesto: " + Environment.StackTrace);
 			bool consumMana = false;
 			bool consumHits = false;
 			bool consumStam = false;
@@ -283,9 +283,7 @@ namespace Server.Engines.Craft
 
                 if (from.Mana < Mana)
                 {
-					//from.SendMessage("You lack the required mana to make that");
                     message = "You lack the required mana to make that.";
-					Console.WriteLine("DEBUG: 'APPARE QUESTA LINEA DEL MANA.");
                     return false;
                 }
 				else
@@ -325,7 +323,7 @@ namespace Server.Engines.Craft
 
 		public bool ConsumeAttributesForUOR(Mobile from, bool consume)
 		{
-			Console.WriteLine("DEBUG: Entrato in ConsumeAttributesForUOR dal contesto: " + Environment.StackTrace);
+			//Console.WriteLine("DEBUG: Entrato in ConsumeAttributesForUOR dal contesto: " + Environment.StackTrace);
 			bool consumMana = false;
 			bool consumHits = false;
 			bool consumStam = false;
@@ -344,7 +342,6 @@ namespace Server.Engines.Craft
 			{
 				if (from.Mana < Mana)
 				{
-					Console.WriteLine("DEBUG: 'MESSAGGIO 4.");
 					from.SendMessage("You lack the required mana to make that.");
 					return false;
 				}
@@ -418,7 +415,11 @@ namespace Server.Engines.Craft
 			new[] {typeof(SpinedLeather), typeof(SpinedHides)}, 
             new[] {typeof(HornedLeather), typeof(HornedHides)},
 			new[] {typeof(BarbedLeather), typeof(BarbedHides)}, 
-            new[] {typeof(BlankMap), typeof(BlankScroll)},
+            //new[] {typeof(BlankMap), typeof(BlankScroll)},
+			// NUOVA GESTIONE PER UOR
+			new[] {typeof(BlankMap)}, // Solo BlankMap
+			new[] {typeof(BlankScroll)}, // Solo BlankScroll
+			//
 			new[] {typeof(Cloth), typeof(UncutCloth), typeof(AbyssalCloth)},
             new[] {typeof(CheeseWheel), typeof(CheeseWedge)},
 			new[] {typeof(Pumpkin), typeof(SmallPumpkin)}, 
@@ -755,6 +756,9 @@ namespace Server.Engines.Craft
 				for (int j = 0; j < items[i].Length; ++j)
 				{
 					Item item = items[i][j];
+					Console.WriteLine(DateTime.UtcNow.ToString("HH:mm:ss") + " DEBUG: Oggetto trovato per consumo - Nome: " 
+						+ item.Name + ", Tipo: " + item.GetType().Name + ", Quantità: " + item.Amount);
+
 					IHasQuantity hq = item as IHasQuantity;
 
 					if (hq == null)
@@ -801,11 +805,20 @@ namespace Server.Engines.Craft
 		public int GetQuantity(Container cont, Type[] types)
 		{
 			var items = cont.FindItemsByType(types, true);
+			Console.WriteLine("{0} DEBUG: Risultati FindItemsByType - Numero di oggetti trovati: {1}", DateTime.UtcNow.ToString("HH:mm:ss"), items.Length);
+
 
 			int amount = 0;
 
 			for (int i = 0; i < items.Length; ++i)
 			{
+
+			Console.WriteLine(
+				DateTime.UtcNow.ToString("HH:mm:ss") + 
+				" DEBUG: Oggetto trovato - Nome: " + items[i].Name + 
+				", Tipo: " + items[i].GetType().Name + 
+				", Quantità: " + items[i].Amount);
+
 				IHasQuantity hq = items[i] as IHasQuantity;
 
 				if (hq == null)
@@ -822,7 +835,7 @@ namespace Server.Engines.Craft
 					amount += hq.Quantity;
 				}
 			}
-
+			Console.WriteLine("{0} DEBUG: Quantità totale trovata: {1}", DateTime.UtcNow.ToString("HH:mm:ss"), amount);
 			return amount;
 		}
 
@@ -860,6 +873,7 @@ namespace Server.Engines.Craft
 			ConsumeType consumeType,
 			ref object message)
 		{
+			Console.WriteLine("entra in consumeres");
 			return ConsumeRes(from, typeRes, craftSystem, ref resHue, ref maxAmount, consumeType, ref message, false);
 		}
 
@@ -873,6 +887,7 @@ namespace Server.Engines.Craft
 			ref object message,
 			bool isFailure)
 		{
+
 			Container ourPack = from.Backpack;
 
 			if (ourPack == null)
@@ -1097,12 +1112,21 @@ namespace Server.Engines.Craft
 
 				if (IsQuantityType(types))
 				{
+					
 					for (int i = 0; i < types.Length; i++)
 					{
+						Console.WriteLine("DEBUG: Tipo {0} - Nome: {1}, Quantità richiesta: {2}", i, types[i][0].Name, amounts[i]);
 						if (GetQuantity(ourPack, types[i]) < amounts[i])
 						{
+							Console.WriteLine("DEBUG: Quantità insufficiente per {0}. Richiesta: {1}, Disponibile: {2}", 
+                types[i][0].Name, amounts[i], GetQuantity(ourPack, types[i]));
 							index = i;
 							break;
+						}
+						else
+						{
+							            Console.WriteLine("DEBUG: Quantità sufficiente per {0}. Richiesta: {1}, Disponibile: {2}", 
+                types[i][0].Name, amounts[i], GetQuantity(ourPack, types[i]));
 						}
 					}
 				}
@@ -1131,13 +1155,19 @@ namespace Server.Engines.Craft
 					}
 				}
 			}
-
+			Console.WriteLine("DEBUG: Risultato consumo risorse - Indice: {0}", index);
 			if (index == -1)
 			{
+				Console.WriteLine("DEBUG: INSEX " + index);
+				Console.WriteLine("DEBUG: Valore di consumeType: " + consumeType);
 				if (consumeType != ConsumeType.None)
 				{
+
+					Console.WriteLine("DEBUG: Tutte le risorse consumate correttamente.");
+					Console.WriteLine("DEBUG: Valore di consumeType dopo il check: " + consumeType);
 					if (consumeExtra != null)
 					{
+						Console.WriteLine("consume extra");
 						consumeExtra.Delete();
 					}
 				}
@@ -1353,96 +1383,106 @@ namespace Server.Engines.Craft
 				{
 					if (from.BeginAction(typeof(CraftSystem))) // Controlla se l'azione può essere iniziata
 					{
-						Console.WriteLine("DEBUG: parte anche la parte di codice UOR.");
-						
-						if (RequiredExpansion == Expansion.None || 
-							(from.NetState != null && from.NetState.SupportsExpansion(RequiredExpansion))) // Controlla l'espansione richiesta
+						try
 						{
-							bool allRequiredSkills = true;
-							double chance = GetSuccessChance(from, typeRes, craftSystem, false, ref allRequiredSkills); // Verifica le abilità necessarie
-
-							if (allRequiredSkills && chance >= 0.0) // Se le abilità sono sufficienti
+							if (RequiredExpansion == Expansion.None ||
+								(from.NetState != null && from.NetState.SupportsExpansion(RequiredExpansion))) // Controlla l'espansione richiesta
 							{
-								if (Recipe == null || !(from is PlayerMobile) || ((PlayerMobile)from).HasRecipe(Recipe)) // Controlla la ricetta
+								bool allRequiredSkills = true;
+								double chance = GetSuccessChance(from, typeRes, craftSystem, false, ref allRequiredSkills);
+
+								if (allRequiredSkills && chance >= 0.0) // Se le abilità sono sufficienti
 								{
-									if (!RequiresBasketWeaving || (from is PlayerMobile && ((PlayerMobile)from).BasketWeaving)) // Controlla Basket Weaving
+									if (Recipe == null || !(from is PlayerMobile) || ((PlayerMobile)from).HasRecipe(Recipe)) // Controlla la ricetta
 									{
-										if (!RequiresMechanicalLife || (from is PlayerMobile && ((PlayerMobile)from).MechanicalLife)) // Controlla Mechanical Life
+										if (!RequiresBasketWeaving || (from is PlayerMobile && ((PlayerMobile)from).BasketWeaving)) // Controlla Basket Weaving
 										{
-											int badCraft = craftSystem.CanCraft(from, tool, m_Type); // Controlla se l'oggetto può essere craftato
-
-											if (badCraft <= 0) // Se non ci sono errori
+											if (!RequiresMechanicalLife || (from is PlayerMobile && ((PlayerMobile)from).MechanicalLife)) // Controlla Mechanical Life
 											{
-												if (RequiresResTarget && NeedsResTarget(from, craftSystem)) // Controlla se è necessario scegliere una risorsa
+												int badCraft = craftSystem.CanCraft(from, tool, m_Type);
+
+												if (badCraft <= 0) // Se non ci sono errori
 												{
-													from.Target = new ChooseResTarget(from, this, craftSystem, typeRes, tool);
-													from.SendMessage("Choose the resource you would like to use.");
-													return;
-												}
-
-												int resHue = 0;
-												int maxAmount = 0;
-												object message = null;
-
-												if (ConsumeRes(from, typeRes, craftSystem, ref resHue, ref maxAmount, ConsumeType.None, ref message)) // Consuma le risorse
-												{
-													CraftContext context = craftSystem.GetContext(from);
-
-													if (context != null)
+													if (!ConsumeAttributesForUOR(from, false)) // Verifica senza consumare
 													{
-														Console.WriteLine("DEBUG: Context OnMade chiamato.");
-														context.OnMade(this);
+														from.SendMessage("Non hai abbastanza risorse per procedere con il crafting.");
+														return;
 													}
 
-													// Avvia il timer per completare il crafting
-													int iMin = craftSystem.MinCraftEffect;
-													int iMax = (craftSystem.MaxCraftEffect - iMin) + 1;
-													int iRandom = Utility.Random(iMax) + iMin + 1;
+													if (RequiresResTarget && NeedsResTarget(from, craftSystem))
+													{
+														from.Target = new ChooseResTarget(from, this, craftSystem, typeRes, tool);
+														from.SendMessage("Choose the resource you would like to use.");
+														return;
+													}
 
-													new InternalTimer(from, craftSystem, this, typeRes, tool, iRandom).Start();
-													return; // Termina il metodo
+													int resHue = 0;
+													int maxAmount = 0;
+													object message = null;
+
+													if (ConsumeRes(from, typeRes, craftSystem, ref resHue, ref maxAmount, ConsumeType.None, ref message))
+													{
+														CraftContext context = craftSystem.GetContext(from);
+
+														if (context != null)
+														{
+															context.OnMade(this);
+														}
+
+														// Avvia il timer per completare il crafting
+														int iMin = craftSystem.MinCraftEffect;
+														int iMax = (craftSystem.MaxCraftEffect - iMin) + 1;
+														int iRandom = Utility.Random(iMax) + iMin + 1;
+
+														new InternalTimer(from, craftSystem, this, typeRes, tool, iRandom).Start();
+														return;
+													}
+													else
+													{
+														from.SendMessage("You do not have enough resources to create this item.");
+														return;
+													}
 												}
 												else
 												{
-													from.SendMessage("Non hai abbastanza risorse per creare questo oggetto.");
+													from.SendMessage("Error during crafting: " + badCraft);
 												}
 											}
 											else
 											{
-												from.SendMessage("Errore durante il crafting: " + badCraft);
+												from.SendMessage("You have not read the Mechanical Life manual. Talking to Sutek might help!");
 											}
 										}
 										else
 										{
-											from.SendMessage("Non hai letto il manuale di vita meccanica. Parlare con Sutek potrebbe aiutarti!");
+											from.SendMessage("You have not learned the art of basket weaving. Perhaps studying a book could help!");
 										}
 									}
 									else
 									{
-										from.SendMessage("Non hai imparato l'arte della tessitura di cestini. Forse studiare un libro potrebbe aiutarti!");
+										from.SendMessage("You must learn this recipe from a scroll.");
 									}
 								}
 								else
 								{
-									from.SendMessage("Devi imparare questa ricetta da una pergamena.");
+									from.SendMessage("You do not have the skills required to create this item.");
 								}
 							}
 							else
 							{
-								from.SendMessage("Non hai le abilità necessarie per creare questo oggetto.");
+								from.SendMessage("The required expansion is not available to create this item.");
 							}
 						}
-						else
+						finally
 						{
-							from.SendMessage("L'espansione richiesta non è disponibile per creare questo oggetto.");
+							// Assicurati di terminare l'azione in tutti i casi
+							from.EndAction(typeof(CraftSystem));
 						}
-
-						from.EndAction(typeof(CraftSystem)); // Termina l'azione in caso di errore
 					}
 					else
 					{
+						Console.WriteLine("sssssss");
 						from.SendLocalizedMessage(500119); // "You must wait to perform another action"
-						Console.WriteLine("DEBUG: Azione non consentita.");
 					}
 				}
 
@@ -1453,7 +1493,6 @@ namespace Server.Engines.Craft
 			///////////
 			if (from.BeginAction(typeof(CraftSystem)))
 			{
-				Console.WriteLine("DEBUG: parte anche la parte di codice NON UOR.");
 				if (RequiredExpansion == Expansion.None ||
 					(from.NetState != null && from.NetState.SupportsExpansion(RequiredExpansion)))
 				{
@@ -1489,12 +1528,11 @@ namespace Server.Engines.Craft
 
                                             if (ConsumeAttributes(from, ref message, false))
                                             {
-												Console.WriteLine("DEBUG: parte anche la parte di codice NON UOR.  ConsumeAttributes");
+
                                                 CraftContext context = craftSystem.GetContext(from);
 
                                                 if (context != null)
                                                 {
-													Console.WriteLine("DEBUG: parte anche la parte di codice NON UOR.  context");
                                                     context.OnMade(this);
                                                 }
 
@@ -1559,8 +1597,8 @@ namespace Server.Engines.Craft
 			}
 			else
 			{
+				
 				from.SendLocalizedMessage(500119); // You must wait to perform another action
-				Console.WriteLine("DEBUG: parte anche la parte di codice NON UOR. ANOTHER ACTION");
 			}
 
             AutoCraftTimer.EndTimer(from);
@@ -1619,19 +1657,21 @@ namespace Server.Engines.Craft
 			// Not enough resource to craft it
 			if (!ConsumeRes(from, typeRes, craftSystem, ref checkResHue, ref checkMaxAmount, ConsumeType.None, ref checkMessage))
 			{
+
+				Console.WriteLine("DEBUG: Errore nel consumo risorse durante il completamento del crafting.");
+				Console.WriteLine("DEBUG: Risorse mancanti per il crafting. Tipo di risorsa: " + (typeRes != null ? typeRes.Name : "Nessuna") + ", Messaggio: " + checkMessage);
+				Console.WriteLine("DEBUG: Giocatore: " + from.Name + ", Posizione: " + from.Location + ", Oggetti nello zaino: " + (from.Backpack != null ? from.Backpack.Items.Count : 0));
+
 				if (tool != null && !tool.Deleted && tool.UsesRemaining > 0)
 				{
-					Console.WriteLine("DEBUG: 'MESSAGGIO 1.");
 					from.SendGump(new CraftGump(from, craftSystem, tool, checkMessage));
 				}
 				else if (checkMessage is int && (int)checkMessage > 0)
 				{
-					Console.WriteLine("DEBUG: 'MESSAGGIO 2.");
 					from.SendLocalizedMessage((int)checkMessage);
 				}
 				else if (checkMessage is string)
 				{
-					Console.WriteLine("DEBUG: 'MESSAGGIO 3.");
 					from.SendMessage((string)checkMessage);
 				}
 
@@ -1972,37 +2012,52 @@ namespace Server.Engines.Craft
 					if (craftSystem.GetType().Name == "DefClassicBlacksmithy")
 					
 					{
-						from.SendMenu(new NewCraftingMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+						NewBlacksmithyMenu.OpenMenuWithMaterialCheck(from, craftSystem, tool, num, true); // Passa true per isPreAoS
+						//from.SendMenu(new NewCraftingMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
 					}
 					else if (craftSystem.GetType().Name == "DefClassicCarpentry")
 					
 					{
-						from.SendMenu(new NewCarpentryMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+						NewCarpentryMenu.OpenMenuWithMaterialCheck(from, craftSystem, tool, num, true); // Passa true per isPreAoS
+						//from.SendMenu(new NewCarpentryMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
 					}
 					else if (craftSystem.GetType().Name == "DefClassictTinkering")
 					
 					{
-						from.SendMenu(new NewTinkeringMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+						NewTinkeringMenu.OpenMenuWithMaterialCheck(from, craftSystem, tool, num, true); // Passa true per isPreAoS
+						//from.SendMenu(new NewTinkeringMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
 					}
 					else if (craftSystem.GetType().Name == "DefClassictTailoring")
 					
 					{
-						from.SendMenu(new NewTailoringMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+						NewTailoringMenu.OpenMenuWithMaterialCheck(from, craftSystem, tool, num, true); // Passa true per isPreAoS
+						//from.SendMenu(new NewTailoringMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
 					}
 					else if (craftSystem.GetType().Name == "DefClassicBowFletching")
 					
 					{
-						from.SendMenu(new NewFletchingMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+						NewFletchingMenu.OpenMenuWithMaterialCheck(from, craftSystem, tool, num, true); // Passa true per isPreAoS
+						//from.SendMenu(new NewFletchingMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
 					}
 					else if (craftSystem.GetType().Name == "DefClassicAlchemy")
-					
 					{
-						from.SendMenu(new NewAlchemyMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+						NewAlchemyMenu.OpenMenuWithMaterialCheck(from, craftSystem, tool, num, true); // Passa true per isPreAoS
+						//from.SendMenu(new NewAlchemyMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
 					}
 					else if (craftSystem.GetType().Name == "DefClassicInscription")
-					
 					{
-						from.SendMenu(new NewInscriptionMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+						NewInscriptionMenu.OpenMenuWithMaterialCheck(from, craftSystem, tool, num, true); // Passa true per isPreAoS
+						//from.SendMenu(new NewInscriptionMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+					}
+					else if (craftSystem.GetType().Name == "DefCartography")
+					{
+						NewCartographyMenu.OpenMenuWithMaterialCheck(from, craftSystem, tool, num, true); // Passa true per isPreAoS
+						//from.SendMenu(new NewCartographyMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+					}
+					else if (craftSystem.GetType().Name == "DefClassicCooking")
+					{
+						NewCookingMenu.OpenMenuWithMaterialCheck(from, craftSystem, tool, num, true); // Passa true per isPreAoS
+
 					}
 
 					else
@@ -2061,12 +2116,7 @@ namespace Server.Engines.Craft
                     AutoCraftTimer.EndTimer(from);
 
 					// Inizio modifica per riaprire il menu pre-AoS in caso di fallimento
-					//if (craftSystem.GetType().Name == "DefClassicBlacksmithy")
-					//{
-					//	from.SendMenu(new NewCraftingMenu(from, craftSystem, tool, 0, true)); // Passa true per isPreAoS
-					//	return;
-					//}
-					// Fine modifica
+
 
 					return;
 				}
@@ -2103,7 +2153,7 @@ namespace Server.Engines.Craft
 				// Inizio modifica per riaprire il menu pre-AoS PER LE VARIE SKILL in caso di fallimento
 				if (craftSystem.GetType().Name == "DefClassicBlacksmithy")
 				{
-					from.SendMenu(new NewCraftingMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+					from.SendMenu(new NewBlacksmithyMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
 					return;
 				}
 				// CARPENTRY
@@ -2141,7 +2191,16 @@ namespace Server.Engines.Craft
 					from.SendMenu(new NewInscriptionMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
 					return;
 				}
-
+				else if (craftSystem.GetType().Name == "DefCartography")			
+				{
+					from.SendMenu(new NewCartographyMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+					return;
+				}
+				else if (craftSystem.GetType().Name == "DefClassicCooking")			
+				{
+					from.SendMenu(new NewCookingMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
+					return;
+				}
 
 				
 

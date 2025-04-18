@@ -23,8 +23,33 @@ namespace Server.Items
 {
     public class TreasureMap : MapItem
     {
+
+
+
+            /// ////////////// MAP CHANCE
+
+            public static double GetLootChance(int level)
+            {
+                switch (level)
+                {
+                    case 1: return 1.0 / 500; // 1 su 500 (0.2%)
+                    case 2: return 1.0 / 250; // 1 su 250 (0.4%)
+                    case 3: return 1.0 / 150; // 1 su 150 (0.67%)
+                    case 4: return 1.0 / 75;  // 1 su 75 (1.33%)
+                    case 5: return 1.0 / 10;  // 1 su 40 (2.5%)
+                    case 6: return 1.0 / 25;  // 1 su 25 (4%)
+                    case 7: return 1.0 / 10;  // 1 su 10 (10%)
+                    default: return 0.01;     // Default 1% per livelli non specificati
+                }
+            }
+
+
+
         public static bool NewChestLocations = Config.Get("TreasureMaps.Enabled", true);
-        public static double LootChance = Config.Get("TreasureMaps.LootChance", .01);
+        //public static double LootChance = Config.Get("TreasureMaps.LootChance", .01);
+        public static double LootChance = Config.Get("TreasureMaps.LootChance", 1.0);
+
+
         private static TimeSpan ResetTime = TimeSpan.FromDays(Config.Get("TreasureMaps.ResetTime", 30.0));
 
         #region Spawn Types
@@ -968,6 +993,7 @@ namespace Server.Items
                 LootType = LootType.Blessed;
             }
         }
+
 
         private static void LoadLocations()
         {

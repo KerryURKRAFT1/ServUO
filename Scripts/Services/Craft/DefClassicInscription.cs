@@ -242,72 +242,88 @@ namespace Server.Engines.Craft
 
             index = this.AddCraft(typeof(ReactiveArmorScroll), 1116350, 1044548, -25.0, 25.0, typeof(Garlic), 1044358, 1, 1044366);
             this.SetManaReq(index, 4);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(SpidersSilk), 1044529, 1, 500315);
             this.AddRes(index, typeof(SulfurousAsh), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(ClumsyScroll), 1116350, 1044548, -25.0, 25.0, typeof(Bloodmoss), 1044358, 1, 1044366);
             this.SetManaReq(index, 4);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(Nightshade), 1044529, 1, 500315);
             
             index = this.AddCraft(typeof(CreateFoodScroll), 1116350, 1044548, -25.0, 25.0, typeof(Garlic), 1044358, 1, 1044366);
             this.SetManaReq(index, 4);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(Ginseng), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
             
             index = this.AddCraft(typeof(FeeblemindScroll), 1116350, 1044548, -25.0, 25.0, typeof(Nightshade), 1044358, 1, 1044366);
             this.SetManaReq(index, 4);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(Ginseng), 1044529, 1, 500315);
                   
             index = this.AddCraft(typeof(HealScroll), 1116350, 1044548, -25.0, 25.0, typeof(Garlic), 1044358, 1, 1044366);
             this.SetManaReq(index, 4);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(Ginseng), 1044529, 1, 500315);
             this.AddRes(index, typeof(SpidersSilk), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(MagicArrowScroll), 1116350, 1044548, -25.0, 25.0, typeof(SulfurousAsh), 1044358, 1, 1044366);
             this.SetManaReq(index, 4);
-
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
+            
             index = this.AddCraft(typeof(NightSightScroll), 1116350, 1044548, -25.0, 25.0, typeof(SpidersSilk), 1044358, 1, 1044366);
             this.SetManaReq(index, 4);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(SulfurousAsh), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(WeakenScroll), 1116350, 1044548, -25.0, 25.0, typeof(Garlic), 1044358, 1, 1044366);
             this.SetManaReq(index, 4);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(Nightshade), 1044529, 1, 500315);
 
             // 2 circle
 
             index = this.AddCraft(typeof(AgilityScroll), 1116350, 1044548, -10.8, 39.2, typeof(Bloodmoss), 1044358, 1, 1044366);
             this.SetManaReq(index, 6);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(CunningScroll), 1116350, 1044548, -10.8, 39.2, typeof(Nightshade), 1044358, 1, 1044366);
             this.SetManaReq(index, 6);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(CureScroll), 1116350, 1044548, -10.8, 39.2, typeof(Garlic), 1044358, 1, 1044366);
             this.SetManaReq(index, 6);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(Ginseng), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(HarmScroll), 1116350, 1044548, -10.8, 39.2, typeof(Nightshade), 1044358, 1, 1044366);
             this.SetManaReq(index, 6);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(SpidersSilk), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(MagicTrapScroll), 1116350, 1044548, -10.8, 39.2, typeof(Garlic), 1044358, 1, 1044366);
             this.SetManaReq(index, 6);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(SpidersSilk), 1044529, 1, 500315);
             this.AddRes(index, typeof(SulfurousAsh), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(MagicUnTrapScroll), 1116350, 1044548, -10.8, 39.2, typeof(Bloodmoss), 1044358, 1, 1044366);
             this.SetManaReq(index, 6);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(SulfurousAsh), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(ProtectionScroll), 1116350, 1044548, -10.8, 39.2, typeof(Garlic), 1044358, 1, 1044366);
             this.SetManaReq(index, 6);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(Ginseng), 1044529, 1, 500315);
             this.AddRes(index, typeof(SulfurousAsh), 1044529, 1, 500315);
             
             index = this.AddCraft(typeof(StrengthScroll), 1116350, 1044548, -10.8, 39.2, typeof(Nightshade), 1044358, 1, 1044366);
             this.SetManaReq(index, 6);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(SpidersSilk), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
 
@@ -318,75 +334,91 @@ namespace Server.Engines.Craft
 
             index = this.AddCraft(typeof(BlessScroll), 1116350, 1044548, 30.5, 53.5, typeof(Garlic), 1044358, 1, 1044366);
             this.SetManaReq(index, 9);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(FireballScroll), 1116350, 1044548, 30.5, 53.5, typeof(BlackPearl), 1044358, 1, 1044366);
             this.SetManaReq(index, 9);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(MagicLockScroll), 1116350, 1044548, 30.5, 53.5, typeof(Bloodmoss), 1044358, 1, 1044366);
             this.SetManaReq(index, 9);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(Garlic), 1044529, 1, 500315);
             this.AddRes(index, typeof(SulfurousAsh), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(PoisonScroll), 1116350, 1044548, 30.5, 53.5, typeof(Nightshade), 1044358, 1, 1044366);
             this.SetManaReq(index, 9);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(TelekinisisScroll), 1116350, 1044548, 30.5, 53.5, typeof(Bloodmoss), 1044358, 1, 1044366);
             this.SetManaReq(index, 9);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(TeleportScroll), 1116350, 1044548, 30.5, 53.5, typeof(Bloodmoss), 1044358, 1, 1044366);
             this.SetManaReq(index, 9);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(UnlockScroll), 1116350, 1044548, 30.5, 53.5, typeof(Bloodmoss), 1044358, 1, 1044366);
             this.SetManaReq(index, 9);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(SulfurousAsh), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(WallOfStoneScroll), 1116350, 1044548, 30.5, 53.5, typeof(Bloodmoss), 1044358, 1, 1044366);
             this.SetManaReq(index, 9);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(Garlic), 1044529, 1, 500315);
 
             // 4 circle
 
             index = this.AddCraft(typeof(ArchCureScroll), 1116350, 1044548, 40.8, 67.8, typeof(Garlic), 1044358, 1, 1044366);
             this.SetManaReq(index, 11);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(Ginseng), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(ArchProtectionScroll), 1116350, 1044548, 40.8, 67.8, typeof(Garlic), 1044358, 1, 1044366);
             this.SetManaReq(index, 11);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(Ginseng), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
             this.AddRes(index, typeof(SulfurousAsh), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(CurseScroll), 1116350, 1044548, 40.8, 67.8, typeof(Garlic), 1044358, 1, 1044366);
             this.SetManaReq(index, 11);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(Nightshade), 1044529, 1, 500315);
             this.AddRes(index, typeof(SulfurousAsh), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(FireFieldScroll), 1116350, 1044548, 40.8, 67.8, typeof(BlackPearl), 1044358, 1, 1044366);
             this.SetManaReq(index, 11);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(SpidersSilk), 1044529, 1, 500315);
             this.AddRes(index, typeof(SulfurousAsh), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(GreaterHealScroll), 1116350, 1044548, 40.8, 67.8, typeof(Garlic), 1044358, 1, 1044366);
             this.SetManaReq(index, 11);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(SpidersSilk), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
             this.AddRes(index, typeof(Ginseng), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(LightningScroll), 1116350, 1044548, 40.8, 67.8, typeof(MandrakeRoot), 1044358, 1, 1044366);
             this.SetManaReq(index, 11);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(SulfurousAsh), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(ManaDrainScroll), 1116350, 1044548, 40.8, 67.8, typeof(BlackPearl), 1044358, 1, 1044366);
             this.SetManaReq(index, 11);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(SpidersSilk), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(RecallScroll), 1116350, 1044548, 40.8, 67.8, typeof(BlackPearl), 1044358, 1, 1044366);
             this.SetManaReq(index, 11);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(Bloodmoss), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
 
@@ -394,43 +426,51 @@ namespace Server.Engines.Craft
 
             index = this.AddCraft(typeof(BladeSpiritsScroll), 1116350, 1044548, 50.1, 82.1, typeof(BlackPearl), 1044358, 1, 1044366);
             this.SetManaReq(index, 14);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(Nightshade), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(DispelFieldScroll), 1116350, 1044548, 50.1, 82.1, typeof(BlackPearl), 1044358, 1, 1044366);
             this.SetManaReq(index, 14);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(Garlic), 1044529, 1, 500315);
             this.AddRes(index, typeof(SpidersSilk), 1044529, 1, 500315);
             this.AddRes(index, typeof(SulfurousAsh), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(IncognitoScroll), 1116350, 1044548, 50.1, 82.1, typeof(Bloodmoss), 1044358, 1, 1044366);
             this.SetManaReq(index, 14);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(Garlic), 1044529, 1, 500315);
             this.AddRes(index, typeof(Nightshade), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(MagicReflectScroll), 1116350, 1044548, 50.1, 82.1, typeof(Garlic), 1044358, 1, 1044366);
             this.SetManaReq(index, 14);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
             this.AddRes(index, typeof(SpidersSilk), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(MindBlastScroll), 1116350, 1044548, 50.1, 82.1, typeof(BlackPearl), 1044358, 1, 1044366);
             this.SetManaReq(index, 14);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
             this.AddRes(index, typeof(Nightshade), 1044529, 1, 500315);
             this.AddRes(index, typeof(SulfurousAsh), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(ParalyzeScroll), 1116350, 1044548, 50.1, 82.1, typeof(Garlic), 1044358, 1, 1044366);
             this.SetManaReq(index, 14);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
             this.AddRes(index, typeof(SpidersSilk), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(PoisonFieldScroll), 1116350, 1044548, 50.1, 82.1, typeof(BlackPearl), 1044358, 1, 1044366);
             this.SetManaReq(index, 14);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(Nightshade), 1044529, 1, 500315);
             this.AddRes(index, typeof(SpidersSilk), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(SummonCreatureScroll), 1116350, 1044548, 50.1, 82.1, typeof(Bloodmoss), 1044358, 1, 1044366);
             this.SetManaReq(index, 14);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
             this.AddRes(index, typeof(SpidersSilk), 1044529, 1, 500315);
 
@@ -439,39 +479,47 @@ namespace Server.Engines.Craft
 
             index = this.AddCraft(typeof(DispelScroll), 1116350, 1044548, 60.4, 90.4, typeof(Garlic), 1044358, 1, 1044366);
             this.SetManaReq(index, 20);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
             this.AddRes(index, typeof(SulfurousAsh), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(EnergyBoltScroll), 1116350, 1044548, 60.4, 90.4, typeof(BlackPearl), 1044358, 1, 1044366);
             this.SetManaReq(index, 20);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(Nightshade), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(ExplosionScroll), 1116350, 1044548, 60.4, 90.4, typeof(Bloodmoss), 1044358, 1, 1044366);
             this.SetManaReq(index, 20);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(InvisibilityScroll), 1116350, 1044548, 60.4, 90.4, typeof(Bloodmoss), 1044358, 1, 1044366);
             this.SetManaReq(index, 20);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(Nightshade), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(MarkScroll), 1116350, 1044548, 60.4, 90.4, typeof(Bloodmoss), 1044358, 1, 1044366);
             this.SetManaReq(index, 20);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(BlackPearl), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(MassCurseScroll), 1116350, 1044548, 60.4, 90.4, typeof(Garlic), 1044358, 1, 1044366);
             this.SetManaReq(index, 20);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
             this.AddRes(index, typeof(Nightshade), 1044529, 1, 500315);
             this.AddRes(index, typeof(SulfurousAsh), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(ParalyzeFieldScroll), 1116350, 1044548, 60.4, 90.4, typeof(BlackPearl), 1044358, 1, 1044366);
             this.SetManaReq(index, 20);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(Ginseng), 1044529, 1, 500315);
             this.AddRes(index, typeof(SpidersSilk), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(RevealScroll), 1116350, 1044548, 60.4, 90.4, typeof(Bloodmoss), 1044358, 1, 1044366);
             this.SetManaReq(index, 20);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(SulfurousAsh), 1044529, 1, 500315);
 
 
@@ -479,45 +527,53 @@ namespace Server.Engines.Craft
 
             index = this.AddCraft(typeof(ChainLightningScroll), 1116350, 1044548, 70.0, 95.0, typeof(BlackPearl), 1044358, 1, 1044366);
             this.SetManaReq(index, 40);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(Bloodmoss), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
             this.AddRes(index, typeof(SulfurousAsh), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(EnergyFieldScroll), 1116350, 1044548, 70.0, 95.0, typeof(BlackPearl), 1044358, 1, 1044366);
             this.SetManaReq(index, 40);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
             this.AddRes(index, typeof(SpidersSilk), 1044529, 1, 500315);
             this.AddRes(index, typeof(SulfurousAsh), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(FlamestrikeScroll), 1116350, 1044548, 70.0, 95.0, typeof(SpidersSilk), 1044358, 1, 1044366);
             this.SetManaReq(index, 40);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(SulfurousAsh), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(GateTravelScroll), 1116350, 1044548, 70.0, 95.0, typeof(BlackPearl), 1044358, 1, 1044366);
             this.SetManaReq(index, 40);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
             this.AddRes(index, typeof(SulfurousAsh), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(ManaVampireScroll), 1116350, 1044548, 70.0, 95.0, typeof(BlackPearl), 1044358, 1, 1044366);
             this.SetManaReq(index, 40);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(Bloodmoss), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
             this.AddRes(index, typeof(SpidersSilk), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(MassDispelScroll), 1116350, 1044548, 70.0, 95.0, typeof(BlackPearl), 1044358, 1, 1044366);
             this.SetManaReq(index, 40);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(Garlic), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
             this.AddRes(index, typeof(SulfurousAsh), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(MeteorSwarmScroll), 1116350, 1044548, 70.0, 95.0, typeof(Bloodmoss), 1044358, 1, 1044366);
             this.SetManaReq(index, 40);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
             this.AddRes(index, typeof(SulfurousAsh), 1044529, 1, 500315);
             this.AddRes(index, typeof(SpidersSilk), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(PolymorphScroll), 1116350, 1044548, 70.0, 95.0, typeof(Bloodmoss), 1044358, 1, 1044366);
             this.SetManaReq(index, 40);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
             this.AddRes(index, typeof(SpidersSilk), 1044529, 1, 500315);
 
@@ -526,45 +582,53 @@ namespace Server.Engines.Craft
 
             index = this.AddCraft(typeof(EarthquakeScroll), 1116350, 1044548, 90.0, 100.0, typeof(Bloodmoss), 1044358, 1, 1044366);
             this.SetManaReq(index, 50);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
             this.AddRes(index, typeof(Ginseng), 1044529, 1, 500315);
             this.AddRes(index, typeof(SulfurousAsh), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(EnergyVortexScroll), 1116350, 1044548, 90.0, 100.0, typeof(BlackPearl), 1044358, 1, 1044366);
             this.SetManaReq(index, 50);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(Bloodmoss), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
             this.AddRes(index, typeof(Nightshade), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(ResurrectionScroll), 1116350, 1044548, 90.0, 100.0, typeof(Bloodmoss), 1044358, 1, 1044366);
             this.SetManaReq(index, 50);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(Garlic), 1044529, 1, 500315);
             this.AddRes(index, typeof(Ginseng), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(SummonAirElementalScroll), 1116350, 1044548, 90.0, 100.0, typeof(Bloodmoss), 1044358, 1, 1044366);
             this.SetManaReq(index, 50);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
             this.AddRes(index, typeof(SpidersSilk), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(SummonDaemonScroll), 1116350, 1044548, 90.0, 100.0, typeof(Bloodmoss), 1044358, 1, 1044366);
             this.SetManaReq(index, 50);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
             this.AddRes(index, typeof(SpidersSilk), 1044529, 1, 500315);
             this.AddRes(index, typeof(SulfurousAsh), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(SummonEarthElementalScroll), 1116350, 1044548, 90.0, 100.0, typeof(Bloodmoss), 1044358, 1, 1044366);
             this.SetManaReq(index, 50);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
             this.AddRes(index, typeof(SpidersSilk), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(SummonFireElementalScroll), 1116350, 1044548, 90.0, 100.0, typeof(Bloodmoss), 1044358, 1, 1044366);
             this.SetManaReq(index, 50);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
             this.AddRes(index, typeof(SpidersSilk), 1044529, 1, 500315);
             this.AddRes(index, typeof(SulfurousAsh), 1044529, 1, 500315);
 
             index = this.AddCraft(typeof(SummonWaterElementalScroll), 1116350, 1044548, 90.0, 100.0, typeof(Bloodmoss), 1044358, 1, 1044366);
             this.SetManaReq(index, 50);
+            this.AddRes(index, typeof(BlankScroll), 1044529, 1, 500315);
             this.AddRes(index, typeof(MandrakeRoot), 1044529, 1, 500315);
             this.AddRes(index, typeof(SpidersSilk), 1044529, 1, 500315);
 

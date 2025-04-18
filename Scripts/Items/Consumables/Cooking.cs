@@ -372,8 +372,10 @@ namespace Server.Items
         }
     }
 
+    /*
     // ********** PitcherWater **********
-    /*public class PitcherWater : Item
+
+    public class PitcherWater : Item
     {
     [Constructable]
     public PitcherWater() : base(Utility.Random( 0x1f9d, 2 ))
@@ -430,7 +432,11 @@ namespace Server.Items
     }
     }
     }
-    }*/
+    }
+    
+    */
+    ////// fine PITCHER OF WATER
+    
 
     // ********** SackFlour **********
     [TypeAlias("Server.Items.SackFlourOpen")]
@@ -515,14 +521,14 @@ namespace Server.Items
 
             if ((this.ItemID == 0x1039 || this.ItemID == 0x1045))
                 ++this.ItemID;
-            #if false
+            //#if false
 			this.Delete();
 			from.AddToBackpack( new SackFlourOpen() );
-            #endif
+            //#endif
         }
     }
 
-    #if false
+    //#if false
 	// ********** SackFlourOpen **********
 	public class SackFlourOpen : Item
 	{
@@ -599,7 +605,7 @@ namespace Server.Items
 			}
 		}
 	}
-    #endif
+    //#endif
 
     // ********** Eggshells **********
     public class Eggshells : Item

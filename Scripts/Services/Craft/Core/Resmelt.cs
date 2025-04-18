@@ -117,7 +117,7 @@ namespace Server.Engines.Craft
 
                     if (m_IsPreAoS)
                     {
-                        from.SendMenu(new NewCraftingMenu(from, m_CraftSystem, m_Tool, message, m_IsPreAoS));
+                        from.SendMenu(new NewBlacksmithyMenu(from, m_CraftSystem, m_Tool, message, m_IsPreAoS));
                     }
                     else
                     {

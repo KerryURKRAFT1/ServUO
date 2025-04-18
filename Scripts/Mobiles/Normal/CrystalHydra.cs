@@ -59,6 +59,8 @@ namespace Server.Mobiles
             this.AddLoot(LootPack.UltraRich, 2);
             this.AddLoot(LootPack.HighScrolls);
             this.AddLoot(LootPack.Parrot);
+
+
         }
 		
         public override void OnDeath(Container c)

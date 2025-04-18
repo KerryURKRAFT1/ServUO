@@ -9,7 +9,7 @@ using Server.Menus.ItemLists;
 
 namespace Server.Engines.Craft
 {
-    public class NewFletchingMenu : ItemListMenu
+    public class NewCartographyMenu : ItemListMenu
     {
         private readonly Mobile m_From;
         private readonly CraftSystem m_CraftSystem;
@@ -18,7 +18,7 @@ namespace Server.Engines.Craft
         private readonly bool m_isPreAoS;
 
 
-        public NewFletchingMenu(Mobile from, CraftSystem craftSystem, BaseTool tool, int message,  bool isPreAoS)
+        public NewCartographyMenu(Mobile from, CraftSystem craftSystem, BaseTool tool, int message,  bool isPreAoS)
             : base("Select a category to craft:", GetCraftCategories(from, craftSystem))
         {
             m_From = from;
@@ -27,27 +27,34 @@ namespace Server.Engines.Craft
             m_Message = message;
             m_isPreAoS = isPreAoS;
 
+            
+            
+
             if (m_Message != 0)
             {
                 from.SendLocalizedMessage(m_Message);
             }
 
-            if (m_CraftSystem.GetType() == typeof(DefBowFletching))
+            //if (m_CraftSystem.GetType() == typeof(DefInscription))
+            if (m_CraftSystem.GetType() == typeof(DefCartography) && (Core.AOS || Core.UOR))
             {
-                m_CraftSystem = DefClassicBowFletching.CraftSystem;
-                Console.WriteLine("CraftSystem switched to" + m_CraftSystem.GetType().Name);
+                m_CraftSystem = DefCartography.CraftSystem;
+
             }
             else
             {
-                Console.WriteLine("Using CraftSystem alternatio of type: " + m_CraftSystem.GetType().Name);
+                //Console.WriteLine("Using CraftSystem alternatio of type: " + m_CraftSystem.GetType().Name);
             }
+
+
+
 
                         // Verifica dei materiali
             if (!HasRequiredMaterials(from, craftSystem))
             {
-                from.SendMessage("You do not have the necessary materials to craft any items.");
+                from.SendMessage("You do not have the necessary materials or Skill to craft any items aaaaaaaaa.");
 
-                //return;
+                return;
             }
 
 
@@ -79,9 +86,7 @@ namespace Server.Engines.Craft
 
 
 
-                /// <summary>
-        /// Metodo wrapper per verificare i materiali e aprire il menu se i materiali sono sufficienti.
-        /// </summary>
+
         public static void OpenMenuWithMaterialCheck(Mobile from, CraftSystem craftSystem, BaseTool tool, int message, bool isPreAoS)
         {
             // Verifica dei materiali
@@ -92,7 +97,7 @@ namespace Server.Engines.Craft
             }
 
             // Se i materiali sono sufficienti, apri il menu
-            from.SendMenu(new NewInscriptionMenu(from, craftSystem, tool, message, isPreAoS));
+            from.SendMenu(new NewCartographyMenu(from, craftSystem, tool, message, isPreAoS));
         }
 
         /// <summary>
@@ -112,7 +117,7 @@ namespace Server.Engines.Craft
                 }
 
                 // Altrimenti, crea il menu normalmente
-                from.SendMenu(new NewFletchingMenu(from, craftSystem, tool, message, isPreAoS));
+                from.SendMenu(new NewCartographyMenu(from, craftSystem, tool, message, isPreAoS));
             }
 
 
@@ -122,33 +127,23 @@ namespace Server.Engines.Craft
         {
             List<ItemListEntry> categories = new List<ItemListEntry>();
 
-            if (KindlingMenu.HasCraftableItems(from, craftSystem))
+            if (LocalMapMenu.HasCraftableItems(from, craftSystem))
             {
-                categories.Add(new ItemListEntry("Kindling", 3553));
+                categories.Add(new ItemListEntry("Local Map", 6511));
             }
-            if (ShaftMenu.HasCraftableItems(from, craftSystem))
+            if (CityMapnMenu.HasCraftableItems(from, craftSystem))
             {
-                categories.Add(new ItemListEntry("Shaft", 7124));
+                categories.Add(new ItemListEntry("City Map", 6512));
             }
-            if (AmmoMenu.HasCraftableItems(from, craftSystem))
+            if (SeaChartMenu.HasCraftableItems(from, craftSystem))
             {
-                categories.Add(new ItemListEntry("Ammunition", 3903));
+                categories.Add(new ItemListEntry("Sea Chart", 6513));
             }
-            if (BowsMenu.HasCraftableItems(from, craftSystem))
+            if (WorldMapMenu.HasCraftableItems(from, craftSystem))
             {
-                categories.Add(new ItemListEntry("Bow", 5042));
-                Console.WriteLine("[DEBUG] Opening BowsMenu");
-                Console.WriteLine("Using CraftSystem alternatio of type: " + craftSystem.GetType().Name);
-                                
+                categories.Add(new ItemListEntry("World Map", 6514));               
             }
-            if (CrossbowMenu.HasCraftableItems(from, craftSystem))
-            {
-                categories.Add(new ItemListEntry("Crossbow", 3920));
-            }
-            if (HeavyCrossbowMenu.HasCraftableItems(from, craftSystem))
-            {
-                categories.Add(new ItemListEntry("Heavy Crossbow", 5117));
-            }
+           
             return categories.ToArray();
         }
 
@@ -160,25 +155,21 @@ namespace Server.Engines.Craft
             {
                 var category = categories[index].Name;
 
+
+
                 switch (category)
                 {
-                    case "Kindling":
-                        m_From.SendMenu(new KindlingMenu(m_From, m_CraftSystem, m_Tool));
+                    case "Local Map":
+                        m_From.SendMenu(new LocalMapMenu(m_From, m_CraftSystem, m_Tool));
                         break;
-                    case "Shaft":
-                        m_From.SendMenu(new ShaftMenu(m_From, m_CraftSystem, m_Tool));
+                    case "City Map":
+                        m_From.SendMenu(new CityMapnMenu(m_From, m_CraftSystem, m_Tool));
                         break;
-                    case "Ammunition":
-                        m_From.SendMenu(new AmmoMenu(m_From, m_CraftSystem, m_Tool));
+                    case "Sea Chart":
+                        m_From.SendMenu(new SeaChartMenu(m_From, m_CraftSystem, m_Tool));
                         break;
-                    case "Bow":
-                        m_From.SendMenu(new BowsMenu(m_From, m_CraftSystem, m_Tool));
-                        break;
-                    case "Crossbow":
-                        m_From.SendMenu(new CrossbowMenu(m_From, m_CraftSystem, m_Tool));
-                        break;
-                    case "Heavy Crossbow":
-                        m_From.SendMenu(new HeavyCrossbowMenu(m_From, m_CraftSystem, m_Tool));
+                    case "World Map":
+                        m_From.SendMenu(new WorldMapMenu(m_From, m_CraftSystem, m_Tool));
                         break;
                     default:
                         m_From.SendMessage("Invalid selection.");
@@ -193,17 +184,17 @@ namespace Server.Engines.Craft
 
 
 /// <summary>
-/// // kindling MENU
+/// // Local Map Menu
 /// </summary>
 
-public class KindlingMenu : ItemListMenu
+public class LocalMapMenu : ItemListMenu
         {
             private readonly Mobile m_From;
             private readonly CraftSystem m_CraftSystem;
             private readonly BaseTool m_Tool;
 
-            public KindlingMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select a Kindling to craft:", GetCraftItems(from, craftSystem))
+            public LocalMapMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
+                : base("Select a Map to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -214,12 +205,12 @@ public class KindlingMenu : ItemListMenu
             {
                 List<ItemListEntry> items = new List<ItemListEntry>();
 
-                ItemListEntryWithType[] allKindling = new ItemListEntryWithType[]
+                ItemListEntryWithType[] allLocalMap = new ItemListEntryWithType[]
                 {
-                    new ItemListEntryWithType("Kindling", typeof(Kindling), 3553)
+                    new ItemListEntryWithType("Local Map", typeof(LocalMap), 6511)
                 };
 
-                foreach (ItemListEntryWithType entry in allKindling)
+                foreach (ItemListEntryWithType entry in allLocalMap)
                 {
                     CraftItem craftItem = craftSystem.CraftItems.SearchFor(entry.ItemType);
 
@@ -291,17 +282,17 @@ public class KindlingMenu : ItemListMenu
 
 
 /// <summary>
-/// // shaft MENU
+/// // City Mapn Menu
 /// </summary>
 
-public class ShaftMenu : ItemListMenu
+public class CityMapnMenu : ItemListMenu
         {
             private readonly Mobile m_From;
             private readonly CraftSystem m_CraftSystem;
             private readonly BaseTool m_Tool;
 
-            public ShaftMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select a shaft to craft:", GetCraftItems(from, craftSystem))
+            public CityMapnMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
+                : base("Select a map to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -312,12 +303,12 @@ public class ShaftMenu : ItemListMenu
             {
                 List<ItemListEntry> items = new List<ItemListEntry>();
 
-                ItemListEntryWithType[] allShaft = new ItemListEntryWithType[]
+                ItemListEntryWithType[] allCitymap = new ItemListEntryWithType[]
                 {
-                    new ItemListEntryWithType("Shaft", typeof(Shaft), 7124)
+                    new ItemListEntryWithType("City Map", typeof(CityMap), 6312),
                 };
 
-                foreach (ItemListEntryWithType entry in allShaft)
+                foreach (ItemListEntryWithType entry in allCitymap)
                 {
                     CraftItem craftItem = craftSystem.CraftItems.SearchFor(entry.ItemType);
 
@@ -390,16 +381,16 @@ public class ShaftMenu : ItemListMenu
 
 /// 
 /// <summary>
-/// // Ammo MENU
+/// // SeaChartMenu MENU
 /// </summary>
- public class AmmoMenu : ItemListMenu
+ public class SeaChartMenu : ItemListMenu
         {
             private readonly Mobile m_From;
             private readonly CraftSystem m_CraftSystem;
             private readonly BaseTool m_Tool;
 
-            public AmmoMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select an ammunition to craft:", GetCraftItems(from, craftSystem))
+            public SeaChartMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
+                : base("Select map to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -410,13 +401,13 @@ public class ShaftMenu : ItemListMenu
             {
                 List<ItemListEntry> items = new List<ItemListEntry>();
 
-                ItemListEntryWithType[] allAmmo = new ItemListEntryWithType[]
+                ItemListEntryWithType[] allSeachart = new ItemListEntryWithType[]
                 {
-                    new ItemListEntryWithType("Arrow", typeof(Arrow), 3903),
-                    new ItemListEntryWithType("Bolt", typeof(Bolt), 7163)
+                    new ItemListEntryWithType("SeaChart", typeof(SeaChart), 6513),
+
                 };
 
-                foreach (ItemListEntryWithType entry in allAmmo)
+                foreach (ItemListEntryWithType entry in allSeachart)
                 {
                     CraftItem craftItem = craftSystem.CraftItems.SearchFor(entry.ItemType);
 
@@ -488,18 +479,18 @@ public class ShaftMenu : ItemListMenu
 
 
 /// <summary>
-/// // bows MENU
+/// // WorldMapMenu  MENU
 /// </summary>
 
 
- public class BowsMenu : ItemListMenu
+ public class WorldMapMenu : ItemListMenu
         {
             private readonly Mobile m_From;
             private readonly CraftSystem m_CraftSystem;
             private readonly BaseTool m_Tool;
 
-            public BowsMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select a Bow to craft:", GetCraftItems(from, craftSystem))
+            public WorldMapMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
+                : base("Select a map to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -510,13 +501,13 @@ public class ShaftMenu : ItemListMenu
             {
                 List<ItemListEntry> items = new List<ItemListEntry>();
 
-                ItemListEntryWithType[] allBows = new ItemListEntryWithType[]
+                ItemListEntryWithType[] allWorldmap = new ItemListEntryWithType[]
                 {
-                    new ItemListEntryWithType("Bow", typeof(Bow), 5042)
-                    
+                    new ItemListEntryWithType("World Map", typeof(WorldMap), 6314),
+
                 };
 
-                foreach (ItemListEntryWithType entry in allBows)
+                foreach (ItemListEntryWithType entry in allWorldmap)
                 {
                     CraftItem craftItem = craftSystem.CraftItems.SearchFor(entry.ItemType);
 
@@ -586,207 +577,34 @@ public class ShaftMenu : ItemListMenu
         }
 
 /// <summary>
-/// // CROSSBOW MENU
+/// // FifthCircle  MENU
 /// </summary>
 
-public class CrossbowMenu : ItemListMenu
-        {
-            private readonly Mobile m_From;
-            private readonly CraftSystem m_CraftSystem;
-            private readonly BaseTool m_Tool;
 
-            public CrossbowMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select a Crossbow to craft:", GetCraftItems(from, craftSystem))
-            {
-                m_From = from;
-                m_CraftSystem = craftSystem;
-                m_Tool = tool;
-            }
-
-            private static ItemListEntry[] GetCraftItems(Mobile from, CraftSystem craftSystem)
-            {
-                List<ItemListEntry> items = new List<ItemListEntry>();
-
-                ItemListEntryWithType[] allLeather = new ItemListEntryWithType[]
-                {
-                    new ItemListEntryWithType("Crossbow", typeof(Crossbow), 3920)
-
-                };
-
-                foreach (ItemListEntryWithType entry in allLeather)
-                {
-                    CraftItem craftItem = craftSystem.CraftItems.SearchFor(entry.ItemType);
-
-                    if (craftItem != null)
-                    {
-                        bool hasRequiredSkill = false;
-                        foreach (CraftSkill skill in craftItem.Skills)
-                        {
-                            if (from.Skills[skill.SkillToMake].Value >= skill.MinSkill)
-                            {
-                                hasRequiredSkill = true;
-                                break;
-                            }
-                        }
-
-                        if (hasRequiredSkill)
-                        {
-                            bool hasMaterials = true;
-                            foreach (CraftRes craftRes in craftItem.Resources)
-                            {
-                                if (from.Backpack.GetAmount(craftRes.ItemType) < craftRes.Amount)
-                                {
-                                    hasMaterials = false;
-                                    break;
-                                }
-                            }
-
-                            if (hasMaterials)
-                            {
-                                items.Add(entry);
-                            }
-                        }
-                    }
-                }
-
-                return items.ToArray();
-            }
-
-            public override void OnResponse(NetState state, int index)
-            {
-                var items = GetCraftItems(m_From, m_CraftSystem);
-                if (index >= 0 && index < items.Length)
-                {
-                    var itemType = ((ItemListEntryWithType)items[index]).ItemType;
-                    CraftItem craftItem = m_CraftSystem.CraftItems.SearchFor(itemType);
-
-                    if (craftItem != null)
-                    {
-                        craftItem.Craft(m_From, m_CraftSystem, null, m_Tool);
-                    }
-                    else
-                    {
-                        m_From.SendMessage("The selected item cannot be crafted.");
-                    }
-                }
-                else
-                {
-                    m_From.SendMessage("Invalid selection.");
-                }
-            }
-
-            public static bool HasCraftableItems(Mobile from, CraftSystem craftSystem)
-            {
-                var items = GetCraftItems(from, craftSystem);
-                return items.Length > 0;
-            }
-        }
 
 
 
 /// <summary>
-/// // HEAVY CROSSBOW MENU
+/// // explosion MENU
 /// </summary>
-        public class HeavyCrossbowMenu : ItemListMenu
-        {
-            private readonly Mobile m_From;
-            private readonly CraftSystem m_CraftSystem;
-            private readonly BaseTool m_Tool;
-
-            public HeavyCrossbowMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select an Heavy CrossBow to craft:", GetCraftItems(from, craftSystem))
-            {
-                m_From = from;
-                m_CraftSystem = craftSystem;
-                m_Tool = tool;
-            }
-
-            private static ItemListEntry[] GetCraftItems(Mobile from, CraftSystem craftSystem)
-            {
-                List<ItemListEntry> items = new List<ItemListEntry>();
-
-                ItemListEntryWithType[] allHCbow = new ItemListEntryWithType[]
-                {
-                    new ItemListEntryWithType("HeavyCrossbow", typeof(HeavyCrossbow), 5117)
-
-                };
-
-                foreach (ItemListEntryWithType entry in allHCbow)
-                {
-                    CraftItem craftItem = craftSystem.CraftItems.SearchFor(entry.ItemType);
-
-                    if (craftItem != null)
-                    {
-                        bool hasRequiredSkill = false;
-                        foreach (CraftSkill skill in craftItem.Skills)
-                        {
-                            if (from.Skills[skill.SkillToMake].Value >= skill.MinSkill)
-                            {
-                                hasRequiredSkill = true;
-                                break;
-                            }
-                        }
-
-                        if (hasRequiredSkill)
-                        {
-                            bool hasMaterials = true;
-                            foreach (CraftRes craftRes in craftItem.Resources)
-                            {
-                                if (from.Backpack.GetAmount(craftRes.ItemType) < craftRes.Amount)
-                                {
-                                    hasMaterials = false;
-                                    break;
-                                }
-                            }
-
-                            if (hasMaterials)
-                            {
-                                items.Add(entry);
-                            }
-                        }
-                    }
-                }
-
-                return items.ToArray();
-            }
-
-            public override void OnResponse(NetState state, int index)
-            {
-                var items = GetCraftItems(m_From, m_CraftSystem);
-                if (index >= 0 && index < items.Length)
-                {
-                    var itemType = ((ItemListEntryWithType)items[index]).ItemType;
-                    CraftItem craftItem = m_CraftSystem.CraftItems.SearchFor(itemType);
-
-                    if (craftItem != null)
-                    {
-                        craftItem.Craft(m_From, m_CraftSystem, null, m_Tool);
-                    }
-                    else
-                    {
-                        m_From.SendMessage("The selected item cannot be crafted.");
-                    }
-                }
-                else
-                {
-                    m_From.SendMessage("Invalid selection.");
-                }
-            }
-
-            public static bool HasCraftableItems(Mobile from, CraftSystem craftSystem)
-            {
-                var items = GetCraftItems(from, craftSystem);
-                return items.Length > 0;
-            }
-        }
+        
 
 
 /// <summary>
-/// // 
+/// //  SeventhCirclenMenu POT MENU
 /// </summary>
 
 
+       
 
+
+
+/// <summary>
+/// //  EighthCirclenMenu POT MENU
+/// </summary>
+
+
+        
 
             
 
