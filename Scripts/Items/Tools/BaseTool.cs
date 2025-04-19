@@ -173,8 +173,7 @@ namespace Server.Items
                     
                     if (system == DefCarpentry.CraftSystem)
                     {
-                        from.SendMenu(new NewCarpentryMenu(from, system, this, 0, true));
-
+                        NewCarpentryMenu.CreateMenu(from, system, this, 0, true);
                     }
                     else if (system == DefTinkering.CraftSystem)
                     {

@@ -128,7 +128,10 @@ namespace Server.Engines.Craft
                     Container pack = from.Backpack;
                     if (pack != null)
                     {
-                        foreach (Item item in pack.Items)
+                        var items = pack.FindItemsByType<Item>(true); // Ricorsivo
+
+                        //foreach (Item item in pack.Items)
+                        foreach (Item item in items)
                         {
                             if (item is IronIngot)
                             {
@@ -661,30 +664,12 @@ namespace Server.Engines.Craft
 
                     ItemListEntryWithType[] allHelmets = new ItemListEntryWithType[]
                     {
-                        new ItemListEntryWithType("Plate Chest", typeof(PlateChest), 5142),
-                        new ItemListEntryWithType("Plate Legs", typeof(PlateLegs), 5146),
-                        new ItemListEntryWithType("Helmet", typeof(Helmet), 5130),
-                        new ItemListEntryWithType("Shield", typeof(MetalKiteShield), 7028),
-                        new ItemListEntryWithType("Bronze Shield", typeof(BronzeShield), 7026),
-                        new ItemListEntryWithType("Buckler", typeof(Buckler), 7027),
-                        new ItemListEntryWithType("Heater Shield", typeof(HeaterShield), 7030),
-                        new ItemListEntryWithType("Wooden Kite Shield", typeof(WoodenKiteShield), 7032),
-                        new ItemListEntryWithType("Metal Shield", typeof(MetalShield), 7035),
-                        new ItemListEntryWithType("Plate Gorget", typeof(PlateGorget), 1413),
-                        new ItemListEntryWithType("Plate Arms", typeof(PlateArms), 1410),
-                        new ItemListEntryWithType("Plate Gloves", typeof(PlateGloves), 1414),
-                        new ItemListEntryWithType("Close Helm", typeof(CloseHelm), 5128),
-                        new ItemListEntryWithType("Norse Helm", typeof(NorseHelm), 5134),
                         new ItemListEntryWithType("Bascinet", typeof(Bascinet), 5132),
-                        new ItemListEntryWithType("Chain Coif", typeof(ChainCoif), 5051),
-                        new ItemListEntryWithType("Chain Chest", typeof(ChainChest), 5055),
-                        new ItemListEntryWithType("Chain Legs", typeof(ChainLegs), 5054),
-                        new ItemListEntryWithType("Plate Helm", typeof(PlateHelm), 5138),
-                        new ItemListEntryWithType("Ringmail Chest", typeof(RingmailChest), 5100)
+                        new ItemListEntryWithType("CloseHelm", typeof(CloseHelm), 5128),
+                        new ItemListEntryWithType("Helmet", typeof(Helmet), 5130),
+                        new ItemListEntryWithType("NorseHelm", typeof(NorseHelm), 5134),
+                        new ItemListEntryWithType("PlateHelm", typeof(PlateHelm), 5138)
                     };
-
-
-
 
 
                     foreach (ItemListEntryWithType entry in allHelmets)

@@ -125,15 +125,26 @@ namespace Server.Engines.Craft
             // TABLE
             this.AddCraft(typeof(WritingTable), 1044291, 1022890, 63.1, 88.1, typeof(Board), 1044041, 17, 1044351);
             this.AddCraft(typeof(YewWoodTable), 1044291, 1044307, 63.1, 88.1, typeof(Board), 1044041, 23, 1044351);
-            this.AddCraft(typeof(LargeTable), 1044291, 1044308, 84.2, 109.2, typeof(Board), 1044041, 27, 1044351);
+            this.AddCraft(typeof(LargeTable), 1044291, 1044308, 80.2, 100.0, typeof(Board), 1044041, 27, 1044351);
+
+            // BAR table
+
+            this.AddCraft(typeof(BarTablesWest), 1044291, 1022890, 80.1, 90.0, typeof(Board), 1044041, 10, 1044351);
+            this.AddCraft(typeof(BarTableNorth), 1044291, 1044307, 80.1, 90.0, typeof(Board), 1044041, 10, 1044351);
+            this.AddCraft(typeof(BarCornerNorth), 1044291, 1044308, 80.1, 90.0, typeof(Board), 1044041, 10, 1044351);
+            this.AddCraft(typeof(BarCorner), 1044291, 1022890, 80.1, 90.0, typeof(Board), 1044041, 10, 1044351);
+
+
+
+
 
 
             //STAFFS
-            this.AddCraft(typeof(ShepherdsCrook), 1044566, 1023713, 78.9, 103.9, typeof(Board), 1044041, 7, 1044351);
-            this.AddCraft(typeof(QuarterStaff), 1044566, 1023721, 73.6, 98.6, typeof(Board), 1044041, 6, 1044351);
-            this.AddCraft(typeof(GnarledStaff), 1044566, 1025112, 78.9, 103.9, typeof(Board), 1044041, 7, 1044351);
-            this.AddCraft(typeof(Club), 1044566, 1025043, 65.0, 115.0, typeof(Board), 1044041, 9, 1044351);
-            this.AddCraft(typeof(BlackStaff), 1044566, 1023568, 81.5, 141.8, typeof(Board), 1044041, 9, 1044351);
+            this.AddCraft(typeof(ShepherdsCrook), 1044566, 1023713, 50.9, 81.9, typeof(Board), 1044041, 7, 1044351);
+            this.AddCraft(typeof(QuarterStaff), 1044566, 1023721, 73.6, 80.6, typeof(Board), 1044041, 6, 1044351);
+            this.AddCraft(typeof(GnarledStaff), 1044566, 1025112, 78.9, 75.9, typeof(Board), 1044041, 7, 1044351);
+            this.AddCraft(typeof(Club), 1044566, 1025043, 65.0, 80.0, typeof(Board), 1044041, 9, 1044351);
+            this.AddCraft(typeof(BlackStaff), 1044566, 1023568, 81.5, 100.0, typeof(Board), 1044041, 9, 1044351);
 
 
             //shield
@@ -192,7 +203,7 @@ namespace Server.Engines.Craft
             this.AddRes(index, typeof(IronIngot), 1044036, 40, 1044037);
 
 
-            // Tailoring and Cooking
+            // Tailoring and Blacksmith
             index = this.AddCraft(typeof(Dressform), 1044298, 1044339, 63.1, 88.1, typeof(Board), 1044041, 25, 1044351);
             this.AddSkill(index, SkillName.Tailoring, 65.0, 70.0);
             this.AddRes(index, typeof(Cloth), 1044286, 10, 1044287);

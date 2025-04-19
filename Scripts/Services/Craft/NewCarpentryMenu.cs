@@ -51,6 +51,7 @@ public class NewCarpentryMenu : ItemListMenu
         }
         // Verifica dei materiali
 
+
         if (!HasRequiredMaterials(from, craftSystem))
         {
             from.SendMessage("You do not have the necessary materials to craft any items.");
@@ -60,47 +61,61 @@ public class NewCarpentryMenu : ItemListMenu
     }
 
 
-                /// <summary>
-        /// Metodo wrapper per verificare i materiali e aprire il menu se i materiali sono sufficienti.
-        /// </summary>
-        public static void OpenMenuWithMaterialCheck(Mobile from, CraftSystem craftSystem, BaseTool tool, int message, bool isPreAoS)
-        {
-            // Verifica dei materiali
-            if (!HasRequiredMaterials(from, craftSystem))
+                    /// <summary>
+            /// Metodo wrapper per verificare i materiali e aprire il menu se i materiali sono sufficienti.
+            /// </summary>
+            public static void OpenMenuWithMaterialCheck(Mobile from, CraftSystem craftSystem, BaseTool tool, int message, bool isPreAoS)
             {
-                from.SendMessage("You do not have the necessary materials to craft any items.");
-                return;
+                // Verifica dei materiali
+                if (!HasRequiredMaterials(from, craftSystem))
+                {
+                    from.SendMessage("You do not have the necessary materials to craft any items.");
+                    return;
+                }
+
+                // Se i materiali sono sufficienti, apri il menu
+                from.SendMenu(new NewInscriptionMenu(from, craftSystem, tool, message, isPreAoS));
             }
 
-            // Se i materiali sono sufficienti, apri il menu
-            from.SendMenu(new NewInscriptionMenu(from, craftSystem, tool, message, isPreAoS));
-        }
 
-
-
-    // class to check materials
-    private static bool HasRequiredMaterials(Mobile from, CraftSystem craftSystem)
-{
-    foreach (CraftItem craftItem in craftSystem.CraftItems)
-    {
-        bool hasMaterials = true;
-        foreach (CraftRes craftRes in craftItem.Resources)
-        {
-            if (from.Backpack.GetAmount(craftRes.ItemType) < craftRes.Amount)
+            public static void CreateMenu(Mobile from, CraftSystem craftSystem, BaseTool tool, int message, bool isPreAoS)
             {
-                hasMaterials = false;
-                break;
+                var categories = GetCraftCategories(from, craftSystem);
+
+                // Se l'array delle categorie è vuoto, non creare il menu
+                if (categories.Length == 0)
+                {
+                    from.SendMessage("You do not have the necessary materials to craft any items.");
+                    return; // Non mostrare il menu
+                }
+
+                // Altrimenti, crea il menu normalmente
+                from.SendMenu(new NewCarpentryMenu(from, craftSystem, tool, message, isPreAoS));
             }
-        }
 
-        if (hasMaterials)
-        {
-            return true;
-        }
-    }
+                // class to check materials
+                private static bool HasRequiredMaterials(Mobile from, CraftSystem craftSystem)
+            {
+                foreach (CraftItem craftItem in craftSystem.CraftItems)
+                {
+                    bool hasMaterials = true;
+                    foreach (CraftRes craftRes in craftItem.Resources)
+                    {
+                        if (from.Backpack.GetAmount(craftRes.ItemType) < craftRes.Amount)
+                        {
+                            hasMaterials = false;
+                            break;
+                        }
+                    }
 
-    return false;
-}
+                    if (hasMaterials)
+                    {
+                        return true;
+                    }
+                }
+
+                return false;
+            }
 
 
     private static ItemListEntry[] GetCraftCategories(Mobile from, CraftSystem craftSystem)
@@ -110,37 +125,37 @@ public class NewCarpentryMenu : ItemListMenu
         if (ChairMenu.HasCraftableItems(from, craftSystem))
         {
             categories.Add(new ItemListEntry("Chair", 2866));
-            Console.WriteLine("Added category: Chair (index " + (categories.Count - 1) + ")");
+            //Console.WriteLine("Added category: Chair (index " + (categories.Count - 1) + ")");
         }
         if (ContainerMenu.HasCraftableItems(from, craftSystem))
         {
             categories.Add(new ItemListEntry("Container", 3650));
-            Console.WriteLine("Added category: Container (index " + (categories.Count - 1) + ")");
+            //Console.WriteLine("Added category: Container (index " + (categories.Count - 1) + ")");
         }
         if (TableMenu.HasCraftableItems(from, craftSystem))
         {
             categories.Add(new ItemListEntry("Table", 2868));
-            Console.WriteLine("Added category: Table (index " + (categories.Count - 1) + ")");
+            //Console.WriteLine("Added category: Table (index " + (categories.Count - 1) + ")");
         }
         if (StaffsMenu.HasCraftableItems(from, craftSystem))
         {
             categories.Add(new ItemListEntry("Staffs", 3568));
-            Console.WriteLine("Added category: Staffs (index " + (categories.Count - 1) + ")");
+            //Console.WriteLine("Added category: Staffs (index " + (categories.Count - 1) + ")");
         }
         if (ShieldsMenu.HasCraftableItems(from, craftSystem))
         {
             categories.Add(new ItemListEntry("Shields", 7034));
-            Console.WriteLine("Added category: Shields (index " + (categories.Count - 1) + ")");
+            //Console.WriteLine("Added category: Shields (index " + (categories.Count - 1) + ")");
         }
         if (BarMenu.HasCraftableItems(from, craftSystem))
         {
-            categories.Add(new ItemListEntry("Bar", 2921));
-            Console.WriteLine("Added category: Bar (index " + (categories.Count - 1) + ")");
+            categories.Add(new ItemListEntry("Bar", 6424));
+            //Console.WriteLine("Added category: Bar (index " + (categories.Count - 1) + ")");
         }
         if (MultipleSkillItemMenu.HasCraftableItems(from, craftSystem))
         {
             categories.Add(new ItemListEntry("Multiple Skill Item", 5200));
-            Console.WriteLine("Added category: Multiple Skill Item (index " + (categories.Count - 1) + ")");
+            //Console.WriteLine("Added category: Multiple Skill Item (index " + (categories.Count - 1) + ")");
         }
 
         return categories.ToArray();
@@ -148,53 +163,42 @@ public class NewCarpentryMenu : ItemListMenu
 
     public override void OnResponse(NetState state, int index)
     {
-        Console.WriteLine("Selected category index: " + index);
 
         var categories = GetCraftCategories(m_From, m_CraftSystem);
         if (index >= 0 && index < categories.Length)
         {
             var category = categories[index].Name;
-            Console.WriteLine("Selected category: " + category);
 
             switch (category)
             {
                 case "Chair":
-                    Console.WriteLine("Opening ChairMenu");
                     m_From.SendMenu(new ChairMenu(m_From, m_CraftSystem, m_Tool));
                     break;
                 case "Container":
-                    Console.WriteLine("Opening ContainerMenu");
                     m_From.SendMenu(new ContainerMenu(m_From, m_CraftSystem, m_Tool));
                     break;
                 case "Table":
-                    Console.WriteLine("Opening TableMenu");
                     m_From.SendMenu(new TableMenu(m_From, m_CraftSystem, m_Tool));
                     break;
                 case "Staffs":
-                    Console.WriteLine("Opening StaffsMenu");
                     m_From.SendMenu(new StaffsMenu(m_From, m_CraftSystem, m_Tool));
                     break;
                 case "Shields":
-                    Console.WriteLine("Opening ShieldsMenu");
                     m_From.SendMenu(new ShieldsMenu(m_From, m_CraftSystem, m_Tool));
                     break;
                 case "Bar":
-                    Console.WriteLine("Opening BarMenu");
                     m_From.SendMenu(new BarMenu(m_From, m_CraftSystem, m_Tool));
                     break;
                 case "Multiple Skill Item":
-                    Console.WriteLine("Opening MultipleSkillItemMenu");
                     m_From.SendMenu(new MultipleSkillItemMenu(m_From, m_CraftSystem, m_Tool));
                     break;
                 default:
-                    Console.WriteLine("Invalid category: " + category);
                     m_From.SendMessage("Invalid selection.");
                     break;
             }
         }
         else
         {
-            Console.WriteLine("Invalid category index: " + index);
             m_From.SendMessage("Invalid selection.");
         }
     }
@@ -222,8 +226,6 @@ public class NewCarpentryMenu : ItemListMenu
         m_From = from;
         m_CraftSystem = craftSystem;
         m_Tool = tool;
-
-        Console.WriteLine("ChairMenu initialized.");
 
         if (GetChairItems(from, craftSystem).Length == 0)
         {
@@ -286,15 +288,10 @@ public class NewCarpentryMenu : ItemListMenu
             }
         }
 
-        Console.WriteLine("GetChairItems found " + entries.Count + " items.");
         return entries.ToArray();
     }
 
-    public static bool HasCraftableItems(Mobile from, CraftSystem craftSystem)
-    {
-        var items = GetChairItems(from, craftSystem);
-        return items.Length > 0;
-    }
+
 
     public override void OnResponse(NetState state, int index)
     {
@@ -302,7 +299,6 @@ public class NewCarpentryMenu : ItemListMenu
         if (index >= 0 && index < items.Length)
         {
             var itemType = ((ItemListEntryWithType)items[index]).ItemType;
-            Console.WriteLine("Selected item type: " + itemType.Name);
 
             CraftItem craftItem = m_CraftSystem.CraftItems.SearchFor(itemType);
 
@@ -320,17 +316,18 @@ public class NewCarpentryMenu : ItemListMenu
             m_From.SendMessage("Invalid selection.");
         }
     }
+
+
+    public static bool HasCraftableItems(Mobile from, CraftSystem craftSystem)
+    {
+      var items = GetChairItems(from, craftSystem);
+        return items.Length > 0;
+    }
+
 }
 
 
-
-
-// Altri menu come ContainerMenu, TableMenu, StaffsMenu, ShieldsMenu, BarMenu, MultipleSkillItemMenu non modificati
     
-
-
-
-
 /// <summary>
 /// ///////////////
 /// </summary>
@@ -748,13 +745,11 @@ public class BarMenu : ItemListMenu
     private readonly BaseTool m_Tool;
 
     public BarMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-        : base("Select a bar to craft:", GetBarItems(from, craftSystem))
+        : base("Select a bar item to craft:", GetBarItems(from, craftSystem))
     {
         m_From = from;
         m_CraftSystem = craftSystem;
         m_Tool = tool;
-
-        Console.WriteLine("BarMenu initialized.");
 
         var items = GetBarItems(from, craftSystem);
         if (items.Length == 0)
@@ -762,10 +757,7 @@ public class BarMenu : ItemListMenu
             from.SendMessage("You do not have the necessary materials to craft any bars.");
             from.SendGump(new CraftGump(from, craftSystem, tool, 0)); // Torna al gump di crafting
         }
-        else
-        {
-            Console.WriteLine("BarMenu found " + items.Length + " items.");
-        }
+
     }
 
     private static ItemListEntry[] GetBarItems(Mobile from, CraftSystem craftSystem)
@@ -774,12 +766,10 @@ public class BarMenu : ItemListMenu
 
         ItemListEntryWithType[] allBars = new ItemListEntryWithType[]
         {
-            new ItemListEntryWithType("Board", typeof(Board), 7127),
-            new ItemListEntryWithType("Barrel Staves", typeof(BarrelStaves), 7857),
-            new ItemListEntryWithType("Barrel Lid", typeof(BarrelLid), 7608),
-            new ItemListEntryWithType("Short Music Stand", typeof(ShortMusicStand), 3766),
-            new ItemListEntryWithType("Tall Music Stand", typeof(TallMusicStand), 3771),
-            new ItemListEntryWithType("Easel", typeof(Easle), 3945)
+            new ItemListEntryWithType("BarTablesWest", typeof(BarTablesWest), 6424),
+            new ItemListEntryWithType("BarTableNorth", typeof(BarTableNorth), 6426),
+            new ItemListEntryWithType("BarCornerNorth", typeof(BarCornerNorth), 6419),
+            new ItemListEntryWithType("BarCorner", typeof(BarCorner), 6416)
         };
 
         foreach (ItemListEntryWithType entry in allBars)
@@ -824,11 +814,7 @@ public class BarMenu : ItemListMenu
         return entries.ToArray();
     }
 
-    public static bool HasCraftableItems(Mobile from, CraftSystem craftSystem)
-    {
-        var items = GetBarItems(from, craftSystem);
-        return items.Length > 0;
-    }
+
 
     public override void OnResponse(NetState state, int index)
     {
@@ -854,6 +840,13 @@ public class BarMenu : ItemListMenu
             m_From.SendMessage("Invalid selection.");
         }
     }
+
+    public static bool HasCraftableItems(Mobile from, CraftSystem craftSystem)
+    {
+        var items = GetBarItems(from, craftSystem);
+        return items.Length > 0;
+    }
+
 }
 
 

@@ -60,29 +60,6 @@ namespace Server.Engines.Craft
 
         }
 
-        private static bool HasRequiredMaterials(Mobile from, CraftSystem craftSystem)
-        {
-            foreach (CraftItem craftItem in craftSystem.CraftItems)
-            {
-                bool hasMaterials = true;
-                foreach (CraftRes craftRes in craftItem.Resources)
-                {
-                    if (from.Backpack.GetAmount(craftRes.ItemType) < craftRes.Amount)
-                    {
-                        hasMaterials = false;
-                        break;
-                    }
-                }
-
-                if (hasMaterials)
-                {
-                    return true;
-                }
-            }
-
-            
-            return false;
-        }
 
 
 
@@ -119,7 +96,31 @@ namespace Server.Engines.Craft
                 // Altrimenti, crea il menu normalmente
                 from.SendMenu(new NewCartographyMenu(from, craftSystem, tool, message, isPreAoS));
             }
+            
 
+            private static bool HasRequiredMaterials(Mobile from, CraftSystem craftSystem)
+            {
+                foreach (CraftItem craftItem in craftSystem.CraftItems)
+                {
+                    bool hasMaterials = true;
+                    foreach (CraftRes craftRes in craftItem.Resources)
+                    {
+                        if (from.Backpack.GetAmount(craftRes.ItemType) < craftRes.Amount)
+                        {
+                            hasMaterials = false;
+                            break;
+                        }
+                    }
+
+                    if (hasMaterials)
+                    {
+                        return true;
+                    }
+                }
+
+                
+                return false;
+            }
 
 
 
