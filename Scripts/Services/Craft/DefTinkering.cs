@@ -191,8 +191,8 @@ namespace Server.Engines.Craft
             int index = -1;
 
             #region Jewelry
-            this.AddCraft(typeof(GoldRing), 1044049, 1024234, 65.0, 115.0, typeof(IronIngot), 1044036, 3, 1044037);
-            this.AddCraft(typeof(GoldBracelet), 1044049, 1024230, 55.0, 105.0, typeof(IronIngot), 1044036, 3, 1044037);
+            this.AddCraft(typeof(GoldRing), 1044049, 1024234, 65.0, 100.0, typeof(IronIngot), 1044036, 3, 1044037);
+            this.AddCraft(typeof(GoldBracelet), 1044049, 1024230, 55.0, 100.0, typeof(IronIngot), 1044036, 3, 1044037);
 
             index = this.AddCraft(typeof(GargishNecklace), 1044049, 1095784, 60.0, 110.0, typeof(IronIngot), 1044036, 3, 1044037);
             SetNeededExpansion(index, Expansion.SA);
@@ -231,6 +231,7 @@ namespace Server.Engines.Craft
             this.AddCraft(typeof(ClockFrame), 1044042, 1024173, 0.0, 50.0, typeof(Board), 1044041, 6, 1044351);
             this.AddCraft(typeof(Axle), 1044042, 1024187, 0.0, 25.0, typeof(Board), 1044041, 2, 1044351);
             this.AddCraft(typeof(RollingPin), 1044042, 1024163, 0.0, 50.0, typeof(Board), 1044041, 5, 1044351);
+            this.AddCraft(typeof(WoodenBowl), 1044042, 1024187, 0.0, 50.0, typeof(Board), 1044041, 2, 1044351);
 
             #region High Seas
             if (Core.HS)

@@ -96,6 +96,26 @@ namespace Server.Engines.Harvest
             fish.Resources = res;
             fish.Veins = veins;
 
+            // Aggiungi il controllo per il CORE UOR subito prima o in alternativa a questa sezione
+            if (Core.UOR)
+            {
+                res = new HarvestResource[]
+                {
+                    new HarvestResource(00.0, 00.0, 120.0, 1043297, typeof(Fish)),
+                    new HarvestResource(50.0, 50.0, 120.0, 1043298, typeof(BigFish))
+                };
+
+                veins = new HarvestVein[]
+                {
+                    new HarvestVein(80.0, 0.0, res[0], null),
+                    new HarvestVein(20.0, 0.0, res[1], null)
+                };
+
+                fish.Resources = res;
+                fish.Veins = veins;
+            }
+
+
             if (Core.ML)
             {
                 fish.BonusResources = new BonusHarvestResource[]
@@ -469,17 +489,45 @@ namespace Server.Engines.Harvest
                         else
                             chest = new WoodenChest();
 
-                        if (sos.IsAncient)
-                            chest.Hue = 0x481;
+                        // Controllo per il core UOR
+                        if (Core.UOR)
+                        {
+                            chest.DropItem(new SpecialFishingNet());
+                        }
+                        else
+                        {
+                            // Logica originale per sos.IsAncient
+                            if (sos.IsAncient)
+                            {
+                                chest.Hue = 0x481;
+                                chest.DropItem(new FabledFishingNet());
+                            }
+                            else
+                            {
+                                chest.DropItem(new SpecialFishingNet());
+                            }
+                        }
+
+                        //if (sos.IsAncient)
+                        //    chest.Hue = 0x481;
 
                         TreasureMapChest.Fill(chest, from.Luck, Math.Max(1, Math.Min(4, sos.Level)), true, from.Map);
                         sos.OnSOSComplete(chest);
 
+
+                        //else
+                        //{
+                         //   if (sos.IsAncient)
+                         //       chest.DropItem(new FabledFishingNet());
+                         //   else
+                          //      chest.DropItem(new SpecialFishingNet());
+                        //}
+                        /*
                         if (sos.IsAncient)
                             chest.DropItem(new FabledFishingNet());
                         else
                             chest.DropItem(new SpecialFishingNet());
-
+                        */
                         chest.Movable = true;
                         chest.Locked = false;
                         chest.TrapType = TrapType.None;

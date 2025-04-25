@@ -32,26 +32,59 @@ namespace Server.Engines.Craft
                 from.SendLocalizedMessage(m_Message);
             }
 
-            if (m_CraftSystem.GetType() == typeof(DefBowFletching))
+            if (m_CraftSystem.GetType() == typeof(DefClassicBowFletching))
             {
                 m_CraftSystem = DefClassicBowFletching.CraftSystem;
-                Console.WriteLine("CraftSystem switched to" + m_CraftSystem.GetType().Name);
             }
-            else
-            {
-                Console.WriteLine("Using CraftSystem alternatio of type: " + m_CraftSystem.GetType().Name);
-            }
+
 
                         // Verifica dei materiali
             if (!HasRequiredMaterials(from, craftSystem))
             {
                 from.SendMessage("You do not have the necessary materials to craft any items.");
 
-                //return;
+                return;
+            }
+        }
+
+
+
+        /// <summary>
+        /// Metodo wrapper per verificare i materiali e aprire il menu se i materiali sono sufficienti.
+        /// </summary>
+        public static void OpenMenuWithMaterialCheck(Mobile from, CraftSystem craftSystem, BaseTool tool, int message, bool isPreAoS)
+        {
+            // Verifica dei materiali
+            if (!HasRequiredMaterials(from, craftSystem))
+            {
+                from.SendMessage("You do not have the necessary materials to craft any items.");
+                return;
             }
 
-
+            // Se i materiali sono sufficienti, apri il menu
+            from.SendMenu(new NewFletchingMenu(from, craftSystem, tool, message, isPreAoS));
         }
+
+        /// <summary>
+        /// // Controlla dal tool i materiali
+        /// </summary>
+
+
+            public static void CreateMenu(Mobile from, CraftSystem craftSystem, BaseTool tool, int message, bool isPreAoS)
+            {
+                var categories = GetCraftCategories(from, craftSystem);
+
+                // Se l'array delle categorie è vuoto, non creare il menu
+                if (categories.Length == 0)
+                {
+                    from.SendMessage("You do not have the necessary materials to craft any items.");
+                    return; // Non mostrare il menu
+                }
+
+                // Altrimenti, crea il menu normalmente
+                from.SendMenu(new NewFletchingMenu(from, craftSystem, tool, message, isPreAoS));
+            }
+
 
         private static bool HasRequiredMaterials(Mobile from, CraftSystem craftSystem)
         {
@@ -79,45 +112,6 @@ namespace Server.Engines.Craft
 
 
 
-                /// <summary>
-        /// Metodo wrapper per verificare i materiali e aprire il menu se i materiali sono sufficienti.
-        /// </summary>
-        public static void OpenMenuWithMaterialCheck(Mobile from, CraftSystem craftSystem, BaseTool tool, int message, bool isPreAoS)
-        {
-            // Verifica dei materiali
-            if (!HasRequiredMaterials(from, craftSystem))
-            {
-                from.SendMessage("You do not have the necessary materials to craft any items.");
-                return;
-            }
-
-            // Se i materiali sono sufficienti, apri il menu
-            from.SendMenu(new NewInscriptionMenu(from, craftSystem, tool, message, isPreAoS));
-        }
-
-        /// <summary>
-        /// // Controlla dal tool i materiali
-        /// </summary>
-
-
-            public static void CreateMenu(Mobile from, CraftSystem craftSystem, BaseTool tool, int message, bool isPreAoS)
-            {
-                var categories = GetCraftCategories(from, craftSystem);
-
-                // Se l'array delle categorie è vuoto, non creare il menu
-                if (categories.Length == 0)
-                {
-                    from.SendMessage("You do not have the necessary materials to craft any items.");
-                    return; // Non mostrare il menu
-                }
-
-                // Altrimenti, crea il menu normalmente
-                from.SendMenu(new NewFletchingMenu(from, craftSystem, tool, message, isPreAoS));
-            }
-
-
-
-
         private static ItemListEntry[] GetCraftCategories(Mobile from, CraftSystem craftSystem)
         {
             List<ItemListEntry> categories = new List<ItemListEntry>();
@@ -136,10 +130,7 @@ namespace Server.Engines.Craft
             }
             if (BowsMenu.HasCraftableItems(from, craftSystem))
             {
-                categories.Add(new ItemListEntry("Bow", 5042));
-                Console.WriteLine("[DEBUG] Opening BowsMenu");
-                Console.WriteLine("Using CraftSystem alternatio of type: " + craftSystem.GetType().Name);
-                                
+                categories.Add(new ItemListEntry("Bow", 5042));                
             }
             if (CrossbowMenu.HasCraftableItems(from, craftSystem))
             {
@@ -203,7 +194,7 @@ public class KindlingMenu : ItemListMenu
             private readonly BaseTool m_Tool;
 
             public KindlingMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select a Kindling to craft:", GetCraftItems(from, craftSystem))
+                : base("Select an item to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -707,7 +698,7 @@ public class CrossbowMenu : ItemListMenu
 
                 ItemListEntryWithType[] allHCbow = new ItemListEntryWithType[]
                 {
-                    new ItemListEntryWithType("HeavyCrossbow", typeof(HeavyCrossbow), 5117)
+                    new ItemListEntryWithType("Heavy Crossbow", typeof(HeavyCrossbow), 5117)
 
                 };
 

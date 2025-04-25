@@ -306,7 +306,7 @@ public class CityMapnMenu : ItemListMenu
 
                 ItemListEntryWithType[] allCitymap = new ItemListEntryWithType[]
                 {
-                    new ItemListEntryWithType("City Map", typeof(CityMap), 6312),
+                    new ItemListEntryWithType("City Map", typeof(CityMap), 6512),
                 };
 
                 foreach (ItemListEntryWithType entry in allCitymap)
@@ -504,7 +504,7 @@ public class CityMapnMenu : ItemListMenu
 
                 ItemListEntryWithType[] allWorldmap = new ItemListEntryWithType[]
                 {
-                    new ItemListEntryWithType("World Map", typeof(WorldMap), 6314),
+                    new ItemListEntryWithType("World Map", typeof(WorldMap), 6514),
 
                 };
 

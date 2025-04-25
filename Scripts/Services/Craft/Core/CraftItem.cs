@@ -1405,7 +1405,7 @@ namespace Server.Engines.Craft
 												{
 													if (!ConsumeAttributesForUOR(from, false)) // Verifica senza consumare
 													{
-														from.SendMessage("Non hai abbastanza risorse per procedere con il crafting.");
+														from.SendMessage("You lack the required attributes to make that");
 														return;
 													}
 
@@ -1481,7 +1481,6 @@ namespace Server.Engines.Craft
 					}
 					else
 					{
-						Console.WriteLine("sssssss");
 						from.SendLocalizedMessage(500119); // "You must wait to perform another action"
 					}
 				}
@@ -2027,14 +2026,12 @@ namespace Server.Engines.Craft
 						NewTinkeringMenu.OpenMenuWithMaterialCheck(from, craftSystem, tool, num, true); // Passa true per isPreAoS
 						//from.SendMenu(new NewTinkeringMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
 					}
-					else if (craftSystem.GetType().Name == "DefClassictTailoring")
-					
+					else if (craftSystem.GetType().Name == "DefClassicTailoring")
 					{
 						NewTailoringMenu.OpenMenuWithMaterialCheck(from, craftSystem, tool, num, true); // Passa true per isPreAoS
 						//from.SendMenu(new NewTailoringMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS
 					}
 					else if (craftSystem.GetType().Name == "DefClassicBowFletching")
-					
 					{
 						NewFletchingMenu.OpenMenuWithMaterialCheck(from, craftSystem, tool, num, true); // Passa true per isPreAoS
 						//from.SendMenu(new NewFletchingMenu(from, craftSystem, tool, num, true)); // Passa true per isPreAoS

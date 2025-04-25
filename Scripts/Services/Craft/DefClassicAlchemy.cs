@@ -104,6 +104,61 @@ namespace Server.Engines.Craft
             }
         }
 
+/// <summary>
+/// // OVERRIDE CRAFT METHOD
+/// </summary>
+/*
+            public override void Craft(Mobile from, CraftItem item, BaseTool tool)
+            {
+                // Controlla se il giocatore ha tutti i materiali necessari
+                foreach (CraftRes res in item.Resources)
+                {
+                    int quantity = from.Backpack.GetAmount(res.ItemType);
+
+                    if (quantity < res.Amount)
+                    {
+                        from.SendMessage("You do not have the necessary materials to craft any items");
+                        return;
+                    }
+                }
+
+                bool firstReagent = true; // Flag per il primo messaggio
+
+                // Consuma i materiali uno alla volta e mostra il messaggio
+                foreach (CraftRes res in item.Resources)
+                {
+                    for (int i = 0; i < res.Amount; i++)
+                    {
+                        // Rimuove un'unità del materiale
+                        Item consumed = from.Backpack.ConsumeTotal(res.ItemType, 1);
+
+                        if (consumed != null)
+                        {
+                            if (firstReagent)
+                            {
+                                from.PublicOverheadMessage(MessageType.Regular, 0x3B2, false, "You start grinding some " + res.ItemType.Name + " in the Mortar");
+                                firstReagent = false; // Cambia il flag dopo il primo messaggio
+                            }
+                            else
+                            {
+                                from.PublicOverheadMessage(MessageType.Regular, 0x3B2, false, "You add some " + res.ItemType.Name + " and continue grinding");
+                            }
+                        }
+                    }
+                }
+
+                // Completa il crafting
+                base.Craft(from, item, tool);
+
+                // Messaggio di successo finale
+                from.PublicOverheadMessage(MessageType.Regular, 0x3B2, false, "You pour the completed potion into a bottle");
+            }
+
+*/
+/// <summary>
+/// //
+/// </summary>
+
         public override void InitCraftList()
         {
             int index = -1;

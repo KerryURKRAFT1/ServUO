@@ -66,8 +66,11 @@ namespace Server.Items
 
 		public override TimeSpan OnSwing(Mobile attacker, IDamageable damageable)
 		{
+
 			// Make sure we've been standing still for .25/.5/1 second depending on Era
-			if (Core.TickCount - attacker.LastMoveTime >= (Core.SE ? 250 : Core.AOS ? 500 : 1000) ||
+			//if (Core.TickCount - attacker.LastMoveTime >= (Core.SE ? 250 : Core.AOS ? 500 : 1000) ||
+				if (Core.UOR ||
+				Core.TickCount - attacker.LastMoveTime >= (Core.SE ? 250 : Core.AOS ? 500 : 1000) ||
 				(Core.AOS && WeaponAbility.GetCurrentAbility(attacker) is MovingShot))
 			{
 				bool canSwing = true;
@@ -195,7 +198,7 @@ namespace Server.Items
                     Point3D loc = damageable.Location;
 
 					Ammo.MoveToWorld(
-                        new Point3D(loc.X + Utility.RandomMinMax(-1, 1), loc.Y + Utility.RandomMinMax(-1, 1), loc.Z),
+                        new Point3D(loc.X + Utility.RandomMinMax(0, 1), loc.Y + Utility.RandomMinMax(0, 1), loc.Z),
 						damageable.Map);
 				}
 			}

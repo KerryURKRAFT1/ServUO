@@ -177,7 +177,7 @@ namespace Server.Spells
 
             sdiBonus -= Block.GetSpellReduction(target);
 
-			// PvP spell damage increase cap of 15% from an item�s magic property, 30% if spell school focused.
+			// PvP spell damage increase cap of 15% from an item�s magic property, 30% if spell school focused.
 			if (playerVsPlayer)
 			{
 			    if (SpellHelper.HasSpellFocus(m_Caster, CastSkill) && sdiBonus > 30)
@@ -301,6 +301,11 @@ namespace Server.Spells
 		{
             if (IsCasting && BlocksMovement && (!(m_Caster is BaseCreature) || ((BaseCreature)m_Caster).FreezeOnCast))
 			{
+				if (Core.UOR) // Consentire il movimento se Core.UOR è attivo
+				{
+					return true; // Permetti il movimento
+				}
+
                 if (m_Caster is BaseCreature)
                     m_Caster.Say("Trying to move...");
 
@@ -557,34 +562,39 @@ namespace Server.Spells
 				return;
 			}
 
-			if (m_State == SpellState.Casting)
+
+			if (Core.UOR || m_State == SpellState.Casting || m_State == SpellState.Sequencing) // Interrompi in ogni fase se Core.UOR è attivo
 			{
-				if (!firstCircle && !Core.AOS && this is MagerySpell && ((MagerySpell)this).Circle == SpellCircle.First)
+
+				if (m_State == SpellState.Casting)
 				{
-					return;
-				}
+					if (!firstCircle && !Core.AOS && this is MagerySpell && ((MagerySpell)this).Circle == SpellCircle.First)
+					{
+						return;
+					}
 
-				m_State = SpellState.None;
-				m_Caster.Spell = null;
+					m_State = SpellState.None;
+					m_Caster.Spell = null;
 
-				OnDisturb(type, true);
+					OnDisturb(type, true);
 
-				if (m_CastTimer != null)
-				{
-					m_CastTimer.Stop();
-				}
+					if (m_CastTimer != null)
+					{
+						m_CastTimer.Stop();
+					}
 
-				if (m_AnimTimer != null)
-				{
-					m_AnimTimer.Stop();
-				}
+					if (m_AnimTimer != null)
+					{
+						m_AnimTimer.Stop();
+					}
 
-				if (Core.AOS && m_Caster.Player && type == DisturbType.Hurt)
-				{
-					DoHurtFizzle();
-				}
+					if (Core.AOS && m_Caster.Player && type == DisturbType.Hurt)
+					{
+						DoHurtFizzle();
+					}
 
 				m_Caster.NextSpellTime = Core.TickCount + (int)GetDisturbRecovery().TotalMilliseconds;
+				}
 			}
 			else if (m_State == SpellState.Sequencing)
 			{
@@ -1035,6 +1045,7 @@ namespace Server.Spells
 			}
 			else if (Core.AOS && (m_Caster.Frozen || m_Caster.Paralyzed))
 			{
+				//Console.WriteLine("ENTRA QUI!");
 				m_Caster.SendLocalizedMessage(502646); // You cannot cast a spell while frozen.
 				DoFizzle();
 			}

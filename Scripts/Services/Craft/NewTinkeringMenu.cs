@@ -60,32 +60,6 @@ namespace Server.Engines.Craft
 
 
 
-        private static bool HasRequiredMaterials(Mobile from, CraftSystem craftSystem)
-        {
-            foreach (CraftItem craftItem in craftSystem.CraftItems)
-            {
-                bool hasMaterials = true;
-                foreach (CraftRes craftRes in craftItem.Resources)
-                {
-                    if (from.Backpack.GetAmount(craftRes.ItemType) < craftRes.Amount)
-                    {
-                        hasMaterials = false;
-                        break;
-                    }
-                }
-
-                if (hasMaterials)
-                {
-                    return true;
-                }
-            }
-
-            
-            return false;
-        }
-
-
-
                 /// <summary>
         /// Metodo wrapper per verificare i materiali e aprire il menu se i materiali sono sufficienti.
         /// </summary>
@@ -99,7 +73,7 @@ namespace Server.Engines.Craft
             }
 
             // Se i materiali sono sufficienti, apri il menu
-            from.SendMenu(new NewInscriptionMenu(from, craftSystem, tool, message, isPreAoS));
+            from.SendMenu(new NewTinkeringMenu(from, craftSystem, tool, message, isPreAoS));
         }
 
 
@@ -122,6 +96,30 @@ namespace Server.Engines.Craft
 
                 // Altrimenti, crea il menu normalmente
                 from.SendMenu(new NewTinkeringMenu(from, craftSystem, tool, message, isPreAoS));
+            }
+
+            private static bool HasRequiredMaterials(Mobile from, CraftSystem craftSystem)
+            {
+                foreach (CraftItem craftItem in craftSystem.CraftItems)
+                {
+                    bool hasMaterials = true;
+                    foreach (CraftRes craftRes in craftItem.Resources)
+                    {
+                        if (from.Backpack.GetAmount(craftRes.ItemType) < craftRes.Amount)
+                        {
+                            hasMaterials = false;
+                            break;
+                        }
+                    }
+
+                    if (hasMaterials)
+                    {
+                        return true;
+                    }
+                }
+
+                
+                return false;
             }
 
 
@@ -484,7 +482,7 @@ namespace Server.Engines.Craft
                     new ItemListEntryWithType("Scissors", typeof(Scissors), 3998),
                     new ItemListEntryWithType("Mortar Pestle", typeof(MortarPestle), 3739),
                     new ItemListEntryWithType("Scorp", typeof(Scorp), 4327),
-                    new ItemListEntryWithType("Tinker Tools", typeof(TinkerTools), 4164),
+                    new ItemListEntryWithType("Tinker Tools", typeof(TinkerTools), 7868),
                     new ItemListEntryWithType("Hatchet", typeof(Hatchet), 3907),
                     new ItemListEntryWithType("Draw Knife", typeof(DrawKnife), 4324),
                     new ItemListEntryWithType("Sewing Kit", typeof(SewingKit), 3997),
@@ -499,10 +497,11 @@ namespace Server.Engines.Craft
                     new ItemListEntryWithType("Inshave", typeof(Inshave), 4326),
                     new ItemListEntryWithType("Pickaxe", typeof(Pickaxe), 3718),
                     new ItemListEntryWithType("Lockpick", typeof(Lockpick), 5372),
-                    //new ItemListEntryWithType("Skillet", typeof(Skillet), 4567),
-                    new ItemListEntryWithType("Flour Sifter", typeof(FlourSifter), 4158),
+                    new ItemListEntryWithType("Skillet", typeof(Skillet), 2431),
+                    new ItemListEntryWithType("Rolling Pin", typeof(RollingPin), 4163),
+                    //new ItemListEntryWithType("Flour Sifter", typeof(FlourSifter), 4158),
                     new ItemListEntryWithType("Fletcher Tools", typeof(FletcherTools), 4130),
-                    new ItemListEntryWithType("Mapmaker's Pen", typeof(MapmakersPen), 4167),
+                    new ItemListEntryWithType("Mapmaker's Pen", typeof(MapmakersPen), 4031),
                     new ItemListEntryWithType("Scribe's Pen", typeof(ScribesPen), 4031),
                     //new ItemListEntryWithType("Clippers", typeof(Clippers), 1112117)
                 };
@@ -592,7 +591,7 @@ namespace Server.Engines.Craft
             private readonly BaseTool m_Tool;
 
             public MultiMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select a miscellaneous item to craft:", GetCraftItems(from, craftSystem))
+                : base("Select a Multi item to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -802,7 +801,7 @@ namespace Server.Engines.Craft
             private readonly BaseTool m_Tool;
 
             public JewelryMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select jewelry to craft:", GetCraftItems(from, craftSystem))
+                : base("Select a jewel to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -815,12 +814,20 @@ namespace Server.Engines.Craft
 
                 ItemListEntryWithType[] allJewelry = new ItemListEntryWithType[]
                 {
-                    new ItemListEntryWithType("Ecru Citrine Ring", typeof(EcruCitrineRing), 4231),
-                    new ItemListEntryWithType("Blue Diamond Ring", typeof(BlueDiamondRing), 4232),
-                    new ItemListEntryWithType("Fire Ruby Bracelet", typeof(FireRubyBracelet), 4230),
-                    new ItemListEntryWithType("Perfect Emerald Ring", typeof(PerfectEmeraldRing), 4230),
-                    new ItemListEntryWithType("Turqouise Ring", typeof(TurqouiseRing), 4230),
-                    new ItemListEntryWithType("White Pearl Bracelet", typeof(WhitePearlBracelet), 4230)
+
+                    new ItemListEntryWithType("GoldRing", typeof(GoldRing), 4234),
+                    new ItemListEntryWithType("SilverBeadNecklace", typeof(SilverBeadNecklace), 7941),
+                    new ItemListEntryWithType("GoldNecklace", typeof(GoldNecklace), 4232),
+                    new ItemListEntryWithType("GoldEarrings", typeof(GoldEarrings), 4231),
+                    new ItemListEntryWithType("GoldBeadNecklace", typeof(GoldBeadNecklace), 4233),
+                    new ItemListEntryWithType("GoldBracelet", typeof(GoldBracelet), 4230),
+
+                    //new ItemListEntryWithType("Ecru Citrine Ring", typeof(EcruCitrineRing), 4231),
+                    //new ItemListEntryWithType("Blue Diamond Ring", typeof(BlueDiamondRing), 4232),
+                    //new ItemListEntryWithType("Fire Ruby Bracelet", typeof(FireRubyBracelet), 4230),
+                    //new ItemListEntryWithType("Perfect Emerald Ring", typeof(PerfectEmeraldRing), 4230),
+                    //new ItemListEntryWithType("Turqouise Ring", typeof(TurqouiseRing), 4230),
+                    //new ItemListEntryWithType("White Pearl Bracelet", typeof(WhitePearlBracelet), 4230)
                 };
 
                 foreach (ItemListEntryWithType entry in allJewelry)
@@ -904,7 +911,7 @@ namespace Server.Engines.Craft
             private readonly BaseTool m_Tool;
 
             public TaverntypesMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select a items to craft:", GetCraftItems(from, craftSystem))
+                : base("Select a Tavern item to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -1010,7 +1017,7 @@ namespace Server.Engines.Craft
             private readonly BaseTool m_Tool;
 
             public WoodItemsMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select a items to craft:", GetCraftItems(from, craftSystem))
+                : base("Select a Wood item to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -1030,7 +1037,7 @@ namespace Server.Engines.Craft
                     new ItemListEntryWithType("Smoothing Plane", typeof(SmoothingPlane), 4146),
                     new ItemListEntryWithType("Clock Frame", typeof(ClockFrame), 4173),
                     new ItemListEntryWithType("Axle", typeof(Axle), 4187),
-                    new ItemListEntryWithType("Rolling Pin", typeof(RollingPin), 4163),
+                    new ItemListEntryWithType("WoodenBowl", typeof(WoodenBowl), 5624)
                 };
 
                 foreach (ItemListEntryWithType entry in allWoodItems)
@@ -1136,11 +1143,6 @@ namespace Server.Engines.Craft
                     new ItemListEntryWithType("Dart Trap", typeof(DartTrapCraft), 4398),
                     new ItemListEntryWithType("Poison Trap", typeof(PoisonTrapCraft), 4414),
                     new ItemListEntryWithType("Explosion Trap", typeof(ExplosionTrapCraft), 4347),
-                    //new ItemListEntryWithType("Faction Gas Trap Deed", typeof(FactionGasTrapDeed), 4598),
-                    //new ItemListEntryWithType("Faction Explosion Trap Deed", typeof(FactionExplosionTrapDeed), 4599),
-                    //new ItemListEntryWithType("Faction Saw Trap Deed", typeof(FactionSawTrapDeed), 4600),
-                    //new ItemListEntryWithType("Faction Spike Trap Deed", typeof(FactionSpikeTrapDeed), 4601),
-                    //new ItemListEntryWithType("Faction Trap Removal Kit", typeof(FactionTrapRemovalKit), 6445)
                 };
 
                 foreach (ItemListEntryWithType entry in allTraps)

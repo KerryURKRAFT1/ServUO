@@ -225,7 +225,7 @@ public class FirstCirclenMenu : ItemListMenu
             private readonly BaseTool m_Tool;
 
             public FirstCirclenMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select a Scroll Spell to craft:", GetCraftItems(from, craftSystem))
+                : base("Select a Spell Scroll  to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -330,7 +330,7 @@ public class SecondCirclenMenu : ItemListMenu
             private readonly BaseTool m_Tool;
 
             public SecondCirclenMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select a Potion to craft:", GetCraftItems(from, craftSystem))
+                : base("Select a Spell Scroll to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -435,7 +435,7 @@ public class SecondCirclenMenu : ItemListMenu
             private readonly BaseTool m_Tool;
 
             public ThirdCirclenMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select a Potion to craft:", GetCraftItems(from, craftSystem))
+                : base("Select a Spell Scroll to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -541,7 +541,7 @@ public class SecondCirclenMenu : ItemListMenu
             private readonly BaseTool m_Tool;
 
             public FourthCirclenMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select a Potion to craft:", GetCraftItems(from, craftSystem))
+                : base("Select a Spell Scroll to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -644,7 +644,7 @@ public class FifthCirclenMenu : ItemListMenu
             private readonly BaseTool m_Tool;
 
             public FifthCirclenMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select a Potion to craft:", GetCraftItems(from, craftSystem))
+                : base("Select a Spell Scroll to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -748,7 +748,7 @@ public class FifthCirclenMenu : ItemListMenu
             private readonly BaseTool m_Tool;
 
             public SixthCirclenMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select a Potion to craft:", GetCraftItems(from, craftSystem))
+                : base("Select a Spell Scroll to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -854,7 +854,7 @@ public class FifthCirclenMenu : ItemListMenu
             private readonly BaseTool m_Tool;
 
             public SeventhCirclenMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select a Potion to craft:", GetCraftItems(from, craftSystem))
+                : base("Select a Spell Scroll to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -965,7 +965,7 @@ public class FifthCirclenMenu : ItemListMenu
             private readonly BaseTool m_Tool;
 
             public EighthCirclenMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select a scroll to craft:", GetCraftItems(from, craftSystem))
+                : base("Select a Spell Scroll to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -1041,8 +1041,8 @@ public class FifthCirclenMenu : ItemListMenu
                             // Controlli di null prima di chiamare Craft
                             if (m_From == null || m_CraftSystem == null || m_Tool == null)
                             {
-                                Console.WriteLine("DEBUG: Uno o più parametri sono null in OnResponse.");
-                                m_From.SendMessage("Errore interno: impossibile eseguire il crafting.");
+                                //Console.WriteLine("DEBUG: Uno o più parametri sono null in OnResponse.");
+                                //m_From.SendMessage("Errore interno: impossibile eseguire il crafting.");
                                 return;
                             }
 

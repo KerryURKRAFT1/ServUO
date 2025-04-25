@@ -155,11 +155,16 @@ namespace Server.Engines.Craft
             AddCraft(typeof(SmoothingPlane), 1044042, 1024146, 0.0, 50.0, typeof(Board), 1044041, 4, 1044351);
             AddCraft(typeof(ClockFrame), 1044042, 1024173, 0.0, 50.0, typeof(Board), 1044041, 6, 1044351);
             AddCraft(typeof(Axle), 1044042, 1024187, 0.0, 25.0, typeof(Board), 1044041, 2, 1044351);
-            AddCraft(typeof(RollingPin), 1044042, 1024163, 0.0, 50.0, typeof(Board), 1044041, 5, 1044351);
+            AddCraft(typeof(WoodenBowl), 1044042, 1024187, 0.0, 50.0, typeof(Board), 1044041, 2, 1044351);
+
             //KEG
             index = this.AddCraft(typeof(Keg), 1044047, 1023699, 65.0, 100.0, typeof(Board), 1044036, 12, 1044037);
             AddRes(index, typeof(BarrelStaves), 1044250, 2, 1044253);
             AddRes(index, typeof(BarrelLid), 1044250, 1, 1044253);
+
+
+
+            
             #endregion
 
             #region Tools
@@ -182,6 +187,7 @@ namespace Server.Engines.Craft
             AddCraft(typeof(Pickaxe), 1044046, 1023718, 40.0, 90.0, typeof(IronIngot), 1044036, 4, 1044037);
             AddCraft(typeof(Lockpick), 1044046, 1025371, 45.0, 95.0, typeof(IronIngot), 1044036, 1, 1044037);
             AddCraft(typeof(Skillet), 1044046, 1044567, 30.0, 80.0, typeof(IronIngot), 1044036, 4, 1044037);
+            AddCraft(typeof(RollingPin), 1044042, 1024163, 0.0, 50.0, typeof(Board), 1044041, 5, 1044351);
             AddCraft(typeof(FlourSifter), 1044046, 1024158, 50.0, 100.0, typeof(IronIngot), 1044036, 3, 1044037);
             AddCraft(typeof(FletcherTools), 1044046, 1044166, 35.0, 85.0, typeof(IronIngot), 1044036, 3, 1044037);
             AddCraft(typeof(MapmakersPen), 1044046, 1044167, 25.0, 75.0, typeof(IronIngot), 1044036, 1, 1044037);

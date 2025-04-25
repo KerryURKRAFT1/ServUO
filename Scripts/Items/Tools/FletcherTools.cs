@@ -29,7 +29,13 @@ namespace Server.Items
         {
             get
             {
+            if (Core.UOR)
+            {
+                return DefClassicBowFletching.CraftSystem;
+            }
+            else
                 return DefBowFletching.CraftSystem;
+                
             }
         }
         public override void Serialize(GenericWriter writer)

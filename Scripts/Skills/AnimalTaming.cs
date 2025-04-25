@@ -125,8 +125,11 @@ namespace Server.SkillHandlers
 		{
 			private bool m_SetSkillTime = true;
 
+					// CODICE MODIFICATO PER UOR PER TAMARE DISTANZA 4 CASELLE
+			//public InternalTarget()
+			//	: base(Core.AOS ? 3 : 2, false, TargetFlags.None)
 			public InternalTarget()
-				: base(Core.AOS ? 3 : 2, false, TargetFlags.None)
+        		: base(Core.AOS ? 3 : (Core.UOR ? 4 : 2), false, TargetFlags.None)
 			{ }
 
 			public virtual void ResetPacify(object obj)
@@ -301,7 +304,11 @@ namespace Server.SkillHandlers
 					DamageEntry de = m_Creature.FindMostRecentDamageEntry(false);
 					bool alreadyOwned = m_Creature.Owners.Contains(m_Tamer);
 
-					if (!m_Tamer.InRange(m_Creature, Core.AOS ? 7 : 6))
+					// CODICE MODIFICATO PER UOR MENTRE SI TAMA DISTANZA 7 CASELLE
+
+					//if (!m_Tamer.InRange(m_Creature, Core.AOS ? 7 : 6))
+					if (!m_Tamer.InRange(m_Creature, Core.AOS ? 7 : (Core.UOR ? 7 : 6)))
+
 					{
 						m_BeingTamed.Remove(m_Creature);
 						m_Tamer.NextSkillTime = Core.TickCount;

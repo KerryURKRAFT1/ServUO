@@ -32,7 +32,7 @@ namespace Server.Engines.Craft
                 from.SendLocalizedMessage(m_Message);
             }
 
-            if (m_CraftSystem.GetType() == typeof(DefAlchemy))
+            if (m_CraftSystem.GetType() == typeof(DefClassicAlchemy))
             {
                 m_CraftSystem = DefClassicAlchemy.CraftSystem;
 
@@ -91,7 +91,7 @@ namespace Server.Engines.Craft
             }
 
             // Se i materiali sono sufficienti, apri il menu
-            from.SendMenu(new NewInscriptionMenu(from, craftSystem, tool, message, isPreAoS));
+            from.SendMenu(new NewAlchemyMenu(from, craftSystem, tool, message, isPreAoS));
         }
 
 
@@ -379,7 +379,8 @@ public class HealPotionMenu : ItemListMenu
                 {
                     var itemType = ((ItemListEntryWithType)items[index]).ItemType;
                     CraftItem craftItem = m_CraftSystem.CraftItems.SearchFor(itemType);
-
+                     // Mostra un messaggio di completamento
+                     //m_From.PublicOverheadMessage(MessageType.Regular, 0x3B2, false, "Crafting completato!");                
                     if (craftItem != null)
                     {
                         craftItem.Craft(m_From, m_CraftSystem, null, m_Tool);

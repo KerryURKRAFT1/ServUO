@@ -74,7 +74,7 @@ public class NewCarpentryMenu : ItemListMenu
                 }
 
                 // Se i materiali sono sufficienti, apri il menu
-                from.SendMenu(new NewInscriptionMenu(from, craftSystem, tool, message, isPreAoS));
+                from.SendMenu(new NewCarpentryMenu(from, craftSystem, tool, message, isPreAoS));
             }
 
 
@@ -122,6 +122,11 @@ public class NewCarpentryMenu : ItemListMenu
     {
         List<ItemListEntry> categories = new List<ItemListEntry>();
 
+        if (BoardsMenu.HasCraftableItems(from, craftSystem))
+        {
+            categories.Add(new ItemListEntry("Boards", 7127));
+            //Console.WriteLine("Added category: Chair (index " + (categories.Count - 1) + ")");
+        }
         if (ChairMenu.HasCraftableItems(from, craftSystem))
         {
             categories.Add(new ItemListEntry("Chair", 2866));
@@ -171,6 +176,9 @@ public class NewCarpentryMenu : ItemListMenu
 
             switch (category)
             {
+                case "Boards":
+                    m_From.SendMenu(new BoardsMenu(m_From, m_CraftSystem, m_Tool));
+                    break;
                 case "Chair":
                     m_From.SendMenu(new ChairMenu(m_From, m_CraftSystem, m_Tool));
                     break;
@@ -205,6 +213,115 @@ public class NewCarpentryMenu : ItemListMenu
 
 
 
+/// <summary>
+/// //////////// boards menu
+/// </summary>
+
+
+    public class BoardsMenu : ItemListMenu
+{
+    private readonly Mobile m_From;
+    private readonly CraftSystem m_CraftSystem;
+    private readonly BaseTool m_Tool;
+
+    public BoardsMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
+        : base("Select boards to craft:", GetChairItems(from, craftSystem))
+    {
+        m_From = from;
+        m_CraftSystem = craftSystem;
+        m_Tool = tool;
+
+        if (GetChairItems(from, craftSystem).Length == 0)
+        {
+            from.SendMessage("You do not have the necessary materials to craft any Board.");
+            from.SendGump(new CraftGump(from, craftSystem, tool, 0)); // Torna al gump di crafting
+        }
+    }
+
+    private static ItemListEntry[] GetChairItems(Mobile from, CraftSystem craftSystem)
+    {
+        List<ItemListEntry> entries = new List<ItemListEntry>();
+
+        ItemListEntryWithType[] allBoards = new ItemListEntryWithType[]
+        {
+            new ItemListEntryWithType("Boards", typeof(Board), 7127),
+
+        };
+
+        foreach (ItemListEntryWithType entry in allBoards)
+        {
+            CraftItem craftItem = craftSystem.CraftItems.SearchFor(entry.ItemType);
+
+            if (craftItem != null)
+            {
+                bool hasRequiredSkill = false;
+                foreach (CraftSkill skill in craftItem.Skills)
+                {
+                    if (from.Skills[skill.SkillToMake].Value >= skill.MinSkill)
+                    {
+                        hasRequiredSkill = true;
+                        break;
+                    }
+                }
+
+                if (hasRequiredSkill)
+                {
+                    bool hasMaterials = true;
+                    foreach (CraftRes craftRes in craftItem.Resources)
+                    {
+                        if (from.Backpack.GetAmount(craftRes.ItemType) < craftRes.Amount)
+                        {
+                            hasMaterials = false;
+                            break;
+                        }
+                    }
+
+                    if (hasMaterials)
+                    {
+                        entries.Add(entry);
+                        //Console.WriteLine("Added item: " + entry.ItemType.Name);
+                    }
+                }
+            }
+        }
+
+        return entries.ToArray();
+    }
+
+
+
+    public override void OnResponse(NetState state, int index)
+    {
+        var items = GetChairItems(m_From, m_CraftSystem);
+        if (index >= 0 && index < items.Length)
+        {
+            var itemType = ((ItemListEntryWithType)items[index]).ItemType;
+
+            CraftItem craftItem = m_CraftSystem.CraftItems.SearchFor(itemType);
+
+            if (craftItem != null)
+            {
+                craftItem.Craft(m_From, m_CraftSystem, null, m_Tool);
+            }
+            else
+            {
+                m_From.SendMessage("The selected item cannot be crafted.");
+            }
+        }
+        else
+        {
+            m_From.SendMessage("Invalid selection.");
+        }
+    }
+
+
+    public static bool HasCraftableItems(Mobile from, CraftSystem craftSystem)
+    {
+      var items = GetChairItems(from, craftSystem);
+        return items.Length > 0;
+    }
+
+}
 
     
 
@@ -282,7 +399,7 @@ public class NewCarpentryMenu : ItemListMenu
                     if (hasMaterials)
                     {
                         entries.Add(entry);
-                        Console.WriteLine("Added item: " + entry.ItemType.Name);
+                        //Console.WriteLine("Added item: " + entry.ItemType.Name);
                     }
                 }
             }
@@ -766,16 +883,24 @@ public class BarMenu : ItemListMenu
 
         ItemListEntryWithType[] allBars = new ItemListEntryWithType[]
         {
-            new ItemListEntryWithType("BarTablesWest", typeof(BarTablesWest), 6424),
-            new ItemListEntryWithType("BarTableNorth", typeof(BarTableNorth), 6426),
-            new ItemListEntryWithType("BarCornerNorth", typeof(BarCornerNorth), 6419),
-            new ItemListEntryWithType("BarCorner", typeof(BarCorner), 6416)
+            new ItemListEntryWithType("BarTableEast", typeof(BarTableEast), 6428),
+            new ItemListEntryWithType("BarTableEast2", typeof(BarTableEast2), 6429),
+            new ItemListEntryWithType("BarTableWest", typeof(BarTableWest), 6424),
+            new ItemListEntryWithType("BarTableWest2", typeof(BarTableWest2), 6425),
+            new ItemListEntryWithType("BarCornerSouthE", typeof(BarCornerSouthE), 6419),
+            new ItemListEntryWithType("BarCornerNorthE", typeof(BarCornerNorthE), 6417),
+            new ItemListEntryWithType("BarCornerSouthW", typeof(BarCornerSouthW), 6418),
+            new ItemListEntryWithType("BarCornernNorthW", typeof(BarCornernNorthW), 6416),
+            new ItemListEntryWithType("BarTableNorth", typeof(BarTableNorth), 6430),
+            new ItemListEntryWithType("BarTableNorth2", typeof(BarTableNorth2), 6431),
+            new ItemListEntryWithType("BarTableSouth", typeof(BarTableSouth), 6426),
+            new ItemListEntryWithType("BarTableSouth2", typeof(BarTableSouth2), 6427)
         };
 
         foreach (ItemListEntryWithType entry in allBars)
         {
             CraftItem craftItem = craftSystem.CraftItems.SearchFor(entry.ItemType);
-            Console.WriteLine("Checking item: " + entry.ItemType.Name);
+            //Console.WriteLine("Checking item: " + entry.ItemType.Name);
 
             if (craftItem != null)
             {
@@ -804,13 +929,13 @@ public class BarMenu : ItemListMenu
                     if (hasMaterials)
                     {
                         entries.Add(entry);
-                        Console.WriteLine("Added item: " + entry.ItemType.Name);
+                        //Console.WriteLine("Added item: " + entry.ItemType.Name);
                     }
                 }
             }
         }
 
-        Console.WriteLine("GetBarItems found " + entries.Count + " items.");
+        //Console.WriteLine("GetBarItems found " + entries.Count + " items.");
         return entries.ToArray();
     }
 

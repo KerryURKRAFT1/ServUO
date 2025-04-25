@@ -28,7 +28,14 @@ namespace Server.Items
         {
             get
             {
-                return DefCooking.CraftSystem;
+                if (Core.UOR)
+                {
+                    return DefClassicCooking.CraftSystem;
+                }
+                else
+                {
+                    return DefCooking.CraftSystem;
+                }
             }
         }
         public override void Serialize(GenericWriter writer)

@@ -26,6 +26,12 @@ namespace Server.Items
 
 
 
+
+
+
+
+
+
             /// ////////////// MAP CHANCE
 
             public static double GetLootChance(int level)
@@ -259,6 +265,9 @@ namespace Server.Items
             }
         }*/
 
+
+
+
         [CommandProperty(AccessLevel.GameMaster)]
         public Point2D ChestLocation { get { return m_Location; } set { m_Location = value; } }
 
@@ -276,11 +285,13 @@ namespace Server.Items
                         return 1063453;
                     }
                     else if (m_Level == 7)
-                    {
+                    {  
                         return 1116773;
+
                     }
                     else
                     {
+
                         return 1041516 + m_Level;
                     }
                 }
@@ -290,6 +301,7 @@ namespace Server.Items
                 }
                 else if (m_Level == 7)
                 {
+
                     return 1116790;
                 }
                 else
@@ -299,6 +311,13 @@ namespace Server.Items
             }
         }
 
+
+
+
+
+
+
+
         [Constructable]
         public TreasureMap()
         {
@@ -307,10 +326,17 @@ namespace Server.Items
         [Constructable]
         public TreasureMap(int level, Map map)
         {
+
             m_Level = level;
 
-            if (level == 7 || map == Map.Internal)
-                map = GetRandomMap();
+            if (Core.UOR)
+            {
+                // Forziamo tutte le mappe su Felucca se il core è UOR
+                map = Map.Felucca;
+            }
+
+            //if (level == 7 || map == Map.Internal)
+              //  map = GetRandomMap();
 
             Facet = map;
 
@@ -357,6 +383,13 @@ namespace Server.Items
 
         public Map GetRandomMap()
         {
+
+            if (Core.UOR)
+            {
+                // Restituiamo sempre Felucca se il core è UOR
+                return Map.Felucca;
+            }
+
             switch (Utility.Random(8))
             {
                 default:
@@ -382,16 +415,26 @@ namespace Server.Items
             int y = 0;
 
             if (map == Map.Trammel || map == Map.Felucca)
+            {
                 recs = m_FelTramWrap;
+            }
             else if (map == Map.Tokuno)
+            {
                 recs = m_TokunoWrap;
+            }
             else if (map == Map.Malas)
+            {
                 recs = m_MalasWrap;
+            }
             else if (map == Map.Ilshenar)
+            {
+            
                 recs = m_IlshenarWrap;
+            }
             else
+            {
                 recs = m_TerMurWrap;
-
+            }
             while (true)
             {
                 Rectangle2D rec = recs[Utility.Random(recs.Length)];
@@ -788,7 +831,7 @@ namespace Server.Items
                     from.SendLocalizedMessage(503013); // The map is too difficult to attempt to decode.
                 }
 
-                double maxSkill = minSkill + 60.0;
+                double maxSkill = minSkill + 20.0;
 
                 if (!from.CheckSkill(SkillName.Cartography, minSkill, maxSkill))
                 {
@@ -822,6 +865,7 @@ namespace Server.Items
 
         public override void DisplayTo(Mobile from)
         {
+
             if (m_Completed)
             {
                 SendLocalizedMessageTo(from, 503014); // This treasure hunt has already been completed.
@@ -867,7 +911,9 @@ namespace Server.Items
 
         public override void GetProperties(ObjectPropertyList list)
         {
+
             base.GetProperties(list);
+
 
             if (Facet == Map.Felucca)
                 list.Add(1041502);
@@ -891,6 +937,8 @@ namespace Server.Items
 
         public override void OnSingleClick(Mobile from)
         {
+
+
             if (m_Completed)
             {
                 from.Send(
@@ -912,6 +960,12 @@ namespace Server.Items
                 {
                     LabelTo(from, 1063453);
                 }
+                // CODICE PER MAPPA LV 7
+                else if (m_Level == 7)
+                {
+                    LabelTo(from, 1116773);
+                }
+                // FINE
                 else
                 {
                     LabelTo(from, 1041516 + m_Level);
@@ -922,6 +976,11 @@ namespace Server.Items
                 if (m_Level == 6)
                 {
                     LabelTo(from, 1041522, String.Format("#{0}\t \t#{1}", 1063452, Facet == Map.Felucca ? 1041502 : 1041503));
+                }
+                else if (m_Level == 7)
+                {
+                    LabelTo(from, 1041522, String.Format("#{0}\t \t#{1}", 1116790, Facet == Map.Felucca ? 1041502 : 1041503));
+                    
                 }
                 else
                 {
@@ -1071,7 +1130,9 @@ namespace Server.Items
                 case 5:
                     return 70.0;
                 case 6:
-                    return 70.0;
+                    return 85.0;
+                case 7:
+                    return 95.0;
 
                 default:
                     return 0.0;

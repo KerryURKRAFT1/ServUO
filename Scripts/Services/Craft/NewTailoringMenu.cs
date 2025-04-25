@@ -27,6 +27,7 @@ namespace Server.Engines.Craft
             m_Message = message;
             m_isPreAoS = isPreAoS;
 
+            Console.WriteLine("[DEBUG] NewTailoringMenu initialized with CraftSystem type: " + m_CraftSystem.GetType().Name);
             if (m_Message != 0)
             {
                 from.SendLocalizedMessage(m_Message);
@@ -36,10 +37,7 @@ namespace Server.Engines.Craft
             {
                 m_CraftSystem = DefClassicTailoring.CraftSystem;
             }
-            else
-            {
-                Console.WriteLine("Using CraftSystem alternatio of type: " + m_CraftSystem.GetType().Name);
-            }
+
 
                         // Verifica dei materiali
             if (!HasRequiredMaterials(from, craftSystem))
@@ -50,30 +48,6 @@ namespace Server.Engines.Craft
             }
 
 
-        }
-
-        private static bool HasRequiredMaterials(Mobile from, CraftSystem craftSystem)
-        {
-            foreach (CraftItem craftItem in craftSystem.CraftItems)
-            {
-                bool hasMaterials = true;
-                foreach (CraftRes craftRes in craftItem.Resources)
-                {
-                    if (from.Backpack.GetAmount(craftRes.ItemType) < craftRes.Amount)
-                    {
-                        hasMaterials = false;
-                        break;
-                    }
-                }
-
-                if (hasMaterials)
-                {
-                    return true;
-                }
-            }
-
-            
-            return false;
         }
 
 
@@ -91,7 +65,7 @@ namespace Server.Engines.Craft
             }
 
             // Se i materiali sono sufficienti, apri il menu
-            from.SendMenu(new NewInscriptionMenu(from, craftSystem, tool, message, isPreAoS));
+            from.SendMenu(new NewTailoringMenu(from, craftSystem, tool, message, isPreAoS));
         }
 
 
@@ -114,6 +88,31 @@ namespace Server.Engines.Craft
                 // Altrimenti, crea il menu normalmente
                 from.SendMenu(new NewTailoringMenu(from, craftSystem, tool, message, isPreAoS));
             }
+            private static bool HasRequiredMaterials(Mobile from, CraftSystem craftSystem)
+            {
+                foreach (CraftItem craftItem in craftSystem.CraftItems)
+                        {
+                            bool hasMaterials = true;
+                            foreach (CraftRes craftRes in craftItem.Resources)
+                            {
+                                if (from.Backpack.GetAmount(craftRes.ItemType) < craftRes.Amount)
+                                {
+                                    hasMaterials = false;
+                                    break;
+                                }
+                            }
+
+                            if (hasMaterials)
+                            {
+                                return true;
+                            }
+                        }
+
+                        
+                return false;
+            }
+
+
 
 
 
@@ -214,7 +213,7 @@ public class ShirtMenu : ItemListMenu
             private readonly BaseTool m_Tool;
 
             public ShirtMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select an utensil to craft:", GetCraftItems(from, craftSystem))
+                : base("Select a Shirt to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -321,7 +320,7 @@ public class PantsMenu : ItemListMenu
             private readonly BaseTool m_Tool;
 
             public PantsMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select an utensil to craft:", GetCraftItems(from, craftSystem))
+                : base("Select a Pant to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -422,7 +421,7 @@ public class PantsMenu : ItemListMenu
             private readonly BaseTool m_Tool;
 
             public HatsMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select an utensil to craft:", GetCraftItems(from, craftSystem))
+                : base("Select an hat to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -532,7 +531,7 @@ public class PantsMenu : ItemListMenu
             private readonly BaseTool m_Tool;
 
             public MiscMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select an utensil to craft:", GetCraftItems(from, craftSystem))
+                : base("Select an Misc Item to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -630,7 +629,7 @@ public class LeatherMenu : ItemListMenu
             private readonly BaseTool m_Tool;
 
             public LeatherMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select an utensil to craft:", GetCraftItems(from, craftSystem))
+                : base("Select a leather armor to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -732,7 +731,7 @@ public class LeatherMenu : ItemListMenu
             private readonly BaseTool m_Tool;
 
             public StuddedMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select an utensil to craft:", GetCraftItems(from, craftSystem))
+                : base("Select a Studded Armor to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -834,7 +833,7 @@ public class FootMenu : ItemListMenu
             private readonly BaseTool m_Tool;
 
             public FootMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select an utensil to craft:", GetCraftItems(from, craftSystem))
+                : base("Select a footwear to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -935,7 +934,7 @@ public class MiscBagMenu : ItemListMenu
             private readonly BaseTool m_Tool;
 
             public MiscBagMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select an utensil to craft:", GetCraftItems(from, craftSystem))
+                : base("Select a Bag to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;

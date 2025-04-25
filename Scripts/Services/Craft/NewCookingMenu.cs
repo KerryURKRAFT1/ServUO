@@ -133,10 +133,7 @@ namespace Server.Engines.Craft
             {
                 categories.Add(new ItemListEntry("Baking", 6513));
             }
-            if (WorldMapMenu.HasCraftableItems(from, craftSystem))
-            {
-                categories.Add(new ItemListEntry("World Map", 6514));               
-            }
+
            
             return categories.ToArray();
         }
@@ -161,9 +158,6 @@ namespace Server.Engines.Craft
                         break;
                     case "Baking":
                         m_From.SendMenu(new BakingMenu(m_From, m_CraftSystem, m_Tool));
-                        break;
-                    case "World Map":
-                        m_From.SendMenu(new WorldMapMenu(m_From, m_CraftSystem, m_Tool));
                         break;
                     default:
                         m_From.SendMessage("Invalid selection.");
@@ -211,13 +205,13 @@ public class IngredientsMenu : ItemListMenu
 
                 foreach (ItemListEntryWithType entry in allIngredients)
                 {
-                    Console.WriteLine("DEBUG: Checking ingredient: {0}");
+                    //Console.WriteLine("DEBUG: Checking ingredient: {0}");
 
                     CraftItem craftItem = craftSystem.CraftItems.SearchFor(entry.ItemType);
 
                     if (craftItem != null)
                     {
-                         Console.WriteLine("DEBUG: Found CraftItem for {0}.", entry.Name);
+                         //Console.WriteLine("DEBUG: Found CraftItem for {0}.", entry.Name);
                         bool hasRequiredSkill = false;
                         foreach (CraftSkill skill in craftItem.Skills)
                         
@@ -234,21 +228,18 @@ public class IngredientsMenu : ItemListMenu
                             bool hasMaterials = true;
                             foreach (CraftRes craftRes in craftItem.Resources)
                             {
-                                                    int availableAmount = from.Backpack.GetAmount(craftRes.ItemType);
-                    Console.WriteLine("DEBUG: Checking material: {0}, Required: {1}, Available: {2}",
-                        craftRes.ItemType.Name, craftRes.Amount, availableAmount);
                  
                                 if (from.Backpack.GetAmount(craftRes.ItemType) < craftRes.Amount)
                                 {
                                     hasMaterials = false;
-                                    Console.WriteLine("DEBUG: Not enough materials for: {0}", craftRes.ItemType.Name);
+                                    //Console.WriteLine("DEBUG: Not enough materials for: {0}", craftRes.ItemType.Name);
                                     break;
                                 }
                             }
 
                             if (hasMaterials)
                             {
-                                Console.WriteLine("DEBUG: Ingredient {0} is craftable.");
+                                //Console.WriteLine("DEBUG: Ingredient {0} is craftable.");
                                 items.Add(entry);
                             }
                         }
@@ -301,7 +292,7 @@ public class PreparationsMenu : ItemListMenu
             private readonly BaseTool m_Tool;
 
             public PreparationsMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select a map to craft:", GetCraftItems(from, craftSystem))
+                : base("Select a preparation to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -407,7 +398,7 @@ public class PreparationsMenu : ItemListMenu
             private readonly BaseTool m_Tool;
 
             public BakingMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select bred to craft:", GetCraftItems(from, craftSystem))
+                : base("Select a bread to craft:", GetCraftItems(from, craftSystem))
             {
                 m_From = from;
                 m_CraftSystem = craftSystem;
@@ -420,27 +411,6 @@ public class PreparationsMenu : ItemListMenu
 
                 ItemListEntryWithType[] allBaking = new ItemListEntryWithType[]
                 {
-                    new ItemListEntryWithType("SeaChart", typeof(SeaChart), 6513),
-                    new ItemListEntryWithType("SeaChart", typeof(SeaChart), 6513),
-                    new ItemListEntryWithType("SeaChart", typeof(SeaChart), 6513),
-                    new ItemListEntryWithType("SeaChart", typeof(SeaChart), 6513),
-                    new ItemListEntryWithType("SeaChart", typeof(SeaChart), 6513),
-                    new ItemListEntryWithType("SeaChart", typeof(SeaChart), 6513),
-                    new ItemListEntryWithType("SeaChart", typeof(SeaChart), 6513),
-                    new ItemListEntryWithType("SeaChart", typeof(SeaChart), 6513),
-                    new ItemListEntryWithType("SeaChart", typeof(SeaChart), 6513),
-                    new ItemListEntryWithType("SeaChart", typeof(SeaChart), 6513),
-                    new ItemListEntryWithType("SeaChart", typeof(SeaChart), 6513),
-
-
-
-
-
-
-
-
-
-
                 };
 
                 foreach (ItemListEntryWithType entry in allBaking)
@@ -514,129 +484,14 @@ public class PreparationsMenu : ItemListMenu
 
 
 
-/// <summary>
-/// // WorldMapMenu  MENU
-/// </summary>
-
-
- public class WorldMapMenu : ItemListMenu
-        {
-            private readonly Mobile m_From;
-            private readonly CraftSystem m_CraftSystem;
-            private readonly BaseTool m_Tool;
-
-            public WorldMapMenu(Mobile from, CraftSystem craftSystem, BaseTool tool)
-                : base("Select a map to craft:", GetCraftItems(from, craftSystem))
-            {
-                m_From = from;
-                m_CraftSystem = craftSystem;
-                m_Tool = tool;
-            }
-
-            private static ItemListEntry[] GetCraftItems(Mobile from, CraftSystem craftSystem)
-            {
-                List<ItemListEntry> items = new List<ItemListEntry>();
-
-                ItemListEntryWithType[] allWorldmap = new ItemListEntryWithType[]
-                {
-                    new ItemListEntryWithType("World Map", typeof(WorldMap), 6314),
-
-                };
-
-                foreach (ItemListEntryWithType entry in allWorldmap)
-                {
-                    CraftItem craftItem = craftSystem.CraftItems.SearchFor(entry.ItemType);
-
-                    if (craftItem != null)
-                    {
-                        bool hasRequiredSkill = false;
-                        foreach (CraftSkill skill in craftItem.Skills)
-                        {
-                            if (from.Skills[skill.SkillToMake].Value >= skill.MinSkill)
-                            {
-                                hasRequiredSkill = true;
-                                break;
-                            }
-                        }
-
-                        if (hasRequiredSkill)
-                        {
-                            bool hasMaterials = true;
-                            foreach (CraftRes craftRes in craftItem.Resources)
-                            {
-                                if (from.Backpack.GetAmount(craftRes.ItemType) < craftRes.Amount)
-                                {
-                                    hasMaterials = false;
-                                    break;
-                                }
-                            }
-
-                            if (hasMaterials)
-                            {
-                                items.Add(entry);
-                            }
-                        }
-                    }
-                }
-
-                return items.ToArray();
-            }
-
-            public override void OnResponse(NetState state, int index)
-            {
-                var items = GetCraftItems(m_From, m_CraftSystem);
-                if (index >= 0 && index < items.Length)
-                {
-                    var itemType = ((ItemListEntryWithType)items[index]).ItemType;
-                    CraftItem craftItem = m_CraftSystem.CraftItems.SearchFor(itemType);
-
-                    if (craftItem != null)
-                    {
-                        craftItem.Craft(m_From, m_CraftSystem, null, m_Tool);
-                    }
-                    else
-                    {
-                        m_From.SendMessage("The selected item cannot be crafted.");
-                    }
-                }
-                else
-                {
-                    m_From.SendMessage("Invalid selection.");
-                }
-            }
-
-            public static bool HasCraftableItems(Mobile from, CraftSystem craftSystem)
-            {
-                var items = GetCraftItems(from, craftSystem);
-                return items.Length > 0;
-            }
-        }
-
-/// <summary>
-/// // FifthCircle  MENU
-/// </summary>
+ 
 
 
 
 
 
 /// <summary>
-/// // explosion MENU
-/// </summary>
-        
-
-
-/// <summary>
-/// //  SeventhCirclenMenu POT MENU
-/// </summary>
-
-
-       
-
-
-
-/// <summary>
-/// //  EighthCirclenMenu POT MENU
+/// //  
 /// </summary>
 
 

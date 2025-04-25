@@ -93,7 +93,9 @@ namespace Server.Engines.Craft
 
             // Example of Carpentry items excluding ML, SA, SE expansions.
 
-            this.AddCraft(typeof(Board), 1044294, 1027127, 0.0, 0.0, typeof(Log), 1044466, 1, 1044465);
+            index = this.AddCraft(typeof(Board), 1044294, 1027127, 0.0, 0.0, typeof(Log), 1044466, 1, 1044465);
+            this.SetUseAllRes(index, true);
+
             this.AddCraft(typeof(BarrelStaves), 1044294, 1027857, 00.0, 25.0, typeof(Board), 1044041, 5, 1044351);
             this.AddCraft(typeof(BarrelLid), 1044294, 1027608, 11.0, 36.0, typeof(Board), 1044041, 4, 1044351);
             this.AddCraft(typeof(ShortMusicStand), 1044294, 1044313, 78.9, 103.9, typeof(Board), 1044041, 15, 1044351);
@@ -129,10 +131,18 @@ namespace Server.Engines.Craft
 
             // BAR table
 
-            this.AddCraft(typeof(BarTablesWest), 1044291, 1022890, 80.1, 90.0, typeof(Board), 1044041, 10, 1044351);
-            this.AddCraft(typeof(BarTableNorth), 1044291, 1044307, 80.1, 90.0, typeof(Board), 1044041, 10, 1044351);
-            this.AddCraft(typeof(BarCornerNorth), 1044291, 1044308, 80.1, 90.0, typeof(Board), 1044041, 10, 1044351);
-            this.AddCraft(typeof(BarCorner), 1044291, 1022890, 80.1, 90.0, typeof(Board), 1044041, 10, 1044351);
+            this.AddCraft(typeof(BarTableEast), 1044291, 1022890, 80.1, 90.0, typeof(Board), 1044041, 10, 1044351);
+            this.AddCraft(typeof(BarTableEast2), 1044291, 1022890, 80.1, 90.0, typeof(Board), 1044041, 10, 1044351);
+            this.AddCraft(typeof(BarTableWest), 1044291, 1022890, 80.1, 90.0, typeof(Board), 1044041, 10, 1044351);
+            this.AddCraft(typeof(BarTableWest2), 1044291, 1044307, 80.1, 90.0, typeof(Board), 1044041, 10, 1044351);
+            this.AddCraft(typeof(BarCornerSouthE), 1044291, 1044307, 80.1, 90.0, typeof(Board), 1044041, 10, 1044351);
+            this.AddCraft(typeof(BarCornerNorthE), 1044291, 1044308, 80.1, 90.0, typeof(Board), 1044041, 10, 1044351);
+            this.AddCraft(typeof(BarCornerSouthW), 1044291, 1022890, 80.1, 90.0, typeof(Board), 1044041, 10, 1044351);
+            this.AddCraft(typeof(BarCornernNorthW), 1044291, 1022890, 80.1, 90.0, typeof(Board), 1044041, 10, 1044351);
+            this.AddCraft(typeof(BarTableNorth), 1044291, 1022890, 80.1, 90.0, typeof(Board), 1044041, 10, 1044351);
+            this.AddCraft(typeof(BarTableNorth2), 1044291, 1022890, 80.1, 90.0, typeof(Board), 1044041, 10, 1044351);
+            this.AddCraft(typeof(BarTableSouth), 1044291, 1022890, 80.1, 90.0, typeof(Board), 1044041, 10, 1044351);
+            this.AddCraft(typeof(BarTableSouth2), 1044291, 1022890, 80.1, 90.0, typeof(Board), 1044041, 10, 1044351);
 
 
 

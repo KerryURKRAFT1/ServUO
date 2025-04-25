@@ -46,7 +46,8 @@ namespace Server
  			PacketHandlers.SingleClickProps = false; // Disabilita il menu automatico sui vendor
 
 			Mobile.InsuranceEnabled = false; // Disabilita l'assicurazione degli oggetti
-			Mobile.VisibleDamageType = VisibleDamageType.None; // Nessun danno visibile sopra la testa
+			//Mobile.VisibleDamageType = VisibleDamageType.None; // Nessun danno visibile sopra la testa
+			Mobile.VisibleDamageType = VisibleDamageType.Related;
 
 			Mobile.GuildClickMessage = !Core.AOS; // Già corretto per Renaissance
 			Mobile.AsciiClickMessage = !Core.AOS; // Già corretto per Renaissance

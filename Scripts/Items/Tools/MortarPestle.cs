@@ -26,9 +26,17 @@ namespace Server.Items
 
         public override CraftSystem CraftSystem
         {
+            
             get
             {
-                return DefAlchemy.CraftSystem;
+                if (Core.UOR)
+                {
+                    return DefClassicAlchemy.CraftSystem;
+                }
+                else
+                {
+                    return DefAlchemy.CraftSystem;
+                }
             }
         }
         public override void Serialize(GenericWriter writer)

@@ -877,6 +877,19 @@ namespace Server
 
         public static BaseInstrument RandomInstrument()
         {
+            
+            if (Core.UOR) // Se il core è UOR, escludi strumenti con Slayer
+            {
+                BaseInstrument instrument = Construct(m_InstrumentTypes) as BaseInstrument;
+                if (instrument != null)
+                {
+                    instrument.Slayer = SlayerName.None;
+                    instrument.Slayer2 = SlayerName.None;
+                }
+                return instrument;
+            }
+
+
             if (Core.SE)
             {
                 return Construct(m_InstrumentTypes, m_SEInstrumentTypes) as BaseInstrument;

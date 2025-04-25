@@ -3,6 +3,8 @@ using System.Collections;
 using Server.Gumps;
 using Server.Items;
 using Server.Spells.Fifth;
+using Server.CustomMenus;
+
 
 namespace Server.Spells.Seventh
 {
@@ -86,11 +88,28 @@ namespace Server.Spells.Seventh
             }
             else if (this.m_NewBody == 0)
             {
-                Gump gump;
-                if (Core.SE)
+                // Dichiarazione della variabile Gump
+                Gump gump = null;
+
+                // Apertura del menu basato sul Core
+                if (Core.UOR)
+                {
+                    // Usa il nuovo menu personalizzato per UOR
+                    this.Caster.SendMenu(new NewUORPolymorphMenu(this.Caster, this.Scroll));
+                    return false
+                    //gump = null;
+                    //gump = new NewPolymorphMenu(this.Caster, this.Scroll);
+                }
+                else if (Core.SE)
+                {
+                    // Usa il menu "NewPolymorphGump" per SE
                     gump = new NewPolymorphGump(this.Caster, this.Scroll);
+                }
                 else
+                {
+                    // Usa il menu originale "PolymorphGump"
                     gump = new PolymorphGump(this.Caster, this.Scroll);
+                }
 
                 this.Caster.SendGump(gump);
                 return false;
@@ -209,6 +228,7 @@ namespace Server.Spells.Seventh
                 case 0x02: return 1018111; // ettin
                 case 0x09: return 1018103; // daemon
                 default: return -1;
+               
             }
         }
 

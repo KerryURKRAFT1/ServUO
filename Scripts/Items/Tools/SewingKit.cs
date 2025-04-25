@@ -28,7 +28,8 @@ namespace Server.Items
         {
             get
             {
-                return DefTailoring.CraftSystem;
+                //return DefTailoring.CraftSystem;
+                return DefClassicTailoring.CraftSystem;
             }
         }
         public override void Serialize(GenericWriter writer)

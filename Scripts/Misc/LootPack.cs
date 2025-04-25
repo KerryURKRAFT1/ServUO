@@ -1032,6 +1032,12 @@ namespace Server
 				else if (m_Type == typeof(BaseInstrument))
 				{
 					item = Loot.RandomInstrument();
+					if (Core.UOR && item is BaseInstrument) // Se il core è UOR, rimuovi gli Slayer
+					{
+						BaseInstrument instr = (BaseInstrument)item;
+						instr.Slayer = SlayerName.None;
+						instr.Slayer2 = SlayerName.None;
+					}
 				}
 				else if (m_Type == typeof(Amber)) // gem
 				{

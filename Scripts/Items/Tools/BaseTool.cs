@@ -178,9 +178,8 @@ namespace Server.Items
                     else if (system == DefTinkering.CraftSystem)
                     {
                         NewTinkeringMenu.CreateMenu(from, system, this, 0, true);
-                        //from.SendMenu(new NewTinkeringMenu(from, system, this, 0, true));
                     }
-                    else if (system == DefTailoring.CraftSystem)
+                    else if (system == DefClassicTailoring.CraftSystem)
                     {
                         NewTailoringMenu.CreateMenu(from, system, this, 0, true);
                     }
@@ -188,11 +187,11 @@ namespace Server.Items
                     {
                         NewBlacksmithyMenu.CreateMenu(from, system, this, 0, true);
                     }
-                    else if (system == DefBowFletching.CraftSystem)
+                    else if (system == DefClassicBowFletching.CraftSystem)
                     {
                         NewFletchingMenu.CreateMenu(from, system, this, 0, true);
                     }
-                    else if (system == DefAlchemy.CraftSystem)
+                    else if (system == DefClassicAlchemy.CraftSystem)
                     {
                         NewAlchemyMenu.CreateMenu(from, system, this, 0, true);
                     }

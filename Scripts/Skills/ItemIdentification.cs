@@ -40,6 +40,7 @@ namespace Server.Items
                             ((BaseArmor)o).Identified = true;
 
                         if (!Core.AOS)
+                        //if (Core.AOS)
                             ((Item)o).OnSingleClick(from);
                     }
                     else
