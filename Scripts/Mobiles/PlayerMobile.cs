@@ -3634,6 +3634,9 @@ namespace Server.Mobiles
 			m_ChampionTitles = new ChampionTitleInfo();
 
 			InvalidateMyRunUO();
+			
+			// REMOVE YOUNG SYSTEM FOR UOR
+			//this.Young = false;
 		}
 
 		public override bool MutateSpeech(List<Mobile> hears, ref string text, ref object context)

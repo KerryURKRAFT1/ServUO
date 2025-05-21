@@ -1,5 +1,5 @@
 using System;
-using System.Collections.Generic;
+using System.Collections;
 using Server.Items;
 using Server.Mobiles;
 using Server.Targeting;
@@ -16,6 +16,7 @@ namespace Server.Spells.Seventh
             Reagent.MandrakeRoot,
             Reagent.BlackPearl,
             Reagent.SulfurousAsh);
+
         public MassDispelSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {
@@ -28,6 +29,7 @@ namespace Server.Spells.Seventh
                 return SpellCircle.Seventh;
             }
         }
+
         public override void OnCast()
         {
             this.Caster.Target = new InternalTarget(this);
@@ -45,7 +47,7 @@ namespace Server.Spells.Seventh
 
                 SpellHelper.GetSurfaceTop(ref p);
 
-                List<Mobile> targets = new List<Mobile>();
+                ArrayList targets = new ArrayList();
 
                 Map map = this.Caster.Map;
 
@@ -54,38 +56,57 @@ namespace Server.Spells.Seventh
                     IPooledEnumerable eable = map.GetMobilesInRange(new Point3D(p), 8);
 
                     foreach (Mobile m in eable)
-                        if (m is BaseCreature && (m as BaseCreature).IsDispellable && (((BaseCreature)m).SummonMaster == this.Caster || this.Caster.CanBeHarmful(m, false)))
-                            targets.Add(m);
+                    {
+                        if (m.BodyMod != 0) // Controlla se è sotto Polymorph
+                        {
+                            targets.Add(m); // Aggiungere il bersaglio per Polymorph
+                        }
+                        else if (m is BaseCreature)
+                        {
+                            BaseCreature bc = (BaseCreature)m;
+
+                            if (bc.IsDispellable && (bc.SummonMaster == this.Caster || this.Caster.CanBeHarmful(m, false)))
+                                targets.Add(m);
+                        }
+                    }
 
                     eable.Free();
                 }
 
                 for (int i = 0; i < targets.Count; ++i)
                 {
-                    Mobile m = targets[i];
+                    Mobile m = (Mobile)targets[i];
 
-                    BaseCreature bc = m as BaseCreature;
-
-                    if (bc == null)
-                        continue;
-
-                    double dispelChance = (50.0 + ((100 * (this.Caster.Skills.Magery.Value - bc.GetDispelDifficulty())) / (bc.DispelFocus * 2))) / 100;
-                    
-                    // Skill Masteries
-                    dispelChance -= ((double)SkillMasteries.MasteryInfo.EnchantedSummoningBonus(bc) / 100);
-
-                    if (dispelChance > Utility.RandomDouble())
+                    if (m.BodyMod != 0) // Controlla se il bersaglio è sotto Polymorph
                     {
-                        Effects.SendLocationParticles(EffectItem.Create(m.Location, m.Map, EffectItem.DefaultDuration), 0x3728, 8, 20, 5042);
-                        Effects.PlaySound(m, m.Map, 0x201);
+                        SpellHelper.Turn(this.Caster, m);
 
-                        m.Delete();
+                        // Rimuove l'effetto Polymorph
+                        PolymorphSpell.EndPolymorph(m);
+                        Effects.PlaySound(m.Location, m.Map, 0x201); // Suono per Dispel riuscito
+                        this.Caster.SendMessage("You dispel the polymorph effect!");
                     }
-                    else
+                    else if (m is BaseCreature)
                     {
-                        this.Caster.DoHarmful(m);
+                        BaseCreature bc = (BaseCreature)m;
 
-                        m.FixedEffect(0x3779, 10, 20);
+                        double dispelChance = (50.0 + ((100 * (this.Caster.Skills.Magery.Value - bc.GetDispelDifficulty())) / (bc.DispelFocus * 2))) / 100;
+
+                        // Skill Masteries
+                        dispelChance -= ((double)SkillMasteries.MasteryInfo.EnchantedSummoningBonus(bc) / 100);
+
+                        if (dispelChance > Utility.RandomDouble())
+                        {
+                            Effects.SendLocationParticles(EffectItem.Create(m.Location, m.Map, EffectItem.DefaultDuration), 0x3728, 8, 20, 5042);
+                            Effects.PlaySound(m, m.Map, 0x201); // Suono per Dispel riuscito
+
+                            m.Delete();
+                        }
+                        else
+                        {
+                            this.Caster.DoHarmful(m);
+                            m.FixedEffect(0x3779, 10, 20);
+                        }
                     }
                 }
             }
@@ -96,6 +117,7 @@ namespace Server.Spells.Seventh
         public class InternalTarget : Target
         {
             private readonly MassDispelSpell m_Owner;
+
             public InternalTarget(MassDispelSpell owner)
                 : base(Core.ML ? 10 : 12, true, TargetFlags.None)
             {

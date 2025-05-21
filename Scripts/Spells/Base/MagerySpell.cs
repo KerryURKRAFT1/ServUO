@@ -44,6 +44,30 @@ namespace Server.Spells
             max = avg + ChanceOffset;
         }
 
+
+
+            // UOR STYLE FOR SCROLL
+        /*
+        public override void GetCastSkills(out double min, out double max)
+        {
+            int circle = (int)this.Circle;
+
+            if (this.Scroll != null)
+                circle -= 2;
+
+            // Clamp circle (non andare mai sotto 0)
+            if (circle < 0) circle = 0;
+            if (circle > 7) circle = 7;
+
+            // Tabella skill richiesta (UOR-like)
+            double[] minSkills = { 0, 15, 30, 45, 60, 75, 85, 90 };
+            double[] maxSkills = { 20, 35, 50, 65, 80, 90, 95, 100 };
+
+            min = minSkills[circle];
+            max = maxSkills[circle];
+        }
+        */
+
         public override int GetMana()
         {
             if (this.Scroll is BaseWand)

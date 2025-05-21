@@ -47,23 +47,54 @@ namespace Server.Spells.Third
             }
             else if (this.CheckBSequence(m))
             {
+
                 SpellHelper.Turn(this.Caster, m);
 
-                SpellHelper.AddStatBonus(this.Caster, m, StatType.Str);
-                SpellHelper.DisableSkillCheck = true;
-				SpellHelper.AddStatBonus(this.Caster, m, StatType.Dex);
-				SpellHelper.AddStatBonus(this.Caster, m, StatType.Int);
-                SpellHelper.DisableSkillCheck = false;
+                // UOR LOGIC
+                if (Core.UOR)
+                {
+                    double magery = this.Caster.Skills[SkillName.Magery].Value;
+                    double percent = magery * 0.003; // 0,3% per punto magery (100 magery = 30%)
 
-				int percentage = (int)(SpellHelper.GetOffsetScalar(this.Caster, m, false) * 100);
-				TimeSpan length = SpellHelper.GetDuration(this.Caster, m);
-				string args = String.Format("{0}\t{1}\t{2}", percentage, percentage, percentage);
-				BuffInfo.AddBuff(m, new BuffInfo(BuffIcon.Bless, 1075847, 1075848, length, m, args.ToString()));
+                    int strBonus = (int)(m.RawStr * percent);
+                    int dexBonus = (int)(m.RawDex * percent);
+                    int intBonus = (int)(m.RawInt * percent);
 
-				m.FixedParticles(0x373A, 10, 15, 5018, EffectLayer.Waist);
-                m.PlaySound(0x1EA);
+                    TimeSpan length = SpellHelper.GetDuration(this.Caster, m);
 
-                Timer.DelayCall(length, () => m.Delta(MobileDelta.Stat));
+                    m.AddStatMod(new StatMod(StatType.Str, "[Bless] Str", strBonus, length));
+                    m.AddStatMod(new StatMod(StatType.Dex, "[Bless] Dex", dexBonus, length));
+                    m.AddStatMod(new StatMod(StatType.Int, "[Bless] Int", intBonus, length));
+
+                    int percentage = (int)(percent * 100);
+                    string args = String.Format("{0}\t{1}\t{2}", percentage, percentage, percentage);
+                    BuffInfo.AddBuff(m, new BuffInfo(BuffIcon.Bless, 1075847, 1075848, length, m, args.ToString()));
+
+                    m.FixedParticles(0x373A, 10, 15, 5018, EffectLayer.Waist);
+                    m.PlaySound(0x1EA);
+
+                    Timer.DelayCall(length, () => m.Delta(MobileDelta.Stat));
+                }
+                ////// OLD LOGIC
+                else
+                {
+
+                    SpellHelper.AddStatBonus(this.Caster, m, StatType.Str);
+                    SpellHelper.DisableSkillCheck = true;
+                    SpellHelper.AddStatBonus(this.Caster, m, StatType.Dex);
+                    SpellHelper.AddStatBonus(this.Caster, m, StatType.Int);
+                    SpellHelper.DisableSkillCheck = false;
+                    
+                    int percentage = (int)(SpellHelper.GetOffsetScalar(this.Caster, m, false) * 100);
+                    TimeSpan length = SpellHelper.GetDuration(this.Caster, m);
+                    string args = String.Format("{0}\t{1}\t{2}", percentage, percentage, percentage);
+                    BuffInfo.AddBuff(m, new BuffInfo(BuffIcon.Bless, 1075847, 1075848, length, m, args.ToString()));
+
+                    m.FixedParticles(0x373A, 10, 15, 5018, EffectLayer.Waist);
+                    m.PlaySound(0x1EA);
+
+                    Timer.DelayCall(length, () => m.Delta(MobileDelta.Stat));
+                }
             }
 
             this.FinishSequence();

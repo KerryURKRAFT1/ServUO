@@ -2,6 +2,8 @@ using System;
 using Server.Items;
 using Server.Mobiles;
 using Server.Targeting;
+// PATCH FOR UOR
+using System.Linq;
 
 namespace Server.Engines.Harvest
 {
@@ -199,6 +201,53 @@ namespace Server.Engines.Harvest
             #endregion
         }
 
+        // PATCH FOR UOR - MINING LIKE UOR-OSI STYLE !
+            public override Type GetResourceType(Mobile from, Item tool, HarvestDefinition def, Map map, Point3D loc, HarvestResource resource)
+            {
+                if (def == this.m_OreAndStone)
+                {
+                    // Tabella delle percentuali: {minSkill, chance, resourceIndex}
+                    double[,] chances = new double[,]
+                    {
+                        // minSkill,   chance,   resourceIndex
+                        {  99, 0.007, 8 }, // Valorite
+                        {  95, 0.008, 7 }, // Verite
+                        {  90, 0.015, 6 }, // Agapite
+                        {  85, 0.02,  5 }, // Gold
+                        {  80, 0.05,  4 }, // Bronze
+                        {  75, 0.08,  3 }, // Copper
+                        {  70, 0.12,  2 }, // Shadow Iron
+                        {  65, 0.20,  1 }, // Dull Copper
+                        {   0, 0.50,  0 }  // Ferro (aggiunge anche il residuo)
+                    };
+
+                    double skill = from.Skills[SkillName.Mining].Base;
+                    double roll = Utility.RandomDouble();
+                    double cumulative = 0;
+
+                    // Ciclo sulle percentuali dalla più rara alla meno rara
+                    for (int i = 0; i < chances.GetLength(0); i++)
+                    {
+                        double minSkill = chances[i, 0];
+                        double chance = chances[i, 1];
+                        int resIndex = (int)chances[i, 2];
+
+                        if (skill >= minSkill)
+                        {
+                            cumulative += chance;
+                            if (roll < cumulative)
+                                return def.Resources[resIndex].Types[0];
+                        }
+                    }
+                    // Se non rientra in nessuna, torna ferro
+                    return def.Resources[0].Types[0];
+                }
+
+                return base.GetResourceType(from, tool, def, map, loc, resource);
+            }
+
+        // OLD VERSION
+        /*
         public override Type GetResourceType(Mobile from, Item tool, HarvestDefinition def, Map map, Point3D loc, HarvestResource resource)
         {
             if (def == this.m_OreAndStone)
@@ -231,6 +280,8 @@ namespace Server.Engines.Harvest
 
             return base.GetResourceType(from, tool, def, map, loc, resource);
         }
+
+        */
 
         public override bool CheckResources(Mobile from, Item tool, HarvestDefinition def, Map map, Point3D loc, bool timed)
         {

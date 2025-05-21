@@ -3067,6 +3067,43 @@ namespace Server.Items
             if (context != null && context.DoNotColor)
                 this.Hue = 0;
 
+
+        // PATCH START UOR: Nome materiale nel nome visibile
+            if (Core.UOR && tool is BaseTool)
+            {
+                string materialName = "";
+                switch (this.Resource)
+                {
+                    case CraftResource.DullCopper: materialName = "Dull Copper"; break;
+                    case CraftResource.ShadowIron: materialName = "Shadow Iron"; break;
+                    case CraftResource.Copper: materialName = "Copper"; break;
+                    case CraftResource.Bronze: materialName = "Bronze"; break;
+                    case CraftResource.Gold: materialName = "Gold"; break;
+                    case CraftResource.Agapite: materialName = "Agapite"; break;
+                    case CraftResource.Verite: materialName = "Verite"; break;
+                    case CraftResource.Valorite: materialName = "Valorite"; break;
+                }
+                if (!string.IsNullOrEmpty(materialName))
+                {
+                    // Rendi il nome leggibile: es "Gold Plate Chest", "Copper Ringmail Legs", ecc.
+                    string itemName = this.GetType().Name
+                        .Replace("Chest", " Chest")
+                        .Replace("Legs", " Legs")
+                        .Replace("Arms", " Arms")
+                        .Replace("Gloves", " Gloves")
+                        .Replace("Gorget", " Gorget")
+                        .Replace("Helm", " Helm");
+                    this.Name = materialName + " " + itemName;
+                }
+                else
+                {
+                    this.Name = null;
+                }
+            }
+            // PATCH FINE
+
+
+
             if (this.Quality == ArmorQuality.Exceptional && !craftItem.ForceNonExceptional)
             {
                 if (!(Core.ML && this is BaseShield) && !craftItem.ForceNonExceptional)		// Guessed Core.ML removed exceptional resist bonuses from crafted shields
@@ -3078,7 +3115,7 @@ namespace Server.Items
 
                     for (int i = 0; i < bonus; i++)
                     {
-                        switch( Utility.Random(5) )
+                        switch (Utility.Random(5))
                         {
                             case 0:
                                 this.m_PhysicalBonus++;

@@ -198,8 +198,10 @@ namespace Server.Misc
                 }
                 pm.Profession = args.Profession;
 
+                // REMOVE YOUNG SYSTEM FOR UOR
+                    
                 if (pm.IsPlayer() && ((Account)pm.Account).Young)
-                    young = pm.Young = true;
+                    young = pm.Young = false;
             }
 
             SetName(newChar, args.Name);
@@ -262,13 +264,16 @@ namespace Server.Misc
 
         private static CityInfo GetStartLocation(CharacterCreatedEventArgs args, bool isYoung)
         {
+
+            /*
             if (Core.ML)
             {
                 //if( args.State != null && args.State.NewHaven )
                 return m_NewHavenInfo;	//We don't get the client Version until AFTER Character creation
                 //return args.City;  TODO: Uncomment when the old quest system is actually phased out
             }
-
+            */
+            
             bool useHaven = isYoung;
 
             ClientFlags flags = args.State == null ? ClientFlags.None : args.State.Flags;

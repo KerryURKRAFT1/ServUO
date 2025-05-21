@@ -14,7 +14,7 @@ namespace Server.Misc
             * 4) Changing or removing any predefined races may cause server instability.
             */
             RegisterRace(new Human(0, 0));
-            RegisterRace(new Elf(1, 1));
+            //RegisterRace(new Elf(1, 1));
 
             #region Stygian Abyss
             RegisterRace(new Gargoyle(2, 2));

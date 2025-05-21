@@ -5,7 +5,6 @@ using Server.Items;
 using Server.Spells.Fifth;
 using Server.CustomMenus;
 
-
 namespace Server.Spells.Seventh
 {
     public class PolymorphSpell : MagerySpell
@@ -17,8 +16,26 @@ namespace Server.Spells.Seventh
             Reagent.Bloodmoss,
             Reagent.SpidersSilk,
             Reagent.MandrakeRoot);
+
         private static readonly Hashtable m_Timers = new Hashtable();
+        private static readonly Hashtable m_OriginalStats = new Hashtable(); // Per salvare le statistiche originali
         private readonly int m_NewBody;
+
+        // Classe interna per rappresentare le statistiche originali
+        private class Stats
+        {
+            public int Strength { get; private set; }
+            public int Dexterity { get; private set; }
+            public int Intelligence { get; private set; }
+
+            public Stats(int strength, int dexterity, int intelligence)
+            {
+                Strength = strength;
+                Dexterity = dexterity;
+                Intelligence = intelligence;
+            }
+        }
+
         public PolymorphSpell(Mobile caster, Item scroll, int body)
             : base(caster, scroll, m_Info)
         {
@@ -26,7 +43,7 @@ namespace Server.Spells.Seventh
         }
 
         public PolymorphSpell(Mobile caster, Item scroll)
-            : this(caster,scroll,0)
+            : this(caster, scroll, 0)
         {
         }
 
@@ -37,6 +54,7 @@ namespace Server.Spells.Seventh
                 return SpellCircle.Seventh;
             }
         }
+
         public static bool StopTimer(Mobile m)
         {
             Timer t = (Timer)m_Timers[m];
@@ -82,7 +100,7 @@ namespace Server.Spells.Seventh
             {
                 if (Core.ML)
                     EndPolymorph(this.Caster);
-                else 
+                else
                     this.Caster.SendLocalizedMessage(1005559); // This spell is already in effect.
                 return false;
             }
@@ -96,9 +114,7 @@ namespace Server.Spells.Seventh
                 {
                     // Usa il nuovo menu personalizzato per UOR
                     this.Caster.SendMenu(new NewUORPolymorphMenu(this.Caster, this.Scroll));
-                    return false
-                    //gump = null;
-                    //gump = new NewPolymorphMenu(this.Caster, this.Scroll);
+                    return false;
                 }
                 else if (Core.SE)
                 {
@@ -158,6 +174,23 @@ namespace Server.Spells.Seventh
                 {
                     if (this.m_NewBody != 0)
                     {
+                        Effects.PlaySound(this.Caster.Location, this.Caster.Map, 0x1E3);
+                        
+                        // CODICE PER UOR 
+                        // Salva le statistiche originali prima di applicare il Polymorph
+                        if (!m_OriginalStats.ContainsKey(this.Caster))
+                        {
+                            m_OriginalStats[this.Caster] = new Stats(this.Caster.RawStr, this.Caster.RawDex, this.Caster.RawInt);
+                        }
+
+                        var form = NewUORPolymorphMenu.PolymorphForms.Find(f => f.BodyID == this.m_NewBody);
+                        if (form != null)
+                        {
+                            this.Caster.RawStr = form.Strength;
+                            this.Caster.RawDex = form.Dexterity;
+                            this.Caster.RawInt = form.Intelligence;
+                        }
+
                         if (!((Body)this.m_NewBody).IsHuman)
                         {
                             Mobiles.IMount mt = this.Caster.Mount;
@@ -198,7 +231,7 @@ namespace Server.Spells.Seventh
 
             this.FinishSequence();
         }
-        
+
         private static TextDefinition GetArticleCliloc(int body)
         {
             if (body == 0x11 || body == 0x01)
@@ -228,23 +261,30 @@ namespace Server.Spells.Seventh
                 case 0x02: return 1018111; // ettin
                 case 0x09: return 1018103; // daemon
                 default: return -1;
-               
             }
         }
 
-        private static void EndPolymorph(Mobile m)
+        public static void EndPolymorph(Mobile m)
         {
-            if (!m.CanBeginAction(typeof(PolymorphSpell)))
+            if (m_OriginalStats.ContainsKey(m))
             {
+                Stats stats = (Stats)m_OriginalStats[m];
+                m.RawStr = stats.Strength;
+                m.RawDex = stats.Dexterity;
+                m.RawInt = stats.Intelligence;
+
                 m.BodyMod = 0;
                 m.HueMod = -1;
-                m.EndAction(typeof(PolymorphSpell));
 
-                BaseArmor.ValidateMobile(m);
-                BaseClothing.ValidateMobile(m);
-                
-                BuffInfo.RemoveBuff(m, BuffIcon.Polymorph);
+                m_OriginalStats.Remove(m);
             }
+
+            m.EndAction(typeof(PolymorphSpell));
+
+            BaseArmor.ValidateMobile(m);
+            BaseClothing.ValidateMobile(m);
+
+            BuffInfo.RemoveBuff(m, BuffIcon.Polymorph);
         }
 
         private class InternalTimer : Timer

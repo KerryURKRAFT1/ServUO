@@ -590,7 +590,14 @@ namespace Server.Items
 				double seconds;
 				double resDelay = (patient.Alive ? 0.0 : 5.0);
 
-				if (onSelf)
+				if (Core.UOR)
+				{
+					// UOR-style: 11 - (DEX/20), cap DEX a 100, minimo 5s
+					seconds = 11.0 - (Math.Min(healer.Dex, 100) / 20.0);
+					if (seconds < 5.0) seconds = 5.0;
+				}
+				else if (onSelf)
+				//if (onSelf)
 				{
 					if (Core.AOS)
 					{
