@@ -30,62 +30,155 @@ namespace Server.Gumps
             EventSink.PlayerDeath += new PlayerDeathEventHandler(EventSink_PlayerDeath);
         }
 
-        public static void EventSink_PlayerDeath(PlayerDeathEventArgs e)
+        // PATCH FOR UOR / NO GUMP
+public static void EventSink_PlayerDeath(PlayerDeathEventArgs e)
+{
+    Mobile m = e.Mobile;
+
+    // Sphere-like: se Core.UOR, aggiungi kill direttamente e NON mostrare il gump
+    if (Core.UOR)
+    {
+        foreach (AggressorInfo ai in m.Aggressors)
         {
-            Mobile m = e.Mobile;
-
-            List<Mobile> killers = new List<Mobile>();
-            List<Mobile> toGive = new List<Mobile>();
-
-            foreach (AggressorInfo ai in m.Aggressors)
+            if (ai.Attacker != null && ai.Attacker.Player && ai.CanReportMurder && !ai.Reported)
             {
-                if (ai.Attacker.Player && ai.CanReportMurder && !ai.Reported)
+                ai.Attacker.Kills++;
+                ai.Attacker.ShortTermMurders++;
+                ai.Reported = true;
+                ai.CanReportMurder = false;
+
+                PlayerMobile pk = ai.Attacker as PlayerMobile;
+                if (pk != null)
                 {
-                    if (!Core.SE || !((PlayerMobile)m).RecentlyReported.Contains(ai.Attacker))
+                    pk.ResetKillTime();
+                    pk.SendLocalizedMessage(1049067); // You have been reported for murder!
+                    if (pk.Kills == 5)
                     {
-                        killers.Add(ai.Attacker);
-                        ai.Reported = true;
-                        ai.CanReportMurder = false;
+                        pk.SendLocalizedMessage(502134); // You are now known as a murderer!
                     }
                 }
-                if (ai.Attacker.Player && (DateTime.UtcNow - ai.LastCombatTime) < TimeSpan.FromSeconds(30.0) && !toGive.Contains(ai.Attacker))
-                    toGive.Add(ai.Attacker);
             }
-
-            foreach (AggressorInfo ai in m.Aggressed)
-            {
-                if (ai.Defender.Player && (DateTime.UtcNow - ai.LastCombatTime) < TimeSpan.FromSeconds(30.0) && !toGive.Contains(ai.Defender))
-                    toGive.Add(ai.Defender);
-            }
-
-            foreach (Mobile g in toGive)
-            {
-                int n = Notoriety.Compute(g, m);
-
-                int theirKarma = m.Karma, ourKarma = g.Karma;
-                bool innocent = (n == Notoriety.Innocent);
-                bool criminal = (n == Notoriety.Criminal || n == Notoriety.Murderer);
-
-                int fameAward = m.Fame / 200;
-                int karmaAward = 0;
-
-                if (innocent)
-                    karmaAward = (ourKarma > -2500 ? -850 : -110 - (m.Karma / 100));
-                else if (criminal)
-                    karmaAward = 50;
-
-                Titles.AwardFame(g, fameAward, false);
-                Titles.AwardKarma(g, karmaAward, true);
-
-                Server.Items.XmlQuest.RegisterKill(m, g);
-            }
-
-            if (m is PlayerMobile && ((PlayerMobile)m).NpcGuild == NpcGuild.ThievesGuild)
-                return;
-
-            if (killers.Count > 0)
-                new GumpTimer(m, killers).Start();
         }
+        // NON mostrare il gump
+        return;
+    }
+
+    // Comportamento standard (gump di report murder) se NON UOR
+    List<Mobile> killers = new List<Mobile>();
+    List<Mobile> toGive = new List<Mobile>();
+
+    foreach (AggressorInfo ai in m.Aggressors)
+    {
+        if (ai.Attacker != null && ai.Attacker.Player && ai.CanReportMurder && !ai.Reported)
+        {
+            if (!Core.SE || !((PlayerMobile)m).RecentlyReported.Contains(ai.Attacker))
+            {
+                killers.Add(ai.Attacker);
+                ai.Reported = true;
+                ai.CanReportMurder = false;
+            }
+        }
+        if (ai.Attacker != null && ai.Attacker.Player && (DateTime.UtcNow - ai.LastCombatTime) < TimeSpan.FromSeconds(30.0) && !toGive.Contains(ai.Attacker))
+            toGive.Add(ai.Attacker);
+    }
+
+    foreach (AggressorInfo ai in m.Aggressed)
+    {
+        if (ai.Defender != null && ai.Defender.Player && (DateTime.UtcNow - ai.LastCombatTime) < TimeSpan.FromSeconds(30.0) && !toGive.Contains(ai.Defender))
+            toGive.Add(ai.Defender);
+    }
+
+    foreach (Mobile g in toGive)
+    {
+        int n = Notoriety.Compute(g, m);
+
+        int theirKarma = m.Karma, ourKarma = g.Karma;
+        bool innocent = (n == Notoriety.Innocent);
+        bool criminal = (n == Notoriety.Criminal || n == Notoriety.Murderer);
+
+        int fameAward = m.Fame / 200;
+        int karmaAward = 0;
+
+        if (innocent)
+            karmaAward = (ourKarma > -2500 ? -850 : -110 - (m.Karma / 100));
+        else if (criminal)
+            karmaAward = 50;
+
+        Titles.AwardFame(g, fameAward, false);
+        Titles.AwardKarma(g, karmaAward, true);
+
+        Server.Items.XmlQuest.RegisterKill(m, g);
+    }
+
+    if (m is PlayerMobile && ((PlayerMobile)m).NpcGuild == NpcGuild.ThievesGuild)
+        return;
+
+    if (killers.Count > 0)
+        new GumpTimer(m, killers).Start();
+}
+
+        /*
+                public static void EventSink_PlayerDeath(PlayerDeathEventArgs e)
+                {
+                    Mobile m = e.Mobile;
+
+                    List<Mobile> killers = new List<Mobile>();
+                    List<Mobile> toGive = new List<Mobile>();
+
+                    foreach (AggressorInfo ai in m.Aggressors)
+                    {
+                        if (ai.Attacker.Player && ai.CanReportMurder && !ai.Reported)
+                        {
+                            if (!Core.SE || !((PlayerMobile)m).RecentlyReported.Contains(ai.Attacker))
+                            {
+                                killers.Add(ai.Attacker);
+                                ai.Reported = true;
+                                ai.CanReportMurder = false;
+                            }
+                        }
+                        if (ai.Attacker.Player && (DateTime.UtcNow - ai.LastCombatTime) < TimeSpan.FromSeconds(30.0) && !toGive.Contains(ai.Attacker))
+                            toGive.Add(ai.Attacker);
+                    }
+
+                    foreach (AggressorInfo ai in m.Aggressed)
+                    {
+                        if (ai.Defender.Player && (DateTime.UtcNow - ai.LastCombatTime) < TimeSpan.FromSeconds(30.0) && !toGive.Contains(ai.Defender))
+                            toGive.Add(ai.Defender);
+                    }
+
+                    foreach (Mobile g in toGive)
+                    {
+                        int n = Notoriety.Compute(g, m);
+
+                        int theirKarma = m.Karma, ourKarma = g.Karma;
+                        bool innocent = (n == Notoriety.Innocent);
+                        bool criminal = (n == Notoriety.Criminal || n == Notoriety.Murderer);
+
+                        int fameAward = m.Fame / 200;
+                        int karmaAward = 0;
+
+                        if (innocent)
+                            karmaAward = (ourKarma > -2500 ? -850 : -110 - (m.Karma / 100));
+                        else if (criminal)
+                            karmaAward = 50;
+
+                        Titles.AwardFame(g, fameAward, false);
+                        Titles.AwardKarma(g, karmaAward, true);
+
+                        Server.Items.XmlQuest.RegisterKill(m, g);
+                    }
+
+                    if (m is PlayerMobile && ((PlayerMobile)m).NpcGuild == NpcGuild.ThievesGuild)
+                        return;
+
+                    if (killers.Count > 0)
+                        new GumpTimer(m, killers).Start();
+                }
+
+
+
+
+                */
 
         public static void ReportedListExpiry_Callback(object state)
         {

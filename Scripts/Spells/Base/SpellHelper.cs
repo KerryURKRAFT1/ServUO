@@ -14,6 +14,12 @@ using Server.Spells.Seventh;
 using Server.Spells.Fourth;
 using Server.Targeting;
 using Server.Spells.SkillMasteries;
+// FUR UOR STYLE
+using Server.Spells.First;
+using Server.Spells.Fourth;  // Fireball, Lightning
+using Server.Spells.Fifth;   // Energy Bolt, Mind Blast
+using Server.Spells.Sixth;   // Explosion
+using Server.Spells.Seventh; // Flamestrike, Chain Lightning
 
 namespace Server
 {
@@ -21,8 +27,15 @@ namespace Server
     {
         public static void Nullify(Mobile from)
         {
-            if (!from.CanBeginAction(typeof(DefensiveSpell)))
-                new InternalTimer(from).Start();
+            if (Core.UOR)
+            {
+                from.EndAction(typeof(DefensiveSpell)); // Sblocca SUBITO il recast su UOR
+            }
+            else
+            {
+                if (!from.CanBeginAction(typeof(DefensiveSpell)))
+                    new InternalTimer(from).Start();
+            }
         }
 
         private class InternalTimer : Timer
@@ -1005,6 +1018,7 @@ namespace Server.Spells
         }
 
         //magic reflection
+
         public static void CheckReflect(int circle, Mobile caster, ref Mobile target)
         {
             CheckReflect(circle, ref caster, ref target);
@@ -1056,6 +1070,77 @@ namespace Server.Spells
                 }
             }
         }
+
+        // UOR STYLE - SPELL REFLECT
+            public static bool CheckReflectUOR(Spell spell, Mobile caster, Mobile target, double damage)
+            {
+                // Funziona solo su Core.UOR
+                if (!Core.UOR)
+                    return false;
+
+                // Se il target ha Reflection attivo
+                if (target.MagicDamageAbsorb > 0)
+                {
+                    // Consuma Reflection dal target (include effetti/sonoro/messaggio standard)
+                    MagicReflectSpell.EndReflect(target);
+
+                    // Effetto e suono della Magic Arrow che colpisce il target
+                    caster.MovingParticles(target, 0x36E4, 5, 0, false, false, 3006, 0, 0);
+                    caster.PlaySound(0x1E5);
+
+                    // Se anche il caster ha Reflection attivo
+                    if (caster.MagicDamageAbsorb > 0)
+                    {
+                        // Consuma Reflection dal caster (include effetti/sonoro/messaggio standard)
+                        MagicReflectSpell.EndReflect(caster);
+
+                        // Effetto e suono della Magic Arrow che colpisce il caster
+                        target.MovingParticles(caster, 0x36E4, 5, 0, false, false, 3006, 0, 0);
+                        target.PlaySound(0x1E5);
+
+                        // Spell neutralizzata, non infliggere danno a nessuno
+                        return true;
+                    }
+                    else
+                    {
+                        // Magic Arrow riflessa: effetto e suono su caster
+                        target.MovingParticles(caster, 0x36E4, 5, 0, false, false, 3006, 0, 0);
+                        target.PlaySound(0x1E5);
+
+                        SpellHelper.Damage(spell, caster, damage);
+                        return true;
+                    }
+                }
+
+                // Nessun reflect: la spell va avanti normalmente
+                return false;
+            }
+
+        /*
+        public static bool CheckReflectUOR(Spell spell, ref Mobile caster, ref Mobile target, double damage)
+        {
+            if (!Core.UOR)
+                return false;
+
+            if (target.MagicDamageAbsorb > 0)
+            {
+                MagicReflectSpell.EndReflect(target);
+                target.FixedEffect(0x37B9, 10, 5);
+
+                // Riflette la spell: il danno torna sul caster
+                SpellHelper.Damage(spell, caster, damage);
+
+                return true;
+            }
+
+            return false;
+        }
+        
+        */
+            
+/// <summary>
+/// //
+/// </summary>
 
         public static void Damage(Spell spell, Mobile target, double damage)
         {

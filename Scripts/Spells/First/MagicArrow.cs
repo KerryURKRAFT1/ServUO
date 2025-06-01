@@ -10,6 +10,7 @@ namespace Server.Spells.First
             212,
             9041,
             Reagent.SulfurousAsh);
+
         public MagicArrowSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {
@@ -22,6 +23,7 @@ namespace Server.Spells.First
                 return SpellCircle.First;
             }
         }
+
         public override bool DelayedDamageStacking
         {
             get
@@ -29,6 +31,7 @@ namespace Server.Spells.First
                 return !Core.AOS;
             }
         }
+
         public override bool DelayedDamage
         {
             get
@@ -36,6 +39,7 @@ namespace Server.Spells.First
                 return true;
             }
         }
+
         public override void OnCast()
         {
             this.Caster.Target = new InternalTarget(this);
@@ -44,22 +48,18 @@ namespace Server.Spells.First
         public void Target(IDamageable d)
         {
             Mobile m = d as Mobile;
+            Mobile source = this.Caster;
 
-            if (!this.Caster.CanSee(d))
+            if (!source.CanSee(d))
             {
-                this.Caster.SendLocalizedMessage(500237); // Target can not be seen.
+                source.SendLocalizedMessage(500237); // Target can not be seen.
             }
             else if (this.CheckHSequence(d))
             {
-                Mobile source = this.Caster;
-
                 SpellHelper.Turn(source, d);
 
-                if(m != null)
-                    SpellHelper.CheckReflect((int)this.Circle, ref source, ref m);
-
                 double damage = 0;
-				
+
                 if (Core.AOS)
                 {
                     damage = this.GetNewAosDamage(10, 1, 4, d);
@@ -71,19 +71,29 @@ namespace Server.Spells.First
                     if (this.CheckResisted(m))
                     {
                         damage *= 0.75;
-
                         m.SendLocalizedMessage(501783); // You feel yourself resisting magical energy.
                     }
 
                     damage *= this.GetDamageScalar(m);
                 }
 
+                // PATCH UOR: riflesso diretto (solo se target è Mobile)
+                //if (m != null && SpellHelper.CheckReflectUOR(this, ref source, ref m, damage))
+                   // return;
+                    if (m != null && SpellHelper.CheckReflectUOR(this, source, m, damage))
+                    return;
+                // FINE PATCH
+
+                // Logica classica (compatibilità legacy)
+                if (m != null)
+                    SpellHelper.CheckReflect((int)this.Circle, ref source, ref m);
+
                 if (damage > 0)
                 {
                     source.MovingParticles(d, 0x36E4, 5, 0, false, false, 3006, 0, 0);
                     source.PlaySound(0x1E5);
 
-                    SpellHelper.Damage(this, d, damage, 0, 100, 0, 0, 0);
+                    SpellHelper.Damage(this, m, damage);
                 }
             }
 
@@ -92,7 +102,7 @@ namespace Server.Spells.First
 
         private class InternalTarget : Target
         {
-            private readonly MagicArrowSpell m_Owner;
+            private MagicArrowSpell m_Owner;
             public InternalTarget(MagicArrowSpell owner)
                 : base(Core.ML ? 10 : 12, false, TargetFlags.Harmful)
             {

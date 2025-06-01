@@ -46,9 +46,11 @@ namespace Server.Spells.Third
                 Mobile target = m as Mobile;
 
                 SpellHelper.Turn(source, m);
+                
+
 
                 if(target != null)
-                    SpellHelper.CheckReflect((int)this.Circle, ref source, ref target);
+                  SpellHelper.CheckReflect((int)this.Circle, ref source, ref target);
 
                 double damage = 0;
 

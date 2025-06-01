@@ -1045,39 +1045,49 @@ namespace Server.Items
 				}
 			}
 
-			from.NextCombatTime = Core.TickCount + (int)GetDelay(from).TotalMilliseconds;
+			//from.NextCombatTime = Core.TickCount + (int)GetDelay(from).TotalMilliseconds;
 
-			if (UseSkillMod && m_AccuracyLevel != WeaponAccuracyLevel.Regular)
+			// PATCH ANTI-EXPLOIT: solo se Core.UOR (o Core.UOSP o Core.UORC... aggiungi altri se serve)
+			if (Core.UOR)
 			{
-				if (m_SkillMod != null)
+				from.NextCombatTime = Core.TickCount + (long)this.GetDelay(from).TotalMilliseconds;
+			}
+			else
+			{
+				// Comportamento originale (AOS/SE/ML/etc.)
+				from.NextCombatTime = Core.TickCount + (int)GetDelay(from).TotalMilliseconds;
+			}
+				if (UseSkillMod && m_AccuracyLevel != WeaponAccuracyLevel.Regular)
 				{
-					m_SkillMod.Remove();
+					if (m_SkillMod != null)
+					{
+						m_SkillMod.Remove();
+					}
+
+					m_SkillMod = new DefaultSkillMod(AccuracySkill, true, (int)m_AccuracyLevel * 5);
+					from.AddSkillMod(m_SkillMod);
 				}
 
-				m_SkillMod = new DefaultSkillMod(AccuracySkill, true, (int)m_AccuracyLevel * 5);
-				from.AddSkillMod(m_SkillMod);
-			}
-
-			if (Core.AOS && m_AosWeaponAttributes.MageWeapon != 0 && m_AosWeaponAttributes.MageWeapon != 30)
-			{
-				if (m_MageMod != null)
+				if (Core.AOS && m_AosWeaponAttributes.MageWeapon != 0 && m_AosWeaponAttributes.MageWeapon != 30)
 				{
-					m_MageMod.Remove();
+					if (m_MageMod != null)
+					{
+						m_MageMod.Remove();
+					}
+
+					m_MageMod = new DefaultSkillMod(SkillName.Magery, true, -30 + m_AosWeaponAttributes.MageWeapon);
+					from.AddSkillMod(m_MageMod);
 				}
 
-				m_MageMod = new DefaultSkillMod(SkillName.Magery, true, -30 + m_AosWeaponAttributes.MageWeapon);
-				from.AddSkillMod(m_MageMod);
+				if (Core.TOL && m_AosWeaponAttributes.MysticWeapon != 0 && m_AosWeaponAttributes.MysticWeapon != 30)
+				{
+					AddMysticMod(from);
+				}
+
+				XmlAttach.CheckOnEquip(this, from);
+
+				return true;
 			}
-
-			if (Core.TOL && m_AosWeaponAttributes.MysticWeapon != 0 && m_AosWeaponAttributes.MysticWeapon != 30)
-			{
-				AddMysticMod(from);
-			}
-
-			XmlAttach.CheckOnEquip(this, from);
-
-			return true;
-		}
 
 		public override void OnAdded(object parent)
 		{
