@@ -5,6 +5,7 @@ public class StaticHouseInit
 {
     static StaticHouseInit()
     {
-        StaticHouseDecayTimer.Initialize();
+        StaticHouseDecayTimer.Initialize(); // Se serve ancora questa
+        StaticHouseSpeech.Initialize(); // <<< AGGIUNGI QUESTA RIGA QUI
     }
 }

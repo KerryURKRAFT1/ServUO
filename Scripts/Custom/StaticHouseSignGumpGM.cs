@@ -24,7 +24,7 @@ namespace Custom
 
             AddPage(0);
 
-            AddBackground(0, 0, 350, 320, 9200); // Sfondo più chiaro
+            AddBackground(0, 0, 350, 340, 9200); // Aumentato altezza
 
             // Bottone X in alto a destra
             AddButton(320, 10, 4017, 4018, 0, GumpButtonType.Reply, 0);
@@ -59,6 +59,10 @@ namespace Custom
 
             AddButton(50, 270, 247, 248, 1, GumpButtonType.Reply, 0); // Salva
             AddLabel(90, 270, 0, "Salva");
+
+            // --- NUOVO: Bottone Abbina Porta ---
+            AddButton(50, 310, 247, 248, 2, GumpButtonType.Reply, 0);
+            AddLabel(90, 310, 0, "Abbina Porta");
         }
 
         public override void OnResponse(Server.Network.NetState sender, RelayInfo info)
@@ -87,6 +91,13 @@ namespace Custom
                 m_Sign.ForRent = info.IsSwitched(11);
 
                 m_User.SendMessage("Impostazioni salvate.");
+                m_User.SendGump(new StaticHouseSignGumpGM(m_Sign, m_User));
+            }
+            else if (info.ButtonID == 2) // Abbina Porta
+            {
+                m_User.SendMessage("Seleziona una porta da abbinare a questa casa.");
+                m_Sign.BeginAssociateDoor(m_User);
+                // Riapri il gump per comodità
                 m_User.SendGump(new StaticHouseSignGumpGM(m_Sign, m_User));
             }
         }
