@@ -1,11 +1,17 @@
+using System;
 using Server;
-using Custom;
+using Server.StaticHouse;
 
-public class StaticHouseInit
+namespace Server.StaticHouse
 {
-    static StaticHouseInit()
+    public class StaticHouseInit
     {
-        StaticHouseDecayTimer.Initialize(); // Se serve ancora questa
-        StaticHouseSpeech.Initialize(); // <<< AGGIUNGI QUESTA RIGA QUI
+        static StaticHouseInit()
+        {
+            StaticHouseDecayTimer.Initialize();
+            StaticHouseSpeech.Initialize();
+            StaticHouseContainerAccess.Initialize();
+            PreventStaticHouseItemDecay.Initialize();
+        }
     }
 }

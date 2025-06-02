@@ -1,7 +1,8 @@
 using System;
 using Server;
+using Server.StaticHouse;
 
-namespace Custom
+namespace Server.StaticHouse
 {
     public class StaticHouseDecayTimer : Timer
     {

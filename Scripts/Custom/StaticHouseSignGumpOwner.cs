@@ -1,10 +1,10 @@
 using System;
 using Server;
 using Server.Gumps;
-using Custom;
 using Server.Mobiles;
+using Server.StaticHouse;
 
-namespace Custom
+namespace Server.StaticHouse
 {
     public class StaticHouseSignGumpOwner : Gump
     {

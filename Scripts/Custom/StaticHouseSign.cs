@@ -1,117 +1,125 @@
 using System;
+using System.Collections.Generic;
 using Server;
 using Server.Gumps;
-using Server.Items;
 using Server.Mobiles;
 using Server.Targeting;
-using System.Collections.Generic;
+using Server.Items; // Necessario per BaseDoor e Key
 
-namespace Custom
+namespace Server.StaticHouse
 {
     public class StaticHouseSign : Item
     {
         private string m_HouseName;
+        private Mobile m_Owner;
+        private bool m_ForSale;
         private int m_SalePrice;
+        private bool m_ForRent;
         private int m_RentPrice;
         private Rectangle2D m_HouseArea;
-        private Mobile m_Owner;
         private DateTime m_LastRefresh;
         private TimeSpan m_DecayPeriod;
-        private bool m_ForSale;
-        private bool m_ForRent;
-
-        // Nuove proprietà per porte/chiavi
         private List<BaseDoor> m_AssociatedDoors;
         private uint m_HouseKeyValue;
 
-        [CommandProperty(AccessLevel.GameMaster)]
-        public List<BaseDoor> AssociatedDoors { get { return m_AssociatedDoors; } set { m_AssociatedDoors = value; } }
+        [Constructable]
+        public StaticHouseSign() : base(0xBD2)
+        {
+            Name = "Insegna Casa Statica";
+            Movable = true;
+            m_ForSale = false;
+            m_ForRent = false;
+            m_SalePrice = 0;
+            m_RentPrice = 0;
+            m_HouseName = null;
+            m_Owner = null;
+            m_HouseArea = new Rectangle2D(this.X - 5, this.Y - 5, 11, 11);
+            m_LastRefresh = DateTime.UtcNow;
+            m_DecayPeriod = TimeSpan.FromDays(21);
+            m_AssociatedDoors = new List<BaseDoor>();
+            m_HouseKeyValue = 0;
+        }
 
-        [CommandProperty(AccessLevel.GameMaster)]
+        public StaticHouseSign(Serial serial) : base(serial) { }
+
+        public string HouseName { get { return m_HouseName; } set { m_HouseName = value; InvalidateProperties(); } }
+        public Mobile Owner { get { return m_Owner; } set { m_Owner = value; InvalidateProperties(); } }
+        public bool ForSale { get { return m_ForSale; } set { m_ForSale = value; InvalidateProperties(); } }
+        public int SalePrice { get { return m_SalePrice; } set { m_SalePrice = value; InvalidateProperties(); } }
+        public bool ForRent { get { return m_ForRent; } set { m_ForRent = value; InvalidateProperties(); } }
+        public int RentPrice { get { return m_RentPrice; } set { m_RentPrice = value; InvalidateProperties(); } }
+        public Rectangle2D HouseArea { get { return m_HouseArea; } set { m_HouseArea = value; } }
+        public DateTime LastRefresh { get { return m_LastRefresh; } set { m_LastRefresh = value; } }
+        public TimeSpan DecayPeriod { get { return m_DecayPeriod; } set { m_DecayPeriod = value; } }
+        public List<BaseDoor> AssociatedDoors { get { return m_AssociatedDoors; } }
         public uint HouseKeyValue { get { return m_HouseKeyValue; } set { m_HouseKeyValue = value; } }
 
-        [Constructable]
-        public StaticHouseSign()
-            : base(0xBD2)
+        public override void Serialize(GenericWriter writer)
         {
-            this.Name = "static house sign";
-            this.Movable = false;
-            this.m_DecayPeriod = TimeSpan.FromDays(14.0); // default 2 settimane
-            this.m_LastRefresh = DateTime.UtcNow;
+            base.Serialize(writer);
+            writer.Write((int)2); // version
+
+            writer.Write(m_HouseName);
+            writer.Write(m_Owner);
+            writer.Write(m_ForSale);
+            writer.Write(m_SalePrice);
+            writer.Write(m_ForRent);
+            writer.Write(m_RentPrice);
+
+            // Rectangle2D manuale
+            writer.Write(m_HouseArea.Start.X);
+            writer.Write(m_HouseArea.Start.Y);
+            writer.Write(m_HouseArea.Width);
+            writer.Write(m_HouseArea.Height);
+
+            writer.Write(m_LastRefresh);
+            writer.Write(m_DecayPeriod);
+
+            // Porte abbinate
+            writer.Write(m_AssociatedDoors.Count);
+            for (int i = 0; i < m_AssociatedDoors.Count; i++)
+                writer.Write(m_AssociatedDoors[i]);
+
+            writer.Write(m_HouseKeyValue);
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+
+            m_HouseName = reader.ReadString();
+            m_Owner = reader.ReadMobile();
+            m_ForSale = reader.ReadBool();
+            m_SalePrice = reader.ReadInt();
+            m_ForRent = reader.ReadBool();
+            m_RentPrice = reader.ReadInt();
+
+            // Rectangle2D manuale
+            int x = reader.ReadInt();
+            int y = reader.ReadInt();
+            int w = reader.ReadInt();
+            int h = reader.ReadInt();
+            m_HouseArea = new Rectangle2D(x, y, w, h);
+
+            m_LastRefresh = reader.ReadDateTime();
+            m_DecayPeriod = reader.ReadTimeSpan();
 
             m_AssociatedDoors = new List<BaseDoor>();
-        }
-
-        public StaticHouseSign(Serial serial)
-            : base(serial)
-        {
-        }
-
-        [CommandProperty(AccessLevel.GameMaster)]
-        public string HouseName
-        {
-            get { return m_HouseName; }
-            set { m_HouseName = value; InvalidateProperties(); }
-        }
-        [CommandProperty(AccessLevel.GameMaster)]
-        public int SalePrice
-        {
-            get { return m_SalePrice; }
-            set { m_SalePrice = value; }
-        }
-        [CommandProperty(AccessLevel.GameMaster)]
-        public int RentPrice
-        {
-            get { return m_RentPrice; }
-            set { m_RentPrice = value; }
-        }
-        [CommandProperty(AccessLevel.GameMaster)]
-        public Rectangle2D HouseArea
-        {
-            get { return m_HouseArea; }
-            set { m_HouseArea = value; }
-        }
-        [CommandProperty(AccessLevel.GameMaster)]
-        public bool ForSale
-        {
-            get { return m_ForSale; }
-            set { m_ForSale = value; }
-        }
-        [CommandProperty(AccessLevel.GameMaster)]
-        public bool ForRent
-        {
-            get { return m_ForRent; }
-            set { m_ForRent = value; }
-        }
-        [CommandProperty(AccessLevel.GameMaster)]
-        public Mobile Owner
-        {
-            get { return m_Owner; }
-            set { m_Owner = value; }
-        }
-        public DateTime LastRefresh { get { return m_LastRefresh; } }
-        public TimeSpan DecayPeriod { get { return m_DecayPeriod; } }
-
-        public override void GetProperties(ObjectPropertyList list)
-        {
-            base.GetProperties(list);
-
-            list.Add("Static City House");
-            list.Add("Name: {0}", m_HouseName != null ? m_HouseName : "N/A");
-            if (m_ForSale)
-                list.Add("For Sale: {0} gp", m_SalePrice);
-            else if (m_ForRent)
-                list.Add("For Rent: {0} gp/week", m_RentPrice);
-            else if (m_Owner != null)
-                list.Add("Owner: {0}", m_Owner.Name);
-            else
-                list.Add("Unowned");
-
-            if (m_Owner != null)
+            if (version >= 2)
             {
-                TimeSpan left = (m_LastRefresh + m_DecayPeriod) - DateTime.UtcNow;
-                if (left < TimeSpan.Zero) left = TimeSpan.Zero;
-                list.Add("Decay in: {0} days", left.Days);
+                int count = reader.ReadInt();
+                for (int i = 0; i < count; i++)
+                {
+                    BaseDoor door = reader.ReadItem() as BaseDoor;
+                    if (door != null)
+                        m_AssociatedDoors.Add(door);
+                }
+                m_HouseKeyValue = reader.ReadUInt();
+            }
+            else
+            {
+                m_HouseKeyValue = 0;
             }
         }
 
@@ -233,75 +241,12 @@ namespace Custom
             // Genera le chiavi in zaino e banca
             Key key1 = new Key(m_HouseKeyValue);
             key1.Description = "Chiave di " + (this.HouseName != null ? this.HouseName : "");
+            newOwner.AddToBackpack(key1);
+
             Key key2 = new Key(m_HouseKeyValue);
             key2.Description = "Chiave di " + (this.HouseName != null ? this.HouseName : "");
-
-            if (newOwner.Backpack != null)
-                newOwner.Backpack.DropItem(key1);
             if (newOwner.BankBox != null)
                 newOwner.BankBox.DropItem(key2);
-        }
-
-        // -------- SERIALIZZAZIONE ESTESA --------
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-            writer.Write((int)1); // version
-
-            writer.Write(m_HouseName);
-            writer.Write(m_SalePrice);
-            writer.Write(m_RentPrice);
-            writer.Write(m_HouseArea);
-            writer.Write(m_ForSale);
-            writer.Write(m_ForRent);
-            writer.Write(m_Owner);
-            writer.Write(m_LastRefresh);
-            writer.Write(m_DecayPeriod);
-
-            writer.Write(m_HouseKeyValue);
-
-            if (m_AssociatedDoors == null)
-                m_AssociatedDoors = new List<BaseDoor>();
-
-            writer.Write(m_AssociatedDoors.Count);
-            for (int i = 0; i < m_AssociatedDoors.Count; i++)
-            {
-                writer.Write(m_AssociatedDoors[i]);
-            }
-        }
-
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-            int version = reader.ReadInt();
-
-            m_HouseName = reader.ReadString();
-            m_SalePrice = reader.ReadInt();
-            m_RentPrice = reader.ReadInt();
-            m_HouseArea = reader.ReadRect2D();
-            m_ForSale = reader.ReadBool();
-            m_ForRent = reader.ReadBool();
-            m_Owner = reader.ReadMobile();
-            m_LastRefresh = reader.ReadDateTime();
-            m_DecayPeriod = reader.ReadTimeSpan();
-
-            if (version >= 1)
-            {
-                m_HouseKeyValue = reader.ReadUInt();
-                int doorCount = reader.ReadInt();
-                m_AssociatedDoors = new List<BaseDoor>();
-                for (int i = 0; i < doorCount; i++)
-                {
-                    BaseDoor door = reader.ReadItem() as BaseDoor;
-                    if (door != null)
-                        m_AssociatedDoors.Add(door);
-                }
-            }
-            else
-            {
-                m_HouseKeyValue = 0;
-                m_AssociatedDoors = new List<BaseDoor>();
-            }
         }
     }
 }
