@@ -10,7 +10,6 @@ namespace Server.StaticHouse
         {
             StaticHouseDecayTimer.Initialize();
             StaticHouseSpeech.Initialize();
-            StaticHouseContainerAccess.Initialize();
             PreventStaticHouseItemDecay.Initialize();
         }
     }

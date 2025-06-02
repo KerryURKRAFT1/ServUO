@@ -7,11 +7,17 @@ using Server.Network;
 using Server.Accounting;
 using System.Linq;
 using Server.Engines.Craft;
+//for static house
+using Server.StaticHouse;
 
 namespace Server.Items
 {
     public abstract class BaseContainer : Container, IEngravable
     {
+
+
+
+
         public BaseContainer(int itemID)
             : base(itemID)
         {
@@ -33,23 +39,23 @@ namespace Server.Items
             }
         }
 
-		private string m_EngravedText = string.Empty;
+        private string m_EngravedText = string.Empty;
 
-		[CommandProperty(AccessLevel.GameMaster)]
-		public string EngravedText
-		{
-			get { return this.m_EngravedText; }
-			set
-			{
-				if (value != null)
-					this.m_EngravedText = value;
-				else
-					this.m_EngravedText = string.Empty;
-				this.InvalidateProperties();
-			}
-		}
+        [CommandProperty(AccessLevel.GameMaster)]
+        public string EngravedText
+        {
+            get { return this.m_EngravedText; }
+            set
+            {
+                if (value != null)
+                    this.m_EngravedText = value;
+                else
+                    this.m_EngravedText = string.Empty;
+                this.InvalidateProperties();
+            }
+        }
 
-		public override bool IsAccessibleTo(Mobile m)
+        public override bool IsAccessibleTo(Mobile m)
         {
             if (!BaseHouse.CheckAccessible(m, this))
                 return false;
@@ -180,25 +186,64 @@ namespace Server.Items
                 ((Mobile)this.RootParent).InvalidateProperties();
         }
 
-        public override void OnDoubleClick(Mobile from)
+public override void OnDoubleClick(Mobile from)
+{
+    // DEBUG INIZIALE
+    from.SendMessage("DEBUG: OnDoubleClick chiamato da: " + from.Name + " [" + from.Serial.ToString() + "]");
+    if (this.Parent == null && this.Map != Map.Internal)
+    {
+        StaticHouseSign house = StaticHouseHelper.FindStaticHouseAt(this.Location, this.Map);
+
+        if (house == null)
         {
-            if (from.IsStaff() || from.InRange(this.GetWorldLocation(), 2) || this.RootParent is PlayerVendor)
-                this.Open(from);
+            from.SendMessage("DEBUG: Nessuna casa trovata in questa posizione!");
+        }
+        else
+        {
+            from.SendMessage("DEBUG: Casa trovata: " + (house.HouseName ?? "N/A"));
+            if (house.Owner == null)
+            {
+                from.SendMessage("DEBUG: Questa casa NON ha owner.");
+            }
             else
-                from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1019045); // I can't reach that.
+            {
+                from.SendMessage("DEBUG: Owner della casa: " + house.Owner.Name + " [" + house.Owner.Serial.ToString() + "]");
+                if (house.Owner == from)
+                {
+                    from.SendMessage("DEBUG: Sei il proprietario della casa (owner match).");
+                }
+                else
+                {
+                    from.SendMessage("DEBUG: NON sei il proprietario! Il tuo serial: " + from.Serial.ToString() + ", owner serial: " + house.Owner.Serial.ToString());
+                }
+            }
         }
 
-		public override void AddNameProperty(ObjectPropertyList list)
-		{
-			base.AddNameProperty(list);
+        // BLOCCO PERMESSI
+        if (house != null && house.Owner != null && house.Owner != from)
+        {
+            from.SendMessage("Non puoi accedere a questo contenitore: non sei il proprietario della casa.");
+            return;
+        }
+    }
 
-			if(!String.IsNullOrEmpty(this.EngravedText))
-			{
-				list.Add(1072305, this.EngravedText); // Engraved: ~1_INSCRIPTION~
-			}
-		}
+    if (from.IsStaff() || from.InRange(this.GetWorldLocation(), 2) || this.RootParent is PlayerVendor)
+        this.Open(from);
+    else
+        from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1019045); // I can't reach that.
+}
 
-		public virtual void Open(Mobile from)
+        public override void AddNameProperty(ObjectPropertyList list)
+        {
+            base.AddNameProperty(list);
+
+            if (!String.IsNullOrEmpty(this.EngravedText))
+            {
+                list.Add(1072305, this.EngravedText); // Engraved: ~1_INSCRIPTION~
+            }
+        }
+
+        public virtual void Open(Mobile from)
         {
             this.DisplayTo(from);
         }
@@ -233,22 +278,22 @@ namespace Server.Items
         {
             base.Serialize(writer);
 
-			writer.Write(1000); // Version
-			writer.Write(m_EngravedText);
+            writer.Write(1000); // Version
+            writer.Write(m_EngravedText);
         }
 
         public override void Deserialize(GenericReader reader)
         {
             base.Deserialize(reader);
 
-			int version = reader.PeekInt();
-			switch(version)
-			{
-				case 1000:
-					reader.ReadInt();
-					m_EngravedText = reader.ReadString();
-					break;
-			}
+            int version = reader.PeekInt();
+            switch (version)
+            {
+                case 1000:
+                    reader.ReadInt();
+                    m_EngravedText = reader.ReadString();
+                    break;
+            }
         }
     }
 
@@ -1145,7 +1190,7 @@ namespace Server.Items
 
             if (version == 0 && this.Weight == 15)
                 this.Weight = -1;
-			
+
             if (version < 2)
                 this.GumpID = 0x10B;
         }
