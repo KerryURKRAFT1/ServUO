@@ -65,6 +65,20 @@ namespace Server.Items
 
         public override bool CheckHold(Mobile m, Item item, bool message, bool checkItems, int plusItems, int plusWeight)
         {
+            // PATCH: se il container è statico in una casa statica e sei l'owner, permetti SEMPRE il drop
+            if (this.Parent == null && this.Map != Map.Internal)
+            {
+                StaticHouseSign house = StaticHouseHelper.FindStaticHouseAt(this.Location, this.Map);
+                if (house != null && house.Owner == m)
+                {
+                    m.SendMessage("DEBUG: PATCH STATIC HOUSE: Sei l'owner, bypasso ogni blocco!");
+                    return true;
+                }
+            }
+            
+			    // PATCH: se il container è statico in una casa statica e sei l'owner, permetti SEMPRE il drop
+
+
             if (this.IsSecure && !BaseHouse.CheckHold(m, this, item, message, checkItems, plusItems, plusWeight))
                 return false;
 
@@ -188,49 +202,54 @@ namespace Server.Items
 
 public override void OnDoubleClick(Mobile from)
 {
-    // DEBUG INIZIALE
-    from.SendMessage("DEBUG: OnDoubleClick chiamato da: " + from.Name + " [" + from.Serial.ToString() + "]");
-    if (this.Parent == null && this.Map != Map.Internal)
-    {
-        StaticHouseSign house = StaticHouseHelper.FindStaticHouseAt(this.Location, this.Map);
+            
+            // DEBUG INIZIALE
+                    from.SendMessage("DEBUG: OnDoubleClick chiamato da: " + from.Name + " [" + from.Serial.ToString() + "]");
+            if (this.Parent == null && this.Map != Map.Internal)
+            {
+                StaticHouseSign house = StaticHouseHelper.FindStaticHouseAt(this.Location, this.Map);
 
-        if (house == null)
-        {
-            from.SendMessage("DEBUG: Nessuna casa trovata in questa posizione!");
-        }
-        else
-        {
-            from.SendMessage("DEBUG: Casa trovata: " + (house.HouseName ?? "N/A"));
-            if (house.Owner == null)
-            {
-                from.SendMessage("DEBUG: Questa casa NON ha owner.");
-            }
-            else
-            {
-                from.SendMessage("DEBUG: Owner della casa: " + house.Owner.Name + " [" + house.Owner.Serial.ToString() + "]");
-                if (house.Owner == from)
+                if (house == null)
                 {
-                    from.SendMessage("DEBUG: Sei il proprietario della casa (owner match).");
+                    from.SendMessage("DEBUG: Nessuna casa trovata in questa posizione!");
                 }
                 else
                 {
-                    from.SendMessage("DEBUG: NON sei il proprietario! Il tuo serial: " + from.Serial.ToString() + ", owner serial: " + house.Owner.Serial.ToString());
+                    from.SendMessage("DEBUG: Casa trovata: " + (house.HouseName ?? "N/A"));
+                    if (house.Owner == null)
+                    {
+                        from.SendMessage("DEBUG: Questa casa NON ha owner.");
+                    }
+                    else
+                    {
+                        from.SendMessage("DEBUG: Owner della casa: " + house.Owner.Name + " [" + house.Owner.Serial.ToString() + "]");
+                        if (house.Owner == from)
+                        {
+                            from.SendMessage("DEBUG: Sei il proprietario della casa (owner match).");
+                        }
+                        else
+                        {
+                            from.SendMessage("DEBUG: NON sei il proprietario! Il tuo serial: " + from.Serial.ToString() + ", owner serial: " + house.Owner.Serial.ToString());
+                        }
+                    }
                 }
+
+                // BLOCCO PERMESSI
+                if (house != null && house.Owner != null && house.Owner != from)
+                {
+                    from.SendMessage("Non puoi accedere a questo contenitore: non sei il proprietario della casa.");
+                    return;
+                }
+
             }
-        }
+                
+        
 
-        // BLOCCO PERMESSI
-        if (house != null && house.Owner != null && house.Owner != from)
-        {
-            from.SendMessage("Non puoi accedere a questo contenitore: non sei il proprietario della casa.");
-            return;
-        }
-    }
-
+        
     if (from.IsStaff() || from.InRange(this.GetWorldLocation(), 2) || this.RootParent is PlayerVendor)
-        this.Open(from);
-    else
-        from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1019045); // I can't reach that.
+                this.Open(from);
+            else
+                from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1019045); // I can't reach that.
 }
 
         public override void AddNameProperty(ObjectPropertyList list)
