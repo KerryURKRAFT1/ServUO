@@ -24,15 +24,13 @@ namespace Server.StaticHouse
 
             AddPage(0);
 
-            AddBackground(0, 0, 350, 340, 9200); // Aumentato altezza
+            AddBackground(0, 0, 350, 400, 9200);
 
-            // Bottone X in alto a destra
             AddButton(320, 10, 4017, 4018, 0, GumpButtonType.Reply, 0);
-
             AddLabel(120, 10, 1152, "Configura Casa Statica");
 
             AddLabel(20, 50, 0, "Nome Casa:");
-            AddTextEntry(120, 48, 200, 20, 0, 0, m_Sign.HouseName ?? "");
+            AddTextEntry(120, 48, 200, 20, 0, 0, m_Sign.HouseName != null ? m_Sign.HouseName : "");
 
             AddLabel(20, 80, 0, "Prezzo Vendita:");
             AddTextEntry(120, 78, 100, 20, 0, 1, m_Sign.SalePrice.ToString());
@@ -57,12 +55,37 @@ namespace Server.StaticHouse
             AddLabel(20, 240, 0, "Proprietario:");
             AddLabel(120, 240, 33, m_Sign.Owner != null ? m_Sign.Owner.Name : "Nessuno");
 
-            AddButton(50, 270, 247, 248, 1, GumpButtonType.Reply, 0); // Salva
-            AddLabel(90, 270, 0, "Salva");
+            int extraY = 260;
+            if (m_Sign.Owner != null)
+            {
+                AddLabel(20, extraY, 0, "Serial Owner:");
+                AddLabel(120, extraY, 33, m_Sign.Owner.Serial.ToString());
+                extraY += 20;
 
-            // --- NUOVO: Bottone Abbina Porta ---
-            AddButton(50, 310, 247, 248, 2, GumpButtonType.Reply, 0);
-            AddLabel(90, 310, 0, "Abbina Porta");
+                AddLabel(20, extraY, 0, "Account:");
+                AddLabel(120, extraY, 33, m_Sign.Owner.Account != null ? m_Sign.Owner.Account.ToString() : "N/A");
+                extraY += 20;
+
+                AddLabel(20, extraY, 0, "Ultimo refresh:");
+                AddLabel(120, extraY, 33, m_Sign.LastRefresh.ToString());
+                extraY += 20;
+
+                // Calcolo giorni rimasti con decimale (uniforme per tutti)
+                TimeSpan left = (m_Sign.LastRefresh + m_Sign.DecayPeriod) - DateTime.UtcNow;
+                if (left < TimeSpan.Zero) left = TimeSpan.Zero;
+                string scadenza = left.TotalDays > 0 
+                    ? string.Format("{0:F1} giorni reali rimasti", left.TotalDays) 
+                    : "SCADUTA!";
+                AddLabel(20, extraY, 0, "Scadenza decay:");
+                AddLabel(120, extraY, 33, scadenza);
+                extraY += 20;
+            }
+
+            AddButton(50, 340, 247, 248, 1, GumpButtonType.Reply, 0);
+            AddLabel(90, 340, 0, "Salva");
+
+            AddButton(50, 370, 247, 248, 2, GumpButtonType.Reply, 0);
+            AddLabel(90, 370, 0, "Abbina Porta");
         }
 
         public override void OnResponse(Server.Network.NetState sender, RelayInfo info)
@@ -71,9 +94,9 @@ namespace Server.StaticHouse
                 return;
 
             if (info.ButtonID == 0)
-                return; // premi X: chiudi
+                return;
 
-            if (info.ButtonID == 1) // Salva
+            if (info.ButtonID == 1)
             {
                 string nome = info.GetTextEntry(0) != null ? info.GetTextEntry(0).Text.Trim() : "";
                 int prezzoVendita = Utility.ToInt32(info.GetTextEntry(1) != null ? info.GetTextEntry(1).Text.Trim() : "0");
@@ -93,11 +116,10 @@ namespace Server.StaticHouse
                 m_User.SendMessage("Impostazioni salvate.");
                 m_User.SendGump(new StaticHouseSignGumpGM(m_Sign, m_User));
             }
-            else if (info.ButtonID == 2) // Abbina Porta
+            else if (info.ButtonID == 2)
             {
                 m_User.SendMessage("Seleziona una porta da abbinare a questa casa.");
                 m_Sign.BeginAssociateDoor(m_User);
-                // Riapri il gump per comodità
                 m_User.SendGump(new StaticHouseSignGumpGM(m_Sign, m_User));
             }
         }

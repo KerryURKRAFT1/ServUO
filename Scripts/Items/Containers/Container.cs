@@ -65,12 +65,14 @@ namespace Server.Items
 
         public override bool CheckHold(Mobile m, Item item, bool message, bool checkItems, int plusItems, int plusWeight)
         {
+            Console.WriteLine("[DEBUG][CheckHold] Chiamato da: " + (m != null ? m.Name : "null") + " (" + (m != null ? m.Serial.ToString() : "null") + "), Item: " + (item != null ? item.Name : "null") + " (" + (item != null ? item.Serial.ToString() : "null") + "), Container: " + this.Serial.ToString() + ", Map: " + (this.Map != null ? this.Map.ToString() : "null") + ", Location: " + this.Location.ToString());
             // PATCH: se il container è statico in una casa statica e sei l'owner, permetti SEMPRE il drop
             if (this.Parent == null && this.Map != Map.Internal)
             {
                 StaticHouseSign house = StaticHouseHelper.FindStaticHouseAt(this.Location, this.Map);
                 if (house != null && house.Owner == m)
                 {
+                    Console.WriteLine("[DEBUG][CheckHold] PATCH STATIC HOUSE: Owner match, bypasso ogni blocco!");
                     m.SendMessage("DEBUG: PATCH STATIC HOUSE: Sei l'owner, bypasso ogni blocco!");
                     return true;
                 }
@@ -80,10 +82,32 @@ namespace Server.Items
 
 
             if (this.IsSecure && !BaseHouse.CheckHold(m, this, item, message, checkItems, plusItems, plusWeight))
+            {
+                Console.WriteLine("[DEBUG][CheckHold] BLOCCATO da BaseHouse.CheckHold");
                 return false;
+            }
 
             return base.CheckHold(m, item, message, checkItems, plusItems, plusWeight);
         }
+
+
+            public override bool CheckLift(Mobile m, Item item, ref LRReason reject)
+            {
+                // PATCH: se il container è statico in una casa statica e sei l'owner, permetti SEMPRE il pick up
+                if (this.Parent == null && this.Map != Map.Internal)
+                {
+                    StaticHouseSign house = StaticHouseHelper.FindStaticHouseAt(this.Location, this.Map);
+                    if (house != null && house.Owner == m)
+                    {
+                        m.SendMessage("DEBUG: PATCH STATIC HOUSE: Sei l'owner, bypasso ogni blocco di pickup!");
+                        return true;
+                    }
+                }
+                return base.CheckLift(m, item, ref reject);
+            }
+
+
+
 
         public override bool CheckItemUse(Mobile from, Item item)
         {

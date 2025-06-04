@@ -28,7 +28,7 @@ namespace Server.StaticHouse
             AddLabel(80, 10, 1152, "Gestione Casa Cittadina");
 
             AddLabel(20, 40, 0, "Nome:");
-            AddLabel(90, 40, 33, m_Sign.HouseName ?? "N/A");
+            AddLabel(90, 40, 33, m_Sign.HouseName != null ? m_Sign.HouseName : "N/A");
 
             AddLabel(20, 65, 0, "Proprietario:");
             AddLabel(120, 65, 33, m_User.Name);
@@ -36,7 +36,7 @@ namespace Server.StaticHouse
             AddLabel(20, 90, 0, "Tempo rimanente:");
             TimeSpan left = (m_Sign.LastRefresh + m_Sign.DecayPeriod) - DateTime.UtcNow;
             if (left < TimeSpan.Zero) left = TimeSpan.Zero;
-            AddLabel(150, 90, 33, left.Days + " giorni");
+            AddLabel(150, 90, 33, string.Format("{0:F1} giorni", left.TotalDays));
 
             AddButton(50, 130, 247, 248, 1, GumpButtonType.Reply, 0); // Rinnova
             AddLabel(90, 130, 0, "Rinnova (refresh)");

@@ -23,7 +23,8 @@ namespace Server.StaticHouse
         private uint m_HouseKeyValue;
 
         [Constructable]
-        public StaticHouseSign() : base(0xBD2)
+        public StaticHouseSign()
+            : base(0xBD2)
         {
             Name = "Insegna Casa Statica";
             Movable = true;
@@ -40,24 +41,70 @@ namespace Server.StaticHouse
             m_HouseKeyValue = 0;
         }
 
-        public StaticHouseSign(Serial serial) : base(serial) { }
+        public StaticHouseSign(Serial serial)
+            : base(serial)
+        {
+        }
 
-        public string HouseName { get { return m_HouseName; } set { m_HouseName = value; InvalidateProperties(); } }
-        public Mobile Owner { get { return m_Owner; } set { m_Owner = value; InvalidateProperties(); } }
-        public bool ForSale { get { return m_ForSale; } set { m_ForSale = value; InvalidateProperties(); } }
-        public int SalePrice { get { return m_SalePrice; } set { m_SalePrice = value; InvalidateProperties(); } }
-        public bool ForRent { get { return m_ForRent; } set { m_ForRent = value; InvalidateProperties(); } }
-        public int RentPrice { get { return m_RentPrice; } set { m_RentPrice = value; InvalidateProperties(); } }
-        public Rectangle2D HouseArea { get { return m_HouseArea; } set { m_HouseArea = value; } }
-        public DateTime LastRefresh { get { return m_LastRefresh; } set { m_LastRefresh = value; } }
-        public TimeSpan DecayPeriod { get { return m_DecayPeriod; } set { m_DecayPeriod = value; } }
-        public List<BaseDoor> AssociatedDoors { get { return m_AssociatedDoors; } }
-        public uint HouseKeyValue { get { return m_HouseKeyValue; } set { m_HouseKeyValue = value; } }
+        public string HouseName
+        {
+            get { return m_HouseName; }
+            set { m_HouseName = value; InvalidateProperties(); }
+        }
+        public Mobile Owner
+        {
+            get { return m_Owner; }
+            set { m_Owner = value; InvalidateProperties(); }
+        }
+        public bool ForSale
+        {
+            get { return m_ForSale; }
+            set { m_ForSale = value; InvalidateProperties(); }
+        }
+        public int SalePrice
+        {
+            get { return m_SalePrice; }
+            set { m_SalePrice = value; InvalidateProperties(); }
+        }
+        public bool ForRent
+        {
+            get { return m_ForRent; }
+            set { m_ForRent = value; InvalidateProperties(); }
+        }
+        public int RentPrice
+        {
+            get { return m_RentPrice; }
+            set { m_RentPrice = value; InvalidateProperties(); }
+        }
+        public Rectangle2D HouseArea
+        {
+            get { return m_HouseArea; }
+            set { m_HouseArea = value; }
+        }
+        public DateTime LastRefresh
+        {
+            get { return m_LastRefresh; }
+            set { m_LastRefresh = value; }
+        }
+        public TimeSpan DecayPeriod
+        {
+            get { return m_DecayPeriod; }
+            set { m_DecayPeriod = value; }
+        }
+        public List<BaseDoor> AssociatedDoors
+        {
+            get { return m_AssociatedDoors; }
+        }
+        public uint HouseKeyValue
+        {
+            get { return m_HouseKeyValue; }
+            set { m_HouseKeyValue = value; }
+        }
 
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
-            writer.Write((int)2); // version
+            writer.Write((int)4);
 
             writer.Write(m_HouseName);
             writer.Write(m_Owner);
@@ -95,15 +142,32 @@ namespace Server.StaticHouse
             m_ForRent = reader.ReadBool();
             m_RentPrice = reader.ReadInt();
 
-            // Rectangle2D manuale
             int x = reader.ReadInt();
             int y = reader.ReadInt();
             int w = reader.ReadInt();
             int h = reader.ReadInt();
             m_HouseArea = new Rectangle2D(x, y, w, h);
 
-            m_LastRefresh = reader.ReadDateTime();
-            m_DecayPeriod = reader.ReadTimeSpan();
+            if (version >= 4)
+            {
+                m_LastRefresh = reader.ReadDateTime();
+                m_DecayPeriod = reader.ReadTimeSpan();
+            }
+            else
+            {
+                m_LastRefresh = DateTime.UtcNow;
+                m_DecayPeriod = TimeSpan.FromDays(21);
+                if (version >= 3)
+                {
+                    reader.ReadTimeSpan();
+                    reader.ReadTimeSpan();
+                }
+                else if (version >= 2)
+                {
+                    reader.ReadDateTime();
+                    reader.ReadTimeSpan();
+                }
+            }
 
             m_AssociatedDoors = new List<BaseDoor>();
             if (version >= 2)
@@ -181,9 +245,9 @@ namespace Server.StaticHouse
             }
             e.Free();
 
-            foreach (Item door in toRemove)
+            for (int i = 0; i < toRemove.Count; i++)
             {
-                door.Delete();
+                toRemove[i].Delete();
             }
         }
 
@@ -199,7 +263,8 @@ namespace Server.StaticHouse
         private class DoorTarget : Target
         {
             private StaticHouseSign m_Sign;
-            public DoorTarget(StaticHouseSign sign) : base(10, false, TargetFlags.None)
+            public DoorTarget(StaticHouseSign sign)
+                : base(10, false, TargetFlags.None)
             {
                 m_Sign = sign;
             }
@@ -240,11 +305,11 @@ namespace Server.StaticHouse
 
             // Genera le chiavi in zaino e banca
             Key key1 = new Key(m_HouseKeyValue);
-            key1.Description = "Chiave di " + (this.HouseName != null ? this.HouseName : "");
+            key1.Description = string.Format("Chiave di {0}", (this.HouseName != null ? this.HouseName : ""));
             newOwner.AddToBackpack(key1);
 
             Key key2 = new Key(m_HouseKeyValue);
-            key2.Description = "Chiave di " + (this.HouseName != null ? this.HouseName : "");
+            key2.Description = string.Format("Chiave di {0}", (this.HouseName != null ? this.HouseName : ""));
             if (newOwner.BankBox != null)
                 newOwner.BankBox.DropItem(key2);
         }
