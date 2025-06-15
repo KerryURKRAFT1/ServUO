@@ -259,7 +259,8 @@ public override void OnDoubleClick(Mobile from)
                 }
 
                 // BLOCCO PERMESSI
-                if (house != null && house.Owner != null && house.Owner != from)
+                //if (house != null && house.Owner != null && house.Owner != from)
+                if (house != null && house.Owner != null && house.Owner != from && from.AccessLevel < AccessLevel.GameMaster)
                 {
                     from.SendMessage("Non puoi accedere a questo contenitore: non sei il proprietario della casa.");
                     return;

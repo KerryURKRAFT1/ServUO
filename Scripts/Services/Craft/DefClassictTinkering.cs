@@ -309,6 +309,35 @@ namespace Server.Engines.Craft
             AddCraft(typeof(ClockFrame), 1044050, 1024173, 0.0, 50.0, typeof(Board), 1044041, 6, 1044351);
             AddCraft(typeof(Lantern), 1044050, 1022597, 30.0, 80.0, typeof(IronIngot), 1044036, 2, 1044037);
             AddCraft(typeof(HeatingStand), 1044050, 1026217, 60.0, 110.0, typeof(IronIngot), 1044036, 4, 1044037);
+
+
+
+            // Instruments
+            index = this.AddCraft(typeof(LapHarp), 1044293, 1023762, 53.6, 88.1, typeof(Board), 1044041, 20, 1044351);
+            this.AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
+            //this.AddRes(index, typeof(Cloth), 1044286, 10, 1044287);
+
+            index = this.AddCraft(typeof(Harp), 1044293, 1023761, 78.9, 100.0, typeof(Board), 1044041, 35, 1044351);
+            this.AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
+            //this.AddRes(index, typeof(Cloth), 1044286, 15, 1044287);
+
+            index = this.AddCraft(typeof(Drums), 1044293, 1023740, 36.8, 82.8, typeof(Board), 1044041, 20, 1044351);
+            this.AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
+            //this.AddRes(index, typeof(Cloth), 1044286, 10, 1044287);
+
+            index = this.AddCraft(typeof(Lute), 1044293, 1023763, 45.4, 93.4, typeof(Board), 1044041, 25, 1044351);
+            this.AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
+            //this.AddRes(index, typeof(Cloth), 1044286, 10, 1044287);
+
+            index = this.AddCraft(typeof(Tambourine), 1044293, 1023741, 57.8, 82.8, typeof(Board), 1044041, 15, 1044351);
+            this.AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
+            //this.AddRes(index, typeof(Cloth), 1044286, 10, 1044287);
+
+            index = this.AddCraft(typeof(TambourineTassel), 1044293, 1044320, 57.8, 82.8, typeof(Board), 1044041, 15, 1044351);
+            this.AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
+            //this.AddRes(index, typeof(Cloth), 1044286, 15, 1044287);
+
+
             #endregion
 
 

@@ -142,9 +142,9 @@ namespace Server.SkillHandlers
                             int toConsume = theirPack.GetAmount(typeof(Gold)) / 10;
                             int max = 10 + (m_From.Fame / 2500);
 
-                            if (max > 14)
+                            if (max > 50)
                             {
-                                max = 14;
+                                max = 50;
                             }
                             else if (max < 10)
                             {

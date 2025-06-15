@@ -14,6 +14,7 @@ namespace Server.Spells.Fifth
             Reagent.MandrakeRoot,
             Reagent.SpidersSilk);
         private static readonly Hashtable m_Table = new Hashtable();
+
         public MagicReflectSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {
@@ -21,34 +22,11 @@ namespace Server.Spells.Fifth
 
         public override SpellCircle Circle
         {
-            get
-            {
-                return SpellCircle.Fifth;
-            }
+            get { return SpellCircle.Fifth; }
         }
-        /*
+
         public static void EndReflect(Mobile m)
         {
-            if (m_Table.Contains(m))
-            {
-                ResistanceMod[] mods = (ResistanceMod[])m_Table[m];
-
-                if (mods != null)
-                {
-                    for (int i = 0; i < mods.Length; ++i)
-                        m.RemoveResistanceMod(mods[i]);
-                }
-
-                m_Table.Remove(m);
-                BuffInfo.RemoveBuff(m, BuffIcon.MagicReflection);
-            }
-        }
-            */
-
-        // PATCH FOR UOR
-        public static void EndReflect(Mobile m)
-        {
-            // questa funzione annulla SEMPRE il buff, a prescindere dal core!
             if (m == null)
                 return;
 
@@ -67,30 +45,14 @@ namespace Server.Spells.Fifth
             DefensiveSpell.Nullify(m);
             m.MagicDamageAbsorb = 0;
 
-
-            // AGGIUNGI QUESTO BLOCCO QUI
-            m.FixedEffect(0x37B9, 10, 5);   // Effetto visivo rimozione Reflection
-            //m.PlaySound(0x1E9);             // Suono rimozione Reflection
-            m.SendLocalizedMessage(1005558);// "The spell reflection spell is dissipated."
+            m.FixedEffect(0x37B9, 10, 5);
+            m.SendLocalizedMessage(1005558); // "The spell reflection spell is dissipated."
         }
-
-
 
         public override bool CheckCast()
         {
             if (Core.AOS)
                 return true;
-
-            //if (this.Caster.MagicDamageAbsorb > 0)
-            //{
-              //  this.Caster.SendLocalizedMessage(1005559); // This spell is already in effect.
-               // return false;
-            //}
-            //if (!this.Caster.CanBeginAction(typeof(DefensiveSpell)))
-            //{
-              //  this.Caster.SendLocalizedMessage(1005385); // The spell will not adhere to you at this time.
-                //return false;
-            //}
 
             return true;
         }
@@ -99,17 +61,10 @@ namespace Server.Spells.Fifth
         {
             if (Core.UOR)
             {
-                // Solo in UOR puoi scegliere il target
                 this.Caster.Target = new InternalTarget(this);
             }
             else if (Core.AOS)
             {
-                /* The magic reflection spell decreases the caster's physical resistance, while increasing the caster's elemental resistances.
-                * Physical decrease = 25 - (Inscription/20).
-                * Elemental resistance = +10 (-20 physical, +10 elemental at GM Inscription)
-                * The magic reflection spell has an indefinite duration, becoming active when cast, and deactivated when re-cast.
-                * Reactive Armor, Protection, and Magic Reflection will stay on�even after logging out, even after dying�until you �turn them off� by casting them again. 
-                */
                 if (this.CheckSequence())
                 {
                     Mobile targ = this.Caster;
@@ -160,7 +115,7 @@ namespace Server.Spells.Fifth
             }
             else
             {
-                if (this.Caster.MagicDamageAbsorb > 0)
+                if (HasAnyDefensiveSpell(this.Caster))
                 {
                     this.Caster.SendLocalizedMessage(1005559); // This spell is already in effect.
                 }
@@ -173,7 +128,7 @@ namespace Server.Spells.Fifth
                     if (this.Caster.BeginAction(typeof(DefensiveSpell)))
                     {
                         int value = (int)(this.Caster.Skills[SkillName.Magery].Value + this.Caster.Skills[SkillName.Inscribe].Value);
-                        value = (int)(8 + (value / 200) * 7.0);//absorb from 8 to 15 "circles"
+                        value = (int)(8 + (value / 200) * 7.0);
 
                         this.Caster.MagicDamageAbsorb = value;
 
@@ -190,70 +145,71 @@ namespace Server.Spells.Fifth
             }
         }
 
-            private class InternalTarget : Target
+        private class InternalTarget : Target
+        {
+            private MagicReflectSpell m_Owner;
+
+            public InternalTarget(MagicReflectSpell owner)
+                : base(12, false, TargetFlags.Beneficial)
             {
-                private MagicReflectSpell m_Owner;
-
-                public InternalTarget(MagicReflectSpell owner)
-                    : base(12, false, TargetFlags.Beneficial)
-                {
-                    m_Owner = owner;
-                }
-
-                protected override void OnTarget(Mobile from, object o)
-                {
-                    Mobile target = o as Mobile;
-                    if (target != null)
-                        m_Owner.Target(target);
-                }
-
-                protected override void OnTargetFinish(Mobile from)
-                {
-                    m_Owner.FinishSequence();
-                }
+                m_Owner = owner;
             }
 
-public void Target(Mobile target)
-{
-    if (!this.Caster.CanSee(target))
-    {
-        this.Caster.SendLocalizedMessage(500237); // Target can not be seen.
-    }
-    else if (this.CheckBSequence(target))
-    {
-        if (target.MagicDamageAbsorb > 0)
-        {
-            // Mandalo sia a chi casta che a chi riceve
-            this.Caster.SendLocalizedMessage(1005559);  // Caster: "This spell is already in effect."
-            if (target != this.Caster)
-            target.SendLocalizedMessage(1005559);   // Target: "This spell is already in effect."
-            target.FixedParticles(0x375A, 10, 15, 5037, EffectLayer.Waist);
-            target.PlaySound(0x1E9);
-        }
-        else
-        {
-            // Solo qui chiami BeginAction e applichi l'effetto!
-            if (target.BeginAction(typeof(DefensiveSpell)))
+            protected override void OnTarget(Mobile from, object o)
             {
-                int value = (int)(this.Caster.Skills[SkillName.Magery].Value + this.Caster.Skills[SkillName.Inscribe].Value);
-                value = (int)(8 + (value / 200) * 7.0);
-
-                target.MagicDamageAbsorb = value;
-
-                target.FixedParticles(0x375A, 10, 15, 5037, EffectLayer.Waist);
-                target.PlaySound(0x1E9);
+                Mobile target = o as Mobile;
+                if (target != null)
+                    m_Owner.Target(target);
             }
-            else
+
+            protected override void OnTargetFinish(Mobile from)
             {
-                // Qui NON serve mandare alcun messaggio, il lock non dovrebbe mai scattare con questa logica.
+                m_Owner.FinishSequence();
             }
         }
-    }
 
-    this.FinishSequence();
-}
+        public void Target(Mobile target)
+        {
+            if (!this.Caster.CanSee(target))
+            {
+                this.Caster.SendLocalizedMessage(500237); // Target can not be seen.
+            }
+            else if (this.CheckBSequence(target))
+            {
+                if (HasAnyDefensiveSpell(target))
+                {
+                    // Mandalo sia a chi casta che a chi riceve
+                    this.Caster.SendLocalizedMessage(1005559);  // Caster: "This spell is already in effect."
+                    if (target != this.Caster)
+                        target.SendLocalizedMessage(1005559);   // Target: "This spell is already in effect."
+                    target.FixedParticles(0x375A, 10, 15, 5037, EffectLayer.Waist);
+                    target.PlaySound(0x1E9);
+                }
+                else
+                {
+                    if (target.BeginAction(typeof(DefensiveSpell)))
+                    {
+                        int value = (int)(this.Caster.Skills[SkillName.Magery].Value + this.Caster.Skills[SkillName.Inscribe].Value);
+                        value = (int)(8 + (value / 200) * 7.0);
 
+                        target.MagicDamageAbsorb = value;
 
+                        target.FixedParticles(0x375A, 10, 15, 5037, EffectLayer.Waist);
+                        target.PlaySound(0x1E9);
+                    }
+                }
+            }
+
+            this.FinishSequence();
+        }
+
+        public static bool HasAnyDefensiveSpell(Mobile m)
+        {
+            return Server.Spells.First.ReactiveArmorSpell.HasArmor(m)
+                || Server.Spells.Second.ProtectionSpell.HasProtection(m)
+                || HasReflect(m)
+                || (m != null && m.MagicDamageAbsorb > 0);
+        }
 
         #region SA
         public static bool HasReflect(Mobile m)
@@ -261,10 +217,5 @@ public void Target(Mobile target)
             return m_Table.ContainsKey(m);
         }
         #endregion
-        
-
-
-
-
     }
 }

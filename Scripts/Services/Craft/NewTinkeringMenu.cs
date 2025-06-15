@@ -718,6 +718,14 @@ namespace Server.Engines.Craft
                     new ItemListEntryWithType("Key", typeof(Key), 4112),
                     new ItemListEntryWithType("Globe", typeof(Globe), 4167),
                     new ItemListEntryWithType("Spyglass", typeof(Spyglass), 5365),
+
+                    new ItemListEntryWithType("LapHarp", typeof(LapHarp), 3762),
+                    new ItemListEntryWithType("Harp", typeof(Harp), 3761),
+                    new ItemListEntryWithType("Drums", typeof(Drums), 3740),
+                    new ItemListEntryWithType("Lute", typeof(Lute), 3763),
+                    new ItemListEntryWithType("Tambourine", typeof(Tambourine), 3741),
+                    new ItemListEntryWithType("TambourineTassel", typeof(TambourineTassel), 3742),    
+
                 };
 
                 foreach (ItemListEntryWithType entry in allMisc)

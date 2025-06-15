@@ -33,13 +33,13 @@ namespace Server.Mobiles
 
             this.SetDamage(7, 14);
 
-            this.SetSkill(SkillName.Tactics, 36, 67);
-            this.SetSkill(SkillName.Magery, 22, 22);
-            this.SetSkill(SkillName.Swords, 64, 100);
-            this.SetSkill(SkillName.Parry, 60, 82);
-            this.SetSkill(SkillName.Macing, 36, 67);
-            this.SetSkill(SkillName.Focus, 36, 67);
-            this.SetSkill(SkillName.Wrestling, 25, 47);
+            this.SetSkill(SkillName.Tactics, 100, 100);
+            this.SetSkill(SkillName.Magery, 30, 40);
+            this.SetSkill(SkillName.Swords, 100, 100);
+            this.SetSkill(SkillName.Parry, 100, 100);
+            this.SetSkill(SkillName.Macing, 100, 100);
+            this.SetSkill(SkillName.Focus, 100, 100);
+            this.SetSkill(SkillName.Wrestling, 100, 100);
 
             this.Fame = 100;
             this.Karma = 100;
@@ -53,7 +53,7 @@ namespace Server.Mobiles
                     this.AddItem(new Boots(Utility.RandomNeutralHue()));
                     break;
             }
-			
+            
             this.AddItem(new Shirt());
 
             // Pick a random sword
@@ -104,7 +104,7 @@ namespace Server.Mobiles
                     this.AddItem(new ChaosShield());
                     break;
             }
-		  
+          
             switch( Utility.Random(5) )
             {
                 case 0:
@@ -153,6 +153,9 @@ namespace Server.Mobiles
             }
 
             this.PackGold(25, 100);
+
+            // AGGIUNGI QUESTA RIGA ALLA FINE DEL COSTRUTTORE!
+            this.Payday(this);
         }
 
         public HireFighter(Serial serial)

@@ -27,7 +27,7 @@ namespace Server.StaticHouse
             : base(0xBD2)
         {
             Name = "Insegna Casa Statica";
-            Movable = true;
+            Movable = false;
             m_ForSale = false;
             m_ForRent = false;
             m_SalePrice = 0;
@@ -46,6 +46,11 @@ namespace Server.StaticHouse
         {
         }
 
+
+        public override bool Decays
+        {
+            get { return false; }
+        }
         public string HouseName
         {
             get { return m_HouseName; }
@@ -223,6 +228,7 @@ namespace Server.StaticHouse
         private void OnDecayExpired()
         {
             RemoveDoorsInArea();
+            InvalidateAllKeys();
             m_Owner = null;
             m_ForSale = true; // Torna in vendita
             InvalidateProperties();
@@ -252,6 +258,45 @@ namespace Server.StaticHouse
         }
 
         // -------- SISTEMA PORTE/CHIAVI --------
+
+        // Invalida tutte le chiavi della casa su tutto il server e resetta le porte
+        private void InvalidateAllKeys()
+        {
+            if (m_HouseKeyValue == 0)
+                return;
+
+            foreach (Mobile m in World.Mobiles.Values)
+            {
+                // Zaino
+                if (m.Backpack != null)
+                    RemoveKeysFromContainer(m.Backpack);
+
+                // Banca
+                if (m.BankBox != null)
+                    RemoveKeysFromContainer(m.BankBox);
+            }
+            // Resetta il valore delle porte associate (non obbligatorio, ma consigliato)
+            foreach (BaseDoor door in m_AssociatedDoors)
+            {
+                if (door != null)
+                    door.KeyValue = 0;
+            }
+            // Resetta la chiave della casa
+            m_HouseKeyValue = 0;
+        }
+
+        private void RemoveKeysFromContainer(Container cont)
+        {
+            List<Item> toDelete = new List<Item>();
+            foreach (Item item in cont.FindItemsByType(typeof(Key), true))
+            {
+                Key key = item as Key;
+                if (key != null && key.KeyValue == m_HouseKeyValue)
+                    toDelete.Add(key);
+            }
+            foreach (Item key in toDelete)
+                key.Delete();
+        }
 
         // Per GM: Associa una porta alla casa statica
         public void BeginAssociateDoor(Mobile from)

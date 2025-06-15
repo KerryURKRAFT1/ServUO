@@ -28,6 +28,8 @@ namespace Server.Mobiles
         private DateTime m_DeleteTime;
         private Timer m_DeleteTimer;
         private DateTime m_LastSeenEscorter;
+        private Dictionary<Mobile, DateTime> m_GreetedPlayers = new Dictionary<Mobile, DateTime>();
+
         [Constructable]
         public BaseEscortable()
             : base(AIType.AI_Melee, FightMode.Aggressor, 22, 1, 0.2, 1.0)
@@ -101,6 +103,7 @@ namespace Server.Mobiles
 
             this.PackGold(200, 250);
         }
+
 
         public virtual bool SayDestinationTo(Mobile m)
         {
@@ -200,12 +203,35 @@ namespace Server.Mobiles
             base.OnAfterDelete();
         }
 
+        /*  
+              public override void OnThink()
+                {
+                    base.OnThink();
+                    this.CheckAtDestination();
+                }
+        */
+
         public override void OnThink()
         {
             base.OnThink();
             this.CheckAtDestination();
-        }
 
+             foreach (Mobile m in this.GetMobilesInRange(3))
+            {
+                if (m.Player && m.Alive && m != this && !this.Hidden && !this.Controlled)
+                {
+                    // Delay di 5 minuti tra un saluto e l'altro per ogni player
+                    if (!m_GreetedPlayers.ContainsKey(m) || DateTime.UtcNow - m_GreetedPlayers[m] > TimeSpan.FromMinutes(3))
+                    {
+                        if (this.Destination != null)
+                            this.Say("I am looking to go to {0}. Will you take me there?", this.Destination);
+                        else
+                            this.Say("Can you escort me?");
+                        m_GreetedPlayers[m] = DateTime.UtcNow;
+                    }
+                }
+            }
+        }
         public virtual void StartFollow()
         {
             this.StartFollow(this.GetEscorter());

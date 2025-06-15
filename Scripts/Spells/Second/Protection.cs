@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using Server.Mobiles;
+using Server.Targeting;
 
 namespace Server.Spells.Second
 {
@@ -14,6 +16,7 @@ namespace Server.Spells.Second
             Reagent.Ginseng,
             Reagent.SulfurousAsh);
         private static readonly Hashtable m_Table = new Hashtable();
+
         public ProtectionSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {
@@ -21,28 +24,24 @@ namespace Server.Spells.Second
 
         public static Hashtable Registry
         {
-            get
-            {
-                return m_Registry;
-            }
+            get { return m_Registry; }
         }
+
         public override SpellCircle Circle
         {
-            get
-            {
-                return SpellCircle.Second;
-            }
+            get { return SpellCircle.Second; }
         }
+
         public static void Toggle(Mobile caster, Mobile target, bool archprotection)
         {
-            /* Players under the protection spell effect can no longer have their spells "disrupted" when hit.
-            * Players under the protection spell have decreased physical resistance stat value (-15 + (Inscription/20),
-            * a decreased "resisting spells" skill value by -35 + (Inscription/20),
-            * and a slower casting speed modifier (technically, a negative "faster cast speed") of 2 points.
-            * The protection spell has an indefinite duration, becoming active when cast, and deactivated when re-cast.
-            * Reactive Armor, Protection, and Magic Reflection will stay on—even after logging out,
-            * even after dying—until you “turn them off” by casting them again.
-            */
+            // BLOCCO: se il target ha già una spell difensiva attiva, non applicare la spell e mostra il messaggio
+            if (HasAnyDefensiveSpell(target))
+            {
+                if (caster != null)
+                    caster.SendLocalizedMessage(1005559); // This spell is already in effect.
+                return;
+            }
+
             object[] mods = (object[])m_Table[target];
 
             if (mods == null)
@@ -102,7 +101,8 @@ namespace Server.Spells.Second
 
         public override bool CheckCast()
         {
-            if (Core.AOS)
+            // Solo la restrizione classica per self-cast (non targeting)
+            if (Core.AOS || Core.UOR)
                 return true;
 
             if (m_Registry.ContainsKey(this.Caster))
@@ -115,17 +115,28 @@ namespace Server.Spells.Second
                 this.Caster.SendLocalizedMessage(1005385); // The spell will not adhere to you at this time.
                 return false;
             }
-
             return true;
         }
 
         public override void OnCast()
         {
-            if (Core.AOS)
+            if (Core.UOR)
+            {
+                this.Caster.Target = new InternalTarget(this);
+            }
+            else if (Core.AOS)
             {
                 if (this.CheckSequence())
-                    Toggle(this.Caster, this.Caster, false);
-
+                {
+                    if (HasAnyDefensiveSpell(this.Caster))
+                    {
+                        this.Caster.SendLocalizedMessage(1005559); // This spell is already in effect.
+                    }
+                    else
+                    {
+                        Toggle(this.Caster, this.Caster, false);
+                    }
+                }
                 this.FinishSequence();
             }
             else
@@ -140,7 +151,11 @@ namespace Server.Spells.Second
                 }
                 else if (this.CheckSequence())
                 {
-                    if (this.Caster.BeginAction(typeof(DefensiveSpell)))
+                    if (HasAnyDefensiveSpell(this.Caster))
+                    {
+                        this.Caster.SendLocalizedMessage(1005559); // This spell is already in effect.
+                    }
+                    else if (this.Caster.BeginAction(typeof(DefensiveSpell)))
                     {
                         double value = (int)(this.Caster.Skills[SkillName.EvalInt].Value + this.Caster.Skills[SkillName.Meditation].Value + this.Caster.Skills[SkillName.Inscribe].Value);
                         value /= 4;
@@ -166,6 +181,46 @@ namespace Server.Spells.Second
             }
         }
 
+        private class InternalTarget : Target
+        {
+            private ProtectionSpell m_Owner;
+
+            public InternalTarget(ProtectionSpell owner)
+                : base(12, false, TargetFlags.Beneficial)
+            {
+                m_Owner = owner;
+            }
+
+            protected override void OnTarget(Mobile from, object targeted)
+            {
+                if (targeted is Mobile)
+                {
+                    Mobile targ = (Mobile)targeted;
+                    if (!from.CanBeBeneficial(targ))
+                    {
+                        from.SendLocalizedMessage(1004037); // You cannot perform beneficial acts on that target.
+                    }
+                    else if (m_Owner.CheckBSequence(targ))
+                    {
+                        if (HasAnyDefensiveSpell(targ))
+                        {
+                            from.SendLocalizedMessage(1005559); // This spell is already in effect.
+                        }
+                        else
+                        {
+                            Toggle(from, targ, false);
+                        }
+                    }
+                }
+                m_Owner.FinishSequence();
+            }
+        }
+
+        public static bool HasAnyDefensiveSpell(Mobile m)
+        {
+            return HasProtection(m) || Server.Spells.First.ReactiveArmorSpell.HasArmor(m) || Server.Spells.Fifth.MagicReflectSpell.HasReflect(m);
+        }
+
         #region SA
         public static bool HasProtection(Mobile m)
         {
@@ -175,7 +230,7 @@ namespace Server.Spells.Second
 
         private class InternalTimer : Timer
         {
-            private readonly Mobile m_Caster;
+            private Mobile m_Caster;
             public InternalTimer(Mobile caster)
                 : base(TimeSpan.FromSeconds(0))
             {

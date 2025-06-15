@@ -83,5 +83,12 @@ namespace Server.Mobiles
 
             int version = reader.ReadInt();
         }
+
+        // RIDABLE WITHOUT TAMING FOR UOR  
+        public override double GetControlChance(Mobile m, bool useBaseSkill)
+        {
+            return 1.0;
+        }
+        
     }
 }

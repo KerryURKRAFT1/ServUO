@@ -12,6 +12,7 @@ namespace Server.Mobiles
         private bool m_IsHired;
         private int m_HoldGold = 8;
         private Timer m_PayTimer;
+        private Dictionary<Mobile, DateTime> m_GreetedPlayers = new Dictionary<Mobile, DateTime>();
 
         public BaseHire(AIType AI)
             : base(AI, FightMode.Aggressor, 10, 1, 0.1, 4.0)
@@ -69,10 +70,31 @@ namespace Server.Mobiles
             }
         }
         private int m_GoldOnDeath = 0;
-        public override bool OnBeforeDeath() 
-        { 
+
+        public override void OnThink()
+        {
+            base.OnThink();
+
+            foreach (Mobile m in this.GetMobilesInRange(7))
+            {
+                if (m.Player && m.Alive && m != this && !this.Hidden && !this.Controlled)
+                {
+                    // Delay di 3 minuti tra un saluto e l'altro per ogni player
+                    if (!m_GreetedPlayers.ContainsKey(m) || DateTime.UtcNow - m_GreetedPlayers[m] > TimeSpan.FromMinutes(3))
+                    {
+                        this.Payday(this);
+                        this.SayHireCost();
+                        m_GreetedPlayers[m] = DateTime.UtcNow;
+                    }
+                }
+            }
+        }
+
+
+        public override bool OnBeforeDeath()
+        {
             // Stop the pay timer if its running 
-            if (this.m_PayTimer != null) 
+            if (this.m_PayTimer != null)
                 this.m_PayTimer.Stop();
 
             this.m_PayTimer = null;
@@ -172,8 +194,9 @@ namespace Server.Mobiles
             this.m_Pay += (int)m.Skills[SkillName.Fencing].Value + (int)m.Skills[SkillName.Archery].Value;
             this.m_Pay += (int)m.Skills[SkillName.MagicResist].Value + (int)m.Skills[SkillName.Healing].Value;
             this.m_Pay += (int)m.Skills[SkillName.Magery].Value + (int)m.Skills[SkillName.Parry].Value;
-            this.m_Pay /= 35;
-            this.m_Pay += 1;
+            //this.m_Pay /= 35;
+            this.m_Pay /= 1;
+            this.m_Pay += 200;
             return true;
         }
 

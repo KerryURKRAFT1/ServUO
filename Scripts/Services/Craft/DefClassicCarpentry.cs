@@ -160,7 +160,7 @@ namespace Server.Engines.Craft
             //shield
             this.AddCraft(typeof(WoodenShield), 1062760, 1027034, 52.6, 77.6, typeof(Board), 1044041, 9, 1044351);
 
-
+            /*  MOVED TO TINKERING
             // Instruments
             index = this.AddCraft(typeof(LapHarp), 1044293, 1023762, 63.1, 88.1, typeof(Board), 1044041, 20, 1044351);
             this.AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
@@ -185,7 +185,7 @@ namespace Server.Engines.Craft
             index = this.AddCraft(typeof(TambourineTassel), 1044293, 1044320, 57.8, 82.8, typeof(Board), 1044041, 15, 1044351);
             this.AddSkill(index, SkillName.Musicianship, 45.0, 50.0);
             this.AddRes(index, typeof(Cloth), 1044286, 15, 1044287);
-
+            */
 
             /// items with other sills
             /// Tailoring

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Server;
 
 namespace Server.StaticHouse
@@ -21,28 +22,30 @@ namespace Server.StaticHouse
         {
             public DecayPreventTimer() : base(TimeSpan.FromMinutes(10.0), TimeSpan.FromMinutes(10.0))
             {
-                // Timer: scatta ogni 10 minuti
                 Priority = TimerPriority.FiveSeconds;
             }
 
             protected override void OnTick()
             {
                 int count = 0;
+                // Cicla solo le static house
                 foreach (Item item in World.Items.Values)
                 {
-                    if (item == null || item.Deleted)
+                    StaticHouseSign house = item as StaticHouseSign;
+                    if (house == null || house.Owner == null)
                         continue;
 
-                    // Se l'item si trova in una static house con owner
-                    if (StaticHouseHelper.IsItemInPlayerOwnedStaticHouse(item))
+                    IPooledEnumerable e = house.Map.GetItemsInBounds(house.HouseArea);
+                    foreach (Item inside in e)
                     {
-                        // Reset del timer di decay
-                        item.LastMoved = DateTime.UtcNow;
+                        if (inside == null || inside.Deleted)
+                            continue;
+                        inside.LastMoved = DateTime.UtcNow;
                         count++;
                     }
+                    e.Free();
                 }
-                // Log opzionale in console
-                // Console.WriteLine($"[PreventStaticHouseItemDecay] Refreshed {count} items in static houses.");
+                // Console.WriteLine("[PreventStaticHouseItemDecay] Refreshed {0} items in static houses.", count);
             }
         }
     }

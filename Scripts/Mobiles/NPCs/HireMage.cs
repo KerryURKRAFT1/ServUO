@@ -34,12 +34,12 @@ namespace Server.Mobiles
 
             this.SetDamage(10, 23);
 
-            this.SetSkill(SkillName.EvalInt, 100.0, 125);
-            this.SetSkill(SkillName.Magery, 100, 125);
-            this.SetSkill(SkillName.Meditation, 100, 125);
-            this.SetSkill(SkillName.MagicResist, 100, 125);
-            this.SetSkill(SkillName.Tactics, 100, 125);
-            this.SetSkill(SkillName.Macing, 100, 125);
+            this.SetSkill(SkillName.EvalInt, 100.0, 100);
+            this.SetSkill(SkillName.Magery, 100, 100);
+            this.SetSkill(SkillName.Meditation, 100, 100);
+            this.SetSkill(SkillName.MagicResist, 100, 100);
+            this.SetSkill(SkillName.Tactics, 100, 100);
+            this.SetSkill(SkillName.Macing, 100, 100);
 
             this.Fame = 100;
             this.Karma = 100;

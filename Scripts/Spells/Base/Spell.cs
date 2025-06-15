@@ -1241,10 +1241,11 @@ namespace Server.Spells
 
 					m_Spell.OnCast();
 
-					if (m_Spell.m_Caster.Player && m_Spell.m_Caster.Target != originalTarget && m_Spell.Caster.Target != null)
-					{
-						m_Spell.m_Caster.Target.BeginTimeout(m_Spell.m_Caster, TimeSpan.FromSeconds(30.0));
-					}
+					// PRE CAST NO DECAY
+					//if (m_Spell.m_Caster.Player && m_Spell.m_Caster.Target != originalTarget && m_Spell.Caster.Target != null)
+					//{
+					//	m_Spell.m_Caster.Target.BeginTimeout(m_Spell.m_Caster, TimeSpan.FromSeconds(30.0));
+					//}
 
 					m_Spell.m_CastTimer = null;
 				}
