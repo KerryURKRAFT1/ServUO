@@ -1,0 +1,86 @@
+##############################
+Log started on 28/03/2025 10:30:51
+
+28/03/2025 10:31:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 50'
+28/03/2025 10:31:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '50'
+28/03/2025 10:31:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 60'
+28/03/2025 10:31:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '60'
+##############################
+Log started on 28/03/2025 11:01:44
+
+##############################
+Log started on 28/03/2025 11:06:33
+
+##############################
+Log started on 28/03/2025 11:08:05
+
+##############################
+Log started on 28/03/2025 11:09:41
+
+##############################
+Log started on 28/03/2025 11:14:45
+
+##############################
+Log started on 28/03/2025 11:15:44
+
+##############################
+Log started on 28/03/2025 11:17:16
+
+28/03/2025 11:18:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL BLACKSMITH 50'
+28/03/2025 11:18:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '50'
+28/03/2025 11:18:12: 127.0.0.1: Crafting 0x4000104B (RingmailLegs) with craft system DefClassicBlacksmithy
+28/03/2025 11:18:48: 127.0.0.1: Crafting 0x4000104E (ChainChest) with craft system DefClassicBlacksmithy
+##############################
+Log started on 28/03/2025 14:02:24
+
+##############################
+Log started on 28/03/2025 14:30:50
+
+##############################
+Log started on 28/03/2025 14:33:06
+
+##############################
+Log started on 28/03/2025 14:35:44
+
+##############################
+Log started on 28/03/2025 14:53:20
+
+##############################
+Log started on 28/03/2025 14:53:36
+
+##############################
+Log started on 28/03/2025 14:58:52
+
+##############################
+Log started on 28/03/2025 15:02:26
+
+28/03/2025 15:09:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill mining 1000'
+28/03/2025 15:09:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Mining.Base' of 0x39E "FDDSDASAD" ('Kerry') to '1000'
+28/03/2025 15:09:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill mining 1000'
+##############################
+Log started on 28/03/2025 20:31:41
+
+##############################
+Log started on 28/03/2025 20:38:47
+
+##############################
+Log started on 28/03/2025 20:50:29
+
+28/03/2025 20:50:45: 127.0.0.1: Crafting 0x40000F7D (Longsword) with craft system DefClassicBlacksmithy
+28/03/2025 20:50:52: 127.0.0.1: Crafting 0x40000F7E (WarFork) with craft system DefClassicBlacksmithy
+28/03/2025 20:50:59: 127.0.0.1: Crafting 0x40001016 (Bardiche) with craft system DefClassicBlacksmithy
+28/03/2025 20:51:03: 127.0.0.1: Crafting 0x4000101A (PlateLegs) with craft system DefClassicBlacksmithy
+28/03/2025 20:51:35: 127.0.0.1: Crafting 0x4000101C (ExecutionersAxe) with craft system DefClassicBlacksmithy
+28/03/2025 20:51:42: 127.0.0.1: Crafting 0x4000101E (DoubleAxe) with craft system DefClassicBlacksmithy
+28/03/2025 20:56:42: 127.0.0.1: Crafting 0x40001111 (HeaterShield) with craft system DefClassicBlacksmithy
+##############################
+Log started on 28/03/2025 20:58:13
+
+28/03/2025 20:58:31: 127.0.0.1: Crafting 0x40000F7D (RingmailArms) with craft system DefClassicBlacksmithy
+28/03/2025 20:58:43: 127.0.0.1: Crafting 0x40001014 (Helmet) with craft system DefClassicBlacksmithy
+28/03/2025 20:58:52: 127.0.0.1: Crafting 0x40001016 (Halberd) with craft system DefClassicBlacksmithy
+28/03/2025 21:11:31: 127.0.0.1: Crafting 0x4000124D (PlateChest) with craft system DefClassicBlacksmithy
+28/03/2025 21:11:36: 127.0.0.1: Crafting 0x40001250 (PlateChest) with craft system DefClassicBlacksmithy
+28/03/2025 21:11:39: 127.0.0.1: Crafting 0x40001251 (PlateChest) with craft system DefClassicBlacksmithy
+28/03/2025 21:11:42: 127.0.0.1: Crafting 0x40001252 (PlateChest) with craft system DefClassicBlacksmithy
+28/03/2025 21:11:45: 127.0.0.1: Crafting 0x40001255 (PlateChest) with craft system DefClassicBlacksmithy

@@ -1,0 +1,21 @@
+##############################
+Log started on 23/03/2025 13:18:57
+
+##############################
+Log started on 23/03/2025 13:34:00
+
+##############################
+Log started on 23/03/2025 13:42:07
+
+##############################
+Log started on 23/03/2025 14:05:40
+
+23/03/2025 14:06:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add dagger'
+23/03/2025 14:06:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2535, 573, 0) in Felucca: "dagger"
+23/03/2025 14:06:38: 127.0.0.1: Serials: 0x40000F51; 
+23/03/2025 14:07:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add dagger'
+23/03/2025 14:07:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2535, 573, 0) in Felucca: "dagger"
+23/03/2025 14:07:12: 127.0.0.1: Serials: 0x40000F60; 
+23/03/2025 14:07:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+23/03/2025 14:08:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'MaxHitPoints' of 0x40000F60 (Dagger) to '20'
+23/03/2025 14:08:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '

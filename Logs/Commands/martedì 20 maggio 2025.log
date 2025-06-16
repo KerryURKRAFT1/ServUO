@@ -1,0 +1,515 @@
+##############################
+Log started on 20/05/2025 10:57:53
+
+20/05/2025 10:58:01: 127.0.0.1: Crafting 0x40000F03 (PlateChest) with craft system DefClassicBlacksmithy
+20/05/2025 10:58:35: 127.0.0.1: Crafting 0x40000F04 (PlateChest) with craft system DefClassicBlacksmithy
+20/05/2025 10:58:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 200'
+20/05/2025 10:58:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x4001A691 (GoldIngot) to '200'
+20/05/2025 10:58:52: 127.0.0.1: Crafting 0x40000F05 (PlateChest) with craft system DefClassicBlacksmithy
+20/05/2025 11:04:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add log'
+20/05/2025 11:04:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 557, 0) in Felucca: "log"
+20/05/2025 11:04:04: 127.0.0.1: Serials: 0x40001288; 
+20/05/2025 11:04:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 100'
+20/05/2025 11:04:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x40001288 (Log) to '100'
+20/05/2025 11:04:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add bow'
+20/05/2025 11:04:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add bosjf'
+20/05/2025 11:04:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 557, 0) in Felucca: "FletcherTools"
+20/05/2025 11:04:33: 127.0.0.1: Serials: 0x40001289; 
+20/05/2025 11:04:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill fletcher 100'
+20/05/2025 11:04:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill fletching 100'
+20/05/2025 11:04:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Fletching.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+20/05/2025 11:05:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add board'
+20/05/2025 11:05:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 557, 0) in Felucca: "board"
+20/05/2025 11:05:15: 127.0.0.1: Serials: 0x4000128A; 
+20/05/2025 11:05:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 100'
+20/05/2025 11:05:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x4000128A (Board) to '100'
+20/05/2025 11:05:28: 127.0.0.1: Crafting 0x4000128B (Bow) with craft system DefClassicBowFletching
+20/05/2025 11:05:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 11:05:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F05 (PlateChest)
+20/05/2025 11:05:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 11:05:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F03 (PlateChest)
+20/05/2025 11:05:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 11:05:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F04 (PlateChest)
+20/05/2025 11:05:52: 127.0.0.1: Crafting 0x4000128C (PlateArms) with craft system DefClassicBlacksmithy
+20/05/2025 11:05:57: 127.0.0.1: Crafting 0x4000128D (PlateChest) with craft system DefClassicBlacksmithy
+20/05/2025 11:06:36: 127.0.0.1: Crafting 0x4000128E (Broadsword) with craft system DefClassicBlacksmithy
+20/05/2025 11:06:52: 127.0.0.1: Crafting 0x4000129D (PlateChest) with craft system DefClassicBlacksmithy
+20/05/2025 11:06:57: 127.0.0.1: Crafting 0x400012A3 (PlateChest) with craft system DefClassicBlacksmithy
+20/05/2025 11:07:03: 127.0.0.1: Crafting 0x400012A4 (PlateChest) with craft system DefClassicBlacksmithy
+20/05/2025 11:07:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 11:07:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000129D (PlateChest)
+20/05/2025 11:07:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 11:07:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400012A3 (PlateChest)
+20/05/2025 11:07:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 11:07:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400012A4 (PlateChest)
+20/05/2025 11:07:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 2000'
+20/05/2025 11:07:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x4001A691 (GoldIngot) to '2000'
+20/05/2025 11:07:13: 127.0.0.1: Crafting 0x400012A9 (PlateLegs) with craft system DefClassicBlacksmithy
+20/05/2025 11:07:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL BLACKSMITH 100'
+20/05/2025 11:07:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+20/05/2025 11:09:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 11:09:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400012A9 (PlateLegs)
+20/05/2025 11:09:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 11:09:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000128D (PlateChest)
+20/05/2025 11:09:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 11:09:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000128C (PlateArms)
+20/05/2025 11:09:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 11:09:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000128E (Broadsword)
+20/05/2025 11:09:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add agaputeingot'
+20/05/2025 11:10:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 559, 0) in Felucca: "AgapiteIngot"
+20/05/2025 11:10:03: 127.0.0.1: Serials: 0x400012B2; 
+20/05/2025 11:10:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 560, 0) in Felucca: "AgapiteIngot"
+20/05/2025 11:10:03: 127.0.0.1: Serials: 0x400012CC; 
+20/05/2025 11:10:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 1000'
+20/05/2025 11:10:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x400012B2 (AgapiteIngot) to '1000'
+##############################
+Log started on 20/05/2025 11:26:35
+
+20/05/2025 11:27:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 2000'
+20/05/2025 11:27:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x4001A691 (GoldIngot) to '2000'
+20/05/2025 11:27:23: 127.0.0.1: Crafting 0x40000F03 (PlateChest) with craft system DefClassicBlacksmithy
+20/05/2025 11:27:26: 127.0.0.1: Crafting 0x40000F04 (PlateLegs) with craft system DefClassicBlacksmithy
+20/05/2025 11:27:29: 127.0.0.1: Crafting 0x40000F05 (Helmet) with craft system DefClassicBlacksmithy
+20/05/2025 11:27:44: 127.0.0.1: Crafting 0x40000F06 (PlateArms) with craft system DefClassicBlacksmithy
+20/05/2025 11:28:12: 127.0.0.1: Crafting 0x40001020 (PlateGloves) with craft system DefClassicBlacksmithy
+20/05/2025 11:28:17: 127.0.0.1: Crafting 0x40001026 (PlateGorget) with craft system DefClassicBlacksmithy
+20/05/2025 11:28:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set int 25'
+20/05/2025 11:28:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'int' of 0x39E "FDDSDASAD" ('Kerry') to '25'
+20/05/2025 11:29:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set rawint 25'
+20/05/2025 11:29:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'rawint' of 0x39E "FDDSDASAD" ('Kerry') to '25'
+20/05/2025 11:29:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set rawdex 100'
+20/05/2025 11:29:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'rawdex' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+20/05/2025 11:29:44: 127.0.0.1: Crafting 0x400011DA (VikingSword) with craft system DefClassicBlacksmithy
+20/05/2025 11:30:42: 127.0.0.1: Crafting 0x400011DE (MetalKiteShield) with craft system DefClassicBlacksmithy
+20/05/2025 11:31:18: 127.0.0.1: Crafting 0x400011EA (VikingSword) with craft system DefClassicBlacksmithy
+20/05/2025 11:31:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add bag'
+20/05/2025 11:31:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 558, 0) in Felucca: "bag"
+20/05/2025 11:31:47: 127.0.0.1: Serials: 0x400012A9; 
+20/05/2025 11:32:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 11:32:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400011DE (MetalKiteShield)
+20/05/2025 11:32:25: 127.0.0.1: Crafting 0x400012B2 (PlateArms) with craft system DefClassicBlacksmithy
+20/05/2025 11:32:28: 127.0.0.1: Crafting 0x400012CC (PlateGloves) with craft system DefClassicBlacksmithy
+20/05/2025 11:32:32: 127.0.0.1: Crafting 0x400012D0 (PlateGorget) with craft system DefClassicBlacksmithy
+20/05/2025 11:32:35: 127.0.0.1: Crafting 0x400012D1 (PlateLegs) with craft system DefClassicBlacksmithy
+20/05/2025 11:32:39: 127.0.0.1: Crafting 0x400012D6 (PlateChest) with craft system DefClassicBlacksmithy
+20/05/2025 11:32:52: 127.0.0.1: Crafting 0x400012DA (PlateGorget) with craft system DefClassicBlacksmithy
+20/05/2025 11:33:00: 127.0.0.1: Crafting 0x400012E0 (PlateHelm) with craft system DefClassicBlacksmithy
+20/05/2025 11:33:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add bag'
+20/05/2025 11:33:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 558, 0) in Felucca: "bag"
+20/05/2025 11:33:14: 127.0.0.1: Serials: 0x400012E1; 
+20/05/2025 11:33:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add copperingot'
+20/05/2025 11:33:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 559, 0) in Felucca: "copperingot"
+20/05/2025 11:33:52: 127.0.0.1: Serials: 0x400012E3; 
+20/05/2025 11:33:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 200'
+20/05/2025 11:33:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x400012E3 (CopperIngot) to '200'
+20/05/2025 11:34:13: 127.0.0.1: Crafting 0x400012E5 (PlateChest) with craft system DefClassicBlacksmithy
+20/05/2025 11:34:16: 127.0.0.1: Crafting 0x400012E7 (PlateLegs) with craft system DefClassicBlacksmithy
+20/05/2025 11:34:19: 127.0.0.1: Crafting 0x400012ED (Helmet) with craft system DefClassicBlacksmithy
+20/05/2025 11:34:28: 127.0.0.1: Crafting 0x400012EF (PlateGloves) with craft system DefClassicBlacksmithy
+20/05/2025 11:34:40: 127.0.0.1: Crafting 0x400012F3 (PlateArms) with craft system DefClassicBlacksmithy
+20/05/2025 11:34:47: 127.0.0.1: Crafting 0x400012FD (PlateGorget) with craft system DefClassicBlacksmithy
+20/05/2025 11:35:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add bag'
+20/05/2025 11:35:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 557, 0) in Felucca: "bag"
+20/05/2025 11:35:09: 127.0.0.1: Serials: 0x400012FE; 
+20/05/2025 11:38:44: 127.0.0.1: Crafting 0x40001302 (PlateChest) with craft system DefClassicBlacksmithy
+20/05/2025 11:41:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add '
+##############################
+Log started on 20/05/2025 12:43:53
+
+20/05/2025 12:44:14: 127.0.0.1: Crafting 0x40000F9E (Broadsword) with craft system DefClassicBlacksmithy
+20/05/2025 12:44:30: 127.0.0.1: Crafting 0x40000FA0 (PlateChest) with craft system DefClassicBlacksmithy
+20/05/2025 12:44:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 12:44:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000FA0 (PlateChest)
+20/05/2025 12:44:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 12:45:14: 127.0.0.1: Crafting 0x4000107E (Broadsword) with craft system DefClassicBlacksmithy
+20/05/2025 12:45:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 12:45:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001302 (PlateChest)
+20/05/2025 12:45:24: 127.0.0.1: Crafting 0x40001084 (Broadsword) with craft system DefClassicBlacksmithy
+20/05/2025 12:45:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 12:45:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000107E (Broadsword)
+20/05/2025 12:45:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 12:45:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001084 (Broadsword)
+20/05/2025 12:45:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 12:45:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F9E (Broadsword)
+20/05/2025 12:46:05: 127.0.0.1: Crafting 0x4000121A (Broadsword) with craft system DefClassicBlacksmithy
+20/05/2025 12:46:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 12:46:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000121A (Broadsword)
+20/05/2025 12:46:32: 127.0.0.1: Crafting 0x4000122C (Broadsword) with craft system DefClassicBlacksmithy
+##############################
+Log started on 20/05/2025 13:18:43
+
+20/05/2025 13:19:17: 127.0.0.1: Crafting 0x40000F9E (PlateChest) with craft system DefClassicBlacksmithy
+20/05/2025 13:19:26: 127.0.0.1: Crafting 0x40000FA0 (PlateArms) with craft system DefClassicBlacksmithy
+20/05/2025 13:20:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 13:20:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F9E (PlateChest)
+20/05/2025 13:20:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 13:20:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001302 (PlateChest)
+20/05/2025 13:20:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 13:20:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000FA0 (PlateArms)
+20/05/2025 13:20:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 13:20:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A691 (GoldIngot)
+##############################
+Log started on 20/05/2025 13:39:12
+
+20/05/2025 13:39:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+20/05/2025 13:39:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 13:39:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001302 (PlateChest)
+20/05/2025 13:40:52: 127.0.0.1: Crafting 0x40001078 (Dagger) with craft system DefClassicBlacksmithy
+20/05/2025 13:41:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go '
+20/05/2025 13:42:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD NPC'
+20/05/2025 13:42:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5444, 1152, 0) in Felucca: "XmlQuestNPC"
+20/05/2025 13:42:10: 127.0.0.1: Serials: 0x3B3; 
+20/05/2025 13:42:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 13:42:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x3B3 "Chayton" (no account)
+20/05/2025 13:42:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD FGF'
+20/05/2025 13:42:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5444, 1152, 0) in Felucca: "VendorRentalContract"
+20/05/2025 13:42:37: 127.0.0.1: Serials: 0x40001236; 
+20/05/2025 13:42:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5445, 1152, 0) in Felucca: "VendorMallManager"
+20/05/2025 13:42:41: 127.0.0.1: Serials: 0x3B4; 
+20/05/2025 13:42:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5446, 1152, 0) in Felucca: "VendorMallManager"
+20/05/2025 13:42:46: 127.0.0.1: Serials: 0x3B5; 
+20/05/2025 13:42:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5447, 1152, 0) in Felucca: "VendorMallManager"
+20/05/2025 13:42:48: 127.0.0.1: Serials: 0x3B6; 
+20/05/2025 13:42:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5448, 1152, 0) in Felucca: "VendorMallManager"
+20/05/2025 13:42:49: 127.0.0.1: Serials: 0x3B7; 
+20/05/2025 13:42:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5449, 1152, 0) in Felucca: "VendorMallManager"
+20/05/2025 13:42:51: 127.0.0.1: Serials: 0x3B8; 
+20/05/2025 13:42:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 13:42:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001236 (VendorRentalContract)
+20/05/2025 13:43:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 13:43:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x3B4 "Atheron" (no account)
+20/05/2025 13:43:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 13:43:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x3B5 "Kale" (no account)
+20/05/2025 13:43:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 13:43:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x3B6 "Wijdan" (no account)
+20/05/2025 13:43:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 13:43:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x3B7 "Howrence" (no account)
+20/05/2025 13:43:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 13:43:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x3B8 "Agustin" (no account)
+20/05/2025 13:43:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 13:43:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 13:43:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F03 (PlateChest)
+20/05/2025 13:43:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 13:43:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F04 (PlateLegs)
+20/05/2025 13:43:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 13:43:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 13:43:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F06 (PlateArms)
+20/05/2025 13:43:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 13:43:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001020 (PlateGloves)
+20/05/2025 13:43:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 13:43:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400011EA (VikingSword)
+20/05/2025 13:43:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 13:43:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400011DA (VikingSword)
+20/05/2025 13:43:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 13:43:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F05 (Helmet)
+20/05/2025 13:43:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 13:43:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001026 (PlateGorget)
+20/05/2025 14:10:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD FORGE'
+20/05/2025 14:10:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5447, 1155, 0) in Felucca: "FORGE"
+20/05/2025 14:10:07: 127.0.0.1: Serials: 0x4001A236; 
+20/05/2025 14:10:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD ANVIL'
+20/05/2025 14:10:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5446, 1155, 0) in Felucca: "ANVIL"
+20/05/2025 14:10:11: 127.0.0.1: Serials: 0x4001A237; 
+20/05/2025 14:10:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD IRONINGOT'
+20/05/2025 14:10:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5445, 1153, 0) in Felucca: "IRONINGOT"
+20/05/2025 14:10:20: 127.0.0.1: Serials: 0x4001A238; 
+20/05/2025 14:10:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD VENDOR'
+20/05/2025 14:10:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5444, 1151, 0) in Felucca: "VendorRentalContract"
+20/05/2025 14:10:31: 127.0.0.1: Serials: 0x4001A239; 
+20/05/2025 14:10:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5445, 1151, 0) in Felucca: "VendorMallAddon"
+20/05/2025 14:10:37: 127.0.0.1: Serials: 0x4001A23A; 
+20/05/2025 14:10:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:10:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A239 (VendorRentalContract)
+20/05/2025 14:10:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:10:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A3DD (AddonComponent)
+20/05/2025 14:10:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:10:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD VENDOR'
+20/05/2025 14:10:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5443, 1150, 0) in Felucca: "VendorMallManager"
+20/05/2025 14:10:55: 127.0.0.1: Serials: 0x3EE; 
+20/05/2025 14:10:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5444, 1150, 0) in Felucca: "VendorMallManager"
+20/05/2025 14:10:56: 127.0.0.1: Serials: 0x3EF; 
+20/05/2025 14:10:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5445, 1150, 0) in Felucca: "VendorMallManager"
+20/05/2025 14:10:59: 127.0.0.1: Serials: 0x3F0; 
+20/05/2025 14:10:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5446, 1150, 0) in Felucca: "VendorMallManager"
+20/05/2025 14:10:59: 127.0.0.1: Serials: 0x3F1; 
+20/05/2025 14:11:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5447, 1150, 0) in Felucca: "VendorMallManager"
+20/05/2025 14:11:00: 127.0.0.1: Serials: 0x3F2; 
+20/05/2025 14:11:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5448, 1150, 0) in Felucca: "VendorMallManager"
+20/05/2025 14:11:01: 127.0.0.1: Serials: 0x3F3; 
+20/05/2025 14:11:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5449, 1150, 0) in Felucca: "VendorMallManager"
+20/05/2025 14:11:02: 127.0.0.1: Serials: 0x3F5; 
+20/05/2025 14:11:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5450, 1150, 0) in Felucca: "VendorMallManager"
+20/05/2025 14:11:02: 127.0.0.1: Serials: 0x3F7; 
+20/05/2025 14:11:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5451, 1150, 0) in Felucca: "VendorMallManager"
+20/05/2025 14:11:03: 127.0.0.1: Serials: 0x3F8; 
+20/05/2025 14:11:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5452, 1150, 0) in Felucca: "VendorMallManager"
+20/05/2025 14:11:04: 127.0.0.1: Serials: 0x3F9; 
+20/05/2025 14:11:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5454, 1150, 0) in Felucca: "VendorMallManager"
+20/05/2025 14:11:05: 127.0.0.1: Serials: 0x3FA; 
+20/05/2025 14:11:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5455, 1150, 0) in Felucca: "VendorMallManager"
+20/05/2025 14:11:06: 127.0.0.1: Serials: 0x400; 
+20/05/2025 14:11:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 1000'
+20/05/2025 14:11:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x4001A238 (IronIngot) to '1000'
+20/05/2025 14:11:41: 127.0.0.1: Crafting 0x4001A5E6 (PlateArms) with craft system DefClassicBlacksmithy
+20/05/2025 14:11:44: 127.0.0.1: Crafting 0x4001A5E7 (PlateGloves) with craft system DefClassicBlacksmithy
+20/05/2025 14:11:47: 127.0.0.1: Crafting 0x4001A5E8 (PlateGorget) with craft system DefClassicBlacksmithy
+20/05/2025 14:11:54: 127.0.0.1: Crafting 0x4001A5E9 (PlateChest) with craft system DefClassicBlacksmithy
+20/05/2025 14:12:45: 127.0.0.1: Crafting 0x4001A5EA (PlateLegs) with craft system DefClassicBlacksmithy
+20/05/2025 14:12:56: 127.0.0.1: Crafting 0x4001A5EB (PlateHelm) with craft system DefClassicBlacksmithy
+20/05/2025 14:13:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD DULLCOPPERINGOT'
+20/05/2025 14:13:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5447, 1153, 0) in Felucca: "DULLCOPPERINGOT"
+20/05/2025 14:13:11: 127.0.0.1: Serials: 0x4001A5EC; 
+20/05/2025 14:13:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT'
+20/05/2025 14:13:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT'
+20/05/2025 14:13:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 500'
+20/05/2025 14:13:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x4001A5EC (DullCopperIngot) to '500'
+20/05/2025 14:13:46: 127.0.0.1: Crafting 0x4001A5ED (PlateChest) with craft system DefClassicBlacksmithy
+20/05/2025 14:13:49: 127.0.0.1: Crafting 0x4001A5EE (PlateLegs) with craft system DefClassicBlacksmithy
+20/05/2025 14:13:52: 127.0.0.1: Crafting 0x4001A5EF (Helmet) with craft system DefClassicBlacksmithy
+20/05/2025 14:13:59: 127.0.0.1: Crafting 0x4001A5F0 (PlateGloves) with craft system DefClassicBlacksmithy
+20/05/2025 14:14:03: 127.0.0.1: Crafting 0x4001A5F1 (PlateGloves) with craft system DefClassicBlacksmithy
+20/05/2025 14:14:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:14:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A5E8 (PlateGorget)
+20/05/2025 14:16:10: 127.0.0.1: Crafting 0x4001A5F2 (PlateArms) with craft system DefClassicBlacksmithy
+20/05/2025 14:16:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:16:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A5EC (DullCopperIngot)
+20/05/2025 14:16:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:16:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A5F1 (PlateGloves)
+20/05/2025 14:16:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD SHADOWINGOT'
+20/05/2025 14:16:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5444, 1154, 0) in Felucca: "AgapiteIngot"
+20/05/2025 14:16:45: 127.0.0.1: Serials: 0x4001A5F3; 
+20/05/2025 14:16:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5444, 1153, 0) in Felucca: "BronzeIngot"
+20/05/2025 14:16:49: 127.0.0.1: Serials: 0x4001A5FC; 
+20/05/2025 14:16:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5444, 1152, 0) in Felucca: "CopperIngot"
+20/05/2025 14:16:53: 127.0.0.1: Serials: 0x4001A5FD; 
+20/05/2025 14:17:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5443, 1153, 0) in Felucca: "GoldIngot"
+20/05/2025 14:17:08: 127.0.0.1: Serials: 0x4001A5FE; 
+20/05/2025 14:17:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5445, 1154, 0) in Felucca: "ShadowIronIngot"
+20/05/2025 14:17:19: 127.0.0.1: Serials: 0x4001A5FF; 
+20/05/2025 14:17:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 2000'
+20/05/2025 14:17:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x4001A5FF (ShadowIronIngot) to '2000'
+20/05/2025 14:17:40: 127.0.0.1: Crafting 0x4001A600 (PlateChest) with craft system DefClassicBlacksmithy
+20/05/2025 14:17:43: 127.0.0.1: Crafting 0x4001A601 (PlateLegs) with craft system DefClassicBlacksmithy
+20/05/2025 14:17:47: 127.0.0.1: Crafting 0x4001A602 (Helmet) with craft system DefClassicBlacksmithy
+20/05/2025 14:17:53: 127.0.0.1: Crafting 0x4001A603 (PlateArms) with craft system DefClassicBlacksmithy
+20/05/2025 14:17:58: 127.0.0.1: Crafting 0x4001A604 (PlateGloves) with craft system DefClassicBlacksmithy
+20/05/2025 14:18:03: 127.0.0.1: Crafting 0x4001A605 (PlateGloves) with craft system DefClassicBlacksmithy
+20/05/2025 14:18:08: 127.0.0.1: Crafting 0x4001A606 (PlateGorget) with craft system DefClassicBlacksmithy
+20/05/2025 14:18:12: 127.0.0.1: Crafting 0x4001A607 (HeaterShield) with craft system DefClassicBlacksmithy
+20/05/2025 14:18:33: 127.0.0.1: Crafting 0x4001A608 (Helmet) with craft system DefClassicBlacksmithy
+20/05/2025 14:18:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:18:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A604 (PlateGloves)
+20/05/2025 14:18:46: 127.0.0.1: Crafting 0x4001A609 (VikingSword) with craft system DefClassicBlacksmithy
+20/05/2025 14:19:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 2000'
+20/05/2025 14:19:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x4001A5FD (CopperIngot) to '2000'
+20/05/2025 14:19:28: 127.0.0.1: Crafting 0x4001A60A (PlateChest) with craft system DefClassicBlacksmithy
+20/05/2025 14:19:34: 127.0.0.1: Crafting 0x4001A60B (Helmet) with craft system DefClassicBlacksmithy
+20/05/2025 14:19:37: 127.0.0.1: Crafting 0x4001A613 (PlateArms) with craft system DefClassicBlacksmithy
+20/05/2025 14:19:44: 127.0.0.1: Crafting 0x4001A614 (PlateGloves) with craft system DefClassicBlacksmithy
+20/05/2025 14:19:49: 127.0.0.1: Crafting 0x4001A615 (PlateGorget) with craft system DefClassicBlacksmithy
+20/05/2025 14:19:53: 127.0.0.1: Crafting 0x4001A616 (HeaterShield) with craft system DefClassicBlacksmithy
+20/05/2025 14:19:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:20:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F01 (LeatherGloves)
+20/05/2025 14:20:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:20:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F11 (FancyShirt)
+20/05/2025 14:20:08: 127.0.0.1: Crafting 0x4001A617 (PlateLegs) with craft system DefClassicBlacksmithy
+20/05/2025 14:20:14: 127.0.0.1: Crafting 0x4001A618 (VikingSword) with craft system DefClassicBlacksmithy
+20/05/2025 14:20:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:20:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A5FD (CopperIngot)
+20/05/2025 14:20:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 2000'
+20/05/2025 14:20:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x4001A5FC (BronzeIngot) to '2000'
+20/05/2025 14:20:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:20:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A602 (Helmet)
+20/05/2025 14:20:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD SMITHHAMMER'
+20/05/2025 14:20:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5448, 1154, 0) in Felucca: "SMITHHAMMER"
+20/05/2025 14:20:43: 127.0.0.1: Serials: 0x4001A619; 
+20/05/2025 14:21:05: 127.0.0.1: Crafting 0x4001A61A (PlateChest) with craft system DefClassicBlacksmithy
+20/05/2025 14:21:08: 127.0.0.1: Crafting 0x4001A61B (PlateLegs) with craft system DefClassicBlacksmithy
+20/05/2025 14:21:11: 127.0.0.1: Crafting 0x4001A61C (Helmet) with craft system DefClassicBlacksmithy
+20/05/2025 14:21:17: 127.0.0.1: Crafting 0x4001A61D (PlateGloves) with craft system DefClassicBlacksmithy
+20/05/2025 14:21:23: 127.0.0.1: Crafting 0x4001A61E (PlateGloves) with craft system DefClassicBlacksmithy
+20/05/2025 14:21:26: 127.0.0.1: Crafting 0x4001A61F (PlateArms) with craft system DefClassicBlacksmithy
+20/05/2025 14:21:30: 127.0.0.1: Crafting 0x4001A620 (PlateGorget) with craft system DefClassicBlacksmithy
+20/05/2025 14:21:34: 127.0.0.1: Crafting 0x4001A621 (HeaterShield) with craft system DefClassicBlacksmithy
+20/05/2025 14:21:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:22:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A554 (Skirt)
+20/05/2025 14:22:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:22:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A61E (PlateGloves)
+20/05/2025 14:22:11: 127.0.0.1: Crafting 0x4001A622 (VikingSword) with craft system DefClassicBlacksmithy
+20/05/2025 14:22:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 2000'
+20/05/2025 14:22:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x4001A5F3 (AgapiteIngot) to '2000'
+20/05/2025 14:22:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 2000'
+20/05/2025 14:22:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x4001A5FE (GoldIngot) to '2000'
+20/05/2025 14:22:51: 127.0.0.1: Crafting 0x4001A623 (PlateChest) with craft system DefClassicBlacksmithy
+20/05/2025 14:22:54: 127.0.0.1: Crafting 0x4001A624 (PlateLegs) with craft system DefClassicBlacksmithy
+20/05/2025 14:22:57: 127.0.0.1: Crafting 0x4001A625 (Helmet) with craft system DefClassicBlacksmithy
+20/05/2025 14:23:00: 127.0.0.1: Crafting 0x4001A626 (PlateArms) with craft system DefClassicBlacksmithy
+20/05/2025 14:23:04: 127.0.0.1: Crafting 0x4001A627 (PlateGloves) with craft system DefClassicBlacksmithy
+20/05/2025 14:23:08: 127.0.0.1: Crafting 0x4001A628 (PlateGorget) with craft system DefClassicBlacksmithy
+20/05/2025 14:23:14: 127.0.0.1: Crafting 0x4001A629 (HeaterShield) with craft system DefClassicBlacksmithy
+20/05/2025 14:23:20: 127.0.0.1: Crafting 0x4001A62A (VikingSword) with craft system DefClassicBlacksmithy
+20/05/2025 14:23:54: 127.0.0.1: Crafting 0x4001A62B (PlateChest) with craft system DefClassicBlacksmithy
+20/05/2025 14:24:00: 127.0.0.1: Crafting 0x4001A62C (Helmet) with craft system DefClassicBlacksmithy
+20/05/2025 14:24:03: 127.0.0.1: Crafting 0x4001A62D (PlateArms) with craft system DefClassicBlacksmithy
+20/05/2025 14:24:07: 127.0.0.1: Crafting 0x4001A62E (PlateGloves) with craft system DefClassicBlacksmithy
+20/05/2025 14:24:11: 127.0.0.1: Crafting 0x4001A62F (PlateGorget) with craft system DefClassicBlacksmithy
+20/05/2025 14:24:16: 127.0.0.1: Crafting 0x4001A630 (HeaterShield) with craft system DefClassicBlacksmithy
+20/05/2025 14:24:21: 127.0.0.1: Crafting 0x4001A638 (VikingSword) with craft system DefClassicBlacksmithy
+20/05/2025 14:24:43: 127.0.0.1: Crafting 0x4001A639 (PlateChest) with craft system DefClassicBlacksmithy
+20/05/2025 14:25:04: 127.0.0.1: Crafting 0x4001A642 (PlateLegs) with craft system DefClassicBlacksmithy
+20/05/2025 14:25:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:25:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A562 (Kilt)
+20/05/2025 14:25:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:25:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A560 (Doublet)
+20/05/2025 14:25:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:25:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A639 (PlateChest)
+20/05/2025 14:25:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD VERITEINGOT'
+20/05/2025 14:25:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5447, 1152, 0) in Felucca: "VERITEINGOT"
+20/05/2025 14:25:38: 127.0.0.1: Serials: 0x4001A643; 
+20/05/2025 14:25:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD VALORITEINGOT'
+20/05/2025 14:25:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5446, 1152, 0) in Felucca: "VALORITEINGOT"
+20/05/2025 14:25:43: 127.0.0.1: Serials: 0x4001A644; 
+20/05/2025 14:25:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 200'
+20/05/2025 14:25:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x4001A644 (ValoriteIngot) to '200'
+20/05/2025 14:25:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 200'
+20/05/2025 14:25:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x4001A643 (VeriteIngot) to '200'
+20/05/2025 14:26:08: 127.0.0.1: Crafting 0x4001A645 (PlateChest) with craft system DefClassicBlacksmithy
+20/05/2025 14:26:13: 127.0.0.1: Crafting 0x4001A646 (PlateChest) with craft system DefClassicBlacksmithy
+20/05/2025 14:26:16: 127.0.0.1: Crafting 0x4001A647 (PlateLegs) with craft system DefClassicBlacksmithy
+20/05/2025 14:26:19: 127.0.0.1: Crafting 0x4001A648 (Helmet) with craft system DefClassicBlacksmithy
+20/05/2025 14:26:22: 127.0.0.1: Crafting 0x4001A649 (PlateArms) with craft system DefClassicBlacksmithy
+20/05/2025 14:26:26: 127.0.0.1: Crafting 0x4001A64A (PlateGloves) with craft system DefClassicBlacksmithy
+20/05/2025 14:26:31: 127.0.0.1: Crafting 0x4001A65B (PlateGloves) with craft system DefClassicBlacksmithy
+20/05/2025 14:26:35: 127.0.0.1: Crafting 0x4001A65C (PlateGorget) with craft system DefClassicBlacksmithy
+20/05/2025 14:26:40: 127.0.0.1: Crafting 0x4001A65D (HeaterShield) with craft system DefClassicBlacksmithy
+20/05/2025 14:26:45: 127.0.0.1: Crafting 0x4001A65E (VikingSword) with craft system DefClassicBlacksmithy
+20/05/2025 14:26:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:26:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A56F (Doublet)
+20/05/2025 14:27:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:27:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A646 (PlateChest)
+20/05/2025 14:27:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:27:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A65B (PlateGloves)
+20/05/2025 14:28:03: 127.0.0.1: Crafting 0x4001A65F (PlateChest) with craft system DefClassicBlacksmithy
+20/05/2025 14:28:06: 127.0.0.1: Crafting 0x4001A660 (PlateChest) with craft system DefClassicBlacksmithy
+20/05/2025 14:28:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:28:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A660 (PlateChest)
+20/05/2025 14:28:18: 127.0.0.1: Crafting 0x4001A661 (PlateLegs) with craft system DefClassicBlacksmithy
+20/05/2025 14:28:21: 127.0.0.1: Crafting 0x4001A662 (Helmet) with craft system DefClassicBlacksmithy
+20/05/2025 14:28:25: 127.0.0.1: Crafting 0x4001A663 (PlateArms) with craft system DefClassicBlacksmithy
+20/05/2025 14:28:29: 127.0.0.1: Crafting 0x4001A664 (PlateGloves) with craft system DefClassicBlacksmithy
+20/05/2025 14:28:44: 127.0.0.1: Crafting 0x4001A6BF (PlateGorget) with craft system DefClassicBlacksmithy
+20/05/2025 14:28:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 2000'
+20/05/2025 14:28:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x4001A643 (VeriteIngot) to '2000'
+20/05/2025 14:29:02: 127.0.0.1: Crafting 0x4001A710 (HeaterShield) with craft system DefClassicBlacksmithy
+20/05/2025 14:29:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD SMITHHAMMER'
+20/05/2025 14:29:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5444, 1154, 0) in Felucca: "SMITHHAMMER"
+20/05/2025 14:29:10: 127.0.0.1: Serials: 0x4001A725; 
+20/05/2025 14:29:21: 127.0.0.1: Crafting 0x4001A726 (VikingSword) with craft system DefClassicBlacksmithy
+20/05/2025 14:29:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD DULLCOPPERINGOT'
+20/05/2025 14:29:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5444, 1151, 0) in Felucca: "DULLCOPPERINGOT"
+20/05/2025 14:29:52: 127.0.0.1: Serials: 0x4001A728; 
+20/05/2025 14:29:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 20'
+20/05/2025 14:29:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x4001A728 (DullCopperIngot) to '20'
+20/05/2025 14:30:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD COPPERINGOT'
+20/05/2025 14:30:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5446, 1153, 0) in Felucca: "COPPERINGOT"
+20/05/2025 14:30:04: 127.0.0.1: Serials: 0x4001A729; 
+20/05/2025 14:30:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 20'
+20/05/2025 14:30:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x4001A729 (CopperIngot) to '20'
+20/05/2025 14:30:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:30:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x3F9 "Bent" (no account)
+20/05/2025 14:30:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:30:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:30:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400 "Kirby" (no account)
+20/05/2025 14:30:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:30:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x3FA "Lear" (no account)
+20/05/2025 14:30:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'move '
+20/05/2025 14:30:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') moving 0x3F8 "Arion" (no account) to (5452, 1149, 0)
+20/05/2025 14:30:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'move '
+20/05/2025 14:30:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') moving 0x3F8 "Arion" (no account) to (5451, 1150, 0)
+20/05/2025 14:30:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'move '
+20/05/2025 14:30:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') moving 0x3F7 "Zenon" (no account) to (5450, 1147, 0)
+20/05/2025 14:30:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'move '
+20/05/2025 14:30:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') moving 0x3F7 "Zenon" (no account) to (5450, 1150, 0)
+20/05/2025 14:31:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD GG'
+20/05/2025 14:31:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5442, 1156, 0) in Felucca: "AnniversaryRobe"
+20/05/2025 14:31:52: 127.0.0.1: Serials: 0x4001A72A; 
+20/05/2025 14:32:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:32:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A72A (AnniversaryRobe)
+20/05/2025 14:32:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD GG'
+20/05/2025 14:32:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5440, 1156, 0) in Felucca: "Robe"
+20/05/2025 14:32:42: 127.0.0.1: Serials: 0x4001A72B; 
+20/05/2025 14:33:38: 127.0.0.1: Crafting 0x4001A7B8 (VikingSword) with craft system DefClassicBlacksmithy
+20/05/2025 14:33:58: 127.0.0.1: Crafting 0x4001A875 (VikingSword) with craft system DefClassicBlacksmithy
+20/05/2025 14:34:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 200'
+20/05/2025 14:34:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x4001A238 (IronIngot) to '200'
+20/05/2025 14:34:17: 127.0.0.1: Crafting 0x4001A8AF (HeaterShield) with craft system DefClassicBlacksmithy
+20/05/2025 14:34:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 200'
+20/05/2025 14:34:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x4001A728 (DullCopperIngot) to '200'
+20/05/2025 14:34:35: 127.0.0.1: Crafting 0x4001A8B0 (HeaterShield) with craft system DefClassicBlacksmithy
+20/05/2025 14:42:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET RAWDEX 0'
+20/05/2025 14:42:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET RAWDEX 20'
+20/05/2025 14:42:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'RAWDEX' of 0x39E "FDDSDASAD" ('Kerry') to '20'
+20/05/2025 14:42:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET RAWINT 100'
+20/05/2025 14:42:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'RAWINT' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+20/05/2025 14:42:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET MANA 100'
+20/05/2025 14:42:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'MANA' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+20/05/2025 14:42:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:42:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x39F "a fire steed" (no account)
+20/05/2025 14:42:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add '
+20/05/2025 14:42:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD G'
+20/05/2025 14:43:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5447, 1128, 0) in Felucca: "BagOfAllReagents"
+20/05/2025 14:43:06: 127.0.0.1: Serials: 0x4001A9F9; 
+20/05/2025 14:43:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'admin '
+20/05/2025 14:46:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go '
+20/05/2025 14:47:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go Minoc'
+20/05/2025 14:47:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+20/05/2025 14:47:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:47:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001022 (Forge)
+20/05/2025 14:47:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:47:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A6EB (Anvil)
+20/05/2025 14:47:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:47:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A691 (GoldIngot)
+20/05/2025 14:47:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:47:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F9E (IronIngot)
+20/05/2025 14:47:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:47:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000145B (AddonComponent)
+20/05/2025 14:47:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:47:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000118A (AddonComponent)
+20/05/2025 14:47:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 14:47:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000100E (AddonComponent)
+##############################
+Log started on 20/05/2025 15:07:20
+
+20/05/2025 15:07:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add bandage'
+20/05/2025 15:07:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5447, 1145, 0) in Felucca: "bandage"
+20/05/2025 15:07:33: 127.0.0.1: Serials: 0x40000F03; 
+20/05/2025 15:07:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 200'
+20/05/2025 15:07:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x40000F03 (Bandage) to '200'
+20/05/2025 15:07:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set hits 20'
+20/05/2025 15:07:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'hits' of 0x39E "FDDSDASAD" ('Kerry') to '20'
+##############################
+Log started on 20/05/2025 15:33:12
+
+20/05/2025 15:34:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set hits 20'
+20/05/2025 15:34:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'hits' of 0x39E "FDDSDASAD" ('Kerry') to '20'
+20/05/2025 15:34:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add bandage'
+20/05/2025 15:34:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5445, 1146, 0) in Felucca: "bandage"
+20/05/2025 15:34:21: 127.0.0.1: Serials: 0x40000F03; 
+20/05/2025 15:34:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 200'
+20/05/2025 15:34:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x40000F03 (Bandage) to '200'
+20/05/2025 15:34:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set skill healing 100'
+20/05/2025 15:34:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set skill healing 100'
+20/05/2025 15:35:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set skill healing'
+20/05/2025 15:35:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set skill healing 100'
+20/05/2025 15:35:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set skill healing 100'
+20/05/2025 15:35:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill healing 100'
+20/05/2025 15:35:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Healing.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+20/05/2025 15:35:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set hit 10'
+20/05/2025 15:35:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set hits 10'
+20/05/2025 15:35:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'hits' of 0x39E "FDDSDASAD" ('Kerry') to '10'
+20/05/2025 15:36:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set hits 10'
+20/05/2025 15:36:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'hits' of 0x39E "FDDSDASAD" ('Kerry') to '10'
+20/05/2025 15:49:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go magincia'
+20/05/2025 15:50:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/05/2025 15:50:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x526 "Yerik" (no account)
+20/05/2025 15:50:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go '

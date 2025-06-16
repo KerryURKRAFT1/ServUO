@@ -1,0 +1,208 @@
+##############################
+Log started on 14/04/2025 13:47:30
+
+##############################
+Log started on 14/04/2025 13:47:47
+
+##############################
+Log started on 14/04/2025 14:14:25
+
+14/04/2025 14:14:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET INT 100'
+14/04/2025 14:15:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'INT' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+14/04/2025 14:23:58: 127.0.0.1: Crafting 0x400012DA (IncognitoScroll) with craft system DefClassicInscription
+14/04/2025 14:24:54: 127.0.0.1: Crafting 0x400012E5 (IncognitoScroll) with craft system DefClassicInscription
+##############################
+Log started on 14/04/2025 14:26:14
+
+14/04/2025 14:28:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET INT 50'
+14/04/2025 14:28:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'INT' of 0x39E "FDDSDASAD" ('Kerry') to '50'
+14/04/2025 14:29:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD SCROLL'
+14/04/2025 14:29:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 565, 0) in Felucca: "AgilityScroll"
+14/04/2025 14:29:29: 127.0.0.1: Serials: 0x400010C3; 
+14/04/2025 14:29:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 564, 0) in Felucca: "AnimateDeadScroll"
+14/04/2025 14:29:31: 127.0.0.1: Serials: 0x40001111; 
+14/04/2025 14:29:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 562, 0) in Felucca: "AnimatedWeaponScroll"
+14/04/2025 14:29:33: 127.0.0.1: Serials: 0x40001113; 
+14/04/2025 14:29:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 563, 0) in Felucca: "AnimatedWeaponScroll"
+14/04/2025 14:29:34: 127.0.0.1: Serials: 0x40001119; 
+14/04/2025 14:29:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 563, 0) in Felucca: "AnimatedWeaponScroll"
+14/04/2025 14:29:35: 127.0.0.1: Serials: 0x40001125; 
+14/04/2025 14:29:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 567, 0) in Felucca: "BladeSpiritsScroll"
+14/04/2025 14:29:43: 127.0.0.1: Serials: 0x40001128; 
+14/04/2025 14:29:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 565, 0) in Felucca: "BlessScroll"
+14/04/2025 14:29:47: 127.0.0.1: Serials: 0x4000112B; 
+14/04/2025 14:29:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 563, 0) in Felucca: "BloodOathScroll"
+14/04/2025 14:29:49: 127.0.0.1: Serials: 0x40001135; 
+14/04/2025 14:29:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 565, 0) in Felucca: "ChainLightningScroll"
+14/04/2025 14:29:55: 127.0.0.1: Serials: 0x40001137; 
+14/04/2025 14:30:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 561, 0) in Felucca: "ClumsyScroll"
+14/04/2025 14:30:00: 127.0.0.1: Serials: 0x4000113B; 
+14/04/2025 14:30:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 562, 0) in Felucca: "CreateFoodScroll"
+14/04/2025 14:30:04: 127.0.0.1: Serials: 0x4000113C; 
+14/04/2025 14:30:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 561, 0) in Felucca: "CunningScroll"
+14/04/2025 14:30:08: 127.0.0.1: Serials: 0x40001141; 
+14/04/2025 14:30:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 560, 0) in Felucca: "CureScroll"
+14/04/2025 14:30:11: 127.0.0.1: Serials: 0x40001142; 
+14/04/2025 14:30:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 560, 0) in Felucca: "DispelFieldScroll"
+14/04/2025 14:30:17: 127.0.0.1: Serials: 0x40001147; 
+14/04/2025 14:30:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 560, 0) in Felucca: "DispelScroll"
+14/04/2025 14:30:19: 127.0.0.1: Serials: 0x4000114F; 
+14/04/2025 14:30:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 566, 0) in Felucca: "DispelScroll"
+14/04/2025 14:30:47: 127.0.0.1: Serials: 0x40001234; 
+14/04/2025 14:30:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 566, 0) in Felucca: "EarthquakeScroll"
+14/04/2025 14:30:53: 127.0.0.1: Serials: 0x40001236; 
+14/04/2025 14:30:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 567, 0) in Felucca: "EnergyBoltScroll"
+14/04/2025 14:30:57: 127.0.0.1: Serials: 0x40001238; 
+14/04/2025 14:31:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 566, 0) in Felucca: "EnergyFieldScroll"
+14/04/2025 14:31:04: 127.0.0.1: Serials: 0x4000123A; 
+14/04/2025 14:31:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 565, 0) in Felucca: "EnergyVortexScroll"
+14/04/2025 14:31:07: 127.0.0.1: Serials: 0x4000123C; 
+14/04/2025 14:31:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 564, 0) in Felucca: "ExplosionScroll"
+14/04/2025 14:31:16: 127.0.0.1: Serials: 0x40001246; 
+14/04/2025 14:31:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 566, 0) in Felucca: "FeeblemindScroll"
+14/04/2025 14:31:22: 127.0.0.1: Serials: 0x4000124C; 
+14/04/2025 14:31:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 566, 0) in Felucca: "FireballScroll"
+14/04/2025 14:31:23: 127.0.0.1: Serials: 0x4000124D; 
+14/04/2025 14:31:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 563, 0) in Felucca: "FireFieldScroll"
+14/04/2025 14:31:32: 127.0.0.1: Serials: 0x40001250; 
+14/04/2025 14:31:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 559, 0) in Felucca: "FlamestrikeScroll"
+14/04/2025 14:31:39: 127.0.0.1: Serials: 0x40001251; 
+14/04/2025 14:31:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 556, 0) in Felucca: "GateTravelScroll"
+14/04/2025 14:31:45: 127.0.0.1: Serials: 0x40001252; 
+14/04/2025 14:31:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 555, 0) in Felucca: "GreaterHealScroll"
+14/04/2025 14:31:50: 127.0.0.1: Serials: 0x40001253; 
+14/04/2025 14:31:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 558, 0) in Felucca: "HarmScroll"
+14/04/2025 14:31:55: 127.0.0.1: Serials: 0x40001254; 
+14/04/2025 14:32:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 557, 0) in Felucca: "HealScroll"
+14/04/2025 14:32:02: 127.0.0.1: Serials: 0x40001255; 
+14/04/2025 14:32:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 549, 0) in Felucca: "IncognitoScroll"
+14/04/2025 14:32:09: 127.0.0.1: Serials: 0x40001258; 
+14/04/2025 14:32:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 548, 0) in Felucca: "MagicArrowScroll"
+14/04/2025 14:32:19: 127.0.0.1: Serials: 0x4000125A; 
+14/04/2025 14:32:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 548, 0) in Felucca: "MagicReflectScroll"
+14/04/2025 14:32:22: 127.0.0.1: Serials: 0x4000125B; 
+14/04/2025 14:32:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 548, 0) in Felucca: "MagicTrapScroll"
+14/04/2025 14:32:25: 127.0.0.1: Serials: 0x4000125E; 
+14/04/2025 14:32:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 549, 0) in Felucca: "MagicUnTrapScroll"
+14/04/2025 14:32:27: 127.0.0.1: Serials: 0x40001260; 
+14/04/2025 14:32:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 550, 0) in Felucca: "ManaDrainScroll"
+14/04/2025 14:32:29: 127.0.0.1: Serials: 0x40001261; 
+14/04/2025 14:32:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 548, 0) in Felucca: "ManaVampireScroll"
+14/04/2025 14:32:31: 127.0.0.1: Serials: 0x40001264; 
+14/04/2025 14:32:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2513, 553, 0) in Felucca: "MarkScroll"
+14/04/2025 14:32:50: 127.0.0.1: Serials: 0x40001265; 
+14/04/2025 14:32:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 553, 0) in Felucca: "MassCurseScroll"
+14/04/2025 14:32:52: 127.0.0.1: Serials: 0x40001266; 
+14/04/2025 14:32:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2513, 553, 0) in Felucca: "MassDispelScroll"
+14/04/2025 14:32:53: 127.0.0.1: Serials: 0x4000127A; 
+14/04/2025 14:33:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 552, 0) in Felucca: "MeteorSwarmScroll"
+14/04/2025 14:33:00: 127.0.0.1: Serials: 0x40001280; 
+14/04/2025 14:33:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2513, 552, 0) in Felucca: "MindBlastScroll"
+14/04/2025 14:33:03: 127.0.0.1: Serials: 0x40001281; 
+14/04/2025 14:33:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2513, 552, 0) in Felucca: "NightSightScroll"
+14/04/2025 14:33:09: 127.0.0.1: Serials: 0x40001285; 
+14/04/2025 14:33:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 552, 0) in Felucca: "PoisonScroll"
+14/04/2025 14:33:21: 127.0.0.1: Serials: 0x40001288; 
+14/04/2025 14:33:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 553, 0) in Felucca: "ParalyzeScroll"
+14/04/2025 14:33:23: 127.0.0.1: Serials: 0x40001289; 
+14/04/2025 14:33:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 552, 0) in Felucca: "ParalyzeFieldScroll"
+14/04/2025 14:33:28: 127.0.0.1: Serials: 0x4000128A; 
+14/04/2025 14:33:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 552, 0) in Felucca: "ParalyzeScroll"
+14/04/2025 14:33:35: 127.0.0.1: Serials: 0x4000128B; 
+14/04/2025 14:33:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 550, 0) in Felucca: "PoisonScroll"
+14/04/2025 14:33:38: 127.0.0.1: Serials: 0x4000128C; 
+14/04/2025 14:33:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 551, 0) in Felucca: "PolymorphScroll"
+14/04/2025 14:33:47: 127.0.0.1: Serials: 0x4000128D; 
+14/04/2025 14:33:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 549, 0) in Felucca: "ProtectionScroll"
+14/04/2025 14:33:51: 127.0.0.1: Serials: 0x4000128E; 
+14/04/2025 14:33:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 539, 0) in Felucca: "ReactiveArmorScroll"
+14/04/2025 14:33:58: 127.0.0.1: Serials: 0x4000129D; 
+14/04/2025 14:34:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 539, 0) in Felucca: "RecallScroll"
+14/04/2025 14:34:04: 127.0.0.1: Serials: 0x400012A4; 
+14/04/2025 14:34:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 539, 0) in Felucca: "ResurrectionScroll"
+14/04/2025 14:34:07: 127.0.0.1: Serials: 0x400012A8; 
+14/04/2025 14:34:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 539, 0) in Felucca: "RevealScroll"
+14/04/2025 14:34:11: 127.0.0.1: Serials: 0x400012A9; 
+14/04/2025 14:34:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 540, 0) in Felucca: "StrengthScroll"
+14/04/2025 14:34:31: 127.0.0.1: Serials: 0x400012B2; 
+14/04/2025 14:34:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 535, 0) in Felucca: "SummonAirElementalScroll"
+14/04/2025 14:34:40: 127.0.0.1: Serials: 0x400012CC; 
+14/04/2025 14:34:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 536, 0) in Felucca: "SummonCreatureScroll"
+14/04/2025 14:34:42: 127.0.0.1: Serials: 0x400012D0; 
+14/04/2025 14:34:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 537, 0) in Felucca: "SummonDaemonScroll"
+14/04/2025 14:34:44: 127.0.0.1: Serials: 0x400012D1; 
+14/04/2025 14:34:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 538, 0) in Felucca: "SummonEarthElementalScroll"
+14/04/2025 14:34:46: 127.0.0.1: Serials: 0x400012D6; 
+14/04/2025 14:34:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 538, 0) in Felucca: "SummonFireElementalScroll"
+14/04/2025 14:34:51: 127.0.0.1: Serials: 0x400012DA; 
+14/04/2025 14:35:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 536, 0) in Felucca: "SummonWaterElementalScroll"
+14/04/2025 14:35:01: 127.0.0.1: Serials: 0x400012E0; 
+14/04/2025 14:35:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 537, 0) in Felucca: "TeleportScroll"
+14/04/2025 14:35:05: 127.0.0.1: Serials: 0x400012E1; 
+14/04/2025 14:35:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 537, 0) in Felucca: "TelekinisisScroll"
+14/04/2025 14:35:09: 127.0.0.1: Serials: 0x400012E3; 
+14/04/2025 14:35:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 537, 0) in Felucca: "UnlockScroll"
+14/04/2025 14:35:17: 127.0.0.1: Serials: 0x400012E5; 
+14/04/2025 14:35:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 538, 0) in Felucca: "WallOfStoneScroll"
+14/04/2025 14:35:25: 127.0.0.1: Serials: 0x400012E7; 
+14/04/2025 14:35:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 537, 0) in Felucca: "WeakenScroll"
+14/04/2025 14:35:29: 127.0.0.1: Serials: 0x400013CB; 
+14/04/2025 14:35:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+14/04/2025 14:35:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400012E1 (TeleportScroll)
+14/04/2025 14:35:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+14/04/2025 14:35:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400012B2 (StrengthScroll)
+14/04/2025 14:35:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+14/04/2025 14:35:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000125A (MagicArrowScroll)
+14/04/2025 14:35:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+14/04/2025 14:35:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000128C (PoisonScroll)
+14/04/2025 14:35:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+14/04/2025 14:35:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001288 (PoisonScroll)
+14/04/2025 14:35:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+14/04/2025 14:35:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000128B (ParalyzeScroll)
+14/04/2025 14:35:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+14/04/2025 14:35:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001285 (NightSightScroll)
+14/04/2025 14:35:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+14/04/2025 14:36:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001253 (GreaterHealScroll)
+14/04/2025 14:36:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+14/04/2025 14:36:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001255 (HealScroll)
+14/04/2025 14:36:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+14/04/2025 14:36:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001254 (HarmScroll)
+14/04/2025 14:36:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+14/04/2025 14:36:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001142 (CureScroll)
+14/04/2025 14:36:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+14/04/2025 14:36:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001135 (BloodOathScroll)
+14/04/2025 14:36:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+14/04/2025 14:36:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001250 (FireFieldScroll)
+14/04/2025 14:36:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+14/04/2025 14:36:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001111 (AnimateDeadScroll)
+14/04/2025 14:36:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+14/04/2025 14:36:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000124D (FireballScroll)
+14/04/2025 14:36:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+14/04/2025 14:36:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001234 (DispelScroll)
+14/04/2025 14:36:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET MANA 50'
+14/04/2025 14:36:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'MANA' of 0x39E "FDDSDASAD" ('Kerry') to '50'
+14/04/2025 14:37:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET MANA 50'
+14/04/2025 14:37:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'MANA' of 0x39E "FDDSDASAD" ('Kerry') to '50'
+14/04/2025 14:37:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET MANA 50'
+14/04/2025 14:37:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'MANA' of 0x39E "FDDSDASAD" ('Kerry') to '50'
+14/04/2025 14:37:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET MANA 51'
+14/04/2025 14:37:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'MANA' of 0x39E "FDDSDASAD" ('Kerry') to '51'
+14/04/2025 14:37:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET MANA 100'
+14/04/2025 14:37:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'MANA' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+14/04/2025 14:38:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET INT 100'
+14/04/2025 14:38:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'INT' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+14/04/2025 14:38:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET MANA 100'
+14/04/2025 14:38:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'MANA' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+14/04/2025 14:38:15: 127.0.0.1: Crafting 0x40001453 (ResurrectionScroll) with craft system DefClassicInscription
+14/04/2025 14:38:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET MANA 100'
+14/04/2025 14:38:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'MANA' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+##############################
+Log started on 14/04/2025 16:52:48
+
+14/04/2025 16:53:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set int 50'
+14/04/2025 16:53:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'int' of 0x39E "FDDSDASAD" ('Kerry') to '50'
+##############################
+Log started on 14/04/2025 17:26:08
+
+14/04/2025 17:26:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET INT 50'
+14/04/2025 17:26:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'INT' of 0x39E "FDDSDASAD" ('Kerry') to '50'

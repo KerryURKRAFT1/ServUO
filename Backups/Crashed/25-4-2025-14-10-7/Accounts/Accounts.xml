@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<accounts count="2">
+	<account>
+		<username>Kerry</username>
+		<newCryptPassword>E0-62-92-41-A1-28-9F-B7-FE-46-78-62-E3-38-1D-71-6A-E3-99-36</newCryptPassword>
+		<accessLevel>Owner</accessLevel>
+		<flags>2</flags>
+		<created>2025-03-15T11:38:23.4775774Z</created>
+		<lastLogin>2025-04-24T11:08:47.0167562Z</lastLogin>
+		<totalGameTime>P2DT5H47M27.7424902S</totalGameTime>
+		<chars>
+			<char index="0">926</char>
+		</chars>
+		<addressList count="1">
+			<ip>127.0.0.1</ip>
+		</addressList>
+		<totalCurrency>0</totalCurrency>
+	</account>
+	<account>
+		<username>utente</username>
+		<newCryptPassword>6E-41-BA-AC-77-35-06-BF-8A-30-AD-32-2A-73-41-88-B8-0B-15-F4</newCryptPassword>
+		<flags>2</flags>
+		<created>2025-04-06T11:13:30.7236316Z</created>
+		<lastLogin>2025-04-06T11:13:43.2432441Z</lastLogin>
+		<totalGameTime>PT48M19.4585457S</totalGameTime>
+		<chars>
+			<char index="0">986</char>
+		</chars>
+		<addressList count="1">
+			<ip>127.0.0.1</ip>
+		</addressList>
+		<totalCurrency>0</totalCurrency>
+	</account>
+</accounts>

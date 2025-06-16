@@ -1,0 +1,162 @@
+##############################
+Log started on 08/03/2025 10:27:07
+
+##############################
+Log started on 08/03/2025 10:38:37
+
+08/03/2025 10:40:38: 127.0.0.1: Owner 0x386 "Kerry" ('Kerry') used command 'add '
+08/03/2025 10:41:12: 127.0.0.1: Owner 0x386 "Kerry" ('Kerry') used command 'Add PlateChest'
+08/03/2025 10:41:14: 127.0.0.1: Owner 0x386 "Kerry" ('Kerry') building at (1498, 1630, 0) in Trammel: "PlateChest"
+08/03/2025 10:41:14: 127.0.0.1: Serials: 0x400013FF; 
+08/03/2025 10:41:43: 127.0.0.1: Owner 0x386 "Kerry" ('Kerry') used command 'add '
+08/03/2025 10:41:48: 127.0.0.1: Owner 0x386 "Kerry" ('Kerry') used command 'add verite'
+08/03/2025 10:42:17: 127.0.0.1: Owner 0x386 "Kerry" ('Kerry') used command 'set skill Mining 1000'
+08/03/2025 10:50:23: 127.0.0.1: Owner 0x386 "Kerry" ('Kerry') used command 'M Tele'
+08/03/2025 10:50:28: 127.0.0.1: Owner 0x386 "Kerry" ('Kerry') used command 'M Tele'
+08/03/2025 10:50:30: 127.0.0.1: Owner 0x386 "Kerry" ('Kerry') used command 'M Tele'
+08/03/2025 10:50:32: 127.0.0.1: Owner 0x386 "Kerry" ('Kerry') used command 'M Tele'
+08/03/2025 10:50:33: 127.0.0.1: Owner 0x386 "Kerry" ('Kerry') used command 'M Tele'
+08/03/2025 10:50:35: 127.0.0.1: Owner 0x386 "Kerry" ('Kerry') used command 'M Tele'
+##############################
+Log started on 08/03/2025 11:10:24
+
+08/03/2025 11:10:38: 127.0.0.1: Owner 0x386 "Kerry" ('Kerry') used command 'M Tele'
+08/03/2025 11:10:41: 127.0.0.1: Owner 0x386 "Kerry" ('Kerry') used command 'M Tele'
+08/03/2025 11:10:42: 127.0.0.1: Owner 0x386 "Kerry" ('Kerry') used command 'M Tele'
+08/03/2025 11:10:44: 127.0.0.1: Owner 0x386 "Kerry" ('Kerry') used command 'M Tele'
+08/03/2025 11:10:46: 127.0.0.1: Owner 0x386 "Kerry" ('Kerry') used command 'M Tele'
+08/03/2025 11:10:49: 127.0.0.1: Owner 0x386 "Kerry" ('Kerry') used command 'M Tele'
+08/03/2025 11:10:50: 127.0.0.1: Owner 0x386 "Kerry" ('Kerry') used command 'M Tele'
+##############################
+Log started on 08/03/2025 11:21:21
+
+08/03/2025 11:22:01: 127.0.0.1: Owner 0x3C4 "Kerry" ('Kerry') used command 'M Tele'
+##############################
+Log started on 08/03/2025 11:25:35
+
+08/03/2025 13:23:32: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'createworld '
+08/03/2025 13:25:31: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'moongen '
+08/03/2025 13:25:32: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'doorgen '
+08/03/2025 13:25:32: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'signgen '
+08/03/2025 13:25:32: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'telgen '
+08/03/2025 13:25:37: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'decorate '
+08/03/2025 13:25:48: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'XmlLoad Spawns'
+08/03/2025 13:25:48: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'setupdespise '
+08/03/2025 13:25:48: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'setupnewcovetous '
+08/03/2025 13:25:48: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'generatenewshame '
+08/03/2025 13:25:48: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'gennewmagincia '
+08/03/2025 13:25:48: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'setupcityloyaltysystem '
+08/03/2025 13:25:48: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'XmlLoad Spawns/BlackthornDungeon.xml'
+08/03/2025 13:25:48: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'genblackthorn '
+08/03/2025 13:25:57: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'go to magincia'
+08/03/2025 13:26:04: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'go to Minoc'
+08/03/2025 13:26:10: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'go to 2514 1144'
+08/03/2025 13:26:28: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'createworld '
+08/03/2025 13:26:58: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'moongen '
+08/03/2025 13:26:58: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'doorgen '
+08/03/2025 13:26:58: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'shtelgen '
+08/03/2025 13:28:17: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'M Tele'
+08/03/2025 13:28:22: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'go '
+08/03/2025 13:28:42: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'go to'
+08/03/2025 13:28:45: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'go '
+08/03/2025 13:28:58: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'go to 789 300'
+08/03/2025 13:29:06: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'go '
+08/03/2025 13:29:26: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'go '
+08/03/2025 13:29:48: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'admin '
+08/03/2025 13:30:45: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'teleport 789 300'
+08/03/2025 13:31:02: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'go 789 300'
+08/03/2025 13:31:29: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'go 778 325'
+08/03/2025 13:31:46: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'go '
+##############################
+Log started on 08/03/2025 13:49:30
+
+08/03/2025 13:49:51: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'M Tele'
+08/03/2025 13:50:03: 127.0.0.1: Owner 0x3A3 "Kerry" ('Kerry') used command 'where '
+##############################
+Log started on 08/03/2025 14:06:37
+
+##############################
+Log started on 08/03/2025 14:12:03
+
+08/03/2025 14:12:35: 127.0.0.1: Owner 0x352 "kERRY" ('Kerry') used command 'where '
+08/03/2025 14:12:43: 127.0.0.1: Owner 0x352 "kERRY" ('Kerry') used command 'M Tele'
+08/03/2025 14:13:13: 127.0.0.1: Owner 0x352 "kERRY" ('Kerry') used command 'admin '
+08/03/2025 14:13:15: 127.0.0.1: Owner 0x352 "kERRY" ('Kerry') used command 'staffrunebook '
+08/03/2025 14:13:30: 127.0.0.1: Owner 0x352 "kERRY" ('Kerry') used command 'staffrunebook '
+08/03/2025 14:14:54: 127.0.0.1: Owner 0x352 "kERRY" ('Kerry') used command 'createworld '
+08/03/2025 14:17:37: 127.0.0.1: Owner 0x352 "kERRY" ('Kerry') used command 'moongen '
+08/03/2025 14:17:37: 127.0.0.1: Owner 0x352 "kERRY" ('Kerry') used command 'doorgen '
+08/03/2025 14:17:37: 127.0.0.1: Owner 0x352 "kERRY" ('Kerry') used command 'signgen '
+08/03/2025 14:17:37: 127.0.0.1: Owner 0x352 "kERRY" ('Kerry') used command 'telgen '
+08/03/2025 14:17:37: 127.0.0.1: Owner 0x352 "kERRY" ('Kerry') used command 'genleverpuzzle '
+08/03/2025 14:17:37: 127.0.0.1: Owner 0x352 "kERRY" ('Kerry') used command 'gengauntlet '
+08/03/2025 14:17:42: 127.0.0.1: Owner 0x352 "kERRY" ('Kerry') used command 'decorate '
+08/03/2025 14:17:53: 127.0.0.1: Owner 0x352 "kERRY" ('Kerry') used command 'XmlLoad Spawns'
+08/03/2025 14:17:53: 127.0.0.1: Owner 0x352 "kERRY" ('Kerry') used command 'setupdespise '
+08/03/2025 14:17:53: 127.0.0.1: Owner 0x352 "kERRY" ('Kerry') used command 'setupnewcovetous '
+08/03/2025 14:17:53: 127.0.0.1: Owner 0x352 "kERRY" ('Kerry') used command 'generatenewshame '
+08/03/2025 14:17:53: 127.0.0.1: Owner 0x352 "kERRY" ('Kerry') used command 'setupcityloyaltysystem '
+08/03/2025 14:17:53: 127.0.0.1: Owner 0x352 "kERRY" ('Kerry') used command 'XmlLoad Spawns/BlackthornDungeon.xml'
+08/03/2025 14:17:53: 127.0.0.1: Owner 0x352 "kERRY" ('Kerry') used command 'genblackthorn '
+##############################
+Log started on 08/03/2025 14:19:09
+
+08/03/2025 14:19:39: 127.0.0.1: Owner 0x384 "Kerry" ('Kerry') used command 'where '
+08/03/2025 14:19:48: 127.0.0.1: Owner 0x384 "Kerry" ('Kerry') used command 'createworld '
+08/03/2025 14:20:40: 127.0.0.1: Owner 0x384 "Kerry" ('Kerry') used command 'moongen '
+08/03/2025 14:20:40: 127.0.0.1: Owner 0x384 "Kerry" ('Kerry') used command 'doorgen '
+08/03/2025 14:20:40: 127.0.0.1: Owner 0x384 "Kerry" ('Kerry') used command 'signgen '
+08/03/2025 14:20:40: 127.0.0.1: Owner 0x384 "Kerry" ('Kerry') used command 'telgen '
+08/03/2025 14:20:46: 127.0.0.1: Owner 0x384 "Kerry" ('Kerry') used command 'decorate '
+08/03/2025 14:20:56: 127.0.0.1: Owner 0x384 "Kerry" ('Kerry') used command 'XmlLoad Spawns'
+08/03/2025 14:20:56: 127.0.0.1: Owner 0x384 "Kerry" ('Kerry') used command 'setupdespise '
+08/03/2025 14:20:56: 127.0.0.1: Owner 0x384 "Kerry" ('Kerry') used command 'setupnewcovetous '
+08/03/2025 14:20:56: 127.0.0.1: Owner 0x384 "Kerry" ('Kerry') used command 'generatenewshame '
+08/03/2025 14:21:08: 127.0.0.1: Owner 0x384 "Kerry" ('Kerry') used command 'go '
+08/03/2025 14:22:19: 127.0.0.1: Owner 0x384 "Kerry" ('Kerry') used command 'M Tele'
+08/03/2025 14:24:59: 127.0.0.1: Owner 0x384 "Kerry" ('Kerry') used command 'go '
+08/03/2025 14:26:10: 127.0.0.1: Owner 0x384 "Kerry" ('Kerry') used command 'viewequip '
+08/03/2025 14:26:11: 127.0.0.1: Owner 0x384 "Kerry" ('Kerry') viewing equipment of 0x78E "Annikka" (no account)
+08/03/2025 14:26:15: 127.0.0.1: Owner 0x384 "Kerry" ('Kerry') used command 'add '
+08/03/2025 14:26:25: 127.0.0.1: Owner 0x384 "Kerry" ('Kerry') used command 'Add BulkOrderBook'
+08/03/2025 14:26:25: 127.0.0.1: Owner 0x384 "Kerry" ('Kerry') building at (5272, 3975, 37) in Felucca: "BulkOrderBook"
+08/03/2025 14:26:25: 127.0.0.1: Serials: 0x4001FE46; 
+08/03/2025 14:27:18: 127.0.0.1: Owner 0x384 "Kerry" ('Kerry') used command 'go '
+08/03/2025 14:28:03: 127.0.0.1: Owner 0x384 "Kerry" ('Kerry') used command 'who '
+##############################
+Log started on 08/03/2025 14:32:20
+
+08/03/2025 14:33:21: 127.0.0.1: Owner 0x3C4 "Kerry" ('Kerry') used command 'go '
+08/03/2025 15:26:20: 127.0.0.1: Owner 0x3C4 "Kerry" ('Kerry') used command 'admin '
+08/03/2025 15:29:55: 127.0.0.1: Owner 0x3C4 "Kerry" ('Kerry') used command 'help '
+##############################
+Log started on 08/03/2025 15:33:52
+
+08/03/2025 15:34:45: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'go '
+##############################
+Log started on 08/03/2025 15:49:15
+
+##############################
+Log started on 08/03/2025 15:49:31
+
+##############################
+Log started on 08/03/2025 15:51:29
+
+##############################
+Log started on 08/03/2025 15:53:30
+
+##############################
+Log started on 08/03/2025 15:54:42
+
+##############################
+Log started on 08/03/2025 15:54:56
+
+##############################
+Log started on 08/03/2025 16:02:58
+
+##############################
+Log started on 08/03/2025 16:19:07
+
+##############################
+Log started on 08/03/2025 20:17:09
+

@@ -1,0 +1,70 @@
+##############################
+Log started on 09/04/2025 12:09:43
+
+09/04/2025 12:10:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add chest'
+##############################
+Log started on 09/04/2025 12:21:14
+
+09/04/2025 12:21:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD METALbOX'
+09/04/2025 12:21:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 584, 0) in Felucca: "METALbOX"
+09/04/2025 12:21:23: 127.0.0.1: Serials: 0x40000FEE; 
+09/04/2025 12:21:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD METChest'
+09/04/2025 12:21:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 580, 0) in Felucca: "MetalChest"
+09/04/2025 12:21:38: 127.0.0.1: Serials: 0x40000FF0; 
+09/04/2025 12:21:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 581, 0) in Felucca: "FillableMetalChest"
+09/04/2025 12:21:41: 127.0.0.1: Serials: 0x40000FF3; 
+09/04/2025 12:22:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD METChest'
+09/04/2025 12:22:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+09/04/2025 12:23:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+##############################
+Log started on 09/04/2025 12:26:16
+
+09/04/2025 12:26:31: 127.0.0.1: Crafting 0x40000FEE (MetalChest) with craft system DefClassictTinkering
+##############################
+Log started on 09/04/2025 12:29:12
+
+09/04/2025 12:29:23: 127.0.0.1: Crafting 0x40000FEE (MetalChest) with craft system DefClassictTinkering
+##############################
+Log started on 09/04/2025 12:36:16
+
+09/04/2025 12:36:26: 127.0.0.1: Crafting 0x40000FEE (MetalChest) with craft system DefClassictTinkering
+##############################
+Log started on 09/04/2025 12:57:05
+
+09/04/2025 13:00:19: 127.0.0.1: Crafting 0x40001111 (MetalBox) with craft system DefClassictTinkering
+09/04/2025 14:28:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+09/04/2025 14:28:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001111 (MetalBox)
+09/04/2025 14:45:48: 127.0.0.1: Crafting 0x4001A823 (Keg) with craft system DefClassictTinkering
+09/04/2025 14:46:13: 127.0.0.1: Crafting 0x4001A824 (ClockRight) with craft system DefClassictTinkering
+09/04/2025 14:46:31: 127.0.0.1: Crafting 0x4001A825 (AxleGears) with craft system DefClassictTinkering
+##############################
+Log started on 09/04/2025 14:52:29
+
+09/04/2025 14:52:54: 127.0.0.1: Crafting 0x40000FF6 (AxleGears) with craft system DefClassictTinkering
+##############################
+Log started on 09/04/2025 15:05:08
+
+##############################
+Log started on 09/04/2025 15:17:08
+
+09/04/2025 15:17:54: 127.0.0.1: Crafting 0x40000FF6 (AxleGears) with craft system DefClassictTinkering
+##############################
+Log started on 09/04/2025 15:20:37
+
+##############################
+Log started on 09/04/2025 15:27:57
+
+09/04/2025 15:28:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+##############################
+Log started on 09/04/2025 15:37:46
+
+09/04/2025 15:37:57: 127.0.0.1: Crafting 0x40000FF6 (ClockRight) with craft system DefClassictTinkering
+09/04/2025 15:38:01: 127.0.0.1: Crafting 0x40000FF8 (AxleGears) with craft system DefClassictTinkering
+##############################
+Log started on 09/04/2025 15:43:54
+
+##############################
+Log started on 09/04/2025 15:46:09
+
+09/04/2025 15:46:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+09/04/2025 15:46:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F6C (Board)

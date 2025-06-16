@@ -1,0 +1,42 @@
+##############################
+Log started on 09/06/2025 13:44:43
+
+09/06/2025 13:48:22: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'go britain'
+09/06/2025 13:49:27: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'M Tele'
+09/06/2025 13:49:28: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'M Tele'
+09/06/2025 13:49:35: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'M Tele'
+09/06/2025 13:49:46: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'M Tele'
+09/06/2025 14:01:55: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'set fame 4600'
+09/06/2025 14:01:56: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') set property 'fame' of 0x39E "Kerry" ('Kerry') to '4600'
+09/06/2025 14:02:05: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'set Karma - 2600'
+09/06/2025 14:03:15: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'set karma -10000'
+09/06/2025 14:03:16: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') set property 'karma' of 0x39E "Kerry" ('Kerry') to '-10000'
+09/06/2025 14:03:25: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'set fame -10000'
+09/06/2025 14:03:26: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') set property 'fame' of 0x39E "Kerry" ('Kerry') to '-10000'
+09/06/2025 14:03:49: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'props '
+09/06/2025 14:05:06: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'admin '
+09/06/2025 14:05:15: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'set fame 10000'
+09/06/2025 14:05:16: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') set property 'fame' of 0x3DE "tester" ('tester') to '10000'
+09/06/2025 14:05:20: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'set karma 10000'
+09/06/2025 14:05:21: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') set property 'karma' of 0x3DE "tester" ('tester') to '10000'
+09/06/2025 14:05:26: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'set karma 10000'
+09/06/2025 14:05:26: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') set property 'karma' of 0x39E "Kerry" ('Kerry') to '10000'
+09/06/2025 14:05:27: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'set fame 10000'
+09/06/2025 14:05:29: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') set property 'fame' of 0x39E "Kerry" ('Kerry') to '10000'
+09/06/2025 14:07:00: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'set fame 11000'
+09/06/2025 14:07:01: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') set property 'fame' of 0x39E "Kerry" ('Kerry') to '11000'
+09/06/2025 14:07:26: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'set karma  -10000'
+09/06/2025 14:07:27: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') set property 'karma' of 0x39E "Kerry" ('Kerry') to '-10000'
+##############################
+Log started on 09/06/2025 17:11:29
+
+09/06/2025 17:11:48: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'kill '
+09/06/2025 17:11:49: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') killing 0x3DE "tester" ('tester')
+09/06/2025 17:12:07: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'admin '
+##############################
+Log started on 09/06/2025 17:27:38
+
+09/06/2025 17:27:54: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'get '
+09/06/2025 17:27:58: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'admin '
+09/06/2025 17:28:02: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'kill '
+09/06/2025 17:28:03: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') killing 0x3DE "tester" ('tester')

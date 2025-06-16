@@ -1,0 +1,26 @@
+##############################
+Log started on 16/05/2025 16:21:07
+
+16/05/2025 16:21:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill magery 50'
+16/05/2025 16:21:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Magery.Base' of 0x39E "FDDSDASAD" ('Kerry') to '50'
+16/05/2025 16:22:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill magery 70'
+16/05/2025 16:22:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Magery.Base' of 0x39E "FDDSDASAD" ('Kerry') to '70'
+16/05/2025 16:23:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set mana 12'
+16/05/2025 16:23:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'mana' of 0x39E "FDDSDASAD" ('Kerry') to '12'
+16/05/2025 16:24:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+16/05/2025 17:05:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go '
+16/05/2025 17:07:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go '
+16/05/2025 17:08:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill magery 100'
+16/05/2025 17:08:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Magery.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+16/05/2025 17:08:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go '
+16/05/2025 17:13:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+16/05/2025 17:18:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go '
+16/05/2025 17:20:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go '
+16/05/2025 17:20:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go '
+16/05/2025 17:20:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go '
+##############################
+Log started on 16/05/2025 17:48:06
+
+16/05/2025 17:48:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go '
+16/05/2025 17:48:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go '
+16/05/2025 17:52:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'admin '

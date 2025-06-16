@@ -1,0 +1,420 @@
+##############################
+Log started on 11/04/2025 10:52:18
+
+##############################
+Log started on 11/04/2025 10:56:50
+
+##############################
+Log started on 11/04/2025 10:57:44
+
+11/04/2025 10:58:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add doublert'
+11/04/2025 10:59:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add doublet'
+11/04/2025 10:59:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 579, 0) in Felucca: "doublet"
+11/04/2025 10:59:01: 127.0.0.1: Serials: 0x40001040; 
+11/04/2025 10:59:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 10:59:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add shirt'
+11/04/2025 10:59:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 579, 0) in Felucca: "shirt"
+11/04/2025 10:59:29: 127.0.0.1: Serials: 0x40001041; 
+11/04/2025 10:59:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 10:59:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add fancyshirt'
+11/04/2025 10:59:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 575, 0) in Felucca: "fancyshirt"
+11/04/2025 10:59:58: 127.0.0.1: Serials: 0x4000104A; 
+11/04/2025 10:59:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:00:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add runi'
+11/04/2025 11:00:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add tunic'
+11/04/2025 11:00:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 575, 0) in Felucca: "tunic"
+11/04/2025 11:00:20: 127.0.0.1: Serials: 0x4000116E; 
+11/04/2025 11:00:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:00:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add surcouat'
+11/04/2025 11:00:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add surcoat'
+11/04/2025 11:00:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 576, 0) in Felucca: "surcoat"
+11/04/2025 11:00:44: 127.0.0.1: Serials: 0x40001253; 
+11/04/2025 11:00:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:01:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add plaindress'
+11/04/2025 11:01:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 572, 0) in Felucca: "plaindress"
+11/04/2025 11:01:03: 127.0.0.1: Serials: 0x40001254; 
+11/04/2025 11:01:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:01:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add fancydress'
+11/04/2025 11:01:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 573, 0) in Felucca: "fancydress"
+11/04/2025 11:01:19: 127.0.0.1: Serials: 0x40001255; 
+11/04/2025 11:01:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:01:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add cloak'
+11/04/2025 11:01:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 575, 0) in Felucca: "cloak"
+11/04/2025 11:01:35: 127.0.0.1: Serials: 0x40001258; 
+11/04/2025 11:01:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:01:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:01:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add robe'
+11/04/2025 11:01:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 573, 0) in Felucca: "robe"
+11/04/2025 11:01:57: 127.0.0.1: Serials: 0x4000125A; 
+11/04/2025 11:01:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:02:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add jestersuite'
+11/04/2025 11:02:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add jestersuite'
+11/04/2025 11:02:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add jestersuite'
+11/04/2025 11:02:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 567, 0) in Felucca: "JesterSuit"
+11/04/2025 11:02:39: 127.0.0.1: Serials: 0x4000125E; 
+11/04/2025 11:02:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:03:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add shortpants'
+11/04/2025 11:03:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2513, 570, 0) in Felucca: "shortpants"
+11/04/2025 11:03:05: 127.0.0.1: Serials: 0x40001260; 
+11/04/2025 11:03:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:03:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add longpants'
+11/04/2025 11:03:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 569, 0) in Felucca: "longpants"
+11/04/2025 11:03:42: 127.0.0.1: Serials: 0x40001261; 
+11/04/2025 11:03:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:04:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add kilt'
+11/04/2025 11:04:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 567, 0) in Felucca: "kilt"
+11/04/2025 11:04:05: 127.0.0.1: Serials: 0x40001264; 
+11/04/2025 11:04:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:04:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add skirt'
+11/04/2025 11:04:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 565, 0) in Felucca: "skirt"
+11/04/2025 11:04:22: 127.0.0.1: Serials: 0x40001265; 
+11/04/2025 11:04:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:04:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add skullcap'
+11/04/2025 11:04:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 552, 0) in Felucca: "skullcap"
+11/04/2025 11:04:45: 127.0.0.1: Serials: 0x40001333; 
+11/04/2025 11:04:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:05:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add bandana'
+11/04/2025 11:05:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 553, 0) in Felucca: "bandana"
+11/04/2025 11:05:02: 127.0.0.1: Serials: 0x4000137E; 
+11/04/2025 11:05:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:05:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:05:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:05:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:05:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add floppyhat'
+11/04/2025 11:05:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 550, 0) in Felucca: "floppyhat"
+11/04/2025 11:05:38: 127.0.0.1: Serials: 0x40001387; 
+11/04/2025 11:05:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:05:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add cap'
+11/04/2025 11:05:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2513, 555, 0) in Felucca: "cap"
+11/04/2025 11:05:56: 127.0.0.1: Serials: 0x40001388; 
+11/04/2025 11:05:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:06:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add widebrimhat'
+11/04/2025 11:06:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2513, 548, 0) in Felucca: "widebrimhat"
+11/04/2025 11:06:22: 127.0.0.1: Serials: 0x40001389; 
+11/04/2025 11:06:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:06:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add strawhat'
+11/04/2025 11:06:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 545, 0) in Felucca: "strawhat"
+11/04/2025 11:06:42: 127.0.0.1: Serials: 0x40001390; 
+11/04/2025 11:06:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:06:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add tallstrawhat'
+11/04/2025 11:06:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2513, 544, 0) in Felucca: "tallstrawhat"
+11/04/2025 11:06:58: 127.0.0.1: Serials: 0x4000146B; 
+11/04/2025 11:06:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:07:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add wizardhat'
+11/04/2025 11:07:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add wizardhat'
+11/04/2025 11:07:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 540, 0) in Felucca: "WizardsHat"
+11/04/2025 11:07:31: 127.0.0.1: Serials: 0x4000146C; 
+11/04/2025 11:07:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:08:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add bonet'
+11/04/2025 11:08:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add bonet'
+11/04/2025 11:08:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add bonnet'
+11/04/2025 11:08:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2512, 543, 0) in Felucca: "bonnet"
+11/04/2025 11:08:31: 127.0.0.1: Serials: 0x400015A3; 
+11/04/2025 11:08:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:08:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add featheredhat'
+11/04/2025 11:08:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 540, 0) in Felucca: "featheredhat"
+11/04/2025 11:08:52: 127.0.0.1: Serials: 0x400015A4; 
+11/04/2025 11:08:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:09:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add tricornehat'
+11/04/2025 11:09:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 547, 0) in Felucca: "tricornehat"
+11/04/2025 11:09:15: 127.0.0.1: Serials: 0x400015A5; 
+11/04/2025 11:09:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:09:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add jesterhat'
+11/04/2025 11:09:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 544, 0) in Felucca: "jesterhat"
+11/04/2025 11:09:37: 127.0.0.1: Serials: 0x400015A6; 
+11/04/2025 11:09:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:10:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add bodyhash'
+11/04/2025 11:10:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add bodysash'
+11/04/2025 11:10:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 559, 0) in Felucca: "bodysash"
+11/04/2025 11:10:41: 127.0.0.1: Serials: 0x400015A7; 
+11/04/2025 11:10:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:10:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:10:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:11:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add halfapron'
+11/04/2025 11:11:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 559, 0) in Felucca: "halfapron"
+11/04/2025 11:11:05: 127.0.0.1: Serials: 0x400015A8; 
+11/04/2025 11:11:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:11:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add fullapron'
+11/04/2025 11:11:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2512, 559, 0) in Felucca: "fullapron"
+11/04/2025 11:11:24: 127.0.0.1: Serials: 0x400015A9; 
+11/04/2025 11:11:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:11:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add leathergorget'
+11/04/2025 11:11:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2521, 564, 0) in Felucca: "leathergorget"
+11/04/2025 11:11:51: 127.0.0.1: Serials: 0x40001887; 
+11/04/2025 11:11:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add leathercap'
+11/04/2025 11:11:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2522, 564, 0) in Felucca: "leathercap"
+11/04/2025 11:11:59: 127.0.0.1: Serials: 0x40001888; 
+11/04/2025 11:12:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add leathergloves'
+11/04/2025 11:12:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2523, 564, 0) in Felucca: "leathergloves"
+11/04/2025 11:12:06: 127.0.0.1: Serials: 0x40001A47; 
+11/04/2025 11:12:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add leatherarms'
+11/04/2025 11:12:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2524, 564, 0) in Felucca: "leatherarms"
+11/04/2025 11:12:13: 127.0.0.1: Serials: 0x40001A4B; 
+11/04/2025 11:12:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add leatherleg'
+11/04/2025 11:12:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add leatherlegs'
+11/04/2025 11:12:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2525, 564, 0) in Felucca: "leatherlegs"
+11/04/2025 11:12:24: 127.0.0.1: Serials: 0x40001B91; 
+11/04/2025 11:12:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add leatherchest'
+11/04/2025 11:12:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2526, 564, 0) in Felucca: "leatherchest"
+11/04/2025 11:12:30: 127.0.0.1: Serials: 0x40001C7E; 
+11/04/2025 11:12:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:12:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:13:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:13:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:14:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:14:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:14:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:15:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add studdedgorget'
+11/04/2025 11:15:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 559, 0) in Felucca: "studdedgorget"
+11/04/2025 11:15:05: 127.0.0.1: Serials: 0x40001C7F; 
+11/04/2025 11:15:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add studdedgloves'
+11/04/2025 11:15:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 559, 0) in Felucca: "studdedgloves"
+11/04/2025 11:15:23: 127.0.0.1: Serials: 0x40001C80; 
+11/04/2025 11:15:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add studdedarms'
+11/04/2025 11:15:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2520, 559, 0) in Felucca: "studdedarms"
+11/04/2025 11:15:29: 127.0.0.1: Serials: 0x40001C81; 
+11/04/2025 11:15:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add studdedlegs'
+11/04/2025 11:15:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2521, 559, 0) in Felucca: "studdedlegs"
+11/04/2025 11:15:35: 127.0.0.1: Serials: 0x40001C82; 
+11/04/2025 11:15:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add studdedchest'
+11/04/2025 11:15:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2522, 559, 0) in Felucca: "studdedchest"
+11/04/2025 11:15:39: 127.0.0.1: Serials: 0x40001C83; 
+11/04/2025 11:15:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add studdedchesd'
+11/04/2025 11:15:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 557, 0) in Felucca: "FemaleStuddedChest"
+11/04/2025 11:15:53: 127.0.0.1: Serials: 0x40001E31; 
+11/04/2025 11:16:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2520, 556, 0) in Felucca: "StuddedDo"
+11/04/2025 11:16:06: 127.0.0.1: Serials: 0x4001A0CD; 
+11/04/2025 11:16:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:16:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:16:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:16:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:17:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:17:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add studdedcap'
+##############################
+Log started on 11/04/2025 11:17:43
+
+##############################
+Log started on 11/04/2025 11:21:46
+
+11/04/2025 11:22:07: 127.0.0.1: Crafting 0x40001040 (Doublet) with craft system DefTailoring
+11/04/2025 11:22:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set skills tailoring 100'
+11/04/2025 11:22:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill tailoring 100'
+11/04/2025 11:22:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Tailoring.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+11/04/2025 11:24:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add sandals'
+11/04/2025 11:24:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 581, 0) in Felucca: "sandals"
+11/04/2025 11:24:04: 127.0.0.1: Serials: 0x40001041; 
+11/04/2025 11:24:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add shoes'
+11/04/2025 11:24:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 580, 0) in Felucca: "shoes"
+11/04/2025 11:24:11: 127.0.0.1: Serials: 0x4000104A; 
+11/04/2025 11:24:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add boots'
+11/04/2025 11:24:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 579, 0) in Felucca: "boots"
+11/04/2025 11:24:17: 127.0.0.1: Serials: 0x4000117A; 
+11/04/2025 11:24:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add thigboots'
+11/04/2025 11:24:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add thighboot'
+11/04/2025 11:24:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 578, 0) in Felucca: "ThighBoots"
+11/04/2025 11:24:41: 127.0.0.1: Serials: 0x4000128D; 
+11/04/2025 11:24:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:24:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:24:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:25:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:25:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+##############################
+Log started on 11/04/2025 11:35:58
+
+11/04/2025 11:36:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add bag'
+11/04/2025 11:36:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 581, 0) in Felucca: "bag"
+11/04/2025 11:36:10: 127.0.0.1: Serials: 0x40001040; 
+11/04/2025 11:36:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add smallbag'
+11/04/2025 11:36:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 580, 0) in Felucca: "SmallBagBall"
+11/04/2025 11:36:17: 127.0.0.1: Serials: 0x40001041; 
+11/04/2025 11:36:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 579, 0) in Felucca: "AlchemyBag"
+11/04/2025 11:36:26: 127.0.0.1: Serials: 0x4000104A; 
+11/04/2025 11:37:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:37:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add backpack'
+11/04/2025 11:37:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 582, 0) in Felucca: "backpack"
+11/04/2025 11:37:09: 127.0.0.1: Serials: 0x40001084; 
+11/04/2025 11:37:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add pounch'
+11/04/2025 11:37:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 581, 0) in Felucca: "Pouch"
+11/04/2025 11:37:19: 127.0.0.1: Serials: 0x40001085; 
+11/04/2025 11:38:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:38:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:38:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 11:39:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add largeballbag'
+11/04/2025 11:39:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 575, 0) in Felucca: "LargeBagBall"
+11/04/2025 11:39:40: 127.0.0.1: Serials: 0x400012E5; 
+11/04/2025 11:40:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+##############################
+Log started on 11/04/2025 11:56:56
+
+11/04/2025 11:57:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add leather'
+11/04/2025 11:57:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 582, 0) in Felucca: "leather"
+11/04/2025 11:57:23: 127.0.0.1: Serials: 0x40001040; 
+11/04/2025 11:57:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 1000'
+11/04/2025 11:57:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x40001040 (Leather) to '1000'
+11/04/2025 11:57:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill tailoring 100'
+11/04/2025 11:57:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Tailoring.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+11/04/2025 11:59:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add Pounch'
+11/04/2025 12:00:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add pounch'
+11/04/2025 12:00:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add pouch'
+11/04/2025 12:00:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 583, 0) in Felucca: "pouch"
+11/04/2025 12:00:04: 127.0.0.1: Serials: 0x40001234; 
+11/04/2025 12:00:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+##############################
+Log started on 11/04/2025 12:03:04
+
+11/04/2025 12:03:31: 127.0.0.1: Crafting 0x40000FFE (Backpack) with craft system DefTailoring
+##############################
+Log started on 11/04/2025 12:08:58
+
+##############################
+Log started on 11/04/2025 12:11:41
+
+##############################
+Log started on 11/04/2025 12:36:24
+
+11/04/2025 12:37:38: 127.0.0.1: Crafting 0x4000108E (FletcherTools) with craft system DefClassictTinkering
+11/04/2025 12:38:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+11/04/2025 12:38:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add knife'
+11/04/2025 12:38:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 578, 0) in Felucca: "knife"
+11/04/2025 12:38:47: 127.0.0.1: Serials: 0x40001151; 
+11/04/2025 12:39:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add dagger'
+11/04/2025 12:39:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 578, 0) in Felucca: "dagger"
+11/04/2025 12:39:09: 127.0.0.1: Serials: 0x40001153; 
+11/04/2025 13:52:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 13:52:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add baselog'
+11/04/2025 13:52:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 584, 0) in Felucca: "baselog"
+11/04/2025 13:52:56: 127.0.0.1: Serials: 0x4001A601; 
+11/04/2025 13:52:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add log'
+11/04/2025 13:52:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 583, 0) in Felucca: "log"
+11/04/2025 13:52:59: 127.0.0.1: Serials: 0x4001A602; 
+11/04/2025 13:53:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 13:53:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 13:53:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 13:53:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 13:53:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 13:54:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add board'
+11/04/2025 13:54:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 581, 0) in Felucca: "board"
+11/04/2025 13:54:04: 127.0.0.1: Serials: 0x4001A645; 
+11/04/2025 13:54:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 13:57:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add kindle'
+11/04/2025 13:57:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add kindling'
+11/04/2025 13:57:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 579, 0) in Felucca: "kindling"
+11/04/2025 13:57:26: 127.0.0.1: Serials: 0x4001A6AD; 
+11/04/2025 13:57:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 13:58:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add shaft'
+11/04/2025 13:58:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 579, 0) in Felucca: "shaft"
+11/04/2025 13:58:45: 127.0.0.1: Serials: 0x4001A6F7; 
+11/04/2025 13:58:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 13:59:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add arrow'
+11/04/2025 13:59:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 578, 0) in Felucca: "arrow"
+11/04/2025 13:59:22: 127.0.0.1: Serials: 0x4001A6F8; 
+11/04/2025 13:59:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 14:00:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add bow'
+11/04/2025 14:00:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 587, 0) in Felucca: "bow"
+11/04/2025 14:00:31: 127.0.0.1: Serials: 0x4001A6F9; 
+11/04/2025 14:00:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 14:00:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 14:01:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add heavycrossbow'
+11/04/2025 14:01:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 586, 0) in Felucca: "heavycrossbow"
+11/04/2025 14:01:02: 127.0.0.1: Serials: 0x4001A6FA; 
+11/04/2025 14:01:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 14:01:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add crossbow'
+11/04/2025 14:01:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 585, 0) in Felucca: "crossbow"
+11/04/2025 14:01:23: 127.0.0.1: Serials: 0x4001A6FB; 
+11/04/2025 14:01:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 14:10:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add bolt'
+11/04/2025 14:10:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 587, 0) in Felucca: "bolt"
+11/04/2025 14:10:25: 127.0.0.1: Serials: 0x4001A79E; 
+11/04/2025 14:10:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+##############################
+Log started on 11/04/2025 14:19:49
+
+11/04/2025 14:20:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add board'
+11/04/2025 14:20:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 584, 0) in Felucca: "board"
+11/04/2025 14:20:26: 127.0.0.1: Serials: 0x4000106E; 
+11/04/2025 14:20:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 1000'
+11/04/2025 14:20:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x4000106E (Board) to '1000'
+##############################
+Log started on 11/04/2025 14:22:46
+
+11/04/2025 14:23:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill bowercraft 100'
+11/04/2025 14:23:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill fletching 100'
+11/04/2025 14:23:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Fletching.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+##############################
+Log started on 11/04/2025 14:25:36
+
+##############################
+Log started on 11/04/2025 14:26:05
+
+11/04/2025 14:26:18: 127.0.0.1: Crafting 0x4000116E (Shaft) with craft system DefClassicBowFletching
+11/04/2025 14:26:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add board'
+11/04/2025 14:26:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 580, 0) in Felucca: "board"
+11/04/2025 14:26:48: 127.0.0.1: Serials: 0x40001172; 
+11/04/2025 14:26:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 1000'
+11/04/2025 14:26:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x40001172 (Board) to '1000'
+11/04/2025 14:27:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add geathers'
+11/04/2025 14:27:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add feathers'
+11/04/2025 14:27:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add feather'
+11/04/2025 14:27:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 580, 0) in Felucca: "feather"
+11/04/2025 14:27:35: 127.0.0.1: Serials: 0x40001174; 
+11/04/2025 14:27:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add featherset amount 100'
+11/04/2025 14:27:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 100'
+11/04/2025 14:27:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x40001174 (Feather) to '100'
+11/04/2025 14:28:03: 127.0.0.1: Crafting 0x40001250 (Arrow) with craft system DefClassicBowFletching
+11/04/2025 14:28:37: 127.0.0.1: Crafting 0x40001251 (Bow) with craft system DefClassicBowFletching
+11/04/2025 14:28:49: 127.0.0.1: Crafting 0x40001252 (Bow) with craft system DefClassicBowFletching
+11/04/2025 14:29:05: 127.0.0.1: Crafting 0x40001253 (Crossbow) with craft system DefClassicBowFletching
+11/04/2025 14:30:14: 127.0.0.1: Crafting 0x40001254 (MetalChest) with craft system DefClassictTinkering
+11/04/2025 14:30:36: 127.0.0.1: Crafting 0x40001258 (MetalChest) with craft system DefClassictTinkering
+11/04/2025 14:30:41: 127.0.0.1: Crafting 0x4000125E (MetalBox) with craft system DefClassictTinkering
+11/04/2025 14:30:44: 127.0.0.1: Crafting 0x40001261 (Hatchet) with craft system DefClassictTinkering
+##############################
+Log started on 11/04/2025 14:32:14
+
+11/04/2025 14:32:29: 127.0.0.1: Crafting 0x4000116E (LongPants) with craft system DefClassicTailoring
+11/04/2025 14:34:39: 127.0.0.1: Crafting 0x40001250 (FloppyHat) with craft system DefClassicTailoring
+11/04/2025 14:38:59: 127.0.0.1: Crafting 0x40001251 (Bow) with craft system DefClassicBowFletching
+##############################
+Log started on 11/04/2025 14:48:42
+
+11/04/2025 14:48:49: 127.0.0.1: Crafting 0x4000116E (Bow) with craft system DefClassicBowFletching
+11/04/2025 14:49:11: 127.0.0.1: Crafting 0x40001174 (LeatherLegs) with craft system DefClassicTailoring
+##############################
+Log started on 11/04/2025 14:50:00
+
+11/04/2025 14:50:10: 127.0.0.1: Crafting 0x4000116E (Bow) with craft system DefClassicBowFletching
+##############################
+Log started on 11/04/2025 15:06:51
+
+11/04/2025 15:07:13: 127.0.0.1: Crafting 0x4000116E (Bow) with craft system DefClassicBowFletching
+##############################
+Log started on 11/04/2025 15:15:50
+
+##############################
+Log started on 11/04/2025 16:15:46
+
+11/04/2025 16:16:45: 127.0.0.1: Crafting 0x4000116E (Bow) with craft system DefClassicBowFletching
+11/04/2025 16:20:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+11/04/2025 16:20:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'UsesRemaining' of 0x4000108E (FletcherTools) to '0'
+11/04/2025 16:20:28: 127.0.0.1: Crafting 0x40001252 (Bow) with craft system DefClassicBowFletching
+11/04/2025 16:20:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add fletchingtool'
+11/04/2025 16:21:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 580, 0) in Felucca: "FletcherTools"
+11/04/2025 16:21:07: 127.0.0.1: Serials: 0x40001253; 
+11/04/2025 16:21:15: 127.0.0.1: Crafting 0x40001254 (Bow) with craft system DefClassicBowFletching
+11/04/2025 16:21:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add feather'
+11/04/2025 16:21:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 580, 0) in Felucca: "feather"
+11/04/2025 16:21:23: 127.0.0.1: Serials: 0x40001255; 
+11/04/2025 16:21:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 100'
+11/04/2025 16:21:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x40001255 (Feather) to '100'
+11/04/2025 16:21:40: 127.0.0.1: Crafting 0x40001258 (Shaft) with craft system DefClassicBowFletching
+11/04/2025 16:21:58: 127.0.0.1: Crafting 0x4000125A (Arrow) with craft system DefClassicBowFletching
+11/04/2025 16:22:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add board'
+11/04/2025 16:22:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 579, 0) in Felucca: "board"
+11/04/2025 16:22:07: 127.0.0.1: Serials: 0x4000125E; 
+11/04/2025 16:22:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 1000'
+11/04/2025 16:22:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x4000125E (Board) to '1000'
+11/04/2025 16:22:18: 127.0.0.1: Crafting 0x40001260 (Crossbow) with craft system DefClassicBowFletching
+##############################
+Log started on 11/04/2025 16:27:21
+
+11/04/2025 16:27:32: 127.0.0.1: Crafting 0x4000116E (Bow) with craft system DefClassicBowFletching

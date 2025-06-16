@@ -1,0 +1,425 @@
+##############################
+Log started on 24/04/2025 10:10:33
+
+24/04/2025 10:11:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+24/04/2025 10:14:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 1000'
+24/04/2025 10:14:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x4001A3EB (Arrow) to '1000'
+24/04/2025 10:16:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+24/04/2025 10:21:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 10:21:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3A5 "the Collector of Souls" (no account)
+24/04/2025 10:22:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add treasuremap 7 felucca'
+24/04/2025 10:22:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2470, 478, 15) in Felucca: "treasuremap" "7" "felucca"
+24/04/2025 10:22:26: 127.0.0.1: Serials: 0x4001A152; 
+24/04/2025 10:22:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+24/04/2025 10:22:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go 1446 2348'
+24/04/2025 10:23:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+24/04/2025 10:23:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go 1446 2343'
+24/04/2025 10:24:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 10:24:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x498 "a frost dragon" (no account)
+24/04/2025 10:24:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 10:24:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x495 "a frost dragon" (no account)
+24/04/2025 10:24:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 10:24:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 10:24:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x497 "a frost dragon" (no account)
+24/04/2025 10:24:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 10:24:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x496 "a frost dragon" (no account)
+24/04/2025 10:24:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 10:24:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 10:24:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A502 (Corpse)
+24/04/2025 10:24:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 10:24:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A562 (Corpse)
+24/04/2025 10:26:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 10:26:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x4A1 "a poison elemental" (no account)
+24/04/2025 10:26:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 10:26:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x499 "a blood elemental" (no account)
+24/04/2025 10:26:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 10:26:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x4A2 "a poison elemental" (no account)
+24/04/2025 10:26:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 10:26:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x4A0 "a greater dragon" (no account)
+24/04/2025 10:26:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 10:26:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 10:26:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x49A "a poison elemental" (no account)
+24/04/2025 10:42:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 10:42:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A415 (TreasureMapChest)
+24/04/2025 10:42:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add balron'
+24/04/2025 10:42:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (1442, 2336, 0) in Felucca: "balron"
+24/04/2025 10:42:37: 127.0.0.1: Serials: 0x509; 
+24/04/2025 10:42:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill archery 20'
+24/04/2025 10:42:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Archery.Base' of 0x39E "FDDSDASAD" ('Kerry') to '20'
+24/04/2025 10:43:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill tinkering 0'
+24/04/2025 10:43:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Tinkering.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+24/04/2025 10:43:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill mining 0'
+24/04/2025 10:43:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Mining.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+24/04/2025 10:43:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill cooking 0'
+24/04/2025 10:43:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Cooking.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+24/04/2025 10:43:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill cblacksmith 0'
+24/04/2025 10:43:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill cblacksmith 0'
+24/04/2025 10:43:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill cblacksmithy 0'
+24/04/2025 10:43:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill cblacksmithy 0'
+24/04/2025 10:43:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill alchemy 0'
+24/04/2025 10:43:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Alchemy.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+24/04/2025 10:44:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmithy 0'
+24/04/2025 10:44:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 0'
+24/04/2025 10:44:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+24/04/2025 10:44:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill evaint 0'
+24/04/2025 10:44:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill inscribe 0'
+24/04/2025 10:44:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Inscribe.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+24/04/2025 10:44:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill cartography 0'
+24/04/2025 10:44:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Cartography.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+24/04/2025 10:44:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill Bower 0'
+24/04/2025 10:44:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill fletching 0'
+24/04/2025 10:44:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Fletching.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+24/04/2025 10:45:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill tailotin 0'
+24/04/2025 10:45:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill tailoring 0'
+24/04/2025 10:45:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Tailoring.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+24/04/2025 10:45:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 10:45:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x509 "the Slayer" (no account)
+24/04/2025 10:45:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 10:45:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A9BC (Corpse)
+24/04/2025 10:46:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+##############################
+Log started on 24/04/2025 10:46:59
+
+24/04/2025 10:50:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 10:50:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x43F "the Slayer" (no account)
+24/04/2025 10:50:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 10:50:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x3A5 "the Collector of Souls" (no account)
+24/04/2025 10:50:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add fish'
+24/04/2025 10:50:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add fishd'
+24/04/2025 10:50:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add fishpole'
+24/04/2025 10:51:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add fishe'
+24/04/2025 10:51:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2452, 560, 0) in Felucca: "FishingPole"
+24/04/2025 10:51:25: 127.0.0.1: Serials: 0x40001593; 
+24/04/2025 10:51:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill fishing 100'
+24/04/2025 10:51:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Fishing.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+24/04/2025 10:53:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+24/04/2025 10:59:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add bigfish'
+24/04/2025 10:59:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2331, 388, -5) in Felucca: "bigfish"
+24/04/2025 10:59:34: 127.0.0.1: Serials: 0x4001A28E; 
+24/04/2025 10:59:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add commonfish'
+24/04/2025 11:00:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add fish'
+24/04/2025 11:00:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2329, 388, -5) in Felucca: "fish"
+24/04/2025 11:00:47: 127.0.0.1: Serials: 0x4001A290; 
+24/04/2025 11:03:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add specialfishingnet'
+24/04/2025 11:03:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2331, 388, -5) in Felucca: "specialfishingnet"
+24/04/2025 11:03:24: 127.0.0.1: Serials: 0x4001A2C4; 
+24/04/2025 11:03:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add specialfishingnet'
+24/04/2025 11:03:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:03:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x45C "a deep sea serpent" (no account)
+24/04/2025 11:03:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:03:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x45B "a sea serpent" (no account)
+24/04/2025 11:03:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:03:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x459 "a deep sea serpent" (no account)
+24/04/2025 11:03:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:04:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x45A "a sea serpent" (no account)
+24/04/2025 11:04:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+24/04/2025 11:04:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:04:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x465 "a kraken" (no account)
+24/04/2025 11:04:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:04:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x468 "a kraken" (no account)
+24/04/2025 11:04:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:04:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x467 "a water elemental" (no account)
+24/04/2025 11:04:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:04:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x469 "a deep sea serpent" (no account)
+24/04/2025 11:04:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'resurrect '
+24/04/2025 11:04:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') resurrecting 0x39E "FDDSDASAD" ('Kerry')
+24/04/2025 11:04:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:05:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x464 "a deep sea serpent" (no account)
+24/04/2025 11:05:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:05:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x463 "a sea serpent" (no account)
+24/04/2025 11:05:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:05:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x462 "a kraken" (no account)
+24/04/2025 11:06:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go 439 7018'
+##############################
+Log started on 24/04/2025 11:08:43
+
+24/04/2025 11:08:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 11:08:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x43F "the Slayer" (no account)
+24/04/2025 11:08:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 11:08:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x3A5 "the Collector of Souls" (no account)
+24/04/2025 11:08:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+24/04/2025 11:09:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add fishingnet'
+24/04/2025 11:09:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2358, 316, -5) in Felucca: "SpecialFishingNet"
+24/04/2025 11:09:16: 127.0.0.1: Serials: 0x400011CB; 
+24/04/2025 11:09:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2360, 316, -5) in Felucca: "SpecialFishingNet"
+24/04/2025 11:09:17: 127.0.0.1: Serials: 0x400011CE; 
+24/04/2025 11:09:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:09:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3A9 "a deep sea serpent" (no account)
+24/04/2025 11:09:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:09:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3A7 "a kraken" (no account)
+24/04/2025 11:09:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:09:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3A5 "a kraken" (no account)
+24/04/2025 11:09:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:09:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3A6 "a sea serpent" (no account)
+24/04/2025 11:09:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'resurrect '
+24/04/2025 11:10:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') resurrecting 0x39E "FDDSDASAD" ('Kerry')
+24/04/2025 11:10:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:10:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3A8 "a kraken" (no account)
+24/04/2025 11:10:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go 3035 17034'
+24/04/2025 11:18:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go 3035 17034'
+24/04/2025 11:18:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go 30 35 S 170 34 W'
+24/04/2025 11:18:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+24/04/2025 11:18:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+24/04/2025 11:18:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+24/04/2025 11:18:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+24/04/2025 11:18:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+24/04/2025 11:18:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+24/04/2025 11:18:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:19:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0xB95 "a kraken" (no account)
+24/04/2025 11:20:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add sexant'
+24/04/2025 11:20:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (4017, 1971, -5) in Felucca: "Sextant"
+24/04/2025 11:20:49: 127.0.0.1: Serials: 0x4001BA24; 
+24/04/2025 11:21:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add fishingpole'
+24/04/2025 11:21:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (4018, 1969, -5) in Felucca: "fishingpole"
+24/04/2025 11:21:29: 127.0.0.1: Serials: 0x4001BA61; 
+24/04/2025 11:21:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill fishing 100'
+24/04/2025 11:21:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Fishing.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+24/04/2025 11:23:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+24/04/2025 11:23:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+24/04/2025 11:23:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+24/04/2025 11:23:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+24/04/2025 11:23:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+24/04/2025 11:24:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 11:24:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:24:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0xBAE "a sea serpent" (no account)
+24/04/2025 11:25:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:25:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0xBAC "a sea serpent" (no account)
+24/04/2025 11:25:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:25:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0xBAB "a deep sea serpent" (no account)
+24/04/2025 11:25:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:25:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0xBB0 "a deep sea serpent" (no account)
+24/04/2025 11:26:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:26:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0xBBD "a sea serpent" (no account)
+24/04/2025 11:34:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add fabled'
+24/04/2025 11:34:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (4017, 1974, -5) in Felucca: "FabledFishingNet"
+24/04/2025 11:34:31: 127.0.0.1: Serials: 0x4001BCE8; 
+24/04/2025 11:34:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:34:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0xBD9 "a sea serpent" (no account)
+24/04/2025 11:34:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:34:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:34:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0xBD4 "a water elemental" (no account)
+24/04/2025 11:34:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:35:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0xBD0 "a sea serpent" (no account)
+24/04/2025 11:35:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:35:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0xBD3 "a deep sea serpent" (no account)
+24/04/2025 11:35:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:35:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0xBCD "a leviathan" (no account)
+24/04/2025 11:35:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:35:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0xBCF "a deep sea serpent" (no account)
+24/04/2025 11:35:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:35:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0xBD1 "a deep sea serpent" (no account)
+24/04/2025 11:35:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 11:35:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0xBD5 "a sea serpent" (no account)
+24/04/2025 11:35:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 12:21:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+24/04/2025 12:21:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+24/04/2025 12:22:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add harp'
+24/04/2025 12:22:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3651, 2599, 0) in Felucca: "harp"
+24/04/2025 12:22:24: 127.0.0.1: Serials: 0x4001C256; 
+24/04/2025 12:22:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 12:22:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001BB7F (MetalGoldenChest)
+24/04/2025 12:22:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 12:22:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001BCEC (Rope)
+24/04/2025 12:22:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 12:22:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001BA62 (ShipwreckedItem)
+24/04/2025 12:22:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 12:22:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001BB79 (ShipwreckedItem)
+24/04/2025 12:22:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 12:22:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001BAE1 (ShipwreckedItem)
+24/04/2025 12:22:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 12:22:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001BB7A (ShipwreckedItem)
+24/04/2025 12:22:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 12:22:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400010AC (CakeMix)
+24/04/2025 12:22:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 12:22:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400010C2 (CookieMix)
+24/04/2025 12:22:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 12:22:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001BAE3 (ShipwreckedItem)
+24/04/2025 12:22:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 12:22:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400013B9 (DrawKnife)
+24/04/2025 12:22:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 12:22:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001231 (Scorp)
+24/04/2025 12:23:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 12:23:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001BB6B (MessageInABottle)
+24/04/2025 12:23:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 12:23:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400011F0 (MessageInABottle)
+24/04/2025 12:23:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 0'
+24/04/2025 12:23:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+24/04/2025 12:23:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith alchemy 0'
+24/04/2025 12:23:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill alchemy 0'
+24/04/2025 12:23:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Alchemy.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+24/04/2025 12:23:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill  fletching 0'
+24/04/2025 12:23:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Fletching.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+24/04/2025 12:23:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill   mining 0'
+24/04/2025 12:23:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Mining.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+24/04/2025 12:23:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill cooking 0'
+24/04/2025 12:23:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Cooking.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+24/04/2025 12:24:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill fishing 0'
+24/04/2025 12:24:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Fishing.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+24/04/2025 12:24:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill tailoring 0'
+24/04/2025 12:24:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Tailoring.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+24/04/2025 12:24:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill tinkering 0'
+24/04/2025 12:24:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Tinkering.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+24/04/2025 12:24:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill archery 0'
+24/04/2025 12:24:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Archery.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+24/04/2025 12:24:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill tectics 0'
+24/04/2025 12:24:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill tectics'
+24/04/2025 12:24:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill tectics 0'
+24/04/2025 12:24:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill tactics 0'
+24/04/2025 12:24:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Tactics.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+24/04/2025 12:24:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill musicanship 100'
+24/04/2025 12:25:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill musicanship 100'
+24/04/2025 12:25:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill musica 100'
+24/04/2025 12:25:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill provocation 100'
+24/04/2025 12:26:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Provocation.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+24/04/2025 12:26:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill Musicianship 100'
+24/04/2025 12:26:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Musicianship.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+24/04/2025 12:26:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add drafon'
+24/04/2025 12:26:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3646, 2616, 0) in Felucca: "Dragon"
+24/04/2025 12:26:47: 127.0.0.1: Serials: 0xCE3; 
+24/04/2025 12:26:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3639, 2617, 0) in Felucca: "Dragon"
+24/04/2025 12:26:48: 127.0.0.1: Serials: 0xCE4; 
+24/04/2025 12:27:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add drafon[setskill peacemaking 100'
+24/04/2025 12:27:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill peacemaking 100'
+24/04/2025 12:27:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Peacemaking.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+24/04/2025 12:28:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add polimo'
+24/04/2025 12:28:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3645, 2613, 0) in Felucca: "PolymorphScroll"
+24/04/2025 12:28:33: 127.0.0.1: Serials: 0x4001C2DF; 
+24/04/2025 12:29:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set rawdex 25'
+24/04/2025 12:29:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'rawdex' of 0x39E "FDDSDASAD" ('Kerry') to '25'
+24/04/2025 12:29:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set raint 100'
+24/04/2025 12:29:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set rawint 100'
+24/04/2025 12:29:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'rawint' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+24/04/2025 12:29:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set mana 100'
+24/04/2025 12:29:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'mana' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+24/04/2025 12:30:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 12:30:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0xCE4 "a dragon" (no account)
+24/04/2025 13:44:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add dragon'
+24/04/2025 13:44:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3635, 2620, 0) in Felucca: "dragon"
+24/04/2025 13:44:36: 127.0.0.1: Serials: 0xD6E; 
+24/04/2025 13:44:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+24/04/2025 13:46:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 13:46:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0xD6E "a dragon" (no account)
+24/04/2025 13:53:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill animallore 100'
+24/04/2025 13:53:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AnimalLore.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+24/04/2025 13:53:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add Dragon'
+24/04/2025 13:53:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3625, 2619, 0) in Felucca: "Dragon"
+24/04/2025 13:53:45: 127.0.0.1: Serials: 0xD84; 
+24/04/2025 13:54:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 13:54:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0xD84 "a dragon" (no account)
+24/04/2025 13:55:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add dragon'
+24/04/2025 13:55:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3613, 2618, 0) in Felucca: "dragon"
+24/04/2025 13:55:01: 127.0.0.1: Serials: 0xD85; 
+24/04/2025 13:55:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+24/04/2025 13:56:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 13:56:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0xD85 "a dragon" (no account)
+24/04/2025 14:01:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD WYRM'
+24/04/2025 14:01:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3616, 2601, 0) in Felucca: "IceWyrm"
+24/04/2025 14:01:53: 127.0.0.1: Serials: 0xD98; 
+24/04/2025 14:02:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3617, 2600, 0) in Felucca: "WhiteWyrm"
+24/04/2025 14:02:01: 127.0.0.1: Serials: 0xDAF; 
+24/04/2025 14:02:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 14:02:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0xD98 "Ice Wyrm" (no account)
+24/04/2025 14:02:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL ANIMALTAMING 100'
+24/04/2025 14:02:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AnimalTaming.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+24/04/2025 14:03:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD GREATER'
+24/04/2025 14:03:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3614, 2611, 0) in Felucca: "GreaterHealScroll"
+24/04/2025 14:03:44: 127.0.0.1: Serials: 0x4001CA1D; 
+24/04/2025 14:03:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 100'
+24/04/2025 14:03:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x4001CA1D (GreaterHealScroll) to '100'
+24/04/2025 14:04:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD PARALYZ'
+24/04/2025 14:04:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3615, 2610, 0) in Felucca: "ParalyzeFieldScroll"
+24/04/2025 14:04:03: 127.0.0.1: Serials: 0x4001CA1E; 
+24/04/2025 14:04:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 100'
+24/04/2025 14:04:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x4001CA1E (ParalyzeFieldScroll) to '100'
+24/04/2025 14:04:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 14:04:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0xDAF "a white wyrm" (no account)
+24/04/2025 14:04:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD WYRM'
+24/04/2025 14:04:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3542, 2562, 20) in Felucca: "WhiteWyrm"
+24/04/2025 14:04:37: 127.0.0.1: Serials: 0xDC8; 
+24/04/2025 14:05:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 14:05:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0xDC8 "a white wyrm" (no account)
+##############################
+Log started on 24/04/2025 14:14:46
+
+24/04/2025 14:14:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD WYRM'
+24/04/2025 14:14:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3529, 2564, 20) in Felucca: "WhiteWyrm"
+24/04/2025 14:14:58: 127.0.0.1: Serials: 0x3A4; 
+24/04/2025 14:17:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 14:20:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 14:20:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x3A4 "a white wyrm" (no account)
+24/04/2025 14:20:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD DRAGON'
+24/04/2025 14:20:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3522, 2563, 20) in Felucca: "DRAGON"
+24/04/2025 14:20:05: 127.0.0.1: Serials: 0x3D5; 
+24/04/2025 14:23:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 14:23:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x3D5 "a dragon" (no account)
+24/04/2025 14:27:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD FIREELEM'
+24/04/2025 14:27:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3508, 2575, 14) in Felucca: "FireElemental"
+24/04/2025 14:27:45: 127.0.0.1: Serials: 0x3F2; 
+24/04/2025 14:27:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 14:27:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x3F2 "a fire elemental" (no account)
+##############################
+Log started on 24/04/2025 14:40:20
+
+##############################
+Log started on 24/04/2025 14:41:13
+
+24/04/2025 14:41:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add treasuremap 7 felucca'
+24/04/2025 14:41:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3533, 2561, 16) in Felucca: "treasuremap" "7" "felucca"
+24/04/2025 14:41:23: 127.0.0.1: Serials: 0x40000F7D; 
+24/04/2025 14:41:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'admin '
+24/04/2025 14:41:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+24/04/2025 14:41:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go 1105 2014'
+24/04/2025 14:42:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 14:42:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D1 "a blood elemental" (no account)
+24/04/2025 14:42:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 14:42:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D0 "a cold drake" (no account)
+24/04/2025 14:42:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 14:42:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3CF "a poison elemental" (no account)
+24/04/2025 14:42:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 14:42:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x39F "a fire steed" (no account)
+24/04/2025 14:42:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 14:42:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3CE "a cold drake" (no account)
+24/04/2025 14:43:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 14:43:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001318 (Corpse)
+24/04/2025 14:43:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+24/04/2025 14:43:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x3D8 "a greater dragon" (no account)
+24/04/2025 14:43:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill itemidentification 100'
+24/04/2025 14:44:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill itemidentification 100'
+24/04/2025 14:44:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set skill ItemIdentification 100'
+24/04/2025 14:44:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set skill ItemIdentification 100'
+24/04/2025 14:45:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set skill ItemIdentification 100'
+24/04/2025 14:45:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set skill Itemid 100'
+24/04/2025 14:45:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set skill Itemidentiphy 100'
+24/04/2025 14:45:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set skill ItemIdentification 100'
+##############################
+Log started on 24/04/2025 16:39:04
+
+24/04/2025 16:40:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET ITEMID 80'
+24/04/2025 16:40:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET SKILL ITEMID 100'
+24/04/2025 16:41:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET SKILL ITEMID 100'
+24/04/2025 16:41:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET SKILL ITEMIDENTIFICATION 100'
+24/04/2025 16:42:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET SKILL ITEM IDENTIFICATION 100'
+24/04/2025 16:42:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET SKILL ITEM 100'
+24/04/2025 16:42:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set skill "Item Identification" 100.0'
+24/04/2025 16:43:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET SKILL ITEMID 100'
+24/04/2025 16:43:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set skill ItemID 80.0'
+24/04/2025 16:44:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setSKILL ITEMID 100'
+24/04/2025 16:44:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'ItemID.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+24/04/2025 16:57:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add treasuremap 7 felucca'
+24/04/2025 16:57:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3537, 2566, 20) in Felucca: "treasuremap" "7" "felucca"
+24/04/2025 16:57:41: 127.0.0.1: Serials: 0x40001302; 
+24/04/2025 16:57:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+24/04/2025 16:57:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go 1093 896'
+24/04/2025 16:58:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 16:58:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x415 "a greater dragon" (no account)
+24/04/2025 16:58:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 16:58:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x414 "a blood elemental" (no account)
+24/04/2025 16:58:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 16:58:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x413 "a greater dragon" (no account)
+24/04/2025 16:58:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 16:58:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x412 "a blood elemental" (no account)
+24/04/2025 16:58:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 16:58:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x39F "a fire steed" (no account)
+24/04/2025 16:59:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+24/04/2025 16:59:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x431 "a blood elemental" (no account)
+24/04/2025 16:59:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'admin '

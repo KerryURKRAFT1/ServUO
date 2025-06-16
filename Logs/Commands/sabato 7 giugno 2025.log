@@ -1,0 +1,97 @@
+##############################
+Log started on 07/06/2025 09:43:49
+
+07/06/2025 09:44:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'npcfinder '
+07/06/2025 09:47:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'npcfinder '
+07/06/2025 10:19:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go despice'
+07/06/2025 10:19:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'createworld '
+07/06/2025 10:19:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go '
+07/06/2025 10:19:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go covetus'
+07/06/2025 10:19:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go covetus'
+07/06/2025 10:19:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go '
+07/06/2025 10:20:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go '
+07/06/2025 10:22:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go '
+07/06/2025 10:23:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go magincia'
+07/06/2025 10:23:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add kaos'
+07/06/2025 10:23:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3715, 2219, 20) in Felucca: "ChaosShield"
+07/06/2025 10:23:31: 127.0.0.1: Serials: 0x4000052C; 
+07/06/2025 10:23:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add kaos'
+07/06/2025 10:24:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3715, 2219, 20) in Felucca: "VesperChaosShield"
+07/06/2025 10:24:11: 127.0.0.1: Serials: 0x4000052D; 
+07/06/2025 10:24:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add kaos'
+07/06/2025 10:24:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3715, 2217, 20) in Felucca: "DardensTunic"
+07/06/2025 10:24:28: 127.0.0.1: Serials: 0x4000052E; 
+07/06/2025 10:24:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add kaos'
+07/06/2025 10:24:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3714, 2217, 20) in Felucca: "GrizzleTunic"
+07/06/2025 10:24:47: 127.0.0.1: Serials: 0x4000052F; 
+07/06/2025 10:24:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3715, 2216, 20) in Felucca: "TunicOfFire"
+07/06/2025 10:24:55: 127.0.0.1: Serials: 0x40000530; 
+07/06/2025 10:24:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3715, 2218, 20) in Felucca: "VirtuososTunic"
+07/06/2025 10:24:57: 127.0.0.1: Serials: 0x40000531; 
+07/06/2025 10:25:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3715, 2220, 20) in Felucca: "TunicBearingTheCrestOfBlackthorn"
+07/06/2025 10:25:03: 127.0.0.1: Serials: 0x40000532; 
+07/06/2025 10:25:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3713, 2221, 20) in Felucca: "StuddedTunicArtifact"
+07/06/2025 10:25:09: 127.0.0.1: Serials: 0x40000533; 
+07/06/2025 10:25:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+07/06/2025 10:25:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A72B (Robe)
+07/06/2025 10:25:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+07/06/2025 10:25:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000012C (Cloth)
+07/06/2025 10:25:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+07/06/2025 10:25:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000052D (VesperChaosShield)
+07/06/2025 10:25:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+07/06/2025 10:25:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001AC22 (Cotton)
+07/06/2025 10:25:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+07/06/2025 10:25:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+07/06/2025 10:25:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000076D (BlankMap)
+07/06/2025 10:25:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+07/06/2025 10:25:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000052F (GrizzleTunic)
+07/06/2025 10:25:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+07/06/2025 10:25:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000533 (StuddedTunicArtifact)
+07/06/2025 10:25:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+07/06/2025 10:25:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000531 (VirtuososTunic)
+07/06/2025 10:28:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add tunic'
+07/06/2025 10:28:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3714, 2216, 20) in Felucca: "tunic"
+07/06/2025 10:28:25: 127.0.0.1: Serials: 0x40000576; 
+07/06/2025 10:28:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ytn'
+07/06/2025 10:28:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set hue 1575'
+07/06/2025 10:28:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'hue' of 0x40000576 (Tunic) to '1575'
+07/06/2025 10:29:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add xml'
+07/06/2025 10:30:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3699, 2218, 20) in Felucca: "XmlSpawner"
+07/06/2025 10:30:00: 127.0.0.1: Serials: 0x40000577; 
+07/06/2025 10:31:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+07/06/2025 10:31:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000577 (XmlSpawner)
+07/06/2025 10:31:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go '
+07/06/2025 10:31:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add xml'
+07/06/2025 10:31:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'placehuegrid '
+07/06/2025 10:32:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+##############################
+Log started on 07/06/2025 10:37:05
+
+07/06/2025 10:37:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go '
+07/06/2025 10:37:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add xml'
+07/06/2025 10:37:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3699, 2219, 20) in Felucca: "XmlSpawner"
+07/06/2025 10:37:43: 127.0.0.1: Serials: 0x400000E9; 
+07/06/2025 10:39:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') added to XmlSpawner 0x400000E9 'Spawner' [3699, 2219] (Felucca) : Mage
+07/06/2025 10:43:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+07/06/2025 10:43:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+07/06/2025 12:20:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+07/06/2025 12:21:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add xml'
+07/06/2025 12:21:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (3690, 2212, 20) in Felucca: "XmlSpawner"
+07/06/2025 12:21:16: 127.0.0.1: Serials: 0x400007C1; 
+07/06/2025 12:21:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') added to XmlSpawner 0x400007C1 'Spawner' [3690, 2212] (Felucca) : Healer
+07/06/2025 12:23:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set name Kerry'
+07/06/2025 12:23:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'name' of 0x39E "FDDSDASAD" ('Kerry') to 'Kerry'
+07/06/2025 12:29:07: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'GO mINOC'
+07/06/2025 12:30:39: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'M Tele'
+07/06/2025 12:30:51: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'SETSKILL BLACKSMITH 100'
+07/06/2025 12:30:52: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') set property 'Blacksmith.Base' of 0x39E "Kerry" ('Kerry') to '100'
+07/06/2025 12:42:55: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'npcfinder '
+07/06/2025 12:43:28: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'listmobiles '
+07/06/2025 12:43:52: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'listmobiles '
+##############################
+Log started on 07/06/2025 13:43:13
+
+07/06/2025 13:43:26: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'mobilesfinder '
+##############################
+Log started on 07/06/2025 13:44:50
+

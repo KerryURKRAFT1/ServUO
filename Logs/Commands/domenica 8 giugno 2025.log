@@ -1,0 +1,71 @@
+##############################
+Log started on 08/06/2025 08:49:03
+
+08/06/2025 08:51:40: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'add ostard'
+08/06/2025 08:51:48: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') building at (2524, 600, 0) in Felucca: "OstardTopiary"
+08/06/2025 08:51:48: 127.0.0.1: Serials: 0x4000010E; 
+08/06/2025 08:51:51: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') building at (2521, 598, 0) in Felucca: "FrenziedOstard"
+08/06/2025 08:51:51: 127.0.0.1: Serials: 0x2A; 
+08/06/2025 08:51:55: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') building at (2518, 599, 0) in Felucca: "ForestOstard"
+08/06/2025 08:51:55: 127.0.0.1: Serials: 0x2B; 
+08/06/2025 08:51:57: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') building at (2515, 600, 0) in Felucca: "ForestOstard"
+08/06/2025 08:51:57: 127.0.0.1: Serials: 0x2C; 
+08/06/2025 08:52:10: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+08/06/2025 08:52:11: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') deleting 0x4000010E (OstardTopiary)
+08/06/2025 08:52:14: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+08/06/2025 08:52:15: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') deleting 0x2A "a frenzied ostard" (no account)
+08/06/2025 08:52:16: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+08/06/2025 08:52:17: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') deleting 0x2B "a forest ostard" (no account)
+08/06/2025 08:52:18: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+08/06/2025 08:52:19: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') deleting 0x2C "a forest ostard" (no account)
+08/06/2025 09:18:38: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'admin '
+08/06/2025 09:18:47: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'add Nightmare'
+08/06/2025 09:18:48: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') building at (1304, 1831, 0) in Felucca: "Nightmare"
+08/06/2025 09:18:48: 127.0.0.1: Serials: 0xAB; 
+08/06/2025 09:18:58: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'add '
+08/06/2025 09:19:04: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'admin '
+08/06/2025 09:19:08: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') set property 'Blessed' of 0x39E "Kerry" ('Kerry') to 'True'
+08/06/2025 09:19:14: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'add nightmare'
+08/06/2025 09:19:15: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') building at (1318, 1838, 0) in Felucca: "nightmare"
+08/06/2025 09:19:15: 127.0.0.1: Serials: 0xAD; 
+08/06/2025 09:20:02: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'add nightmare'
+08/06/2025 09:20:03: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') building at (1325, 1832, 0) in Felucca: "nightmare"
+08/06/2025 09:20:03: 127.0.0.1: Serials: 0xAF; 
+08/06/2025 09:20:04: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'M Tele'
+08/06/2025 09:23:11: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'M Tele'
+08/06/2025 09:23:13: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+08/06/2025 09:23:13: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') deleting 0xAF "a nightmare" (no account)
+08/06/2025 09:23:13: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+08/06/2025 09:23:18: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'add nightmare'
+08/06/2025 09:23:18: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') building at (1328, 1830, 0) in Felucca: "nightmare"
+08/06/2025 09:23:18: 127.0.0.1: Serials: 0xB5; 
+08/06/2025 09:23:19: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+08/06/2025 09:23:47: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'SETSKILL ANIMALLORE 100'
+08/06/2025 09:23:49: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') set property 'AnimalLore.Base' of 0x39E "Kerry" ('Kerry') to '100'
+08/06/2025 09:23:50: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+08/06/2025 09:31:41: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'SETSKILL ANIMALTAMING 200'
+08/06/2025 09:31:42: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') set property 'AnimalTaming.Base' of 0x39E "Kerry" ('Kerry') to '200'
+08/06/2025 09:32:13: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'M Tele'
+08/06/2025 09:32:25: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'resurrect '
+08/06/2025 09:32:26: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') resurrecting 0x3DE "tester" ('tester')
+08/06/2025 09:32:31: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'ADD HORSE'
+08/06/2025 09:32:32: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') building at (1314, 1822, 0) in Felucca: "HORSE"
+08/06/2025 09:32:32: 127.0.0.1: Serials: 0xC5; 
+08/06/2025 09:33:22: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+08/06/2025 09:33:23: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') deleting 0xC5 "aa" (no account)
+08/06/2025 09:33:30: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'M Tele'
+08/06/2025 09:33:35: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'admin '
+08/06/2025 10:04:30: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+08/06/2025 10:04:34: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') deleting 0x39F "a fire steed" (no account)
+08/06/2025 10:04:43: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'npcfinder '
+08/06/2025 10:09:37: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'admin '
+08/06/2025 10:09:41: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') set property 'Blessed' of 0x39E "Kerry" ('Kerry') to 'True'
+08/06/2025 10:09:42: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') set property 'Blessed' of 0x39E "Kerry" ('Kerry') to 'True'
+08/06/2025 10:09:44: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') set property 'Blessed' of 0x39E "Kerry" ('Kerry') to 'True'
+08/06/2025 10:09:49: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') set property 'Blessed' of 0x39E "Kerry" ('Kerry') to 'False'
+08/06/2025 10:09:52: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'go minoc'
+08/06/2025 10:09:55: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'M Tele'
+08/06/2025 10:10:04: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'setskill begging 100'
+08/06/2025 10:10:05: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') set property 'Begging.Base' of 0x39E "Kerry" ('Kerry') to '100'
+08/06/2025 10:10:20: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+08/06/2025 10:10:20: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') deleting 0x40000980 (Gold)

@@ -1,0 +1,69 @@
+##############################
+Log started on 30/05/2025 15:38:02
+
+30/05/2025 15:38:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD BANDAGE'
+30/05/2025 15:38:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2567, 485, 0) in Felucca: "BANDAGE"
+30/05/2025 15:38:19: 127.0.0.1: Serials: 0x400011A6; 
+30/05/2025 15:38:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 2000'
+30/05/2025 15:38:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x400011A6 (Bandage) to '2000'
+30/05/2025 15:39:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD SS'
+30/05/2025 15:39:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2563, 487, 0) in Felucca: "Broadsword"
+30/05/2025 15:39:56: 127.0.0.1: Serials: 0x400011D6; 
+30/05/2025 15:49:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill swordmanshio 100'
+30/05/2025 15:49:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill swords 100'
+30/05/2025 15:49:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Swords.Base' of 0x3DE "tester" ('tester') to '100'
+30/05/2025 15:50:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'resurrect '
+30/05/2025 15:50:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') resurrecting 0x39E "FDDSDASAD" ('Kerry')
+30/05/2025 15:50:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'resurrect '
+30/05/2025 15:50:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') resurrecting 0x3DE "tester" ('tester')
+30/05/2025 15:50:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'resurrect '
+30/05/2025 15:50:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') resurrecting 0x3DE "tester" ('tester')
+30/05/2025 15:50:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+30/05/2025 15:50:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x39F "a fire steed" (no account)
+30/05/2025 15:51:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set mana 100'
+30/05/2025 15:51:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'mana' of 0x3DE "tester" ('tester') to '100'
+30/05/2025 15:52:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'dupe '
+30/05/2025 15:52:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duping 0x40000F6D (BagOfAllReagents) (inBag=False; amount=1)
+30/05/2025 15:52:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duped 0x40000F6D (BagOfAllReagents) creating 0x4001A117 (BagOfAllReagents)
+30/05/2025 15:52:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'resurrect '
+30/05/2025 15:52:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'resurrect '
+30/05/2025 15:52:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') resurrecting 0x39E "FDDSDASAD" ('Kerry')
+30/05/2025 15:52:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'resurrect '
+30/05/2025 15:52:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') resurrecting 0x39E "FDDSDASAD" ('Kerry')
+30/05/2025 15:53:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'resurrect '
+30/05/2025 15:53:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') resurrecting 0x39E "FDDSDASAD" ('Kerry')
+30/05/2025 15:54:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'resurrect '
+30/05/2025 15:54:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') resurrecting 0x39E "FDDSDASAD" ('Kerry')
+30/05/2025 15:54:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'resurrect '
+30/05/2025 15:54:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') resurrecting 0x39E "FDDSDASAD" ('Kerry')
+30/05/2025 15:56:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'resurrect '
+30/05/2025 15:56:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') resurrecting 0x39E "FDDSDASAD" ('Kerry')
+30/05/2025 15:57:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'resurrect '
+30/05/2025 15:57:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') resurrecting 0x39E "FDDSDASAD" ('Kerry')
+30/05/2025 15:57:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET MANA 100'
+30/05/2025 15:57:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'MANA' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+30/05/2025 15:58:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'resurrect '
+30/05/2025 15:58:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') resurrecting 0x3DE "tester" ('tester')
+##############################
+Log started on 30/05/2025 16:03:10
+
+30/05/2025 16:03:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'admin '
+30/05/2025 16:11:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'resurrect '
+30/05/2025 16:11:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') resurrecting 0x3D1 "ABADIDIBI" ('tester2')
+##############################
+Log started on 30/05/2025 16:26:22
+
+30/05/2025 16:26:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'resurrect '
+30/05/2025 16:26:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') resurrecting 0x3D1 "ABADIDIBI" ('tester2')
+30/05/2025 16:26:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'resurrect '
+30/05/2025 16:27:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') resurrecting 0x3D1 "ABADIDIBI" ('tester2')
+30/05/2025 16:27:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'resurrect '
+30/05/2025 16:27:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') resurrecting 0x3D1 "ABADIDIBI" ('tester2')
+30/05/2025 16:27:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'resurrect '
+30/05/2025 16:27:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') resurrecting 0x3D1 "ABADIDIBI" ('tester2')
+30/05/2025 16:28:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add horse'
+30/05/2025 16:28:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2565, 483, 0) in Felucca: "horse"
+30/05/2025 16:28:43: 127.0.0.1: Serials: 0x3BE; 
+30/05/2025 16:28:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add horse'
+30/05/2025 16:28:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2568, 485, 0) in Felucca: "horse"
+30/05/2025 16:28:44: 127.0.0.1: Serials: 0x3BF; 

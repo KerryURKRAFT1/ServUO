@@ -1,0 +1,89 @@
+##############################
+Log started on 27/03/2025 14:17:51
+
+27/03/2025 14:18:05: 127.0.0.1: Crafting 0x40000FE2 (MetalKiteShield) with craft system DefBlacksmithy
+27/03/2025 14:18:17: 127.0.0.1: Crafting 0x40000FE4 (HeaterShield) with craft system DefBlacksmithy
+27/03/2025 14:18:24: 127.0.0.1: Crafting 0x40000FE8 (MetalKiteShield) with craft system DefBlacksmithy
+##############################
+Log started on 27/03/2025 14:23:30
+
+27/03/2025 14:23:44: 127.0.0.1: Crafting 0x40000FE2 (MetalKiteShield) with craft system DefBlacksmithy
+##############################
+Log started on 27/03/2025 14:29:24
+
+27/03/2025 14:30:23: 127.0.0.1: Crafting 0x4000104E (MetalKiteShield) with craft system DefBlacksmithy
+##############################
+Log started on 27/03/2025 14:49:26
+
+27/03/2025 14:49:37: 127.0.0.1: Crafting 0x40000FE2 (HeaterShield) with craft system DefBlacksmithy
+##############################
+Log started on 27/03/2025 14:53:22
+
+27/03/2025 14:53:56: 127.0.0.1: Crafting 0x40000FE2 (HeaterShield) with craft system DefBlacksmithy
+##############################
+Log started on 27/03/2025 14:55:47
+
+##############################
+Log started on 27/03/2025 14:57:39
+
+27/03/2025 14:57:49: 127.0.0.1: Crafting 0x40000FE2 (HeaterShield) with craft system DefBlacksmithy
+##############################
+Log started on 27/03/2025 15:00:40
+
+27/03/2025 15:01:20: 127.0.0.1: Crafting 0x40001058 (HeaterShield) with craft system DefBlacksmithy
+##############################
+Log started on 27/03/2025 15:29:41
+
+27/03/2025 15:29:56: 127.0.0.1: Crafting 0x40000FE2 (HeaterShield) with craft system DefClassicBlacksmithy
+27/03/2025 15:30:18: 127.0.0.1: Crafting 0x4000103A (HeaterShield) with craft system DefClassicBlacksmithy
+##############################
+Log started on 27/03/2025 15:32:05
+
+27/03/2025 15:32:20: 127.0.0.1: Crafting 0x40000FE2 (MetalKiteShield) with craft system DefClassicBlacksmithy
+27/03/2025 15:32:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL BLACKSMITH 30'
+27/03/2025 15:32:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '30'
+##############################
+Log started on 27/03/2025 15:40:25
+
+27/03/2025 15:40:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 50'
+27/03/2025 15:40:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '50'
+##############################
+Log started on 27/03/2025 17:03:05
+
+27/03/2025 17:03:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 30'
+27/03/2025 17:03:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '30'
+27/03/2025 17:04:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 50'
+27/03/2025 17:04:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '50'
+27/03/2025 17:29:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 1000'
+27/03/2025 17:29:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x40000F58 (IronIngot) to '1000'
+27/03/2025 17:29:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 100'
+27/03/2025 17:29:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 45'
+27/03/2025 17:29:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '45'
+27/03/2025 17:31:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 39'
+27/03/2025 17:31:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '39'
+27/03/2025 17:32:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 35'
+27/03/2025 17:32:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '35'
+27/03/2025 17:32:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 38'
+27/03/2025 17:32:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '38'
+27/03/2025 17:33:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add copperingot'
+27/03/2025 17:33:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2533, 573, 0) in Felucca: "copperingot"
+27/03/2025 17:33:43: 127.0.0.1: Serials: 0x4001A1A6; 
+27/03/2025 17:33:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 1000'
+27/03/2025 17:33:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x4001A1A6 (CopperIngot) to '1000'
+##############################
+Log started on 27/03/2025 17:54:29
+
+27/03/2025 17:54:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add copperingot'
+27/03/2025 17:54:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2534, 574, 0) in Felucca: "copperingot"
+27/03/2025 17:54:49: 127.0.0.1: Serials: 0x40000FE2; 
+27/03/2025 17:55:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 1000'
+27/03/2025 17:55:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x40000FE2 (CopperIngot) to '1000'
+##############################
+Log started on 27/03/2025 18:16:59
+
+27/03/2025 18:17:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add copperingot'
+27/03/2025 18:17:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2534, 573, 0) in Felucca: "copperingot"
+27/03/2025 18:17:12: 127.0.0.1: Serials: 0x40000FE2; 
+27/03/2025 18:18:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set value 1000'
+27/03/2025 18:18:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 1000'
+27/03/2025 18:18:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x40000FE2 (CopperIngot) to '1000'

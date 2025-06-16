@@ -1,0 +1,66 @@
+##############################
+Log started on 10/06/2025 13:43:43
+
+10/06/2025 13:44:52: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'admin '
+10/06/2025 13:45:15: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'set rawdex 25'
+10/06/2025 13:45:16: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') set property 'rawdex' of 0x3DE "tester" ('tester') to '25'
+10/06/2025 13:45:20: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'set rawint 100'
+10/06/2025 13:45:21: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') set property 'rawint' of 0x3DE "tester" ('tester') to '100'
+10/06/2025 13:45:24: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'set mana 100'
+10/06/2025 13:45:25: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') set property 'mana' of 0x3DE "tester" ('tester') to '100'
+10/06/2025 13:45:40: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'go '
+10/06/2025 13:45:52: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'admin '
+10/06/2025 13:46:26: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'dupe '
+10/06/2025 13:46:27: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') duping 0x40000F6D (BagOfAllReagents) (inBag=False; amount=1)
+10/06/2025 13:46:27: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') duped 0x40000F6D (BagOfAllReagents) creating 0x40000179 (BagOfAllReagents)
+10/06/2025 14:00:16: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'set hits 100'
+10/06/2025 14:00:18: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') set property 'hits' of 0x39E "Kerry" ('Kerry') to '100'
+10/06/2025 14:01:08: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'set hits 100'
+10/06/2025 14:01:09: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') set property 'hits' of 0x39E "Kerry" ('Kerry') to '100'
+10/06/2025 14:01:29: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'set mana 100'
+10/06/2025 14:01:30: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') set property 'mana' of 0x3DE "tester" ('tester') to '100'
+10/06/2025 15:23:31: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'GO MINOC'
+10/06/2025 15:23:33: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'M Tele'
+10/06/2025 15:23:43: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'ADD PICKAXE'
+10/06/2025 15:23:44: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') building at (2567, 485, 0) in Felucca: "PICKAXE"
+10/06/2025 15:23:44: 127.0.0.1: Serials: 0x4000083B; 
+10/06/2025 15:23:51: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+10/06/2025 15:23:52: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+10/06/2025 15:25:39: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+10/06/2025 15:25:39: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') deleting 0x40000871 (DullCopperOre)
+10/06/2025 15:25:39: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+10/06/2025 15:25:40: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') deleting 0x4000087A (VeriteOre)
+10/06/2025 15:25:40: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+10/06/2025 15:25:40: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+10/06/2025 15:25:40: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') deleting 0x4000083D (CopperOre)
+10/06/2025 15:25:41: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+10/06/2025 15:25:41: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+10/06/2025 15:25:42: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+10/06/2025 15:25:42: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') deleting 0x4000083E (IronOre)
+10/06/2025 15:25:42: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+10/06/2025 15:25:43: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') deleting 0x4000083F (GoldOre)
+10/06/2025 15:41:12: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'go magincia'
+10/06/2025 15:52:36: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'go minoc'
+10/06/2025 15:52:40: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'M Tele'
+##############################
+Log started on 10/06/2025 20:22:09
+
+10/06/2025 20:22:25: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'set skill armslore 100'
+10/06/2025 20:22:40: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'setskill armslore 100'
+10/06/2025 20:22:41: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') set property 'ArmsLore.Base' of 0x39E "Kerry" ('Kerry') to '100'
+10/06/2025 20:23:14: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+10/06/2025 20:23:14: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') deleting 0x40000870 (IronOre)
+10/06/2025 20:23:15: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+10/06/2025 20:23:15: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') deleting 0x40000877 (IronOre)
+10/06/2025 20:23:17: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+10/06/2025 20:23:18: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') deleting 0x400000A8 (Board)
+10/06/2025 20:23:18: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+10/06/2025 20:23:18: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') deleting 0x4001AC22 (Cotton)
+10/06/2025 20:23:19: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+10/06/2025 20:23:19: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') deleting 0x4000012C (Cloth)
+10/06/2025 20:23:21: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+10/06/2025 20:23:21: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') deleting 0x40000872 (IronOre)
+10/06/2025 20:23:21: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+10/06/2025 20:23:22: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') deleting 0x4000083C (DullCopperOre)
+10/06/2025 20:23:27: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') used command 'remove '
+10/06/2025 20:23:27: 127.0.0.1: Owner 0x39E "Kerry" ('Kerry') deleting 0x4000076D (BlankMap)

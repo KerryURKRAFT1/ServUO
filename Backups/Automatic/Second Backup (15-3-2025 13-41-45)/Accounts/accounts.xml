@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<accounts count="1">
+	<account>
+		<username>Kerry</username>
+		<newCryptPassword>E0-62-92-41-A1-28-9F-B7-FE-46-78-62-E3-38-1D-71-6A-E3-99-36</newCryptPassword>
+		<accessLevel>Owner</accessLevel>
+		<created>2025-03-15T11:38:23.4775774Z</created>
+		<lastLogin>2025-03-15T13:14:50.7107024Z</lastLogin>
+		<totalGameTime>PT34M20.3326705S</totalGameTime>
+		<chars>
+			<char index="0">926</char>
+		</chars>
+		<addressList count="1">
+			<ip>127.0.0.1</ip>
+		</addressList>
+		<totalCurrency>0</totalCurrency>
+	</account>
+</accounts>

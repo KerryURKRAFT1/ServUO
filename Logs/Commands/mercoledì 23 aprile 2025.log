@@ -1,0 +1,63 @@
+##############################
+Log started on 23/04/2025 12:59:36
+
+23/04/2025 13:00:20: 127.0.0.1: Crafting 0x40001068 (ChainLightningScroll) with craft system DefClassicInscription
+23/04/2025 13:00:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 50'
+23/04/2025 13:00:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x40001068 (ChainLightningScroll) to '50'
+23/04/2025 13:00:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD BALRON'
+23/04/2025 13:00:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2488, 490, 15) in Felucca: "BALRON"
+23/04/2025 13:00:30: 127.0.0.1: Serials: 0x3A5; 
+23/04/2025 13:00:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET MANA 50'
+23/04/2025 13:00:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'MANA' of 0x39E "FDDSDASAD" ('Kerry') to '50'
+23/04/2025 13:01:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD FLAMESTRIKE'
+23/04/2025 13:01:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2478, 486, 15) in Felucca: "FlamestrikeScroll"
+23/04/2025 13:01:04: 127.0.0.1: Serials: 0x4000107C; 
+23/04/2025 13:01:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2478, 485, 15) in Felucca: "FlamestrikeScroll"
+23/04/2025 13:01:05: 127.0.0.1: Serials: 0x4000107E; 
+23/04/2025 13:01:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 50'
+23/04/2025 13:01:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x4000107C (FlamestrikeScroll) to '50'
+23/04/2025 13:02:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD FROZEN'
+23/04/2025 13:06:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+23/04/2025 13:06:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3A5 "the Collector of Souls" (no account)
+##############################
+Log started on 23/04/2025 13:14:28
+
+23/04/2025 13:15:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add flame'
+23/04/2025 13:15:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add magicarro'
+23/04/2025 13:15:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2489, 489, 15) in Felucca: "MagicArrowScroll"
+23/04/2025 13:15:17: 127.0.0.1: Serials: 0x40000F6F; 
+23/04/2025 13:15:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 100'
+23/04/2025 13:15:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x40000F6F (MagicArrowScroll) to '100'
+23/04/2025 14:06:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add boxs'
+23/04/2025 14:07:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2489, 484, 15) in Felucca: "LongbowOfMight"
+23/04/2025 14:07:43: 127.0.0.1: Serials: 0x4001A376; 
+23/04/2025 14:07:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+23/04/2025 14:07:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A376 (LongbowOfMight)
+23/04/2025 14:08:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set rawstr 50'
+23/04/2025 14:08:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'rawstr' of 0x39E "FDDSDASAD" ('Kerry') to '50'
+23/04/2025 14:08:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set rawdex 50'
+23/04/2025 14:08:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'rawdex' of 0x39E "FDDSDASAD" ('Kerry') to '50'
+23/04/2025 14:08:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set rawint 50'
+23/04/2025 14:08:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'rawint' of 0x39E "FDDSDASAD" ('Kerry') to '50'
+23/04/2025 14:09:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set rawstr 100'
+23/04/2025 14:09:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'rawstr' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+23/04/2025 14:09:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set rawdex 100'
+23/04/2025 14:09:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'rawdex' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+23/04/2025 14:09:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set rawint 25'
+23/04/2025 14:09:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'rawint' of 0x39E "FDDSDASAD" ('Kerry') to '25'
+23/04/2025 14:09:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add balron'
+23/04/2025 14:09:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2487, 484, 15) in Felucca: "balron"
+23/04/2025 14:09:52: 127.0.0.1: Serials: 0x43F; 
+23/04/2025 14:12:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill archery 100'
+23/04/2025 14:12:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Archery.Base' of 0x43F "the Slayer" (no account) to '100'
+23/04/2025 14:12:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill archery 100'
+23/04/2025 14:12:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Archery.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+23/04/2025 14:13:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill anatomy 100'
+23/04/2025 14:13:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Anatomy.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+23/04/2025 14:13:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill tactics 100'
+23/04/2025 14:13:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Tactics.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+23/04/2025 14:15:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add chainmail'
+23/04/2025 14:15:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2483, 484, 15) in Felucca: "ChainChest"
+23/04/2025 14:15:46: 127.0.0.1: Serials: 0x4001A43D; 
+23/04/2025 14:16:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+23/04/2025 14:16:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x43F "the Slayer" (no account)

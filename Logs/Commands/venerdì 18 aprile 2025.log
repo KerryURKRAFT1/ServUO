@@ -1,0 +1,586 @@
+##############################
+Log started on 18/04/2025 09:45:40
+
+18/04/2025 09:48:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 10:01:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add water'
+18/04/2025 10:01:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2534, 563, 0) in Felucca: "WaterTroughEastAddon"
+18/04/2025 10:01:41: 127.0.0.1: Serials: 0x4000146C; 
+18/04/2025 10:01:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2531, 563, 0) in Felucca: "BasinOfCrystalClearWater"
+18/04/2025 10:01:50: 127.0.0.1: Serials: 0x40001481; 
+18/04/2025 10:02:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2524, 565, 0) in Felucca: "WaterVatEast"
+18/04/2025 10:02:15: 127.0.0.1: Serials: 0x400014A8; 
+18/04/2025 10:54:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD SKILLET'
+18/04/2025 10:54:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2530, 565, 0) in Felucca: "SKILLET"
+18/04/2025 10:54:15: 127.0.0.1: Serials: 0x4001A5DD; 
+18/04/2025 10:57:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD TRIBALPAINT'
+18/04/2025 10:57:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 556, 0) in Felucca: "TRIBALPAINT"
+18/04/2025 10:57:18: 127.0.0.1: Serials: 0x4001A666; 
+18/04/2025 11:01:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD BEEHIVE'
+18/04/2025 11:01:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 558, 0) in Felucca: "BEEHIVE"
+18/04/2025 11:01:37: 127.0.0.1: Serials: 0x4001A667; 
+18/04/2025 11:02:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD BowlFlour'
+18/04/2025 11:02:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2521, 555, 0) in Felucca: "BowlFlour"
+18/04/2025 11:02:37: 127.0.0.1: Serials: 0x4001A668; 
+18/04/2025 11:03:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 11:03:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A2B5 (WaterBarrel)
+18/04/2025 11:03:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 11:03:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F5D (SackFlour)
+18/04/2025 11:03:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 11:03:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A2FC (RawRibs)
+18/04/2025 11:10:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 11:10:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A668 (BowlFlour)
+18/04/2025 11:10:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 11:10:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A2BC (AddonComponent)
+18/04/2025 11:10:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 11:10:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400014D6 (AddonComponent)
+18/04/2025 11:10:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 11:10:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A4BF (AddonComponent)
+18/04/2025 11:10:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 11:10:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001471 (AddonComponent)
+18/04/2025 11:10:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 11:10:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001481 (BasinOfCrystalClearWater)
+18/04/2025 11:11:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 11:11:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001478 (FarmableWheat)
+18/04/2025 11:19:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+##############################
+Log started on 18/04/2025 11:23:33
+
+18/04/2025 11:24:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD DOUGH'
+18/04/2025 11:24:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 561, 0) in Felucca: "DOUGH"
+18/04/2025 11:24:42: 127.0.0.1: Serials: 0x4000109A; 
+18/04/2025 11:24:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD APPLE'
+18/04/2025 11:24:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 557, 0) in Felucca: "APPLE"
+18/04/2025 11:24:56: 127.0.0.1: Serials: 0x4000109E; 
+18/04/2025 11:34:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD BEEHIBVE'
+18/04/2025 11:34:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 557, 0) in Felucca: "Beehive"
+18/04/2025 11:34:50: 127.0.0.1: Serials: 0x40001255; 
+18/04/2025 11:34:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 556, 0) in Felucca: "Beehive"
+18/04/2025 11:34:51: 127.0.0.1: Serials: 0x40001258; 
+18/04/2025 11:34:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2520, 556, 0) in Felucca: "Beehive"
+18/04/2025 11:34:52: 127.0.0.1: Serials: 0x4000125A; 
+18/04/2025 11:34:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2520, 557, 0) in Felucca: "Beehive"
+18/04/2025 11:34:52: 127.0.0.1: Serials: 0x4000125B; 
+18/04/2025 11:34:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2520, 558, 0) in Felucca: "Beehive"
+18/04/2025 11:34:52: 127.0.0.1: Serials: 0x4000125E; 
+18/04/2025 11:42:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD WOODENBOW'
+18/04/2025 11:42:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2520, 561, 0) in Felucca: "EmptyWoodenBowl"
+18/04/2025 11:42:07: 127.0.0.1: Serials: 0x40005110; 
+18/04/2025 11:42:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 562, 0) in Felucca: "EmptyWoodenBowl"
+18/04/2025 11:42:08: 127.0.0.1: Serials: 0x40005111; 
+18/04/2025 11:42:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 562, 0) in Felucca: "EmptyWoodenBowl"
+18/04/2025 11:42:09: 127.0.0.1: Serials: 0x4000BE26; 
+##############################
+Log started on 18/04/2025 11:42:46
+
+18/04/2025 11:43:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD SACKFLOUROPEN'
+18/04/2025 11:43:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 560, 0) in Felucca: "SACKFLOUROPEN"
+18/04/2025 11:43:13: 127.0.0.1: Serials: 0x4000109A; 
+18/04/2025 11:43:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD WOODENBOWL'
+18/04/2025 11:43:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 559, 0) in Felucca: "WOODENBOWL"
+18/04/2025 11:43:38: 127.0.0.1: Serials: 0x4000109E; 
+18/04/2025 11:44:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 11:44:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001483 (SackFlour)
+18/04/2025 11:44:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD WheatSheaf'
+18/04/2025 11:44:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 551, 0) in Felucca: "WheatSheaf"
+18/04/2025 11:44:37: 127.0.0.1: Serials: 0x400010A2; 
+18/04/2025 11:44:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD WheatSheaf'
+18/04/2025 11:44:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 552, 0) in Felucca: "WheatSheaf"
+18/04/2025 11:44:40: 127.0.0.1: Serials: 0x400010A4; 
+18/04/2025 11:44:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD WheatSheaf'
+18/04/2025 11:44:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 551, 0) in Felucca: "WheatSheaf"
+18/04/2025 11:44:42: 127.0.0.1: Serials: 0x400010A5; 
+18/04/2025 11:45:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 11:45:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD OPENSACKFLOUR'
+18/04/2025 11:46:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD SACKFLOUROPEN'
+18/04/2025 11:46:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 553, 0) in Felucca: "SACKFLOUROPEN"
+18/04/2025 11:46:04: 127.0.0.1: Serials: 0x400011DE; 
+18/04/2025 11:46:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD SACKFLOUROPEN'
+18/04/2025 11:46:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 552, 0) in Felucca: "SACKFLOUROPEN"
+18/04/2025 11:46:09: 127.0.0.1: Serials: 0x400011EA; 
+18/04/2025 11:46:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 11:46:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 11:46:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 11:47:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD WOODENBOW'
+18/04/2025 11:47:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD WOODBOWL'
+18/04/2025 11:48:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD woodenbowl'
+18/04/2025 11:48:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 552, 0) in Felucca: "woodenbowl"
+18/04/2025 11:48:18: 127.0.0.1: Serials: 0x400011EC; 
+18/04/2025 11:48:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD woodenbowl'
+18/04/2025 11:48:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 551, 0) in Felucca: "woodenbowl"
+18/04/2025 11:48:19: 127.0.0.1: Serials: 0x400011EE; 
+18/04/2025 11:50:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 11:51:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add beehive'
+18/04/2025 11:51:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 557, 0) in Felucca: "beehive"
+18/04/2025 11:51:23: 127.0.0.1: Serials: 0x400012E5; 
+18/04/2025 11:51:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add beehive'
+18/04/2025 11:51:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2520, 558, 0) in Felucca: "beehive"
+18/04/2025 11:51:24: 127.0.0.1: Serials: 0x400012E7; 
+18/04/2025 11:51:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add beehive'
+18/04/2025 11:51:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2520, 557, 0) in Felucca: "beehive"
+18/04/2025 11:51:25: 127.0.0.1: Serials: 0x400012ED; 
+18/04/2025 11:51:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add beehive'
+18/04/2025 11:51:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2520, 556, 0) in Felucca: "beehive"
+18/04/2025 11:51:26: 127.0.0.1: Serials: 0x400012EF; 
+18/04/2025 11:51:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add beehive'
+18/04/2025 11:51:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 556, 0) in Felucca: "beehive"
+18/04/2025 11:51:27: 127.0.0.1: Serials: 0x400012F3; 
+18/04/2025 11:51:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add beehive'
+18/04/2025 11:51:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 554, 0) in Felucca: "beehive"
+18/04/2025 11:51:29: 127.0.0.1: Serials: 0x400012FD; 
+18/04/2025 11:51:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add beehive'
+18/04/2025 11:51:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2520, 555, 0) in Felucca: "beehive"
+18/04/2025 11:51:30: 127.0.0.1: Serials: 0x400012FE; 
+18/04/2025 11:51:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add beehive'
+18/04/2025 11:51:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 555, 0) in Felucca: "beehive"
+18/04/2025 11:51:31: 127.0.0.1: Serials: 0x400012FF; 
+18/04/2025 11:51:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add beehive'
+18/04/2025 11:51:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2520, 554, 0) in Felucca: "beehive"
+18/04/2025 11:51:32: 127.0.0.1: Serials: 0x40001302; 
+18/04/2025 11:51:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 11:51:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400010A6 (SackFlour)
+18/04/2025 11:51:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 11:51:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400010AA (SackFlour)
+18/04/2025 11:52:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 11:52:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Honeypots' of 0x400012FD (Beehive) to '110'
+18/04/2025 11:53:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 11:57:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add Dough'
+18/04/2025 11:57:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2521, 563, 0) in Felucca: "Dough"
+18/04/2025 11:57:36: 127.0.0.1: Serials: 0x40001451; 
+18/04/2025 11:57:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 11:57:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add SweetDough'
+18/04/2025 11:57:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 563, 0) in Felucca: "SweetDough"
+18/04/2025 11:57:53: 127.0.0.1: Serials: 0x4000145F; 
+18/04/2025 11:57:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 11:58:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add CakeMix'
+18/04/2025 11:58:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2524, 561, 0) in Felucca: "CakeMix"
+18/04/2025 11:58:13: 127.0.0.1: Serials: 0x40001463; 
+18/04/2025 11:58:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 11:58:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add CookieMix'
+18/04/2025 11:58:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2520, 560, 0) in Felucca: "CookieMix"
+18/04/2025 11:58:40: 127.0.0.1: Serials: 0x400015A4; 
+18/04/2025 11:58:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 11:59:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 11:59:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400015A4 (CookieMix)
+18/04/2025 11:59:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 11:59:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001463 (CakeMix)
+18/04/2025 11:59:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 11:59:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001451 (Dough)
+18/04/2025 11:59:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 11:59:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000145F (SweetDough)
+18/04/2025 12:03:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add barkfragment'
+18/04/2025 12:03:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 562, 0) in Felucca: "barkfragment"
+18/04/2025 12:03:22: 127.0.0.1: Serials: 0x400015A5; 
+18/04/2025 12:04:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add dough'
+18/04/2025 12:04:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2521, 559, 0) in Felucca: "dough"
+18/04/2025 12:04:29: 127.0.0.1: Serials: 0x400015A6; 
+18/04/2025 12:04:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add pear'
+18/04/2025 12:04:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2521, 561, 0) in Felucca: "pear"
+18/04/2025 12:04:47: 127.0.0.1: Serials: 0x400015A7; 
+18/04/2025 12:05:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add sausage'
+18/04/2025 12:05:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2522, 560, 0) in Felucca: "sausage"
+18/04/2025 12:05:27: 127.0.0.1: Serials: 0x400015A8; 
+18/04/2025 12:05:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add sausage'
+18/04/2025 12:05:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2521, 560, 0) in Felucca: "sausage"
+18/04/2025 12:05:47: 127.0.0.1: Serials: 0x400015A9; 
+18/04/2025 12:05:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add sausage'
+18/04/2025 12:05:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2521, 562, 0) in Felucca: "sausage"
+18/04/2025 12:05:49: 127.0.0.1: Serials: 0x400015AA; 
+18/04/2025 12:08:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 12:08:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000101E (RawRibs)
+18/04/2025 12:08:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 12:08:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000102F (Board)
+18/04/2025 12:08:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 12:08:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400015A5 (BarkFragment)
+18/04/2025 12:08:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add UnbakedQuiche'
+18/04/2025 12:08:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2521, 561, 0) in Felucca: "UnbakedQuiche"
+18/04/2025 12:08:27: 127.0.0.1: Serials: 0x400015AC; 
+18/04/2025 12:08:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 12:08:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add UnbakedMeatPie'
+18/04/2025 12:08:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2520, 561, 0) in Felucca: "UnbakedMeatPie"
+18/04/2025 12:08:51: 127.0.0.1: Serials: 0x400015AD; 
+18/04/2025 12:08:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 12:09:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add UncookedSausagePizza'
+18/04/2025 12:09:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 561, 0) in Felucca: "UncookedSausagePizza"
+18/04/2025 12:09:05: 127.0.0.1: Serials: 0x400020A5; 
+18/04/2025 12:09:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 12:09:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add UncookedCheesePizza'
+18/04/2025 12:09:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2522, 561, 0) in Felucca: "UncookedCheesePizza"
+18/04/2025 12:09:30: 127.0.0.1: Serials: 0x400020A6; 
+18/04/2025 12:09:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 12:09:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add UnbakedFruitPie'
+18/04/2025 12:09:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2523, 560, 0) in Felucca: "UnbakedFruitPie"
+18/04/2025 12:09:48: 127.0.0.1: Serials: 0x400020A7; 
+18/04/2025 12:09:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 12:10:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add UnbakedPeachCobbler'
+18/04/2025 12:10:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2524, 558, 0) in Felucca: "UnbakedPeachCobbler"
+18/04/2025 12:10:06: 127.0.0.1: Serials: 0x400020A8; 
+18/04/2025 12:10:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 12:10:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add UnbakedApplePie'
+18/04/2025 12:10:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2523, 557, 0) in Felucca: "UnbakedApplePie"
+18/04/2025 12:10:23: 127.0.0.1: Serials: 0x400020A9; 
+18/04/2025 12:10:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 12:10:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add pizzas'
+18/04/2025 12:10:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2520, 560, 0) in Felucca: "BegPizza"
+18/04/2025 12:10:57: 127.0.0.1: Serials: 0x400020AA; 
+18/04/2025 12:13:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add bredloaf'
+18/04/2025 12:14:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2521, 560, 0) in Felucca: "BreadLoaf"
+18/04/2025 12:14:03: 127.0.0.1: Serials: 0x4001A0E0; 
+18/04/2025 12:15:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add cookiemix'
+18/04/2025 12:15:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 560, 0) in Felucca: "cookiemix"
+18/04/2025 12:15:12: 127.0.0.1: Serials: 0x4001A0E1; 
+18/04/2025 12:15:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add cake'
+18/04/2025 12:15:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 559, 0) in Felucca: "cake"
+18/04/2025 12:15:39: 127.0.0.1: Serials: 0x4001A133; 
+18/04/2025 12:15:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add cakemix'
+18/04/2025 12:15:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 559, 0) in Felucca: "cakemix"
+18/04/2025 12:15:56: 127.0.0.1: Serials: 0x4001A134; 
+##############################
+Log started on 18/04/2025 12:19:38
+
+##############################
+Log started on 18/04/2025 12:21:00
+
+18/04/2025 12:21:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add backpack'
+18/04/2025 12:21:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 554, 0) in Felucca: "backpack"
+18/04/2025 12:21:39: 127.0.0.1: Serials: 0x40001004; 
+18/04/2025 12:22:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 12:22:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001274 (AxleGears)
+18/04/2025 12:22:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 12:22:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000FE4 (Bolt)
+18/04/2025 12:22:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 12:22:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400010BA (Axle)
+18/04/2025 12:22:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 12:22:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000107E (Key)
+18/04/2025 12:22:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 12:22:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F0B (CreateFoodScroll)
+18/04/2025 12:22:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 12:22:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F0D (ClumsyScroll)
+18/04/2025 12:22:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+18/04/2025 12:22:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000FF0 (Key)
+18/04/2025 12:23:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add water'
+18/04/2025 12:23:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2526, 563, 0) in Felucca: "WaterTroughSouthAddon"
+18/04/2025 12:23:22: 127.0.0.1: Serials: 0x40001006; 
+18/04/2025 12:23:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add WheatSheaf'
+18/04/2025 12:23:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 553, 0) in Felucca: "WheatSheaf"
+18/04/2025 12:23:59: 127.0.0.1: Serials: 0x40001177; 
+18/04/2025 12:24:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add WheatSheaf'
+18/04/2025 12:24:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 554, 0) in Felucca: "WheatSheaf"
+18/04/2025 12:24:00: 127.0.0.1: Serials: 0x40001178; 
+18/04/2025 12:24:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add WheatSheaf'
+18/04/2025 12:24:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add woodenbowl'
+18/04/2025 12:24:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 551, 0) in Felucca: "woodenbowl"
+18/04/2025 12:24:17: 127.0.0.1: Serials: 0x40001180; 
+18/04/2025 12:25:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill cooking 100'
+18/04/2025 12:25:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Cooking.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+18/04/2025 12:25:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add hoven'
+18/04/2025 12:25:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 551, 0) in Felucca: "StoneOvenSouthAddon"
+18/04/2025 12:25:53: 127.0.0.1: Serials: 0x40001186; 
+18/04/2025 12:26:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add Dough'
+18/04/2025 12:26:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 551, 0) in Felucca: "Dough"
+18/04/2025 12:26:17: 127.0.0.1: Serials: 0x4000118E; 
+##############################
+Log started on 18/04/2025 12:28:35
+
+##############################
+Log started on 18/04/2025 12:31:44
+
+18/04/2025 12:32:44: 127.0.0.1: Crafting 0x400012D0 (SweetDough) with craft system DefClassicCooking
+18/04/2025 12:32:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 12:41:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 12:44:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 12:45:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 12:51:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 12:52:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add 0x1F9E'
+18/04/2025 12:52:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 556, 0) in Felucca: "BegWaterPitcher"
+18/04/2025 12:52:32: 127.0.0.1: Serials: 0x4001A1C1; 
+18/04/2025 12:52:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 556, 0) in Felucca: "Pitcher"
+18/04/2025 12:52:36: 127.0.0.1: Serials: 0x4001A1C2; 
+18/04/2025 12:52:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 12:52:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 12:53:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 12:53:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 12:53:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 12:57:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 12:58:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+##############################
+Log started on 18/04/2025 13:03:25
+
+18/04/2025 13:05:45: 127.0.0.1: Crafting 0x400012D0 (Dough) with craft system DefClassicCooking
+18/04/2025 13:05:56: 127.0.0.1: Crafting 0x400012D1 (Dough) with craft system DefClassicCooking
+18/04/2025 13:06:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 13:06:11: 127.0.0.1: Crafting 0x400012D6 (Dough) with craft system DefClassicCooking
+18/04/2025 13:06:15: 127.0.0.1: Crafting 0x400012DA (Dough) with craft system DefClassicCooking
+18/04/2025 13:06:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 13:06:40: 127.0.0.1: Crafting 0x400012E0 (SweetDough) with craft system DefClassicCooking
+18/04/2025 13:07:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add BowlFlour'
+18/04/2025 13:07:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 552, 0) in Felucca: "BowlFlour"
+18/04/2025 13:07:08: 127.0.0.1: Serials: 0x400012E1; 
+18/04/2025 13:07:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add BowlFlour'
+18/04/2025 13:07:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 552, 0) in Felucca: "BowlFlour"
+18/04/2025 13:07:28: 127.0.0.1: Serials: 0x400012E3; 
+18/04/2025 13:08:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+##############################
+Log started on 18/04/2025 13:12:43
+
+18/04/2025 13:17:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+##############################
+Log started on 18/04/2025 13:17:49
+
+18/04/2025 13:18:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 13:19:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 13:19:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 13:19:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 13:20:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add pitcher'
+18/04/2025 13:20:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 555, 0) in Felucca: "pitcher"
+18/04/2025 13:20:11: 127.0.0.1: Serials: 0x400012D0; 
+18/04/2025 13:20:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 13:20:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 13:20:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+##############################
+Log started on 18/04/2025 13:21:51
+
+18/04/2025 13:22:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD PITCHER'
+18/04/2025 13:22:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 553, 0) in Felucca: "PITCHER"
+18/04/2025 13:22:24: 127.0.0.1: Serials: 0x400012D0; 
+18/04/2025 13:22:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 13:23:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 13:24:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 13:24:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD PITCHEROF'
+18/04/2025 13:24:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 560, 0) in Felucca: "PitcherWater"
+18/04/2025 13:24:40: 127.0.0.1: Serials: 0x400015C7; 
+18/04/2025 13:25:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+##############################
+Log started on 18/04/2025 13:32:04
+
+18/04/2025 13:32:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+##############################
+Log started on 18/04/2025 13:40:12
+
+##############################
+Log started on 18/04/2025 13:47:05
+
+18/04/2025 13:47:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add pitcher'
+18/04/2025 13:47:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 552, 0) in Felucca: "pitcher"
+18/04/2025 13:47:42: 127.0.0.1: Serials: 0x400012D0; 
+18/04/2025 13:47:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 13:48:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add Pitcher'
+18/04/2025 13:48:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 552, 0) in Felucca: "Pitcher"
+18/04/2025 13:48:48: 127.0.0.1: Serials: 0x400012D1; 
+18/04/2025 13:48:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+##############################
+Log started on 18/04/2025 13:50:01
+
+18/04/2025 13:50:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add Pitcher'
+18/04/2025 13:50:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 553, 0) in Felucca: "Pitcher"
+18/04/2025 13:50:40: 127.0.0.1: Serials: 0x400012D0; 
+18/04/2025 13:51:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add BaseBeverage'
+18/04/2025 13:51:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 552, 0) in Felucca: "BaseBeverage"
+18/04/2025 13:51:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add BaseBeverage'
+18/04/2025 13:51:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 553, 0) in Felucca: "BaseBeverage"
+##############################
+Log started on 18/04/2025 14:04:30
+
+##############################
+Log started on 18/04/2025 14:10:19
+
+##############################
+Log started on 18/04/2025 14:11:38
+
+##############################
+Log started on 18/04/2025 14:13:38
+
+##############################
+Log started on 18/04/2025 14:17:54
+
+##############################
+Log started on 18/04/2025 14:32:57
+
+##############################
+Log started on 18/04/2025 14:43:28
+
+18/04/2025 14:43:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'dupe '
+18/04/2025 14:43:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duping 0x400010A0 (BowlFlour) (inBag=False; amount=1)
+18/04/2025 14:43:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duped 0x400010A0 (BowlFlour) creating 0x40000F68 (BowlFlour)
+18/04/2025 14:43:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'dupe '
+18/04/2025 14:43:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duping 0x400010A0 (BowlFlour) (inBag=False; amount=1)
+18/04/2025 14:43:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duped 0x400010A0 (BowlFlour) creating 0x40000FE4 (BowlFlour)
+18/04/2025 14:43:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'dupe '
+18/04/2025 14:43:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duping 0x400010A0 (BowlFlour) (inBag=False; amount=1)
+18/04/2025 14:43:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duped 0x400010A0 (BowlFlour) creating 0x40000FF0 (BowlFlour)
+18/04/2025 14:43:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'dupe '
+18/04/2025 14:43:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duping 0x400010A0 (BowlFlour) (inBag=False; amount=1)
+18/04/2025 14:43:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duped 0x400010A0 (BowlFlour) creating 0x40001010 (BowlFlour)
+18/04/2025 14:43:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'dupe '
+18/04/2025 14:43:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duping 0x400010A0 (BowlFlour) (inBag=False; amount=1)
+18/04/2025 14:43:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duped 0x400010A0 (BowlFlour) creating 0x40001012 (BowlFlour)
+18/04/2025 14:43:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'dupe '
+18/04/2025 14:43:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duping 0x400010A0 (BowlFlour) (inBag=False; amount=1)
+18/04/2025 14:43:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duped 0x400010A0 (BowlFlour) creating 0x40001016 (BowlFlour)
+18/04/2025 14:45:19: 127.0.0.1: Crafting 0x4000105E (Dough) with craft system DefClassicCooking
+18/04/2025 14:45:22: 127.0.0.1: Crafting 0x40001060 (Dough) with craft system DefClassicCooking
+18/04/2025 14:45:25: 127.0.0.1: Crafting 0x40001062 (Dough) with craft system DefClassicCooking
+18/04/2025 14:45:28: 127.0.0.1: Crafting 0x40001066 (Dough) with craft system DefClassicCooking
+18/04/2025 14:45:30: 127.0.0.1: Crafting 0x40001068 (Dough) with craft system DefClassicCooking
+18/04/2025 14:46:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 14:46:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+##############################
+Log started on 18/04/2025 14:51:35
+
+18/04/2025 14:52:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+##############################
+Log started on 18/04/2025 14:54:11
+
+##############################
+Log started on 18/04/2025 14:58:51
+
+##############################
+Log started on 18/04/2025 15:02:09
+
+18/04/2025 15:02:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add pitcher'
+18/04/2025 15:02:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 552, 0) in Felucca: "pitcher"
+18/04/2025 15:02:27: 127.0.0.1: Serials: 0x40000F68; 
+18/04/2025 15:02:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 16:05:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 16:06:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add sweetd'
+18/04/2025 16:06:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 552, 0) in Felucca: "SweetDough"
+18/04/2025 16:06:05: 127.0.0.1: Serials: 0x4001A55B; 
+18/04/2025 16:06:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add doufg'
+18/04/2025 16:06:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 552, 0) in Felucca: "Dough"
+18/04/2025 16:06:26: 127.0.0.1: Serials: 0x4001A55C; 
+18/04/2025 16:08:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+##############################
+Log started on 18/04/2025 16:14:07
+
+18/04/2025 16:14:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add BowlFlour'
+18/04/2025 16:14:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 549, 0) in Felucca: "BowlFlour"
+18/04/2025 16:14:49: 127.0.0.1: Serials: 0x400010A4; 
+18/04/2025 16:16:07: 127.0.0.1: Crafting 0x400010A6 (Dough) with craft system DefClassicCooking
+18/04/2025 16:16:11: 127.0.0.1: Crafting 0x400010AA (Dough) with craft system DefClassicCooking
+##############################
+Log started on 18/04/2025 16:19:42
+
+18/04/2025 16:20:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+##############################
+Log started on 18/04/2025 16:32:32
+
+##############################
+Log started on 18/04/2025 16:32:42
+
+##############################
+Log started on 18/04/2025 16:34:11
+
+##############################
+Log started on 18/04/2025 16:38:12
+
+##############################
+Log started on 18/04/2025 16:41:03
+
+##############################
+Log started on 18/04/2025 16:43:13
+
+##############################
+Log started on 18/04/2025 16:45:04
+
+##############################
+Log started on 18/04/2025 16:46:45
+
+##############################
+Log started on 18/04/2025 16:48:48
+
+18/04/2025 16:49:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 16:49:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 16:49:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 16:49:51: 127.0.0.1: Crafting 0x400010A4 (Dough) with craft system DefClassicCooking
+18/04/2025 16:50:05: 127.0.0.1: Crafting 0x400010A5 (Dough) with craft system DefClassicCooking
+18/04/2025 16:50:14: 127.0.0.1: Crafting 0x400010A6 (Dough) with craft system DefClassicCooking
+18/04/2025 16:51:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 16:51:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 16:51:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 16:51:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 16:51:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 16:52:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'dupe '
+18/04/2025 16:52:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duping 0x40001184 (BowlFlour) (inBag=False; amount=1)
+18/04/2025 16:52:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duped 0x40001184 (BowlFlour) creating 0x40001391 (BowlFlour)
+18/04/2025 16:52:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add bowlflour'
+18/04/2025 16:52:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2524, 563, 0) in Felucca: "bowlflour"
+18/04/2025 16:52:17: 127.0.0.1: Serials: 0x40001392; 
+18/04/2025 16:54:50: 127.0.0.1: Crafting 0x40001441 (Dough) with craft system DefClassicCooking
+##############################
+Log started on 18/04/2025 16:56:04
+
+##############################
+Log started on 18/04/2025 16:59:17
+
+18/04/2025 17:00:19: 127.0.0.1: Crafting 0x400010B2 (Dough) with craft system DefClassicCooking
+18/04/2025 17:00:28: 127.0.0.1: Crafting 0x400010B6 (Dough) with craft system DefClassicCooking
+##############################
+Log started on 18/04/2025 17:09:10
+
+18/04/2025 17:09:38: 127.0.0.1: Crafting 0x400010A4 (Dough) with craft system DefClassicCooking
+18/04/2025 17:09:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+18/04/2025 17:12:01: 127.0.0.1: Crafting 0x40001212 (SweetDough) with craft system DefClassicCooking
+##############################
+Log started on 18/04/2025 17:25:46
+
+18/04/2025 17:26:00: 127.0.0.1: Crafting 0x400010A4 (Dough) with craft system DefClassicCooking
+##############################
+Log started on 18/04/2025 17:26:53
+
+18/04/2025 17:27:11: 127.0.0.1: Crafting 0x400010A4 (Dough) with craft system DefClassicCooking
+18/04/2025 17:27:23: 127.0.0.1: Crafting 0x400010AA (SweetDough) with craft system DefClassicCooking
+18/04/2025 17:27:26: 127.0.0.1: Crafting 0x400010AC (CakeMix) with craft system DefClassicCooking
+18/04/2025 17:27:29: 127.0.0.1: Crafting 0x400010AE (Dough) with craft system DefClassicCooking
+18/04/2025 17:27:33: 127.0.0.1: Crafting 0x400010B2 (SweetDough) with craft system DefClassicCooking
+18/04/2025 17:27:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'dupe '
+18/04/2025 17:27:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duping 0x40001184 (BowlFlour) (inBag=False; amount=1)
+18/04/2025 17:27:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duped 0x40001184 (BowlFlour) creating 0x400010B6 (BowlFlour)
+18/04/2025 17:27:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'dupe '
+18/04/2025 17:27:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duping 0x40001184 (BowlFlour) (inBag=False; amount=1)
+18/04/2025 17:27:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duped 0x40001184 (BowlFlour) creating 0x400010B7 (BowlFlour)
+18/04/2025 17:27:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'dupe '
+18/04/2025 17:27:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duping 0x40001184 (BowlFlour) (inBag=False; amount=1)
+18/04/2025 17:27:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duped 0x40001184 (BowlFlour) creating 0x400010BA (BowlFlour)
+18/04/2025 17:27:52: 127.0.0.1: Crafting 0x400010BE (Dough) with craft system DefClassicCooking
+18/04/2025 17:28:20: 127.0.0.1: Crafting 0x400010C2 (CookieMix) with craft system DefClassicCooking
+18/04/2025 17:28:27: 127.0.0.1: Crafting 0x400010C3 (Dough) with craft system DefClassicCooking
+18/04/2025 17:28:57: 127.0.0.1: Crafting 0x400010C8 (SweetDough) with craft system DefClassicCooking
+18/04/2025 17:29:01: 127.0.0.1: Crafting 0x400010C9 (SweetDough) with craft system DefClassicCooking
+18/04/2025 17:29:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add '
+18/04/2025 17:29:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add eggs'
+18/04/2025 17:29:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2524, 561, 0) in Felucca: "eggs"
+18/04/2025 17:29:48: 127.0.0.1: Serials: 0x40001238; 
+18/04/2025 17:30:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add Sausage'
+18/04/2025 17:30:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2523, 560, 0) in Felucca: "Sausage"
+18/04/2025 17:30:04: 127.0.0.1: Serials: 0x40001316; 
+18/04/2025 17:30:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add CheeseWheel'
+18/04/2025 17:30:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2522, 560, 0) in Felucca: "CheeseWheel"
+18/04/2025 17:30:15: 127.0.0.1: Serials: 0x400013FE; 
+18/04/2025 17:30:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add dough'
+18/04/2025 17:30:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2523, 557, 0) in Felucca: "dough"
+18/04/2025 17:30:44: 127.0.0.1: Serials: 0x40001400; 
+18/04/2025 17:31:26: 127.0.0.1: Crafting 0x4000143B (UnbakedQuiche) with craft system DefClassicCooking
+18/04/2025 18:49:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add '
+18/04/2025 18:49:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'Add Cook'
+18/04/2025 18:49:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 562, 0) in Felucca: "Cook"
+18/04/2025 18:49:37: 127.0.0.1: Serials: 0x472; 
+18/04/2025 19:12:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add lettuce'
+18/04/2025 19:12:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 556, 0) in Felucca: "lettuce"
+18/04/2025 19:12:41: 127.0.0.1: Serials: 0x4001A9C3; 
+##############################
+Log started on 18/04/2025 20:03:24
+
+18/04/2025 20:07:59: 127.0.0.1: Crafting 0x40000F6E (AgilityScroll) with craft system DefClassicInscription
+18/04/2025 20:08:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add blasnkscroll'
+18/04/2025 20:08:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add blankscroll'
+18/04/2025 20:08:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2532, 572, 0) in Felucca: "blankscroll"
+18/04/2025 20:08:29: 127.0.0.1: Serials: 0x40000F6F; 
+18/04/2025 20:08:44: 127.0.0.1: Crafting 0x40000F79 (ResurrectionScroll) with craft system DefClassicInscription
+18/04/2025 20:17:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add blankscroll'
+18/04/2025 20:17:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2534, 573, 0) in Felucca: "blankscroll"
+18/04/2025 20:17:58: 127.0.0.1: Serials: 0x4000129D; 
+##############################
+Log started on 18/04/2025 20:22:53
+
+##############################
+Log started on 18/04/2025 20:29:35
+

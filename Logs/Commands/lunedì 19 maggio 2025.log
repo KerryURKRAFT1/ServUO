@@ -1,0 +1,361 @@
+##############################
+Log started on 19/05/2025 07:49:06
+
+19/05/2025 07:49:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'npcfinder '
+19/05/2025 07:51:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go minoc'
+19/05/2025 08:01:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go minoc'
+19/05/2025 08:01:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'npcfinder '
+19/05/2025 08:02:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'npcfinder '
+19/05/2025 08:03:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'npcfinder '
+19/05/2025 09:04:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go minoc'
+19/05/2025 09:04:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add gg'
+19/05/2025 09:05:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 562, 0) in Felucca: "GoldIngot"
+19/05/2025 09:05:02: 127.0.0.1: Serials: 0x4001A691; 
+19/05/2025 09:05:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 200'
+19/05/2025 09:05:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x4001A691 (GoldIngot) to '200'
+19/05/2025 09:05:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add smithhammer'
+19/05/2025 09:05:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 562, 0) in Felucca: "smithhammer"
+19/05/2025 09:05:26: 127.0.0.1: Serials: 0x4001A692; 
+19/05/2025 09:05:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add anvil'
+19/05/2025 09:05:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 560, 0) in Felucca: "anvil"
+19/05/2025 09:05:53: 127.0.0.1: Serials: 0x4001A6EB; 
+19/05/2025 09:39:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add agapite ingot'
+19/05/2025 09:39:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 559, 0) in Felucca: "AgapiteIngot"
+19/05/2025 09:39:09: 127.0.0.1: Serials: 0x4001A9A9; 
+19/05/2025 09:39:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 1000'
+19/05/2025 09:39:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x4001A9A9 (AgapiteIngot) to '1000'
+##############################
+Log started on 19/05/2025 10:07:12
+
+19/05/2025 10:07:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 85'
+19/05/2025 10:07:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '85'
+##############################
+Log started on 19/05/2025 10:19:36
+
+19/05/2025 10:20:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 85'
+19/05/2025 10:20:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 85'
+19/05/2025 10:20:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '85'
+19/05/2025 10:27:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 100'
+19/05/2025 10:27:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+19/05/2025 10:30:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ironingot'
+19/05/2025 10:30:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 558, 0) in Felucca: "ironingot"
+19/05/2025 10:30:57: 127.0.0.1: Serials: 0x400014F1; 
+19/05/2025 10:31:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 100'
+19/05/2025 10:31:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x400014F1 (IronIngot) to '100'
+19/05/2025 10:31:22: 127.0.0.1: Crafting 0x40001503 (PlateChest) with craft system DefClassicBlacksmithy
+##############################
+Log started on 19/05/2025 10:37:49
+
+19/05/2025 10:38:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL BLACKSMITH 85'
+19/05/2025 10:38:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '85'
+19/05/2025 10:38:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:38:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001041 (Leather)
+19/05/2025 10:38:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:38:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A13A (StarSapphire)
+19/05/2025 10:38:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:38:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A1C6 (Citrine)
+19/05/2025 10:38:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:38:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000108E (FletcherTools)
+19/05/2025 10:38:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:38:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400010B4 (Saw)
+19/05/2025 10:38:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001068 (ChainLightningScroll)
+19/05/2025 10:39:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000116E (MortarPestle)
+19/05/2025 10:39:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000FEA (GreaterExplosionPotion)
+19/05/2025 10:39:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000111F (Bottle)
+19/05/2025 10:39:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A788 (LeatherCap)
+19/05/2025 10:39:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000117A (MapmakersPen)
+19/05/2025 10:39:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A7CE (VikingSword)
+19/05/2025 10:39:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001478 (Inshave)
+19/05/2025 10:39:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400013F8 (Shaft)
+19/05/2025 10:39:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F69 (JointingPlane)
+19/05/2025 10:39:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F6F (MagicArrowScroll)
+19/05/2025 10:39:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A265 (GoldRing)
+19/05/2025 10:39:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A186 (Sapphire)
+19/05/2025 10:39:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A102 (GreaterHealPotion)
+19/05/2025 10:39:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001036 (ExplosionPotion)
+19/05/2025 10:39:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000FEC (LesserExplosionPotion)
+19/05/2025 10:39:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001071 (ScribesPen)
+19/05/2025 10:39:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001BBA7 (TwoHandedAxe)
+19/05/2025 10:39:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001BA61 (FishingPole)
+19/05/2025 10:39:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001BA24 (Sextant)
+19/05/2025 10:39:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400010BC (RollingPin)
+19/05/2025 10:39:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000104A (Shovel)
+19/05/2025 10:39:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F7C (Arrow)
+19/05/2025 10:39:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F00 (Dagger)
+19/05/2025 10:39:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F0E (Spellbook)
+19/05/2025 10:39:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A187 (Ruby)
+19/05/2025 10:39:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001C256 (Harp)
+19/05/2025 10:39:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F71 (PlateChest)
+19/05/2025 10:39:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001004 (Backpack)
+19/05/2025 10:39:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001074 (Backpack)
+19/05/2025 10:39:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A39D (GreaterHealPotion)
+19/05/2025 10:39:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F02 (BagOfReagents)
+19/05/2025 10:39:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A13B (Emerald)
+19/05/2025 10:39:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400014B0 (JointingPlane)
+19/05/2025 10:39:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000144D (RawFishSteak)
+19/05/2025 10:39:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001BB7B (ShipwreckedItem)
+19/05/2025 10:39:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000EFD (RedBook)
+19/05/2025 10:39:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 10:39:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F70 (Broadsword)
+##############################
+Log started on 19/05/2025 13:15:31
+
+19/05/2025 13:15:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 100'
+19/05/2025 13:15:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+19/05/2025 13:30:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ironingot'
+19/05/2025 13:30:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 559, 0) in Felucca: "ironingot"
+19/05/2025 13:30:48: 127.0.0.1: Serials: 0x40001632; 
+19/05/2025 13:30:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 200'
+19/05/2025 13:30:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x40001632 (IronIngot) to '200'
+19/05/2025 13:31:04: 127.0.0.1: Crafting 0x40001634 (PlateChest) with craft system DefClassicBlacksmithy
+19/05/2025 13:34:28: 127.0.0.1: Crafting 0x4000164F (PlateChest) with craft system DefClassicBlacksmithy
+19/05/2025 13:37:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F6D (Cloth)
+19/05/2025 13:37:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400010C9 (SweetDough)
+19/05/2025 13:37:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000FF6 (SewingKit)
+19/05/2025 13:37:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400010C8 (SweetDough)
+19/05/2025 13:37:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400012A3 (TinkersTools)
+19/05/2025 13:37:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001230 (Scissors)
+19/05/2025 13:37:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A5DD (Skillet)
+19/05/2025 13:37:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001CA1D (GreaterHealScroll)
+19/05/2025 13:37:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000FCE (VeriteIngot)
+19/05/2025 13:37:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001483 (Saw)
+19/05/2025 13:37:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000FCC (GoldIngot)
+19/05/2025 13:37:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001101 (RollingPin)
+19/05/2025 13:37:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F79 (Bow)
+19/05/2025 13:37:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001CA1E (ParalyzeFieldScroll)
+19/05/2025 13:37:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001475 (CopperIngot)
+19/05/2025 13:37:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A433 (Pitcher)
+19/05/2025 13:37:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001477 (ShadowIronIngot)
+19/05/2025 13:37:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000146F (Froe)
+19/05/2025 13:37:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F71 (PlateChest)
+19/05/2025 13:37:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000164F (PlateChest)
+19/05/2025 13:37:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001632 (IronIngot)
+19/05/2025 13:37:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F0E (Spellbook)
+19/05/2025 13:37:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001BBA7 (TwoHandedAxe)
+19/05/2025 13:37:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001BA61 (FishingPole)
+19/05/2025 13:37:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001BA24 (Sextant)
+19/05/2025 13:37:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001004 (Backpack)
+19/05/2025 13:37:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001074 (Backpack)
+19/05/2025 13:37:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001C256 (Harp)
+19/05/2025 13:37:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A39D (GreaterHealPotion)
+19/05/2025 13:37:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400014B0 (JointingPlane)
+19/05/2025 13:37:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001634 (PlateChest)
+19/05/2025 13:37:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000144D (RawFishSteak)
+19/05/2025 13:37:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001BB7B (ShipwreckedItem)
+19/05/2025 13:37:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000104A (Shovel)
+19/05/2025 13:37:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A187 (Ruby)
+19/05/2025 13:37:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001153 (Dagger)
+19/05/2025 13:37:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400010BC (RollingPin)
+19/05/2025 13:37:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F70 (Broadsword)
+19/05/2025 13:37:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F7C (Arrow)
+19/05/2025 13:37:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A13B (Emerald)
+19/05/2025 13:37:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:37:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F02 (BagOfReagents)
+19/05/2025 13:37:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ironingot'
+19/05/2025 13:37:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 559, 0) in Felucca: "ironingot"
+19/05/2025 13:37:51: 127.0.0.1: Serials: 0x40014A1F; 
+19/05/2025 13:37:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 200'
+19/05/2025 13:37:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x40014A1F (IronIngot) to '200'
+19/05/2025 13:38:07: 127.0.0.1: Crafting 0x400164EF (PlateChest) with craft system DefClassicBlacksmithy
+##############################
+Log started on 19/05/2025 13:41:06
+
+19/05/2025 13:41:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:41:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F71 (PlateChest)
+19/05/2025 13:41:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:41:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001C256 (Harp)
+19/05/2025 13:41:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:41:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001074 (Backpack)
+19/05/2025 13:41:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:41:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001004 (Backpack)
+19/05/2025 13:41:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:41:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:41:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A39D (GreaterHealPotion)
+19/05/2025 13:41:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:41:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F02 (BagOfReagents)
+19/05/2025 13:41:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:41:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A13B (Emerald)
+19/05/2025 13:41:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:41:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400014B0 (JointingPlane)
+19/05/2025 13:41:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:41:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000144D (RawFishSteak)
+19/05/2025 13:41:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:41:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001BB7B (ShipwreckedItem)
+19/05/2025 13:41:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:41:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000104A (Shovel)
+19/05/2025 13:41:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:41:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F7C (Arrow)
+19/05/2025 13:41:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:41:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001BA61 (FishingPole)
+19/05/2025 13:41:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:41:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001BBA7 (TwoHandedAxe)
+19/05/2025 13:41:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:41:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001153 (Dagger)
+19/05/2025 13:41:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:41:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A187 (Ruby)
+19/05/2025 13:41:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:41:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000EFD (RedBook)
+19/05/2025 13:41:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:41:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400010BC (RollingPin)
+19/05/2025 13:41:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:41:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F70 (Broadsword)
+19/05/2025 13:41:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:41:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001BA24 (Sextant)
+19/05/2025 13:41:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ironingot'
+19/05/2025 13:41:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 558, 0) in Felucca: "ironingot"
+19/05/2025 13:41:43: 127.0.0.1: Serials: 0x40001028; 
+19/05/2025 13:41:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 200'
+19/05/2025 13:41:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x40001028 (IronIngot) to '200'
+19/05/2025 13:42:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 100'
+19/05/2025 13:42:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+19/05/2025 13:42:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill animallore 0'
+19/05/2025 13:42:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AnimalLore.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+19/05/2025 13:42:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill anatomy 0'
+19/05/2025 13:42:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Anatomy.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+19/05/2025 13:42:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill Taming 0'
+19/05/2025 13:42:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill AnimalTaming0'
+19/05/2025 13:42:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill Musicanship 0'
+19/05/2025 13:43:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill Wrestling 0'
+19/05/2025 13:43:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Wrestling.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+19/05/2025 13:43:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill Peacemaking 0'
+19/05/2025 13:43:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Peacemaking.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+19/05/2025 13:43:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill Provocation 0'
+19/05/2025 13:43:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Provocation.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+19/05/2025 13:43:45: 127.0.0.1: Crafting 0x4000110C (PlateChest) with craft system DefClassicBlacksmithy
+19/05/2025 13:44:02: 127.0.0.1: Crafting 0x40001111 (PlateChest) with craft system DefClassicBlacksmithy
+19/05/2025 13:46:13: 127.0.0.1: Crafting 0x400011D2 (PlateChest) with craft system DefClassicBlacksmithy
+19/05/2025 13:46:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 1000'
+19/05/2025 13:46:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x4001A691 (GoldIngot) to '1000'
+19/05/2025 13:46:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:46:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001111 (PlateChest)
+19/05/2025 13:46:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:46:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000110C (PlateChest)
+19/05/2025 13:46:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:46:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400011D2 (PlateChest)
+19/05/2025 13:46:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+19/05/2025 13:46:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001028 (IronIngot)
+19/05/2025 13:46:59: 127.0.0.1: Crafting 0x400013F3 (PlateChest) with craft system DefClassicBlacksmithy
+19/05/2025 13:47:07: 127.0.0.1: Crafting 0x400013F5 (PlateChest) with craft system DefClassicBlacksmithy
+19/05/2025 13:47:36: 127.0.0.1: Crafting 0x400013F8 (PlateChest) with craft system DefClassicBlacksmithy
+19/05/2025 13:48:11: 127.0.0.1: Crafting 0x400013FE (PlateChest) with craft system DefClassicBlacksmithy
+19/05/2025 13:48:40: 127.0.0.1: Crafting 0x4000158B (PlateChest) with craft system DefClassicBlacksmithy
+19/05/2025 13:49:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ironingot'
+19/05/2025 13:49:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 558, 0) in Felucca: "ironingot"
+19/05/2025 13:49:17: 127.0.0.1: Serials: 0x4000158C; 
+19/05/2025 13:49:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 100'
+19/05/2025 13:49:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x4000158C (IronIngot) to '100'
+19/05/2025 13:49:30: 127.0.0.1: Crafting 0x4000158D (PlateChest) with craft system DefClassicBlacksmithy
+##############################
+Log started on 19/05/2025 14:19:52
+
+19/05/2025 14:20:18: 127.0.0.1: Crafting 0x40000F03 (PlateChest) with craft system DefClassicBlacksmithy
+19/05/2025 14:20:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 1000'
+19/05/2025 14:20:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x4001A691 (GoldIngot) to '1000'
+19/05/2025 14:20:53: 127.0.0.1: Crafting 0x40000F04 (PlateLegs) with craft system DefClassicBlacksmithy
+19/05/2025 14:20:57: 127.0.0.1: Crafting 0x40000F05 (PlateLegs) with craft system DefClassicBlacksmithy
+##############################
+Log started on 19/05/2025 16:56:00
+
+19/05/2025 16:56:47: 127.0.0.1: Crafting 0x40000F03 (PlateChest) with craft system DefClassicBlacksmithy
+19/05/2025 17:06:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 200'
+19/05/2025 17:06:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x4001A691 (GoldIngot) to '200'
+19/05/2025 17:06:35: 127.0.0.1: Crafting 0x40001281 (PlateChest) with craft system DefClassicBlacksmithy
+19/05/2025 17:07:04: 127.0.0.1: Crafting 0x40001285 (PlateChest) with craft system DefClassicBlacksmithy
+19/05/2025 17:07:36: 127.0.0.1: Crafting 0x40001288 (PlateChest) with craft system DefClassicBlacksmithy
+##############################
+Log started on 19/05/2025 17:12:28
+
+19/05/2025 17:12:45: 127.0.0.1: Crafting 0x40000F03 (PlateChest) with craft system DefClassicBlacksmithy
+19/05/2025 17:12:50: 127.0.0.1: Crafting 0x40000F04 (PlateChest) with craft system DefClassicBlacksmithy
+19/05/2025 17:13:59: 127.0.0.1: Crafting 0x40000F05 (PlateChest) with craft system DefClassicBlacksmithy
+##############################
+Log started on 19/05/2025 17:42:19
+
+19/05/2025 17:42:39: 127.0.0.1: Crafting 0x40000F03 (PlateChest) with craft system DefClassicBlacksmithy

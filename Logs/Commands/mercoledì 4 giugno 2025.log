@@ -1,0 +1,72 @@
+##############################
+Log started on 04/06/2025 10:01:35
+
+04/06/2025 10:06:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add statichousesign'
+04/06/2025 10:06:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2496, 601, 0) in Felucca: "statichousesign"
+04/06/2025 10:06:49: 127.0.0.1: Serials: 0x4000018F; 
+04/06/2025 10:08:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+04/06/2025 10:08:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000017E (Key)
+04/06/2025 10:08:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+04/06/2025 10:08:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+04/06/2025 10:09:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+04/06/2025 10:09:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+04/06/2025 10:09:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+04/06/2025 10:09:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+04/06/2025 10:09:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+04/06/2025 10:09:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+04/06/2025 10:09:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+04/06/2025 10:09:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+04/06/2025 10:09:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+04/06/2025 10:09:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+04/06/2025 10:10:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+04/06/2025 10:10:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+04/06/2025 10:10:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+04/06/2025 10:10:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+04/06/2025 10:10:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+04/06/2025 10:10:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+04/06/2025 10:10:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+04/06/2025 10:11:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD BANKCHECK 100000'
+04/06/2025 10:11:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2497, 597, 0) in Felucca: "BANKCHECK" "100000"
+04/06/2025 10:11:01: 127.0.0.1: Serials: 0x400001F0; 
+##############################
+Log started on 04/06/2025 10:12:59
+
+04/06/2025 10:13:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD STATICHOUSESIGN'
+04/06/2025 10:13:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2496, 601, 0) in Felucca: "STATICHOUSESIGN"
+04/06/2025 10:13:27: 127.0.0.1: Serials: 0x40000092; 
+04/06/2025 10:13:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+04/06/2025 10:13:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+04/06/2025 10:14:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD BANKCHECK 100000'
+04/06/2025 10:14:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2495, 597, 0) in Felucca: "BANKCHECK" "100000"
+04/06/2025 10:14:32: 127.0.0.1: Serials: 0x400000D4; 
+04/06/2025 10:15:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'GO 0,0,0'
+04/06/2025 10:15:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'GO 0'
+04/06/2025 10:15:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'GO 0 0 0'
+04/06/2025 10:15:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'admin '
+##############################
+Log started on 04/06/2025 13:37:22
+
+04/06/2025 13:37:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add statichousesign'
+04/06/2025 13:37:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2496, 601, 0) in Felucca: "statichousesign"
+04/06/2025 13:37:58: 127.0.0.1: Serials: 0x400000AF; 
+04/06/2025 13:38:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+04/06/2025 13:38:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+04/06/2025 13:38:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+04/06/2025 13:39:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD BANKCHECK 100000'
+04/06/2025 13:39:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2496, 596, 0) in Felucca: "BANKCHECK" "100000"
+04/06/2025 13:39:27: 127.0.0.1: Serials: 0x400000B2; 
+04/06/2025 13:39:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD BANKCHECK 100000'
+04/06/2025 13:39:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2496, 597, 0) in Felucca: "BANKCHECK" "100000"
+04/06/2025 13:39:27: 127.0.0.1: Serials: 0x400000B3; 
+04/06/2025 13:39:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD BANKCHECK 100000'
+04/06/2025 13:39:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2497, 597, 0) in Felucca: "BANKCHECK" "100000"
+04/06/2025 13:39:28: 127.0.0.1: Serials: 0x400000B4; 
+04/06/2025 13:39:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD BANKCHECK 100000'
+04/06/2025 13:39:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2497, 596, 0) in Felucca: "BANKCHECK" "100000"
+04/06/2025 13:39:29: 127.0.0.1: Serials: 0x400000B5; 
+##############################
+Log started on 04/06/2025 13:48:31
+
+##############################
+Log started on 04/06/2025 14:07:10
+

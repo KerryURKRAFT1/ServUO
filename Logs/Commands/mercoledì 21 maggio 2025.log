@@ -1,0 +1,145 @@
+##############################
+Log started on 21/05/2025 13:28:57
+
+21/05/2025 13:33:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go Minoc'
+21/05/2025 13:33:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add pickaxe'
+21/05/2025 13:33:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2560, 491, 0) in Felucca: "pickaxe"
+21/05/2025 13:33:46: 127.0.0.1: Serials: 0x4000110C; 
+21/05/2025 13:33:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 13:33:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 13:33:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 13:34:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill mining 100'
+21/05/2025 13:34:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Mining.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+21/05/2025 13:35:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+##############################
+Log started on 21/05/2025 13:53:49
+
+21/05/2025 13:53:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go minoc'
+21/05/2025 13:53:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add pickaxe'
+21/05/2025 13:53:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2469, 544, 0) in Felucca: "pickaxe"
+21/05/2025 13:53:59: 127.0.0.1: Serials: 0x40000F11; 
+21/05/2025 13:54:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill mining 100'
+21/05/2025 13:54:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Mining.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+21/05/2025 13:54:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+21/05/2025 13:56:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 13:56:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001074 (VeriteOre)
+21/05/2025 13:56:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 13:56:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000107C (ValoriteOre)
+21/05/2025 13:56:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 13:56:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000107A (AgapiteOre)
+21/05/2025 13:56:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 13:56:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000107E (GoldOre)
+21/05/2025 13:56:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 13:56:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400010A6 (CopperOre)
+21/05/2025 13:56:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 13:56:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400010B4 (VeriteOre)
+21/05/2025 13:56:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 13:56:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A725 (SmithHammer)
+21/05/2025 13:56:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 13:56:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001096 (ValoriteOre)
+##############################
+Log started on 21/05/2025 14:03:25
+
+21/05/2025 14:03:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go minoc'
+21/05/2025 14:03:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+21/05/2025 14:03:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add pickaxe'
+21/05/2025 14:03:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2563, 489, 0) in Felucca: "pickaxe"
+21/05/2025 14:03:42: 127.0.0.1: Serials: 0x40000FCE; 
+21/05/2025 14:03:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill mining 100'
+21/05/2025 14:03:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Mining.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+21/05/2025 14:04:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:04:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000FDC (IronOre)
+21/05/2025 14:04:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:04:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000101A (DullCopperOre)
+21/05/2025 14:04:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:04:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000FF0 (CopperOre)
+21/05/2025 14:04:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:04:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001058 (IronOre)
+21/05/2025 14:04:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:04:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001028 (ValoriteOre)
+21/05/2025 14:04:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:04:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400012FE (Bag)
+21/05/2025 14:04:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:04:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400012A9 (Bag)
+21/05/2025 14:04:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:04:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001004 (DullCopperOre)
+21/05/2025 14:04:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:04:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000101E (ShadowIronOre)
+21/05/2025 14:04:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:04:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:04:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000FF6 (BronzeOre)
+21/05/2025 14:04:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:04:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000FEC (CopperOre)
+21/05/2025 14:04:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:04:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A238 (IronIngot)
+21/05/2025 14:04:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:04:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001041 (IronOre)
+21/05/2025 14:04:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:04:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001008 (DullCopperOre)
+21/05/2025 14:04:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:04:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400012E1 (Bag)
+21/05/2025 14:06:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:09:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'admin '
+21/05/2025 14:10:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill mining 100'
+21/05/2025 14:10:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Mining.Base' of 0x3DE "tester" ('tester') to '100'
+21/05/2025 14:13:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001071 (DullCopperOre)
+21/05/2025 14:13:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001066 (GoldOre)
+21/05/2025 14:13:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001117 (IronOre)
+21/05/2025 14:13:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001068 (IronOre)
+21/05/2025 14:13:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000105A (DullCopperOre)
+21/05/2025 14:13:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001060 (BronzeOre)
+21/05/2025 14:13:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000106E (IronOre)
+21/05/2025 14:13:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001516 (IronOre)
+21/05/2025 14:13:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001062 (DullCopperOre)
+21/05/2025 14:13:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001392 (IronOre)
+21/05/2025 14:13:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001395 (DullCopperOre)
+21/05/2025 14:13:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400014B4 (IronOre)
+21/05/2025 14:13:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400014AC (CopperOre)
+21/05/2025 14:13:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000139A (CopperOre)
+21/05/2025 14:13:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000139B (ShadowIronOre)
+21/05/2025 14:13:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000123C (IronIngot)
+21/05/2025 14:13:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001390 (IronOre)
+21/05/2025 14:13:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000139F (AgapiteOre)
+21/05/2025 14:13:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:13:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400014B0 (DullCopperOre)
+21/05/2025 14:14:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:14:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:14:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001250 (ClockFrame)
+21/05/2025 14:14:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+21/05/2025 14:14:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400013AD (CopperOre)
+##############################
+Log started on 21/05/2025 16:10:23
+
+21/05/2025 16:10:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD REAG'
+21/05/2025 16:10:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2569, 487, 0) in Felucca: "BagOfAllReagents"
+21/05/2025 16:10:41: 127.0.0.1: Serials: 0x40000FDC; 
+21/05/2025 16:11:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET MANA 100'
+21/05/2025 16:11:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET MANA 32'
+21/05/2025 16:11:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'MANA' of 0x39E "FDDSDASAD" ('Kerry') to '32'

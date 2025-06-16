@@ -1,0 +1,40 @@
+##############################
+Log started on 30/03/2025 08:34:18
+
+##############################
+Log started on 30/03/2025 08:50:05
+
+##############################
+Log started on 30/03/2025 08:52:48
+
+##############################
+Log started on 30/03/2025 09:01:01
+
+##############################
+Log started on 30/03/2025 09:18:41
+
+30/03/2025 09:46:10: 127.0.0.1: Crafting 0x400016B6 (ShortSpear) with craft system DefClassicBlacksmithy
+##############################
+Log started on 30/03/2025 12:32:58
+
+##############################
+Log started on 30/03/2025 12:33:57
+
+##############################
+Log started on 30/03/2025 12:48:36
+
+##############################
+Log started on 30/03/2025 12:54:05
+
+##############################
+Log started on 30/03/2025 13:07:15
+
+##############################
+Log started on 30/03/2025 13:13:36
+
+30/03/2025 13:14:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD SHADOWINGOT'
+30/03/2025 13:14:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD SHADOWINGOT'
+30/03/2025 13:14:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2533, 573, 0) in Felucca: "ShadowIronIngot"
+30/03/2025 13:14:36: 127.0.0.1: Serials: 0x40000F6C; 
+30/03/2025 13:14:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 1000'
+30/03/2025 13:14:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x40000F6C (ShadowIronIngot) to '1000'

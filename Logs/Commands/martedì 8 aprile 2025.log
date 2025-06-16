@@ -1,0 +1,239 @@
+##############################
+Log started on 08/04/2025 08:26:12
+
+##############################
+Log started on 08/04/2025 08:29:00
+
+##############################
+Log started on 08/04/2025 08:29:48
+
+08/04/2025 08:31:23: 127.0.0.1: Crafting 0x400010C4 (DecorativeSwordWest) with craft system DefClassictTinkering
+08/04/2025 08:31:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+##############################
+Log started on 08/04/2025 08:59:47
+
+08/04/2025 09:00:05: 127.0.0.1: Crafting 0x4000111F (DecorativeAxeNorth) with craft system DefClassictTinkering
+08/04/2025 09:00:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+##############################
+Log started on 08/04/2025 09:02:20
+
+08/04/2025 09:02:35: 127.0.0.1: Crafting 0x40001044 (DecorativeAxeNorth) with craft system DefClassictTinkering
+##############################
+Log started on 08/04/2025 09:06:17
+
+08/04/2025 09:06:28: 127.0.0.1: Crafting 0x40001044 (DecorativeAxeNorth) with craft system DefClassictTinkering
+##############################
+Log started on 08/04/2025 10:09:35
+
+08/04/2025 10:10:02: 127.0.0.1: Crafting 0x400010C6 (DecorativeAxeNorth) with craft system DefClassictTinkering
+08/04/2025 10:10:13: 127.0.0.1: Crafting 0x400010C7 (DecorativeAxeWest) with craft system DefClassictTinkering
+08/04/2025 10:10:29: 127.0.0.1: Crafting 0x400010C8 (DecorativeDAxeNorth) with craft system DefClassictTinkering
+08/04/2025 10:10:45: 127.0.0.1: Crafting 0x4000110C (DecorativeDAxeWest) with craft system DefClassictTinkering
+08/04/2025 10:11:05: 127.0.0.1: Crafting 0x40001113 (DecorativeSwordNorth) with craft system DefClassictTinkering
+08/04/2025 10:11:11: 127.0.0.1: Crafting 0x40001119 (DecorativeSwordWest) with craft system DefClassictTinkering
+08/04/2025 10:31:54: 127.0.0.1: Crafting 0x40001512 (BrazierTall) with craft system DefClassictTinkering
+08/04/2025 10:33:41: 127.0.0.1: Crafting 0x40001516 (Brazier) with craft system DefClassictTinkering
+##############################
+Log started on 08/04/2025 10:42:55
+
+08/04/2025 10:43:08: 127.0.0.1: Crafting 0x40001044 (Brazier) with craft system DefClassictTinkering
+08/04/2025 10:43:16: 127.0.0.1: Crafting 0x400010BE (BrazierTall) with craft system DefClassictTinkering
+08/04/2025 10:44:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add jointingplane'
+08/04/2025 10:44:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 580, 0) in Felucca: "jointingplane"
+08/04/2025 10:44:07: 127.0.0.1: Serials: 0x400010C0; 
+08/04/2025 10:44:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+08/04/2025 10:44:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add mouldingplane'
+08/04/2025 10:44:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 577, 0) in Felucca: "mouldingplane"
+08/04/2025 10:44:45: 127.0.0.1: Serials: 0x400010C2; 
+08/04/2025 10:45:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+08/04/2025 10:45:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+08/04/2025 10:45:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add smoothingplane'
+08/04/2025 10:45:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 578, 0) in Felucca: "smoothingplane"
+08/04/2025 10:45:38: 127.0.0.1: Serials: 0x400010C3; 
+08/04/2025 10:45:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+08/04/2025 10:46:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add clockframe'
+08/04/2025 10:46:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 575, 0) in Felucca: "clockframe"
+08/04/2025 10:46:18: 127.0.0.1: Serials: 0x400010C4; 
+08/04/2025 10:46:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+08/04/2025 10:46:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add axle'
+08/04/2025 10:46:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 575, 0) in Felucca: "axle"
+08/04/2025 10:46:37: 127.0.0.1: Serials: 0x400010C5; 
+08/04/2025 10:46:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+08/04/2025 10:46:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+08/04/2025 10:46:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+08/04/2025 10:46:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+08/04/2025 10:47:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add rollingpin'
+08/04/2025 10:47:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 571, 0) in Felucca: "rollingpin"
+08/04/2025 10:47:18: 127.0.0.1: Serials: 0x400011D2; 
+08/04/2025 10:47:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+08/04/2025 10:47:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+##############################
+Log started on 08/04/2025 10:49:00
+
+08/04/2025 10:49:27: 127.0.0.1: Crafting 0x4000113B (ClockFrame) with craft system DefClassictTinkering
+08/04/2025 10:49:38: 127.0.0.1: Crafting 0x4000113C (SmoothingPlane) with craft system DefClassictTinkering
+08/04/2025 10:49:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+08/04/2025 10:50:11: 127.0.0.1: Crafting 0x40001141 (Axle) with craft system DefClassictTinkering
+08/04/2025 10:50:17: 127.0.0.1: Crafting 0x40001142 (RollingPin) with craft system DefClassictTinkering
+08/04/2025 10:50:25: 127.0.0.1: Crafting 0x40001145 (Gears) with craft system DefClassictTinkering
+08/04/2025 10:50:30: 127.0.0.1: Crafting 0x40001147 (ClockParts) with craft system DefClassictTinkering
+08/04/2025 10:51:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add clo'
+08/04/2025 10:53:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add exlegear'
+08/04/2025 10:53:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 583, 0) in Felucca: "AxleGears"
+08/04/2025 10:53:11: 127.0.0.1: Serials: 0x4000114F; 
+08/04/2025 10:54:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add clockspart'
+08/04/2025 10:54:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 579, 0) in Felucca: "ClockParts"
+08/04/2025 10:54:16: 127.0.0.1: Serials: 0x4000123C; 
+08/04/2025 10:54:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add clockright'
+08/04/2025 10:54:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 582, 0) in Felucca: "clockright"
+08/04/2025 10:54:34: 127.0.0.1: Serials: 0x40001246; 
+08/04/2025 10:57:05: 127.0.0.1: Crafting 0x4000124C (Gears) with craft system DefClassictTinkering
+08/04/2025 10:57:48: 127.0.0.1: Crafting 0x4000124D (Gears) with craft system DefClassictTinkering
+08/04/2025 10:58:02: 127.0.0.1: Crafting 0x40001250 (Gears) with craft system DefClassictTinkering
+08/04/2025 10:59:05: 127.0.0.1: Crafting 0x40001251 (Axle) with craft system DefClassictTinkering
+08/04/2025 11:03:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+08/04/2025 11:03:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+08/04/2025 11:03:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+##############################
+Log started on 08/04/2025 11:11:15
+
+08/04/2025 11:11:36: 127.0.0.1: Crafting 0x400010C4 (ClockFrame) with craft system DefClassictTinkering
+##############################
+Log started on 08/04/2025 11:13:25
+
+08/04/2025 11:13:34: 127.0.0.1: Crafting 0x40001044 (ClockFrame) with craft system DefClassictTinkering
+08/04/2025 11:13:41: 127.0.0.1: Crafting 0x400010BA (Axle) with craft system DefClassictTinkering
+08/04/2025 11:13:49: 127.0.0.1: Crafting 0x400010BC (RollingPin) with craft system DefClassictTinkering
+08/04/2025 11:13:57: 127.0.0.1: Crafting 0x400010BE (Gears) with craft system DefClassictTinkering
+08/04/2025 11:14:11: 127.0.0.1: Crafting 0x400010C0 (ClockParts) with craft system DefClassictTinkering
+##############################
+Log started on 08/04/2025 11:16:14
+
+08/04/2025 11:16:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add clock'
+08/04/2025 11:16:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 584, 0) in Felucca: "clock"
+08/04/2025 11:16:45: 127.0.0.1: Serials: 0x40000FEE; 
+08/04/2025 11:16:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+08/04/2025 11:17:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add axlegears'
+08/04/2025 11:17:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 578, 0) in Felucca: "axlegears"
+08/04/2025 11:17:41: 127.0.0.1: Serials: 0x40000FF0; 
+08/04/2025 11:17:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+08/04/2025 11:18:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add clockright'
+08/04/2025 11:18:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2513, 577, 0) in Felucca: "clockright"
+08/04/2025 11:18:06: 127.0.0.1: Serials: 0x40000FF3; 
+08/04/2025 11:18:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add clockleft'
+08/04/2025 11:18:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2513, 576, 0) in Felucca: "clockleft"
+08/04/2025 11:18:10: 127.0.0.1: Serials: 0x40000FF6; 
+08/04/2025 11:18:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+08/04/2025 11:18:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+08/04/2025 11:18:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add potionkeg'
+08/04/2025 11:18:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 576, 0) in Felucca: "potionkeg"
+08/04/2025 11:18:40: 127.0.0.1: Serials: 0x400010A0; 
+08/04/2025 11:18:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add keg'
+08/04/2025 11:18:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 577, 0) in Felucca: "keg"
+08/04/2025 11:18:43: 127.0.0.1: Serials: 0x400010A2; 
+08/04/2025 11:18:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+08/04/2025 11:19:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+##############################
+Log started on 08/04/2025 11:25:01
+
+08/04/2025 11:25:50: 127.0.0.1: Crafting 0x40000FEE (ClockRight) with craft system DefClassictTinkering
+08/04/2025 11:26:17: 127.0.0.1: Crafting 0x40000FF0 (AxleGears) with craft system DefClassictTinkering
+##############################
+Log started on 08/04/2025 11:31:24
+
+08/04/2025 11:31:58: 127.0.0.1: Crafting 0x40000FEE (Keg) with craft system DefClassictTinkering
+08/04/2025 11:32:05: 127.0.0.1: Crafting 0x40000FF0 (PotionKeg) with craft system DefClassictTinkering
+08/04/2025 11:32:36: 127.0.0.1: Crafting 0x40000FF3 (Keg) with craft system DefClassictTinkering
+##############################
+Log started on 08/04/2025 11:41:02
+
+08/04/2025 11:42:29: 127.0.0.1: Crafting 0x40000FEE (FlourSifter) with craft system DefClassictTinkering
+08/04/2025 11:43:07: 127.0.0.1: Crafting 0x40000FF0 (ClockLeft) with craft system DefClassictTinkering
+08/04/2025 11:43:21: 127.0.0.1: Crafting 0x400010B7 (Keg) with craft system DefClassictTinkering
+08/04/2025 11:43:43: 127.0.0.1: Crafting 0x400010BC (BarrelHoops) with craft system DefClassictTinkering
+08/04/2025 11:44:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add barrelLid'
+08/04/2025 11:44:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 586, 0) in Felucca: "barrelLid"
+08/04/2025 11:44:16: 127.0.0.1: Serials: 0x400010C0; 
+08/04/2025 11:44:40: 127.0.0.1: Crafting 0x400010C2 (BarrelTap) with craft system DefClassictTinkering
+08/04/2025 11:44:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add bottle'
+08/04/2025 11:44:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 587, 0) in Felucca: "bottle"
+08/04/2025 11:44:45: 127.0.0.1: Serials: 0x400010C3; 
+08/04/2025 11:44:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 1'
+08/04/2025 11:44:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 10'
+08/04/2025 11:44:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x400010C3 (Bottle) to '10'
+08/04/2025 11:45:15: 127.0.0.1: Crafting 0x400010C4 (PotionKeg) with craft system DefClassictTinkering
+##############################
+Log started on 08/04/2025 13:26:09
+
+##############################
+Log started on 08/04/2025 13:29:15
+
+##############################
+Log started on 08/04/2025 13:32:43
+
+##############################
+Log started on 08/04/2025 13:35:20
+
+##############################
+Log started on 08/04/2025 13:45:46
+
+##############################
+Log started on 08/04/2025 13:49:21
+
+##############################
+Log started on 08/04/2025 14:04:07
+
+##############################
+Log started on 08/04/2025 14:12:24
+
+##############################
+Log started on 08/04/2025 14:13:34
+
+##############################
+Log started on 08/04/2025 14:13:53
+
+##############################
+Log started on 08/04/2025 14:22:20
+
+##############################
+Log started on 08/04/2025 14:26:04
+
+##############################
+Log started on 08/04/2025 14:26:20
+
+##############################
+Log started on 08/04/2025 14:31:23
+
+##############################
+Log started on 08/04/2025 14:42:46
+
+##############################
+Log started on 08/04/2025 16:19:16
+
+##############################
+Log started on 08/04/2025 16:25:54
+
+##############################
+Log started on 08/04/2025 16:28:24
+
+##############################
+Log started on 08/04/2025 16:32:35
+
+##############################
+Log started on 08/04/2025 16:48:17
+
+##############################
+Log started on 08/04/2025 16:58:38
+
+##############################
+Log started on 08/04/2025 17:01:04
+
+##############################
+Log started on 08/04/2025 17:04:35
+
+##############################
+Log started on 08/04/2025 17:22:31
+
+##############################
+Log started on 08/04/2025 17:35:08
+

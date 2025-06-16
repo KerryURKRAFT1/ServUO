@@ -1,0 +1,20 @@
+Server Crash Report
+===================
+
+RunUO Version 0.5, Build 9199.30292
+Operating System: Microsoft Windows NT 6.2.9200.0
+.NET Framework: 4.0.30319.42000
+Time: 09/03/2025 15:50:28
+Mobiles: 3154
+Items: 93443
+Exception:
+System.ArgumentException: Gli indici min e max devono essere non negativi.
+   in Server.Utility.RandomMinMax(Int32 min, Int32 max) in c:\Users\Kerry\Downloads\ServUO-0fcd1a196b1311b234b61d2f2f53d578793587d2(1)\ServUO-0fcd1a196b1311b234b61d2f2f53d578793587d2\Server\Utility.cs:riga 892
+   in Server.Multis.OrcCamp.AddComponents()
+   in Server.Timer.DelayCallTimer.OnTick() in c:\Users\Kerry\Downloads\ServUO-0fcd1a196b1311b234b61d2f2f53d578793587d2(1)\ServUO-0fcd1a196b1311b234b61d2f2f53d578793587d2\Server\Timer.cs:riga 616
+   in Server.Timer.Slice() in c:\Users\Kerry\Downloads\ServUO-0fcd1a196b1311b234b61d2f2f53d578793587d2(1)\ServUO-0fcd1a196b1311b234b61d2f2f53d578793587d2\Server\Timer.cs:riga 410
+   in Server.Core.Main(String[] args) in c:\Users\Kerry\Downloads\ServUO-0fcd1a196b1311b234b61d2f2f53d578793587d2(1)\ServUO-0fcd1a196b1311b234b61d2f2f53d578793587d2\Server\Main.cs:riga 569
+
+Clients:
+- Count: 1
++ 127.0.0.1: (account = Kerry) (mobile = 0x3C1 'Kerry')

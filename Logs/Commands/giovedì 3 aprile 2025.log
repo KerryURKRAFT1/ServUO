@@ -1,0 +1,373 @@
+##############################
+Log started on 03/04/2025 08:29:49
+
+##############################
+Log started on 03/04/2025 08:35:17
+
+##############################
+Log started on 03/04/2025 08:48:17
+
+##############################
+Log started on 03/04/2025 09:04:04
+
+03/04/2025 09:09:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+##############################
+Log started on 03/04/2025 09:43:44
+
+##############################
+Log started on 03/04/2025 09:44:13
+
+##############################
+Log started on 03/04/2025 10:00:14
+
+##############################
+Log started on 03/04/2025 10:04:57
+
+##############################
+Log started on 03/04/2025 10:16:37
+
+##############################
+Log started on 03/04/2025 10:19:47
+
+##############################
+Log started on 03/04/2025 10:21:47
+
+03/04/2025 10:25:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill carpentry 50'
+03/04/2025 10:25:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '50'
+03/04/2025 10:26:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill carpentry 0'
+03/04/2025 10:26:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+03/04/2025 10:26:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 0'
+03/04/2025 10:26:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+03/04/2025 10:27:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill magery 30'
+03/04/2025 10:27:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Magery.Base' of 0x39E "FDDSDASAD" ('Kerry') to '30'
+03/04/2025 10:29:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill magery 100'
+03/04/2025 10:29:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Magery.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+03/04/2025 10:30:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 100'
+03/04/2025 10:30:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+##############################
+Log started on 03/04/2025 10:38:00
+
+03/04/2025 10:39:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill carpentry 100'
+03/04/2025 10:39:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+03/04/2025 10:39:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill magery 100'
+03/04/2025 10:39:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Magery.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+03/04/2025 10:40:39: 127.0.0.1: Crafting 0x40000FDA (AbbatoirDeed) with craft system DefClassicCarpentry
+03/04/2025 12:02:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add 2490'
+03/04/2025 12:03:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add 5190'
+03/04/2025 12:05:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add throne'
+03/04/2025 12:05:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2533, 573, 0) in Felucca: "throne"
+03/04/2025 12:05:26: 127.0.0.1: Serials: 0x4001A6B6; 
+03/04/2025 12:05:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+##############################
+Log started on 03/04/2025 12:12:13
+
+03/04/2025 12:12:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add bamboochair'
+03/04/2025 12:12:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 590, 0) in Felucca: "bamboochair"
+03/04/2025 12:12:24: 127.0.0.1: Serials: 0x40000F7C; 
+03/04/2025 12:12:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:12:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add woodenchair'
+03/04/2025 12:12:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 591, 0) in Felucca: "woodenchair"
+03/04/2025 12:12:49: 127.0.0.1: Serials: 0x40000F7D; 
+03/04/2025 12:12:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:13:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add '
+03/04/2025 12:13:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add fancywooden'
+03/04/2025 12:13:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2521, 589, 0) in Felucca: "FancyWoodenChairCushion"
+03/04/2025 12:13:18: 127.0.0.1: Serials: 0x40001028; 
+03/04/2025 12:13:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:13:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:13:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add woodenchaircushion'
+03/04/2025 12:13:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2522, 588, 0) in Felucca: "woodenchaircushion"
+03/04/2025 12:13:48: 127.0.0.1: Serials: 0x40001153; 
+03/04/2025 12:13:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:14:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add woodenbench'
+03/04/2025 12:14:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2522, 586, 0) in Felucca: "woodenbench"
+03/04/2025 12:14:12: 127.0.0.1: Serials: 0x4000116C; 
+03/04/2025 12:14:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add woodenthrone'
+03/04/2025 12:14:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2523, 587, 0) in Felucca: "woodenthrone"
+03/04/2025 12:14:17: 127.0.0.1: Serials: 0x4000116E; 
+03/04/2025 12:14:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:14:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:14:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F7C (BambooChair)
+03/04/2025 12:14:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:14:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F7D (WoodenChair)
+03/04/2025 12:14:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:14:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001028 (FancyWoodenChairCushion)
+03/04/2025 12:14:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:14:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001153 (WoodenChairCushion)
+03/04/2025 12:14:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:14:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000116E (WoodenThrone)
+03/04/2025 12:14:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:14:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000116C (WoodenBench)
+03/04/2025 12:14:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add woodenbox'
+03/04/2025 12:14:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2522, 586, 0) in Felucca: "woodenbox"
+03/04/2025 12:14:52: 127.0.0.1: Serials: 0x40001172; 
+03/04/2025 12:14:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:15:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add smallcrate'
+03/04/2025 12:15:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2520, 588, 0) in Felucca: "smallcrate"
+03/04/2025 12:15:25: 127.0.0.1: Serials: 0x40001174; 
+03/04/2025 12:15:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add mediumcrate'
+03/04/2025 12:15:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2521, 588, 0) in Felucca: "mediumcrate"
+03/04/2025 12:15:33: 127.0.0.1: Serials: 0x40001175; 
+03/04/2025 12:15:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add largecrate'
+03/04/2025 12:15:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2522, 588, 0) in Felucca: "largecrate"
+03/04/2025 12:15:40: 127.0.0.1: Serials: 0x40001177; 
+03/04/2025 12:15:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:15:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:16:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:16:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add woodenchest'
+03/04/2025 12:16:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2523, 587, 0) in Felucca: "woodenchest"
+03/04/2025 12:16:24: 127.0.0.1: Serials: 0x40001178; 
+03/04/2025 12:16:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:16:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add emprybookcase'
+03/04/2025 12:16:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add emptybook'
+03/04/2025 12:16:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 585, 0) in Felucca: "EmptyBookcase"
+03/04/2025 12:16:54: 127.0.0.1: Serials: 0x4000117A; 
+03/04/2025 12:16:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:16:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:17:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add fencyarmoire'
+03/04/2025 12:17:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add fancyarmoire'
+03/04/2025 12:17:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 587, 0) in Felucca: "fancyarmoire"
+03/04/2025 12:17:46: 127.0.0.1: Serials: 0x4000117C; 
+03/04/2025 12:17:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:18:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add armoire'
+03/04/2025 12:18:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 583, 0) in Felucca: "armoire"
+03/04/2025 12:18:01: 127.0.0.1: Serials: 0x4000117D; 
+03/04/2025 12:18:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:18:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:18:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add writintable'
+03/04/2025 12:18:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add writingtable'
+03/04/2025 12:18:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 592, 0) in Felucca: "writingtable"
+03/04/2025 12:18:42: 127.0.0.1: Serials: 0x40001180; 
+03/04/2025 12:18:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add yewwoodtable'
+03/04/2025 12:18:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 592, 0) in Felucca: "yewwoodtable"
+03/04/2025 12:18:51: 127.0.0.1: Serials: 0x40001182; 
+03/04/2025 12:19:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add largetable'
+03/04/2025 12:19:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2520, 591, 0) in Felucca: "largetable"
+03/04/2025 12:19:03: 127.0.0.1: Serials: 0x40001184; 
+03/04/2025 12:19:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:19:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:19:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:19:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:19:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001180 (WritingTable)
+03/04/2025 12:19:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:19:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001182 (YewWoodTable)
+03/04/2025 12:19:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:19:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001184 (LargeTable)
+03/04/2025 12:19:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:19:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001174 (SmallCrate)
+03/04/2025 12:19:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:19:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001175 (MediumCrate)
+03/04/2025 12:19:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:19:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001177 (LargeCrate)
+03/04/2025 12:19:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:19:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001178 (WoodenChest)
+03/04/2025 12:19:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:19:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001172 (WoodenBox)
+03/04/2025 12:19:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:19:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000117C (FancyArmoire)
+03/04/2025 12:20:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:20:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000117A (EmptyBookcase)
+03/04/2025 12:20:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:20:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000117D (Armoire)
+03/04/2025 12:20:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add sheperd'
+03/04/2025 12:20:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add shepherd'
+03/04/2025 12:20:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 586, 0) in Felucca: "ShepherdsCrook"
+03/04/2025 12:20:21: 127.0.0.1: Serials: 0x4000125A; 
+03/04/2025 12:20:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:20:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add quarterstaff'
+03/04/2025 12:20:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 587, 0) in Felucca: "quarterstaff"
+03/04/2025 12:20:50: 127.0.0.1: Serials: 0x4000125B; 
+03/04/2025 12:20:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:21:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set str 100'
+03/04/2025 12:21:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'str' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+03/04/2025 12:21:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:21:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add gnarledstaff'
+03/04/2025 12:21:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 588, 0) in Felucca: "gnarledstaff"
+03/04/2025 12:21:32: 127.0.0.1: Serials: 0x4000125E; 
+03/04/2025 12:21:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:21:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add blackstaff'
+03/04/2025 12:21:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 584, 0) in Felucca: "blackstaff"
+03/04/2025 12:21:51: 127.0.0.1: Serials: 0x40001260; 
+03/04/2025 12:21:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:22:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add woodenshield'
+03/04/2025 12:22:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 588, 0) in Felucca: "woodenshield"
+03/04/2025 12:22:23: 127.0.0.1: Serials: 0x40001261; 
+03/04/2025 12:22:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:22:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add barrelstaves'
+03/04/2025 12:22:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 591, 0) in Felucca: "barrelstaves"
+03/04/2025 12:22:53: 127.0.0.1: Serials: 0x4000132E; 
+03/04/2025 12:22:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add barrellid'
+03/04/2025 12:23:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 591, 0) in Felucca: "barrellid"
+03/04/2025 12:23:00: 127.0.0.1: Serials: 0x40001331; 
+03/04/2025 12:23:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:23:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:23:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add shortmusic'
+03/04/2025 12:23:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 590, 0) in Felucca: "ShortMusicStand"
+03/04/2025 12:23:23: 127.0.0.1: Serials: 0x40001333; 
+03/04/2025 12:23:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:23:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:23:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:23:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add tallmusic'
+03/04/2025 12:23:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 589, 0) in Felucca: "TallMusicStand"
+03/04/2025 12:23:47: 127.0.0.1: Serials: 0x400013F8; 
+03/04/2025 12:23:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:24:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add easel'
+03/04/2025 12:24:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 586, 0) in Felucca: "CanvaslessEasel"
+03/04/2025 12:24:04: 127.0.0.1: Serials: 0x400013FE; 
+03/04/2025 12:24:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add easel'
+03/04/2025 12:24:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:25:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:25:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001333 (ShortMusicStand)
+03/04/2025 12:25:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:25:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000132E (BarrelStaves)
+03/04/2025 12:25:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:25:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001331 (BarrelLid)
+03/04/2025 12:25:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:25:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400013F8 (TallMusicStand)
+03/04/2025 12:25:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:25:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000125E (GnarledStaff)
+03/04/2025 12:25:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:25:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001261 (WoodenShield)
+03/04/2025 12:25:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:25:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000125A (ShepherdsCrook)
+03/04/2025 12:25:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:25:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400013FE (CanvaslessEasel)
+03/04/2025 12:25:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:25:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001260 (BlackStaff)
+03/04/2025 12:25:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add smallbedsouth'
+03/04/2025 12:25:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 588, 0) in Felucca: "SmallBedSouthAddon"
+03/04/2025 12:25:30: 127.0.0.1: Serials: 0x40001400; 
+03/04/2025 12:25:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 588, 0) in Felucca: "SmallBedSouthDeed"
+03/04/2025 12:25:33: 127.0.0.1: Serials: 0x4000143F; 
+03/04/2025 12:25:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:25:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000143D (AddonComponent)
+03/04/2025 12:26:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:26:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add smallbedeast'
+03/04/2025 12:26:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 587, 0) in Felucca: "SmallBedEastDeed"
+03/04/2025 12:26:38: 127.0.0.1: Serials: 0x4000144B; 
+03/04/2025 12:26:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:26:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:26:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000FDA (AbbatoirDeed)
+03/04/2025 12:26:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:26:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A7A0 (WoodenKiteShield)
+03/04/2025 12:26:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:26:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:27:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add largebed'
+03/04/2025 12:27:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 582, 0) in Felucca: "LargeBedEastDeed"
+03/04/2025 12:27:35: 127.0.0.1: Serials: 0x4000144D; 
+03/04/2025 12:27:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add largebed'
+03/04/2025 12:27:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 582, 0) in Felucca: "LargeBedSouthDeed"
+03/04/2025 12:27:40: 127.0.0.1: Serials: 0x40001451; 
+03/04/2025 12:27:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:27:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:28:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add dartboard'
+03/04/2025 12:28:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 584, 0) in Felucca: "dartboard"
+03/04/2025 12:28:19: 127.0.0.1: Serials: 0x40001453; 
+03/04/2025 12:28:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add dartboardsouth'
+03/04/2025 12:28:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 584, 0) in Felucca: "DartBoardSouthDeed"
+03/04/2025 12:28:30: 127.0.0.1: Serials: 0x40001455; 
+03/04/2025 12:28:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:29:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add dressform'
+03/04/2025 12:29:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 587, 0) in Felucca: "dressform"
+03/04/2025 12:29:24: 127.0.0.1: Serials: 0x40001457; 
+03/04/2025 12:29:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+03/04/2025 12:29:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add clothes'
+03/04/2025 12:29:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:29:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001453 (DartBoard)
+03/04/2025 12:30:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:30:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001457 (Dressform)
+03/04/2025 12:30:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:30:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000144B (SmallBedEastDeed)
+03/04/2025 12:30:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:30:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000143F (SmallBedSouthDeed)
+03/04/2025 12:30:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:30:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001455 (DartBoardSouthDeed)
+03/04/2025 12:30:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:30:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001451 (LargeBedSouthDeed)
+03/04/2025 12:30:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 12:30:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000144D (LargeBedEastDeed)
+03/04/2025 12:30:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add cloth'
+03/04/2025 12:30:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 581, 0) in Felucca: "cloth"
+03/04/2025 12:30:11: 127.0.0.1: Serials: 0x4000145B; 
+03/04/2025 12:30:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 1000'
+03/04/2025 12:30:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x4000145B (Cloth) to '1000'
+##############################
+Log started on 03/04/2025 12:32:19
+
+03/04/2025 12:36:41: 127.0.0.1: Crafting 0x4000129D (DartBoardSouthDeed) with craft system DefClassicCarpentry
+03/04/2025 12:37:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+03/04/2025 12:38:05: 127.0.0.1: Crafting 0x4000158B (DartBoardSouthDeed) with craft system DefClassicCarpentry
+03/04/2025 12:38:51: 127.0.0.1: Crafting 0x400016B6 (AnvilEastDeed) with craft system DefClassicCarpentry
+03/04/2025 12:39:57: 127.0.0.1: Crafting 0x40001A47 (SmallForgeDeed) with craft system DefClassicCarpentry
+03/04/2025 12:41:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill tailoring 100'
+03/04/2025 12:41:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Tailoring.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+03/04/2025 12:41:13: 127.0.0.1: Crafting 0x40001C7E (LargeBedEastDeed) with craft system DefClassicCarpentry
+##############################
+Log started on 03/04/2025 13:38:42
+
+03/04/2025 13:39:25: 127.0.0.1: Crafting 0x40000FDE (WritingTable) with craft system DefClassicCarpentry
+03/04/2025 13:39:54: 127.0.0.1: Crafting 0x40000FE2 (WoodenThrone) with craft system DefClassicCarpentry
+03/04/2025 13:40:18: 127.0.0.1: Crafting 0x4000107A (FootStool) with craft system DefClassicCarpentry
+03/04/2025 13:40:29: 127.0.0.1: Crafting 0x4000107C (AbbatoirDeed) with craft system DefClassicCarpentry
+03/04/2025 13:40:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill carpentry 50'
+03/04/2025 13:40:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '50'
+03/04/2025 13:40:45: 127.0.0.1: Crafting 0x4000107E (EmptyBookcase) with craft system DefClassicCarpentry
+03/04/2025 13:40:52: 127.0.0.1: Crafting 0x40001080 (MediumCrate) with craft system DefClassicCarpentry
+03/04/2025 13:41:06: 127.0.0.1: Crafting 0x40001084 (BallotBoxDeed) with craft system DefClassicCarpentry
+03/04/2025 13:41:19: 127.0.0.1: Crafting 0x40001141 (EmptyBookcase) with craft system DefClassicCarpentry
+03/04/2025 13:41:30: 127.0.0.1: Crafting 0x40001142 (BallotBoxDeed) with craft system DefClassicCarpentry
+03/04/2025 13:41:36: 127.0.0.1: Crafting 0x40001145 (BallotBoxDeed) with craft system DefClassicCarpentry
+03/04/2025 13:41:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill carpentry 40'
+03/04/2025 13:41:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '40'
+03/04/2025 13:41:49: 127.0.0.1: Crafting 0x40001147 (EmptyBookcase) with craft system DefClassicCarpentry
+03/04/2025 13:42:03: 127.0.0.1: Crafting 0x4000128C (EmptyBookcase) with craft system DefClassicCarpentry
+03/04/2025 13:42:08: 127.0.0.1: Crafting 0x4000128D (EmptyBookcase) with craft system DefClassicCarpentry
+03/04/2025 13:42:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill carpentry 35'
+03/04/2025 13:42:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '35'
+03/04/2025 13:42:18: 127.0.0.1: Crafting 0x4000128E (EmptyBookcase) with craft system DefClassicCarpentry
+03/04/2025 13:42:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'move '
+03/04/2025 13:42:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill carpentry 35remove'
+03/04/2025 13:42:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill carpentry 35remove'
+03/04/2025 13:42:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 13:42:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000128E (EmptyBookcase)
+03/04/2025 13:42:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+03/04/2025 13:42:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000128C (EmptyBookcase)
+03/04/2025 13:42:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill carpentry 25'
+03/04/2025 13:42:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '25'
+03/04/2025 13:42:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill carpentry 25'
+03/04/2025 13:42:55: 127.0.0.1: Crafting 0x4000129D (EmptyBookcase) with craft system DefClassicCarpentry
+03/04/2025 13:43:12: 127.0.0.1: Crafting 0x400012A3 (EmptyBookcase) with craft system DefClassicCarpentry
+03/04/2025 13:43:17: 127.0.0.1: Crafting 0x400012A4 (EmptyBookcase) with craft system DefClassicCarpentry
+03/04/2025 13:43:27: 127.0.0.1: Crafting 0x400012A8 (EmptyBookcase) with craft system DefClassicCarpentry
+03/04/2025 13:44:01: 127.0.0.1: Crafting 0x400012A9 (MediumCrate) with craft system DefClassicCarpentry
+##############################
+Log started on 03/04/2025 13:50:08
+
+03/04/2025 13:50:17: 127.0.0.1: Crafting 0x40000FDE (WoodenChest) with craft system DefClassicCarpentry
+03/04/2025 13:50:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set carpentry 25'
+03/04/2025 13:50:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill carpentry 25'
+03/04/2025 13:50:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '25'
+##############################
+Log started on 03/04/2025 13:55:36
+
+##############################
+Log started on 03/04/2025 13:56:00
+
+03/04/2025 13:56:11: 127.0.0.1: Crafting 0x40000FDE (LargeCrate) with craft system DefClassicCarpentry
+03/04/2025 13:56:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill carpentry 25'
+03/04/2025 13:56:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '25'
+03/04/2025 13:56:21: 127.0.0.1: Crafting 0x40000FE4 (EmptyBookcase) with craft system DefClassicCarpentry
+03/04/2025 13:56:28: 127.0.0.1: Crafting 0x40000FE8 (EmptyBookcase) with craft system DefClassicCarpentry
+03/04/2025 13:56:35: 127.0.0.1: Crafting 0x40000FEA (EmptyBookcase) with craft system DefClassicCarpentry
+03/04/2025 13:56:50: 127.0.0.1: Crafting 0x40000FEC (EmptyBookcase) with craft system DefClassicCarpentry
+03/04/2025 13:56:56: 127.0.0.1: Crafting 0x40000FEE (BarrelStaves) with craft system DefClassicCarpentry
+03/04/2025 13:57:02: 127.0.0.1: Crafting 0x40000FF0 (EmptyBookcase) with craft system DefClassicCarpentry
+03/04/2025 13:57:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill carpentry 20'
+03/04/2025 13:57:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '20'
+03/04/2025 13:57:15: 127.0.0.1: Crafting 0x40000FF3 (EmptyBookcase) with craft system DefClassicCarpentry
+03/04/2025 13:57:19: 127.0.0.1: Crafting 0x40001078 (EmptyBookcase) with craft system DefClassicCarpentry
+03/04/2025 13:57:22: 127.0.0.1: Crafting 0x4000107A (EmptyBookcase) with craft system DefClassicCarpentry
+03/04/2025 13:57:25: 127.0.0.1: Crafting 0x4000107C (EmptyBookcase) with craft system DefClassicCarpentry
+03/04/2025 13:57:28: 127.0.0.1: Crafting 0x4000107E (EmptyBookcase) with craft system DefClassicCarpentry
+03/04/2025 13:57:53: 127.0.0.1: Crafting 0x40001080 (EmptyBookcase) with craft system DefClassicCarpentry
+03/04/2025 13:57:59: 127.0.0.1: Crafting 0x40001084 (EmptyBookcase) with craft system DefClassicCarpentry

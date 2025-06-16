@@ -1,0 +1,1179 @@
+##############################
+Log started on 15/04/2025 08:36:43
+
+##############################
+Log started on 15/04/2025 08:43:52
+
+15/04/2025 08:44:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET MANA 50'
+15/04/2025 08:44:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'MANA' of 0x39E "FDDSDASAD" ('Kerry') to '50'
+15/04/2025 08:44:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET MANA 50'
+15/04/2025 08:44:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'MANA' of 0x39E "FDDSDASAD" ('Kerry') to '50'
+##############################
+Log started on 15/04/2025 08:49:40
+
+15/04/2025 08:56:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'coreinfo '
+##############################
+Log started on 15/04/2025 10:52:51
+
+##############################
+Log started on 15/04/2025 10:56:13
+
+##############################
+Log started on 15/04/2025 10:59:39
+
+##############################
+Log started on 15/04/2025 11:05:23
+
+##############################
+Log started on 15/04/2025 11:36:40
+
+##############################
+Log started on 15/04/2025 11:39:32
+
+##############################
+Log started on 15/04/2025 11:48:30
+
+##############################
+Log started on 15/04/2025 11:52:12
+
+##############################
+Log started on 15/04/2025 11:53:27
+
+##############################
+Log started on 15/04/2025 11:58:57
+
+15/04/2025 12:00:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set mana 50'
+15/04/2025 12:00:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'mana' of 0x39E "FDDSDASAD" ('Kerry') to '50'
+15/04/2025 12:00:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set mana 50'
+15/04/2025 12:00:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'mana' of 0x39E "FDDSDASAD" ('Kerry') to '50'
+##############################
+Log started on 15/04/2025 12:56:35
+
+##############################
+Log started on 15/04/2025 13:01:32
+
+##############################
+Log started on 15/04/2025 13:10:29
+
+15/04/2025 13:19:42: 127.0.0.1: Crafting 0x400012D1 (ResurrectionScroll) with craft system DefClassicInscription
+15/04/2025 13:23:27: 127.0.0.1: Crafting 0x400012F3 (ResurrectionScroll) with craft system DefClassicInscription
+15/04/2025 13:23:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill insribe 80'
+15/04/2025 13:23:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill inscribe 80'
+15/04/2025 13:23:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Inscribe.Base' of 0x39E "FDDSDASAD" ('Kerry') to '80'
+15/04/2025 13:23:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill inscribe 80'
+15/04/2025 13:24:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill inscribe 80'
+15/04/2025 13:24:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill inscribe 85'
+15/04/2025 13:24:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Inscribe.Base' of 0x39E "FDDSDASAD" ('Kerry') to '85'
+15/04/2025 13:24:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill inscribe 90'
+15/04/2025 13:24:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Inscribe.Base' of 0x39E "FDDSDASAD" ('Kerry') to '90'
+15/04/2025 13:24:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set int 100'
+15/04/2025 13:24:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'int' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+15/04/2025 13:24:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set mana 100'
+15/04/2025 13:24:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'mana' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+15/04/2025 13:24:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set int 500'
+15/04/2025 13:24:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'int' of 0x39E "FDDSDASAD" ('Kerry') to '500'
+15/04/2025 13:24:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set mana 500'
+15/04/2025 13:24:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'mana' of 0x39E "FDDSDASAD" ('Kerry') to '500'
+15/04/2025 13:31:02: 127.0.0.1: Crafting 0x400015BE (ResurrectionScroll) with craft system DefClassicInscription
+15/04/2025 13:31:10: 127.0.0.1: Crafting 0x400015C5 (FireballScroll) with craft system DefClassicInscription
+15/04/2025 13:31:33: 127.0.0.1: Crafting 0x40001626 (MagicReflectScroll) with craft system DefClassicInscription
+15/04/2025 13:32:26: 127.0.0.1: Crafting 0x400016A0 (ResurrectionScroll) with craft system DefClassicInscription
+##############################
+Log started on 15/04/2025 13:33:27
+
+15/04/2025 13:33:45: 127.0.0.1: Crafting 0x4000108A (ResurrectionScroll) with craft system DefClassicInscription
+15/04/2025 13:42:25: 127.0.0.1: Crafting 0x4000123A (ResurrectionScroll) with craft system DefClassicInscription
+##############################
+Log started on 15/04/2025 13:43:41
+
+15/04/2025 13:44:07: 127.0.0.1: Crafting 0x4000108A (ResurrectionScroll) with craft system DefClassicInscription
+##############################
+Log started on 15/04/2025 13:55:14
+
+15/04/2025 13:55:24: 127.0.0.1: Crafting 0x4000108A (ResurrectionScroll) with craft system DefClassicInscription
+15/04/2025 14:06:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill inscribe 90.1'
+15/04/2025 14:06:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Inscribe.Base' of 0x39E "FDDSDASAD" ('Kerry') to '901'
+15/04/2025 14:06:42: 127.0.0.1: Crafting 0x4000125B (ResurrectionScroll) with craft system DefClassicInscription
+15/04/2025 14:06:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill inscribe 90..1'
+15/04/2025 14:06:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Inscribe.Base' of 0x39E "FDDSDASAD" ('Kerry') to '901'
+15/04/2025 14:07:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill inscribe 90.,1'
+15/04/2025 14:07:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Inscribe.Base' of 0x39E "FDDSDASAD" ('Kerry') to '90,1'
+15/04/2025 14:07:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill inscribe 90.'
+15/04/2025 14:07:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Inscribe.Base' of 0x39E "FDDSDASAD" ('Kerry') to '90'
+15/04/2025 14:07:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set int 100'
+15/04/2025 14:07:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'int' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+15/04/2025 14:07:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set int 1000'
+15/04/2025 14:07:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'int' of 0x39E "FDDSDASAD" ('Kerry') to '1000'
+15/04/2025 14:07:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set mana 100'
+15/04/2025 14:07:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set mana 1000'
+15/04/2025 14:07:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'mana' of 0x39E "FDDSDASAD" ('Kerry') to '1000'
+15/04/2025 14:08:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill inscribe 89,9'
+15/04/2025 14:08:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Inscribe.Base' of 0x39E "FDDSDASAD" ('Kerry') to '89,9'
+15/04/2025 14:08:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill inscribe 89'
+15/04/2025 14:08:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Inscribe.Base' of 0x39E "FDDSDASAD" ('Kerry') to '89'
+15/04/2025 14:09:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill inscribe 88,8'
+15/04/2025 14:09:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Inscribe.Base' of 0x39E "FDDSDASAD" ('Kerry') to '88,8'
+15/04/2025 14:28:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill inscrive 76'
+15/04/2025 14:29:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill inscribe 76'
+15/04/2025 14:29:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Inscribe.Base' of 0x39E "FDDSDASAD" ('Kerry') to '76'
+15/04/2025 14:29:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill inscribe 74'
+15/04/2025 14:29:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Inscribe.Base' of 0x39E "FDDSDASAD" ('Kerry') to '74'
+15/04/2025 14:29:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill inscribe 72'
+15/04/2025 14:29:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Inscribe.Base' of 0x39E "FDDSDASAD" ('Kerry') to '72'
+##############################
+Log started on 15/04/2025 14:33:11
+
+15/04/2025 14:33:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill inscribe 72'
+15/04/2025 14:33:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Inscribe.Base' of 0x39E "FDDSDASAD" ('Kerry') to '72'
+15/04/2025 14:33:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill inscribe 73'
+15/04/2025 14:33:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Inscribe.Base' of 0x39E "FDDSDASAD" ('Kerry') to '73'
+##############################
+Log started on 15/04/2025 14:34:45
+
+15/04/2025 14:35:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill inscribe 73'
+15/04/2025 14:35:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Inscribe.Base' of 0x39E "FDDSDASAD" ('Kerry') to '73'
+15/04/2025 14:35:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill inscribe 75'
+15/04/2025 14:35:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Inscribe.Base' of 0x39E "FDDSDASAD" ('Kerry') to '75'
+15/04/2025 14:35:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill inscribe 80'
+15/04/2025 14:35:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Inscribe.Base' of 0x39E "FDDSDASAD" ('Kerry') to '80'
+15/04/2025 14:36:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill inscribe 90'
+15/04/2025 14:36:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Inscribe.Base' of 0x39E "FDDSDASAD" ('Kerry') to '90'
+15/04/2025 14:47:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+##############################
+Log started on 15/04/2025 14:57:25
+
+15/04/2025 14:59:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add mapmakerspen'
+15/04/2025 14:59:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 565, 0) in Felucca: "mapmakerspen"
+15/04/2025 14:59:27: 127.0.0.1: Serials: 0x4000117A; 
+##############################
+Log started on 15/04/2025 15:27:27
+
+15/04/2025 15:27:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add map'
+15/04/2025 15:27:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 563, 0) in Felucca: "map"
+15/04/2025 15:27:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add mapd'
+15/04/2025 15:28:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 562, 0) in Felucca: "BlankMap"
+15/04/2025 15:28:02: 127.0.0.1: Serials: 0x40001008; 
+15/04/2025 15:29:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add maps'
+15/04/2025 15:29:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 560, 0) in Felucca: "TatteredWallMapSouth"
+15/04/2025 15:29:08: 127.0.0.1: Serials: 0x4000100E; 
+15/04/2025 15:29:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 563, 0) in Felucca: "CityMap"
+15/04/2025 15:29:16: 127.0.0.1: Serials: 0x40001010; 
+15/04/2025 15:29:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 563, 0) in Felucca: "LocalMap"
+15/04/2025 15:29:21: 127.0.0.1: Serials: 0x40001012; 
+15/04/2025 15:30:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill cartography 20'
+15/04/2025 15:30:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Cartography.Base' of 0x39E "FDDSDASAD" ('Kerry') to '20'
+15/04/2025 15:30:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill cartography 25'
+15/04/2025 15:30:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Cartography.Base' of 0x39E "FDDSDASAD" ('Kerry') to '25'
+15/04/2025 15:30:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill cartography 50'
+15/04/2025 15:30:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Cartography.Base' of 0x39E "FDDSDASAD" ('Kerry') to '50'
+##############################
+Log started on 15/04/2025 15:32:07
+
+15/04/2025 15:32:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add blankmap'
+15/04/2025 15:32:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 565, 0) in Felucca: "blankmap"
+15/04/2025 15:32:23: 127.0.0.1: Serials: 0x40001008; 
+15/04/2025 15:33:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill cartography 50'
+15/04/2025 15:33:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Cartography.Base' of 0x39E "FDDSDASAD" ('Kerry') to '50'
+15/04/2025 15:34:16: 127.0.0.1: Crafting 0x40001141 (LocalMap) with craft system DefCartography
+15/04/2025 15:34:26: 127.0.0.1: Crafting 0x40001142 (LocalMap) with craft system DefCartography
+15/04/2025 15:34:51: 127.0.0.1: Crafting 0x40001147 (LocalMap) with craft system DefCartography
+15/04/2025 15:34:57: 127.0.0.1: Crafting 0x4000114F (LocalMap) with craft system DefCartography
+15/04/2025 15:35:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill cartography 100'
+15/04/2025 15:35:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Cartography.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+15/04/2025 15:35:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add treasuryma'
+15/04/2025 15:35:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 565, 0) in Felucca: "TreasureMap"
+15/04/2025 15:35:42: 127.0.0.1: Serials: 0x40001151; 
+15/04/2025 15:36:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 565, 0) in Felucca: "Shovel"
+15/04/2025 15:36:21: 127.0.0.1: Serials: 0x4000116C; 
+15/04/2025 15:36:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add pickaxe'
+15/04/2025 15:36:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 565, 0) in Felucca: "pickaxe"
+15/04/2025 15:36:53: 127.0.0.1: Serials: 0x40001172; 
+15/04/2025 15:42:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add treasure'
+15/04/2025 15:42:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2501, 556, 0) in Felucca: "HiddenTreasuresTreasureMap"
+##############################
+Log started on 15/04/2025 15:42:40
+
+15/04/2025 15:43:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add paragonchest'
+15/04/2025 15:43:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 562, 0) in Felucca: "paragonchest"
+15/04/2025 15:44:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add paragonch'
+15/04/2025 15:45:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go '
+15/04/2025 15:46:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'move '
+15/04/2025 15:46:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+15/04/2025 15:46:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+15/04/2025 15:48:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add titan'
+15/04/2025 15:48:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5137, 3015, 63) in Felucca: "titan"
+15/04/2025 15:48:20: 127.0.0.1: Serials: 0x907; 
+15/04/2025 15:48:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add titan'
+15/04/2025 15:48:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5139, 3010, 69) in Felucca: "titan"
+15/04/2025 15:48:21: 127.0.0.1: Serials: 0x908; 
+15/04/2025 15:48:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add titan'
+15/04/2025 15:48:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5139, 3010, 69) in Felucca: "titan"
+15/04/2025 15:48:22: 127.0.0.1: Serials: 0x909; 
+15/04/2025 15:48:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add titan'
+15/04/2025 15:48:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5137, 3018, 58) in Felucca: "titan"
+15/04/2025 15:48:25: 127.0.0.1: Serials: 0x90A; 
+15/04/2025 15:48:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add titan'
+15/04/2025 15:48:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5139, 3018, 58) in Felucca: "titan"
+15/04/2025 15:48:25: 127.0.0.1: Serials: 0x90B; 
+15/04/2025 15:48:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add titan'
+15/04/2025 15:48:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5144, 3017, 70) in Felucca: "titan"
+15/04/2025 15:48:26: 127.0.0.1: Serials: 0x90C; 
+15/04/2025 15:48:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add titan'
+15/04/2025 15:48:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5137, 3013, 62) in Felucca: "titan"
+15/04/2025 15:48:27: 127.0.0.1: Serials: 0x90D; 
+15/04/2025 15:48:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add titan'
+15/04/2025 15:48:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5141, 3010, 72) in Felucca: "titan"
+15/04/2025 15:48:28: 127.0.0.1: Serials: 0x90E; 
+15/04/2025 15:48:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add titan'
+15/04/2025 15:48:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5143, 3017, 68) in Felucca: "titan"
+15/04/2025 15:48:29: 127.0.0.1: Serials: 0x910; 
+15/04/2025 15:48:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add titan'
+15/04/2025 15:48:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5134, 3019, 63) in Felucca: "titan"
+15/04/2025 15:48:31: 127.0.0.1: Serials: 0x913; 
+15/04/2025 15:49:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:49:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x913 "a titan" (no account)
+15/04/2025 15:49:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:49:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x907 "a titan" (no account)
+15/04/2025 15:49:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:49:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x914 "a titan" (no account)
+15/04/2025 15:49:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:49:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x906 "a titan" (no account)
+15/04/2025 15:49:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:49:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x908 "a titan" (no account)
+15/04/2025 15:49:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:49:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x90D "a titan" (no account)
+15/04/2025 15:49:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:49:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x910 "a titan" (no account)
+15/04/2025 15:49:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:49:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x90B "a titan" (no account)
+15/04/2025 15:49:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:49:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x90A "a titan" (no account)
+15/04/2025 15:49:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:49:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x90E "a titan" (no account)
+15/04/2025 15:49:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:49:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x909 "a titan" (no account)
+15/04/2025 15:49:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:49:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x90C "a titan" (no account)
+15/04/2025 15:50:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add treasuremap'
+15/04/2025 15:50:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5141, 3007, 70) in Felucca: "treasuremap"
+15/04/2025 15:50:45: 127.0.0.1: Serials: 0x4001B0D0; 
+15/04/2025 15:51:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+15/04/2025 15:51:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+15/04/2025 15:51:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001B0D0 (TreasureMap)
+15/04/2025 15:51:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:51:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5141, 3007, 70) in Felucca: "ancientwyrm"
+15/04/2025 15:51:11: 127.0.0.1: Serials: 0x915; 
+15/04/2025 15:51:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:51:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5135, 3012, 58) in Felucca: "ancientwyrm"
+15/04/2025 15:51:15: 127.0.0.1: Serials: 0x916; 
+15/04/2025 15:51:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:51:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5135, 3016, 58) in Felucca: "ancientwyrm"
+15/04/2025 15:51:16: 127.0.0.1: Serials: 0x917; 
+15/04/2025 15:51:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:51:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5137, 3016, 57) in Felucca: "ancientwyrm"
+15/04/2025 15:51:18: 127.0.0.1: Serials: 0x91A; 
+15/04/2025 15:51:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:51:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5139, 3016, 59) in Felucca: "ancientwyrm"
+15/04/2025 15:51:19: 127.0.0.1: Serials: 0x91B; 
+15/04/2025 15:51:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:51:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5135, 3020, 62) in Felucca: "ancientwyrm"
+15/04/2025 15:51:20: 127.0.0.1: Serials: 0x91C; 
+15/04/2025 15:51:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:51:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5141, 3019, 63) in Felucca: "ancientwyrm"
+15/04/2025 15:51:21: 127.0.0.1: Serials: 0x91D; 
+15/04/2025 15:51:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:51:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5146, 3017, 72) in Felucca: "ancientwyrm"
+15/04/2025 15:51:22: 127.0.0.1: Serials: 0x91E; 
+15/04/2025 15:51:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:51:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5141, 3001, 67) in Felucca: "ancientwyrm"
+15/04/2025 15:51:23: 127.0.0.1: Serials: 0x91F; 
+15/04/2025 15:51:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:51:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5135, 3002, 71) in Felucca: "ancientwyrm"
+15/04/2025 15:51:24: 127.0.0.1: Serials: 0x920; 
+15/04/2025 15:51:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:51:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5148, 3013, 71) in Felucca: "ancientwyrm"
+15/04/2025 15:51:25: 127.0.0.1: Serials: 0x921; 
+15/04/2025 15:51:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:51:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5136, 3020, 60) in Felucca: "ancientwyrm"
+15/04/2025 15:51:27: 127.0.0.1: Serials: 0x923; 
+15/04/2025 15:51:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:51:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x921 "an ancient wyrm" (no account)
+15/04/2025 15:51:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:51:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x91E "an ancient wyrm" (no account)
+15/04/2025 15:51:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:51:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x91D "an ancient wyrm" (no account)
+15/04/2025 15:51:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:51:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x91C "an ancient wyrm" (no account)
+15/04/2025 15:51:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:51:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x923 "an ancient wyrm" (no account)
+15/04/2025 15:51:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:51:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x91B "an ancient wyrm" (no account)
+15/04/2025 15:51:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:51:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x91A "an ancient wyrm" (no account)
+15/04/2025 15:51:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:51:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x916 "an ancient wyrm" (no account)
+15/04/2025 15:51:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:51:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x91F "an ancient wyrm" (no account)
+15/04/2025 15:51:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:51:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x915 "an ancient wyrm" (no account)
+15/04/2025 15:51:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:51:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x917 "an ancient wyrm" (no account)
+15/04/2025 15:51:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:51:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x920 "an ancient wyrm" (no account)
+15/04/2025 15:52:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:52:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5134, 3021, 64) in Felucca: "ancientwyrm"
+15/04/2025 15:52:21: 127.0.0.1: Serials: 0x926; 
+15/04/2025 15:52:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:52:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5137, 3020, 60) in Felucca: "ancientwyrm"
+15/04/2025 15:52:21: 127.0.0.1: Serials: 0x927; 
+15/04/2025 15:52:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:52:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5135, 3026, 62) in Felucca: "ancientwyrm"
+15/04/2025 15:52:22: 127.0.0.1: Serials: 0x929; 
+15/04/2025 15:52:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:52:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5141, 3008, 69) in Felucca: "ancientwyrm"
+15/04/2025 15:52:24: 127.0.0.1: Serials: 0x92A; 
+15/04/2025 15:52:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:52:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5142, 3011, 70) in Felucca: "ancientwyrm"
+15/04/2025 15:52:25: 127.0.0.1: Serials: 0x92C; 
+15/04/2025 15:52:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:52:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5143, 3011, 67) in Felucca: "ancientwyrm"
+15/04/2025 15:52:26: 127.0.0.1: Serials: 0x92D; 
+15/04/2025 15:52:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:52:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5190, 2982, 71) in Felucca: "ancientwyrm"
+15/04/2025 15:52:36: 127.0.0.1: Serials: 0x92E; 
+15/04/2025 15:52:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:52:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5191, 2982, 71) in Felucca: "ancientwyrm"
+15/04/2025 15:52:37: 127.0.0.1: Serials: 0x930; 
+15/04/2025 15:52:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:52:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5191, 2982, 71) in Felucca: "ancientwyrm"
+15/04/2025 15:52:39: 127.0.0.1: Serials: 0x931; 
+15/04/2025 15:52:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:52:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5190, 2985, 72) in Felucca: "ancientwyrm"
+15/04/2025 15:52:43: 127.0.0.1: Serials: 0x932; 
+15/04/2025 15:52:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:52:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5192, 2984, 69) in Felucca: "ancientwyrm"
+15/04/2025 15:52:45: 127.0.0.1: Serials: 0x933; 
+15/04/2025 15:52:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:52:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5193, 2985, 66) in Felucca: "ancientwyrm"
+15/04/2025 15:52:46: 127.0.0.1: Serials: 0x934; 
+15/04/2025 15:52:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:52:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5195, 2984, 57) in Felucca: "ancientwyrm"
+15/04/2025 15:52:46: 127.0.0.1: Serials: 0x935; 
+15/04/2025 15:52:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:52:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5196, 2985, 61) in Felucca: "ancientwyrm"
+15/04/2025 15:52:47: 127.0.0.1: Serials: 0x936; 
+15/04/2025 15:52:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrmù'
+15/04/2025 15:52:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:52:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5197, 2990, 61) in Felucca: "ancientwyrm"
+15/04/2025 15:52:52: 127.0.0.1: Serials: 0x937; 
+15/04/2025 15:52:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:52:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5198, 2986, 58) in Felucca: "ancientwyrm"
+15/04/2025 15:52:53: 127.0.0.1: Serials: 0x938; 
+15/04/2025 15:52:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:52:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5191, 2986, 62) in Felucca: "ancientwyrm"
+15/04/2025 15:52:54: 127.0.0.1: Serials: 0x939; 
+15/04/2025 15:52:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:52:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5197, 2991, 60) in Felucca: "ancientwyrm"
+15/04/2025 15:52:55: 127.0.0.1: Serials: 0x93A; 
+15/04/2025 15:52:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:52:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5197, 2994, 58) in Felucca: "ancientwyrm"
+15/04/2025 15:52:57: 127.0.0.1: Serials: 0x93B; 
+15/04/2025 15:52:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:52:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5191, 2987, 61) in Felucca: "ancientwyrm"
+15/04/2025 15:52:58: 127.0.0.1: Serials: 0x93C; 
+15/04/2025 15:52:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:52:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5192, 2994, 58) in Felucca: "ancientwyrm"
+15/04/2025 15:52:59: 127.0.0.1: Serials: 0x93E; 
+15/04/2025 15:53:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:53:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5199, 2981, 61) in Felucca: "ancientwyrm"
+15/04/2025 15:53:00: 127.0.0.1: Serials: 0x93F; 
+15/04/2025 15:53:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:53:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5198, 2985, 60) in Felucca: "ancientwyrm"
+15/04/2025 15:53:01: 127.0.0.1: Serials: 0x940; 
+15/04/2025 15:53:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:53:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5194, 2971, 68) in Felucca: "ancientwyrm"
+15/04/2025 15:53:03: 127.0.0.1: Serials: 0x941; 
+15/04/2025 15:53:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add ancientwyrm'
+15/04/2025 15:53:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5198, 2973, 68) in Felucca: "ancientwyrm"
+15/04/2025 15:53:04: 127.0.0.1: Serials: 0x942; 
+15/04/2025 15:53:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:53:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x941 "an ancient wyrm" (no account)
+15/04/2025 15:53:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:53:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x932 "an ancient wyrm" (no account)
+15/04/2025 15:53:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:53:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x942 "an ancient wyrm" (no account)
+15/04/2025 15:53:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:53:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x931 "an ancient wyrm" (no account)
+15/04/2025 15:53:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:53:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x933 "an ancient wyrm" (no account)
+15/04/2025 15:53:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:53:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x935 "an ancient wyrm" (no account)
+15/04/2025 15:53:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:53:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x93E "an ancient wyrm" (no account)
+15/04/2025 15:53:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:53:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x930 "an ancient wyrm" (no account)
+15/04/2025 15:53:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:53:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:53:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x934 "an ancient wyrm" (no account)
+15/04/2025 15:53:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:53:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x93C "an ancient wyrm" (no account)
+15/04/2025 15:53:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:53:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x939 "an ancient wyrm" (no account)
+15/04/2025 15:53:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:53:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x93F "an ancient wyrm" (no account)
+15/04/2025 15:53:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:53:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x940 "an ancient wyrm" (no account)
+15/04/2025 15:53:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:53:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x936 "an ancient wyrm" (no account)
+15/04/2025 15:53:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:53:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x93B "an ancient wyrm" (no account)
+15/04/2025 15:53:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:53:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x937 "an ancient wyrm" (no account)
+15/04/2025 15:53:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:53:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x938 "an ancient wyrm" (no account)
+15/04/2025 15:53:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:53:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x93A "an ancient wyrm" (no account)
+15/04/2025 15:54:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 15:54:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x92E "an ancient wyrm" (no account)
+15/04/2025 15:55:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add treasuremap'
+15/04/2025 15:56:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5192, 2989, 57) in Felucca: "treasuremap"
+15/04/2025 15:56:01: 127.0.0.1: Serials: 0x4001B2D9; 
+15/04/2025 15:56:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add shovel'
+15/04/2025 15:56:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (5192, 2989, 57) in Felucca: "shovel"
+15/04/2025 15:56:34: 127.0.0.1: Serials: 0x4001B2DA; 
+##############################
+Log started on 15/04/2025 16:05:03
+
+15/04/2025 16:05:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add plenty'
+15/04/2025 16:06:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 566, 0) in Felucca: "PlainWoodenChest"
+15/04/2025 16:06:35: 127.0.0.1: Serials: 0x40001008; 
+15/04/2025 16:08:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+15/04/2025 16:08:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001008 (PlainWoodenChest)
+15/04/2025 16:10:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add treasuremap  3 felucca'
+15/04/2025 16:10:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 566, 0) in Felucca: "treasuremap" "3" "felucca"
+15/04/2025 16:10:01: 127.0.0.1: Serials: 0x400010C4; 
+15/04/2025 16:10:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill cartograpgy 100'
+15/04/2025 16:10:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill cartography 100'
+15/04/2025 16:10:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Cartography.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+15/04/2025 16:10:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add shovel'
+15/04/2025 16:11:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 565, 0) in Felucca: "shovel"
+15/04/2025 16:11:00: 127.0.0.1: Serials: 0x400010C5; 
+15/04/2025 16:11:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+15/04/2025 16:13:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go 998 791'
+15/04/2025 16:14:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go 998 791'
+15/04/2025 16:16:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+15/04/2025 16:16:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+15/04/2025 16:16:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'go 998 1791'
+##############################
+Log started on 15/04/2025 16:17:54
+
+15/04/2025 16:18:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add treauremap 3 felucca'
+15/04/2025 16:18:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add tresurymap 3 felucca'
+15/04/2025 16:18:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add treasuremap 3 felucca'
+15/04/2025 16:18:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 566, 0) in Felucca: "treasuremap" "3" "felucca"
+15/04/2025 16:18:29: 127.0.0.1: Serials: 0x40001008; 
+15/04/2025 16:18:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add treasuremap 6 felucca'
+15/04/2025 16:18:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 565, 0) in Felucca: "treasuremap" "6" "felucca"
+15/04/2025 16:18:39: 127.0.0.1: Serials: 0x4000100E; 
+15/04/2025 16:19:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add crystal hydra'
+15/04/2025 16:19:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2513, 575, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:19:20: 127.0.0.1: Serials: 0x3CE; 
+15/04/2025 16:19:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 575, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:19:21: 127.0.0.1: Serials: 0x3CF; 
+15/04/2025 16:19:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add crystal hydra'
+15/04/2025 16:19:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 578, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:19:22: 127.0.0.1: Serials: 0x3D0; 
+15/04/2025 16:19:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 576, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:19:23: 127.0.0.1: Serials: 0x3D1; 
+15/04/2025 16:19:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add crystal hydra'
+15/04/2025 16:19:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 574, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:19:23: 127.0.0.1: Serials: 0x3D2; 
+15/04/2025 16:19:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2512, 576, 2) in Felucca: "CrystalHydra"
+15/04/2025 16:19:24: 127.0.0.1: Serials: 0x3D3; 
+15/04/2025 16:19:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add crystal hydra'
+15/04/2025 16:19:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2511, 577, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:19:25: 127.0.0.1: Serials: 0x3D4; 
+15/04/2025 16:19:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2512, 577, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:19:25: 127.0.0.1: Serials: 0x3D5; 
+15/04/2025 16:19:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2513, 577, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:19:26: 127.0.0.1: Serials: 0x3D7; 
+15/04/2025 16:19:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 576, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:19:26: 127.0.0.1: Serials: 0x3D8; 
+15/04/2025 16:19:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 576, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:19:26: 127.0.0.1: Serials: 0x3D9; 
+15/04/2025 16:19:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 576, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:19:26: 127.0.0.1: Serials: 0x3DC; 
+15/04/2025 16:19:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 575, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:19:27: 127.0.0.1: Serials: 0x3DD; 
+15/04/2025 16:19:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2513, 571, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:19:27: 127.0.0.1: Serials: 0x3DE; 
+15/04/2025 16:19:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 575, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:19:28: 127.0.0.1: Serials: 0x3E0; 
+15/04/2025 16:19:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2513, 571, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:19:28: 127.0.0.1: Serials: 0x3E1; 
+15/04/2025 16:19:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2513, 571, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:19:28: 127.0.0.1: Serials: 0x3E2; 
+15/04/2025 16:19:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add '
+15/04/2025 16:19:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:19:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3CF "a crystal hydra" (no account)
+15/04/2025 16:19:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add crystal hydra'
+15/04/2025 16:19:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:19:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3DD "a crystal hydra" (no account)
+15/04/2025 16:19:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:19:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D2 "a crystal hydra" (no account)
+15/04/2025 16:19:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:19:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3E0 "a crystal hydra" (no account)
+15/04/2025 16:19:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:19:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D1 "a crystal hydra" (no account)
+15/04/2025 16:19:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:19:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D8 "a crystal hydra" (no account)
+15/04/2025 16:19:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:19:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D9 "a crystal hydra" (no account)
+15/04/2025 16:19:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:19:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3DE "a crystal hydra" (no account)
+15/04/2025 16:19:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:19:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3CE "a crystal hydra" (no account)
+15/04/2025 16:19:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:19:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3E1 "a crystal hydra" (no account)
+15/04/2025 16:19:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:19:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D3 "a crystal hydra" (no account)
+15/04/2025 16:19:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:19:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D4 "a crystal hydra" (no account)
+15/04/2025 16:19:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:19:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D5 "a crystal hydra" (no account)
+15/04/2025 16:19:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:19:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D7 "a crystal hydra" (no account)
+15/04/2025 16:19:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:19:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3DC "a crystal hydra" (no account)
+15/04/2025 16:20:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:20:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:20:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3E2 "a crystal hydra" (no account)
+15/04/2025 16:21:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:21:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D0 "a crystal hydra" (no account)
+15/04/2025 16:23:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add crystal hydra'
+15/04/2025 16:23:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2526, 622, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:36: 127.0.0.1: Serials: 0x3E8; 
+15/04/2025 16:23:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2528, 622, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:36: 127.0.0.1: Serials: 0x3EB; 
+15/04/2025 16:23:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2529, 621, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:37: 127.0.0.1: Serials: 0x3EC; 
+15/04/2025 16:23:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2530, 621, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:37: 127.0.0.1: Serials: 0x3ED; 
+15/04/2025 16:23:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2531, 621, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:37: 127.0.0.1: Serials: 0x3EE; 
+15/04/2025 16:23:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2534, 621, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:37: 127.0.0.1: Serials: 0x3EF; 
+15/04/2025 16:23:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2535, 620, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:37: 127.0.0.1: Serials: 0x3F0; 
+15/04/2025 16:23:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2537, 621, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:38: 127.0.0.1: Serials: 0x3F1; 
+15/04/2025 16:23:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2537, 621, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:38: 127.0.0.1: Serials: 0x3F2; 
+15/04/2025 16:23:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2537, 621, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:38: 127.0.0.1: Serials: 0x3F3; 
+15/04/2025 16:23:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2532, 624, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:38: 127.0.0.1: Serials: 0x3F5; 
+15/04/2025 16:23:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2531, 624, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:38: 127.0.0.1: Serials: 0x3F7; 
+15/04/2025 16:23:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2530, 624, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:39: 127.0.0.1: Serials: 0x3F8; 
+15/04/2025 16:23:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2530, 624, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:39: 127.0.0.1: Serials: 0x3F9; 
+15/04/2025 16:23:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2530, 624, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:39: 127.0.0.1: Serials: 0x3FA; 
+15/04/2025 16:23:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2525, 628, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:39: 127.0.0.1: Serials: 0x3FB; 
+15/04/2025 16:23:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2524, 629, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:39: 127.0.0.1: Serials: 0x3FC; 
+15/04/2025 16:23:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2524, 629, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:39: 127.0.0.1: Serials: 0x3FD; 
+15/04/2025 16:23:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2522, 629, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:39: 127.0.0.1: Serials: 0x3FE; 
+15/04/2025 16:23:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2521, 628, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:40: 127.0.0.1: Serials: 0x3FF; 
+15/04/2025 16:23:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 626, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:40: 127.0.0.1: Serials: 0x400; 
+15/04/2025 16:23:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 623, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:40: 127.0.0.1: Serials: 0x401; 
+15/04/2025 16:23:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 620, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:40: 127.0.0.1: Serials: 0x402; 
+15/04/2025 16:23:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 618, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:41: 127.0.0.1: Serials: 0x403; 
+15/04/2025 16:23:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 618, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:41: 127.0.0.1: Serials: 0x404; 
+15/04/2025 16:23:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2520, 616, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:41: 127.0.0.1: Serials: 0x405; 
+15/04/2025 16:23:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2521, 616, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:41: 127.0.0.1: Serials: 0x406; 
+15/04/2025 16:23:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2522, 619, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:41: 127.0.0.1: Serials: 0x407; 
+15/04/2025 16:23:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2522, 620, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:41: 127.0.0.1: Serials: 0x408; 
+15/04/2025 16:23:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2523, 621, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:42: 127.0.0.1: Serials: 0x409; 
+15/04/2025 16:23:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2526, 624, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:42: 127.0.0.1: Serials: 0x40A; 
+15/04/2025 16:23:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2531, 626, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:42: 127.0.0.1: Serials: 0x40B; 
+15/04/2025 16:23:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2531, 627, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:42: 127.0.0.1: Serials: 0x40C; 
+15/04/2025 16:23:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2532, 628, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:43: 127.0.0.1: Serials: 0x40D; 
+15/04/2025 16:23:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2533, 628, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:43: 127.0.0.1: Serials: 0x40E; 
+15/04/2025 16:23:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2534, 628, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:43: 127.0.0.1: Serials: 0x40F; 
+15/04/2025 16:23:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2536, 627, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:43: 127.0.0.1: Serials: 0x410; 
+15/04/2025 16:23:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2539, 626, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:43: 127.0.0.1: Serials: 0x411; 
+15/04/2025 16:23:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2540, 625, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:43: 127.0.0.1: Serials: 0x412; 
+15/04/2025 16:23:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2542, 621, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:43: 127.0.0.1: Serials: 0x413; 
+15/04/2025 16:23:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2542, 619, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:44: 127.0.0.1: Serials: 0x414; 
+15/04/2025 16:23:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2543, 619, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:44: 127.0.0.1: Serials: 0x415; 
+15/04/2025 16:23:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2539, 617, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:44: 127.0.0.1: Serials: 0x416; 
+15/04/2025 16:23:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2526, 612, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:44: 127.0.0.1: Serials: 0x417; 
+15/04/2025 16:23:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2526, 612, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:23:45: 127.0.0.1: Serials: 0x418; 
+15/04/2025 16:23:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:23:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x418 "a crystal hydra" (no account)
+15/04/2025 16:24:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3FC "a crystal hydra" (no account)
+15/04/2025 16:24:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3FD "a crystal hydra" (no account)
+15/04/2025 16:24:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3FE "a crystal hydra" (no account)
+15/04/2025 16:24:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x409 "a crystal hydra" (no account)
+15/04/2025 16:24:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x406 "a crystal hydra" (no account)
+15/04/2025 16:24:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x403 "a crystal hydra" (no account)
+15/04/2025 16:24:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3FF "a crystal hydra" (no account)
+15/04/2025 16:24:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x405 "a crystal hydra" (no account)
+15/04/2025 16:24:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x400 "a crystal hydra" (no account)
+15/04/2025 16:24:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x404 "a crystal hydra" (no account)
+15/04/2025 16:24:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3ED "a crystal hydra" (no account)
+15/04/2025 16:24:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x40A "a crystal hydra" (no account)
+15/04/2025 16:24:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x40B "a crystal hydra" (no account)
+15/04/2025 16:24:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x402 "a crystal hydra" (no account)
+15/04/2025 16:24:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x408 "a crystal hydra" (no account)
+15/04/2025 16:24:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3F8 "a crystal hydra" (no account)
+15/04/2025 16:24:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x410 "a crystal hydra" (no account)
+15/04/2025 16:24:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3FA "a crystal hydra" (no account)
+15/04/2025 16:24:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3EC "a crystal hydra" (no account)
+15/04/2025 16:24:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x40D "a crystal hydra" (no account)
+15/04/2025 16:24:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3FB "a crystal hydra" (no account)
+15/04/2025 16:24:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3F1 "a crystal hydra" (no account)
+15/04/2025 16:24:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3F2 "a crystal hydra" (no account)
+15/04/2025 16:24:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x411 "a crystal hydra" (no account)
+15/04/2025 16:24:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x417 "a crystal hydra" (no account)
+15/04/2025 16:24:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x40E "a crystal hydra" (no account)
+15/04/2025 16:24:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3F5 "a crystal hydra" (no account)
+15/04/2025 16:24:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3E8 "a crystal hydra" (no account)
+15/04/2025 16:24:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3EF "a crystal hydra" (no account)
+15/04/2025 16:24:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3F9 "a crystal hydra" (no account)
+15/04/2025 16:24:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:24:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x413 "a crystal hydra" (no account)
+15/04/2025 16:24:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:25:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x40F "a crystal hydra" (no account)
+15/04/2025 16:25:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:25:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x401 "a crystal hydra" (no account)
+15/04/2025 16:25:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:25:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:25:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:25:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x412 "a crystal hydra" (no account)
+15/04/2025 16:25:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:27:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:27:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3F7 "a crystal hydra" (no account)
+15/04/2025 16:27:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:27:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3EE "a crystal hydra" (no account)
+15/04/2025 16:27:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:27:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3F0 "a crystal hydra" (no account)
+15/04/2025 16:27:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:27:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x415 "a crystal hydra" (no account)
+15/04/2025 16:27:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:27:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3EB "a crystal hydra" (no account)
+15/04/2025 16:27:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:27:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x40C "a crystal hydra" (no account)
+##############################
+Log started on 15/04/2025 16:31:30
+
+15/04/2025 16:31:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add crystalhydra'
+15/04/2025 16:31:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 571, 0) in Felucca: "crystalhydra"
+15/04/2025 16:31:42: 127.0.0.1: Serials: 0x3CE; 
+##############################
+Log started on 15/04/2025 16:32:18
+
+15/04/2025 16:33:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add crystalhydra'
+15/04/2025 16:33:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 569, 0) in Felucca: "crystalhydra"
+15/04/2025 16:33:11: 127.0.0.1: Serials: 0x3CE; 
+##############################
+Log started on 15/04/2025 16:37:58
+
+15/04/2025 16:38:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add crystalhydra'
+15/04/2025 16:38:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 581, 0) in Felucca: "crystalhydra"
+15/04/2025 16:38:13: 127.0.0.1: Serials: 0x3CE; 
+15/04/2025 16:38:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:38:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3CE "a crystal hydra" (no account)
+15/04/2025 16:38:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add crystalhydra'
+15/04/2025 16:38:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 595, 0) in Felucca: "crystalhydra"
+15/04/2025 16:38:27: 127.0.0.1: Serials: 0x3CF; 
+15/04/2025 16:38:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add crystalhydra'
+15/04/2025 16:38:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2519, 598, 0) in Felucca: "crystalhydra"
+15/04/2025 16:38:31: 127.0.0.1: Serials: 0x3D0; 
+15/04/2025 16:38:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add crystalhydras'
+15/04/2025 16:38:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2522, 599, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:38:39: 127.0.0.1: Serials: 0x3D1; 
+15/04/2025 16:38:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2522, 598, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:38:39: 127.0.0.1: Serials: 0x3D2; 
+15/04/2025 16:38:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 603, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:38:39: 127.0.0.1: Serials: 0x3D3; 
+15/04/2025 16:38:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 603, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:38:39: 127.0.0.1: Serials: 0x3D4; 
+15/04/2025 16:38:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 603, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:38:39: 127.0.0.1: Serials: 0x3D5; 
+15/04/2025 16:38:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 601, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:38:39: 127.0.0.1: Serials: 0x3D7; 
+15/04/2025 16:38:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 602, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:38:40: 127.0.0.1: Serials: 0x3D8; 
+15/04/2025 16:38:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 601, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:38:40: 127.0.0.1: Serials: 0x3D9; 
+15/04/2025 16:38:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 604, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:38:40: 127.0.0.1: Serials: 0x3DC; 
+15/04/2025 16:38:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 604, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:38:40: 127.0.0.1: Serials: 0x3DD; 
+15/04/2025 16:38:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2524, 603, 2) in Felucca: "CrystalHydra"
+15/04/2025 16:38:40: 127.0.0.1: Serials: 0x3DE; 
+15/04/2025 16:38:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2524, 603, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:38:40: 127.0.0.1: Serials: 0x3E0; 
+15/04/2025 16:38:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2525, 602, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:38:41: 127.0.0.1: Serials: 0x3E1; 
+15/04/2025 16:38:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2528, 601, 1) in Felucca: "CrystalHydra"
+15/04/2025 16:38:41: 127.0.0.1: Serials: 0x3E2; 
+15/04/2025 16:38:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2529, 600, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:38:41: 127.0.0.1: Serials: 0x3E3; 
+15/04/2025 16:38:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2520, 603, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:38:41: 127.0.0.1: Serials: 0x3E4; 
+15/04/2025 16:38:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2520, 602, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:38:41: 127.0.0.1: Serials: 0x3E5; 
+15/04/2025 16:38:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:38:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3E0 "a crystal hydra" (no account)
+15/04/2025 16:38:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:38:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:38:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3E5 "a crystal hydra" (no account)
+15/04/2025 16:38:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:38:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D5 "a crystal hydra" (no account)
+15/04/2025 16:38:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:38:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D9 "a crystal hydra" (no account)
+15/04/2025 16:38:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:38:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3DC "a crystal hydra" (no account)
+15/04/2025 16:38:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:38:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D7 "a crystal hydra" (no account)
+15/04/2025 16:38:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:38:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3CF "a crystal hydra" (no account)
+15/04/2025 16:38:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:38:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3E4 "a crystal hydra" (no account)
+15/04/2025 16:38:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:38:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D1 "a crystal hydra" (no account)
+15/04/2025 16:38:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:38:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3E1 "a crystal hydra" (no account)
+15/04/2025 16:38:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:38:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3DE "a crystal hydra" (no account)
+15/04/2025 16:38:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:38:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3DD "a crystal hydra" (no account)
+15/04/2025 16:38:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:39:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D0 "a crystal hydra" (no account)
+15/04/2025 16:39:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:39:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3E3 "a crystal hydra" (no account)
+15/04/2025 16:39:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:39:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D8 "a crystal hydra" (no account)
+15/04/2025 16:39:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:39:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D3 "a crystal hydra" (no account)
+15/04/2025 16:39:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:39:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3E2 "a crystal hydra" (no account)
+15/04/2025 16:39:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:39:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D2 "a crystal hydra" (no account)
+15/04/2025 16:39:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:39:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:39:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D4 "a crystal hydra" (no account)
+15/04/2025 16:39:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:42:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add crystal'
+15/04/2025 16:42:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2534, 627, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:48: 127.0.0.1: Serials: 0x3ED; 
+15/04/2025 16:42:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2535, 627, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:48: 127.0.0.1: Serials: 0x3EE; 
+15/04/2025 16:42:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2538, 627, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:49: 127.0.0.1: Serials: 0x3EF; 
+15/04/2025 16:42:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2538, 627, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:49: 127.0.0.1: Serials: 0x3F0; 
+15/04/2025 16:42:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2541, 626, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:49: 127.0.0.1: Serials: 0x3F1; 
+15/04/2025 16:42:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2543, 626, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:49: 127.0.0.1: Serials: 0x3F2; 
+15/04/2025 16:42:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2545, 626, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:49: 127.0.0.1: Serials: 0x3F3; 
+15/04/2025 16:42:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2547, 626, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:49: 127.0.0.1: Serials: 0x3F5; 
+15/04/2025 16:42:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2550, 625, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:49: 127.0.0.1: Serials: 0x3F7; 
+15/04/2025 16:42:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2553, 625, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:50: 127.0.0.1: Serials: 0x3F8; 
+15/04/2025 16:42:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2554, 624, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:50: 127.0.0.1: Serials: 0x3F9; 
+15/04/2025 16:42:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2555, 624, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:50: 127.0.0.1: Serials: 0x3FA; 
+15/04/2025 16:42:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2553, 619, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:50: 127.0.0.1: Serials: 0x3FB; 
+15/04/2025 16:42:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2553, 619, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:50: 127.0.0.1: Serials: 0x3FC; 
+15/04/2025 16:42:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2550, 619, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:50: 127.0.0.1: Serials: 0x3FD; 
+15/04/2025 16:42:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2548, 619, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:51: 127.0.0.1: Serials: 0x3FE; 
+15/04/2025 16:42:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2547, 619, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:51: 127.0.0.1: Serials: 0x3FF; 
+15/04/2025 16:42:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2545, 619, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:51: 127.0.0.1: Serials: 0x400; 
+15/04/2025 16:42:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2543, 619, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:51: 127.0.0.1: Serials: 0x401; 
+15/04/2025 16:42:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2542, 619, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:51: 127.0.0.1: Serials: 0x402; 
+15/04/2025 16:42:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2542, 618, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:51: 127.0.0.1: Serials: 0x403; 
+15/04/2025 16:42:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2538, 620, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:52: 127.0.0.1: Serials: 0x404; 
+15/04/2025 16:42:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2536, 619, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:52: 127.0.0.1: Serials: 0x405; 
+15/04/2025 16:42:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2536, 619, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:52: 127.0.0.1: Serials: 0x406; 
+15/04/2025 16:42:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2531, 622, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:52: 127.0.0.1: Serials: 0x407; 
+15/04/2025 16:42:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2533, 625, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:52: 127.0.0.1: Serials: 0x408; 
+15/04/2025 16:42:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2530, 629, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:53: 127.0.0.1: Serials: 0x409; 
+15/04/2025 16:42:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2532, 631, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:53: 127.0.0.1: Serials: 0x40A; 
+15/04/2025 16:42:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2536, 631, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:53: 127.0.0.1: Serials: 0x40B; 
+15/04/2025 16:42:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2542, 628, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:53: 127.0.0.1: Serials: 0x40C; 
+15/04/2025 16:42:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2546, 626, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:53: 127.0.0.1: Serials: 0x40D; 
+15/04/2025 16:42:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2548, 626, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:53: 127.0.0.1: Serials: 0x40E; 
+15/04/2025 16:42:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2551, 625, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:53: 127.0.0.1: Serials: 0x40F; 
+15/04/2025 16:42:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2554, 625, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:54: 127.0.0.1: Serials: 0x410; 
+15/04/2025 16:42:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2557, 624, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:54: 127.0.0.1: Serials: 0x411; 
+15/04/2025 16:42:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2559, 623, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:54: 127.0.0.1: Serials: 0x412; 
+15/04/2025 16:42:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2559, 623, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:54: 127.0.0.1: Serials: 0x413; 
+15/04/2025 16:42:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2544, 629, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:54: 127.0.0.1: Serials: 0x414; 
+15/04/2025 16:42:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2544, 629, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:55: 127.0.0.1: Serials: 0x415; 
+15/04/2025 16:42:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2535, 624, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:55: 127.0.0.1: Serials: 0x416; 
+15/04/2025 16:42:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2535, 624, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:55: 127.0.0.1: Serials: 0x417; 
+15/04/2025 16:42:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2533, 625, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:55: 127.0.0.1: Serials: 0x418; 
+15/04/2025 16:42:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2531, 625, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:55: 127.0.0.1: Serials: 0x419; 
+15/04/2025 16:42:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2527, 624, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:56: 127.0.0.1: Serials: 0x41A; 
+15/04/2025 16:42:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2527, 621, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:56: 127.0.0.1: Serials: 0x41C; 
+15/04/2025 16:42:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2529, 617, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:56: 127.0.0.1: Serials: 0x41D; 
+15/04/2025 16:42:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2534, 612, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:56: 127.0.0.1: Serials: 0x41E; 
+15/04/2025 16:42:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2536, 612, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:57: 127.0.0.1: Serials: 0x41F; 
+15/04/2025 16:42:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2541, 615, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:57: 127.0.0.1: Serials: 0x420; 
+15/04/2025 16:42:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2543, 613, 0) in Felucca: "CrystalHydra"
+15/04/2025 16:42:57: 127.0.0.1: Serials: 0x423; 
+15/04/2025 16:43:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x409 "a crystal hydra" (no account)
+15/04/2025 16:43:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x414 "a crystal hydra" (no account)
+15/04/2025 16:43:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3F2 "a crystal hydra" (no account)
+15/04/2025 16:43:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x40A "a crystal hydra" (no account)
+15/04/2025 16:43:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x419 "a crystal hydra" (no account)
+15/04/2025 16:43:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3F0 "a crystal hydra" (no account)
+15/04/2025 16:43:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x40F "a crystal hydra" (no account)
+15/04/2025 16:43:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3EF "a crystal hydra" (no account)
+15/04/2025 16:43:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x40C "a crystal hydra" (no account)
+15/04/2025 16:43:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3ED "a crystal hydra" (no account)
+15/04/2025 16:43:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x40B "a crystal hydra" (no account)
+15/04/2025 16:43:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x405 "a crystal hydra" (no account)
+15/04/2025 16:43:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x407 "a crystal hydra" (no account)
+15/04/2025 16:43:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x404 "a crystal hydra" (no account)
+15/04/2025 16:43:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3FF "a crystal hydra" (no account)
+15/04/2025 16:43:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x40D "a crystal hydra" (no account)
+15/04/2025 16:43:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x402 "a crystal hydra" (no account)
+15/04/2025 16:43:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3FD "a crystal hydra" (no account)
+15/04/2025 16:43:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3FC "a crystal hydra" (no account)
+15/04/2025 16:43:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x417 "a crystal hydra" (no account)
+15/04/2025 16:43:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x420 "a crystal hydra" (no account)
+15/04/2025 16:43:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x41E "a crystal hydra" (no account)
+15/04/2025 16:43:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x408 "a crystal hydra" (no account)
+15/04/2025 16:43:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x401 "a crystal hydra" (no account)
+15/04/2025 16:43:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3FB "a crystal hydra" (no account)
+15/04/2025 16:43:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:43:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3F8 "a crystal hydra" (no account)
+15/04/2025 16:44:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:44:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3F7 "a crystal hydra" (no account)
+15/04/2025 16:44:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:44:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x416 "a crystal hydra" (no account)
+15/04/2025 16:44:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:44:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:44:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3F1 "a crystal hydra" (no account)
+15/04/2025 16:44:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:44:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x406 "a crystal hydra" (no account)
+15/04/2025 16:44:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:44:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3F3 "a crystal hydra" (no account)
+15/04/2025 16:44:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:44:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x412 "a crystal hydra" (no account)
+15/04/2025 16:44:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:44:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x418 "a crystal hydra" (no account)
+15/04/2025 16:44:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:44:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x41F "a crystal hydra" (no account)
+15/04/2025 16:44:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:44:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x400 "a crystal hydra" (no account)
+15/04/2025 16:44:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:44:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3F9 "a crystal hydra" (no account)
+15/04/2025 16:44:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:44:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x423 "a crystal hydra" (no account)
+15/04/2025 16:44:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:44:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x41D "a crystal hydra" (no account)
+15/04/2025 16:44:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:44:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:44:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:44:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3EE "a crystal hydra" (no account)
+##############################
+Log started on 15/04/2025 16:57:50
+
+15/04/2025 16:58:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add crystalhydra'
+15/04/2025 16:58:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 566, 0) in Felucca: "crystalhydra"
+15/04/2025 16:58:02: 127.0.0.1: Serials: 0x3CE; 
+15/04/2025 16:58:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:58:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3CE "a crystal hydra" (no account)
+##############################
+Log started on 15/04/2025 16:59:33
+
+15/04/2025 16:59:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add crystalhydra'
+15/04/2025 16:59:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 566, 0) in Felucca: "crystalhydra"
+15/04/2025 16:59:43: 127.0.0.1: Serials: 0x3CE; 
+15/04/2025 16:59:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 16:59:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3CE "a crystal hydra" (no account)
+15/04/2025 17:00:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add crystal'
+15/04/2025 17:00:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2527, 624, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:00:50: 127.0.0.1: Serials: 0x3CF; 
+15/04/2025 17:00:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2530, 623, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:00:50: 127.0.0.1: Serials: 0x3D0; 
+15/04/2025 17:00:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2532, 623, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:00:51: 127.0.0.1: Serials: 0x3D1; 
+15/04/2025 17:00:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2536, 622, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:00:51: 127.0.0.1: Serials: 0x3D2; 
+15/04/2025 17:00:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2537, 622, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:00:51: 127.0.0.1: Serials: 0x3D3; 
+15/04/2025 17:00:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2539, 622, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:00:51: 127.0.0.1: Serials: 0x3D4; 
+15/04/2025 17:00:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2534, 626, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:00:51: 127.0.0.1: Serials: 0x3D5; 
+15/04/2025 17:00:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2532, 627, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:00:52: 127.0.0.1: Serials: 0x3D7; 
+15/04/2025 17:00:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2539, 622, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:00:52: 127.0.0.1: Serials: 0x3D8; 
+15/04/2025 17:00:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2544, 619, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:00:52: 127.0.0.1: Serials: 0x3D9; 
+15/04/2025 17:00:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2539, 625, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:00:52: 127.0.0.1: Serials: 0x3DC; 
+15/04/2025 17:00:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2537, 626, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:00:53: 127.0.0.1: Serials: 0x3DD; 
+15/04/2025 17:00:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2529, 627, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:00:53: 127.0.0.1: Serials: 0x3DE; 
+15/04/2025 17:00:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2529, 627, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:00:53: 127.0.0.1: Serials: 0x3E0; 
+15/04/2025 17:00:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2526, 626, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:00:53: 127.0.0.1: Serials: 0x3E1; 
+15/04/2025 17:01:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:01:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3E0 "a crystal hydra" (no account)
+15/04/2025 17:01:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:01:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D5 "a crystal hydra" (no account)
+15/04/2025 17:01:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:01:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:01:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3DE "a crystal hydra" (no account)
+15/04/2025 17:01:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:01:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3E1 "a crystal hydra" (no account)
+15/04/2025 17:01:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:01:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3CF "a crystal hydra" (no account)
+15/04/2025 17:01:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:01:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3DC "a crystal hydra" (no account)
+15/04/2025 17:01:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:01:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D1 "a crystal hydra" (no account)
+15/04/2025 17:01:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:01:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D0 "a crystal hydra" (no account)
+15/04/2025 17:01:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:01:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D3 "a crystal hydra" (no account)
+15/04/2025 17:01:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:01:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D7 "a crystal hydra" (no account)
+15/04/2025 17:01:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:01:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D8 "a crystal hydra" (no account)
+15/04/2025 17:01:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:01:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D4 "a crystal hydra" (no account)
+15/04/2025 17:01:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:01:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3DD "a crystal hydra" (no account)
+15/04/2025 17:01:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:01:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D2 "a crystal hydra" (no account)
+15/04/2025 17:01:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:01:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D9 "a crystal hydra" (no account)
+##############################
+Log started on 15/04/2025 17:03:31
+
+15/04/2025 17:04:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add crystalhydr'
+15/04/2025 17:04:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2528, 624, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:04:11: 127.0.0.1: Serials: 0x3CE; 
+15/04/2025 17:04:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2531, 624, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:04:11: 127.0.0.1: Serials: 0x3CF; 
+15/04/2025 17:04:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2533, 624, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:04:11: 127.0.0.1: Serials: 0x3D0; 
+15/04/2025 17:04:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2536, 624, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:04:11: 127.0.0.1: Serials: 0x3D1; 
+15/04/2025 17:04:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2538, 623, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:04:11: 127.0.0.1: Serials: 0x3D2; 
+15/04/2025 17:04:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2542, 623, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:04:11: 127.0.0.1: Serials: 0x3D3; 
+15/04/2025 17:04:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2544, 623, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:04:12: 127.0.0.1: Serials: 0x3D4; 
+15/04/2025 17:04:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2548, 623, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:04:12: 127.0.0.1: Serials: 0x3D5; 
+15/04/2025 17:04:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2550, 622, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:04:12: 127.0.0.1: Serials: 0x3D7; 
+15/04/2025 17:04:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2551, 621, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:04:12: 127.0.0.1: Serials: 0x3D8; 
+15/04/2025 17:04:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2536, 631, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:04:12: 127.0.0.1: Serials: 0x3D9; 
+15/04/2025 17:04:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2529, 633, 20) in Felucca: "CrystalHydra"
+15/04/2025 17:04:12: 127.0.0.1: Serials: 0x3DC; 
+15/04/2025 17:04:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2532, 634, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:04:13: 127.0.0.1: Serials: 0x3DD; 
+15/04/2025 17:04:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2530, 615, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:04:13: 127.0.0.1: Serials: 0x3DE; 
+15/04/2025 17:04:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2531, 616, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:04:13: 127.0.0.1: Serials: 0x3E0; 
+15/04/2025 17:04:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2536, 614, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:04:13: 127.0.0.1: Serials: 0x3E1; 
+15/04/2025 17:04:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2539, 613, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:04:13: 127.0.0.1: Serials: 0x3E2; 
+15/04/2025 17:04:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2538, 613, 0) in Felucca: "CrystalHydra"
+15/04/2025 17:04:13: 127.0.0.1: Serials: 0x3E3; 
+15/04/2025 17:04:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2544, 612, 2) in Felucca: "CrystalHydra"
+15/04/2025 17:04:14: 127.0.0.1: Serials: 0x3E4; 
+15/04/2025 17:04:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2544, 612, 2) in Felucca: "CrystalHydra"
+15/04/2025 17:04:14: 127.0.0.1: Serials: 0x3E5; 
+15/04/2025 17:04:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:04:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3CF "a crystal hydra" (no account)
+15/04/2025 17:04:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:04:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D0 "a crystal hydra" (no account)
+15/04/2025 17:04:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:04:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3CE "a crystal hydra" (no account)
+15/04/2025 17:04:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:04:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3DD "a crystal hydra" (no account)
+15/04/2025 17:04:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:04:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D1 "a crystal hydra" (no account)
+15/04/2025 17:04:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:04:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D9 "a crystal hydra" (no account)
+15/04/2025 17:04:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:04:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D4 "a crystal hydra" (no account)
+15/04/2025 17:04:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:04:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3E4 "a crystal hydra" (no account)
+15/04/2025 17:04:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:04:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3E1 "a crystal hydra" (no account)
+15/04/2025 17:04:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:04:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3E0 "a crystal hydra" (no account)
+15/04/2025 17:04:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:04:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D2 "a crystal hydra" (no account)
+15/04/2025 17:04:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:04:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3E5 "a crystal hydra" (no account)
+15/04/2025 17:04:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:04:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3D7 "a crystal hydra" (no account)
+15/04/2025 17:04:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:04:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3E2 "a crystal hydra" (no account)
+15/04/2025 17:05:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+15/04/2025 17:05:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:05:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3DE "a crystal hydra" (no account)
+##############################
+Log started on 15/04/2025 17:10:59
+
+15/04/2025 17:11:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add crystalhydra'
+15/04/2025 17:11:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 567, 0) in Felucca: "crystalhydra"
+15/04/2025 17:11:10: 127.0.0.1: Serials: 0x3CE; 
+15/04/2025 17:11:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add crystalhydra'
+15/04/2025 17:11:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 571, 0) in Felucca: "crystalhydra"
+15/04/2025 17:11:12: 127.0.0.1: Serials: 0x3CF; 
+15/04/2025 17:11:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:11:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3CF "a crystal hydra" (no account)
+15/04/2025 17:11:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'kill '
+15/04/2025 17:11:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') killing 0x3CE "a crystal hydra" (no account)

@@ -1,0 +1,90 @@
+##############################
+Log started on 05/06/2025 13:33:26
+
+05/06/2025 13:43:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add statichousesign'
+05/06/2025 13:43:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2496, 600, 20) in Felucca: "statichousesign"
+05/06/2025 13:43:30: 127.0.0.1: Serials: 0x40000173; 
+05/06/2025 13:43:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+05/06/2025 13:43:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+05/06/2025 13:43:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+05/06/2025 13:43:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+05/06/2025 13:43:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+05/06/2025 13:43:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+05/06/2025 13:44:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+05/06/2025 13:44:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400000BE (Key)
+05/06/2025 13:44:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+05/06/2025 13:44:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000017E (Key)
+05/06/2025 13:44:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+05/06/2025 13:44:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400000DE (Key)
+##############################
+Log started on 05/06/2025 13:44:56
+
+05/06/2025 13:45:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add statichousesign'
+05/06/2025 13:45:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2496, 601, 0) in Felucca: "statichousesign"
+05/06/2025 13:45:28: 127.0.0.1: Serials: 0x400000B3; 
+05/06/2025 13:45:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+05/06/2025 13:45:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+05/06/2025 13:45:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+##############################
+Log started on 05/06/2025 13:57:04
+
+05/06/2025 15:02:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add statichousesign'
+05/06/2025 15:02:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2496, 601, 0) in Felucca: "statichousesign"
+05/06/2025 15:02:20: 127.0.0.1: Serials: 0x40000489; 
+05/06/2025 16:28:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+05/06/2025 16:28:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'M Tele'
+05/06/2025 16:28:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+05/06/2025 16:28:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'where '
+##############################
+Log started on 05/06/2025 17:25:30
+
+05/06/2025 17:26:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'dupe '
+05/06/2025 17:26:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'dupe '
+05/06/2025 17:26:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duping 0x40000F6D (BagOfAllReagents) (inBag=False; amount=1)
+05/06/2025 17:26:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duped 0x40000F6D (BagOfAllReagents) creating 0x400000BA (BagOfAllReagents)
+05/06/2025 17:26:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'dupe '
+05/06/2025 17:26:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duping 0x40000F6D (BagOfAllReagents) (inBag=False; amount=1)
+05/06/2025 17:26:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duped 0x40000F6D (BagOfAllReagents) creating 0x400000CC (BagOfAllReagents)
+##############################
+Log started on 05/06/2025 17:34:57
+
+05/06/2025 17:35:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'dupe '
+05/06/2025 17:35:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'dupe '
+05/06/2025 17:35:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duping 0x40000F6D (BagOfAllReagents) (inBag=False; amount=1)
+05/06/2025 17:35:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duped 0x40000F6D (BagOfAllReagents) creating 0x400000BA (BagOfAllReagents)
+05/06/2025 17:35:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'dupe '
+05/06/2025 17:35:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duping 0x40000F6D (BagOfAllReagents) (inBag=False; amount=1)
+05/06/2025 17:35:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') duped 0x40000F6D (BagOfAllReagents) creating 0x400000CC (BagOfAllReagents)
+05/06/2025 17:38:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add arch'
+05/06/2025 17:38:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2497, 595, 0) in Felucca: "ArchProtectionScroll"
+05/06/2025 17:38:52: 127.0.0.1: Serials: 0x400000DB; 
+05/06/2025 17:38:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2497, 595, 0) in Felucca: "ArchProtectionScroll"
+05/06/2025 17:38:53: 127.0.0.1: Serials: 0x400000DC; 
+##############################
+Log started on 05/06/2025 18:52:57
+
+05/06/2025 18:53:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add archprotection'
+05/06/2025 18:53:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2497, 595, 0) in Felucca: "ArchProtectionScroll"
+05/06/2025 18:53:30: 127.0.0.1: Serials: 0x400000A6; 
+05/06/2025 18:53:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2498, 596, 0) in Felucca: "ArchProtectionScroll"
+05/06/2025 18:53:32: 127.0.0.1: Serials: 0x400000A7; 
+05/06/2025 18:54:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set mana 100'
+05/06/2025 18:54:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'mana' of 0x3DE "tester" ('tester') to '100'
+05/06/2025 18:54:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set mana 100'
+05/06/2025 18:54:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'mana' of 0x3DE "tester" ('tester') to '100'
+##############################
+Log started on 05/06/2025 20:05:04
+
+05/06/2025 20:05:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD ARCHPROT'
+05/06/2025 20:05:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2497, 595, 0) in Felucca: "ArchProtectionScroll"
+05/06/2025 20:05:28: 127.0.0.1: Serials: 0x400000A6; 
+05/06/2025 20:05:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2498, 596, 0) in Felucca: "ArchProtectionScroll"
+05/06/2025 20:05:30: 127.0.0.1: Serials: 0x400000A7; 
+05/06/2025 20:05:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD ARCHPROT'
+05/06/2025 20:05:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2497, 594, 0) in Felucca: "ArchProtectionScroll"
+05/06/2025 20:05:48: 127.0.0.1: Serials: 0x400000A8; 
+05/06/2025 20:06:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET MANA 100'
+05/06/2025 20:06:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'MANA' of 0x3DE "tester" ('tester') to '100'
+##############################
+Log started on 05/06/2025 20:20:33
+

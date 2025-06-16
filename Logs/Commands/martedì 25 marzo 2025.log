@@ -1,0 +1,113 @@
+##############################
+Log started on 25/03/2025 09:22:37
+
+##############################
+Log started on 25/03/2025 09:59:37
+
+25/03/2025 10:00:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add verite ingot'
+25/03/2025 10:00:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2533, 574, 0) in Felucca: "VeriteIngot"
+25/03/2025 10:00:32: 127.0.0.1: Serials: 0x40000F51; 
+25/03/2025 10:00:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 1000'
+25/03/2025 10:00:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x40000F51 (VeriteIngot) to '1000'
+25/03/2025 10:01:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 1000'
+25/03/2025 10:01:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '1000'
+25/03/2025 10:01:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 100'
+25/03/2025 10:01:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+25/03/2025 10:01:41: 127.0.0.1: Crafting 0x40000F5D (Bascinet) with craft system DefBlacksmithy
+25/03/2025 10:02:14: 127.0.0.1: Crafting 0x40001020 (Bascinet) with craft system DefBlacksmithy
+25/03/2025 10:02:21: 127.0.0.1: Crafting 0x40001022 (LargeBattleAxe) with craft system DefBlacksmithy
+25/03/2025 10:02:27: 127.0.0.1: Crafting 0x40001024 (Mace) with craft system DefBlacksmithy
+25/03/2025 10:03:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add shadow ingot'
+25/03/2025 10:04:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2533, 574, 0) in Felucca: "ShadowIronIngot"
+25/03/2025 10:04:39: 127.0.0.1: Serials: 0x4000102C; 
+25/03/2025 10:04:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 1000'
+25/03/2025 10:04:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x4000102C (ShadowIronIngot) to '1000'
+25/03/2025 10:05:04: 127.0.0.1: Crafting 0x4000102E (HammerPick) with craft system DefBlacksmithy
+25/03/2025 10:05:10: 127.0.0.1: Crafting 0x4000102F (CloseHelm) with craft system DefBlacksmithy
+##############################
+Log started on 25/03/2025 15:28:27
+
+25/03/2025 15:29:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 100'
+25/03/2025 15:29:14: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+25/03/2025 15:29:16: 127.0.0.1: Crafting 0x40000F51 (MetalShield) with craft system DefBlacksmithy
+25/03/2025 15:29:18: 127.0.0.1: Crafting 0x40000F5D (WoodenKiteShield) with craft system DefBlacksmithy
+25/03/2025 15:30:03: 127.0.0.1: Crafting 0x40000F68 (MetalKiteShield) with craft system DefBlacksmithy
+25/03/2025 15:30:05: 127.0.0.1: Crafting 0x40000F69 (BronzeShield) with craft system DefBlacksmithy
+25/03/2025 15:30:08: 127.0.0.1: Crafting 0x40000F6C (LargeBattleAxe) with craft system DefBlacksmithy
+25/03/2025 15:30:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+25/03/2025 15:31:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'HitPoints' of 0x40000F68 (MetalKiteShield) to '20'
+##############################
+Log started on 25/03/2025 15:47:00
+
+25/03/2025 15:47:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL BLACKSMITH 100'
+25/03/2025 15:47:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+25/03/2025 15:47:19: 127.0.0.1: Crafting 0x40000F50 (Kryss) with craft system DefBlacksmithy
+25/03/2025 15:47:21: 127.0.0.1: Crafting 0x40000F51 (Cutlass) with craft system DefBlacksmithy
+25/03/2025 15:47:24: 127.0.0.1: Crafting 0x40000F5D (MetalShield) with craft system DefBlacksmithy
+25/03/2025 15:47:26: 127.0.0.1: Crafting 0x40000F60 (MetalKiteShield) with craft system DefBlacksmithy
+##############################
+Log started on 25/03/2025 16:00:59
+
+25/03/2025 16:01:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 100'
+25/03/2025 16:01:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+25/03/2025 16:01:18: 127.0.0.1: Crafting 0x40000F50 (NorseHelm) with craft system DefBlacksmithy
+25/03/2025 16:01:20: 127.0.0.1: Crafting 0x40000F51 (CloseHelm) with craft system DefBlacksmithy
+25/03/2025 16:01:22: 127.0.0.1: Crafting 0x40000F5D (Katana) with craft system DefBlacksmithy
+25/03/2025 16:01:24: 127.0.0.1: Crafting 0x40000F60 (Longsword) with craft system DefBlacksmithy
+25/03/2025 16:01:27: 127.0.0.1: Crafting 0x40000F61 (WarFork) with craft system DefBlacksmithy
+25/03/2025 16:01:31: 127.0.0.1: Crafting 0x40000F68 (MetalShield) with craft system DefBlacksmithy
+25/03/2025 16:01:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+25/03/2025 16:02:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+25/03/2025 16:02:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'HitPoints' of 0x40000F68 (MetalShield) to '20'
+25/03/2025 16:03:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+25/03/2025 16:03:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'HitPoints' of 0x40000F68 (MetalShield) to '20'
+25/03/2025 16:03:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+25/03/2025 16:03:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'HitPoints' of 0x40000F50 (NorseHelm) to '20'
+25/03/2025 16:04:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+25/03/2025 16:04:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+25/03/2025 16:04:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'HitPoints' of 0x40000F50 (NorseHelm) to '20'
+##############################
+Log started on 25/03/2025 16:25:14
+
+25/03/2025 16:25:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL BLACKSMITH 100'
+25/03/2025 16:25:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+25/03/2025 16:25:34: 127.0.0.1: Crafting 0x40000F50 (Kryss) with craft system DefBlacksmithy
+25/03/2025 16:25:37: 127.0.0.1: Crafting 0x40000F51 (TwoHandedAxe) with craft system DefBlacksmithy
+25/03/2025 16:25:41: 127.0.0.1: Crafting 0x40000F5D (ShortSpear) with craft system DefBlacksmithy
+25/03/2025 16:25:43: 127.0.0.1: Crafting 0x40000F60 (HeaterShield) with craft system DefBlacksmithy
+25/03/2025 16:25:45: 127.0.0.1: Crafting 0x40000F61 (MetalKiteShield) with craft system DefBlacksmithy
+25/03/2025 16:26:04: 127.0.0.1: Crafting 0x40000F68 (PlateGloves) with craft system DefBlacksmithy
+25/03/2025 16:26:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+25/03/2025 16:26:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'HitPoints' of 0x40000F61 (MetalKiteShield) to '20'
+25/03/2025 16:26:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'admin '
+25/03/2025 16:26:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'save '
+25/03/2025 16:27:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD COPPERINGOT'
+25/03/2025 16:27:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2533, 573, 0) in Felucca: "COPPERINGOT"
+25/03/2025 16:27:33: 127.0.0.1: Serials: 0x400010BC; 
+25/03/2025 16:27:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 100'
+25/03/2025 16:27:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x400010BC (CopperIngot) to '100'
+25/03/2025 16:27:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 1000'
+25/03/2025 16:27:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x400010BC (CopperIngot) to '1000'
+25/03/2025 16:28:02: 127.0.0.1: Crafting 0x400010BE (Kryss) with craft system DefBlacksmithy
+25/03/2025 16:28:19: 127.0.0.1: Crafting 0x400010C0 (BronzeShield) with craft system DefBlacksmithy
+25/03/2025 16:28:35: 127.0.0.1: Crafting 0x400010C5 (PlateLegs) with craft system DefBlacksmithy
+25/03/2025 16:28:45: 127.0.0.1: Crafting 0x400010C7 (PlateGloves) with craft system DefBlacksmithy
+25/03/2025 16:29:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET BLACKSMITH 100'
+25/03/2025 16:30:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET ALLSKILLS 1000'
+25/03/2025 16:30:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL MINING 100'
+25/03/2025 16:30:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Mining.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+##############################
+Log started on 25/03/2025 17:19:21
+
+##############################
+Log started on 25/03/2025 17:26:34
+
+##############################
+Log started on 25/03/2025 17:37:23
+
+##############################
+Log started on 25/03/2025 17:41:39
+
+##############################
+Log started on 25/03/2025 18:08:03
+

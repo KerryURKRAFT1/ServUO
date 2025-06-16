@@ -1,0 +1,125 @@
+##############################
+Log started on 10/04/2025 09:24:38
+
+##############################
+Log started on 10/04/2025 09:25:26
+
+##############################
+Log started on 10/04/2025 09:41:05
+
+##############################
+Log started on 10/04/2025 09:44:35
+
+##############################
+Log started on 10/04/2025 09:50:00
+
+##############################
+Log started on 10/04/2025 09:56:42
+
+##############################
+Log started on 10/04/2025 10:06:32
+
+##############################
+Log started on 10/04/2025 10:29:18
+
+##############################
+Log started on 10/04/2025 10:33:46
+
+##############################
+Log started on 10/04/2025 10:53:37
+
+##############################
+Log started on 10/04/2025 10:54:27
+
+##############################
+Log started on 10/04/2025 10:55:19
+
+##############################
+Log started on 10/04/2025 11:07:34
+
+##############################
+Log started on 10/04/2025 11:09:47
+
+10/04/2025 11:13:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add boards'
+10/04/2025 11:13:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add Board'
+10/04/2025 11:13:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 582, 0) in Felucca: "Board"
+10/04/2025 11:13:16: 127.0.0.1: Serials: 0x4000102F; 
+10/04/2025 11:13:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 1000'
+10/04/2025 11:13:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x4000102F (Board) to '1000'
+10/04/2025 11:14:08: 127.0.0.1: Crafting 0x400011F0 (Keg) with craft system DefClassictTinkering
+10/04/2025 11:14:31: 127.0.0.1: Crafting 0x4000120F (Keg) with craft system DefClassictTinkering
+10/04/2025 11:14:40: 127.0.0.1: Crafting 0x40001212 (Keg) with craft system DefClassictTinkering
+10/04/2025 11:15:00: 127.0.0.1: Crafting 0x4000121A (Chessboard) with craft system DefClassictTinkering
+10/04/2025 11:17:04: 127.0.0.1: Crafting 0x4000128A (Keg) with craft system DefClassictTinkering
+##############################
+Log started on 10/04/2025 11:42:30
+
+10/04/2025 11:42:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD bOARD'
+10/04/2025 11:42:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 581, 0) in Felucca: "bOARD"
+10/04/2025 11:42:52: 127.0.0.1: Serials: 0x4000102F; 
+10/04/2025 11:42:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 1000'
+10/04/2025 11:42:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x4000102F (Board) to '1000'
+10/04/2025 11:43:13: 127.0.0.1: Crafting 0x40001032 (Backgammon) with craft system DefClassictTinkering
+10/04/2025 11:43:50: 127.0.0.1: Crafting 0x400010A6 (Chessboard) with craft system DefClassictTinkering
+10/04/2025 11:43:56: 127.0.0.1: Crafting 0x4000116C (Chessboard) with craft system DefClassictTinkering
+10/04/2025 11:44:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD BARREL'
+10/04/2025 11:44:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD BARRELS'
+10/04/2025 11:44:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 580, 0) in Felucca: "BarrelStaves"
+10/04/2025 11:44:38: 127.0.0.1: Serials: 0x4000121A; 
+10/04/2025 11:44:55: 127.0.0.1: Crafting 0x4000122C (Dices) with craft system DefClassictTinkering
+10/04/2025 11:45:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD BARREL'
+10/04/2025 11:45:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD BARRELL'
+10/04/2025 11:45:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 579, 0) in Felucca: "BarrelLid"
+10/04/2025 11:45:07: 127.0.0.1: Serials: 0x4000122E; 
+10/04/2025 11:45:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 2'
+10/04/2025 11:45:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 2'
+10/04/2025 11:45:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x4000121A (BarrelStaves) to '2'
+10/04/2025 11:45:40: 127.0.0.1: Crafting 0x40001230 (Keg) with craft system DefClassictTinkering
+10/04/2025 11:54:14: 127.0.0.1: Crafting 0x400020B8 (Backgammon) with craft system DefClassictTinkering
+##############################
+Log started on 10/04/2025 11:54:36
+
+10/04/2025 11:55:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add Board'
+10/04/2025 11:55:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 580, 0) in Felucca: "Board"
+10/04/2025 11:55:17: 127.0.0.1: Serials: 0x4000102F; 
+10/04/2025 11:55:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 1000'
+10/04/2025 11:55:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x4000102F (Board) to '1000'
+##############################
+Log started on 10/04/2025 12:41:00
+
+##############################
+Log started on 10/04/2025 13:04:52
+
+##############################
+Log started on 10/04/2025 13:06:58
+
+##############################
+Log started on 10/04/2025 13:09:48
+
+##############################
+Log started on 10/04/2025 13:14:50
+
+##############################
+Log started on 10/04/2025 13:15:39
+
+10/04/2025 13:27:04: 127.0.0.1: Crafting 0x4000145F (Backgammon) with craft system DefClassictTinkering
+##############################
+Log started on 10/04/2025 13:30:42
+
+##############################
+Log started on 10/04/2025 13:34:15
+
+##############################
+Log started on 10/04/2025 17:05:14
+
+##############################
+Log started on 10/04/2025 17:05:22
+
+##############################
+Log started on 10/04/2025 17:05:46
+
+10/04/2025 17:05:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add sewing'
+10/04/2025 17:05:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 583, 0) in Felucca: "SewingKit"
+10/04/2025 17:05:56: 127.0.0.1: Serials: 0x40000FF3; 
+10/04/2025 17:05:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 583, 0) in Felucca: "SewingKit"
+10/04/2025 17:05:59: 127.0.0.1: Serials: 0x40000FF6; 

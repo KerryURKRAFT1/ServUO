@@ -1,0 +1,119 @@
+##############################
+Log started on 02/04/2025 08:26:45
+
+##############################
+Log started on 02/04/2025 10:30:52
+
+##############################
+Log started on 02/04/2025 10:48:42
+
+##############################
+Log started on 02/04/2025 10:49:40
+
+##############################
+Log started on 02/04/2025 12:24:26
+
+##############################
+Log started on 02/04/2025 12:41:23
+
+##############################
+Log started on 02/04/2025 13:00:22
+
+##############################
+Log started on 02/04/2025 13:23:47
+
+##############################
+Log started on 02/04/2025 13:37:31
+
+02/04/2025 13:37:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD BOARDS'
+02/04/2025 13:38:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2533, 574, 0) in Felucca: "Board"
+02/04/2025 13:38:05: 127.0.0.1: Serials: 0x40000F6C; 
+02/04/2025 13:38:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET AMOUNT 1000'
+02/04/2025 13:38:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'AMOUNT' of 0x40000F6C (Board) to '1000'
+02/04/2025 13:39:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill carpentry 100'
+02/04/2025 13:39:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+02/04/2025 13:41:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill carpentry 50'
+02/04/2025 13:41:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '50'
+02/04/2025 13:41:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill carpentry 20'
+02/04/2025 13:41:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '20'
+02/04/2025 13:41:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill carpentry 10'
+02/04/2025 13:41:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '10'
+02/04/2025 13:47:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill carpentry 10[set blacksmith 10'
+02/04/2025 13:47:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 0'
+02/04/2025 13:47:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+02/04/2025 13:47:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 10'
+02/04/2025 13:47:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Blacksmith.Base' of 0x39E "FDDSDASAD" ('Kerry') to '10'
+02/04/2025 13:47:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill blacksmith 10'
+##############################
+Log started on 02/04/2025 14:45:50
+
+02/04/2025 14:47:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill carpentry 10'
+02/04/2025 14:47:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '10'
+02/04/2025 14:47:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill carpentry 0'
+02/04/2025 14:47:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+02/04/2025 14:52:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill carpentry 100'
+02/04/2025 14:52:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+02/04/2025 14:56:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+##############################
+Log started on 02/04/2025 14:59:25
+
+02/04/2025 14:59:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET CARPENTRY 10'
+02/04/2025 14:59:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SET CARPENTRY  100'
+02/04/2025 15:00:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL CARPENTRY 10'
+02/04/2025 15:00:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '10'
+02/04/2025 15:00:32: 127.0.0.1: Crafting 0x40000FDA (SmallCrate) with craft system DefClassicCarpentry
+02/04/2025 15:33:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'coreinfo '
+02/04/2025 15:33:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL CARPENTRY 100'
+02/04/2025 15:33:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+02/04/2025 15:33:41: 127.0.0.1: Crafting 0x4001A105 (Board) with craft system DefClassicCarpentry
+02/04/2025 15:33:57: 127.0.0.1: Crafting 0x4001A107 (Board) with craft system DefClassicCarpentry
+##############################
+Log started on 02/04/2025 16:12:01
+
+02/04/2025 16:12:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL CARPENTRY 50'
+02/04/2025 16:12:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '50'
+02/04/2025 16:12:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL CARPENTRY 50'
+02/04/2025 16:12:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL CARPENTRY 60'
+02/04/2025 16:12:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '60'
+02/04/2025 16:12:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL CARPENTRY 100'
+02/04/2025 16:12:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+02/04/2025 16:12:52: 127.0.0.1: Crafting 0x40000FDC (Board) with craft system DefClassicCarpentry
+02/04/2025 16:13:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL CARPENTRY 0'
+02/04/2025 16:13:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+##############################
+Log started on 02/04/2025 16:19:45
+
+02/04/2025 16:32:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL CARPENTRY 60'
+02/04/2025 16:32:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '60'
+02/04/2025 16:32:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL CARPENTRY 60'
+02/04/2025 16:32:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '60'
+02/04/2025 16:32:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL CARPENTRY 70'
+02/04/2025 16:32:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '70'
+02/04/2025 16:32:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL CARPENTRY 65'
+02/04/2025 16:32:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '65'
+02/04/2025 16:32:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL CARPENTRY 55'
+02/04/2025 16:32:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '55'
+02/04/2025 16:33:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL CARPENTRY 53'
+02/04/2025 16:33:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '53'
+02/04/2025 16:33:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL CARPENTRY 54'
+02/04/2025 16:33:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '54'
+02/04/2025 16:33:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL CARPENTRY 55'
+02/04/2025 16:33:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '55'
+02/04/2025 16:33:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL CARPENTRY 56'
+02/04/2025 16:33:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '56'
+02/04/2025 16:33:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL CARPENTRY 57'
+02/04/2025 16:33:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '57'
+02/04/2025 16:33:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL CARPENTRY 60'
+02/04/2025 16:33:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '60'
+02/04/2025 16:34:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL CARPENTRY 70'
+02/04/2025 16:34:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '70'
+02/04/2025 16:34:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL CARPENTRY 65'
+02/04/2025 16:34:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '65'
+02/04/2025 16:34:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'SETSKILL CARPENTRY 55'
+02/04/2025 16:34:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '55'
+##############################
+Log started on 02/04/2025 16:39:30
+
+##############################
+Log started on 02/04/2025 17:30:36
+

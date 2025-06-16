@@ -1,0 +1,225 @@
+##############################
+Log started on 20/04/2025 08:27:14
+
+20/04/2025 08:33:00: 127.0.0.1: Crafting 0x4000130E (TinkerTools) with craft system DefClassictTinkering
+20/04/2025 08:33:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+20/04/2025 08:33:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+20/04/2025 08:33:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+20/04/2025 08:34:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+20/04/2025 08:42:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add SilverBeadNecklace'
+20/04/2025 08:42:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2490, 491, 15) in Felucca: "SilverBeadNecklace"
+20/04/2025 08:42:57: 127.0.0.1: Serials: 0x400015BE; 
+20/04/2025 08:43:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+20/04/2025 08:43:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add GoldNecklace'
+20/04/2025 08:43:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2486, 485, 15) in Felucca: "GoldNecklace"
+20/04/2025 08:43:24: 127.0.0.1: Serials: 0x400020A8; 
+20/04/2025 08:43:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+20/04/2025 08:43:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+20/04/2025 08:43:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+20/04/2025 08:43:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+20/04/2025 08:44:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add GoldEarrings'
+20/04/2025 08:44:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2487, 488, 15) in Felucca: "GoldEarrings"
+20/04/2025 08:44:02: 127.0.0.1: Serials: 0x400020A9; 
+20/04/2025 08:44:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+20/04/2025 08:44:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add GoldBeadNecklace'
+20/04/2025 08:44:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2487, 488, 15) in Felucca: "GoldBeadNecklace"
+20/04/2025 08:44:25: 127.0.0.1: Serials: 0x400020AA; 
+20/04/2025 08:44:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+20/04/2025 08:44:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add GoldBracelet'
+20/04/2025 08:44:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2487, 488, 15) in Felucca: "GoldBracelet"
+20/04/2025 08:44:46: 127.0.0.1: Serials: 0x400020AB; 
+20/04/2025 08:44:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+20/04/2025 08:51:53: 127.0.0.1: Crafting 0x4001A0CB (WoodenBowl) with craft system DefClassictTinkering
+20/04/2025 08:52:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'props '
+20/04/2025 08:52:57: 127.0.0.1: Crafting 0x4001A0D0 (DartBoardSouthDeed) with craft system DefClassicCarpentry
+##############################
+Log started on 20/04/2025 16:56:50
+
+20/04/2025 16:57:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add bolt'
+20/04/2025 16:57:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2485, 486, 15) in Felucca: "bolt"
+20/04/2025 16:57:28: 127.0.0.1: Serials: 0x4000109E; 
+20/04/2025 16:57:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 16:57:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000109E (Bolt)
+20/04/2025 16:57:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add cloth'
+20/04/2025 16:57:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2485, 486, 15) in Felucca: "cloth"
+20/04/2025 16:57:34: 127.0.0.1: Serials: 0x400010A0; 
+20/04/2025 16:57:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 5'
+20/04/2025 16:57:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x400010A0 (Cloth) to '5'
+20/04/2025 16:57:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 16:57:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A788 (LeatherCap)
+20/04/2025 16:57:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 16:57:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A0D0 (DartBoardSouthDeed)
+20/04/2025 16:57:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 16:57:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400020AA (GoldBeadNecklace)
+20/04/2025 16:57:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 16:57:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400020A9 (GoldEarrings)
+20/04/2025 16:57:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 16:58:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400020A8 (GoldNecklace)
+20/04/2025 16:58:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 16:58:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400020AB (GoldBracelet)
+20/04/2025 16:58:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 16:58:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001453 (ResurrectionScroll)
+20/04/2025 16:58:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 16:58:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A7CE (VikingSword)
+20/04/2025 16:58:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 16:58:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400010B4 (Saw)
+20/04/2025 16:58:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 16:58:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001234 (TinkerTools)
+20/04/2025 16:58:27: 127.0.0.1: Crafting 0x400010A2 (SkullCap) with craft system DefClassicTailoring
+20/04/2025 16:59:53: 127.0.0.1: Crafting 0x400010A4 (SkullCap) with craft system DefClassicTailoring
+20/04/2025 16:59:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 2'
+20/04/2025 16:59:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x400010A0 (Cloth) to '2'
+20/04/2025 17:00:10: 127.0.0.1: Crafting 0x400010A5 (SkullCap) with craft system DefClassicTailoring
+20/04/2025 17:01:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set cloth'
+20/04/2025 17:01:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add cloth'
+20/04/2025 17:01:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2487, 483, 15) in Felucca: "cloth"
+20/04/2025 17:01:57: 127.0.0.1: Serials: 0x400010A6; 
+20/04/2025 17:02:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 500'
+20/04/2025 17:02:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x400010A6 (Cloth) to '500'
+20/04/2025 17:02:09: 127.0.0.1: Crafting 0x400010AA (FullApron) with craft system DefClassicTailoring
+##############################
+Log started on 20/04/2025 17:04:42
+
+20/04/2025 17:05:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add cloth'
+20/04/2025 17:05:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2487, 483, 15) in Felucca: "cloth"
+20/04/2025 17:05:23: 127.0.0.1: Serials: 0x4000107C; 
+20/04/2025 17:05:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 500'
+20/04/2025 17:05:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x4000107C (Cloth) to '500'
+20/04/2025 17:05:33: 127.0.0.1: Crafting 0x4000107E (FullApron) with craft system DefClassicTailoring
+20/04/2025 17:05:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:05:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A0D0 (DartBoardSouthDeed)
+20/04/2025 17:05:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:05:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400020AA (GoldBeadNecklace)
+20/04/2025 17:05:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:05:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400020A9 (GoldEarrings)
+20/04/2025 17:05:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:05:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400020A8 (GoldNecklace)
+20/04/2025 17:05:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:05:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400020AB (GoldBracelet)
+20/04/2025 17:05:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:05:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001453 (ResurrectionScroll)
+20/04/2025 17:05:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:05:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A788 (LeatherCap)
+20/04/2025 17:05:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:05:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001234 (TinkerTools)
+20/04/2025 17:06:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:06:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001471 (Scorp)
+20/04/2025 17:06:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:06:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000130E (TinkerTools)
+20/04/2025 17:07:39: 127.0.0.1: Crafting 0x40001084 (YewWoodTable) with craft system DefClassicCarpentry
+20/04/2025 17:07:47: 127.0.0.1: Crafting 0x40001085 (ClockFrame) with craft system DefClassictTinkering
+20/04/2025 17:07:52: 127.0.0.1: Crafting 0x4000108F (SmoothingPlane) with craft system DefClassictTinkering
+20/04/2025 17:07:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:08:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001084 (YewWoodTable)
+20/04/2025 17:08:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:08:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000FD0 (FootStool)
+20/04/2025 17:08:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:08:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001085 (ClockFrame)
+20/04/2025 17:08:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:08:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400014AC (SmoothingPlane)
+20/04/2025 17:09:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add leather'
+20/04/2025 17:09:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2486, 484, 15) in Felucca: "leather"
+20/04/2025 17:09:19: 127.0.0.1: Serials: 0x40001096; 
+20/04/2025 17:09:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 50'
+20/04/2025 17:09:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x40001096 (Leather) to '50'
+20/04/2025 17:09:33: 127.0.0.1: Crafting 0x4000109A (Backpack) with craft system DefClassicTailoring
+##############################
+Log started on 20/04/2025 17:19:51
+
+20/04/2025 17:20:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add cloth'
+20/04/2025 17:20:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2487, 483, 15) in Felucca: "cloth"
+20/04/2025 17:20:07: 127.0.0.1: Serials: 0x40000F6D; 
+20/04/2025 17:20:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 500'
+20/04/2025 17:20:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x40000F6D (Cloth) to '500'
+20/04/2025 17:20:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:20:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000FD0 (FootStool)
+20/04/2025 17:20:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:20:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A0D0 (DartBoardSouthDeed)
+20/04/2025 17:20:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:20:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400020AA (GoldBeadNecklace)
+20/04/2025 17:20:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:20:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400020A9 (GoldEarrings)
+20/04/2025 17:20:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:20:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400020A8 (GoldNecklace)
+20/04/2025 17:20:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:20:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400020AB (GoldBracelet)
+20/04/2025 17:20:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:20:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001453 (ResurrectionScroll)
+20/04/2025 17:20:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:20:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001234 (TinkerTools)
+20/04/2025 17:20:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:20:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001481 (DovetailSaw)
+20/04/2025 17:20:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:20:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400014AC (SmoothingPlane)
+20/04/2025 17:20:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:20:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000130E (TinkerTools)
+20/04/2025 17:21:10: 127.0.0.1: Crafting 0x4000109A (FullApron) with craft system DefClassicTailoring
+20/04/2025 17:28:59: 127.0.0.1: Crafting 0x4000109E (MediumCrate) with craft system DefClassicCarpentry
+20/04/2025 17:29:25: 127.0.0.1: Crafting 0x400011EA (SmallCrate) with craft system DefClassicCarpentry
+##############################
+Log started on 20/04/2025 17:33:58
+
+20/04/2025 17:34:09: 127.0.0.1: Crafting 0x40001040 (LongPants) with craft system DefClassicTailoring
+20/04/2025 17:34:17: 127.0.0.1: Crafting 0x40001041 (Armoire) with craft system DefClassicCarpentry
+20/04/2025 17:34:22: 127.0.0.1: Crafting 0x4000104A (LargeCrate) with craft system DefClassicCarpentry
+20/04/2025 17:34:33: 127.0.0.1: Crafting 0x4000105A (WoodenChest) with craft system DefClassicCarpentry
+20/04/2025 17:34:58: 127.0.0.1: Crafting 0x40001060 (WoodenBox) with craft system DefClassicCarpentry
+20/04/2025 17:35:10: 127.0.0.1: Crafting 0x40001066 (LargeCrate) with craft system DefClassicCarpentry
+20/04/2025 17:35:17: 127.0.0.1: Crafting 0x40001069 (MediumCrate) with craft system DefClassicCarpentry
+20/04/2025 17:36:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:36:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001041 (Armoire)
+20/04/2025 17:36:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:36:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000105A (WoodenChest)
+20/04/2025 17:36:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:36:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001066 (LargeCrate)
+20/04/2025 17:36:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:36:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400011EA (SmallCrate)
+20/04/2025 17:36:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:36:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000109E (MediumCrate)
+20/04/2025 17:36:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:36:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001069 (MediumCrate)
+20/04/2025 17:36:33: 127.0.0.1: Crafting 0x40001078 (Skirt) with craft system DefClassicTailoring
+20/04/2025 17:36:57: 127.0.0.1: Crafting 0x4000107A (JesterSuit) with craft system DefClassicTailoring
+##############################
+Log started on 20/04/2025 17:40:35
+
+20/04/2025 17:40:50: 127.0.0.1: Crafting 0x40001040 (Shirt) with craft system DefClassicTailoring
+##############################
+Log started on 20/04/2025 17:42:37
+
+20/04/2025 17:42:56: 127.0.0.1: Crafting 0x40001040 (FullApron) with craft system DefClassicTailoring
+20/04/2025 17:47:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add leather'
+20/04/2025 17:47:29: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2480, 482, 15) in Felucca: "leather"
+20/04/2025 17:47:29: 127.0.0.1: Serials: 0x40001041; 
+20/04/2025 17:47:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 100'
+20/04/2025 17:47:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x40001041 (Leather) to '100'
+20/04/2025 17:47:45: 127.0.0.1: Crafting 0x4000104A (StuddedChest) with craft system DefClassicTailoring
+20/04/2025 17:50:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:50:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000104A (StuddedChest)
+20/04/2025 17:50:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:50:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000109A (FullApron)
+20/04/2025 17:50:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:50:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400011EA (SmallCrate)
+20/04/2025 17:50:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:50:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000109E (MediumCrate)
+20/04/2025 17:50:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+20/04/2025 17:50:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001040 (FullApron)
+20/04/2025 17:58:02: 127.0.0.1: Crafting 0x400014AC (Bow) with craft system DefClassicBowFletching
+##############################
+Log started on 20/04/2025 18:00:19
+
+20/04/2025 18:00:35: 127.0.0.1: Crafting 0x40001111 (Bow) with craft system DefClassicBowFletching
+20/04/2025 18:00:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add log'
+20/04/2025 18:00:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2486, 486, 15) in Felucca: "log"
+20/04/2025 18:00:59: 127.0.0.1: Serials: 0x4000124C; 
+20/04/2025 18:01:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add log'
+20/04/2025 18:01:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2486, 486, 15) in Felucca: "log"
+20/04/2025 18:01:03: 127.0.0.1: Serials: 0x400013E1; 
+20/04/2025 18:01:16: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 50'
+20/04/2025 18:01:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x400013E1 (Log) to '50'
+20/04/2025 18:01:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill carpentry 0'
+20/04/2025 18:01:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '0'
+20/04/2025 18:01:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill carpentry 10'
+20/04/2025 18:01:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '10'
+20/04/2025 18:02:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill carpentry 30'
+20/04/2025 18:02:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Carpentry.Base' of 0x39E "FDDSDASAD" ('Kerry') to '30'

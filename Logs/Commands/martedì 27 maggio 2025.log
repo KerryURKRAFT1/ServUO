@@ -1,0 +1,21 @@
+##############################
+Log started on 27/05/2025 16:35:57
+
+27/05/2025 16:38:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+27/05/2025 16:38:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x3D7 "a water elemental" (no account)
+27/05/2025 16:39:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set mana 100'
+27/05/2025 16:39:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'mana' of 0x3DE "tester" ('tester') to '100'
+27/05/2025 16:39:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+27/05/2025 16:39:43: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x3D8 "a water elemental" (no account)
+27/05/2025 16:40:30: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set mana 100'
+27/05/2025 16:40:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'mana' of 0x3DE "tester" ('tester') to '100'
+27/05/2025 16:41:05: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set mana 100'
+27/05/2025 16:41:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'mana' of 0x3DE "tester" ('tester') to '100'
+27/05/2025 16:41:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set mana 100'
+27/05/2025 16:41:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'mana' of 0x3DE "tester" ('tester') to '100'
+27/05/2025 16:41:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+27/05/2025 16:41:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+27/05/2025 16:41:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x3E1 "a water elemental" (no account)
+##############################
+Log started on 27/05/2025 17:09:12
+

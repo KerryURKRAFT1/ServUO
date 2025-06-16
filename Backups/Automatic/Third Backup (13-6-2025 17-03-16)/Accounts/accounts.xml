@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<accounts count="4">
+	<account>
+		<username>Kerry</username>
+		<newCryptPassword>E0-62-92-41-A1-28-9F-B7-FE-46-78-62-E3-38-1D-71-6A-E3-99-36</newCryptPassword>
+		<accessLevel>Owner</accessLevel>
+		<flags>2</flags>
+		<created>2025-03-15T11:38:23.4775774Z</created>
+		<lastLogin>2025-06-10T13:43:54.1939441Z</lastLogin>
+		<totalGameTime>P4DT1H4M58.9498442S</totalGameTime>
+		<chars>
+			<char index="0">926</char>
+		</chars>
+		<addressList count="1">
+			<ip>127.0.0.1</ip>
+		</addressList>
+		<totalCurrency>0</totalCurrency>
+	</account>
+	<account>
+		<username>utente</username>
+		<newCryptPassword>6E-41-BA-AC-77-35-06-BF-8A-30-AD-32-2A-73-41-88-B8-0B-15-F4</newCryptPassword>
+		<flags>2</flags>
+		<created>2025-04-06T11:13:30.7236316Z</created>
+		<lastLogin>2025-04-06T11:13:43.2432441Z</lastLogin>
+		<totalGameTime>PT48M19.4585457S</totalGameTime>
+		<chars>
+			<char index="0">986</char>
+		</chars>
+		<addressList count="1">
+			<ip>127.0.0.1</ip>
+		</addressList>
+		<totalCurrency>0</totalCurrency>
+	</account>
+	<account>
+		<username>tester</username>
+		<newCryptPassword>22-26-9E-D2-E3-73-E5-27-80-DD-17-E8-EF-15-64-01-15-D2-36-52</newCryptPassword>
+		<flags>2</flags>
+		<created>2025-05-21T14:08:54.5644025Z</created>
+		<lastLogin>2025-06-10T13:43:58.5406121Z</lastLogin>
+		<totalGameTime>P1DT9H18M31.4865763S</totalGameTime>
+		<chars>
+			<char index="0">990</char>
+		</chars>
+		<addressList count="1">
+			<ip>127.0.0.1</ip>
+		</addressList>
+		<totalCurrency>0</totalCurrency>
+	</account>
+	<account>
+		<username>tester2</username>
+		<newCryptPassword>30-15-36-29-EF-E1-5F-17-FE-89-AC-F5-21-86-B1-52-A9-32-C9-4C</newCryptPassword>
+		<created>2025-05-30T16:03:21.626709Z</created>
+		<lastLogin>2025-06-10T13:44:47.7603482Z</lastLogin>
+		<totalGameTime>P1DT2H28M32.7825151S</totalGameTime>
+		<chars>
+			<char index="0">977</char>
+		</chars>
+		<addressList count="1">
+			<ip>127.0.0.1</ip>
+		</addressList>
+		<totalCurrency>0</totalCurrency>
+	</account>
+</accounts>

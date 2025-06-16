@@ -1,0 +1,138 @@
+##############################
+Log started on 13/03/2025 15:06:15
+
+13/03/2025 15:06:25: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'set color'
+13/03/2025 15:06:35: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'set color 0x59'
+13/03/2025 15:06:41: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'props '
+13/03/2025 15:06:44: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'props '
+13/03/2025 15:07:02: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'set color 0x59'
+13/03/2025 15:09:04: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'set color 33781'
+13/03/2025 15:09:18: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'set color 0x83f5'
+13/03/2025 15:09:26: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'set color 0x83F5'
+13/03/2025 15:09:47: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') set property 'Hue' of 0x100B "Cara" (no account) to '3'
+13/03/2025 15:10:14: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'SET COLOR 89'
+##############################
+Log started on 13/03/2025 16:39:12
+
+##############################
+Log started on 13/03/2025 16:41:10
+
+##############################
+Log started on 13/03/2025 16:47:22
+
+##############################
+Log started on 13/03/2025 16:49:59
+
+##############################
+Log started on 13/03/2025 16:53:10
+
+13/03/2025 16:53:25: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'add '
+13/03/2025 16:53:30: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'Add WarriorGuard'
+13/03/2025 16:53:30: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') building at (2505, 563, 0) in Felucca: "WarriorGuard"
+13/03/2025 16:53:30: 127.0.0.1: Serials: 0x5A9; 
+13/03/2025 16:53:51: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'Add BlackSolenInfiltratorQueen'
+13/03/2025 16:53:52: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') building at (2499, 554, 0) in Felucca: "BlackSolenInfiltratorQueen"
+13/03/2025 16:53:52: 127.0.0.1: Serials: 0x7AB; 
+13/03/2025 16:53:55: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'kill '
+13/03/2025 16:53:55: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') killing 0x7AB "a black solen infiltrator" (no account)
+13/03/2025 16:54:10: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'Add RedSolenQueen'
+13/03/2025 16:54:10: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') building at (2501, 556, 0) in Felucca: "RedSolenQueen"
+13/03/2025 16:54:10: 127.0.0.1: Serials: 0x8CF; 
+13/03/2025 16:54:13: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'kill '
+13/03/2025 16:54:13: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') killing 0x8CF "a red solen queen" (no account)
+13/03/2025 16:54:32: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'resurrect '
+13/03/2025 16:54:33: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') resurrecting 0x3BD "Kerry" ('Kerry')
+13/03/2025 16:55:03: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'Add Gargoyle'
+13/03/2025 16:55:03: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') building at (2505, 556, 0) in Felucca: "Gargoyle"
+13/03/2025 16:55:03: 127.0.0.1: Serials: 0xFDC; 
+13/03/2025 16:55:07: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'kill '
+13/03/2025 16:55:08: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') killing 0xFDC "a gargoyle" (no account)
+13/03/2025 16:55:36: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'Add FireGargoyle'
+13/03/2025 16:55:36: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') building at (2583, 628, 0) in Felucca: "FireGargoyle"
+13/03/2025 16:55:36: 127.0.0.1: Serials: 0x1305; 
+13/03/2025 16:55:38: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'kill '
+13/03/2025 16:55:38: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') killing 0x1305 "a flaming gargoyle" (no account)
+13/03/2025 16:55:49: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'Add StoneGargoyle'
+13/03/2025 16:55:50: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') building at (2586, 642, 0) in Felucca: "StoneGargoyle"
+13/03/2025 16:55:50: 127.0.0.1: Serials: 0x14E2; 
+13/03/2025 16:55:52: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'kill '
+13/03/2025 16:55:53: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') killing 0x14E2 "a stone gargoyle" (no account)
+13/03/2025 16:56:02: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'Add OphidianMage'
+13/03/2025 16:56:03: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') building at (2597, 657, 0) in Felucca: "OphidianMage"
+13/03/2025 16:56:03: 127.0.0.1: Serials: 0x1518; 
+13/03/2025 16:56:05: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'kill '
+13/03/2025 16:56:06: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') killing 0x1518 "an ophidian apprentice mage" (no account)
+##############################
+Log started on 13/03/2025 16:57:26
+
+13/03/2025 16:57:41: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'add '
+13/03/2025 16:57:48: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'Add ArcherGuard'
+13/03/2025 16:57:48: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') building at (2502, 561, 0) in Felucca: "ArcherGuard"
+13/03/2025 16:57:48: 127.0.0.1: Serials: 0x5B1; 
+##############################
+Log started on 13/03/2025 16:58:28
+
+##############################
+Log started on 13/03/2025 17:01:28
+
+##############################
+Log started on 13/03/2025 17:23:51
+
+13/03/2025 17:24:21: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'SET MINING 1000'
+13/03/2025 17:24:27: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'SET SKILL MINING 1000'
+13/03/2025 17:24:34: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'SETSKILL MINING 1000'
+13/03/2025 17:24:35: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') set property 'Mining.Base' of 0x3BD "Kerry" ('Kerry') to '1000'
+13/03/2025 17:24:40: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'SETSKILL BLACKSMITH 1000'
+13/03/2025 17:24:40: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') set property 'Blacksmith.Base' of 0x3BD "Kerry" ('Kerry') to '1000'
+13/03/2025 17:24:49: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'ADD SMITHHAMMER'
+13/03/2025 17:24:50: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') building at (2517, 579, 0) in Felucca: "SMITHHAMMER"
+13/03/2025 17:24:50: 127.0.0.1: Serials: 0x400158F2; 
+13/03/2025 17:25:14: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'ADD IRONINGOT'
+13/03/2025 17:25:15: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') building at (2528, 573, 0) in Felucca: "IRONINGOT"
+13/03/2025 17:25:15: 127.0.0.1: Serials: 0x40015935; 
+13/03/2025 17:25:25: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'props '
+13/03/2025 17:25:39: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'dupe '
+13/03/2025 17:25:40: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') duping 0x40015935 (IronIngot) (inBag=False; amount=1)
+13/03/2025 17:25:40: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') duped 0x40015935 (IronIngot) creating 0x400159C9 (IronIngot)
+13/03/2025 17:25:46: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'dupe '
+13/03/2025 17:25:47: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') duping 0x40015935 (IronIngot) (inBag=False; amount=1)
+13/03/2025 17:25:47: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') duped 0x40015935 (IronIngot) creating 0x400159E0 (IronIngot)
+13/03/2025 17:25:50: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'dupe '
+13/03/2025 17:25:51: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') duping 0x400159E0 (IronIngot) (inBag=False; amount=1)
+13/03/2025 17:25:51: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') duped 0x400159E0 (IronIngot) creating 0x400159F3 (IronIngot)
+13/03/2025 17:25:51: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'dupe '
+13/03/2025 17:25:52: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') duping 0x400159E0 (IronIngot) (inBag=False; amount=1)
+13/03/2025 17:25:52: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') duped 0x400159E0 (IronIngot) creating 0x400159F6 (IronIngot)
+13/03/2025 17:25:53: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'dupe '
+13/03/2025 17:25:53: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') duping 0x400159E0 (IronIngot) (inBag=False; amount=1)
+13/03/2025 17:25:53: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') duped 0x400159E0 (IronIngot) creating 0x400159F7 (IronIngot)
+13/03/2025 17:26:04: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'dupe '
+13/03/2025 17:26:05: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') duping 0x400159F3 (IronIngot) (inBag=False; amount=1)
+13/03/2025 17:26:05: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') duped 0x400159F3 (IronIngot) creating 0x40015A74 (IronIngot)
+13/03/2025 17:26:11: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'dupe '
+13/03/2025 17:26:11: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') duping 0x400159F3 (IronIngot) (inBag=False; amount=1)
+13/03/2025 17:26:11: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') duped 0x400159F3 (IronIngot) creating 0x40015A7F (IronIngot)
+13/03/2025 17:26:15: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'dupe '
+13/03/2025 17:26:15: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') duping 0x40015A7F (IronIngot) (inBag=False; amount=1)
+13/03/2025 17:26:15: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') duped 0x40015A7F (IronIngot) creating 0x40015A80 (IronIngot)
+13/03/2025 17:28:58: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'dupe '
+13/03/2025 17:28:59: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') duping 0x40015A80 (IronIngot) (inBag=False; amount=1)
+13/03/2025 17:28:59: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') duped 0x40015A80 (IronIngot) creating 0x40015DDB (IronIngot)
+13/03/2025 17:29:00: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'dupe '
+13/03/2025 17:29:00: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') duping 0x40015A80 (IronIngot) (inBag=False; amount=1)
+13/03/2025 17:29:00: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') duped 0x40015A80 (IronIngot) creating 0x40015DE4 (IronIngot)
+13/03/2025 17:29:01: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'dupe '
+13/03/2025 17:29:01: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') duping 0x40015A80 (IronIngot) (inBag=False; amount=1)
+13/03/2025 17:29:01: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') duped 0x40015A80 (IronIngot) creating 0x40015DE7 (IronIngot)
+13/03/2025 17:29:24: 127.0.0.1: Crafting 0x40015EC0 (Broadsword) with craft system DefBlacksmithy
+13/03/2025 17:29:39: 127.0.0.1: Crafting 0x40015EFA (VikingSword) with craft system DefBlacksmithy
+13/03/2025 17:29:56: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'add veriteingot'
+13/03/2025 17:29:57: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') building at (2534, 573, 0) in Felucca: "veriteingot"
+13/03/2025 17:29:57: 127.0.0.1: Serials: 0x40015F67; 
+13/03/2025 17:30:05: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') used command 'set amount 300'
+13/03/2025 17:30:07: 127.0.0.1: Owner 0x3BD "Kerry" ('Kerry') set property 'amount' of 0x40015F67 (VeriteIngot) to '300'
+13/03/2025 17:31:02: 127.0.0.1: Crafting 0x400160B2 (Buckler) with craft system DefBlacksmithy
+13/03/2025 17:31:22: 127.0.0.1: Crafting 0x4001613E (DoubleAxe) with craft system DefBlacksmithy
+13/03/2025 17:31:35: 127.0.0.1: Crafting 0x40016173 (Axe) with craft system DefBlacksmithy
+13/03/2025 17:32:44: 127.0.0.1: Crafting 0x40016343 (RingmailGloves) with craft system DefBlacksmithy
+13/03/2025 17:32:50: 127.0.0.1: Crafting 0x4001634C (PlateGorget) with craft system DefBlacksmithy

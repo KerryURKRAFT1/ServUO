@@ -1,0 +1,344 @@
+##############################
+Log started on 16/04/2025 08:20:44
+
+16/04/2025 08:21:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add blankscroll'
+16/04/2025 08:21:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 565, 0) in Felucca: "blankscroll"
+16/04/2025 08:21:41: 127.0.0.1: Serials: 0x40001008; 
+16/04/2025 08:21:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add blankmap'
+16/04/2025 08:21:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2518, 564, 0) in Felucca: "blankmap"
+16/04/2025 08:21:46: 127.0.0.1: Serials: 0x4000100E; 
+16/04/2025 08:21:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set amount 100'
+16/04/2025 08:21:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'amount' of 0x4000100E (BlankMap) to '100'
+16/04/2025 08:25:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill cartography 10'
+16/04/2025 08:25:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Cartography.Base' of 0x39E "FDDSDASAD" ('Kerry') to '10'
+16/04/2025 08:25:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill cartography 5'
+16/04/2025 08:25:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Cartography.Base' of 0x39E "FDDSDASAD" ('Kerry') to '5'
+##############################
+Log started on 16/04/2025 09:43:12
+
+##############################
+Log started on 16/04/2025 09:44:15
+
+##############################
+Log started on 16/04/2025 09:49:57
+
+16/04/2025 09:50:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill cartography 50'
+16/04/2025 09:50:53: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Cartography.Base' of 0x39E "FDDSDASAD" ('Kerry') to '50'
+16/04/2025 10:19:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill cartography 70'
+16/04/2025 10:19:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Cartography.Base' of 0x39E "FDDSDASAD" ('Kerry') to '70'
+16/04/2025 10:19:32: 127.0.0.1: Crafting 0x4001A12D (WorldMap) with craft system DefCartography
+16/04/2025 10:19:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add blankmap'
+16/04/2025 10:19:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 564, 0) in Felucca: "blankmap"
+16/04/2025 10:19:52: 127.0.0.1: Serials: 0x4001A12E; 
+16/04/2025 10:20:15: 127.0.0.1: Crafting 0x4001A12F (WorldMap) with craft system DefCartography
+16/04/2025 10:20:26: 127.0.0.1: Crafting 0x4001A130 (WorldMap) with craft system DefCartography
+16/04/2025 10:20:29: 127.0.0.1: Crafting 0x4001A131 (WorldMap) with craft system DefCartography
+16/04/2025 10:20:44: 127.0.0.1: Crafting 0x4001A132 (WorldMap) with craft system DefCartography
+16/04/2025 10:20:52: 127.0.0.1: Crafting 0x4001A133 (WorldMap) with craft system DefCartography
+16/04/2025 10:47:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add emptybottle'
+16/04/2025 10:47:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 563, 0) in Felucca: "AgilityPotion"
+16/04/2025 10:47:39: 127.0.0.1: Serials: 0x4001A39A; 
+16/04/2025 10:48:03: 127.0.0.1: Crafting 0x4001A39D (GreaterHealPotion) with craft system DefClassicAlchemy
+##############################
+Log started on 16/04/2025 10:55:17
+
+16/04/2025 10:55:31: 127.0.0.1: Crafting 0x40000F5C (LocalMap) with craft system DefCartography
+16/04/2025 10:58:34: 127.0.0.1: Crafting 0x40001147 (LocalMap) with craft system DefCartography
+16/04/2025 11:01:06: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'coreinfo '
+16/04/2025 11:01:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD SMITHHAMMER'
+16/04/2025 11:01:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2532, 571, 0) in Felucca: "SMITHHAMMER"
+16/04/2025 11:01:49: 127.0.0.1: Serials: 0x40001258; 
+16/04/2025 11:02:27: 127.0.0.1: Crafting 0x4000125A (FemalePlateChest) with craft system DefClassicBlacksmithy
+16/04/2025 11:02:58: 127.0.0.1: Crafting 0x4000125B (PlateChest) with craft system DefClassicBlacksmithy
+16/04/2025 11:04:58: 127.0.0.1: Crafting 0x4000125E (PlateChest) with craft system DefClassicBlacksmithy
+##############################
+Log started on 16/04/2025 11:22:24
+
+16/04/2025 11:23:14: 127.0.0.1: Crafting 0x40000F5C (LocalMap) with craft system DefCartography
+##############################
+Log started on 16/04/2025 12:25:19
+
+16/04/2025 12:25:48: 127.0.0.1: Crafting 0x40000F5C (LocalMap) with craft system DefCartography
+16/04/2025 12:28:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add blankmap'
+16/04/2025 12:28:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2513, 561, 0) in Felucca: "blankmap"
+16/04/2025 12:28:40: 127.0.0.1: Serials: 0x40001184; 
+##############################
+Log started on 16/04/2025 12:35:22
+
+16/04/2025 12:35:40: 127.0.0.1: Crafting 0x40000F5C (LocalMap) with craft system DefCartography
+##############################
+Log started on 16/04/2025 12:44:20
+
+16/04/2025 12:44:29: 127.0.0.1: Crafting 0x40000F5C (LocalMap) with craft system DefCartography
+16/04/2025 12:46:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add blankmap'
+16/04/2025 12:46:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 561, 0) in Felucca: "blankmap"
+16/04/2025 12:46:48: 127.0.0.1: Serials: 0x4000118A; 
+16/04/2025 12:47:01: 127.0.0.1: Crafting 0x4000118E (LocalMap) with craft system DefCartography
+16/04/2025 12:47:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add blankmap'
+16/04/2025 12:47:13: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2514, 559, 0) in Felucca: "blankmap"
+16/04/2025 12:47:13: 127.0.0.1: Serials: 0x40001190; 
+16/04/2025 12:47:24: 127.0.0.1: Crafting 0x40001192 (LocalMap) with craft system DefCartography
+##############################
+Log started on 16/04/2025 13:03:09
+
+16/04/2025 13:03:22: 127.0.0.1: Crafting 0x40000F5C (LocalMap) with craft system DefCartography
+16/04/2025 13:03:53: 127.0.0.1: Crafting 0x40000F5D (LocalMap) with craft system DefCartography
+16/04/2025 13:18:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD BLANKMAP'
+16/04/2025 13:18:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2513, 562, 0) in Felucca: "BLANKMAP"
+16/04/2025 13:18:12: 127.0.0.1: Serials: 0x400013E3; 
+16/04/2025 13:18:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill cartography 100'
+16/04/2025 13:18:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Cartography.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+##############################
+Log started on 16/04/2025 13:22:42
+
+16/04/2025 13:22:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'setskill cartography 100'
+16/04/2025 13:22:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'Cartography.Base' of 0x39E "FDDSDASAD" ('Kerry') to '100'
+16/04/2025 13:23:00: 127.0.0.1: Crafting 0x40000F5C (SeaChart) with craft system DefCartography
+16/04/2025 13:23:11: 127.0.0.1: Crafting 0x40000F5D (SeaChart) with craft system DefCartography
+##############################
+Log started on 16/04/2025 13:25:28
+
+16/04/2025 13:25:41: 127.0.0.1: Crafting 0x40000F5C (SeaChart) with craft system DefCartography
+16/04/2025 14:49:50: 127.0.0.1: Crafting 0x4001A6A8 (LocalMap) with craft system DefCartography
+16/04/2025 14:50:07: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add blankmap'
+16/04/2025 14:50:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 563, 0) in Felucca: "blankmap"
+16/04/2025 14:50:08: 127.0.0.1: Serials: 0x4001A6A9; 
+16/04/2025 14:50:17: 127.0.0.1: Crafting 0x4001A6AA (LocalMap) with craft system DefCartography
+##############################
+Log started on 16/04/2025 14:54:42
+
+16/04/2025 14:54:54: 127.0.0.1: Crafting 0x40001060 (LocalMap) with craft system DefCartography
+16/04/2025 14:57:17: 127.0.0.1: Crafting 0x40001062 (LocalMap) with craft system DefCartography
+16/04/2025 14:57:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 14:57:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001060 (LocalMap)
+16/04/2025 14:57:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 14:57:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001062 (LocalMap)
+16/04/2025 14:57:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 14:57:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F5C (SeaChart)
+16/04/2025 14:57:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD BLANKMAP'
+16/04/2025 14:57:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2513, 563, 0) in Felucca: "BLANKMAP"
+16/04/2025 14:57:46: 127.0.0.1: Serials: 0x40001066; 
+16/04/2025 14:57:57: 127.0.0.1: Crafting 0x40001068 (LocalMap) with craft system DefCartography
+16/04/2025 14:58:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD BLANKMAP'
+16/04/2025 14:58:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2513, 563, 0) in Felucca: "BLANKMAP"
+16/04/2025 14:58:56: 127.0.0.1: Serials: 0x40001069; 
+16/04/2025 14:59:20: 127.0.0.1: Crafting 0x4000106A (LocalMap) with craft system DefCartography
+16/04/2025 15:05:35: 127.0.0.1: Crafting 0x400011DA (AgilityScroll) with craft system DefClassicInscription
+16/04/2025 15:05:44: 127.0.0.1: Crafting 0x400011EE (CureScroll) with craft system DefClassicInscription
+16/04/2025 15:06:03: 127.0.0.1: Crafting 0x4000121A (CunningScroll) with craft system DefClassicInscription
+16/04/2025 15:06:26: 127.0.0.1: Crafting 0x40001236 (ClumsyScroll) with craft system DefClassicInscription
+16/04/2025 15:09:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add blankmap'
+16/04/2025 15:09:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2516, 558, 0) in Felucca: "blankmap"
+16/04/2025 15:09:27: 127.0.0.1: Serials: 0x40001238; 
+16/04/2025 15:09:34: 127.0.0.1: Crafting 0x4000123A (LocalMap) with craft system DefCartography
+16/04/2025 15:09:44: 127.0.0.1: Crafting 0x4000123C (LocalMap) with craft system DefCartography
+##############################
+Log started on 16/04/2025 15:11:31
+
+16/04/2025 15:11:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:11:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A12F (WorldMap)
+16/04/2025 15:11:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add blankmap'
+16/04/2025 15:11:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2515, 565, 1) in Felucca: "blankmap"
+16/04/2025 15:11:42: 127.0.0.1: Serials: 0x40001060; 
+16/04/2025 15:12:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:12:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A133 (WorldMap)
+16/04/2025 15:12:55: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:12:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001060 (BlankMap)
+16/04/2025 15:12:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:12:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000100E (BlankMap)
+16/04/2025 15:12:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:12:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A12D (WorldMap)
+16/04/2025 15:12:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:12:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A131 (WorldMap)
+16/04/2025 15:12:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:12:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A130 (WorldMap)
+16/04/2025 15:12:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:12:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A132 (WorldMap)
+16/04/2025 15:12:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:12:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001008 (BlankScroll)
+16/04/2025 15:13:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:13:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A12E (BlankMap)
+16/04/2025 15:13:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:13:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F5C (SeaChart)
+16/04/2025 15:13:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD BLANKMAP'
+16/04/2025 15:13:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 563, 0) in Felucca: "BLANKMAP"
+16/04/2025 15:13:10: 127.0.0.1: Serials: 0x40001062; 
+16/04/2025 15:13:29: 127.0.0.1: Crafting 0x40001066 (LocalMap) with craft system DefCartography
+16/04/2025 15:13:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD BLANKMAP'
+16/04/2025 15:13:37: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2517, 563, 0) in Felucca: "BLANKMAP"
+16/04/2025 15:13:37: 127.0.0.1: Serials: 0x40001068; 
+16/04/2025 15:13:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:13:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001066 (LocalMap)
+16/04/2025 15:14:15: 127.0.0.1: Crafting 0x40001078 (ReactiveArmorScroll) with craft system DefClassicInscription
+16/04/2025 15:14:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:14:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001078 (ReactiveArmorScroll)
+16/04/2025 15:14:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:14:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F68 (Log)
+16/04/2025 15:14:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:14:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001453 (ResurrectionScroll)
+16/04/2025 15:14:26: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:14:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A39D (GreaterHealPotion)
+16/04/2025 15:14:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:14:31: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001274 (AxleGears)
+16/04/2025 15:14:32: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:14:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000FE4 (Bolt)
+16/04/2025 15:14:35: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:14:36: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A7CE (VikingSword)
+16/04/2025 15:14:38: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:14:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001036 (ExplosionPotion)
+16/04/2025 15:14:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:14:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:14:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400010B4 (Saw)
+16/04/2025 15:14:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:14:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400010BA (Axle)
+16/04/2025 15:14:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:14:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000FEC (LesserExplosionPotion)
+16/04/2025 15:14:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:14:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000107E (Key)
+16/04/2025 15:14:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:14:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000FF0 (Key)
+16/04/2025 15:14:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:14:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000FEA (GreaterExplosionPotion)
+16/04/2025 15:15:20: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'ADD BLANKMAP'
+16/04/2025 15:15:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2513, 563, 0) in Felucca: "BLANKMAP"
+16/04/2025 15:15:21: 127.0.0.1: Serials: 0x4000107A; 
+16/04/2025 15:18:44: 127.0.0.1: Crafting 0x4000123C (ReactiveArmorScroll) with craft system DefClassicInscription
+16/04/2025 15:18:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:18:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000123C (ReactiveArmorScroll)
+16/04/2025 15:24:30: 127.0.0.1: Crafting 0x40001250 (EarthquakeScroll) with craft system DefClassicInscription
+16/04/2025 15:24:56: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:24:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F0D (ClumsyScroll)
+16/04/2025 15:24:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:24:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F0C (ReactiveArmorScroll)
+16/04/2025 15:24:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:24:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001250 (EarthquakeScroll)
+16/04/2025 15:25:29: 127.0.0.1: Crafting 0x40001254 (MagicReflectScroll) with craft system DefClassicInscription
+16/04/2025 15:26:08: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'set mana 50'
+16/04/2025 15:26:09: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') set property 'mana' of 0x39E "FDDSDASAD" ('Kerry') to '50'
+16/04/2025 15:26:23: 127.0.0.1: Crafting 0x4000125E (MagicReflectScroll) with craft system DefClassicInscription
+##############################
+Log started on 16/04/2025 15:35:38
+
+16/04/2025 15:35:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:35:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A12F (WorldMap)
+16/04/2025 15:35:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:35:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A133 (WorldMap)
+16/04/2025 15:35:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:35:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A132 (WorldMap)
+16/04/2025 15:35:46: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:35:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A130 (WorldMap)
+16/04/2025 15:35:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:35:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A131 (WorldMap)
+16/04/2025 15:35:47: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:35:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A12D (WorldMap)
+16/04/2025 15:35:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:35:48: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000100E (BlankMap)
+16/04/2025 15:35:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:35:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F5C (SeaChart)
+16/04/2025 15:35:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:35:51: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A12E (BlankMap)
+16/04/2025 15:35:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:35:52: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F68 (Log)
+16/04/2025 15:35:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:35:54: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A7CE (VikingSword)
+16/04/2025 15:35:57: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:35:58: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000107E (Key)
+16/04/2025 15:36:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:36:03: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001453 (ResurrectionScroll)
+16/04/2025 15:36:10: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:36:11: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400010BC (RollingPin)
+16/04/2025 15:36:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:36:12: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001274 (AxleGears)
+16/04/2025 15:36:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:36:15: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A39D (GreaterHealPotion)
+16/04/2025 15:36:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:36:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400010BA (Axle)
+16/04/2025 15:36:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 15:36:25: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x400010B4 (Saw)
+16/04/2025 15:37:18: 127.0.0.1: Crafting 0x40001069 (ClumsyScroll) with craft system DefClassicInscription
+16/04/2025 15:39:08: 127.0.0.1: Crafting 0x40001072 (GreaterExplosionPotion) with craft system DefClassicAlchemy
+16/04/2025 15:39:24: 127.0.0.1: Crafting 0x4000107A (PoisonPotion) with craft system DefClassicAlchemy
+16/04/2025 16:22:50: 127.0.0.1: Crafting 0x4001A2D6 (LesserPoisonPotion) with craft system DefClassicAlchemy
+##############################
+Log started on 16/04/2025 16:23:33
+
+16/04/2025 16:23:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:23:39: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A12D (WorldMap)
+16/04/2025 16:23:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:23:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A12F (WorldMap)
+16/04/2025 16:23:40: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:23:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000100E (BlankMap)
+16/04/2025 16:23:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:23:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A131 (WorldMap)
+16/04/2025 16:23:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:23:41: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A130 (WorldMap)
+16/04/2025 16:23:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:23:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A133 (WorldMap)
+16/04/2025 16:23:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:23:42: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A132 (WorldMap)
+16/04/2025 16:23:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:23:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F5C (SeaChart)
+16/04/2025 16:23:44: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:23:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40001074 (Backpack)
+16/04/2025 16:23:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:23:45: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A12E (BlankMap)
+16/04/2025 16:23:49: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:23:50: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F68 (Log)
+16/04/2025 16:23:58: 127.0.0.1: Crafting 0x40001069 (ClumsyScroll) with craft system DefClassicInscription
+##############################
+Log started on 16/04/2025 16:24:56
+
+16/04/2025 16:24:59: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:25:00: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A12D (WorldMap)
+16/04/2025 16:25:01: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:25:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A12E (BlankMap)
+16/04/2025 16:25:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:25:02: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F5C (SeaChart)
+16/04/2025 16:25:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:25:04: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F68 (Log)
+16/04/2025 16:25:16: 127.0.0.1: Crafting 0x4000106A (MassCurseScroll) with craft system DefClassicInscription
+16/04/2025 16:27:28: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add blnakmap'
+16/04/2025 16:27:33: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'add blankmap'
+16/04/2025 16:27:34: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') building at (2513, 562, 0) in Felucca: "blankmap"
+16/04/2025 16:27:34: 127.0.0.1: Serials: 0x4000106E; 
+16/04/2025 16:27:39: 127.0.0.1: Crafting 0x40001072 (WorldMap) with craft system DefCartography
+##############################
+Log started on 16/04/2025 16:32:11
+
+16/04/2025 16:32:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:32:17: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A12E (BlankMap)
+16/04/2025 16:32:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:32:18: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F5C (SeaChart)
+16/04/2025 16:32:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:32:19: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:32:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x40000F68 (Log)
+16/04/2025 16:32:21: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:32:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A12D (WorldMap)
+16/04/2025 16:32:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:32:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A12F (WorldMap)
+16/04/2025 16:32:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:32:22: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4000100E (BlankMap)
+16/04/2025 16:32:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:32:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A131 (WorldMap)
+16/04/2025 16:32:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:32:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A130 (WorldMap)
+16/04/2025 16:32:23: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:32:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A132 (WorldMap)
+16/04/2025 16:32:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:32:24: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') deleting 0x4001A133 (WorldMap)
+16/04/2025 16:32:27: 127.0.0.1: Owner 0x39E "FDDSDASAD" ('Kerry') used command 'remove '
+16/04/2025 16:32:38: 127.0.0.1: Crafting 0x40001069 (AgilityScroll) with craft system DefClassicInscription
+16/04/2025 16:33:28: 127.0.0.1: Crafting 0x4000107C (FireFieldScroll) with craft system DefClassicInscription
+##############################
+Log started on 16/04/2025 16:39:57
+
+16/04/2025 16:40:09: 127.0.0.1: Crafting 0x40001006 (AgilityScroll) with craft system DefClassicInscription
+##############################
+Log started on 16/04/2025 16:57:01
+
+16/04/2025 16:57:13: 127.0.0.1: Crafting 0x40001006 (AgilityScroll) with craft system DefClassicInscription
+##############################
+Log started on 16/04/2025 16:58:47
+
+16/04/2025 16:58:58: 127.0.0.1: Crafting 0x40001006 (AgilityScroll) with craft system DefClassicInscription
+16/04/2025 16:59:24: 127.0.0.1: Crafting 0x40001016 (ReactiveArmorScroll) with craft system DefClassicInscription
