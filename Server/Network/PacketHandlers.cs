@@ -1007,19 +1007,32 @@ namespace Server.Network
 			int hue = pvSrc.ReadInt16();
 
 			index -= 1; // convert from 1-based to 0-based
+	//debug
+    if (state == null || state.Menus == null)
+    {
+        Console.WriteLine("DEBUG: 'state' o 'state.Menus' è null.");
+        return;
+    }
 
 			foreach (IMenu menu in state.Menus)
 			{
+				        if (menu == null)
+						{
+							Console.WriteLine("DEBUG: Un menu è null.");
+							continue;
+						}
 				if (menu.Serial == serial)
 				{
 					state.RemoveMenu(menu);
 
 					if (index >= 0 && index < menu.EntryLength)
 					{
+						Console.WriteLine("DEBUG: Invocazione di OnResponse con index={index}.");
 						menu.OnResponse(state, index);
 					}
 					else
 					{
+						Console.WriteLine("DEBUG: Invocazione di OnCancel.");
 						menu.OnCancel(state);
 					}
 

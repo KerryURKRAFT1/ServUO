@@ -20,6 +20,9 @@ using Server.ContextMenus;
 using Server.Items;
 using Server.Network;
 using Server.Targeting;
+
+
+
 #endregion
 
 namespace Server
@@ -4402,6 +4405,33 @@ namespace Server
         {
             return true;
         }
+
+
+        // STATIC HOUSE SYSTEM FOR UOR
+        /*
+        public virtual bool OnDragLift(Mobile from)
+        {
+            try
+            {
+                // Gestione solo per le case statiche!
+                StaticHouse.StaticHouseSign staticHouse = Server.StaticHouse.StaticHouseHelper.FindStaticHouseAt(from) as StaticHouse.StaticHouseSign;
+                if (staticHouse != null && this.IsLockedDown && staticHouse.HouseArea.Contains(this.Location))
+                {
+                    if (staticHouse.Owner == from)
+                        return true;
+
+                    from.SendMessage("Questo oggetto è lockato a terra in una casa statica!");
+                    return false;
+                }
+            }
+            catch
+            {
+                // fail safe
+            }
+
+            return true;
+        }
+        */
 
         public virtual bool OnEquip(Mobile from)
         {

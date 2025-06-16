@@ -819,6 +819,23 @@ namespace Server
 			{
 				Race oldRace = Race;
 
+				// PATCH UOR-LIKE: Forza sempre Human sui player
+				if (value == null || value == Race.Elf || value == Race.Gargoyle)
+					m_Race = Race.Human;
+				else
+					m_Race = value;
+
+				Body = m_Race.Body(this);
+				UpdateResistances();
+
+				Delta(MobileDelta.Race);
+
+				OnRaceChange(oldRace);
+
+				// REMOVE FOR UOR STYLE
+				/*
+				Race oldRace = Race;
+
 				m_Race = value;
 
 				if (m_Race == null)
@@ -832,6 +849,9 @@ namespace Server
 				Delta(MobileDelta.Race);
 
 				OnRaceChange(oldRace);
+
+
+				*/
 			}
 		}
 

@@ -171,6 +171,8 @@ namespace Server.Items
 
 		public virtual bool CheckHold(Mobile m, Item item, bool message, bool checkItems, int plusItems, int plusWeight)
 		{
+
+
 			if (!m.IsStaff())
 			{
 				if (IsDecoContainer)
