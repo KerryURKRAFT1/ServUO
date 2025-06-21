@@ -562,57 +562,46 @@ namespace Server.Spells
 				return;
 			}
 
-
-			if (Core.UOR || m_State == SpellState.Casting || m_State == SpellState.Sequencing) // Interrompi in ogni fase se Core.UOR è attivo
+			if (Core.UOR || m_State == SpellState.Casting || m_State == SpellState.Sequencing)
 			{
-
+				// MANAGE BOTH  CASES - CASTING AND PRECAST (SEQUENCING)
 				if (m_State == SpellState.Casting)
 				{
 					if (!firstCircle && !Core.AOS && this is MagerySpell && ((MagerySpell)this).Circle == SpellCircle.First)
-					{
 						return;
-					}
 
 					m_State = SpellState.None;
 					m_Caster.Spell = null;
-
 					OnDisturb(type, true);
 
 					if (m_CastTimer != null)
-					{
 						m_CastTimer.Stop();
-					}
-
 					if (m_AnimTimer != null)
-					{
 						m_AnimTimer.Stop();
-					}
 
-					if (Core.AOS && m_Caster.Player && type == DisturbType.Hurt)
-					{
+					//if (Core.AOS && m_Caster.Player && type == DisturbType.Hurt)
+					if (Core.UOR && m_Caster.Player && type == DisturbType.Hurt)
 						DoHurtFizzle();
+
+					m_Caster.NextSpellTime = Core.TickCount + (int)GetDisturbRecovery().TotalMilliseconds;
+				}
+				// IF SPELLSTATE IS IN PRE CAST
+				else if (m_State == SpellState.Sequencing)
+				{
+					// CLOSE PRECAST TARGHET !
+					m_State = SpellState.None;
+					m_Caster.Spell = null;
+					OnDisturb(type, false);
+
+					if (m_Caster != null && m_Caster.Target != null)
+					{
+						// JUST CLOSE THE TARGHET IF HITTED
+						Target.Cancel(m_Caster);
+						//DoHurtFizzle();
 					}
 
-				m_Caster.NextSpellTime = Core.TickCount + (int)GetDisturbRecovery().TotalMilliseconds;
-				}
-			}
-			else if (m_State == SpellState.Sequencing)
-			{
-				if (!firstCircle && !Core.AOS && this is MagerySpell && ((MagerySpell)this).Circle == SpellCircle.First)
-				{
-					return;
-				}
-
-				m_State = SpellState.None;
-				m_Caster.Spell = null;
-
-				OnDisturb(type, false);
-
-				Target.Cancel(m_Caster);
-
-				if (Core.AOS && m_Caster.Player && type == DisturbType.Hurt)
-				{
-					DoHurtFizzle();
+					//if (Core.AOS && m_Caster.Player && type == DisturbType.Hurt)
+					//	DoHurtFizzle();
 				}
 			}
 		}

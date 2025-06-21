@@ -216,7 +216,7 @@ namespace Server.Mobiles
             base.OnThink();
             this.CheckAtDestination();
 
-             foreach (Mobile m in this.GetMobilesInRange(3))
+             foreach (Mobile m in this.GetMobilesInRange(7))
             {
                 if (m.Player && m.Alive && m != this && !this.Hidden && !this.Controlled)
                 {

@@ -21,6 +21,26 @@ namespace Server.StaticHouse
         private TimeSpan m_DecayPeriod;
         private List<BaseDoor> m_AssociatedDoors;
         private uint m_HouseKeyValue;
+        private int m_RequiredKarma;
+        private int m_RequiredFame;
+
+        private static readonly TimeSpan DefaultDecay = TimeSpan.FromDays(21);
+        private static readonly TimeSpan DowngradedDecay = TimeSpan.FromDays(7);
+
+        [CommandProperty(AccessLevel.GameMaster)]
+        public int RequiredKarma
+        {
+            get { return m_RequiredKarma; }
+            set { m_RequiredKarma = value; InvalidateProperties(); }
+        }
+
+        [CommandProperty(AccessLevel.GameMaster)]
+        public int RequiredFame
+        {
+            get { return m_RequiredFame; }
+            set { m_RequiredFame = value; InvalidateProperties(); }
+        }
+
 
         [Constructable]
         public StaticHouseSign()
@@ -34,18 +54,19 @@ namespace Server.StaticHouse
             m_RentPrice = 0;
             m_HouseName = null;
             m_Owner = null;
-            m_HouseArea = new Rectangle2D(this.X - 5, this.Y - 5, 11, 11);
+            m_HouseArea = new Rectangle2D(this.X, this.Y, 0, 0);
             m_LastRefresh = DateTime.UtcNow;
-            m_DecayPeriod = TimeSpan.FromDays(21);
+            m_DecayPeriod = DefaultDecay;
             m_AssociatedDoors = new List<BaseDoor>();
             m_HouseKeyValue = 0;
+            m_RequiredKarma = 0;
+            m_RequiredFame = 0;
         }
 
         public StaticHouseSign(Serial serial)
             : base(serial)
         {
         }
-
 
         public override bool Decays
         {
@@ -109,7 +130,7 @@ namespace Server.StaticHouse
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
-            writer.Write((int)4);
+            writer.Write((int)5); // versione aggiornata!
 
             writer.Write(m_HouseName);
             writer.Write(m_Owner);
@@ -133,6 +154,10 @@ namespace Server.StaticHouse
                 writer.Write(m_AssociatedDoors[i]);
 
             writer.Write(m_HouseKeyValue);
+
+            // Nuovi parametri
+            writer.Write(m_RequiredKarma);
+            writer.Write(m_RequiredFame);
         }
 
         public override void Deserialize(GenericReader reader)
@@ -161,7 +186,7 @@ namespace Server.StaticHouse
             else
             {
                 m_LastRefresh = DateTime.UtcNow;
-                m_DecayPeriod = TimeSpan.FromDays(21);
+                m_DecayPeriod = DefaultDecay;
                 if (version >= 3)
                 {
                     reader.ReadTimeSpan();
@@ -189,6 +214,17 @@ namespace Server.StaticHouse
             else
             {
                 m_HouseKeyValue = 0;
+            }
+
+            if (version >= 5)
+            {
+                m_RequiredKarma = reader.ReadInt();
+                m_RequiredFame = reader.ReadInt();
+            }
+            else
+            {
+                m_RequiredKarma = 0;
+                m_RequiredFame = 0;
             }
         }
 
@@ -219,10 +255,49 @@ namespace Server.StaticHouse
 
         public void CheckDecay()
         {
-            if (m_Owner != null && DateTime.UtcNow > (m_LastRefresh + m_DecayPeriod))
+            // Se non c'è owner, non fare nulla
+            if (m_Owner == null)
+                return;
+
+            // --- NUOVA LOGICA: se owner NON ha più il titolo richiesto, decay a 7 giorni ---
+            bool hasTitle = OwnerHasRequiredTitle();
+
+            if (!hasTitle && m_DecayPeriod != DowngradedDecay)
+            {
+                m_DecayPeriod = DowngradedDecay;
+                m_Owner.SendMessage(33, "Hai perso il titolo richiesto per questa casa: ora il decay è di 7 giorni!");
+            }
+            else if (hasTitle && m_DecayPeriod != DefaultDecay)
+            {
+                m_DecayPeriod = DefaultDecay;
+                m_Owner.SendMessage(33, "Hai recuperato il titolo richiesto: il decay è tornato normale.");
+            }
+
+            if (DateTime.UtcNow > (m_LastRefresh + m_DecayPeriod))
             {
                 OnDecayExpired();
             }
+        }
+
+        private bool OwnerHasRequiredTitle()
+        {
+            if (m_Owner == null)
+                return false;
+
+            // Confronta titolo attuale con quello richiesto
+            string actual = GetTitleFromKarmaFame(m_Owner.Karma, m_Owner.Fame);
+            string required = GetTitleFromKarmaFame(m_RequiredKarma, m_RequiredFame);
+
+            // Serve >= titolo richiesto (puoi rendere più sofisticato il confronto)
+            return actual == required || OwnerIsHigherTitle(m_Owner.Karma, m_Owner.Fame, m_RequiredKarma, m_RequiredFame);
+        }
+
+        private bool OwnerIsHigherTitle(int ownerKarma, int ownerFame, int reqKarma, int reqFame)
+        {
+            // Usa il punteggio combinato per semplicità (puoi fare una tabella di ranking)
+            int ownerScore = Math.Max(ownerFame, Math.Abs(ownerKarma));
+            int reqScore = Math.Max(reqFame, Math.Abs(reqKarma));
+            return ownerScore > reqScore;
         }
 
         private void OnDecayExpired()
@@ -357,6 +432,26 @@ namespace Server.StaticHouse
             key2.Description = string.Format("Chiave di {0}", (this.HouseName != null ? this.HouseName : ""));
             if (newOwner.BankBox != null)
                 newOwner.BankBox.DropItem(key2);
+        }
+
+        // --- UTILITY: calcola titolo da Karma/Fama ---
+        public static string GetTitleFromKarmaFame(int karma, int fame)
+        {
+            if (fame >= 10000 && karma >= 10000)
+                return "Lord";
+            if (fame >= 10000 && karma <= -10000)
+                return "Dread Lord";
+            if (fame >= 10000)
+                return "Noble";
+            if (fame >= 5000)
+                return "Knight";
+            if (fame >= 2500)
+                return "Squire";
+            if (fame >= 1250)
+                return "Citizen";
+            if (fame >= 625)
+                return "Peasant";
+            return "Commoner";
         }
     }
 }

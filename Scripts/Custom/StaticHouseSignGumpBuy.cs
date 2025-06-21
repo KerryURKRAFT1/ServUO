@@ -25,7 +25,7 @@ namespace Server.StaticHouse
 
             AddPage(0);
 
-            AddBackground(0, 0, 320, 180, 9200);
+            AddBackground(0, 0, 320, 220, 9200);
 
             AddButton(285, 10, 4017, 4018, 0, GumpButtonType.Reply, 0);
 
@@ -34,19 +34,26 @@ namespace Server.StaticHouse
             AddLabel(20, 40, 0, "Nome:");
             AddLabel(90, 40, 33, m_Sign.HouseName != null ? m_Sign.HouseName : "N/A");
 
+            // Mostra il titolo richiesto (Karma/Fama)
+            string titolo = StaticHouseSign.GetTitleFromKarmaFame(m_Sign.RequiredKarma, m_Sign.RequiredFame);
+            AddLabel(20, 65, 0, "Titolo richiesto:");
+            AddLabel(150, 65, 88, titolo);
+
+            int y = 90;
+
             if (m_Sign.ForSale)
             {
-                AddLabel(20, 65, 0, "Prezzo di vendita:");
-                AddLabel(150, 65, 33, m_Sign.SalePrice.ToString() + " gp");
-                AddButton(50, 120, 247, 248, 1, GumpButtonType.Reply, 0); // Compra
-                AddLabel(90, 120, 0, "Compra");
+                AddLabel(20, y, 0, "Prezzo di vendita:");
+                AddLabel(150, y, 33, m_Sign.SalePrice.ToString() + " gp");
+                AddButton(50, y + 55, 247, 248, 1, GumpButtonType.Reply, 0); // Compra
+                AddLabel(90, y + 55, 0, "Compra");
             }
             else if (m_Sign.ForRent)
             {
-                AddLabel(20, 65, 0, "Affitto settimanale:");
-                AddLabel(150, 65, 33, m_Sign.RentPrice.ToString() + " gp");
-                AddButton(50, 120, 247, 248, 2, GumpButtonType.Reply, 0); // Affitta
-                AddLabel(90, 120, 0, "Affitta");
+                AddLabel(20, y, 0, "Affitto settimanale:");
+                AddLabel(150, y, 33, m_Sign.RentPrice.ToString() + " gp");
+                AddButton(50, y + 55, 247, 248, 2, GumpButtonType.Reply, 0); // Affitta
+                AddLabel(90, y + 55, 0, "Affitta");
             }
         }
 
@@ -61,6 +68,13 @@ namespace Server.StaticHouse
             // --- ACQUISTO CASA ---
             if (info.ButtonID == 1 && m_Sign.ForSale && m_Sign.Owner == null)
             {
+                // --- CHECK KARMA/FAMA/TITOLO ---
+                if (m_User.Karma < m_Sign.RequiredKarma || m_User.Fame < m_Sign.RequiredFame)
+                {
+                    m_User.SendMessage(33, "Non hai il titolo sufficiente (karma/fama) per acquistare questa casa.");
+                    return;
+                }
+
                 bool pagato = false;
 
                 if (m_User.Backpack != null)
@@ -104,6 +118,13 @@ namespace Server.StaticHouse
             // --- AFFITTO CASA ---
             else if (info.ButtonID == 2 && m_Sign.ForRent && m_Sign.Owner == null)
             {
+                // --- CHECK KARMA/FAMA/TITOLO anche per affitto se desiderato ---
+                if (m_User.Karma < m_Sign.RequiredKarma || m_User.Fame < m_Sign.RequiredFame)
+                {
+                    m_User.SendMessage(33, "Non hai il titolo sufficiente (karma/fama) per affittare questa casa.");
+                    return;
+                }
+
                 bool pagato = false;
 
                 if (m_User.Backpack != null)

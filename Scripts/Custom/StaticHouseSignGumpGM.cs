@@ -24,7 +24,7 @@ namespace Server.StaticHouse
 
             AddPage(0);
 
-            AddBackground(0, 0, 350, 400, 9200);
+            AddBackground(0, 0, 350, 460, 9200);
 
             AddButton(320, 10, 4017, 4018, 0, GumpButtonType.Reply, 0);
             AddLabel(120, 10, 1152, "Configura Casa Statica");
@@ -44,18 +44,25 @@ namespace Server.StaticHouse
             AddTextEntry(210, 138, 40, 20, 0, 4, m_Sign.HouseArea.Start.Y.ToString());
             AddLabel(20, 170, 0, "Width:");
             AddTextEntry(120, 168, 40, 20, 0, 5, m_Sign.HouseArea.Width.ToString());
-            AddLabel(180, 170, 0, "Height:");
-            AddTextEntry(210, 168, 40, 20, 0, 6, m_Sign.HouseArea.Height.ToString());
+            AddLabel(250, 170, 0, "Height:"); // Spostato più a destra
+            AddTextEntry(290, 168, 40, 20, 0, 6, m_Sign.HouseArea.Height.ToString()); // Spostato più a destra
 
             AddCheck(20, 200, 210, 211, m_Sign.ForSale, 10);
             AddLabel(50, 200, 0, "In vendita");
             AddCheck(120, 200, 210, 211, m_Sign.ForRent, 11);
             AddLabel(150, 200, 0, "In affitto");
 
-            AddLabel(20, 240, 0, "Proprietario:");
-            AddLabel(120, 240, 33, m_Sign.Owner != null ? m_Sign.Owner.Name : "Nessuno");
+            // --- Nuovi campi per requisiti Karma e Fama ---
+            AddLabel(20, 230, 0, "Karma richiesto:");
+            AddTextEntry(120, 228, 100, 20, 0, 7, m_Sign.RequiredKarma.ToString());
 
-            int extraY = 260;
+            AddLabel(20, 260, 0, "Fama richiesta:");
+            AddTextEntry(120, 258, 100, 20, 0, 8, m_Sign.RequiredFame.ToString());
+
+            AddLabel(20, 300, 0, "Proprietario:");
+            AddLabel(120, 300, 33, m_Sign.Owner != null ? m_Sign.Owner.Name : "Nessuno");
+
+            int extraY = 320;
             if (m_Sign.Owner != null)
             {
                 AddLabel(20, extraY, 0, "Serial Owner:");
@@ -70,7 +77,6 @@ namespace Server.StaticHouse
                 AddLabel(120, extraY, 33, m_Sign.LastRefresh.ToString());
                 extraY += 20;
 
-                // Calcolo giorni rimasti con decimale (uniforme per tutti)
                 TimeSpan left = (m_Sign.LastRefresh + m_Sign.DecayPeriod) - DateTime.UtcNow;
                 if (left < TimeSpan.Zero) left = TimeSpan.Zero;
                 string scadenza = left.TotalDays > 0 
@@ -81,11 +87,11 @@ namespace Server.StaticHouse
                 extraY += 20;
             }
 
-            AddButton(50, 340, 247, 248, 1, GumpButtonType.Reply, 0);
-            AddLabel(90, 340, 0, "Salva");
+            AddButton(50, 410, 247, 248, 1, GumpButtonType.Reply, 0); // Più in basso
+            AddLabel(120, 410, 0, "Salva"); // Più a destra
 
-            AddButton(50, 370, 247, 248, 2, GumpButtonType.Reply, 0);
-            AddLabel(90, 370, 0, "Abbina Porta");
+            AddButton(200, 410, 247, 248, 2, GumpButtonType.Reply, 0); // Più in basso
+            AddLabel(240, 410, 0, "Abbina Porta"); // Più a destra
         }
 
         public override void OnResponse(Server.Network.NetState sender, RelayInfo info)
@@ -106,12 +112,17 @@ namespace Server.StaticHouse
                 int areaW = Utility.ToInt32(info.GetTextEntry(5) != null ? info.GetTextEntry(5).Text.Trim() : "0");
                 int areaH = Utility.ToInt32(info.GetTextEntry(6) != null ? info.GetTextEntry(6).Text.Trim() : "0");
 
+                int requiredKarma = Utility.ToInt32(info.GetTextEntry(7) != null ? info.GetTextEntry(7).Text.Trim() : "0");
+                int requiredFame = Utility.ToInt32(info.GetTextEntry(8) != null ? info.GetTextEntry(8).Text.Trim() : "0");
+
                 m_Sign.HouseName = nome;
                 m_Sign.SalePrice = prezzoVendita;
                 m_Sign.RentPrice = prezzoAffitto;
                 m_Sign.HouseArea = new Rectangle2D(areaX, areaY, areaW, areaH);
                 m_Sign.ForSale = info.IsSwitched(10);
                 m_Sign.ForRent = info.IsSwitched(11);
+                m_Sign.RequiredKarma = requiredKarma;
+                m_Sign.RequiredFame = requiredFame;
 
                 m_User.SendMessage("Impostazioni salvate.");
                 m_User.SendGump(new StaticHouseSignGumpGM(m_Sign, m_User));
