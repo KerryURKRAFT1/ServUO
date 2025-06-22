@@ -545,10 +545,15 @@ namespace Server.Items
 			/// 
 			public int MinDamage
 			{
-				get 
-				{ 
-					int baseMin = (m_MinDamage == -1 ? Core.AOS ? AosMinDamage : OldMinDamage : m_MinDamage);
-					return baseMin + GetMaterialDamage();
+			get
+			{
+				//int baseMin = (m_MinDamage == -1 ? Core.AOS ? AosMinDamage : OldMinDamage : m_MinDamage);
+				//Console.WriteLine("DEBUG MinDamage: baseMin=" + baseMin + ", bonus=" + bonus + ", totale=" + (baseMin + bonus));
+				//return baseMin + GetMaterialDamage();
+						int baseMin = (m_MinDamage == -1 ? Core.AOS ? AosMinDamage : OldMinDamage : m_MinDamage);
+						int bonus = GetMaterialDamage();
+						//Console.WriteLine("DEBUG MinDamage: baseMin=" + baseMin + ", bonus=" + bonus + ", totale=" + (baseMin + bonus));
+						return baseMin + bonus;
 				}
 				set
 				{
@@ -5945,8 +5950,9 @@ namespace Server.Items
 			if (Core.UOR && tool is BaseTool)
 			{
 				CraftResource thisResource = CraftResources.GetFromType(typeRes);
+				Resource = thisResource; 
 				string materialName = "";
-				int materialDamage = 0;
+
 
 
 
@@ -5956,49 +5962,43 @@ namespace Server.Items
 					case CraftResource.DullCopper:
 						materialName = "Dull Copper";
 						Identified = true;
-						materialDamage = 2;
 						Hue = 2419; // Colore specifico per Dull Copper
 						break;
 					case CraftResource.ShadowIron:
 						materialName = "Shadow Iron";
 						Identified = true;
-						materialDamage = 4;
+
 						Hue = 2406; // Colore specifico per Shadow Iron
 						break;
 					case CraftResource.Copper:
 						materialName = "Copper";
 						Identified = true;
-						materialDamage = 6;
 						Hue = 2413; // Colore specifico per Copper
 						break;
 					case CraftResource.Bronze:
 						materialName = "Bronze";
 						Identified = true;
-						materialDamage = 8;
+
 						Hue = 2418; // Colore specifico per Bronze
 						break;
 					case CraftResource.Gold:
 						materialName = "Gold";
 						Identified = true;
-						materialDamage = 10;
 						Hue = 2213; // Colore specifico per Gold
 						break;
 					case CraftResource.Agapite:
 						materialName = "Agapite";
 						Identified = true;
-						materialDamage = 12;
 						Hue = 2425; // Colore specifico per Agapite
 						break;
 					case CraftResource.Verite:
 						materialName = "Verite";
 						Identified = true;
-						materialDamage = 14;
 						Hue = 2207; // Colore specifico per Verite
 						break;
 					case CraftResource.Valorite:
 						materialName = "Valorite";
 						Identified = true;
-						materialDamage = 16;
 						Hue = 2219; // Colore specifico per Valorite
 						break;
 					default:

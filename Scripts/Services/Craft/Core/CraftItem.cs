@@ -756,8 +756,8 @@ namespace Server.Engines.Craft
 				for (int j = 0; j < items[i].Length; ++j)
 				{
 					Item item = items[i][j];
-					Console.WriteLine(DateTime.UtcNow.ToString("HH:mm:ss") + " DEBUG: Oggetto trovato per consumo - Nome: " 
-						+ item.Name + ", Tipo: " + item.GetType().Name + ", Quantità: " + item.Amount);
+					//Console.WriteLine(DateTime.UtcNow.ToString("HH:mm:ss") + " DEBUG: Oggetto trovato per consumo - Nome: " 
+					//	+ item.Name + ", Tipo: " + item.GetType().Name + ", Quantità: " + item.Amount);
 
 					IHasQuantity hq = item as IHasQuantity;
 
@@ -805,7 +805,7 @@ namespace Server.Engines.Craft
 		public int GetQuantity(Container cont, Type[] types)
 		{
 			var items = cont.FindItemsByType(types, true);
-			Console.WriteLine("{0} DEBUG: Risultati FindItemsByType - Numero di oggetti trovati: {1}", DateTime.UtcNow.ToString("HH:mm:ss"), items.Length);
+			//Console.WriteLine("{0} DEBUG: Risultati FindItemsByType - Numero di oggetti trovati: {1}", DateTime.UtcNow.ToString("HH:mm:ss"), items.Length);
 
 
 			int amount = 0;
@@ -813,11 +813,11 @@ namespace Server.Engines.Craft
 			for (int i = 0; i < items.Length; ++i)
 			{
 
-			Console.WriteLine(
-				DateTime.UtcNow.ToString("HH:mm:ss") + 
-				" DEBUG: Oggetto trovato - Nome: " + items[i].Name + 
-				", Tipo: " + items[i].GetType().Name + 
-				", Quantità: " + items[i].Amount);
+			//Console.WriteLine(
+			//	DateTime.UtcNow.ToString("HH:mm:ss") + 
+			//	" DEBUG: Oggetto trovato - Nome: " + items[i].Name + 
+			//	", Tipo: " + items[i].GetType().Name + 
+			//	", Quantità: " + items[i].Amount);
 
 				IHasQuantity hq = items[i] as IHasQuantity;
 
@@ -835,7 +835,7 @@ namespace Server.Engines.Craft
 					amount += hq.Quantity;
 				}
 			}
-			Console.WriteLine("{0} DEBUG: Quantità totale trovata: {1}", DateTime.UtcNow.ToString("HH:mm:ss"), amount);
+			//Console.WriteLine("{0} DEBUG: Quantità totale trovata: {1}", DateTime.UtcNow.ToString("HH:mm:ss"), amount);
 			return amount;
 		}
 
@@ -873,7 +873,7 @@ namespace Server.Engines.Craft
 			ConsumeType consumeType,
 			ref object message)
 		{
-			Console.WriteLine("entra in consumeres");
+			//Console.WriteLine("entra in consumeres");
 			return ConsumeRes(from, typeRes, craftSystem, ref resHue, ref maxAmount, consumeType, ref message, false);
 		}
 
@@ -1115,18 +1115,18 @@ namespace Server.Engines.Craft
 					
 					for (int i = 0; i < types.Length; i++)
 					{
-						Console.WriteLine("DEBUG: Tipo {0} - Nome: {1}, Quantità richiesta: {2}", i, types[i][0].Name, amounts[i]);
+						//Console.WriteLine("DEBUG: Tipo {0} - Nome: {1}, Quantità richiesta: {2}", i, types[i][0].Name, amounts[i]);
 						if (GetQuantity(ourPack, types[i]) < amounts[i])
 						{
-							Console.WriteLine("DEBUG: Quantità insufficiente per {0}. Richiesta: {1}, Disponibile: {2}", 
-                types[i][0].Name, amounts[i], GetQuantity(ourPack, types[i]));
+							//Console.WriteLine("DEBUG: Quantità insufficiente per {0}. Richiesta: {1}, Disponibile: {2}", 
+                //types[i][0].Name, amounts[i], GetQuantity(ourPack, types[i]));
 							index = i;
 							break;
 						}
 						else
 						{
-							            Console.WriteLine("DEBUG: Quantità sufficiente per {0}. Richiesta: {1}, Disponibile: {2}", 
-                types[i][0].Name, amounts[i], GetQuantity(ourPack, types[i]));
+							            //Console.WriteLine("DEBUG: Quantità sufficiente per {0}. Richiesta: {1}, Disponibile: {2}", 
+                //types[i][0].Name, amounts[i], GetQuantity(ourPack, types[i]));
 						}
 					}
 				}
@@ -1155,19 +1155,19 @@ namespace Server.Engines.Craft
 					}
 				}
 			}
-			Console.WriteLine("DEBUG: Risultato consumo risorse - Indice: {0}", index);
+			//Console.WriteLine("DEBUG: Risultato consumo risorse - Indice: {0}", index);
 			if (index == -1)
 			{
-				Console.WriteLine("DEBUG: INSEX " + index);
-				Console.WriteLine("DEBUG: Valore di consumeType: " + consumeType);
+				//Console.WriteLine("DEBUG: INSEX " + index);
+				//Console.WriteLine("DEBUG: Valore di consumeType: " + consumeType);
 				if (consumeType != ConsumeType.None)
 				{
 
-					Console.WriteLine("DEBUG: Tutte le risorse consumate correttamente.");
-					Console.WriteLine("DEBUG: Valore di consumeType dopo il check: " + consumeType);
+					//Console.WriteLine("DEBUG: Tutte le risorse consumate correttamente.");
+					//Console.WriteLine("DEBUG: Valore di consumeType dopo il check: " + consumeType);
 					if (consumeExtra != null)
 					{
-						Console.WriteLine("consume extra");
+						//Console.WriteLine("consume extra");
 						consumeExtra.Delete();
 					}
 				}
@@ -1657,9 +1657,9 @@ namespace Server.Engines.Craft
 			if (!ConsumeRes(from, typeRes, craftSystem, ref checkResHue, ref checkMaxAmount, ConsumeType.None, ref checkMessage))
 			{
 
-				Console.WriteLine("DEBUG: Errore nel consumo risorse durante il completamento del crafting.");
-				Console.WriteLine("DEBUG: Risorse mancanti per il crafting. Tipo di risorsa: " + (typeRes != null ? typeRes.Name : "Nessuna") + ", Messaggio: " + checkMessage);
-				Console.WriteLine("DEBUG: Giocatore: " + from.Name + ", Posizione: " + from.Location + ", Oggetti nello zaino: " + (from.Backpack != null ? from.Backpack.Items.Count : 0));
+				//Console.WriteLine("DEBUG: Errore nel consumo risorse durante il completamento del crafting.");
+				//Console.WriteLine("DEBUG: Risorse mancanti per il crafting. Tipo di risorsa: " + (typeRes != null ? typeRes.Name : "Nessuna") + ", Messaggio: " + checkMessage);
+				//Console.WriteLine("DEBUG: Giocatore: " + from.Name + ", Posizione: " + from.Location + ", Oggetti nello zaino: " + (from.Backpack != null ? from.Backpack.Items.Count : 0));
 
 				if (tool != null && !tool.Deleted && tool.UsesRemaining > 0)
 				{

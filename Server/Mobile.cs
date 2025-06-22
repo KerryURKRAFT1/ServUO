@@ -12260,17 +12260,17 @@ public ContextMenu ContextMenu
 			{
 				hue = 89;
 				//hue = m_NameHue;
-				Console.WriteLine("Nome hue applicato: " + hue);
+				//Console.WriteLine("Nome hue applicato: " + hue);
 			}
 			else if (IsStaff())
 			{
 				hue = 11;
-				Console.WriteLine("Staff, colore cambiato a 11");
+				//Console.WriteLine("Staff, colore cambiato a 11");
 			}
 			else
 			{
 				hue = Notoriety.GetHue(Notoriety.Compute(from, this));
-				Console.WriteLine("Notoriety hue applicato: " + hue);
+				//Console.WriteLine("Notoriety hue applicato: " + hue);
 			}
 
 
