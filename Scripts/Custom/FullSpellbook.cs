@@ -13,14 +13,22 @@ namespace Server.Custom
         }
 
         [Usage("FullSpellbook")]
-        [Description("Fornisce al tuo zaino uno spellbook di magery già pieno di tutte le magie.")]
+        [Description("Add in your backpack a full magery spellbook")]
         public static void FullSpellbook_OnCommand(CommandEventArgs e)
         {
             Mobile from = e.Mobile;
 
-            Spellbook book = new Spellbook((ulong)0xFFFFFFFF, 0xFFFF); // Magery (tutte le magie)
+            // Crea un nuovo spellbook di magery vuoto
+            Spellbook book = new Spellbook();
+
+            // Riempi tutte le spell di Magery (i primi 64 slot)
+            for (int i = 0; i < 64; i++)
+            {
+                book.Content |= (ulong)1 << i;
+            }
+
             from.AddToBackpack(book);
-            from.SendMessage(1152, "Hai ricevuto uno spellbook di magery completo!");
+            from.SendMessage(1152, "You have received a full magery spellbook!");
         }
     }
 

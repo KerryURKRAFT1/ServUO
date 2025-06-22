@@ -515,6 +515,8 @@ namespace Server.Items
 		public int MissSound { get { return (m_MissSound == -1 ? Core.AOS ? AosMissSound : OldMissSound : m_MissSound); } set { m_MissSound = value; } }
 
 		[CommandProperty(AccessLevel.GameMaster)]
+
+		/*  OLD DAMAVE
 		public int MinDamage
 		{
 			get { return (m_MinDamage == -1 ? Core.AOS ? AosMinDamage : OldMinDamage : m_MinDamage); }
@@ -535,6 +537,44 @@ namespace Server.Items
 				InvalidateProperties();
 			}
 		}
+
+		*/
+
+			//////
+			///    NEW DAMAGE FOR UOR 
+			/// 
+			public int MinDamage
+			{
+				get 
+				{ 
+					int baseMin = (m_MinDamage == -1 ? Core.AOS ? AosMinDamage : OldMinDamage : m_MinDamage);
+					return baseMin + GetMaterialDamage();
+				}
+				set
+				{
+					m_MinDamage = value;
+					InvalidateProperties();
+				}
+			}
+
+			public int MaxDamage
+			{
+				get 
+				{ 
+					int baseMax = (m_MaxDamage == -1 ? Core.AOS ? AosMaxDamage : OldMaxDamage : m_MaxDamage);
+					return baseMax + GetMaterialDamage();
+				}
+				set
+				{
+					m_MaxDamage = value;
+					InvalidateProperties();
+				}
+			}
+			
+			//////
+			/// 
+			/// 
+
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public float Speed
@@ -699,6 +739,9 @@ namespace Server.Items
 		public double ConsecrateProcChance { get; set; }
 		public double ConsecrateDamageBonus { get; set; }
 		#endregion
+
+
+
 
 		public override void GetContextMenuEntries(Mobile from, List<ContextMenuEntry> list)
 		{
@@ -1422,7 +1465,7 @@ namespace Server.Items
                 * The old formula left in for AOS for legacy & because we aren't quite 100%
                 * Sure that AOS has THIS formula
                 */
-				int bonus = AosAttributes.GetValue(m, AosAttribute.WeaponSpeed);
+		int bonus = AosAttributes.GetValue(m, AosAttribute.WeaponSpeed);
 
 				if (bonus > 60)
 				{
@@ -5773,8 +5816,9 @@ namespace Server.Items
 
 			/////////////////////////////////////
 			////CORE UPR
-
-
+			/// 	DEPRECATED
+			///
+			/*
 			if (Core.UOR && tool is BaseTool)
 			{
 				CraftResource thisResource = CraftResources.GetFromType(typeRes);
@@ -5863,8 +5907,83 @@ namespace Server.Items
 				}
 
 			}
+			*/
+
+			if (Core.UOR && tool is BaseTool)
+			{
+				CraftResource thisResource = CraftResources.GetFromType(typeRes);
+				string materialName = "";
+				int materialDamage = 0;
 
 
+
+
+				switch (thisResource)
+				{
+					case CraftResource.DullCopper:
+						materialName = "Dull Copper";
+						Identified = true;
+						materialDamage = 2;
+						Hue = 2419; // Colore specifico per Dull Copper
+						break;
+					case CraftResource.ShadowIron:
+						materialName = "Shadow Iron";
+						Identified = true;
+						materialDamage = 4;
+						Hue = 2406; // Colore specifico per Shadow Iron
+						break;
+					case CraftResource.Copper:
+						materialName = "Copper";
+						Identified = true;
+						materialDamage = 6;
+						Hue = 2413; // Colore specifico per Copper
+						break;
+					case CraftResource.Bronze:
+						materialName = "Bronze";
+						Identified = true;
+						materialDamage = 8;
+						Hue = 2418; // Colore specifico per Bronze
+						break;
+					case CraftResource.Gold:
+						materialName = "Gold";
+						Identified = true;
+						materialDamage = 10;
+						Hue = 2213; // Colore specifico per Gold
+						break;
+					case CraftResource.Agapite:
+						materialName = "Agapite";
+						Identified = true;
+						materialDamage = 12;
+						Hue = 2425; // Colore specifico per Agapite
+						break;
+					case CraftResource.Verite:
+						materialName = "Verite";
+						Identified = true;
+						materialDamage = 14;
+						Hue = 2207; // Colore specifico per Verite
+						break;
+					case CraftResource.Valorite:
+						materialName = "Valorite";
+						Identified = true;
+						materialDamage = 16;
+						Hue = 2219; // Colore specifico per Valorite
+						break;
+					default:
+						Identified = true;
+						break;
+				}
+
+				if (!string.IsNullOrEmpty(materialName))
+				{
+					this.Name = materialName + " " + this.GetType().Name; 
+				}
+				else
+				{
+					this.Name = null; // Nome vanilla per Iron
+				}
+
+			}
+			
 
 			//////////// FINE CORE UOR
 			///
