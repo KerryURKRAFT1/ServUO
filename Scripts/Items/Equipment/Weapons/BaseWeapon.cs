@@ -743,6 +743,39 @@ namespace Server.Items
 
 
 
+
+
+		/// <summary>
+		/// /
+		/// </summary>
+
+		protected int GetMaterialDamage()
+		{
+			int bonus = 0;
+
+			switch (m_Resource)
+			{
+				case CraftResource.DullCopper: bonus += 2; break;
+				case CraftResource.ShadowIron: bonus += 4; break;
+				case CraftResource.Copper: bonus += 6; break;
+				case CraftResource.Bronze: bonus += 8; break;
+				case CraftResource.Gold: bonus += 10; break;
+				case CraftResource.Agapite: bonus += 12; break;
+				case CraftResource.Verite: bonus += 14; break;
+				case CraftResource.Valorite: bonus += 16; break;
+			}
+
+			// Bonus qualità (come per l'armatura)
+			bonus += -8 + (8 * (int)this.m_Quality);
+
+			return bonus;
+		}
+
+/// <summary>
+/// /
+/// </summary>
+
+
 		public override void GetContextMenuEntries(Mobile from, List<ContextMenuEntry> list)
 		{
 			base.GetContextMenuEntries(from, list);
