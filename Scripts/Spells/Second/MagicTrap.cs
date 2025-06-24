@@ -1,6 +1,7 @@
 using System;
 using Server.Items;
 using Server.Targeting;
+using Server.Network;
 
 namespace Server.Spells.Second
 {
@@ -25,9 +26,22 @@ namespace Server.Spells.Second
                 return SpellCircle.Second;
             }
         }
+
+        public override bool Cast()
+        {
+        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+        	{
+        		return (this.Caster.Target = new InternalTarget(this)) != null;
+        	}
+
+        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+        	
+        	return false;
+        }
+
         public override void OnCast()
         {
-            this.Caster.Target = new InternalTarget(this);
+        	Target ((TrapableContainer)ObjectTargeted);
         }
 
         public void Target(TrapableContainer item)
@@ -75,17 +89,15 @@ namespace Server.Spells.Second
             {
                 if (o is TrapableContainer)
                 {
-                    this.m_Owner.Target((TrapableContainer)o);
+	            	if (!this.m_Owner.StartSequence(o))
+	            	{
+	            		this.m_Owner.FinishSequence();
+	            	}
                 }
                 else
                 {
-                    from.SendMessage("You can't trap that");
+	              	from.SendLocalizedMessage(1005213); // You can't do that
                 }
-            }
-
-            protected override void OnTargetFinish(Mobile from)
-            {
-                this.m_Owner.FinishSequence();
             }
         }
     }

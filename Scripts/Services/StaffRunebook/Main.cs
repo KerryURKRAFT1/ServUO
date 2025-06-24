@@ -35,14 +35,25 @@ namespace Joeku.SR
         public static void Initialize()
         {
             if (Info.Count == 0)
-                SR_Load.ReadData(Path.Combine(SavePath, FileName));
-
+            {
+            	Timer.DelayCall(TimeSpan.FromMilliseconds(0.0), DelayedStart);
+            }
+            
             CommandHandlers.Register("StaffRunebook", AccessLevel.Counselor, new CommandEventHandler(SR_OnCommand));
             CommandHandlers.Register("SR", AccessLevel.Counselor, new CommandEventHandler(SR_OnCommand));
             CommandHandlers.Register("StaffRunebookReset", AccessLevel.Counselor, new CommandEventHandler(SR_Reset_OnCommand));
             EventSink.WorldSave += new WorldSaveEventHandler(EventSink_WorldSave);
         }
 
+        public static void DelayedStart()
+        {
+           	SR_Load.ReadData(Path.Combine(SavePath, FileName));
+
+			Utility.PushColor(ConsoleColor.DarkGreen);
+			Console.WriteLine(new String('-', Console.BufferWidth-10));
+			Utility.PopColor();
+        }
+        
         [Usage("StaffRunebook")]
         [Aliases("SR")]
         public static void SR_OnCommand(CommandEventArgs e)

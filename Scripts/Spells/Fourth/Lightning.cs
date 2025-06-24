@@ -1,5 +1,6 @@
 using System;
 using Server.Targeting;
+using Server.Network;
 
 namespace Server.Spells.Fourth
 {
@@ -30,11 +31,24 @@ namespace Server.Spells.Fourth
                 return false;
             }
         }
-        public override void OnCast()
+
+        public override bool Cast()
         {
-            this.Caster.Target = new InternalTarget(this);
+        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+        	{
+        		return (this.Caster.Target = new InternalTarget(this)) != null;
+        	}
+
+        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+        	
+        	return false;
         }
 
+        public override void OnCast()
+        {
+        	Target ((IDamageable)ObjectTargeted);
+        }
+        
         public void Target(IDamageable m)
         {
             Mobile mob = m as Mobile;
@@ -93,12 +107,16 @@ namespace Server.Spells.Fourth
             protected override void OnTarget(Mobile from, object o)
             {
                 if (o is IDamageable)
-                    this.m_Owner.Target((IDamageable)o);
-            }
-
-            protected override void OnTargetFinish(Mobile from)
-            {
-                this.m_Owner.FinishSequence();
+                {
+                	if (!this.m_Owner.StartSequence(o))
+                	{
+                		this.m_Owner.FinishSequence();
+                	}
+                }
+                else
+                {
+	              	from.SendLocalizedMessage(1005213); // You can't do that
+                }
             }
         }
     }

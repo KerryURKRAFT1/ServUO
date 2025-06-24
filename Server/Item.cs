@@ -1,4 +1,4 @@
-#region Header
+﻿#region Header
 // **********
 // ServUO - Item.cs
 // **********
@@ -1048,7 +1048,6 @@ namespace Server
 
             return null;
         }
-
         public static void Measure(Bitmap bmp, out int xMin, out int yMin, out int xMax, out int yMax)
         {
             Ultima.Art.Measure(bmp, out xMin, out yMin, out xMax, out yMax);

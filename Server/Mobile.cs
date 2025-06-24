@@ -1,4 +1,4 @@
-#region Header
+﻿#region Header
 // **********
 // ServUO - Mobile.cs
 // **********
@@ -12254,25 +12254,18 @@ public ContextMenu ContextMenu
 
 			int hue;
 
-			// Colore nome vendor modificato
-
 			if (m_NameHue != -1)
 			{
 				hue = 89;
-				//hue = m_NameHue;
-				//Console.WriteLine("Nome hue applicato: " + hue);
 			}
 			else if (IsStaff())
 			{
 				hue = 11;
-				//Console.WriteLine("Staff, colore cambiato a 11");
 			}
 			else
 			{
 				hue = Notoriety.GetHue(Notoriety.Compute(from, this));
-				//Console.WriteLine("Notoriety hue applicato: " + hue);
 			}
-
 
 			string name = Name;
 

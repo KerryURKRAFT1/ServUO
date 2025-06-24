@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Server.ContextMenus;
 using Server.Mobiles;
@@ -257,7 +257,6 @@ public override void OnDoubleClick(Mobile from)
                         }
                     }
                 }
-
                 // BLOCCO PERMESSI
                 //if (house != null && house.Owner != null && house.Owner != from)
                 if (house != null && house.Owner != null && house.Owner != from && from.AccessLevel < AccessLevel.GameMaster)
@@ -265,11 +264,7 @@ public override void OnDoubleClick(Mobile from)
                     from.SendMessage("Non puoi accedere a questo contenitore: non sei il proprietario della casa.");
                     return;
                 }
-
-            }
-                
-        
-
+            }                      
         
     if (from.IsStaff() || from.InRange(this.GetWorldLocation(), 2) || this.RootParent is PlayerVendor)
                 this.Open(from);

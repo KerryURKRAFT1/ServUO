@@ -3052,38 +3052,6 @@ namespace Server.Mobiles
 
 		public override void OnDamage(int amount, Mobile from, bool willKill)
 		{
-			if (Core.UOR)
-			{
-			
-				//Console.WriteLine("OnDamage chiamato su " + this.Name + " per " + amount + " danno (da " + (from != null ? from.Name : "null") + ")");
-
-				// PATCH: Interrupt  precast if mobile hitted
-				Spell spell = this.Spell as Spell;
-
-				if (spell != null)
-				{
-					// Debug: show internal state of spell
-					//Console.WriteLine("SpellType=" + spell.GetType().Name + ", IsCasting=" + spell.IsCasting + ", State=" + spell.State);
-
-					// Interrompi sia in Cast che in Sequencing (precast)
-					if (spell.IsCasting || spell.State == SpellState.Sequencing)
-					{
-						Console.WriteLine("Disturbo spell su " + this.Name + " (stato: " + spell.State + ")");
-						spell.Disturb(Server.Spells.DisturbType.Hurt);
-					}
-					else
-					{
-						//Console.WriteLine("no spell to disturb" + this.Name + " - stato: " + spell.State);
-					}
-					}
-					else
-					{
-						//Console.WriteLine("no spell active on " + this.Name);
-					}
-
-								
-				}
-
 			int disruptThreshold;
 
 			if (!Core.AOS)
@@ -3107,6 +3075,13 @@ namespace Server.Mobiles
 				{
 					c.Slip();
 				}
+
+				//Disturb mod
+				if (this.Spell != null && this.Spell.IsCasting)
+            	{
+					((Spell)this.Spell).Disturb(DisturbType.Hurt);
+				}
+				//end
 			}
 
 			if (Confidence.IsRegenerating(this))

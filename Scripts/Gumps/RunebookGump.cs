@@ -387,11 +387,17 @@ namespace Server.Gumps
                 }
                 else
                 {
-                    // Recall button
-                    this.AddButton(135 + (half * 160), 140, 2271, 2271, 2 + (index * 6) + 3, GumpButtonType.Reply, 0);
+                	this.AddButton(125 + (half * 160), 140, 2271, 2271, 2 + index * 6 + 3, GumpButtonType.Reply, 0);
+                	this.AddHtmlLocalized(150 + (half * 160), 136, 110, 20, 0, false, false); // Recall
+
+	                this.AddButton(170 + (half * 160), 140, 2291, 2291, 2 + index * 6 + 4, GumpButtonType.Reply, 0);
+                	this.AddHtmlLocalized(150 + (half * 160), 154, 110, 20, 0, false, false); // Gate Travel
+ 
+                	// Recall button
+//                    this.AddButton(135 + (half * 160), 140, 2271, 2271, 2 + (index * 6) + 3, GumpButtonType.Reply, 0);
 
                     // Gate button
-                    this.AddButton(205 + (half * 160), 140, 2291, 2291, 2 + (index * 6) + 4, GumpButtonType.Reply, 0);
+//                    this.AddButton(205 + (half * 160), 140, 2291, 2291, 2 + (index * 6) + 4, GumpButtonType.Reply, 0);
                 }
             }
             else

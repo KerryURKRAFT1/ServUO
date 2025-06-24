@@ -178,7 +178,7 @@ namespace Server
 					}
 				}
 			}
-
+/*
 			if (Core.Debug)
 			{
 				Console.WriteLine();
@@ -190,6 +190,7 @@ namespace Server
 
 				Console.WriteLine();
 			}
+*/
 		}
 
 		private static void LoadFile(string path)

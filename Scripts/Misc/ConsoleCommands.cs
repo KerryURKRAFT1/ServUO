@@ -367,9 +367,8 @@ namespace Server.Misc
 							}
 						}
 						break;
-						//case "help":
-						//case "list":
-					default:
+					case "help":
+					case "list":
 						{
 							Console.WriteLine(" ");
 							Console.WriteLine("Commands:");
@@ -396,6 +395,7 @@ namespace Server.Misc
 							Console.WriteLine(" ");
 						}
 						break;
+						default: {} break;
 				}
 			}
 

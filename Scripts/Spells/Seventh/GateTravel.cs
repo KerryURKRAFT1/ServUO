@@ -36,12 +36,87 @@ namespace Server.Spells.Seventh
                 return SpellCircle.Seventh;
             }
         }
-        public override void OnCast()
+        
+		public override bool TravelSpell { get { return true; } }
+
+        public override bool Cast()
         {
             if (this.m_Entry == null)
-                this.Caster.Target = new InternalTarget(this);
+            {
+	        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+	        	{
+	        		return (this.Caster.Target = new InternalTarget(this)) != null;
+	        	}
+
+	        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+        	
+	        	return false;
+            }
+            else //this delay should be 2.0 seconds
+            {
+	            Timer.DelayCall(GetCastDelay(), () => 
+                { 
+                	this.Effect(this.m_Entry.Location, this.m_Entry.Map, true, m_Entry.Galleon != null);
+                });
+            	
+            	return true;
+            }
+        }
+
+        public override void OnCast()
+        {
+        	Target ((object)ObjectTargeted);
+        }
+
+        public void Target(object o)
+        {
+            if (o is RecallRune)
+            {
+                RecallRune rune = (RecallRune)o;
+
+                if (rune.Marked)
+                    this.Effect(rune.Target, rune.TargetMap, true);
+                else
+                    this.Caster.SendLocalizedMessage(501803); // That rune is not yet marked.
+            }
+            else if (o is Runebook)
+            {
+                RunebookEntry e = ((Runebook)o).Default;
+
+                if (e != null)
+                    this.Effect(e.Location, e.Map, true);
+                else
+                    this.Caster.SendLocalizedMessage(502354); // Target is not marked.
+            }
+
+            #region High Seas
+            else if (o is ShipRune && ((ShipRune)o).Galleon != null)
+            {
+                BaseGalleon galleon = ((ShipRune)o).Galleon;
+
+                if (!galleon.Deleted && galleon.Map != null && galleon.Map != Map.Internal && galleon.HasAccess(this.Caster))
+                    this.Effect(galleon.GetMarkedLocation(), galleon.Map, false, true);
+                else
+                    this.Caster.Send(new MessageLocalized(this.Caster.Serial, this.Caster.Body, MessageType.Regular, 0x3B2, 3, 502357, this.Caster.Name, "")); // I can not recall from that object.
+            }
+            #endregion
+
+            #region New Magincia
+            else if (o is Server.Engines.NewMagincia.WritOfLease)
+            {
+                Server.Engines.NewMagincia.WritOfLease lease = (Server.Engines.NewMagincia.WritOfLease)o;
+
+                if (lease.RecallLoc != Point3D.Zero && lease.Facet != null && lease.Facet != Map.Internal)
+                    this.Effect(lease.RecallLoc, lease.Facet, false);
+                else
+                    this.Caster.Send(new MessageLocalized(this.Caster.Serial, this.Caster.Body, MessageType.Regular, 0x3B2, 3, 502357, this.Caster.Name, "")); // I can not recall from that object.
+            }
+            #endregion
+
             else
-                this.Effect(this.m_Entry.Location, this.m_Entry.Map, true, m_Entry.Galleon != null);
+            {
+                this.Caster.Send(new MessageLocalized(this.Caster.Serial, this.Caster.Body, MessageType.Regular, 0x3B2, 3, 501030, this.Caster.Name, "")); // I can not gate travel from that object.
+            }
         }
 
         public override bool CheckCast()
@@ -261,62 +336,10 @@ namespace Server.Spells.Seventh
 
             protected override void OnTarget(Mobile from, object o)
             {
-                if (o is RecallRune)
-                {
-                    RecallRune rune = (RecallRune)o;
-
-                    if (rune.Marked)
-                        this.m_Owner.Effect(rune.Target, rune.TargetMap, true);
-                    else
-                        from.SendLocalizedMessage(501803); // That rune is not yet marked.
-                }
-                else if (o is Runebook)
-                {
-                    RunebookEntry e = ((Runebook)o).Default;
-
-                    if (e != null)
-                        this.m_Owner.Effect(e.Location, e.Map, true);
-                    else
-                        from.SendLocalizedMessage(502354); // Target is not marked.
-                }
-
-                #region High Seas
-                else if (o is ShipRune && ((ShipRune)o).Galleon != null)
-                {
-                    BaseGalleon galleon = ((ShipRune)o).Galleon;
-
-                    if (!galleon.Deleted && galleon.Map != null && galleon.Map != Map.Internal && galleon.HasAccess(from))
-                        m_Owner.Effect(galleon.GetMarkedLocation(), galleon.Map, false, true);
-                    else
-                        from.Send(new MessageLocalized(from.Serial, from.Body, MessageType.Regular, 0x3B2, 3, 502357, from.Name, "")); // I can not recall from that object.
-                }
-                #endregion
-
-                #region New Magincia
-                else if (o is Server.Engines.NewMagincia.WritOfLease)
-                {
-                    Server.Engines.NewMagincia.WritOfLease lease = (Server.Engines.NewMagincia.WritOfLease)o;
-
-                    if (lease.RecallLoc != Point3D.Zero && lease.Facet != null && lease.Facet != Map.Internal)
-                        m_Owner.Effect(lease.RecallLoc, lease.Facet, false);
-                    else
-                        from.Send(new MessageLocalized(from.Serial, from.Body, MessageType.Regular, 0x3B2, 3, 502357, from.Name, "")); // I can not recall from that object.
-                }
-                #endregion
-
-                else
-                {
-                    from.Send(new MessageLocalized(from.Serial, from.Body, MessageType.Regular, 0x3B2, 3, 501030, from.Name, "")); // I can not gate travel from that object.
-                }
-            }
-
-            protected override void OnNonlocalTarget(Mobile from, object o)
-            {
-            }
-
-            protected override void OnTargetFinish(Mobile from)
-            {
-                this.m_Owner.FinishSequence();
+            	if (!this.m_Owner.StartSequence(o))
+            	{
+            		this.m_Owner.FinishSequence();
+            	}
             }
         }
     }

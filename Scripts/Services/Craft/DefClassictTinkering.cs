@@ -387,20 +387,13 @@ namespace Server.Engines.Craft
 //////
 ////////////////////
 ///
-
-
-
     public abstract class TrapCraft : CustomCraft
     {
-
-
-
-
         private LockableContainer m_Container;
         private Mobile m_From;
         private CraftSystem m_CraftSystem;
         private BaseTool m_Tool;
-        private int m_Message;
+//        private int m_Message;
         private int m_num;
 
         public LockableContainer Container

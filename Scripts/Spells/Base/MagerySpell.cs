@@ -1,5 +1,6 @@
 using System;
 using Server.Items;
+using Server.Mobiles;
 
 namespace Server.Spells
 {
@@ -7,12 +8,14 @@ namespace Server.Spells
     {
         private static readonly int[] m_ManaTable = new int[] { 4, 6, 9, 11, 14, 20, 40, 50 };
         private const double ChanceOffset = 20.0, ChanceLength = 100.0 / 7.0;
+        
         public MagerySpell(Mobile caster, Item scroll, SpellInfo info)
             : base(caster, scroll, info)
         {
         }
 
         public abstract SpellCircle Circle { get; }
+
         public override TimeSpan CastDelayBase
         {
             get
@@ -20,9 +23,22 @@ namespace Server.Spells
                 return TimeSpan.FromSeconds((3 + (int)this.Circle) * this.CastDelaySecondsPerTick);
             }
         }
-        public override bool ConsumeReagents()
+        
+		public override bool OnCasterMoving(Direction d)
+		{
+			return true;
+		}
+
+		public override bool ConsumeReagents()
         {
-            if (base.ConsumeReagents())
+			if (this.Caster.AccessLevel > AccessLevel.Player)
+                return true;
+
+			//set up special exceptions
+//			if (this.Caster.Region is <eg.DuellingRegion>)
+//                return true;
+
+			if (base.ConsumeReagents())
                 return true;
 
             if (ArcaneGem.ConsumeCharges(this.Caster, (Core.SE ? 1 : 1 + (int)this.Circle)))
@@ -31,44 +47,20 @@ namespace Server.Spells
             return false;
         }
 
-        public override void GetCastSkills(out double min, out double max)
-        {
-            int circle = (int)this.Circle;
+		public override void GetCastSkills( out double min, out double max )
+		{
+			int circle = (int)Circle;
 
-            if (this.Scroll != null)
-                circle -= 2;
+			if ( this.Scroll != null )
+				circle -= 2;
 
-            double avg = ChanceLength * circle;
+			double avg = 100.0 * circle / 7;
 
-            min = avg - ChanceOffset;
-            max = avg + ChanceOffset;
-        }
+			min = avg - 20;
+			max = avg + 20;
+		}
 
-
-
-            // UOR STYLE FOR SCROLL
-        /*
-        public override void GetCastSkills(out double min, out double max)
-        {
-            int circle = (int)this.Circle;
-
-            if (this.Scroll != null)
-                circle -= 2;
-
-            // Clamp circle (non andare mai sotto 0)
-            if (circle < 0) circle = 0;
-            if (circle > 7) circle = 7;
-
-            // Tabella skill richiesta (UOR-like)
-            double[] minSkills = { 0, 15, 30, 45, 60, 75, 85, 90 };
-            double[] maxSkills = { 20, 35, 50, 65, 80, 90, 95, 100 };
-
-            min = minSkills[circle];
-            max = maxSkills[circle];
-        }
-        */
-
-        public override int GetMana()
+		public override int GetMana()
         {
             if (this.Scroll is BaseWand)
                 return 0;
@@ -127,9 +119,38 @@ namespace Server.Spells
                 return TimeSpan.Zero;
 
             if (!Core.AOS)
-                return TimeSpan.FromSeconds(0.5 + (0.25 * (int)this.Circle));
-
+            {
+            	return TimeSpan.FromSeconds((((int)this.Circle + 1) * 0.25) + 0.5); //corrected UOR formula circle 1:0.75 circle 2:1.0 circle 3:1.25 etc circle 8:2.5
+            }
+	
             return base.GetCastDelay();
         }
+ 
+		public override void CheckLOS()
+		{
+        	if(!this.Caster.Blessed || this.TravelSpell) //sanity
+            {
+        		return;
+        	}
+
+        	if( this.ObjectTargeted != null )
+    		{
+        		IPoint3D loc = this.ObjectTargeted as IPoint3D;
+
+        		if( loc != null )
+        		{
+					if( !this.Caster.InLOS( new Point3D( loc )) || !this.Caster.CanSee( this.ObjectTargeted ))
+					{
+						this.Caster.SendLocalizedMessage( 500237 ); // Target can not be seen.
+		           		DoFizzle();
+					}
+	        		else if( !this.Caster.InRange( new Point3D( loc ), 12 ))
+					{
+						this.Caster.SendLocalizedMessage( 1076203 ); // Target out of range.
+		           		DoFizzle();
+	                }
+        		}
+            }
+		}
     }
 }

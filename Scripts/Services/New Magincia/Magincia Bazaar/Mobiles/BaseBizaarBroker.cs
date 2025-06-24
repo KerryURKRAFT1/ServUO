@@ -10,7 +10,7 @@ namespace Server.Engines.NewMagincia
 	{
 		private MaginciaBazaarPlot m_Plot;
 		private int m_BankBalance;
-		private string m_ShopName;
+//		private string m_ShopName;
 		private DateTime m_NextFee;
 		
 		[CommandProperty(AccessLevel.GameMaster)]

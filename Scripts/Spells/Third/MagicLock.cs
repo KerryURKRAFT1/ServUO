@@ -26,9 +26,22 @@ namespace Server.Spells.Third
                 return SpellCircle.Third;
             }
         }
+
+        public override bool Cast()
+        {
+        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+        	{
+        		return (this.Caster.Target = new InternalTarget(this)) != null;
+        	}
+
+        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+        	
+        	return false;
+        }
+
         public override void OnCast()
         {
-            this.Caster.Target = new InternalTarget(this);
+        	Target ((LockableContainer)ObjectTargeted);
         }
 
         public void Target(LockableContainer targ)
@@ -77,14 +90,16 @@ namespace Server.Spells.Third
             protected override void OnTarget(Mobile from, object o)
             {
                 if (o is LockableContainer)
-                    this.m_Owner.Target((LockableContainer)o);
+                {
+                   	if (!this.m_Owner.StartSequence(o))
+                	{
+                		this.m_Owner.FinishSequence();
+                	}
+                }
                 else
-                    from.SendLocalizedMessage(501762); // Target must be an unlocked chest.
-            }
-
-            protected override void OnTargetFinish(Mobile from)
-            {
-                this.m_Owner.FinishSequence();
+                {
+	              	from.SendLocalizedMessage(1005213); // You can't do that
+                }
             }
         }
     }

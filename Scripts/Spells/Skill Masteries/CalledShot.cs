@@ -22,7 +22,7 @@ namespace Server.Spells.SkillMasteries
         public override SkillName CastSkill { get { return SkillName.Throwing; } }
         public override SkillName DamageSkill { get { return SkillName.Tactics; } }
 
-        private Dictionary<Mobile, DateTime> _Cooldown;
+//        private Dictionary<Mobile, DateTime> _Cooldown;
 
         private int _HCIBonus;
         private int _DamageBonus;

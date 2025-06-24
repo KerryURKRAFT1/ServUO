@@ -8,6 +8,9 @@ namespace Server.Misc
 {
 	class XmlSpawnerExporter
 	{
+		public List<(string maps, string regs, XmlSpawner spawners)> SpawnerEntry = new List<(string, string, XmlSpawner)>();
+		
+		
 		private static bool m_Enabled = true; //true: On WorldSave
 		
 		public static string RootPath = XmlSpawner.XmlSpawnDir;
@@ -84,13 +87,38 @@ namespace Server.Misc
  			
             for (int i = 0; i < xml.Count; i++)
             {
-				string reg = Region.Find (xml[i].Location, xml[i].Map).ToString();
+            	string region = GetRegionName(xml[i]);
+                
+				xml[i].Name = String.Format ("{0} [{1}]", region, i);
 				
-				xml[i].Name = String.Format ("{0} [{1}]", reg, i);
-				
-				m_SpawnList.Add (new SpawnerEntries( xml[i].Map.ToString(), reg, xml[i]));
+				m_SpawnList.Add (new SpawnerEntries( xml[i].Map.ToString(), region, xml[i]));
 			}
 		}
+ 		
+ 		private static string GetRegionName(XmlSpawner spawner)
+ 		{
+ 			Region reg = Region.Find (spawner.Location, spawner.Map);
+				
+			string region = "Wilderness";
+
+			if (reg.ToString() != "Region") //omg jumping through hoops to get region name
+			{
+				region = reg.ToString();
+			
+				if (!reg.IsDefault)
+                {
+                    reg = reg.Parent;
+
+                    while (reg != null)
+                    {
+                    	region = reg.ToString();
+                        reg = reg.Parent;
+                    }
+                }
+			}
+			
+			return region;
+ 		}
  		
  		public static void ExportSpawns(string path)
 		{

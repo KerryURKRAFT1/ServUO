@@ -16,10 +16,7 @@ using Server.Targeting;
 using Server.Spells.SkillMasteries;
 // FUR UOR STYLE
 using Server.Spells.First;
-using Server.Spells.Fourth;  // Fireball, Lightning
-using Server.Spells.Fifth;   // Energy Bolt, Mind Blast
 using Server.Spells.Sixth;   // Explosion
-using Server.Spells.Seventh; // Flamestrike, Chain Lightning
 
 namespace Server
 {

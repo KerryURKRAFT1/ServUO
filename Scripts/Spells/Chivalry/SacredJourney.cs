@@ -69,6 +69,9 @@ namespace Server.Spells.Chivalry
                 return false;
             }
         }
+
+		public override bool TravelSpell { get { return true; } }
+
         public override void OnCast()
         {
             if (this.m_Entry == null)

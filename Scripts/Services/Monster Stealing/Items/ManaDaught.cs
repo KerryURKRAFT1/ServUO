@@ -26,7 +26,7 @@ namespace drNO.ThieveItems
 
             foreach (PlayerMobile pm in DaughtUsageList.Keys)
             {
-                if (DaughtUsageList[pm] != null)
+                if (DaughtUsageList[pm] != DateTime.MinValue)
                 {
                     if (DaughtUsageList[pm] < DateTime.Now + Cooldown)
                     {
@@ -84,7 +84,7 @@ namespace drNO.ThieveItems
             }
             else
             {
-                if (DaughtUsageList[by] != null)
+                if (DaughtUsageList[by] != DateTime.MinValue)
                 {
                     by.SendLocalizedMessage(1079263, ((int)((DaughtUsageList[by] + Cooldown)-DateTime.Now).TotalSeconds).ToString());
                 }

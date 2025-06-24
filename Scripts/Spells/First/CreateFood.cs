@@ -37,9 +37,10 @@ namespace Server.Spells.First
                 return SpellCircle.First;
             }
         }
+
         public override void OnCast()
-        {
-            if (this.CheckSequence())
+        {			
+        	if (this.CheckSequence())
             {
                 FoodInfo foodInfo = m_Food[Utility.Random(m_Food.Length)];
                 Item food = foodInfo.Create();
@@ -57,7 +58,7 @@ namespace Server.Spells.First
             }
 
             this.FinishSequence();
-        }
+        }        
     }
 
     public class FoodInfo

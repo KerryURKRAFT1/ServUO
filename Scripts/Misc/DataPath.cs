@@ -67,11 +67,6 @@ namespace Server.Misc
 
                 Core.DataDirectories.Add(Console.ReadLine());
             }
-
-	        foreach (var dir in Core.DataDirectories)
-	        {
-		        Ultima.Files.SetMulPath(dir);
-	        }
         }
 
         private static string GetPath(string subName, string keyName)

@@ -41,7 +41,7 @@ namespace Server.Mobiles
             this.Karma = 0;
 
             this.VirtualArmor = 40;
-            this.ControlSlots = (Core.SE) ? 2 : 1;
+            this.ControlSlots = (Core.UOR) ? 0 : (Core.SE) ? 2 : 1; //Can cast Unlimited Bladespirits however > 5 in range 6 will still trigger dispel
         }
 
         public BladeSpirits(Serial serial)
@@ -49,6 +49,13 @@ namespace Server.Mobiles
         {
         }
 
+        public override bool AlwaysMurderer
+        {
+            get
+            {
+                return Core.UOR; //haha watch out
+            }
+        }
         public override bool DeleteCorpseOnDeath
         {
             get

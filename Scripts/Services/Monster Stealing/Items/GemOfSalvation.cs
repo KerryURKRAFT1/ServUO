@@ -46,7 +46,7 @@ namespace drNO.ThieveItems
 
             foreach (PlayerMobile pm in SalvationUsage.Keys)
             {
-                if (SalvationUsage[pm] != null)
+                if (SalvationUsage[pm] != DateTime.MinValue)
                 {
                     if (SalvationUsage[pm] < DateTime.Now + Cooldown)
                     {

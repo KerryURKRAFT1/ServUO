@@ -1,6 +1,7 @@
 using System;
 using Server.Mobiles;
 using Server.Targeting;
+using Server.Network;
 
 namespace Server.Spells.Eighth
 {
@@ -41,9 +42,21 @@ namespace Server.Spells.Eighth
             return true;
         }
 
+        public override bool Cast()
+        {
+        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+        	{
+        		return (this.Caster.Target = new InternalTarget(this)) != null;
+        	}
+
+        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+        	
+        	return false;
+        }
+
         public override void OnCast()
         {
-            this.Caster.Target = new InternalTarget(this);
+        	Target ((IPoint3D)ObjectTargeted);
         }
 
         public void Target(IPoint3D p)
@@ -83,21 +96,16 @@ namespace Server.Spells.Eighth
             protected override void OnTarget(Mobile from, object o)
             {
                 if (o is IPoint3D)
-                    this.m_Owner.Target((IPoint3D)o);
-            }
-
-            protected override void OnTargetOutOfLOS(Mobile from, object o)
-            {
-                from.SendLocalizedMessage(501943); // Target cannot be seen. Try again.
-                from.Target = new InternalTarget(this.m_Owner);
-                from.Target.BeginTimeout(from, this.TimeoutTime - DateTime.UtcNow);
-                this.m_Owner = null;
-            }
-
-            protected override void OnTargetFinish(Mobile from)
-            {
-                if (this.m_Owner != null)
-                    this.m_Owner.FinishSequence();
+                {
+                	if (!this.m_Owner.StartSequence(o))
+                	{
+                		this.m_Owner.FinishSequence();
+                	}
+                }
+                else
+                {
+	              	from.SendLocalizedMessage(1005213); // You can't do that
+                }
             }
         }
     }

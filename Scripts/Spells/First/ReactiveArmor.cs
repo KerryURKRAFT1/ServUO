@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Server.Mobiles;
 using Server.Targeting;
+using Server.Network;
 
 namespace Server.Spells.First
 {
@@ -59,65 +60,61 @@ namespace Server.Spells.First
             return true;
         }
 
+        public override bool Cast()
+        {
+        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+        	{
+        		return (this.Caster.Target = new InternalTarget(this)) != null;
+        	}
+
+        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+        	
+        	return false;
+       }
+
         public override void OnCast()
         {
-            if (Core.UOR)
+        	Target ((Mobile)ObjectTargeted);
+        }
+
+        public void Target(Mobile m)
+        {        	
+            if (this.Caster.MeleeDamageAbsorb > 0)
             {
-                this.Caster.Target = new InternalTarget(this);
+                this.Caster.SendLocalizedMessage(1005559); // This spell is already in effect.
             }
-            else if (Core.AOS)
+            else if (!this.Caster.CanBeginAction(typeof(DefensiveSpell)))
             {
-                if (this.CheckSequence())
-                {
-                    if (HasAnyDefensiveSpell(this.Caster))
-                    {
-                        this.Caster.SendLocalizedMessage(1005559); // This spell is already in effect.
-                    }
-                    else
-                    {
-                        ApplyArmor(this.Caster);
-                    }
-                }
-                this.FinishSequence();
+                this.Caster.SendLocalizedMessage(1005385); // The spell will not adhere to you at this time.
             }
-            else
+            else if (this.CheckSequence())
             {
-                if (this.Caster.MeleeDamageAbsorb > 0)
+                if (HasAnyDefensiveSpell(this.Caster))
                 {
                     this.Caster.SendLocalizedMessage(1005559); // This spell is already in effect.
                 }
-                else if (!this.Caster.CanBeginAction(typeof(DefensiveSpell)))
+                else if (this.Caster.BeginAction(typeof(DefensiveSpell)))
+                {
+                    int value = (int)(this.Caster.Skills[SkillName.Magery].Value + this.Caster.Skills[SkillName.Meditation].Value + this.Caster.Skills[SkillName.Inscribe].Value);
+                    value /= 3;
+
+                    if (value < 0)
+                        value = 1;
+                    else if (value > 75)
+                        value = 75;
+
+                    this.Caster.MeleeDamageAbsorb = value;
+
+                    this.Caster.FixedParticles(0x376A, 9, 32, 5008, EffectLayer.Waist);
+                    this.Caster.PlaySound(0x1F2);
+                }
+                else
                 {
                     this.Caster.SendLocalizedMessage(1005385); // The spell will not adhere to you at this time.
                 }
-                else if (this.CheckSequence())
-                {
-                    if (HasAnyDefensiveSpell(this.Caster))
-                    {
-                        this.Caster.SendLocalizedMessage(1005559); // This spell is already in effect.
-                    }
-                    else if (this.Caster.BeginAction(typeof(DefensiveSpell)))
-                    {
-                        int value = (int)(this.Caster.Skills[SkillName.Magery].Value + this.Caster.Skills[SkillName.Meditation].Value + this.Caster.Skills[SkillName.Inscribe].Value);
-                        value /= 3;
-
-                        if (value < 0)
-                            value = 1;
-                        else if (value > 75)
-                            value = 75;
-
-                        this.Caster.MeleeDamageAbsorb = value;
-
-                        this.Caster.FixedParticles(0x376A, 9, 32, 5008, EffectLayer.Waist);
-                        this.Caster.PlaySound(0x1F2);
-                    }
-                    else
-                    {
-                        this.Caster.SendLocalizedMessage(1005385); // The spell will not adhere to you at this time.
-                    }
-                }
-                this.FinishSequence();
             }
+            
+            this.FinishSequence();
         }
 
         private class InternalTarget : Target
@@ -130,28 +127,19 @@ namespace Server.Spells.First
                 m_Owner = owner;
             }
 
-            protected override void OnTarget(Mobile from, object targeted)
+            protected override void OnTarget(Mobile from, object o)
             {
-                if (targeted is Mobile)
+                if (o is Mobile)
                 {
-                    Mobile target = (Mobile)targeted;
-                    if (!from.CanBeBeneficial(target))
-                    {
-                        from.SendLocalizedMessage(1004037); // You cannot perform beneficial acts on that target.
-                    }
-                    else if (m_Owner.CheckBSequence(target))
-                    {
-                        if (HasAnyDefensiveSpell(target))
-                        {
-                            from.SendLocalizedMessage(1005559); // This spell is already in effect.
-                        }
-                        else
-                        {
-                            m_Owner.ApplyArmor(target);
-                        }
-                    }
+	             	if (!this.m_Owner.StartSequence(o))
+	            	{
+	            		this.m_Owner.FinishSequence();
+	            	}
                 }
-                m_Owner.FinishSequence();
+                else
+                {
+	              	from.SendLocalizedMessage(1005213); // You can't do that
+                }
             }
         }
 

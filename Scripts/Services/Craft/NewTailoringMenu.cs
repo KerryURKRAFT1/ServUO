@@ -1,4 +1,4 @@
-using System;
+﻿ using System;
 using System.Collections.Generic;
 using Server.Gumps;
 using Server.Network;
@@ -27,7 +27,6 @@ namespace Server.Engines.Craft
             m_Message = message;
             m_isPreAoS = isPreAoS;
 
-            Console.WriteLine("[DEBUG] NewTailoringMenu initialized with CraftSystem type: " + m_CraftSystem.GetType().Name);
             if (m_Message != 0)
             {
                 from.SendLocalizedMessage(m_Message);

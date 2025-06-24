@@ -22,7 +22,7 @@ namespace Server.Spells.SkillMasteries
         public override SkillName CastSkill { get { return SkillName.Throwing; } }
         public override SkillName DamageSkill { get { return SkillName.Tactics; } }
 
-        private int _Pool;
+//        private int _Pool;
         private int _MaxAdd;
         private ResistanceType _Type;
 

@@ -1,4 +1,4 @@
-#region Header
+﻿#region Header
 // **********
 // ServUO - CraftItem.cs
 // **********
@@ -756,8 +756,6 @@ namespace Server.Engines.Craft
 				for (int j = 0; j < items[i].Length; ++j)
 				{
 					Item item = items[i][j];
-					//Console.WriteLine(DateTime.UtcNow.ToString("HH:mm:ss") + " DEBUG: Oggetto trovato per consumo - Nome: " 
-					//	+ item.Name + ", Tipo: " + item.GetType().Name + ", Quantità: " + item.Amount);
 
 					IHasQuantity hq = item as IHasQuantity;
 
@@ -805,20 +803,11 @@ namespace Server.Engines.Craft
 		public int GetQuantity(Container cont, Type[] types)
 		{
 			var items = cont.FindItemsByType(types, true);
-			//Console.WriteLine("{0} DEBUG: Risultati FindItemsByType - Numero di oggetti trovati: {1}", DateTime.UtcNow.ToString("HH:mm:ss"), items.Length);
-
 
 			int amount = 0;
 
 			for (int i = 0; i < items.Length; ++i)
 			{
-
-			//Console.WriteLine(
-			//	DateTime.UtcNow.ToString("HH:mm:ss") + 
-			//	" DEBUG: Oggetto trovato - Nome: " + items[i].Name + 
-			//	", Tipo: " + items[i].GetType().Name + 
-			//	", Quantità: " + items[i].Amount);
-
 				IHasQuantity hq = items[i] as IHasQuantity;
 
 				if (hq == null)
@@ -835,7 +824,6 @@ namespace Server.Engines.Craft
 					amount += hq.Quantity;
 				}
 			}
-			//Console.WriteLine("{0} DEBUG: Quantità totale trovata: {1}", DateTime.UtcNow.ToString("HH:mm:ss"), amount);
 			return amount;
 		}
 
@@ -1106,27 +1094,20 @@ namespace Server.Engines.Craft
 				resHue = m_ResHue;
 			}
 			else
-				// ConstumeType.None ( it's basicaly used to know if the crafter has enough resource before starting the process )
 			{
 				index = -1;
-
 				if (IsQuantityType(types))
 				{
-					
+								
 					for (int i = 0; i < types.Length; i++)
 					{
-						//Console.WriteLine("DEBUG: Tipo {0} - Nome: {1}, Quantità richiesta: {2}", i, types[i][0].Name, amounts[i]);
 						if (GetQuantity(ourPack, types[i]) < amounts[i])
 						{
-							//Console.WriteLine("DEBUG: Quantità insufficiente per {0}. Richiesta: {1}, Disponibile: {2}", 
-                //types[i][0].Name, amounts[i], GetQuantity(ourPack, types[i]));
 							index = i;
 							break;
 						}
 						else
 						{
-							            //Console.WriteLine("DEBUG: Quantità sufficiente per {0}. Richiesta: {1}, Disponibile: {2}", 
-                //types[i][0].Name, amounts[i], GetQuantity(ourPack, types[i]));
 						}
 					}
 				}
@@ -1155,16 +1136,11 @@ namespace Server.Engines.Craft
 					}
 				}
 			}
-			//Console.WriteLine("DEBUG: Risultato consumo risorse - Indice: {0}", index);
-			if (index == -1)
+
+	        if (index == -1)
 			{
-				//Console.WriteLine("DEBUG: INSEX " + index);
-				//Console.WriteLine("DEBUG: Valore di consumeType: " + consumeType);
 				if (consumeType != ConsumeType.None)
 				{
-
-					//Console.WriteLine("DEBUG: Tutte le risorse consumate correttamente.");
-					//Console.WriteLine("DEBUG: Valore di consumeType dopo il check: " + consumeType);
 					if (consumeExtra != null)
 					{
 						//Console.WriteLine("consume extra");
@@ -1656,11 +1632,6 @@ namespace Server.Engines.Craft
 			// Not enough resource to craft it
 			if (!ConsumeRes(from, typeRes, craftSystem, ref checkResHue, ref checkMaxAmount, ConsumeType.None, ref checkMessage))
 			{
-
-				//Console.WriteLine("DEBUG: Errore nel consumo risorse durante il completamento del crafting.");
-				//Console.WriteLine("DEBUG: Risorse mancanti per il crafting. Tipo di risorsa: " + (typeRes != null ? typeRes.Name : "Nessuna") + ", Messaggio: " + checkMessage);
-				//Console.WriteLine("DEBUG: Giocatore: " + from.Name + ", Posizione: " + from.Location + ", Oggetti nello zaino: " + (from.Backpack != null ? from.Backpack.Items.Count : 0));
-
 				if (tool != null && !tool.Deleted && tool.UsesRemaining > 0)
 				{
 					from.SendGump(new CraftGump(from, craftSystem, tool, checkMessage));
@@ -1699,7 +1670,7 @@ namespace Server.Engines.Craft
 			}
 
 			bool toolBroken = false;
-			bool failed = false;
+			//bool failed = false;
 
 			int ignored = 1;
 			int endquality = 1;
@@ -2131,7 +2102,7 @@ namespace Server.Engines.Craft
 				}
 
 				// SkillCheck failed.
-				failed = true;
+				//failed = true;
 
 				int num = craftSystem.PlayEndingEffect(from, true, true, toolBroken, endquality, false, this);
 

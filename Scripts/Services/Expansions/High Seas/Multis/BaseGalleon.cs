@@ -50,8 +50,8 @@ namespace Server.Multis
         private BindingPole m_Pole;
         private Mobile m_CapturedCaptain;
 
-        private Mobile m_Captive;
-        private ShippingCrate m_ShippingCrate;
+//        private Mobile m_Captive;
+//        private ShippingCrate m_ShippingCrate;
 
         private List<Item> m_MooringLines = new List<Item>();
         private List<Item> m_Cannons = new List<Item>();

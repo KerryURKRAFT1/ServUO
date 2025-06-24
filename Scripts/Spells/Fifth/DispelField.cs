@@ -2,6 +2,7 @@ using System;
 using Server.Items;
 using Server.Misc;
 using Server.Targeting;
+using Server.Network;
 
 namespace Server.Spells.Fifth
 {
@@ -27,9 +28,22 @@ namespace Server.Spells.Fifth
                 return SpellCircle.Fifth;
             }
         }
+
+        public override bool Cast()
+        {
+        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+        	{
+        		return (this.Caster.Target = new InternalTarget(this)) != null;
+        	}
+
+        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+        	
+        	return false;
+        }
+
         public override void OnCast()
         {
-            this.Caster.Target = new InternalTarget(this);
+        	Target ((Item)ObjectTargeted);
         }
 
         public void Target(Item item)
@@ -74,18 +88,16 @@ namespace Server.Spells.Fifth
             {
                 if (o is Item)
                 {
-                    this.m_Owner.Target((Item)o);
+                 	if (!this.m_Owner.StartSequence(o))
+                	{
+                		this.m_Owner.FinishSequence();
+                	}
                 }
                 else
                 {
-                    this.m_Owner.Caster.SendLocalizedMessage(1005049); // That cannot be dispelled.
+	              	from.SendLocalizedMessage(1005213); // You can't do that
                 }
             }
-
-            protected override void OnTargetFinish(Mobile from)
-            {
-                this.m_Owner.FinishSequence();
-            }
-        }
+       }
     }
 }

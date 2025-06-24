@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Server.Engines.PartySystem;
 using Server.Targeting;
+using Server.Network;
 
 namespace Server.Spells.Fourth
 {
@@ -27,11 +28,24 @@ namespace Server.Spells.Fourth
                 return SpellCircle.Fourth;
             }
         }
-        public override void OnCast()
+
+        public override bool Cast()
         {
-            this.Caster.Target = new InternalTarget(this);
+        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+        	{
+        		return (this.Caster.Target = new InternalTarget(this)) != null;
+        	}
+
+        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+        	
+        	return false;
         }
 
+        public override void OnCast()
+        {
+        	Target ((IPoint3D)ObjectTargeted);
+        }
+        
         public void Target(IPoint3D p)
         {
             if (!this.Caster.CanSee(p))
@@ -163,13 +177,17 @@ namespace Server.Spells.Fourth
                 IPoint3D p = o as IPoint3D;
 
                 if (p != null)
-                    this.m_Owner.Target(p);
+                {
+ 	              	if (!this.m_Owner.StartSequence(o))
+ 	               	{
+                		this.m_Owner.FinishSequence();
+                	}
+                }
+                else
+                {
+	              	from.SendLocalizedMessage(1005213); // You can't do that
+                }
             }
-
-            protected override void OnTargetFinish(Mobile from)
-            {
-                this.m_Owner.FinishSequence();
-            }
-        }
+         }
     }
 }

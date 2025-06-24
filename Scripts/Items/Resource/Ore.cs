@@ -176,14 +176,174 @@ namespace Server.Items
             }
             else if (from.InRange(this.GetWorldLocation(), 2))
             {
-                from.SendLocalizedMessage(501971); // Select the forge on which to smelt the ore, or another pile of ore with which to combine it.
-                from.Target = new InternalTarget(this);
-            }
-            else
-            {
-                from.SendLocalizedMessage(501976); // The ore is too far away.
-            }
-        }
+				bool foundForge = false;
+				IPooledEnumerable eable = from.GetItemsInRange(1);
+				
+				foreach (Item item in eable)
+				{
+					if (IsForge(item))
+					{
+						foundForge = true;
+						break;
+					}
+				}
+				eable.Free();
+
+				if (foundForge)
+				{
+					SmeltOre(from, null);
+				}
+				else
+				{
+					from.SendLocalizedMessage(501971); // Select the forge on which to smelt the ore, or another pile of ore with which to combine it.
+					from.Target = new InternalTarget(this);
+				}
+			}
+			else
+			{
+				from.SendLocalizedMessage(501976); // The ore is too far away.
+			}
+		}
+
+		private bool IsForge(object obj)
+		{
+			if (Core.ML && obj is Mobile && ((Mobile)obj).IsDeadBondedPet)
+				return false;
+
+			if (obj.GetType().IsDefined(typeof(ForgeAttribute), false))
+				return true;
+
+			int itemID = 0;
+
+			if (obj is Item)
+				itemID = ((Item)obj).ItemID;
+			else if (obj is StaticTarget)
+				itemID = ((StaticTarget)obj).ItemID;
+
+			return (itemID == 4017 || (itemID >= 6522 && itemID <= 6569));
+		}
+
+		private void SmeltOre(Mobile from, object targeted)
+		{
+			double difficulty;
+
+			#region Void Pool Rewards
+			bool talisman = false;
+			SmeltersTalisman t = from.FindItemOnLayer(Layer.Talisman) as SmeltersTalisman;
+			if (t != null && t.Resource == this.Resource)
+				talisman = true;
+			#endregion
+
+			switch (this.Resource)
+			{
+				default:
+					difficulty = 50.0;
+					break;
+				case CraftResource.DullCopper:
+					difficulty = 65.0;
+					break;
+				case CraftResource.ShadowIron:
+					difficulty = 70.0;
+					break;
+				case CraftResource.Copper:
+					difficulty = 75.0;
+					break;
+				case CraftResource.Bronze:
+					difficulty = 80.0;
+					break;
+				case CraftResource.Gold:
+					difficulty = 85.0;
+					break;
+				case CraftResource.Agapite:
+					difficulty = 90.0;
+					break;
+				case CraftResource.Verite:
+					difficulty = 95.0;
+					break;
+				case CraftResource.Valorite:
+					difficulty = 99.0;
+					break;
+			}
+
+			double minSkill = difficulty - 25.0;
+			double maxSkill = difficulty + 25.0;
+
+			if (difficulty > 50.0 && difficulty > from.Skills[SkillName.Mining].Value && !talisman)
+			{
+				from.SendLocalizedMessage(501986); // You have no idea how to smelt this strange ore!
+				return;
+			}
+
+			if (this.ItemID == 0x19B7 && this.Amount < 2)
+			{
+				from.SendLocalizedMessage(501987); // There is not enough metal-bearing ore in this pile to make an ingot.
+				return;
+			}
+
+			if (talisman || from.CheckTargetSkill(SkillName.Mining, targeted, minSkill, maxSkill))
+			{
+				int toConsume = this.Amount;
+
+				if (toConsume <= 0)
+				{
+					from.SendLocalizedMessage(501987); // There is not enough metal-bearing ore in this pile to make an ingot.
+				}
+				else
+				{
+					if (toConsume > 30000)
+						toConsume = 30000;
+
+					int ingotAmount;
+
+					if (this.ItemID == 0x19B7)
+					{
+						ingotAmount = toConsume / 2;
+
+						if (toConsume % 2 != 0)
+							--toConsume;
+					}
+					else if (this.ItemID == 0x19B9)
+					{
+						ingotAmount = toConsume * 2;
+					}
+					else
+					{
+						ingotAmount = toConsume;
+					}
+
+					BaseIngot ingot = this.GetIngot();
+					ingot.Amount = ingotAmount;
+
+					this.Consume(toConsume);
+					from.AddToBackpack(ingot);
+					//from.PlaySound(0x57);
+
+					if (talisman && t != null)
+					{
+						t.UsesRemaining--;
+						from.SendLocalizedMessage(1152620); // The magic of your talisman guides your hands as you purify the metal. Success is ensured!
+					}
+					else
+						from.SendLocalizedMessage(501988); // You smelt the ore removing the impurities and put the metal in your backpack.
+				}
+			}
+			else
+			{
+				if (this.Amount < 2)
+				{
+					if (this.ItemID == 0x19B9)
+						this.ItemID = 0x19B8;
+					else
+						this.ItemID = 0x19B7;
+				}
+				else
+				{
+					this.Amount /= 2;
+				}
+
+				from.SendLocalizedMessage(501990); // You burn away the impurities but are left with less useable metal.
+			}
+		}
 
         private class InternalTarget : Target
         {

@@ -177,7 +177,7 @@ namespace Server.Engines.Craft
 
         public override void InitCraftList()
         {
-            int index;
+//            int index;
 
             // Configurazione delle ricette per vari scudi con IronIngot
 

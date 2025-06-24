@@ -174,6 +174,9 @@ namespace Server.Misc
             if (gc < 0.01)
                 gc = 0.01;
 
+			//boost
+			//end
+			
             if (from is BaseCreature && ((BaseCreature)from).Controlled)
                 gc *= 2;
 
@@ -369,6 +372,10 @@ namespace Server.Misc
 				chance = PetChanceToGainStats;
 			else
 				chance = PlayerChanceToGainStats;
+			
+			//boost
+			//end
+			
 			if (Utility.RandomDouble() * 100.0 >= chance)
 			{
 				return;

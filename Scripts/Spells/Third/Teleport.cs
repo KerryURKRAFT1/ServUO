@@ -2,6 +2,7 @@ using System;
 using Server.Items;
 using Server.Regions;
 using Server.Targeting;
+using Server.Network;
 
 namespace Server.Spells.Third
 {
@@ -41,9 +42,21 @@ namespace Server.Spells.Third
             return SpellHelper.CheckTravel(this.Caster, TravelCheckType.TeleportFrom);
         }
 
+        public override bool Cast()
+        {
+        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+        	{
+        		return (this.Caster.Target = new InternalTarget(this)) != null;
+        	}
+
+        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+        	
+        	return false;
+        }
+
         public override void OnCast()
         {
-            this.Caster.Target = new InternalTarget(this);
+        	Target ((IPoint3D)ObjectTargeted);
         }
 
         public void Target(IPoint3D p)
@@ -131,12 +144,16 @@ namespace Server.Spells.Third
                 IPoint3D p = o as IPoint3D;
 
                 if (p != null)
-                    this.m_Owner.Target(p);
-            }
-
-            protected override void OnTargetFinish(Mobile from)
-            {
-                this.m_Owner.FinishSequence();
+                {
+                   	if (!this.m_Owner.StartSequence(o))
+                	{
+                		this.m_Owner.FinishSequence();
+                	}
+                }
+                else
+                {
+	              	from.SendLocalizedMessage(1005213); // You can't do that
+                }
             }
         }
     }

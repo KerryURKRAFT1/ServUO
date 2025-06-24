@@ -10,17 +10,17 @@ namespace Server.Engines.Quests
 {
 	public class ProfessionalBountyQuest : BaseQuest
 	{
-		private object m_Title;
-		private object m_Description;
-		private object m_Refuse;
-		private object m_Uncomplete;
-		private object m_Complete;
+//		private object m_Title;
+//		private object m_Description;
+//		private object m_Refuse;
+//		private object m_Uncomplete;
+//		private object m_Complete;
 
-        public override object Title { get { return 1116708; } }
-        public override object Description { get { return 1116709; } }
-        public override object Refuse { get { return 1116713; } }
-        public override object Uncomplete { get { return 1116714; } }
-        public override object Complete { get { return 1116715; } }
+//        public override object Title { get { return 1116708; } }
+//        public override object Description { get { return 1116709; } }
+//        public override object Refuse { get { return 1116713; } }
+//        public override object Uncomplete { get { return 1116714; } }
+//        public override object Complete { get { return 1116715; } }
  
         private BaseGalleon m_Galleon;
 		private BindingPole m_Pole;

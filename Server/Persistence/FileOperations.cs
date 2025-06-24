@@ -21,11 +21,16 @@ namespace Server
 
         #endif
 
+        #if MONO
+        private static bool unbuffered = false;
+        private static int bufferSize = 50 * MB;
+        private static int concurrency = 0;
+		#else		
+        private static bool unbuffered = true;
         private static int bufferSize = 1 * MB;
         private static int concurrency = 1;
-
-        private static bool unbuffered = true;
-
+		#endif
+		
         public static int BufferSize
         {
             get

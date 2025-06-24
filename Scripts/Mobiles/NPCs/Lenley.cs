@@ -77,7 +77,7 @@ namespace Server.Engines.Quests
 
     public class Lenley : BaseEscort
     {
-        private DateTime recoverDelay;
+//        private DateTime recoverDelay;
         private static bool m_Talked;
       
          string[] Lenleysay = new string[]  

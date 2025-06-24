@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Server.Network;
 
 namespace Server.Spells.Eighth
 {
@@ -19,6 +20,11 @@ namespace Server.Spells.Eighth
         {
         }
 
+//        public override TimeSpan GetCastDelay() //testing disturb
+//        {
+//            return base.GetCastDelay() + TimeSpan.FromSeconds(10.0);
+//        }
+
         public override SpellCircle Circle
         {
             get
@@ -33,6 +39,7 @@ namespace Server.Spells.Eighth
                 return !Core.AOS;
             }
         }
+
         public override void OnCast()
         {
             if (SpellHelper.CheckTown(this.Caster, this.Caster) && this.CheckSequence())

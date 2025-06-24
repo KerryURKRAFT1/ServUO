@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Server;
 using Server.Mobiles;
 using Server.Targeting;
@@ -11,7 +11,6 @@ namespace Server.StaticHouse
     {
         public static void Initialize()
         {
-            Console.WriteLine("[DEBUG] StaticHouseSpeech.Initialize chiamato!");
             EventSink.Speech += new SpeechEventHandler(OnSpeech);
         }
 

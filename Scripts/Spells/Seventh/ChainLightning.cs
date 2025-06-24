@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Server.Targeting;
 using Server.Mobiles;
+using Server.Network;
 
 namespace Server.Spells.Seventh
 {
@@ -35,9 +36,22 @@ namespace Server.Spells.Seventh
                 return true;
             }
         }
+
+        public override bool Cast()
+        {
+        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+        	{
+        		return (this.Caster.Target = new InternalTarget(this)) != null;
+        	}
+
+        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+        	
+        	return false;
+        }
+
         public override void OnCast()
         {
-            this.Caster.Target = new InternalTarget(this);
+        	Target ((IPoint3D)ObjectTargeted);
         }
 
         public void Target(IPoint3D p)
@@ -138,15 +152,17 @@ namespace Server.Spells.Seventh
 
             protected override void OnTarget(Mobile from, object o)
             {
-                IPoint3D p = o as IPoint3D;
-
-                if (p != null)
-                    this.m_Owner.Target(p);
-            }
-
-            protected override void OnTargetFinish(Mobile from)
-            {
-                this.m_Owner.FinishSequence();
+            	if (o is IPoint3D)
+                {
+                	if (!this.m_Owner.StartSequence(o))
+                	{
+                		this.m_Owner.FinishSequence();
+                	}
+                }
+                else
+                {
+	              	from.SendLocalizedMessage(1005213); // You can't do that
+                }
             }
         }
     }

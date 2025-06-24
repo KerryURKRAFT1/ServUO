@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Server.Targeting;
+using Server.Network;
 
 namespace Server.Spells.Fifth
 {
@@ -57,115 +58,21 @@ namespace Server.Spells.Fifth
             return true;
         }
 
-        public override void OnCast()
+        public override bool Cast()
         {
-            if (Core.UOR)
-            {
-                this.Caster.Target = new InternalTarget(this);
-            }
-            else if (Core.AOS)
-            {
-                if (this.CheckSequence())
-                {
-                    Mobile targ = this.Caster;
+        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+        	{
+        		return (this.Caster.Target = new InternalTarget(this)) != null;
+        	}
 
-                    ResistanceMod[] mods = (ResistanceMod[])m_Table[targ];
-
-                    if (mods == null)
-                    {
-                        targ.PlaySound(0x1E9);
-                        targ.FixedParticles(0x375A, 10, 15, 5037, EffectLayer.Waist);
-
-                        int physiMod = -25 + (int)(targ.Skills[SkillName.Inscribe].Value / 20);
-                        int otherMod = 10;
-
-                        mods = new ResistanceMod[5]
-                        {
-                            new ResistanceMod(ResistanceType.Physical, physiMod),
-                            new ResistanceMod(ResistanceType.Fire, otherMod),
-                            new ResistanceMod(ResistanceType.Cold, otherMod),
-                            new ResistanceMod(ResistanceType.Poison,    otherMod),
-                            new ResistanceMod(ResistanceType.Energy,    otherMod)
-                        };
-
-                        m_Table[targ] = mods;
-
-                        for (int i = 0; i < mods.Length; ++i)
-                            targ.AddResistanceMod(mods[i]);
-
-                        string buffFormat = String.Format("{0}\t+{1}\t+{1}\t+{1}\t+{1}", physiMod, otherMod);
-
-                        BuffInfo.AddBuff(targ, new BuffInfo(BuffIcon.MagicReflection, 1075817, buffFormat, true));
-                    }
-                    else
-                    {
-                        targ.PlaySound(0x1ED);
-                        targ.FixedParticles(0x375A, 10, 15, 5037, EffectLayer.Waist);
-
-                        m_Table.Remove(targ);
-
-                        for (int i = 0; i < mods.Length; ++i)
-                            targ.RemoveResistanceMod(mods[i]);
-
-                        BuffInfo.RemoveBuff(targ, BuffIcon.MagicReflection);
-                    }
-                }
-
-                this.FinishSequence();
-            }
-            else
-            {
-                if (HasAnyDefensiveSpell(this.Caster))
-                {
-                    this.Caster.SendLocalizedMessage(1005559); // This spell is already in effect.
-                }
-                else if (!this.Caster.CanBeginAction(typeof(DefensiveSpell)))
-                {
-                    this.Caster.SendLocalizedMessage(1005385); // The spell will not adhere to you at this time.
-                }
-                else if (this.CheckSequence())
-                {
-                    if (this.Caster.BeginAction(typeof(DefensiveSpell)))
-                    {
-                        int value = (int)(this.Caster.Skills[SkillName.Magery].Value + this.Caster.Skills[SkillName.Inscribe].Value);
-                        value = (int)(8 + (value / 200) * 7.0);
-
-                        this.Caster.MagicDamageAbsorb = value;
-
-                        this.Caster.FixedParticles(0x375A, 10, 15, 5037, EffectLayer.Waist);
-                        this.Caster.PlaySound(0x1E9);
-                    }
-                    else
-                    {
-                        this.Caster.SendLocalizedMessage(1005385); // The spell will not adhere to you at this time.
-                    }
-                }
-
-                this.FinishSequence();
-            }
+        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+        	
+        	return false;
         }
 
-        private class InternalTarget : Target
+        public override void OnCast()
         {
-            private MagicReflectSpell m_Owner;
-
-            public InternalTarget(MagicReflectSpell owner)
-                : base(12, false, TargetFlags.Beneficial)
-            {
-                m_Owner = owner;
-            }
-
-            protected override void OnTarget(Mobile from, object o)
-            {
-                Mobile target = o as Mobile;
-                if (target != null)
-                    m_Owner.Target(target);
-            }
-
-            protected override void OnTargetFinish(Mobile from)
-            {
-                m_Owner.FinishSequence();
-            }
+        	Target ((Mobile)ObjectTargeted);
         }
 
         public void Target(Mobile target)
@@ -201,6 +108,32 @@ namespace Server.Spells.Fifth
             }
 
             this.FinishSequence();
+        }
+
+         private class InternalTarget : Target
+        {
+            private MagicReflectSpell m_Owner;
+
+            public InternalTarget(MagicReflectSpell owner)
+                : base(12, false, TargetFlags.Beneficial)
+            {
+                m_Owner = owner;
+            }
+
+            protected override void OnTarget(Mobile from, object o)
+            {
+                if (o is Mobile)
+                {
+                	if (!this.m_Owner.StartSequence(o))
+                	{
+                		this.m_Owner.FinishSequence();
+                	}
+                }
+                else
+                {
+	              	from.SendLocalizedMessage(1005213); // You can't do that
+                }
+            }
         }
 
         public static bool HasAnyDefensiveSpell(Mobile m)

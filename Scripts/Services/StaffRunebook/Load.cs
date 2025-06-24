@@ -23,7 +23,7 @@ namespace Joeku.SR
                 return;
 
             Console.WriteLine();
-            Console.WriteLine("Joeku's Staff Runebook: Loading...");
+            Console.WriteLine("Joeku's Staff Runebook: Loading");
 
             XmlDocument doc = new XmlDocument();
             doc.Load(filePath);

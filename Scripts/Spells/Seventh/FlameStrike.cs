@@ -1,5 +1,6 @@
 using System;
 using Server.Targeting;
+using Server.Network;
 
 namespace Server.Spells.Seventh
 {
@@ -30,9 +31,22 @@ namespace Server.Spells.Seventh
                 return true;
             }
         }
+
+        public override bool Cast()
+        {
+        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+        	{
+        		return (this.Caster.Target = new InternalTarget(this)) != null;
+        	}
+
+        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+        	
+        	return false;
+        }
+
         public override void OnCast()
         {
-            this.Caster.Target = new InternalTarget(this);
+        	Target ((IDamageable)ObjectTargeted);
         }
 
         public void Target(IDamageable m)
@@ -102,15 +116,17 @@ namespace Server.Spells.Seventh
             protected override void OnTarget(Mobile from, object o)
             {
                 if (o is IDamageable)
+                 {
+                	if (!this.m_Owner.StartSequence(o))
+                	{
+                		this.m_Owner.FinishSequence();
+                	}
+                }
+                else
                 {
-                    this.m_Owner.Target((IDamageable)o);
+	              	from.SendLocalizedMessage(1005213); // You can't do that
                 }
             }
-
-            protected override void OnTargetFinish(Mobile from)
-            {
-                this.m_Owner.FinishSequence();
-            }
-        }
+       }
     }
 }

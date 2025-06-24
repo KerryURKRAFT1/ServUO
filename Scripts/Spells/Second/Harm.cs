@@ -1,5 +1,6 @@
 using System;
 using Server.Targeting;
+using Server.Network;
 
 namespace Server.Spells.Second
 {
@@ -30,9 +31,22 @@ namespace Server.Spells.Second
                 return false;
             }
         }
+
+        public override bool Cast()
+        {
+        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+        	{
+        		return (this.Caster.Target = new InternalTarget(this)) != null;
+        	}
+
+        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+        	
+        	return false;
+        }
+
         public override void OnCast()
         {
-            this.Caster.Target = new InternalTarget(this);
+        	Target ((IDamageable)ObjectTargeted);
         }
 
         public override double GetSlayerDamageScalar(Mobile target)
@@ -121,13 +135,15 @@ namespace Server.Spells.Second
             {
                 if (o is IDamageable)
                 {
-                    this.m_Owner.Target((IDamageable)o);
+	            	if (!this.m_Owner.StartSequence(o))
+	            	{
+	            		this.m_Owner.FinishSequence();
+	            	}
                 }
-            }
-
-            protected override void OnTargetFinish(Mobile from)
-            {
-                this.m_Owner.FinishSequence();
+                else
+                {
+	              	from.SendLocalizedMessage(1005213); // You can't do that
+                }
             }
         }
     }

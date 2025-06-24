@@ -410,6 +410,11 @@ namespace Server
 			Process = Process.GetCurrentProcess();
 			Assembly = Assembly.GetEntryAssembly();
 
+			if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+			{
+				Process.PriorityClass = ProcessPriorityClass.High;
+			}
+
 			if (Thread != null)
 			{
 				Thread.Name = "Core Thread";
@@ -431,7 +436,7 @@ namespace Server
 
 			// Added to help future code support on forums, as a 'check' people can ask for to it see if they recompiled core or not
 			Utility.PushColor(ConsoleColor.DarkGreen);
-			Console.WriteLine(new String('-', Console.BufferWidth));
+			Console.WriteLine(new String('-', Console.BufferWidth-1));
 			Utility.PopColor();
 			Utility.PushColor(ConsoleColor.Cyan);
 			Console.WriteLine(
@@ -506,8 +511,11 @@ namespace Server
 			Utility.PopColor();
 
 			Utility.PushColor(ConsoleColor.DarkYellow);
-			Console.WriteLine("Core: Loading config...");
+			Console.Write("Core: Loading config...");
+			Utility.PopColor();
 			Config.Load();
+			Utility.PushColor(ConsoleColor.Green);
+			Console.WriteLine("done");
 			Utility.PopColor();
 
 			while (!ScriptCompiler.Compile(Debug, _Cache))

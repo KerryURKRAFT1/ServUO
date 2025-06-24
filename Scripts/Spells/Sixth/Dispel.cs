@@ -1,8 +1,9 @@
-using System;
+﻿using System;
 using Server.Items;
 using Server.Mobiles;
 using Server.Targeting;
 using Server.Spells.Seventh; // Per accedere a PolymorphSpell.EndPolymorph()
+using Server.Network;
 
 namespace Server.Spells.Sixth
 {
@@ -29,9 +30,69 @@ namespace Server.Spells.Sixth
             }
         }
 
+        public override bool Cast()
+        {
+        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+        	{
+        		return (this.Caster.Target = new InternalTarget(this)) != null;
+        	}
+
+        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+        	
+        	return false;
+        }
+
         public override void OnCast()
         {
-            this.Caster.Target = new InternalTarget(this);
+        	Target ((Mobile)ObjectTargeted);
+        }
+
+        public void Target(Mobile m)
+        {
+            BaseCreature bc = m as BaseCreature;
+
+            if (!this.Caster.CanSee(m))
+            {
+                this.Caster.SendLocalizedMessage(500237); // Target can not be seen.
+            }
+            else if (m.BodyMod != 0) // Controlla se il bersaglio è sotto Polymorph
+            {
+                SpellHelper.Turn(this.Caster, m);
+
+                // Rimuove l'effetto Polymorph
+                PolymorphSpell.EndPolymorph(m);
+                Effects.PlaySound(m, m.Map, 0x201);
+                this.Caster.SendMessage("You dispel the polymorph effect!");
+
+            }
+            else if (bc == null || !bc.IsDispellable)
+            {
+                this.Caster.SendLocalizedMessage(1005049); // That cannot be dispelled.
+            }
+            else if (bc.SummonMaster == this.Caster || this.CheckHSequence(m))
+            {
+                SpellHelper.Turn(this.Caster, m);
+
+                double dispelChance = (50.0 + ((100 * (this.Caster.Skills.Magery.Value - bc.GetDispelDifficulty())) / (bc.DispelFocus * 2))) / 100;
+
+                // Skill Masteries
+                dispelChance -= ((double)SkillMasteries.MasteryInfo.EnchantedSummoningBonus(bc) / 100);
+
+                if (dispelChance > Utility.RandomDouble())
+                {
+                    Effects.SendLocationParticles(EffectItem.Create(m.Location, m.Map, EffectItem.DefaultDuration), 0x3728, 8, 20, 5042);
+                    Effects.PlaySound(m, m.Map, 0x201);
+
+                    m.Delete();
+                }
+                else
+                {
+                    m.FixedEffect(0x3779, 10, 20);
+                    this.Caster.SendLocalizedMessage(1010084); // The creature resisted the attempt to dispel it!
+                }
+            }
+
+            this.FinishSequence();
         }
 
         public class InternalTarget : Target
@@ -48,55 +109,15 @@ namespace Server.Spells.Sixth
             {
                 if (o is Mobile)
                 {
-                    Mobile m = (Mobile)o;
-                    BaseCreature bc = m as BaseCreature;
-
-                    if (!from.CanSee(m))
-                    {
-                        from.SendLocalizedMessage(500237); // Target can not be seen.
-                    }
-                    else if (m.BodyMod != 0) // Controlla se il bersaglio è sotto Polymorph
-                    {
-                        SpellHelper.Turn(from, m);
-
-                        // Rimuove l'effetto Polymorph
-                        PolymorphSpell.EndPolymorph(m);
-                        Effects.PlaySound(m, m.Map, 0x201);
-                        from.SendMessage("You dispel the polymorph effect!");
-
-                    }
-                    else if (bc == null || !bc.IsDispellable)
-                    {
-                        from.SendLocalizedMessage(1005049); // That cannot be dispelled.
-                    }
-                    else if (bc.SummonMaster == from || m_Owner.CheckHSequence(m))
-                    {
-                        SpellHelper.Turn(from, m);
-
-                        double dispelChance = (50.0 + ((100 * (from.Skills.Magery.Value - bc.GetDispelDifficulty())) / (bc.DispelFocus * 2))) / 100;
-
-                        // Skill Masteries
-                        dispelChance -= ((double)SkillMasteries.MasteryInfo.EnchantedSummoningBonus(bc) / 100);
-
-                        if (dispelChance > Utility.RandomDouble())
-                        {
-                            Effects.SendLocationParticles(EffectItem.Create(m.Location, m.Map, EffectItem.DefaultDuration), 0x3728, 8, 20, 5042);
-                            Effects.PlaySound(m, m.Map, 0x201);
-
-                            m.Delete();
-                        }
-                        else
-                        {
-                            m.FixedEffect(0x3779, 10, 20);
-                            from.SendLocalizedMessage(1010084); // The creature resisted the attempt to dispel it!
-                        }
-                    }
+                	if (!this.m_Owner.StartSequence(o))
+                	{
+                		this.m_Owner.FinishSequence();
+                	}
                 }
-            }
-
-            protected override void OnTargetFinish(Mobile from)
-            {
-                this.m_Owner.FinishSequence();
+                else
+                {
+	              	from.SendLocalizedMessage(1005213); // You can't do that
+                }
             }
         }
     }

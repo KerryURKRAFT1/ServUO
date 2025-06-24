@@ -1,6 +1,7 @@
 using System;
 using Server.Items;
 using Server.Targeting;
+using Server.Network;
 
 namespace Server.Spells.Second
 {
@@ -24,12 +25,26 @@ namespace Server.Spells.Second
                 return SpellCircle.Second;
             }
         }
-        public override void OnCast()
+
+        public override bool Cast()
         {
-            this.Caster.Target = new InternalTarget(this);
             this.Caster.SendMessage("What do you wish to untrap?");
+            
+        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+        	{
+        		return (this.Caster.Target = new InternalTarget(this)) != null;
+        	}
+
+        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+        	
+        	return false;
         }
 
+        public override void OnCast()
+        {
+        	Target ((TrapableContainer)ObjectTargeted);
+        }
+        
         public void Target(TrapableContainer item)
         {
             if (!this.Caster.CanSee(item))
@@ -70,17 +85,15 @@ namespace Server.Spells.Second
             {
                 if (o is TrapableContainer)
                 {
-                    this.m_Owner.Target((TrapableContainer)o);
+	            	if (!this.m_Owner.StartSequence(o))
+	            	{
+	            		this.m_Owner.FinishSequence();
+	            	}
                 }
                 else
                 {
-                    from.SendMessage("You can't disarm that");
+	              	from.SendLocalizedMessage(1005213); // You can't do that
                 }
-            }
-
-            protected override void OnTargetFinish(Mobile from)
-            {
-                this.m_Owner.FinishSequence();
             }
         }
     }

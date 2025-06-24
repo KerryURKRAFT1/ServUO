@@ -129,7 +129,7 @@ namespace Server.Engines.Craft
             }
         }
 
-        private int m_Circle, m_Mana;
+        private int m_Circle = 0, m_Mana = 0;
 
         private enum Reg { BlackPearl, Bloodmoss, Garlic, Ginseng, MandrakeRoot, Nightshade, SulfurousAsh, SpidersSilk, BatWing, GraveDust, DaemonBlood, NoxCrystal, PigIron, Bone, DragonBlood, FertileDirt, DaemonBone }
 

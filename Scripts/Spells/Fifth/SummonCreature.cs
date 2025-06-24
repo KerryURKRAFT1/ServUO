@@ -1,5 +1,6 @@
 using System;
 using Server.Mobiles;
+using Server.Network;
 
 namespace Server.Spells.Fifth
 {
@@ -92,7 +93,7 @@ namespace Server.Spells.Fifth
             if (Core.AOS)
                 return TimeSpan.FromTicks(base.GetCastDelay().Ticks * 5);
 
-            return base.GetCastDelay() + TimeSpan.FromSeconds(6.0);
+            return TimeSpan.FromSeconds(8.75);
         }
     }
 }

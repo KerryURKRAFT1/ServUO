@@ -17,8 +17,8 @@ namespace Server.Mobiles
 
         public override ChampionSkullType SkullType { get { return ChampionSkullType.None; } }
 
-        private DateTime _NextScatter;
-        private DateTime _NextAttack;
+//        private DateTime _NextScatter;
+//        private DateTime _NextAttack;
 
         [Constructable]
 		public DragonTurtle() : base(AIType.AI_Mage)

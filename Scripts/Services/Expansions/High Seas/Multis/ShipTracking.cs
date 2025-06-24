@@ -109,7 +109,7 @@ namespace Server.Multis
 
 		private Mobile m_From;
 		private Timer m_Timer;
-        private BaseBoat m_Boat;
+        private BaseBoat m_Boat = null;
 
         public Mobile From { get { return m_From; } }
         public Timer Timer { get { return m_Timer; } }

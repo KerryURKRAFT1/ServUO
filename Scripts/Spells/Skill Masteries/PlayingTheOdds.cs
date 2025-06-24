@@ -28,7 +28,7 @@ namespace Server.Spells.SkillMasteries
         private int _HCIBonus;
         private int _SSIBonus;
 
-        private Dictionary<Mobile, DateTime> _Cooldown;
+//        private Dictionary<Mobile, DateTime> _Cooldown;
 
         public PlayingTheOddsSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)

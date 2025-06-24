@@ -26,9 +26,22 @@ namespace Server.Spells.Sixth
                 return SpellCircle.Sixth;
             }
         }
+
+        public override bool Cast()
+        {
+        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+        	{
+        		return (this.Caster.Target = new InternalTarget(this)) != null;
+        	}
+
+        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+        	
+        	return false;
+        }
+
         public override void OnCast()
         {
-            this.Caster.Target = new InternalTarget(this);
+        	Target ((RecallRune)ObjectTargeted);
         }
 
         public override bool CheckCast()
@@ -80,17 +93,15 @@ namespace Server.Spells.Sixth
             {
                 if (o is RecallRune)
                 {
-                    this.m_Owner.Target((RecallRune)o);
+                	if (!this.m_Owner.StartSequence(o))
+                	{
+                		this.m_Owner.FinishSequence();
+                	}
                 }
                 else
                 {
                     from.Send(new MessageLocalized(from.Serial, from.Body, MessageType.Regular, 0x3B2, 3, 501797, from.Name, "")); // I cannot mark that object.
                 }
-            }
-
-            protected override void OnTargetFinish(Mobile from)
-            {
-                this.m_Owner.FinishSequence();
             }
         }
     }

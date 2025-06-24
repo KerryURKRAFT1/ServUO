@@ -9,7 +9,7 @@ namespace Server.Engines.NewMagincia
 	public class WarehouseContainer : MediumCrate
 	{
 		private Mobile m_Owner;
-		private int m_AmountOwed;
+//		private int m_AmountOwed;
 		
 		[CommandProperty(AccessLevel.GameMaster)]
 		public Mobile Owner { get { return m_Owner; } }
