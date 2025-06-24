@@ -1,4 +1,4 @@
-﻿#region Header
+#region Header
 // **********
 // ServUO - Spell.cs
 // **********
@@ -275,7 +275,7 @@ namespace Server.Spells
 			return damage / 100;
 		}
 
-		public virtual bool IsCasting { get { return m_State == SpellState.Casting; } }
+		public virtual bool IsCasting { get { return m_State == SpellState.Precasting; } }
 
         public virtual void OnCasterHurt()
         {
@@ -625,16 +625,13 @@ namespace Server.Spells
 				return;
 			}
 			
-			//this is legacy, disturb is only called with bool IsCasting now
-			if (m_State == SpellState.Casting || (m_State == SpellState.Sequencing && !firstCircle && this is MagerySpell && ((MagerySpell)this).Circle != SpellCircle.First))
+			if (m_State == SpellState.Precasting || (m_State == SpellState.Sequencing && !firstCircle && this is MagerySpell && ((MagerySpell)this).Circle != SpellCircle.First))
 			{
-				m_State = SpellState.None;
-				m_Caster.Spell = null;
 				m_Disturbed = true;
 				
 				OnDisturb(type, true);
 
-				if (m_State == SpellState.Casting)
+				if (m_State == SpellState.Precasting)
 				{
 					m_Caster.NextSpellTime = Core.TickCount + (int)GetDisturbRecovery().TotalMilliseconds;
 				}
@@ -643,20 +640,12 @@ namespace Server.Spells
 					Target.Cancel(m_Caster);
 				}
 
-				if (m_CastTimer != null)
-				{
-					m_CastTimer.Stop();
-				}
-
-				if (m_AnimTimer != null)
-				{
-					m_AnimTimer.Stop();
-				}
-
 				if (type == DisturbType.Hurt) //copy Kerry's Mod
 				{
 					DoHurtFizzle();
 				}
+				
+				FinishSequence();
 			}
 		}
 
@@ -818,7 +807,7 @@ namespace Server.Spells
 				if (m_Caster.Spell == null && m_Caster.CheckSpellCast(this) && CheckCast() &&
 				    m_Caster.Region.OnBeginSpellCast(m_Caster, this))
 				{
-					m_State = SpellState.Casting;
+					m_State = SpellState.Precasting;
 					m_Caster.Spell = this;
 
 					if (!(m_Scroll is BaseWand) && RevealOnCast)
@@ -1094,11 +1083,13 @@ namespace Server.Spells
 			if (m_CastTimer != null)
 			{
 				m_CastTimer.Stop();
+				m_CastTimer = null;
 			}
 
 			if (m_AnimTimer != null)
 			{
 				m_AnimTimer.Stop();
+				m_AnimTimer = null;
 			}
 		}
 
@@ -1259,7 +1250,7 @@ namespace Server.Spells
 
 			protected override void OnTick()
 			{
-				if (m_Spell.State != SpellState.Casting || m_Spell.m_Caster.Spell != m_Spell)
+				if (m_Spell.State != SpellState.Precasting || m_Spell.m_Caster.Spell != m_Spell)
 				{
 					Stop();
 					return;
@@ -1305,14 +1296,14 @@ namespace Server.Spells
 
 			protected override void OnTick()
 			{
-				if (m_Spell == null || m_Spell.m_Caster == null || m_Spell.State != SpellState.Casting || !m_Spell.Caster.Alive || m_Spell.Caster.Deleted || m_Spell.Caster.IsDeadBondedPet)
+				if (m_Spell == null || m_Spell.m_Caster == null || m_Spell.State != SpellState.Precasting || !m_Spell.Caster.Alive || m_Spell.Caster.Deleted || m_Spell.Caster.IsDeadBondedPet)
 				{
                     m_Spell.FinishSequence();
 				}
 				
 				if( m_Spell.Disturbed || m_Spell.m_Caster.Spell != m_Spell )
                 {
-					m_Spell.DoFizzle();
+					Stop(); //fizzle is now part of Distubed (Kerrys mod) so this isnt really needed
 				}
 
 				if( m_Spell.m_CastTime - 50 < Core.TickCount )
@@ -1352,7 +1343,10 @@ namespace Server.Spells
 				m_Caster.Mana -= m_Mana;
 			}
 			
-			OnCast();
+			if (!Disturbed) //Kerrys mod
+			{
+				OnCast();
+			}
 
 			if (m_Caster.Player && m_Caster.Target != originalTarget && m_Caster.Target != null)
 			{
