@@ -183,7 +183,9 @@ namespace Server.Mobiles
 
     public class BaseCreature : Mobile, IHonorTarget
     {
-        public const int MaxLoyalty = 100;
+		private static readonly bool m_MobsPassThroughObjects = Config.Get("Custom_Settings.MobsPassThroughObjects", false);
+
+		public const int MaxLoyalty = 100;
 
         #region Var declarations
         private BaseAI m_AI; // THE AI
@@ -1627,7 +1629,7 @@ namespace Server.Mobiles
 
         public virtual bool CanOpenDoors { get { return !Body.IsAnimal && !Body.IsSea; } }
 
-        public virtual bool CanMoveOverObstacles { get { return false; } }
+        public virtual bool CanMoveOverObstacles { get { return m_MobsPassThroughObjects; } }
 
         public virtual bool CanDestroyObstacles
         {
