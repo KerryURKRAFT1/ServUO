@@ -31,6 +31,7 @@ using Server.Spells.Spellweaving;
 using Server.Targeting;
 using System.Linq;
 using Server.Spells.SkillMasteries;
+using Server.Movement;
 #endregion
 
 namespace Server.Mobiles
@@ -1626,14 +1627,13 @@ namespace Server.Mobiles
 
         public virtual bool CanOpenDoors { get { return !Body.IsAnimal && !Body.IsSea; } }
 
-        public virtual bool CanMoveOverObstacles { get { return Core.AOS || Body.IsMonster; } }
+        public virtual bool CanMoveOverObstacles { get { return false; } }
 
         public virtual bool CanDestroyObstacles
         {
             get
             {
-                // to enable breaking of furniture, 'return CanMoveOverObstacles;'
-                return false;
+                return CanMoveOverObstacles;
             }
         }
 
@@ -4107,7 +4107,6 @@ namespace Server.Mobiles
 
         protected override bool OnMove(Direction d)
         {
-
             if (Hidden) //Hidden, let's try stealth
             {
                 if (!Mounted && Skills.Stealth.Value >= 25.0 && CanStealth)
@@ -4131,7 +4130,6 @@ namespace Server.Mobiles
             }
 
             return true;
-
         }
 
         public override void OnMovement(Mobile m, Point3D oldLocation)
