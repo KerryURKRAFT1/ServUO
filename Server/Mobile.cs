@@ -1,4 +1,4 @@
-﻿#region Header
+#region Header
 // **********
 // ServUO - Mobile.cs
 // **********
@@ -2084,8 +2084,7 @@ namespace Server
 		{
 			private readonly Mobile m_Mobile;
 
-			public CombatTimer(Mobile m)
-				: base(TimeSpan.FromSeconds(0.0), TimeSpan.FromSeconds(0.01), 0)
+			public CombatTimer(Mobile m) : base(TimeSpan.FromSeconds(0.0), TimeSpan.FromSeconds(0.01), 0)
 			{
 				m_Mobile = m;
 
@@ -2101,32 +2100,26 @@ namespace Server
 				{
 					IDamageable combatant = m_Mobile.Combatant;
 
-					// If no combatant, wrong map, one of us is a ghost, or cannot see, or deleted, then stop combat
 					if (combatant == null || combatant.Deleted || m_Mobile.m_Deleted || combatant.Map != m_Mobile.m_Map ||
-						!combatant.Alive || !m_Mobile.Alive || !m_Mobile.CanSee(combatant) || (combatant is Mobile && ((Mobile)combatant).IsDeadBondedPet) ||
-						m_Mobile.IsDeadBondedPet)
+					    !combatant.Alive || !m_Mobile.Alive || (combatant is Mobile && ((Mobile)combatant).IsDeadBondedPet) 
+					    || m_Mobile.IsDeadBondedPet || !m_Mobile.CanSee(combatant) || !m_Mobile.InRange(combatant, 18))
 					{
 						m_Mobile.Combatant = null;
 						return;
 					}
 
 					IWeapon weapon = m_Mobile.Weapon;
-
-					if (!m_Mobile.InRange(combatant, weapon.MaxRange))
-					{
-						return;
-					}
-
-                    if (m_Mobile.InLOS(combatant))
+					
+					if (m_Mobile.InRange(combatant, weapon.MaxRange) && m_Mobile.InLOS(combatant) && m_Mobile.CanSee(combatant))
                     {
-                        weapon.OnBeforeSwing(m_Mobile, combatant); //OnBeforeSwing for checking in regards to being hidden and whatnot
-                        m_Mobile.RevealingAction();
-                        m_Mobile.m_NextCombatTime = Core.TickCount + (int)weapon.OnSwing(m_Mobile, combatant).TotalMilliseconds;
+                        weapon.OnBeforeSwing (m_Mobile, combatant);
+                        m_Mobile.RevealingAction ();
+                        m_Mobile.m_NextCombatTime = Core.TickCount + (int)weapon.OnSwing (m_Mobile, combatant).TotalMilliseconds;
                     }
 				}
 			}
 		}
-
+		
 		private class ExpireCombatantTimer : Timer
 		{
 			private readonly Mobile m_Mobile;
