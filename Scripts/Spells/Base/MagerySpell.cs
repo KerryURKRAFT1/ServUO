@@ -152,5 +152,18 @@ namespace Server.Spells
         		}
             }
 		}
+ 
+		public override void Explode (BaseExplosionPotion pot)
+        {
+        	if (pot != null && CheckSequence())
+            {
+                pot.Explode (this.Caster, true, pot.GetWorldLocation(), pot.Map);
+                
+                this.Caster.MovingParticles (pot, 0x36E4, 5, 0, false, true, 3006, 4006, 0);                
+                this.Caster.PlaySound (0x1E5);
+            }
+
+        	base.Explode (pot);
+       	}
     }
 }
