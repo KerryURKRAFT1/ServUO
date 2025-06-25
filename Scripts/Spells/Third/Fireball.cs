@@ -1,6 +1,7 @@
 using System;
 using Server.Targeting;
 using Server.Network;
+using Server.Items;
 
 namespace Server.Spells.Third
 {
@@ -45,7 +46,14 @@ namespace Server.Spells.Third
 
         public override void OnCast()
         {
-        	Target ((IDamageable)ObjectTargeted);
+        	if (ObjectTargeted is BaseExplosionPotion)
+        	{
+        		Explode ((BaseExplosionPotion)ObjectTargeted);
+        	}
+        	else
+        	{
+        		Target ((IDamageable)ObjectTargeted);
+        	}
         }
 
         public void Target(IDamageable m)
@@ -109,7 +117,7 @@ namespace Server.Spells.Third
 
             protected override void OnTarget(Mobile from, object o)
             {
-                if (o is IDamageable)
+                if (o is IDamageable || o is BaseExplosionPotion)
                 {
                    	if (!this.m_Owner.StartSequence(o))
                 	{
