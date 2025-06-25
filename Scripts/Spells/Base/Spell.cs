@@ -590,7 +590,7 @@ namespace Server.Spells
 
 			if (m_Caster.AccessLevel > AccessLevel.Player)
 			{
-				m_Caster.SendMessage(48, String.Format("[Staff] {0} {1} secs / {2} mana", Name, GetCastDelay().TotalSeconds, (int)(m_Mana/4)));
+				m_Caster.SendMessage(48, String.Format("[Staff] {0} {1} secs & {2} mana", Name, GetCastDelay().TotalSeconds, (int)(m_Mana/4)));
 			}
 			else
 			{
@@ -643,16 +643,21 @@ namespace Server.Spells
 				if (type == DisturbType.Hurt) //copy Kerry's Mod
 				{
 					DoHurtFizzle();
+					return;
 				}
 				
-				FinishSequence();
+				DoFizzle();
 			}
 		}
 
 		public virtual void DoHurtFizzle()
 		{
+			m_Caster.LocalOverheadMessage(MessageType.Regular, 0x3B2, 502632); // The spell fizzles.
+
 			m_Caster.FixedEffect(0x3735, 6, 30);
 			m_Caster.PlaySound(0x5C);
+
+			FinishSequence();
 		}
 
 		public virtual void OnDisturb(DisturbType type, bool message)
@@ -895,6 +900,11 @@ namespace Server.Spells
 
 		public virtual void CheckLOS()
 		{ }
+
+		public virtual void Explode (BaseExplosionPotion pot)
+		{ 
+        	FinishSequence();
+		}
 
 		public virtual void OnBeginCast()
 		{ }
@@ -1336,7 +1346,7 @@ namespace Server.Spells
 
 			if (m_Caster.AccessLevel > AccessLevel.Player)
 			{
-				m_Caster.SendMessage(48, String.Format("[Staff] {0} {1} secs / {2} mana", Name, GetCastDelay().TotalSeconds, m_Mana));
+				m_Caster.SendMessage(48, String.Format("[Staff] {0} {1} secs & {2} mana", Name, GetCastDelay().TotalSeconds, m_Mana));
 			}
 			else			
 			{
