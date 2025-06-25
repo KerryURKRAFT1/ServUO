@@ -16,6 +16,8 @@ namespace Server.Items
 {
 	public abstract class BaseRanged : BaseMeleeWeapon
 	{
+		private static readonly bool m_ArchersCanMove = Config.Get("Custom_Settings.ArchersCanMove", false);
+
 		public abstract int EffectID { get; }
 		public abstract Type AmmoType { get; }
 		public abstract Item Ammo { get; }
@@ -69,7 +71,7 @@ namespace Server.Items
 
 			// Make sure we've been standing still for .25/.5/1 second depending on Era
 			//if (Core.TickCount - attacker.LastMoveTime >= (Core.SE ? 250 : Core.AOS ? 500 : 1000) ||
-				if (Core.UOR ||
+				if (m_ArchersCanMove ||
 				Core.TickCount - attacker.LastMoveTime >= (Core.SE ? 250 : Core.AOS ? 500 : 1000) ||
 				(Core.AOS && WeaponAbility.GetCurrentAbility(attacker) is MovingShot))
 			{
