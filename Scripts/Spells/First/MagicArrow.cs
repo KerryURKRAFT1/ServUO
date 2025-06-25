@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using Server.Targeting;
 using Server.Network;
+using Server.Items;
 
 namespace Server.Spells.First
 {
@@ -55,7 +56,14 @@ namespace Server.Spells.First
 
         public override void OnCast()
         {
-        	Target ((IDamageable)ObjectTargeted);
+        	if (ObjectTargeted is BaseExplosionPotion)
+        	{
+        		Explode ((BaseExplosionPotion)ObjectTargeted);
+        	}
+        	else
+        	{
+        		Target ((IDamageable)ObjectTargeted);
+        	}
         }
 
         public void Target(IDamageable d)
@@ -124,7 +132,7 @@ namespace Server.Spells.First
 
             protected override void OnTarget(Mobile from, object o)
             {
-                if (o is IDamageable)
+                if (o is IDamageable || o is BaseExplosionPotion)
                 {
                  	if (!this.m_Owner.StartSequence(o))
                 	{
@@ -134,7 +142,7 @@ namespace Server.Spells.First
                 else
                 {
 	              	from.SendLocalizedMessage(1005213); // You can't do that
-                }
+                } 
             }
         }
     }
