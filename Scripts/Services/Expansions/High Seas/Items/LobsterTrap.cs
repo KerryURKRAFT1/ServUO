@@ -1,4 +1,4 @@
-﻿using Server;
+using Server;
 using System;
 using System.Collections.Generic;
 using Server.Mobiles;
@@ -357,7 +357,7 @@ namespace Server.Items
                 return true;
 
             //fel rules
-            if (from.Map != null && from.Map.Rules == MapRules.FeluccaRules)
+            if (from.Map != null && from.Map.Rules == MapRules.FeluccaRulesNone)
             {
                 from.CriminalAction(true);
                 from.SendLocalizedMessage(1149823); //The owner of the lobster trap notices you committing a criminal act!
