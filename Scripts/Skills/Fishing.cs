@@ -11,7 +11,9 @@ namespace Server.Engines.Harvest
 {
     public class Fishing : HarvestSystem
     {
-        private static Fishing m_System;
+		private static readonly bool m_StamBlock = Config.Get("Custom_Settings.StamBlock", false);
+
+		private static Fishing m_System;
 
         public static Fishing System
         {
@@ -1024,7 +1026,7 @@ namespace Server.Engines.Harvest
                         else
                         {
                             if (from.AccessLevel == AccessLevel.Player)
-                                bank.Consume(Convert.ToInt32(map != null && map.Rules == MapRules.FeluccaRules ? Math.Ceiling(item.Amount / 2.0) : item.Amount), from);
+                                bank.Consume(Convert.ToInt32(map != null && map.Rules == (m_StamBlock ? MapRules.FeluccaRulesBlock:MapRules.FeluccaRulesNone) ? Math.Ceiling(item.Amount / 2.0) : item.Amount), from);
 
                             if (Give(from, item, true))
                             {
@@ -1073,7 +1075,7 @@ namespace Server.Engines.Harvest
                 {
                     double chance = (skillValue - entry.m_MinSkill) / (entry.m_MaxSkill - entry.m_MinSkill);
 
-                    if (map != null && map.Rules == MapRules.FeluccaRules)
+                    if (map != null && map.Rules ==(m_StamBlock ? MapRules.FeluccaRulesBlock:MapRules.FeluccaRulesNone))
                         chance *= 1.5;
 
                     if (chance > Utility.RandomDouble())
