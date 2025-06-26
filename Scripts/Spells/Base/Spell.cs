@@ -71,6 +71,10 @@ namespace Server.Spells
 {
 	public abstract class Spell : ISpell
 	{
+		private static readonly bool m_LoseTargetOnAllDisrupts = Config.Get("Custom_Settings.LoseTargetOnAllDisrupts", true);
+		private static readonly bool m_LoseTargetOnHurtDisruptOnly = Config.Get("Custom_Settings.LoseTargetOnHurtDisruptOnly", false);
+		private static readonly bool m_LoseTargetOnAllFizzles = Config.Get("Custom_Settings.LoseTargetOnAllFizzles", false);
+
 		private readonly Mobile m_Caster;
 		private readonly Item m_Scroll;
 		private readonly SpellInfo m_Info;
@@ -597,6 +601,12 @@ namespace Server.Spells
 				m_Caster.Mana -= (int)(m_Mana/4);
 			}
 			
+			if (m_LoseTargetOnAllFizzles)
+			{
+				m_Caster.Combatant = null;
+				Target.Cancel(m_Caster);
+			}
+
 			FinishSequence();
 		}
 
@@ -628,7 +638,7 @@ namespace Server.Spells
 			if (m_State == SpellState.Precasting || (m_State == SpellState.Sequencing && !firstCircle && this is MagerySpell && ((MagerySpell)this).Circle != SpellCircle.First))
 			{
 				m_Disturbed = true;
-				
+								
 				OnDisturb(type, true);
 
 				if (m_State == SpellState.Precasting)
@@ -643,6 +653,7 @@ namespace Server.Spells
 				if (type == DisturbType.Hurt) //copy Kerry's Mod
 				{
 					DoHurtFizzle();
+
 					return;
 				}
 				
@@ -657,6 +668,12 @@ namespace Server.Spells
 			m_Caster.FixedEffect(0x3735, 6, 30);
 			m_Caster.PlaySound(0x5C);
 
+			if (m_LoseTargetOnHurtDisruptOnly)
+			{
+				m_Caster.Combatant = null;
+				Target.Cancel(m_Caster);
+			}
+
 			FinishSequence();
 		}
 
@@ -665,6 +682,12 @@ namespace Server.Spells
 			if (message)
 			{
 				m_Caster.SendLocalizedMessage(500641); // Your concentration is disturbed, thus ruining thy spell.
+			}
+
+			if (m_LoseTargetOnAllDisrupts)
+			{
+				m_Caster.Combatant = null;
+				Target.Cancel(m_Caster);
 			}
 		}
 
@@ -1084,7 +1107,7 @@ namespace Server.Spells
 		public virtual void FinishSequence()
 		{
 			m_State = SpellState.None;
-
+			
 			if (m_Caster.Spell == this)
 			{
 				m_Caster.Spell = null;
