@@ -1485,7 +1485,7 @@ namespace Server.Items
 
                 if (killer != null || luck > 0)
                 {
-                    if (map != null && map.Rules == MapRules.FeluccaRules)
+                    if (map != null && map.Rules == MapRules.FeluccaRulesNone)
                     {
                         luck += RandomItemGenerator.FeluccaLuckBonus;
                         budgetBonus = RandomItemGenerator.FeluccaBudgetBonus;
