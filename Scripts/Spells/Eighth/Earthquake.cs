@@ -6,7 +6,9 @@ namespace Server.Spells.Eighth
 {
     public class EarthquakeSpell : MagerySpell
     {
-        private static readonly SpellInfo m_Info = new SpellInfo(
+		private static readonly bool m_EarthQuakeTestDisrupt = Config.Get("Custom_Settings.EarthQuakeTestDisrupt", false);
+
+		private static readonly SpellInfo m_Info = new SpellInfo(
             "Earthquake", "In Vas Por",
             233,
             9012,
@@ -20,10 +22,15 @@ namespace Server.Spells.Eighth
         {
         }
 
-//        public override TimeSpan GetCastDelay() //testing disturb
-//        {
-//            return base.GetCastDelay() + TimeSpan.FromSeconds(10.0);
-//        }
+        public override TimeSpan GetCastDelay() //testing disturb
+        {
+        	if (m_EarthQuakeTestDisrupt)
+        	{
+	            return TimeSpan.FromSeconds(10.0);
+        	}
+        	
+        	return base.GetCastDelay();
+        }
 
         public override SpellCircle Circle
         {
