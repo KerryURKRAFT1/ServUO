@@ -183,6 +183,7 @@ namespace Server.Mobiles
 
     public class BaseCreature : Mobile, IHonorTarget
     {
+		public static readonly bool StamBlock = Config.Get("Custom_Settings.StamBlock", false);
 		private static readonly bool m_MobsPassThroughObjects = Config.Get("Custom_Settings.MobsPassThroughObjects", false);
 
 		public const int MaxLoyalty = 100;
