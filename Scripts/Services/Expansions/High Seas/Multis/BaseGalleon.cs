@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Server;
 using Server.Mobiles;
 using Server.Items;
@@ -452,7 +452,7 @@ namespace Server.Multis
 
         public virtual bool IsEnemy(BaseGalleon galleon)
         {
-            if(this.Map != null && this.Map.Rules == MapRules.FeluccaRules)
+            if(this.Map != null && this.Map.Rules == MapRules.FeluccaRulesNone)
                 return true;
 
             Mobile thisOwner = Owner;
@@ -466,7 +466,7 @@ namespace Server.Multis
 
         public virtual bool IsEnemy(Mobile from)
         {
-            if (this.Map != null && this.Map.Rules == MapRules.FeluccaRules)
+            if (this.Map != null && this.Map.Rules == MapRules.FeluccaRulesNone)
                 return true;
 
             Mobile thisOwner = Owner;
