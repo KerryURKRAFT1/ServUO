@@ -1877,116 +1877,141 @@ namespace Server.Mobiles
                     from.SendLocalizedMessage(500467); // You carve some meat, which remains on the corpse.
                 }
 
-                if (hides != 0)
+
+                // ONLY IF  Core.UOR, ONLY REGULAR HIDES, NO SCALE, NO DRAGONBLOOD
+                if (Core.UOR)
                 {
-                    Item holding = from.Weapon as Item;
-
-                    if (Core.AOS && (holding is SkinningKnife || with is ButchersWarCleaver))
+                    // only REGULAR hides, no scales, no  dragonblood
+                    //if (hides != 0 && HideType == HideType.Regular)
+                    if (hides != 0)
                     {
-                        Item leather = null;
-
-                        switch (HideType)
-                        {
-                            case HideType.Regular:
-                                leather = new Leather(hides);
-                                break;
-                            case HideType.Spined:
-                                leather = new SpinedLeather(hides);
-                                break;
-                            case HideType.Horned:
-                                leather = new HornedLeather(hides);
-                                break;
-                            case HideType.Barbed:
-                                leather = new BarbedLeather(hides);
-                                break;
-                        }
-
-                        if (leather != null)
-                        {
-                            if (!from.PlaceInBackpack(leather))
-                            {
-                                corpse.DropItem(leather);
-                                from.SendLocalizedMessage(500471); // You skin it, and the hides are now in the corpse.
-                            }
-                            else
-                            {
-                                from.SendLocalizedMessage(1073555); // You skin it and place the cut-up hides in your backpack.
-                            }
-                        }
-                    }
-                    else
-                    {
-                        if (HideType == HideType.Regular)
-                        {
-                            corpse.DropItem(new Hides(hides));
-                        }
-                        else if (HideType == HideType.Spined)
-                        {
-                            corpse.DropItem(new SpinedHides(hides));
-                        }
-                        else if (HideType == HideType.Horned)
-                        {
-                            corpse.DropItem(new HornedHides(hides));
-                        }
-                        else if (HideType == HideType.Barbed)
-                        {
-                            corpse.DropItem(new BarbedHides(hides));
-                        }
-
+                        corpse.DropItem(new Hides(hides));
                         from.SendLocalizedMessage(500471); // You skin it, and the hides are now in the corpse.
                     }
+
+                        corpse.Carved = true;
+
+                        if (corpse.IsCriminalAction(from))
+                        {
+                            from.CriminalAction(true);
+                        }
+                    // 
                 }
-
-                if (scales != 0)
+                else
                 {
-                    ScaleType sc = ScaleType;
+                    // --- LOGIC ORIGINAl ---
 
-                    switch (sc)
+                    if (hides != 0)
                     {
-                        case ScaleType.Red:
-                            corpse.AddCarvedItem(new RedScales(scales), from);
-                            break;
-                        case ScaleType.Yellow:
-                            corpse.AddCarvedItem(new YellowScales(scales), from);
-                            break;
-                        case ScaleType.Black:
-                            corpse.AddCarvedItem(new BlackScales(scales), from);
-                            break;
-                        case ScaleType.Green:
-                            corpse.AddCarvedItem(new GreenScales(scales), from);
-                            break;
-                        case ScaleType.White:
-                            corpse.AddCarvedItem(new WhiteScales(scales), from);
-                            break;
-                        case ScaleType.Blue:
-                            corpse.AddCarvedItem(new BlueScales(scales), from);
-                            break;
-                        case ScaleType.All:
+                        Item holding = from.Weapon as Item;
+
+                        if (Core.AOS && (holding is SkinningKnife || with is ButchersWarCleaver))
+                        {
+                            Item leather = null;
+
+                            switch (HideType)
                             {
-                                corpse.AddCarvedItem(new RedScales(scales), from);
-                                corpse.AddCarvedItem(new YellowScales(scales), from);
-                                corpse.AddCarvedItem(new BlackScales(scales), from);
-                                corpse.AddCarvedItem(new GreenScales(scales), from);
-                                corpse.AddCarvedItem(new WhiteScales(scales), from);
-                                corpse.AddCarvedItem(new BlueScales(scales), from);
-                                break;
+                                case HideType.Regular:
+                                    leather = new Leather(hides);
+                                    break;
+                                case HideType.Spined:
+                                    leather = new SpinedLeather(hides);
+                                    break;
+                                case HideType.Horned:
+                                    leather = new HornedLeather(hides);
+                                    break;
+                                case HideType.Barbed:
+                                    leather = new BarbedLeather(hides);
+                                    break;
                             }
+
+                            if (leather != null)
+                            {
+                                if (!from.PlaceInBackpack(leather))
+                                {
+                                    corpse.DropItem(leather);
+                                    from.SendLocalizedMessage(500471); // You skin it, and the hides are now in the corpse.
+                                }
+                                else
+                                {
+                                    from.SendLocalizedMessage(1073555); // You skin it and place the cut-up hides in your backpack.
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if (HideType == HideType.Regular)
+                            {
+                                corpse.DropItem(new Hides(hides));
+                            }
+                            else if (HideType == HideType.Spined)
+                            {
+                                corpse.DropItem(new SpinedHides(hides));
+                            }
+                            else if (HideType == HideType.Horned)
+                            {
+                                corpse.DropItem(new HornedHides(hides));
+                            }
+                            else if (HideType == HideType.Barbed)
+                            {
+                                corpse.DropItem(new BarbedHides(hides));
+                            }
+
+                            from.SendLocalizedMessage(500471); // You skin it, and the hides are now in the corpse.
+                        }
                     }
 
-                    from.SendMessage("You cut away some scales, but they remain on the corpse.");
-                }
+                    if (scales != 0)
+                    {
+                        ScaleType sc = ScaleType;
 
-                if (dragonblood != 0)
-                {
-                    corpse.AddCarvedItem(new DragonBlood(dragonblood), from);
-                    from.SendLocalizedMessage(500467); // You carve some meat, which remains on the corpse.
-                }
+                        switch (sc)
+                        {
+                            case ScaleType.Red:
+                                corpse.AddCarvedItem(new RedScales(scales), from);
+                                break;
+                            case ScaleType.Yellow:
+                                corpse.AddCarvedItem(new YellowScales(scales), from);
+                                break;
+                            case ScaleType.Black:
+                                corpse.AddCarvedItem(new BlackScales(scales), from);
+                                break;
+                            case ScaleType.Green:
+                                corpse.AddCarvedItem(new GreenScales(scales), from);
+                                break;
+                            case ScaleType.White:
+                                corpse.AddCarvedItem(new WhiteScales(scales), from);
+                                break;
+                            case ScaleType.Blue:
+                                corpse.AddCarvedItem(new BlueScales(scales), from);
+                                break;
+                            case ScaleType.All:
+                                {
+                                    corpse.AddCarvedItem(new RedScales(scales), from);
+                                    corpse.AddCarvedItem(new YellowScales(scales), from);
+                                    corpse.AddCarvedItem(new BlackScales(scales), from);
+                                    corpse.AddCarvedItem(new GreenScales(scales), from);
+                                    corpse.AddCarvedItem(new WhiteScales(scales), from);
+                                    corpse.AddCarvedItem(new BlueScales(scales), from);
+                                    break;
+                                }
+                        }
 
-                corpse.Carved = true;
+                        from.SendMessage("You cut away some scales, but they remain on the corpse.");
+                    }
 
-                if (corpse.IsCriminalAction(from))
-                {
-                    from.CriminalAction(true);
+                    if (dragonblood != 0)
+                    {
+                        corpse.AddCarvedItem(new DragonBlood(dragonblood), from);
+                        from.SendLocalizedMessage(500467); // You carve some meat, which remains on the corpse.
+                    }
+
+                    corpse.Carved = true;
+
+                    if (corpse.IsCriminalAction(from))
+                    {
+                        from.CriminalAction(true);
+                    }
                 }
             }
         }

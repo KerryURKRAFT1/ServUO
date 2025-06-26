@@ -60,7 +60,7 @@ namespace Server.Mobiles
         public override void OnCarve(Mobile from, Corpse corpse, Item with)
         {
             if (corpse != null)
-                corpse.DropItem(new DragonBlood(8));
+                //corpse.DropItem(new DragonBlood(8));
 
             base.OnCarve(from, corpse, with);
         }
