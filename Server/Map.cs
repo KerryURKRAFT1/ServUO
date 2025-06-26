@@ -122,9 +122,7 @@ using System.Linq;
 #endregion
 
 namespace Server
-{
-	private static readonly bool m_StamBlock = Config.Get("Custom_Settings.StamBlock", false);
-	
+{	
 	[Flags]
 	public enum MapRules
 	{
@@ -134,7 +132,8 @@ namespace Server
 		BeneficialRestrictions = 0x0004, // Disallow performing beneficial actions on criminals/murderers
 		HarmfulRestrictions = 0x0008, // Disallow performing harmful actions on innocents
 		TrammelRules = FreeMovement | BeneficialRestrictions | HarmfulRestrictions,
-		FeluccaRules = m_StamBlock ? FreeMovement:None
+		FeluccaRulesBlock = FreeMovement,
+		FeluccaRulesNone = None
 	}
 
 	public interface IPooledEnumerable : IEnumerable
