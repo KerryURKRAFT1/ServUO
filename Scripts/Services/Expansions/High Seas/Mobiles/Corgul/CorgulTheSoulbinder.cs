@@ -1,4 +1,4 @@
-﻿using Server;
+using Server;
 using System;
 using System.Collections.Generic;
 using Server.Items;
@@ -90,8 +90,8 @@ namespace Server.Mobiles
             m_NextReturn = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(120, 180));
         }
 
-        public double SharedChance { get { return this.Map != null && this.Map.Rules == MapRules.FeluccaRules ? .12 : .08; } }
-        public double DecorativeChance { get { return this.Map != null && this.Map.Rules == MapRules.FeluccaRules ? .40 : .25; } }
+        public double SharedChance { get { return this.Map != null && this.Map.Rules == MapRules.FeluccaRulesNone ? .12 : .08; } }
+        public double DecorativeChance { get { return this.Map != null && this.Map.Rules == MapRules.FeluccaRulesNone ? .40 : .25; } }
 
         public override bool OnBeforeDeath()
         {
