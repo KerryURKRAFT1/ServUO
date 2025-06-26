@@ -8,7 +8,9 @@ namespace Server.Spells.Fourth
 {
     public class ArchCureSpell : MagerySpell
     {
-        private static readonly SpellInfo m_Info = new SpellInfo(
+		private static readonly bool m_StamBlock = Config.Get("Custom_Settings.StamBlock", false);
+
+		private static readonly SpellInfo m_Info = new SpellInfo(
             "Arch Cure", "Vas An Nox",
             215,
             9061,
@@ -72,7 +74,7 @@ namespace Server.Spells.Fourth
 
                 if (map != null)
                 {
-                    bool feluccaRules = (map.Rules == MapRules.FeluccaRules);
+                	bool feluccaRules = (map.Rules == (m_StamBlock ? MapRules.FeluccaRulesBlock:MapRules.FeluccaRulesNone));
 
                     // You can target any living mobile directly, beneficial checks apply
                     if (directTarget != null && this.Caster.CanBeBeneficial(directTarget, false))
