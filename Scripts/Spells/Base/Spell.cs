@@ -603,7 +603,6 @@ namespace Server.Spells
 			
 			if (m_LoseTargetOnAllFizzles)
 			{
-				m_Caster.Combatant = null;
 				Target.Cancel(m_Caster);
 			}
 
@@ -670,7 +669,6 @@ namespace Server.Spells
 
 			if (m_LoseTargetOnHurtDisruptOnly)
 			{
-				m_Caster.Combatant = null;
 				Target.Cancel(m_Caster);
 			}
 
@@ -686,7 +684,6 @@ namespace Server.Spells
 
 			if (m_LoseTargetOnAllDisrupts)
 			{
-				m_Caster.Combatant = null;
 				Target.Cancel(m_Caster);
 			}
 		}
