@@ -245,33 +245,22 @@ namespace Server
 			typeof(SummonEarthElementalScroll), typeof(SummonFireElementalScroll), typeof(SummonWaterElementalScroll)
 		};
 
-
-        // REMOVED NECRO SCROLL FROM LOOT FOR UOR
-        /*
         private static readonly Type[] m_NecromancyScrollTypes = new[]
-        {
-            typeof(AnimateDeadScroll), typeof(BloodOathScroll), typeof(CorpseSkinScroll), typeof(CurseWeaponScroll),
-            typeof(EvilOmenScroll), typeof(HorrificBeastScroll), typeof(LichFormScroll), typeof(MindRotScroll),
-            typeof(PainSpikeScroll), typeof(PoisonStrikeScroll), typeof(StrangleScroll), typeof(SummonFamiliarScroll),
-            typeof(VampiricEmbraceScroll), typeof(VengefulSpiritScroll), typeof(WitherScroll), typeof(WraithFormScroll)
-        };
-        */
+		{
+			typeof(AnimateDeadScroll), typeof(BloodOathScroll), typeof(CorpseSkinScroll), typeof(CurseWeaponScroll),
+			typeof(EvilOmenScroll), typeof(HorrificBeastScroll), typeof(LichFormScroll), typeof(MindRotScroll),
+			typeof(PainSpikeScroll), typeof(PoisonStrikeScroll), typeof(StrangleScroll), typeof(SummonFamiliarScroll),
+			typeof(VampiricEmbraceScroll), typeof(VengefulSpiritScroll), typeof(WitherScroll), typeof(WraithFormScroll)
+		};
 
-        /*
         private static readonly Type[] m_SENecromancyScrollTypes = new[]
-        {
-            typeof(AnimateDeadScroll), typeof(BloodOathScroll), typeof(CorpseSkinScroll), typeof(CurseWeaponScroll),
-            typeof(EvilOmenScroll), typeof(HorrificBeastScroll), typeof(LichFormScroll), typeof(MindRotScroll),
-            typeof(PainSpikeScroll), typeof(PoisonStrikeScroll), typeof(StrangleScroll), typeof(SummonFamiliarScroll),
-            typeof(VampiricEmbraceScroll), typeof(VengefulSpiritScroll), typeof(WitherScroll), typeof(WraithFormScroll),
-            typeof(ExorcismScroll)
-        };
-        */
-
-        //private static readonly Type[] m_NecromancyScrollTypes = new Type[0];
-        private static readonly Type[] m_NecromancyScrollTypes = { };
-        private static readonly Type[] m_SENecromancyScrollTypes = { };
-
+		{
+			typeof(AnimateDeadScroll), typeof(BloodOathScroll), typeof(CorpseSkinScroll), typeof(CurseWeaponScroll),
+			typeof(EvilOmenScroll), typeof(HorrificBeastScroll), typeof(LichFormScroll), typeof(MindRotScroll),
+			typeof(PainSpikeScroll), typeof(PoisonStrikeScroll), typeof(StrangleScroll), typeof(SummonFamiliarScroll),
+			typeof(VampiricEmbraceScroll), typeof(VengefulSpiritScroll), typeof(WitherScroll), typeof(WraithFormScroll),
+			typeof(ExorcismScroll)
+		};
 
         private static readonly Type[] m_PaladinScrollTypes = new Type[0];
 
@@ -916,7 +905,8 @@ namespace Server
 
         public static SpellScroll RandomScroll(int minIndex, int maxIndex, SpellbookType type)
         {
-            Type[] types;
+/*
+        	Type[] types;
 
             switch (type)
             {
@@ -937,8 +927,8 @@ namespace Server
                     types = m_MysticismScrollTypes;
                     break;
             }
-
-            return Construct(types, Utility.RandomMinMax(minIndex, maxIndex)) as SpellScroll;
+*/
+            return Construct(m_RegularScrollTypes, Utility.RandomMinMax(minIndex, maxIndex)) as SpellScroll;
         }
 
         public static BaseBook RandomGrimmochJournal()
