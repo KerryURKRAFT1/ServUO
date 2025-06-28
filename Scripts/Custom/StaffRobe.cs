@@ -8,36 +8,36 @@ namespace Server.Items
         private AccessLevel m_GMLevel;
 
         [Constructable]
-        public GMRobe() : base(AccessLevel.Player, 0, 0x2683)
+        public GMRobe() : base(AccessLevel.Player, 0, 0x204F)
         {
             LootType = LootType.Blessed;
             Name = "GM Robe";
         }
         
         [Constructable]
-        public GMRobe(Mobile from) : base(from.AccessLevel, 0, 0x2683)
+        public GMRobe(Mobile m) : base(m.AccessLevel, 0, 0x204F)
         {
-            m_Owner = from;
-            m_GMLevel = from.AccessLevel;
+            m_Owner = m;
+            m_GMLevel = m.AccessLevel;
 
         	LootType = LootType.Blessed;
-        	Name = $"{from.Name}'s GM Robe";
+        	Name = $"{m.Name}'s GM Robe";
         }
         
-        public override bool OnEquip(Mobile from)
+        public override bool OnEquip(Mobile m)
         {
-        	if (from.IsStaff() && m_Owner == null)
+        	if (m.IsStaff() && m_Owner == null)
             {
-                m_Owner = from;
+                m_Owner = m;
 
-                Name = $"{from.Name}'s GM Robe";
+                Name = $"{m.Name}'s GM Robe";
                 	        	
-                m_GMLevel = from.AccessLevel;				
+                m_GMLevel = m.AccessLevel;				
         	}
         	
-            DoHue(from);
+            DoHue(m);
             
-	       	return base.OnEquip(from);
+	       	return base.OnEquip(m);
         }
 
         public override void OnRemoved(object parent)
@@ -45,39 +45,39 @@ namespace Server.Items
             Hue = 0;
         }
 
-        public override void OnDoubleClick(Mobile from)
+        public override void OnDoubleClick(Mobile m)
         {
-            if(m_Owner == null && from.IsStaff())
+            if(m_Owner == null && m.IsStaff())
             {
-                m_Owner = from;
+                m_Owner = m;
                 
-                m_GMLevel = from.AccessLevel;
+                m_GMLevel = m.AccessLevel;
             
-                from.SendMessage(48, "This robe has been assigned to you.");
+                m.SendMessage(48, "This robe has been assigned to you.");
 
-	            Name = $"{from.Name}'s GM Robe";
+	            Name = $"{m.Name}'s GM Robe";
             }
-            else if (m_Owner == from)
+            else if (m_Owner == m)
             {
-            	GMRobe robe = from.FindItemOnLayer(Layer.OuterTorso) as GMRobe;
+	            GMRobe robe = m.FindItemOnLayer(Layer.Backpack) as GMRobe ?? m.FindItemOnLayer(Layer.OuterTorso) as GMRobe;
 
             	if (robe != null)
             	{
-	            	if (from.IsStaff())
+	            	if (m.IsStaff())
 	                {
-	                    from.SendMessage(48, "You are now a player");
+	                    m.SendMessage(48, "You are now a player");
 	                    
-	                    from.AccessLevel = AccessLevel.Player;
+	                    m.AccessLevel = AccessLevel.Player;
 
-	                    from.Blessed = false;
+	                    m.Blessed = false;
 	                }
 	            	else
 	                {
-	                    from.SendMessage(48, "You are now staff");
+	                    m.SendMessage(48, "You are now staff");
 	                    
-	                    from.AccessLevel = m_GMLevel;
+	                    m.AccessLevel = m_GMLevel;
 	                    
-	                    from.Blessed = true;
+	                    m.Blessed = true;
 	            	}
             	}
             }
@@ -86,12 +86,12 @@ namespace Server.Items
             	Delete();
             }
 	            
-            DoHue(from);
+            DoHue(m);
         }
 		    		
-		private void DoHue(Mobile from)
+		private void DoHue(Mobile m)
         {
-            switch (from.AccessLevel)
+            switch (m.AccessLevel)
             {
             	default:
                     Hue = 0;
@@ -158,6 +158,11 @@ namespace Server.Items
                     break;
             	}
             }
+            
+            if (ItemID != 0x204F)
+            {
+            	ItemID = 0x204F;
+            }
         }
 
         public static void Initialize()
@@ -184,9 +189,9 @@ namespace Server.Items
 
         public static void EventSink_PlayerDeath(PlayerDeathEventArgs e)
 		{	
-    		Mobile from = e.Mobile;
+    		Mobile m = e.Mobile;
     		
-    		if (from == m_Owner)
+    		if (m == m_Owner)
     		{
     			new AutoResTimer(m_Owner).Start();
     		}
