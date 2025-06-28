@@ -18,17 +18,18 @@ namespace Server.Custom
         {
             Mobile from = e.Mobile;
 
-            Spellbook book = new Spellbook((ulong)0xFFFFFFFF, 0xFFFF); // Magery (tutte le magie)
-            from.AddToBackpack(book);
-            from.SendMessage(1152, "Hai ricevuto uno spellbook di magery completo!");
-        }
-    }
+            Spellbook book = new Spellbook( ulong.MaxValue ); // Magery (tutte le magie)
 
-    public class FullSpellbookScript
-    {
-        public static void Initialize()
-        {
-            FullSpellbookCommand.Initialize();
+            book.LootType = LootType.Blessed;
+
+            Container pack = from.Backpack;
+
+            if (pack != null)
+                pack.DropItem(book);
+            else
+                book.Delete();
+
+            from.SendMessage(1152, "Hai ricevuto uno spellbook di magery completo!");
         }
     }
 }
