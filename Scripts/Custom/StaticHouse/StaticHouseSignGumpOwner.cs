@@ -28,7 +28,7 @@ namespace Server.StaticHouse
             AddLabel(80, 10, 1152, "Gestione Casa Cittadina");
 
             AddLabel(20, 40, 0, "Nome:");
-            AddLabel(90, 40, 33, m_Sign.HouseName != null ? m_Sign.HouseName : "N/A");
+            AddLabel(90, 40, 33, !string.IsNullOrEmpty(m_Sign.HouseName) ? m_Sign.HouseName : "No one");
 
             AddLabel(20, 65, 0, "Proprietario:");
             AddLabel(120, 65, 33, m_User.Name);
@@ -57,8 +57,10 @@ namespace Server.StaticHouse
             }
             else if (info.ButtonID == 2) // Abbandona
             {
+                m_Sign.UnassignKeysFromDoors(); // azzera la serratura delle porte
                 m_Sign.Owner = null;
                 m_Sign.ForSale = true;
+                m_Sign.HouseName = null; // Reset nome casa!
                 m_User.SendMessage("Hai abbandonato la casa, ora è tornata disponibile.");
             }
         }

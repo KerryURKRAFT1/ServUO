@@ -1,4 +1,5 @@
 using System;
+using System.Linq; // aggiungi questa using!
 using Server;
 using Server.StaticHouse;
 
@@ -14,7 +15,8 @@ namespace Server.StaticHouse
 
         protected override void OnTick()
         {
-            foreach (Item item in World.Items.Values)
+            // Copia la collezione in una lista per enumerare in modo sicuro
+            foreach (Item item in World.Items.Values.ToList())
             {
                 StaticHouseSign sign = item as StaticHouseSign;
                 if (sign != null)

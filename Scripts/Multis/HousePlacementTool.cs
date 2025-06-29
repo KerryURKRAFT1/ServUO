@@ -5,6 +5,7 @@ using Server.Mobiles;
 using Server.Multis;
 using Server.Regions;
 using Server.Targeting;
+using Server.StaticHouse;
 
 namespace Server.Items
 {
@@ -207,7 +208,8 @@ namespace Server.Items
 
             if (index >= 0 && index < this.m_Entries.Length)
             {
-                if (this.m_From.AccessLevel < AccessLevel.GameMaster && BaseHouse.HasAccountHouse(this.m_From))
+                //if (this.m_From.AccessLevel < AccessLevel.GameMaster && BaseHouse.HasAccountHouse(this.m_From))
+                if (this.m_From.AccessLevel < AccessLevel.GameMaster && StaticHouseHelper.HasAnyHouse(this.m_From))
                     this.m_From.SendLocalizedMessage(501271); // You already own a house, you may not place another!
                 else
                     this.m_From.Target = new NewHousePlacementTarget(this.m_Entries, this.m_Entries[index]);
@@ -609,7 +611,8 @@ namespace Server.Items
             {
                 case HousePlacementResult.Valid:
                     {
-                        if (from.AccessLevel < AccessLevel.GameMaster && BaseHouse.HasAccountHouse(from))
+                        //if (from.AccessLevel < AccessLevel.GameMaster && BaseHouse.HasAccountHouse(from))
+                        if (from.AccessLevel < AccessLevel.GameMaster && StaticHouseHelper.HasAnyHouse(from))
                         {
                             from.SendLocalizedMessage(501271); // You already own a house, you may not place another!
                         }
@@ -706,7 +709,8 @@ namespace Server.Items
             {
                 case HousePlacementResult.Valid:
                     {
-                        if (from.AccessLevel < AccessLevel.GameMaster && BaseHouse.HasAccountHouse(from))
+                        //if (from.AccessLevel < AccessLevel.GameMaster && BaseHouse.HasAccountHouse(from))
+                        if (from.AccessLevel < AccessLevel.GameMaster && StaticHouseHelper.HasAnyHouse(from))
                         {
                             from.SendLocalizedMessage(501271); // You already own a house, you may not place another!
                         }

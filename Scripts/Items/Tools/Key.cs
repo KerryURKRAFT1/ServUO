@@ -241,6 +241,19 @@ namespace Server.Items
                 return;
             }
 
+            // Does this key open a static house that the player owns?
+            foreach (Item item in World.Items.Values)
+            {
+                Server.StaticHouse.StaticHouseSign sh = item as Server.StaticHouse.StaticHouseSign;
+                if (sh != null && sh.HouseKeyValue == this.KeyValue && sh.Owner == from)
+                {
+                    from.SendMessage("Select the object on the ground that you want to lock down in your home.");
+                    from.Target = new Server.StaticHouse.StaticLockdownTarget(sh);
+                    return; // DO NOT perform the basic key logic!
+                }
+            }
+
+
             Target t;
             int number;
 

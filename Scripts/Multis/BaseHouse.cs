@@ -13,6 +13,7 @@ using Server.Network;
 using Server.Regions;
 using Server.Targeting;
 using Server.Engines.Auction;
+using Server.StaticHouse;
 
 namespace Server.Multis
 {
@@ -1795,7 +1796,7 @@ namespace Server.Multis
                 bool valid = this.m_House != null && Sextant.Format(this.m_House.Location, this.m_House.Map, ref xLong, ref yLat, ref xMins, ref yMins, ref xEast, ref ySouth);
 
                 if (valid)
-                    location = String.Format("{0}° {1}'{2}, {3}° {4}'{5}", yLat, yMins, ySouth ? "S" : "N", xLong, xMins, xEast ? "E" : "W");
+                    location = String.Format("{0}ï¿½ {1}'{2}, {3}ï¿½ {4}'{5}", yLat, yMins, ySouth ? "S" : "N", xLong, xMins, xEast ? "E" : "W");
                 else
                     location = "unknown";
 
@@ -1835,7 +1836,8 @@ namespace Server.Multis
                 if (this.Deleted || this.m_House == null || this.m_House.Deleted || !this.m_House.IsOwner(from) || !from.CheckAlive() || !to.CheckAlive())
                     return false;
 
-                if (BaseHouse.HasAccountHouse(to))
+                //if (BaseHouse.HasAccountHouse(to))
+                if (StaticHouseHelper.HasAnyHouse(to))
                 {
                     from.SendLocalizedMessage(501388); // You cannot transfer ownership to another house owner or co-owner!
                     return false;
@@ -1919,7 +1921,8 @@ namespace Server.Multis
             }
             else if (to.Player)
             {
-                if (BaseHouse.HasAccountHouse(to))
+                //if (BaseHouse.HasAccountHouse(to))
+                if (StaticHouseHelper.HasAnyHouse(to))
                 {
                     from.SendLocalizedMessage(501388); // You cannot transfer ownership to another house owner or co-owner!
                 }
@@ -1983,7 +1986,8 @@ namespace Server.Multis
             }
             else if (to.Player)
             {
-                if (BaseHouse.HasAccountHouse(to))
+                //if (BaseHouse.HasAccountHouse(to))
+                if (StaticHouseHelper.HasAnyHouse(to))
                 {
                     from.SendLocalizedMessage(501388); // You cannot transfer ownership to another house owner or co-owner!
                 }

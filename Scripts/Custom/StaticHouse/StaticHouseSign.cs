@@ -228,6 +228,8 @@ namespace Server.StaticHouse
             }
         }
 
+
+
         public override void OnDoubleClick(Mobile from)
         {
             if (from.AccessLevel >= AccessLevel.GameMaster)
@@ -302,10 +304,11 @@ namespace Server.StaticHouse
 
         private void OnDecayExpired()
         {
-            RemoveDoorsInArea();
-            InvalidateAllKeys();
+            // RemoveDoorsInArea(); 
+            UnassignKeysFromDoors();
             m_Owner = null;
-            m_ForSale = true; // Torna in vendita
+            m_ForSale = true; // Back for Sale
+            m_HouseName = null; // Reset home name !
             InvalidateProperties();
         }
 
@@ -332,32 +335,19 @@ namespace Server.StaticHouse
             }
         }
 
-        // -------- SISTEMA PORTE/CHIAVI --------
+        // -------- SYSTEM DOORS / KEY  --------
 
-        // Invalida tutte le chiavi della casa su tutto il server e resetta le porte
-        private void InvalidateAllKeys()
+        public void UnassignKeysFromDoors()
         {
-            if (m_HouseKeyValue == 0)
-                return;
-
-            foreach (Mobile m in World.Mobiles.Values)
-            {
-                // Zaino
-                if (m.Backpack != null)
-                    RemoveKeysFromContainer(m.Backpack);
-
-                // Banca
-                if (m.BankBox != null)
-                    RemoveKeysFromContainer(m.BankBox);
-            }
-            // Resetta il valore delle porte associate (non obbligatorio, ma consigliato)
             foreach (BaseDoor door in m_AssociatedDoors)
             {
                 if (door != null)
-                    door.KeyValue = 0;
+                {
+                    door.KeyValue = 0;   // Nessuna serratura
+                    door.Locked = false; // (opzionale: la porta si apre senza chiave)
+                }
             }
-            // Resetta la chiave della casa
-            m_HouseKeyValue = 0;
+            m_HouseKeyValue = 0; // azzera la casa, nuove chiavi future saranno diverse
         }
 
         private void RemoveKeysFromContainer(Container cont)

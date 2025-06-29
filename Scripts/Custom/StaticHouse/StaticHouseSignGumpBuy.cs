@@ -3,6 +3,7 @@ using Server;
 using Server.Gumps;
 using Server.Mobiles;
 using Server.Items;
+using Server.Multis;
 using Server.StaticHouse;
 
 namespace Server.StaticHouse 
@@ -68,10 +69,22 @@ namespace Server.StaticHouse
             // --- ACQUISTO CASA ---
             if (info.ButtonID == 1 && m_Sign.ForSale && m_Sign.Owner == null)
             {
+                        // --- AGGIUNTA QUI IL CONTROLLO ---
+                if (m_Sign.AssociatedDoors == null || m_Sign.AssociatedDoors.Count == 0)
+                {
+                    m_User.SendMessage(33, "Errore: questa casa non ha porte associate. Contatta un GM.");
+                    return;
+                }
                 // --- CHECK KARMA/FAMA/TITOLO ---
                 if (m_User.Karma < m_Sign.RequiredKarma || m_User.Fame < m_Sign.RequiredFame)
                 {
                     m_User.SendMessage(33, "Non hai il titolo sufficiente (karma/fama) per acquistare questa casa.");
+                    return;
+                }
+                // --- CHECK FIND HOUSE PER ACCOUNT ---
+                if (BaseHouse.HasAccountHouse(m_User))
+                {
+                    m_User.SendMessage(33, "Non puoi possedere una casa statica se hai già una casa");
                     return;
                 }
 
@@ -122,6 +135,12 @@ namespace Server.StaticHouse
                 if (m_User.Karma < m_Sign.RequiredKarma || m_User.Fame < m_Sign.RequiredFame)
                 {
                     m_User.SendMessage(33, "Non hai il titolo sufficiente (karma/fama) per affittare questa casa.");
+                    return;
+                }
+                // ---CHECK FIND HOUSE PER ACCOUNT ---
+                if (BaseHouse.HasAccountHouse(m_User))
+                {
+                    m_User.SendMessage(33, "Non puoi possedere una casa statica se hai già una casa");
                     return;
                 }
 
