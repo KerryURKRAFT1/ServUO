@@ -8,6 +8,7 @@ namespace Server.Custom
         {
             // Inizializza patch ghost WAR mode
             GhostWarModePatch.Initialize();
+            SkillManagerCommand.Initialize();
 
             // Qui puoi aggiungere altre inizializzazioni custom future
         }

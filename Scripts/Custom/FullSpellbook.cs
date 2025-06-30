@@ -9,7 +9,9 @@ namespace Server.Custom
     {
         public static void Initialize()
         {
-            CommandSystem.Register("FullSpellbook", AccessLevel.GameMaster, new CommandEventHandler(FullSpellbook_OnCommand));
+            //CommandSystem.Register("FullSpellbook", AccessLevel.GameMaster, new CommandEventHandler(FullSpellbook_OnCommand));
+            // ONLY FOR TESTING PURPOSE 
+            CommandSystem.Register("FullSpellbook", AccessLevel.Player, new CommandEventHandler(FullSpellbook_OnCommand));
         }
 
         [Usage("FullSpellbook")]
