@@ -126,11 +126,11 @@ namespace Server.Spells
             return base.GetCastDelay();
         }
  
-		public override void CheckLOS()
+		public override bool CheckLOS()
 		{
         	if(!this.Caster.Blessed || this.TravelSpell) //sanity
             {
-        		return;
+        		return true;
         	}
 
         	if( this.ObjectTargeted != null )
@@ -142,15 +142,17 @@ namespace Server.Spells
 					if( !this.Caster.InLOS( new Point3D( loc )) || !this.Caster.CanSee( this.ObjectTargeted ))
 					{
 						this.Caster.SendLocalizedMessage( 500237 ); // Target can not be seen.
-		           		DoFizzle();
+		           		return false;
 					}
 	        		else if( !this.Caster.InRange( new Point3D( loc ), 12 ))
 					{
 						this.Caster.SendLocalizedMessage( 1076203 ); // Target out of range.
-		           		DoFizzle();
+		           		return false;
 	                }
         		}
             }
+        	
+        	return true;
 		}
  
 		public override void Explode (BaseExplosionPotion pot)
