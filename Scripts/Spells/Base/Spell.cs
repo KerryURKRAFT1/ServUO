@@ -909,8 +909,10 @@ namespace Server.Spells
 
 		public abstract void OnCast();
 
-		public virtual void CheckLOS()
-		{ }
+		public virtual bool CheckLOS() //overridden by mageryspell
+		{ 
+			return true;		
+		}
 
 		public virtual void Explode (BaseExplosionPotion pot)
 		{ 
@@ -1329,7 +1331,6 @@ namespace Server.Spells
 
 				if( m_Spell.m_CastTime - 50 < Core.TickCount )
                 {
-                    m_Spell.CheckLOS();
                     m_Spell.CastSequence();
                 }
 			}
@@ -1366,7 +1367,14 @@ namespace Server.Spells
 			
 			if (!Disturbed) //Kerrys mod
 			{
-				OnCast();
+				if (CheckLOS()) //moved checkLOS to outside cast timer
+				{
+					OnCast();
+				}
+				else
+				{
+	           		DoFizzle();
+				}
 			}
 
 			if (m_Caster.Player && m_Caster.Target != originalTarget && m_Caster.Target != null)
