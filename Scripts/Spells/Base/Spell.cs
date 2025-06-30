@@ -594,7 +594,7 @@ namespace Server.Spells
 			
 			if (m_LoseTargetOnAllFizzles)
 			{
-				Target.Cancel(m_Caster);man
+				Target.Cancel(m_Caster);
 			}
 
 			FinishSequence();
