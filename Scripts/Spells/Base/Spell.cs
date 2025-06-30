@@ -591,19 +591,10 @@ namespace Server.Spells
 
 				m_Caster.PlaySound(0x5C);
 			}
-
-			if (m_Caster.AccessLevel > AccessLevel.Player)
-			{
-				m_Caster.SendMessage(48, String.Format("[Staff] {0} {1} secs & {2} mana", Name, GetCastDelay().TotalSeconds, (int)(m_Mana/4)));
-			}
-			else
-			{
-				m_Caster.Mana -= (int)(m_Mana/4);
-			}
 			
 			if (m_LoseTargetOnAllFizzles)
 			{
-				Target.Cancel(m_Caster);
+				Target.Cancel(m_Caster);man
 			}
 
 			FinishSequence();
