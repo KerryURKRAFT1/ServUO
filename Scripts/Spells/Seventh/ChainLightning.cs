@@ -101,32 +101,36 @@ namespace Server.Spells.Seventh
                     for (int i = 0; i < targets.Count; ++i)
                     {
                         IDamageable id = targets[i];
-                        Mobile m = id as Mobile;
 
-                        if (Core.AOS)
-                            damage = this.GetNewAosDamage(51, 1, 5, id is PlayerMobile, id);
-                        else
-                            damage = Utility.Random(27, 22);
-
-                        if (Core.AOS && targets.Count > 2)
-                            damage = (damage * 2) / targets.Count;
-                        else if (!Core.AOS)
-                            damage /= targets.Count;
-
-                        if (!Core.AOS && m != null && this.CheckResisted(m))
-                        {
-                            damage *= 0.5;
-
-                            m.SendLocalizedMessage(501783); // You feel yourself resisting magical energy.
-                        }
-
-                        if(m != null)
-                            damage *= this.GetDamageScalar(m);
-
-                        this.Caster.DoHarmful(id);
-                        SpellHelper.Damage(this, id, damage, 0, 0, 0, 0, 100);
-
-                        Effects.SendBoltEffect(id, true, 0);
+			            if (CheckLOS(id))
+			            {
+	                        Mobile m = id as Mobile;
+	                        
+	                        if (Core.AOS)
+	                            damage = this.GetNewAosDamage(51, 1, 5, id is PlayerMobile, id);
+	                        else
+	                            damage = Utility.Random(27, 22);
+	
+	                        if (Core.AOS && targets.Count > 2)
+	                            damage = (damage * 2) / targets.Count;
+	                        else if (!Core.AOS)
+	                            damage /= targets.Count;
+	
+	                        if (!Core.AOS && m != null && this.CheckResisted(m))
+	                        {
+	                            damage *= 0.5;
+	
+	                            m.SendLocalizedMessage(501783); // You feel yourself resisting magical energy.
+	                        }
+	
+	                        if(m != null)
+	                            damage *= this.GetDamageScalar(m);
+	
+	                        this.Caster.DoHarmful(id);
+	                        SpellHelper.Damage(this, id, damage, 0, 0, 0, 0, 100);
+	
+	                        Effects.SendBoltEffect(id, true, 0);
+	                    }
                     }
                 }
                 else

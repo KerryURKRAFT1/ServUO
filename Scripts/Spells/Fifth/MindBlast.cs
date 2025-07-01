@@ -163,7 +163,7 @@ namespace Server.Spells.Fifth
         {
             private readonly MindBlastSpell m_Owner;
             public InternalTarget(MindBlastSpell owner)
-                : base(Core.ML ? 10 : 12, false, TargetFlags.Harmful)
+                : base(Core.ML ? 10 : 12, true, TargetFlags.Harmful)
             {
                 this.m_Owner = owner;
             }

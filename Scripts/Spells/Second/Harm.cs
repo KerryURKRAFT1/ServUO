@@ -126,7 +126,7 @@ namespace Server.Spells.Second
         {
             private readonly HarmSpell m_Owner;
             public InternalTarget(HarmSpell owner)
-                : base(Core.ML ? 10 : 12, false, TargetFlags.Harmful)
+                : base(Core.ML ? 10 : 12, true, TargetFlags.Harmful)
             {
                 this.m_Owner = owner;
             }

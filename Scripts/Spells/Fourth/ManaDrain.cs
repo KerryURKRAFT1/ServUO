@@ -130,7 +130,7 @@ namespace Server.Spells.Fourth
         {
             private readonly ManaDrainSpell m_Owner;
             public InternalTarget(ManaDrainSpell owner)
-                : base(Core.ML ? 10 : 12, false, TargetFlags.Harmful)
+                : base(Core.ML ? 10 : 12, true, TargetFlags.Harmful)
             {
                 this.m_Owner = owner;
             }

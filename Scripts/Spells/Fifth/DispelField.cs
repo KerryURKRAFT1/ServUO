@@ -79,7 +79,7 @@ namespace Server.Spells.Fifth
         {
             private readonly DispelFieldSpell m_Owner;
             public InternalTarget(DispelFieldSpell owner)
-                : base(Core.ML ? 10 : 12, false, TargetFlags.None)
+                : base(Core.ML ? 10 : 12, true, TargetFlags.None)
             {
                 this.m_Owner = owner;
             }

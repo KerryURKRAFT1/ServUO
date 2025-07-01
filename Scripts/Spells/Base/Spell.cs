@@ -1,4 +1,4 @@
-#region Header
+﻿#region Header
 // **********
 // ServUO - Spell.cs
 // **********
@@ -909,9 +909,16 @@ namespace Server.Spells
 
 		public abstract void OnCast();
 
-		public virtual void CheckLOS()
-		{ }
-
+		public virtual bool CheckLOSAndRange(int range = 12) //overridden by mageryspell
+		{ 
+			return true;		
+		}
+			
+		public virtual bool CheckLOS(object obj, int range = 12)//overridden by mageryspell
+		{ 
+			return true;		
+		}
+			
 		public virtual void Explode (BaseExplosionPotion pot)
 		{ 
         	FinishSequence();
@@ -1125,6 +1132,10 @@ namespace Server.Spells
 			{
 				DoFizzle();
 			}
+			else if (!CheckLOS(ObjectTargeted))
+			{
+				DoFizzle();
+			}
 			else if (m_Scroll != null && !(m_Scroll is Runebook) &&
 					 (m_Scroll.Amount <= 0 || m_Scroll.Deleted || m_Scroll.RootParent != m_Caster ||
 					  (m_Scroll is BaseWand && (((BaseWand)m_Scroll).Charges <= 0 || m_Scroll.Parent != m_Caster))))
@@ -1228,6 +1239,11 @@ namespace Server.Spells
 				m_Caster.SendLocalizedMessage(501857); // This spell won't work on that!
 				return false;
 			}
+			else if (!CheckLOS(target))
+			{
+				DoFizzle();
+				return false;
+			}
 			else if (Caster.CanBeBeneficial(target, true, allowDead) && CheckSequence())
 			{
 				Caster.DoBeneficial(target);
@@ -1244,6 +1260,11 @@ namespace Server.Spells
 			if (!target.Alive || (target is IDamageableItem && !((IDamageableItem)target).CanDamage))
 			{
 				m_Caster.SendLocalizedMessage(501857); // This spell won't work on that!
+				return false;
+			}
+			else if (target is Mobile m && !CheckLOS(m))
+			{
+				DoFizzle();
 				return false;
 			}
 			else if (Caster.CanBeHarmful(target) && CheckSequence())
@@ -1329,7 +1350,6 @@ namespace Server.Spells
 
 				if( m_Spell.m_CastTime - 50 < Core.TickCount )
                 {
-                    m_Spell.CheckLOS();
                     m_Spell.CastSequence();
                 }
 			}
@@ -1366,7 +1386,14 @@ namespace Server.Spells
 			
 			if (!Disturbed) //Kerrys mod
 			{
-				OnCast();
+				if (CheckLOSAndRange()) //moved checkLOS to outside cast timer
+				{
+					OnCast();
+				}
+				else
+				{
+	           		DoFizzle();
+				}
 			}
 
 			if (m_Caster.Player && m_Caster.Target != originalTarget && m_Caster.Target != null)

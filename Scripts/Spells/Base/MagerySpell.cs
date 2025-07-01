@@ -1,6 +1,7 @@
 using System;
 using Server.Items;
 using Server.Mobiles;
+using Server.Network;
 
 namespace Server.Spells
 {
@@ -126,11 +127,11 @@ namespace Server.Spells
             return base.GetCastDelay();
         }
  
-		public override void CheckLOS()
+		public override bool CheckLOSAndRange(int range = 12)
 		{
         	if(!this.Caster.Blessed || this.TravelSpell) //sanity
             {
-        		return;
+        		return true;
         	}
 
         	if( this.ObjectTargeted != null )
@@ -141,18 +142,41 @@ namespace Server.Spells
         		{
 					if( !this.Caster.InLOS( new Point3D( loc )) || !this.Caster.CanSee( this.ObjectTargeted ))
 					{
-						this.Caster.SendLocalizedMessage( 500237 ); // Target can not be seen.
-		           		DoFizzle();
+						this.Caster.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237);// Target can not be seen.
+		           		return false;
 					}
-	        		else if( !this.Caster.InRange( new Point3D( loc ), 12 ))
+	        		else if( !this.Caster.InRange( new Point3D( loc ), range ))
 					{
-						this.Caster.SendLocalizedMessage( 1076203 ); // Target out of range.
-		           		DoFizzle();
+						this.Caster.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1076203);// Target out of range.
+		           		return false;
 	                }
         		}
             }
+        	
+        	return true;
 		}
  
+		public override bool CheckLOS(object obj, int range = 12)
+		{
+       		IPoint3D loc = obj as IPoint3D;
+
+       		if (loc != null)
+       		{
+				if (!this.Caster.InLOS(new Point3D(loc)) || !this.Caster.CanSee(obj))
+				{
+					this.Caster.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237);// Target can not be seen.
+					return false;
+				}
+        		else if( !this.Caster.InRange( new Point3D( loc ), range ))
+				{				
+					this.Caster.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1076203);// Target out of range.
+					return false;
+                }
+			}
+        	
+        	return true;
+		}
+
 		public override void Explode (BaseExplosionPotion pot)
         {
         	if (pot != null && CheckSequence())

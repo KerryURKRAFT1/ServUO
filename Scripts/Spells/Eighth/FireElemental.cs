@@ -26,6 +26,7 @@ namespace Server.Spells.Eighth
                 return SpellCircle.Eighth;
             }
         }
+        
         public override bool CheckCast()
         {
             if (!base.CheckCast())

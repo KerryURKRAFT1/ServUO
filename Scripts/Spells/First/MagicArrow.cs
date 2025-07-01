@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Server.Targeting;
 using Server.Network;
 using Server.Items;
@@ -125,7 +125,7 @@ namespace Server.Spells.First
         {
             private MagicArrowSpell m_Owner;
             public InternalTarget(MagicArrowSpell owner)
-                : base(Core.ML ? 10 : 12, false, TargetFlags.Harmful)
+                : base(Core.ML ? 10 : 12, true, TargetFlags.Harmful)
             {
                 this.m_Owner = owner;
             }

@@ -115,7 +115,7 @@ namespace Server.Spells.Fifth
             private MagicReflectSpell m_Owner;
 
             public InternalTarget(MagicReflectSpell owner)
-                : base(12, false, TargetFlags.Beneficial)
+                : base(12, true, TargetFlags.Beneficial)
             {
                 m_Owner = owner;
             }

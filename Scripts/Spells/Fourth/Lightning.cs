@@ -99,7 +99,7 @@ namespace Server.Spells.Fourth
         {
             private readonly LightningSpell m_Owner;
             public InternalTarget(LightningSpell owner)
-                : base(Core.ML ? 10 : 12, false, TargetFlags.Harmful)
+                : base(Core.ML ? 10 : 12, true, TargetFlags.Harmful)
             {
                 this.m_Owner = owner;
             }

@@ -2,7 +2,6 @@ using System;
 using Server.Targeting;
 using Server.Network;
 using Server.Items;
-using Server.Custom; // Import SphereStyleHelper
 
 namespace Server.Spells.Third
 {
@@ -13,10 +12,6 @@ namespace Server.Spells.Third
             203,
             9041,
             Reagent.BlackPearl);
-
-        // For Sphere-style delayed logic
-        private IDamageable m_SphereTarget;
-
         public FireballSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {
@@ -24,94 +19,54 @@ namespace Server.Spells.Third
 
         public override SpellCircle Circle
         {
-            get { return SpellCircle.Third; }
+            get
+            {
+                return SpellCircle.Third;
+            }
         }
-
         public override bool DelayedDamage
         {
-            get { return true; }
+            get
+            {
+                return true;
+            }
         }
 
         public override bool Cast()
         {
-            if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
-            {
-                return (this.Caster.Target = new InternalTarget(this)) != null;
-            }
+        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+        	{
+        		return (this.Caster.Target = new InternalTarget(this)) != null;
+        	}
 
-            this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
-            return false;
+        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+        	
+        	return false;
         }
 
         public override void OnCast()
         {
-            if (ObjectTargeted is BaseExplosionPotion)
-            {
-                Explode((BaseExplosionPotion)ObjectTargeted);
-            }
-            else
-            {
-                Target((IDamageable)ObjectTargeted);
-            }
+        	if (ObjectTargeted is BaseExplosionPotion)
+        	{
+        		Explode ((BaseExplosionPotion)ObjectTargeted);
+        	}
+        	else
+        	{
+        		Target ((IDamageable)ObjectTargeted);
+        	}
         }
 
         public void Target(IDamageable m)
         {
-            if (Core.UOR) // Sphere-style logic
-            {
-                m_SphereTarget = m;
-                TimeSpan delay = GetCastDelay();
-
-                if (Caster != null)
-                    Caster.NextSpellTime = Core.TickCount + (long)(delay.TotalSeconds * 1000);
-
-                SphereStyleHelper.DoSphereStyleCast(
-                    this,
-                    m,
-                    delay,
-                    new SphereStyleHelper.FinalEffectDelegate(DoFireballEffect),
-                    new SphereStyleHelper.FinalChecksDelegate(SphereFinalChecks)
-                );
-                return;
-            }
-
-            DoFireballEffect(m);
-        }
-
-        // Sphere-style: centralized final checks before applying spell effect
-        private bool SphereFinalChecks()
-        {
-            if (Caster == null || Caster.Deleted || !Caster.Alive || m_SphereTarget == null)
-                return false;
-            if (!Caster.CanSee(m_SphereTarget) || !Caster.InLOS(m_SphereTarget) || !Caster.InRange(m_SphereTarget, Core.ML ? 10 : 12))
-                return false;
-            if (Caster.Mana < ScaleMana(GetMana()))
-                return false;
-            return true;
-        }
-
-        // For Sphere-style: call the regular effect logic with stored target
-        private void DoFireballEffect()
-        {
-            DoFireballEffect(m_SphereTarget);
-        }
-
-        // Original spell effect logic, unchanged
-        private void DoFireballEffect(IDamageable m)
-        {
-            if (!this.Caster.CanSee(m))
-            {
-                this.Caster.SendLocalizedMessage(500237); // Target can not be seen.
-            }
-            else if (this.CheckHSequence(m))
+            if (this.CheckHSequence(m))
             {
                 Mobile source = this.Caster;
                 Mobile target = m as Mobile;
 
                 SpellHelper.Turn(source, m);
-
-                if (target != null)
-                    SpellHelper.CheckReflect((int)this.Circle, ref source, ref target);
+                
+                if(target != null)
+                  SpellHelper.CheckReflect((int)this.Circle, ref source, ref target);
 
                 double damage = 0;
 
@@ -126,6 +81,7 @@ namespace Server.Spells.Third
                     if (this.CheckResisted(target))
                     {
                         damage *= 0.75;
+
                         target.SendLocalizedMessage(501783); // You feel yourself resisting magical energy.
                     }
 
@@ -148,7 +104,7 @@ namespace Server.Spells.Third
         {
             private readonly FireballSpell m_Owner;
             public InternalTarget(FireballSpell owner)
-                : base(Core.ML ? 10 : 12, false, TargetFlags.Harmful)
+                : base(Core.ML ? 10 : 12, true, TargetFlags.Harmful)
             {
                 this.m_Owner = owner;
             }
@@ -157,14 +113,14 @@ namespace Server.Spells.Third
             {
                 if (o is IDamageable || o is BaseExplosionPotion)
                 {
-                    if (!this.m_Owner.StartSequence(o))
-                    {
-                        this.m_Owner.FinishSequence();
-                    }
+                   	if (!this.m_Owner.StartSequence(o))
+                	{
+                		this.m_Owner.FinishSequence();
+                	}
                 }
                 else
                 {
-                    from.SendLocalizedMessage(1005213); // You can't do that
+	              	from.SendLocalizedMessage(1005213); // You can't do that
                 }
             }
         }

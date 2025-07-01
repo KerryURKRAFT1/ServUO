@@ -110,7 +110,7 @@ namespace Server.Spells.First
         {
             private readonly HealSpell m_Owner;
             public InternalTarget(HealSpell owner)
-                : base(Core.ML ? 10 : 12, false, TargetFlags.Beneficial)
+                : base(Core.ML ? 10 : 12, true, TargetFlags.Beneficial)
             {
                 this.m_Owner = owner;
             }

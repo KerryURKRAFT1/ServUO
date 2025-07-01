@@ -182,7 +182,7 @@ namespace Server.Spells.Second
             private ProtectionSpell m_Owner;
 
             public InternalTarget(ProtectionSpell owner)
-                : base(12, false, TargetFlags.Beneficial)
+                : base(12, true, TargetFlags.Beneficial)
             {
                 m_Owner = owner;
             }

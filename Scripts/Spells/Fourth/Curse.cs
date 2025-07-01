@@ -123,7 +123,7 @@ namespace Server.Spells.Fourth
         {
             private readonly CurseSpell m_Owner;
             public InternalTarget(CurseSpell owner)
-                : base(Core.ML ? 10 : 12, false, TargetFlags.Harmful)
+                : base(Core.ML ? 10 : 12, true, TargetFlags.Harmful)
             {
                 this.m_Owner = owner;
             }

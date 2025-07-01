@@ -77,7 +77,7 @@ namespace Server.Spells.First
         {
             private readonly ClumsySpell m_Owner;
             public InternalTarget(ClumsySpell owner)
-                : base(Core.ML ? 10 : 12, false, TargetFlags.Harmful)
+                : base(Core.ML ? 10 : 12, true, TargetFlags.Harmful)
             {
                 this.m_Owner = owner;
             }

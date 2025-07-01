@@ -96,7 +96,7 @@ namespace Server.Spells.Second
         {
             private readonly CureSpell m_Owner;
             public InternalTarget(CureSpell owner)
-                : base(Core.ML ? 10 : 12, false, TargetFlags.Beneficial)
+                : base(Core.ML ? 10 : 12, true, TargetFlags.Beneficial)
             {
                 this.m_Owner = owner;
             }

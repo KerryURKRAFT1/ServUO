@@ -122,7 +122,7 @@ namespace Server.Spells.First
             private ReactiveArmorSpell m_Owner;
 
             public InternalTarget(ReactiveArmorSpell owner)
-                : base(12, false, TargetFlags.Beneficial)
+                : base(12, true, TargetFlags.Beneficial)
             {
                 m_Owner = owner;
             }

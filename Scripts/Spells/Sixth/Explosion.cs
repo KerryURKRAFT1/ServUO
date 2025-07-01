@@ -2,6 +2,7 @@ using System;
 using Server.Targeting;
 using Server.Network;
 using Server.Items;
+using System.Collections.Generic;
 
 namespace Server.Spells.Sixth
 {
@@ -25,20 +26,6 @@ namespace Server.Spells.Sixth
                 return SpellCircle.Sixth;
             }
         }
-        public override bool DelayedDamageStacking
-        {
-            get
-            {
-                return !Core.AOS;
-            }
-        }
-        public override bool DelayedDamage
-        {
-            get
-            {
-                return false;
-            }
-        }
 
         public override bool Cast()
         {
@@ -52,6 +39,8 @@ namespace Server.Spells.Sixth
         	return false;
         }
 
+        private List<Mobile> Targets = new List<Mobile>();
+
         public override void OnCast()
         {
         	if (ObjectTargeted is BaseExplosionPotion)
@@ -60,113 +49,70 @@ namespace Server.Spells.Sixth
         	}
         	else
         	{
-        		Target ((IDamageable)ObjectTargeted);
+        		Target ((Mobile)ObjectTargeted);
         	}
         }
 
-        public void Target(IDamageable m)
+        public void Target(Mobile defender) //changed to mobile and now has area damage also removed damage delay
         {
-            Mobile defender = m as Mobile;
-
-            if (!this.Caster.CanSee(m))
+            if (CheckHSequence(defender))
             {
-                this.Caster.SendLocalizedMessage(500237); // Target can not be seen.
-            }
-            else if (this.Caster.CanBeHarmful(m) && this.CheckSequence())
-            {
-                Mobile attacker = this.Caster;
-
-                SpellHelper.Turn(this.Caster, m);
-
-                if(defender != null)
-                    SpellHelper.CheckReflect((int)this.Circle, this.Caster, ref defender);
-
-                InternalTimer t = new InternalTimer(this, attacker, defender != null ? defender : m);
-                t.Start();
-            }
-
-            this.FinishSequence();
-        }
-
-        private class InternalTimer : Timer
-        {
-            private readonly MagerySpell m_Spell;
-            private readonly IDamageable m_Target;
-            private readonly Mobile m_Attacker;
-
-            public InternalTimer(MagerySpell spell, Mobile attacker, IDamageable target)
-                : base(TimeSpan.FromSeconds(Core.AOS ? 3.0 : 2.5))
-            {
-                m_Spell = spell;
-                m_Attacker = attacker;
-                m_Target = target;
-
-                if (this.m_Spell != null)
-                    this.m_Spell.StartDelayedDamageContext(attacker, this);
-
-                this.Priority = TimerPriority.FiftyMS;
-            }
-
-            protected override void OnTick()
-            {
-                Mobile defender = m_Target as Mobile;
-
-                if (m_Attacker.HarmfulCheck(m_Target))
+            	Targets.Add(defender);
+            	
+	            foreach (Mobile targ in this.Caster.Map.GetMobilesInRange(defender.Location, 2)) //2? maybe 3
+	            {
+	            	if (SpellHelper.ValidIndirectTarget(this.Caster, targ) && this.Caster.CanBeHarmful(targ, false))
+	                {
+	                    Targets.Add(targ);
+	                }
+	            }
+	
+                for (int i = 0; i < Targets.Count; ++i)
                 {
-                    double damage = 0;
+                    Mobile target = Targets[i];
 
-                    if (Core.AOS)
-                    {
-                        damage = this.m_Spell.GetNewAosDamage(40, 1, 5, m_Target);
-                    }
-                    else if (defender != null)
-                    {
-                        damage = Utility.Random(23, 22);
+		            if (CheckHSequence(target))
+		            {
+	                    double damage = Utility.Random(23, 22);
+	
+	                    if (CheckResisted(target))
+	                    {
+	                        damage *= 0.75;
+	
+	                        target.SendLocalizedMessage(501783); // You feel yourself resisting magical energy.
+	                    }
+	
+	                    damage *= GetDamageScalar(target);
+	
+                        this.Caster.DoHarmful(target);
+	                    Effects.SendLocationParticles(target, 0x36BD, 20, 10, 5044);
+	                    Effects.PlaySound(target.Location, target.Map, 0x307);
+		
+		                if (damage > 0)
+		                {
+		                    SpellHelper.Damage(this, target, damage, 0, 100, 0, 0, 0);
+		                }		
+	                }	                
+	            }
 
-                        if (this.m_Spell.CheckResisted(defender))
-                        {
-                            damage *= 0.75;
-
-                            defender.SendLocalizedMessage(501783); // You feel yourself resisting magical energy.
-                        }
-
-                        damage *= this.m_Spell.GetDamageScalar(defender);
-                    }
-
-                    if (defender != null)
-                    {
-                        defender.FixedParticles(0x36BD, 20, 10, 5044, EffectLayer.Head);
-                        defender.PlaySound(0x307);
-                    }
-                    else
-                    {
-                        Effects.SendLocationParticles(m_Target, 0x36BD, 20, 10, 5044);
-                        Effects.PlaySound(m_Target.Location, m_Target.Map, 0x307);
-                    }
-
-                    if (damage > 0)
-                    {
-                        SpellHelper.Damage(this.m_Spell, this.m_Target, damage, 0, 100, 0, 0, 0);
-                    }
-
-                    if (this.m_Spell != null)
-                        this.m_Spell.RemoveDelayedDamageContext(this.m_Attacker);
-                }
+                Targets.Clear();
             }
+            
+            FinishSequence();
         }
 
         private class InternalTarget : Target
         {
             private readonly ExplosionSpell m_Owner;
             public InternalTarget(ExplosionSpell owner)
-                : base(Core.ML ? 10 : 12, false, TargetFlags.Harmful)
+                : base(Core.ML ? 10 : 12, true, TargetFlags.Harmful)
             {
                 this.m_Owner = owner;
             }
 
             protected override void OnTarget(Mobile from, object o)
             {
-                if (o is IDamageable || o is BaseExplosionPotion)
+                if (o is Mobile || o is BaseExplosionPotion)
                 {
                 	if (!this.m_Owner.StartSequence(o))
                 	{

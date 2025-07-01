@@ -113,7 +113,7 @@ namespace Server.Spells.Sixth
         {
             private readonly InvisibilitySpell m_Owner;
             public InternalTarget(InvisibilitySpell owner)
-                : base(Core.ML ? 10 : 12, false, TargetFlags.Beneficial)
+                : base(Core.ML ? 10 : 12, true, TargetFlags.Beneficial)
             {
                 this.m_Owner = owner;
             }

@@ -80,7 +80,7 @@ namespace Server.Spells.Second
         {
             private readonly MagicTrapSpell m_Owner;
             public InternalTarget(MagicTrapSpell owner)
-                : base(Core.ML ? 10 : 12, false, TargetFlags.None)
+                : base(Core.ML ? 10 : 12, true, TargetFlags.None)
             {
                 this.m_Owner = owner;
             }

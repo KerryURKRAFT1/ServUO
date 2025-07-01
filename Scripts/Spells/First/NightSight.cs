@@ -77,7 +77,7 @@ namespace Server.Spells.First
             private readonly NightSightSpell m_Owner;
             
             public InternalTarget(NightSightSpell owner)
-                : base(12, false, TargetFlags.Beneficial)
+                : base(12, true, TargetFlags.Beneficial)
             {
                 this.m_Owner = owner;
             }
