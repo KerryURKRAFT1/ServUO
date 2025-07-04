@@ -32,9 +32,6 @@ namespace Server.Spells
 
 		public override bool ConsumeReagents()
         {
-			if (this.Caster.AccessLevel > AccessLevel.Player)
-                return true;
-
 			//set up special exceptions
 //			if (this.Caster.Region is <eg.DuellingRegion>)
 //                return true;
@@ -126,68 +123,5 @@ namespace Server.Spells
 	
             return base.GetCastDelay();
         }
- 
-		public override bool CheckLOSAndRange(int range = 12)
-		{
-        	if(!this.Caster.Blessed || this.TravelSpell) //sanity
-            {
-        		return true;
-        	}
-
-        	if( this.ObjectTargeted != null )
-    		{
-        		IPoint3D loc = this.ObjectTargeted as IPoint3D;
-
-        		if( loc != null )
-        		{
-					if( !this.Caster.InLOS( new Point3D( loc )) || !this.Caster.CanSee( this.ObjectTargeted ))
-					{
-						this.Caster.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237);// Target can not be seen.
-		           		return false;
-					}
-	        		else if( !this.Caster.InRange( new Point3D( loc ), range ))
-					{
-						this.Caster.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1076203);// Target out of range.
-		           		return false;
-	                }
-        		}
-            }
-        	
-        	return true;
-		}
- 
-		public override bool CheckLOS(object obj, int range = 12)
-		{
-       		IPoint3D loc = obj as IPoint3D;
-
-       		if (loc != null)
-       		{
-				if (!this.Caster.InLOS(new Point3D(loc)) || !this.Caster.CanSee(obj))
-				{
-					this.Caster.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237);// Target can not be seen.
-					return false;
-				}
-        		else if( !this.Caster.InRange( new Point3D( loc ), range ))
-				{				
-					this.Caster.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1076203);// Target out of range.
-					return false;
-                }
-			}
-        	
-        	return true;
-		}
-
-		public override void Explode (BaseExplosionPotion pot)
-        {
-        	if (pot != null && CheckSequence())
-            {
-                pot.Explode (this.Caster, true, pot.GetWorldLocation(), pot.Map);
-                
-                this.Caster.MovingParticles (pot, 0x36E4, 5, 0, false, true, 3006, 4006, 0);                
-                this.Caster.PlaySound (0x1E5);
-            }
-
-        	base.Explode (pot);
-       	}
     }
 }
