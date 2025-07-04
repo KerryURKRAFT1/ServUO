@@ -287,7 +287,7 @@ namespace Server.Items
             return 8 + (int)(bard.Skills[skill].Value / 15);
         }
 
-        public static void PickInstrument(Mobile from, InstrumentPickedCallback callback)
+        public static bool PickInstrument(Mobile from, InstrumentPickedCallback callback)
         {
             BaseInstrument instrument = GetInstrument(from);
 
@@ -295,11 +295,13 @@ namespace Server.Items
             {
                 if (callback != null)
                     callback(from, instrument);
+                
+                return true;
             }
             else
             {
                 from.SendLocalizedMessage(500617); // What instrument shall you play?
-                from.BeginTarget(1, false, TargetFlags.None, new TargetStateCallback(OnPickedInstrument), callback);
+                return (from.BeginTarget(1, false, TargetFlags.None, new TargetStateCallback(OnPickedInstrument), callback) != null);                
             }
         }
 
