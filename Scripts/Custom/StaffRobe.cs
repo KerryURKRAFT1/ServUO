@@ -24,69 +24,89 @@ namespace Server.Items
         	Name = $"{m.Name}'s GM Robe";
         }
         
-        public override bool OnEquip(Mobile m)
+        public override void OnAdded(object parent)
         {
-        	if (m.IsStaff() && m_Owner == null)
-            {
-                m_Owner = m;
-
-                Name = $"{m.Name}'s GM Robe";
-                	        	
-                m_GMLevel = m.AccessLevel;				
-        	}
+        	Mobile m = parent as Mobile;
         	
-            DoHue(m);
+        	if (m != null)
+        	{
+        		if (m_Owner == null)
+        		{
+		        	if (m.IsStaff())
+		            {
+		                m_Owner = m;
+		
+		                Name = $"{m.Name}'s GM Robe";
+		                	        	
+		                m_GMLevel = m.AccessLevel;
+		        	}
+        		}
+	        	else if (m_Owner != m)
+	        	{
+	        		return;
+	        	}
+
+	            DoHue(m);
+        	}
+			else
+			{
+				return;
+			}
             
-	       	return base.OnEquip(m);
+	       	base.OnAdded(parent);
         }
 
         public override void OnRemoved(object parent)
         {
-            Hue = 0;
+        	if (Hue > 0)            
+        	{
+        		base.OnRemoved(parent);
+        	}
         }
 
         public override void OnDoubleClick(Mobile m)
         {
-            if(m_Owner == null && m.IsStaff())
-            {
-                m_Owner = m;
-                
-                m_GMLevel = m.AccessLevel;
-            
-                m.SendMessage(48, "This robe has been assigned to you.");
-
-	            Name = $"{m.Name}'s GM Robe";
-            }
-            else if (m_Owner == m)
-            {
-	            GMRobe robe = m.FindItemOnLayer(Layer.Backpack) as GMRobe ?? m.FindItemOnLayer(Layer.OuterTorso) as GMRobe;
-
-            	if (robe != null)
+        	if(m_Owner == null)
+        	{
+        		if (m.IsStaff())
             	{
-	            	if (m.IsStaff())
-	                {
-	                    m.SendMessage(48, "You are now a player");
-	                    
-	                    m.AccessLevel = AccessLevel.Player;
-
-	                    m.Blessed = false;
-	                }
-	            	else
-	                {
-	                    m.SendMessage(48, "You are now staff");
-	                    
-	                    m.AccessLevel = m_GMLevel;
-	                    
-	                    m.Blessed = true;
-	            	}
-            	}
-            }
-            else
-            {
-            	Delete();
-            }
+	                m_Owner = m;
+	                
+	                m_GMLevel = m.AccessLevel;
 	            
-            DoHue(m);
+	                m.SendMessage(48, "This robe has been assigned to you.");
+	
+		            Name = $"{m.Name}'s GM Robe";
+	            }
+        	}
+            else if (m_Owner != m)
+            {
+				return;
+            }
+
+            GMRobe robe = m.FindItemOnLayer(Layer.Backpack) as GMRobe ?? m.FindItemOnLayer(Layer.OuterTorso) as GMRobe;
+
+        	if (robe != null)
+        	{
+            	if (m.IsStaff())
+                {
+                    m.SendMessage(48, "You are now a player");
+                    
+                    m.AccessLevel = AccessLevel.Player;
+
+                    m.Blessed = false;
+                }
+            	else
+                {
+                    m.SendMessage(48, "You are now staff");
+                    
+                    m.AccessLevel = m_GMLevel;
+                    
+                    m.Blessed = true;
+            	}
+
+	            DoHue(m);
+        	}
         }
 		    		
 		private void DoHue(Mobile m)
@@ -188,7 +208,7 @@ namespace Server.Items
         }
 
         public static void EventSink_PlayerDeath(PlayerDeathEventArgs e)
-		{	
+		{
     		Mobile m = e.Mobile;
     		
     		if (m == m_Owner)
