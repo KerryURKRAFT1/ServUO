@@ -65,7 +65,6 @@ namespace Server.Items
 
             if (root is Mobile && ((Mobile)root).AccessLevel < this.m_AccessLevel)
             {
-                this.Delete();
                 return false;
             }
 
