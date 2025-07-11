@@ -211,7 +211,7 @@ namespace Server.Items
 			{
 				if (!m_Mobile.Alive)
 				{					
-		            new SpawnProtection().Add(m_Mobile);
+		            m_Mobile.Resurrect();
 	
 		            m_Mobile.Hits =	m_Mobile.HitsMax;
 					
