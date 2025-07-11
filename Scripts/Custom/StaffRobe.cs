@@ -2,58 +2,40 @@ using System;
 
 namespace Server.Items
 {
-    public class GMRobe : BaseSuit
+    public class GMRobe : Robe
     {
-        private static Mobile m_Owner;
-        private AccessLevel m_GMLevel;
+        private static Mobile m_Wearer = null;
+        private AccessLevel m_GMLevel = AccessLevel.Player;
 
         [Constructable]
-        public GMRobe() : base(AccessLevel.Player, 0, 0x204F)
+        public GMRobe() : base(9859)
         {
             LootType = LootType.Blessed;
             Name = "GM Robe";
+            ItemID = 9859;
         }
-        
-        [Constructable]
-        public GMRobe(Mobile m) : base(m.AccessLevel, 0, 0x204F)
-        {
-            m_Owner = m;
-            m_GMLevel = m.AccessLevel;
-
-        	LootType = LootType.Blessed;
-        	Name = $"{m.Name}'s GM Robe";
-        }
-        
-        public override void OnAdded(object parent)
-        {
-        	Mobile m = parent as Mobile;
-        	
-        	if (m != null)
-        	{
-        		if (m_Owner == null)
-        		{
-		        	if (m.IsStaff())
-		            {
-		                m_Owner = m;
-		
-		                Name = $"{m.Name}'s GM Robe";
-		                	        	
-		                m_GMLevel = m.AccessLevel;
-		        	}
-        		}
-	        	else if (m_Owner != m)
-	        	{
-	        		return;
+                
+        public override bool OnEquip(Mobile m)
+        {        	
+    		if (m_Wearer == null)
+    		{
+	        	if (m.IsStaff())
+	            {
+	                m_Wearer = m;
+	
+	                Name = $"{m.Name}'s GM Robe";
+	                	        	
+	                m_GMLevel = m.AccessLevel;
 	        	}
+    		}
 
+    		if (m_Wearer == m)
+        	{
 	            DoHue(m);
+	    		return true;
         	}
-			else
-			{
-				return;
-			}
-            
-	       	base.OnAdded(parent);
+    		
+    		return false;
         }
 
         public override void OnRemoved(object parent)
@@ -66,11 +48,11 @@ namespace Server.Items
 
         public override void OnDoubleClick(Mobile m)
         {
-        	if(m_Owner == null)
+        	if(m_Wearer == null)
         	{
         		if (m.IsStaff())
             	{
-	                m_Owner = m;
+	                m_Wearer = m;
 	                
 	                m_GMLevel = m.AccessLevel;
 	            
@@ -79,34 +61,32 @@ namespace Server.Items
 		            Name = $"{m.Name}'s GM Robe";
 	            }
         	}
-            else if (m_Owner != m)
+
+        	if (m_Wearer == m)
             {
-				return;
-            }
-
-            GMRobe robe = m.FindItemOnLayer(Layer.Backpack) as GMRobe ?? m.FindItemOnLayer(Layer.OuterTorso) as GMRobe;
-
-        	if (robe != null)
-        	{
-            	if (m.IsStaff())
-                {
-                    m.SendMessage(48, "You are now a player");
-                    
-                    m.AccessLevel = AccessLevel.Player;
-
-                    m.Blessed = false;
-                }
-            	else
-                {
-                    m.SendMessage(48, "You are now staff");
-                    
-                    m.AccessLevel = m_GMLevel;
-                    
-                    m.Blessed = true;
-            	}
-
+	        	if (m.IsStaff())
+	            {
+	                m.SendMessage(48, "You are now a player");
+	                
+	                m.AccessLevel = AccessLevel.Player;
+	
+	                m.Blessed = false;
+	            }
+	        	else
+	            {
+	                m.SendMessage(48, "You are now staff");
+	                
+	                m.AccessLevel = m_GMLevel;
+	                
+	                m.Blessed = true;
+	        	}
+	
 	            DoHue(m);
-        	}
+            }
+            else
+            {
+            	m.SendMessage(48, $"{m_Wearer.Name}");
+            }
         }
 		    		
 		private void DoHue(Mobile m)
@@ -114,7 +94,6 @@ namespace Server.Items
             switch (m.AccessLevel)
             {
             	default:
-                    Hue = 0;
                     break;
                 case AccessLevel.Owner:
                     Hue = 0x497;
@@ -157,7 +136,7 @@ namespace Server.Items
             writer.Write(0); // version
             
             //version 0
-            writer.Write(m_Owner);
+            writer.Write(m_Wearer);
             writer.WriteEncodedInt((int)m_GMLevel);
         }
 
@@ -171,7 +150,7 @@ namespace Server.Items
             {
                 case 0:
             	{
-                    m_Owner = reader.ReadMobile();
+                    m_Wearer = reader.ReadMobile();
                     
                     m_GMLevel = (AccessLevel)reader.ReadEncodedInt();
                     
@@ -179,10 +158,7 @@ namespace Server.Items
             	}
             }
             
-            if (ItemID != 0x204F)
-            {
-            	ItemID = 0x204F;
-            }
+           	ItemID = 9859;
         }
 
         public static void Initialize()
@@ -198,11 +174,16 @@ namespace Server.Items
                 
             if (m.IsStaff())
             {
-	            GMRobe robe = m.FindItemOnLayer(Layer.Backpack) as GMRobe ?? m.FindItemOnLayer(Layer.OuterTorso) as GMRobe;
+	            GMRobe robe = m.FindItemOnLayer(Layer.Backpack) as GMRobe;
+	            	
+		        if (robe == null)
+	            {
+	            	robe = m.FindItemOnLayer(Layer.OuterTorso) as GMRobe;
+	            }
 	
 		        if (robe == null)
 		        {
-		        	m.Backpack.DropItem(new GMRobe(m));
+		        	m.Backpack.DropItem(new GMRobe());
 		        }
             }
         }
@@ -211,9 +192,9 @@ namespace Server.Items
 		{
     		Mobile m = e.Mobile;
     		
-    		if (m == m_Owner)
+    		if (m == m_Wearer)
     		{
-    			new AutoResTimer(m_Owner).Start();
+    			new AutoResTimer(m_Wearer).Start();
     		}
 		}
 
@@ -228,13 +209,16 @@ namespace Server.Items
 
 			protected override void OnTick()
 			{
-				m_Mobile.Resurrect();
+				if (!m_Mobile.Alive)
+				{					
+		            new SpawnProtection().Add(m_Mobile);
+	
+		            m_Mobile.Hits =	m_Mobile.HitsMax;
+					
+					m_Mobile.SendMessage(48, "Your GM robe resurrects you");
+				}
 				
-				m_Mobile.Hits =	m_Mobile.HitsMax;
-				
-				m_Mobile.SendMessage(48, "Your GM robe resurrects you");
-				
-				Stop();
+	            Stop();
 			}
 		}
     }
