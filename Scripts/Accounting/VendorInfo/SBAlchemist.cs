@@ -35,6 +35,7 @@ namespace Server.Mobiles
                 this.Add(new GenericBuyInfo(typeof(AgilityPotion), 15, 10, 0xF08, 0));
                 this.Add(new GenericBuyInfo(typeof(NightSightPotion), 15, 10, 0xF06, 0));
                 this.Add(new GenericBuyInfo(typeof(LesserHealPotion), 15, 10, 0xF0C, 0));
+                Add(new GenericBuyInfo(typeof(LesserManaPotion), 15, 10, 0xF08, 0));
                 this.Add(new GenericBuyInfo(typeof(StrengthPotion), 15, 10, 0xF09, 0));
                 this.Add(new GenericBuyInfo(typeof(LesserPoisonPotion), 15, 10, 0xF0A, 0));
                 this.Add(new GenericBuyInfo(typeof(LesserCurePotion), 15, 10, 0xF07, 0));
@@ -90,6 +91,8 @@ namespace Server.Mobiles
 				this.Add(typeof(LesserExplosionPotion), 10);
 				this.Add(typeof(ExplosionPotion), 15);
 				this.Add(typeof(GreaterExplosionPotion), 25);
+				this.Add(typeof(ManaPotion), 11);
+				this.Add(typeof(GreaterManaPotion), 15);
             }
         }
     }

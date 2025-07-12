@@ -43,7 +43,10 @@ namespace Server.Items
         Barako,
         Urali,
         Sakkhra,
-        #endregion
+		#endregion
+        ManaLesser,
+        Mana,
+        ManaGreater,
     }
 
     public abstract class BasePotion : Item, ICraftable, ICommodity

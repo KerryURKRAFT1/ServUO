@@ -44,14 +44,13 @@ namespace Server.Misc
                 m.AddItem(pack);
             }
 
-            PackItem(new RedBook("a book", m.Name, 20, true));
             PackItem(new Gold(1000)); // Starting gold can be customized here
-            PackItem(new Candle());
-
-            if (m.Race != Race.Gargoyle)
-                PackItem(new Dagger());
-            else
-                PackItem(new GargishDagger());
+            PackItem(new BankCheck(30000)); 
+            
+            PackItem(new SpellbookFull());             
+            PackItem(new Runebook());             
+            PackItem(new RecallRune(10));             
+            PackItem(new BagOfReagents(50));
         }
 
         private static void AddShirt(Mobile m, int shirtHue)

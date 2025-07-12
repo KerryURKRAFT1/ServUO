@@ -108,7 +108,12 @@ namespace Server.Spells.Fifth
 
                 if (lowestStat > 150) 
                     lowestStat = 150;
-                double damage;
+
+				if (m.Spell != null)
+                    m.Spell.OnCasterHurt();
+
+				double damage;
+
                 if (Core.AOS)
                 {
                     damage = this.GetDamageScalar(m)*(highestStat - lowestStat)/4; //less damage
@@ -123,7 +128,6 @@ namespace Server.Spells.Fifth
                 if (this.CheckResisted(target))
                 {
                     damage /= 2;
-                    target.SendLocalizedMessage(501783); // You feel yourself resisting magical energy.
                 }
 
                 from.FixedParticles(0x374A, 10, 15, 2038, EffectLayer.Head);
@@ -182,6 +186,11 @@ namespace Server.Spells.Fifth
 	              	from.SendLocalizedMessage(1005213); // You can't do that
                 }
             }
+            	        protected override void OnTargetOutOfLOS(Mobile from, object o)
+	        {
+	            from.Target = new InternalTarget(m_Owner);
+				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
+	        }
         }
     }
 }

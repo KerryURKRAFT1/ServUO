@@ -1,4 +1,4 @@
-#region Header
+﻿#region Header
 // **********
 // ServUO - Spell.cs
 // **********
@@ -94,14 +94,14 @@ namespace Server.Spells
 		public object ObjectTargeted { get { return m_ObjectTargeted; }}
 		public int Mana { get { return m_Mana; } set { m_Mana = value; } }
 
-		private static readonly TimeSpan NextSpellDelay = TimeSpan.FromSeconds(0.75);
+		private static readonly TimeSpan NextSpellDelay = TimeSpan.Zero;
 		private static TimeSpan AnimateDelay = TimeSpan.FromSeconds(1.5);
 
 		public virtual SkillName CastSkill { get { return SkillName.Magery; } }
 		public virtual SkillName DamageSkill { get { return SkillName.EvalInt; } }
 
 		public virtual bool RevealOnCast { get { return true; } }
-		public virtual bool ClearHandsOnCast { get { return true; } }
+		public virtual bool ClearHandsOnCast { get { return false; } }
 		public virtual bool ShowHandMovement { get { return true; } }
 		public virtual bool TravelSpell { get { return false; } }
 
@@ -273,7 +273,7 @@ namespace Server.Spells
 
         public virtual void CheckCasterDisruption(bool checkElem = false, int phys = 0, int fire = 0, int cold = 0, int pois = 0, int nrgy = 0)
         {
-            if (!Caster.Player || Caster.AccessLevel > AccessLevel.Player)
+            if (!Caster.Player)
             {
                 return;
             }
@@ -308,12 +308,6 @@ namespace Server.Spells
 
 		public virtual bool OnCasterMoving(Direction d)
 		{
-			if (IsCasting && BlocksMovement)
-			{
-				m_Caster.SendLocalizedMessage(500111); // You are frozen and can not move.
-				return false;
-			}
-
 			return true;
 		}
 
@@ -329,7 +323,7 @@ namespace Server.Spells
 
 		public virtual bool OnCasterUsingObject(object o)
 		{
-			if (m_State == SpellState.Sequencing)
+			if (IsCasting)
 			{
 				Disturb(DisturbType.UseRequest);
 			}
@@ -341,15 +335,17 @@ namespace Server.Spells
 		{
 			return m_Info.AllowTown;
 		}
-
+		
 		public virtual bool ConsumeReagents()
-		{
-            GMRobe robe = m_Caster.FindItemOnLayer(Layer.Backpack) as GMRobe ?? m_Caster.FindItemOnLayer(Layer.OuterTorso) as GMRobe;
+		{			
+            GMRobe robe = m_Caster.FindItemOnLayer(Layer.OuterTorso) as GMRobe; 
+			
             if (robe != null)
             {
             	return true;
             }
-			if ((m_Scroll != null && !(m_Scroll is SpellStone)) || !m_Caster.Player)
+
+            if ((m_Scroll != null && !(m_Scroll is SpellStone)) || !m_Caster.Player)
 			{
 				return true;
 			}
@@ -526,23 +522,24 @@ namespace Server.Spells
 
 		public virtual void DoFizzle()
 		{
-			m_Caster.LocalOverheadMessage(MessageType.Regular, 0x3B2, 502632); // The spell fizzles.
-
 			if (m_Caster.Player)
 			{
-				if (Core.AOS)
+				if (!m_Disturbed)
 				{
-					m_Caster.FixedParticles(0x3735, 1, 30, 9503, EffectLayer.Waist);
+					m_Caster.SendLocalizedMessage(502632); // The spell fizzles.
 				}
-				else
-				{
-					m_Caster.FixedEffect(0x3735, 6, 30);
-				}
+				
+				DoHurtFizzle();
 
-				m_Caster.PlaySound(0x5C);
 			}
-			
+
 			FinishSequence();
+		}
+
+		public virtual void DoHurtFizzle()
+		{
+			m_Caster.FixedEffect(0x3735, 6, 30);
+			m_Caster.PlaySound(0x5C);
 		}
 
 		private CastTimer m_CastTimer;
@@ -581,29 +578,17 @@ namespace Server.Spells
 					m_Caster.NextSpellTime = Core.TickCount + (int)GetDisturbRecovery().TotalMilliseconds;
 				}
 
-				if (type == DisturbType.Hurt) //copy Kerry's Mod
-				{
-					DoHurtFizzle();
-
-				}
+				DoFizzle();
 				
 				FinishSequence();
 			}
-		}
-
-		public virtual void DoHurtFizzle()
-		{
-			m_Caster.LocalOverheadMessage(MessageType.Regular, 0x3B2, 502632); // The spell fizzles.
-
-			m_Caster.FixedEffect(0x3735, 6, 30);
-			m_Caster.PlaySound(0x5C);
 		}
 
 		public virtual void OnDisturb(DisturbType type, bool message)
 		{
 			if (message)
 			{
-				m_Caster.SendLocalizedMessage(500641); // Your concentration is disturbed, thus ruining thy spell.
+				m_Caster.SendLocalizedMessage(500641, "", 0x22); // Your concentration is disturbed, thus ruining thy spell.
 			}
 		}
 
@@ -626,7 +611,7 @@ namespace Server.Spells
 
 			if (m_Info.Mantra != null && m_Info.Mantra.Length > 0 && (m_Caster.Player || (m_Caster is BaseCreature && ((BaseCreature)m_Caster).ShowSpellMantra)))
 			{
-				m_Caster.PublicOverheadMessage(MessageType.Spell, m_Caster.SpeechHue, true, m_Info.Mantra, false);
+				m_Caster.PublicOverheadMessage(MessageType.Regular, 2042, true, m_Info.Mantra, false);
 			}
 		}
 
@@ -642,8 +627,8 @@ namespace Server.Spells
             }
         }
 
-		public virtual bool BlockedByAnimalForm { get { return true; } }
-		public virtual bool BlocksMovement { get { return true; } }
+		public virtual bool BlockedByAnimalForm { get { return false; } }
+		public virtual bool BlocksMovement { get { return false; } }
 
 		public virtual bool CheckNextSpellTime { get { return !(m_Scroll is BaseWand); } }
 
@@ -654,7 +639,7 @@ namespace Server.Spells
  				return StartSequence();
  			}
 			
-        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+        	this.Caster.SendLocalizedMessage(502625, "", 0x22); // Insufficient mana
         	
 			return false;
         }
@@ -683,7 +668,7 @@ namespace Server.Spells
 			}
 			else if (CheckNextSpellTime && Core.TickCount - m_Caster.NextSpellTime < 0)
 			{
-				m_Caster.SendLocalizedMessage(502644); // You have not yet recovered from casting a spell.
+//				m_Caster.SendLocalizedMessage(502644); // You have not yet recovered from casting a spell.
 			}
 			else if (m_Caster is PlayerMobile && ((PlayerMobile)m_Caster).PeacedUntil > DateTime.UtcNow)
 			{
@@ -743,7 +728,7 @@ namespace Server.Spells
 									
 					OnBeginCast();
 
-					m_CastTimer = new CastTimer(this, castDelay <= TimeSpan.FromSeconds(1.0) ? 10:100);
+					m_CastTimer = new CastTimer(this, castDelay <= TimeSpan.FromSeconds(1.5) ? 25:100);
 
 					if (castDelay > TimeSpan.Zero)
 					{
@@ -756,10 +741,6 @@ namespace Server.Spells
 					
 					return true;
 				}
-				else
-				{
-					return false;
-				}
 			}
 
 			return false;
@@ -768,7 +749,12 @@ namespace Server.Spells
 		public abstract void OnCast();
 			
 		public virtual void OnBeginCast()
-		{ }
+		{ 
+            if (m_Caster != m_ObjectTargeted)
+            {
+            	SpellHelper.Turn(m_Caster, m_ObjectTargeted);
+            }
+		}
 
 		public virtual void GetCastSkills(out double min, out double max)
 		{
@@ -1079,12 +1065,11 @@ namespace Server.Spells
 		public void CastSequence()
 		{
 			m_Caster.NextSpellTime = Core.TickCount + (int)GetCastRecovery().TotalMilliseconds;
-			Target originalTarget = m_Caster.Target;
+			Target originalTarget = m_Caster.Target;	
+			m_State = SpellState.Sequencing;
 			
-			if (!Disturbed && CheckLOS(ObjectTargeted)) //moved checkLOS to outside cast timer
-			{
-				m_State = SpellState.Sequencing;
-				
+			if (!Disturbed)
+			{				
 				if (m_Caster.Region != null)
 				{
 					m_Caster.Region.OnSpellCast(m_Caster, this);
@@ -1092,13 +1077,20 @@ namespace Server.Spells
 				
 				m_Caster.OnSpellCast(this);
 				
-				if (ConsumeReagents())
+				if (CheckLOS(ObjectTargeted))
 				{
-					OnCast();
+					if (ConsumeReagents())
+					{
+						OnCast();
+					}
+					else
+					{
+						m_Caster.SendLocalizedMessage(502630, "", 0x22); // More reagents are needed for this spell.
+					}
 				}
 				else
 				{
-					m_Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502630); // More reagents are needed for this spell.
+					DoFizzle();
 				}
 			}
 			else
@@ -1114,7 +1106,7 @@ namespace Server.Spells
 			FinishSequence();
 		}
 		
-		public bool CheckLOS(object obj, int range = 12)//overridden by mageryspell
+		public bool CheckLOS(object obj, int range = 15)//overridden by mageryspell
 		{
        		IPoint3D loc = obj as IPoint3D;
        		
@@ -1122,12 +1114,12 @@ namespace Server.Spells
        		{
 				if (!this.Caster.InLOS(new Point3D(loc)) || !this.Caster.CanSee(obj))
 				{
-					this.Caster.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237);// Target can not be seen.
+					this.Caster.SendLocalizedMessage(500237);// Target can not be seen.
 					return false;
 				}
         		else if( !this.Caster.InRange( new Point3D( loc ), range ))
 				{
-					this.Caster.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237);// Target can not be seen.
+					this.Caster.SendLocalizedMessage(500446);// That is too far away.
 					return false;
                 }
 			}

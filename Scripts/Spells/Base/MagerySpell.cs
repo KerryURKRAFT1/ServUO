@@ -95,7 +95,7 @@ namespace Server.Spells
             if (target.Skills[SkillName.MagicResist].Value < maxSkill)
                 target.CheckSkill(SkillName.MagicResist, 0.0, target.Skills[SkillName.MagicResist].Cap);
 
-            return (n >= Utility.RandomDouble());
+            return (Caster != target && n >= Utility.RandomDouble());
         }
 
         public virtual double GetResistPercentForCircle(Mobile target, SpellCircle circle)

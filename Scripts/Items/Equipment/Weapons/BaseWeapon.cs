@@ -779,8 +779,7 @@ namespace Server.Items
 /// <summary>
 /// /
 /// </summary>
-
-
+        
 		public override void GetContextMenuEntries(Mobile from, List<ContextMenuEntry> list)
 		{
 			base.GetContextMenuEntries(from, list);
@@ -4983,12 +4982,12 @@ namespace Server.Items
 
 		public override bool AllowEquipedCast(Mobile from)
 		{
-			if (base.AllowEquipedCast(from))
-			{
+//			if (base.AllowEquipedCast(from))
+//			{
 				return true;
-			}
+//			}
 
-			return m_AosAttributes.SpellChanneling > 0 || Enhancement.GetValue(from, AosAttribute.SpellChanneling) > 0;
+//			return m_AosAttributes.SpellChanneling > 0 || Enhancement.GetValue(from, AosAttribute.SpellChanneling) > 0;
 		}
 
 		public virtual int ArtifactRarity { get { return 0; } }

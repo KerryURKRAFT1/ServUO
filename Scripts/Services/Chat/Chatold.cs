@@ -11,7 +11,7 @@ namespace Server.Chat
 
         private static void EventSink_ChatRequest(ChatRequestEventArgs e)
         {
-            e.Mobile.SendMessage("Chat is not currently supported.");
+//            e.Mobile.SendMessage("Chat is not currently supported.");
         }
     }
 }

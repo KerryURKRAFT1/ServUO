@@ -59,11 +59,7 @@ namespace Server.Spells.Third
 
                 m.Paralyzed = false;
 
-                if (this.CheckResisted(m))
-                {
-                    m.SendLocalizedMessage(501783); // You feel yourself resisting magical energy.
-                }
-                else
+                if (!this.CheckResisted(m))
                 {
                     int level;
 
@@ -162,6 +158,11 @@ namespace Server.Spells.Third
 	              	from.SendLocalizedMessage(1005213); // You can't do that
                 }
             }
+	        protected override void OnTargetOutOfLOS(Mobile from, object o)
+	        {
+	            from.Target = new InternalTarget(m_Owner);
+				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
+	        }
 	    }
     }
 }

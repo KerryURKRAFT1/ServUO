@@ -68,7 +68,10 @@ namespace Server.Spells.Seventh
                 if(mob != null)
                     SpellHelper.CheckReflect((int)this.Circle, this.Caster, ref mob);
 
-                double damage = 0;
+				if (mob.Spell != null)
+                    mob.Spell.OnCasterHurt();
+
+				double damage = 0;
 
                 if (Core.AOS)
                 {
@@ -81,8 +84,6 @@ namespace Server.Spells.Seventh
                     if (this.CheckResisted(mob))
                     {
                         damage *= 0.6;
-
-                        mob.SendLocalizedMessage(501783); // You feel yourself resisting magical energy.
                     }
 
                     damage *= this.GetDamageScalar(mob);
@@ -131,6 +132,11 @@ namespace Server.Spells.Seventh
 	              	from.SendLocalizedMessage(1005213); // You can't do that
                 }
             }
+	        protected override void OnTargetOutOfLOS(Mobile from, object o)
+	        {
+	            from.Target = new InternalTarget(m_Owner);
+				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
+	        }
  	    }
     }
 }

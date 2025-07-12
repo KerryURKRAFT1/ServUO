@@ -118,8 +118,6 @@ namespace Server.Spells.Seventh
                         if (!Core.AOS && m != null && this.CheckResisted(m))
                         {
                             damage *= 0.5;
-
-                            m.SendLocalizedMessage(501783); // You feel yourself resisting magical energy.
                         }
 
                         if(m != null)
@@ -162,6 +160,11 @@ namespace Server.Spells.Seventh
 	              	from.SendLocalizedMessage(1005213); // You can't do that
                 }
             }
+	        protected override void OnTargetOutOfLOS(Mobile from, object o)
+	        {
+	            from.Target = new InternalTarget(m_Owner);
+				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
        }
+        }
     }
 }

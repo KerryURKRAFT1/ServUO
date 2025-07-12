@@ -204,7 +204,8 @@ namespace Server
         private static readonly Type[] m_PotionTypes = new[]
 		{
 			typeof(AgilityPotion), typeof(StrengthPotion), typeof(RefreshPotion), typeof(LesserCurePotion),
-			typeof(LesserHealPotion), typeof(LesserPoisonPotion)
+			typeof(LesserHealPotion), typeof(LesserPoisonPotion), 
+			typeof(LesserManaPotion)
 		};
 
         public static Type[] PotionTypes { get { return m_PotionTypes; } }

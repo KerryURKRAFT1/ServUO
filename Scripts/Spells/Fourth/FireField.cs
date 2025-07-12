@@ -221,8 +221,6 @@ namespace Server.Spells.Fourth
                     if (!Core.AOS && m.CheckSkill(SkillName.MagicResist, 0.0, 30.0))
                     {
                         damage = 1;
-
-                        m.SendLocalizedMessage(501783); // You feel yourself resisting magical energy.
                     }
 
                     AOS.Damage(m, this.m_Caster, damage, 0, 100, 0, 0, 0);
@@ -301,8 +299,6 @@ namespace Server.Spells.Fourth
                                 if (!Core.AOS && m.CheckSkill(SkillName.MagicResist, 0.0, 30.0))
                                 {
                                     damage = 1;
-
-                                    m.SendLocalizedMessage(501783); // You feel yourself resisting magical energy.
                                 }
 
                                 AOS.Damage(m, caster, damage, 0, 100, 0, 0, 0);
@@ -340,6 +336,11 @@ namespace Server.Spells.Fourth
 	              	from.SendLocalizedMessage(1005213); // You can't do that
                 }
             }
+	        protected override void OnTargetOutOfLOS(Mobile from, object o)
+	        {
+	            from.Target = new InternalTarget(m_Owner);
+				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
         }
+       }
     }
 }

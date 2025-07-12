@@ -438,7 +438,7 @@ namespace Server.Engines.Craft
                 if (craftItem.NameNumber > 0)
                     this.AddHtmlLocalized(255, 63 + (index * 20), 220, 18, craftItem.NameNumber, LabelColor, false, false);
                 else
-                    this.AddLabel(255, 60 + (index * 20), LabelHue, craftItem.NameString);
+                    this.AddLabel(255, 63 + (index * 20), LabelHue, craftItem.NameString);
 
                 this.AddButton(480, 60 + (index * 20), 4011, 4012, GetButtonID(2, i), GumpButtonType.Reply, 0);
             }

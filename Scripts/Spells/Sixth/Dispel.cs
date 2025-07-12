@@ -73,7 +73,10 @@ namespace Server.Spells.Sixth
             {
                 SpellHelper.Turn(this.Caster, m);
 
-                double dispelChance = (50.0 + ((100 * (this.Caster.Skills.Magery.Value - bc.GetDispelDifficulty())) / (bc.DispelFocus * 2))) / 100;
+				if (m.Spell != null)
+                    m.Spell.OnCasterHurt();
+
+				double dispelChance = (50.0 + ((100 * (this.Caster.Skills.Magery.Value - bc.GetDispelDifficulty())) / (bc.DispelFocus * 2))) / 100;
 
                 // Skill Masteries
                 dispelChance -= ((double)SkillMasteries.MasteryInfo.EnchantedSummoningBonus(bc) / 100);
@@ -119,6 +122,11 @@ namespace Server.Spells.Sixth
 	              	from.SendLocalizedMessage(1005213); // You can't do that
                 }
             }
+	        protected override void OnTargetOutOfLOS(Mobile from, object o)
+	        {
+	            from.Target = new InternalTarget(m_Owner);
+				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
         }
+       }
     }
 }

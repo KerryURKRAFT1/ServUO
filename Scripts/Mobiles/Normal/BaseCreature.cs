@@ -4745,13 +4745,118 @@ namespace Server.Mobiles
             return val;
         }
 
-        public void PackGold(int amount)
+		#region Reds
+		public static void DismountPlayer( Mobile m )
+		{
+			if ( m.Mount is EtherealMount )
+			{
+				IMount mount = m.Mount;
+				EtherealMount ethy = (EtherealMount)mount;
+				Server.Mobiles.EtherealMount.Dismount( m );
+				m.SendMessage( "Your mount has moved to your pack." );
+			}
+			else if ( m.Mount is BaseMount )
+			{
+				BaseCreature pet = (BaseCreature)(m.Mount);
+				Server.Mobiles.BaseMount.Dismount( m );
+
+				pet.ControlTarget = null;
+				//pet.ControlOrder = OrderType.Stay;
+				pet.Internalize();
+				pet.SetControlMaster( null );
+				pet.SummonMaster = null;
+				pet.IsStabled = true;
+				//pet.Loyalty = BaseCreature.MaxLoyalty;
+				pet.Language = "mount";
+
+				m.Stabled.Add( pet );
+
+				m.SendMessage( "Your mount is safely waiting for you elsewhere." );
+			}
+		}
+
+		private bool m_FullSpeedPassiveAI = false;
+		private bool m_FullSpeedActiveAI = false;
+		private double dOrigPassiveSpeed = 0.0;
+		private double dOrigActiveSpeed = 0.0;
+
+		[CommandProperty( AccessLevel.GameMaster )]
+		public virtual bool AIFullSpeedActive
+		{
+		    get 
+		    { 
+				if (dOrigActiveSpeed == 0.0 && ActiveSpeed != 0.0)
+				{
+					dOrigActiveSpeed = ActiveSpeed;
+				}
+				return m_FullSpeedActiveAI; 
+		    }
+		    set
+		    {
+				m_FullSpeedActiveAI = value;
+				if (m_FullSpeedActiveAI)
+				{
+					dOrigActiveSpeed = ActiveSpeed;
+				}
+				else
+				{
+					ActiveSpeed = dOrigActiveSpeed;
+				}
+		    }
+		}
+
+		[CommandProperty( AccessLevel.GameMaster )]
+		public virtual bool AIFullSpeedPassive
+		{
+		    get 
+		    { 
+			if (dOrigPassiveSpeed == 0.0 && PassiveSpeed != 0.0)
+			{
+			    dOrigPassiveSpeed = PassiveSpeed;
+			}
+			return m_FullSpeedPassiveAI; 
+		    }
+		    set
+		    {
+			m_FullSpeedPassiveAI = value;
+			if (m_FullSpeedPassiveAI)
+			{
+			    dOrigPassiveSpeed = PassiveSpeed;
+			}
+			else
+			{
+			    PassiveSpeed = dOrigPassiveSpeed;
+			}
+		    }
+		}
+		
+        public virtual void CallOthers( Mobile target )
+		{
+			foreach ( Mobile mob in this.GetMobilesInRange( 10 ) )
+			{
+
+				Region region = Region.Find( this.Location, this.Map );
+
+				if ( mob is BaseCreature && InLOS( mob ) && mob.Combatant == null 
+				    && this.GetType() == mob.GetType() && !((BaseCreature)mob).Summoned 
+				    && !((BaseCreature)mob).Controlled  
+				    && !((BaseCreature)mob).IsStabled  
+				   )
+				{
+					mob.Combatant = target;
+					mob.Warmode = true;
+				}
+			}	
+		}
+
+		public void PackGold(int amount)
         {
             if (amount > 0)
             {
                 PackItem(new Gold(amount));
             }
         }
+		#endregion
 
         public void PackGold(int min, int max)
         {

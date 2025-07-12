@@ -82,11 +82,12 @@ namespace Server.Spells.Second
                     if (this.CheckResisted(mob))
                     {
                         damage *= 0.75;
-
-                        mob.SendLocalizedMessage(501783); // You feel yourself resisting magical energy.
                     }
 
-                    damage *= this.GetDamageScalar(mob);
+					if (mob.Spell != null)
+	                    mob.Spell.OnCasterHurt();
+
+					damage *= this.GetDamageScalar(mob);
                 }
 
                 if (!this.Caster.InRange(m, 2))
@@ -145,6 +146,11 @@ namespace Server.Spells.Second
 	              	from.SendLocalizedMessage(1005213); // You can't do that
                 }
             }
+	        protected override void OnTargetOutOfLOS(Mobile from, object o)
+	        {
+	            from.Target = new InternalTarget(m_Owner);
+				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
+	        }
         }
     }
 }

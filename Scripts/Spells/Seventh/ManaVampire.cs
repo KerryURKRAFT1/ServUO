@@ -77,10 +77,11 @@ namespace Server.Spells.Seventh
                 }
                 else
                 {
-                    if (this.CheckResisted(m))
-                        m.SendLocalizedMessage(501783); // You feel yourself resisting magical energy.
-                    else
+                    if (!this.CheckResisted(m))
                         toDrain = m.Mana;
+
+					if (m.Spell != null)
+	                    m.Spell.OnCasterHurt();
                 }
 
                 if (toDrain > (this.Caster.ManaMax - this.Caster.Mana))
@@ -136,6 +137,11 @@ namespace Server.Spells.Seventh
 	              	from.SendLocalizedMessage(1005213); // You can't do that
                 }
             }
+	        protected override void OnTargetOutOfLOS(Mobile from, object o)
+	        {
+	            from.Target = new InternalTarget(m_Owner);
+				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
         }
+       }
     }
 }

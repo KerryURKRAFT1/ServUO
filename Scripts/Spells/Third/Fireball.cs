@@ -76,13 +76,14 @@ namespace Server.Spells.Third
                 }
                 else if (target != null)
                 {
-                    damage = Utility.Random(10, 7);
+					if (target.Spell != null)
+	                    target.Spell.OnCasterHurt();
+
+					damage = Utility.Random(10, 7);
 
                     if (this.CheckResisted(target))
                     {
                         damage *= 0.75;
-
-                        target.SendLocalizedMessage(501783); // You feel yourself resisting magical energy.
                     }
 
                     damage *= this.GetDamageScalar(target);
@@ -123,6 +124,11 @@ namespace Server.Spells.Third
 	              	from.SendLocalizedMessage(1005213); // You can't do that
                 }
             }
+	        protected override void OnTargetOutOfLOS(Mobile from, object o)
+	        {
+	            from.Target = new InternalTarget(m_Owner);
+				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
+	        }
         }
     }
 }

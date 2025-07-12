@@ -111,10 +111,10 @@ namespace Server.Misc
 
             if (items.Count > 0)
             {
-                if (boxes > 0)
-                    Console.WriteLine("Cleanup: Detected {0} inaccessible items, including {1} bank boxes, removing..", items.Count, boxes);
-                else
-                    Console.WriteLine("Cleanup: Detected {0} inaccessible items, removing..", items.Count);
+//                if (boxes > 0)
+//                    Console.WriteLine("Cleanup: Detected {0} inaccessible items, including {1} bank boxes, removing..", items.Count, boxes);
+//                else
+//                    Console.WriteLine("Cleanup: Detected {0} inaccessible items, removing..", items.Count);
 
                 for (int i = 0; i < items.Count; ++i)
                     items[i].Delete();
@@ -122,7 +122,7 @@ namespace Server.Misc
 
             if (hairCleanup.Count > 0)
             {
-                Console.WriteLine("Cleanup: Detected {0} hair and facial hair items being worn, converting to their virtual counterparts..", hairCleanup.Count);
+  //                Console.WriteLine("Cleanup: Detected {0} hair and facial hair items being worn, converting to their virtual counterparts..", hairCleanup.Count);
 
                 for (int i = 0; i < hairCleanup.Count; i++)
                     hairCleanup[i].ConvertHair();

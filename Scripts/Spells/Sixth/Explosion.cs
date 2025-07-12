@@ -78,10 +78,11 @@ namespace Server.Spells.Sixth
 	                    if (CheckResisted(target))
 	                    {
 	                        damage *= 0.75;
-	
-	                        target.SendLocalizedMessage(501783); // You feel yourself resisting magical energy.
 	                    }
 	
+						if (target.Spell != null)
+		                    target.Spell.OnCasterHurt();
+						
 	                    damage *= GetDamageScalar(target);
 	
                         this.Caster.DoHarmful(target);
@@ -124,6 +125,11 @@ namespace Server.Spells.Sixth
 	              	from.SendLocalizedMessage(1005213); // You can't do that
                 }
             }
+	        protected override void OnTargetOutOfLOS(Mobile from, object o)
+	        {
+	            from.Target = new InternalTarget(m_Owner);
+				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
+	        }
         }
     }
 }

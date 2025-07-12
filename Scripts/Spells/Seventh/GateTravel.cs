@@ -341,6 +341,11 @@ namespace Server.Spells.Seventh
             		this.m_Owner.FinishSequence();
             	}
             }
+	        protected override void OnTargetOutOfLOS(Mobile from, object o)
+	        {
+	            from.Target = new InternalTarget(m_Owner);
+				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
         }
+       }
     }
 }
