@@ -1,44 +1,50 @@
-# [ServUO]
+=============================================================================================================================
+   ROB INSTALL
 
-ServUO is a community driven Ultima Online Server Emulator written in C#.
+   Download Server files at branch ServUO-UPDATED (https://github.com/KerryURKRAFT1/ServUO/tree/ServUO-UPDATED)
+=============================================================================================================================
 
-### Website
+1) 	Copy your client into /Client
 
-https://www.servuo.com
+	   We will be using 5.0.8.3 but for testing you can use any client although I recommend staying with or below 7.0.24
 
-### Installation
+2)	   Load up Classic UO with the same client (but not the same folder)
 
-Getting started with ServUO is quite easy.
+3) 	Adjust /Config files that start with Custom-*.cfg
 
-#### Windows
+=============================================================================================================================
+   WINDOWS
+=============================================================================================================================
 
-Just run `Compile.WIN.bat` and follow the prompts. This script will compile both the server binary and Ultima SDK binary for you and run the server for you at end. After this you can run the server by executing `ServUO.exe`.
+4) 	Compile with Compile.WIN - Debug.bat
 
-#### OSX
+5) 	Execute ServUO.exe
 
-`brew install mono`  
-`make`
+=============================================================================================================================
+   LINUX
+=============================================================================================================================
 
-#### Ubuntu
+4)	   make debug
 
-`apt-get install mono-complete`  
-`make`
+5)	   ./ServUO.sh (chmod +x if necessary)
 
-A quick start guide is available at our forums. Follow this link: [Quickstart]
+=============================================================================================================================
+   Linux Dependencies
+=============================================================================================================================
 
-### Development
+   I use Debian 12 here is my list note: this covers ModernUO also so you may not need everything
 
-Want to contribute? Great!
+   Dotnet SDK
+   Mono-Complete
 
-You can submit a pull request at any time and we will review it asap!
+   zlib1g-dev 
+   libicu-dev 
+   libz-dev 
+   zstd 
+   libargon2-dev 
+   tzdata 
+   libdeflate-dev
 
-License
-----
-
-GPL v2
-
-
-
-
-   [ServUO]: <https://www.servuo.com>
-   [Quickstart]: <https://www.servuo.com/tutorials/getting-started-with-servuo.2/>
+=============================================================================================================================
+   Note: Ignore [DEBUG] console messages, these are Kerry's stability tests
+=============================================================================================================================
