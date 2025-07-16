@@ -23,7 +23,7 @@ namespace Server.Items
         		return;
         	}
         	
-			if( !item.IsAccessibleTo( from ) || item.Layer == Layer.Invalid || item.Parent is Corpse || from.Backpack == null || !item.CanEquip(from))
+			if( !item.IsAccessibleTo( from ) || item.Parent is Corpse || from.Backpack == null || !item.CanEquip(from))
             {
 				from.SendLocalizedMessage(1071936); // You cannot equip that.
             }

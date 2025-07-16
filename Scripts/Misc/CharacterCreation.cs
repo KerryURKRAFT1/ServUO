@@ -49,8 +49,6 @@ namespace Server.Misc
             
             PackItem(new SpellbookFull());             
             PackItem(new Runebook());             
-            PackItem(new RecallRune(10));             
-            PackItem(new BagOfReagents(50));
         }
 
         private static void AddShirt(Mobile m, int shirtHue)

@@ -101,7 +101,7 @@ namespace Server.Spells
 		public virtual SkillName DamageSkill { get { return SkillName.EvalInt; } }
 
 		public virtual bool RevealOnCast { get { return true; } }
-		public virtual bool ClearHandsOnCast { get { return false; } }
+		public virtual bool ClearHandsOnCast { get { return true; } }
 		public virtual bool ShowHandMovement { get { return true; } }
 		public virtual bool TravelSpell { get { return false; } }
 
@@ -273,7 +273,7 @@ namespace Server.Spells
 
         public virtual void CheckCasterDisruption(bool checkElem = false, int phys = 0, int fire = 0, int cold = 0, int pois = 0, int nrgy = 0)
         {
-            if (!Caster.Player)
+              if (!Caster.Player)
             {
                 return;
             }
@@ -696,7 +696,7 @@ namespace Server.Spells
 
 					SayMantra();
 
-					TimeSpan castDelay = GetCastDelay();
+					TimeSpan castDelay = GetCastDelay() + TimeSpan.FromSeconds(0.5);
 					
                     m_CastTime = Core.TickCount + (long)castDelay.TotalMilliseconds;
 
