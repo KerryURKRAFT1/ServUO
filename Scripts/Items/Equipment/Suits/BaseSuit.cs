@@ -79,7 +79,9 @@ namespace Server.Items
 
         public override void OnDoubleClick(Mobile from)
         {
-            if (this.Validate())
+            ClickToEquip.OnDoubleClick(from, this);
+
+        	if (this.Validate())
                 base.OnDoubleClick(from);
         }
 

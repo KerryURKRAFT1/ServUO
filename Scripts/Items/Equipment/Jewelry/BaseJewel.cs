@@ -961,7 +961,12 @@ namespace Server.Items
             }
         }
 
-        public override void OnSingleClick(Mobile from)
+		public override void OnDoubleClick( Mobile from )
+        {
+            ClickToEquip.OnDoubleClick( from, this );
+        }
+
+		public override void OnSingleClick(Mobile from)
 		{
 			base.OnSingleClick(from);
 

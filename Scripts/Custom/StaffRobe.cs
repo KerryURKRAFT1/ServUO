@@ -4,7 +4,7 @@ namespace Server.Items
 {
     public class GMRobe : Robe
     {
-        private static Mobile m_Wearer = null;
+        private Mobile m_Wearer = null;
         private AccessLevel m_GMLevel = AccessLevel.Player;
 
         [Constructable]
@@ -192,10 +192,7 @@ namespace Server.Items
 		{
     		Mobile m = e.Mobile;
     		
-    		if (m == m_Wearer)
-    		{
-    			new AutoResTimer(m_Wearer).Start();
-    		}
+   			new AutoResTimer(m).Start();
 		}
 
 		private class AutoResTimer : Timer

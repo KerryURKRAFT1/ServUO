@@ -98,7 +98,6 @@ namespace Server.Items
 
 		public override void OnDoubleClick(Mobile from)
 		{
-
 			if (Parent != from)
 			{
 				from.SendMessage("The costume must be equiped to be used.");
@@ -122,6 +121,8 @@ namespace Server.Items
 			{
 				DeMask(from);
 			}
+
+            base.OnDoubleClick(from);
 		}
 
 		public override void OnRemoved( Object o )

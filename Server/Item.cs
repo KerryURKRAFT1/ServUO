@@ -1577,7 +1577,7 @@ namespace Server
 
         public virtual bool CanEquip(Mobile m)
         {
-            return (m_Layer != Layer.Invalid && m.FindItemOnLayer(m_Layer) == null);
+            return (m_Layer != Layer.Invalid);
         }
 
         public virtual void GetChildContextMenuEntries(Mobile from, List<ContextMenuEntry> list, Item item)

@@ -1095,7 +1095,7 @@ namespace Server.Items
 			}
 		}
 
-		public virtual bool UseSkillMod { get { return !Core.AOS; } }
+		public virtual bool UseSkillMod { get { return false; } }
 
 		public override bool OnEquip(Mobile from)
 		{
@@ -1345,6 +1345,55 @@ namespace Server.Items
 
 		public virtual bool CheckHit(Mobile attacker, IDamageable damageable)
 		{
+			// ===== Sphere-style hit chance for Core.UOR =====
+
+			if (Core.UOR)
+			{
+				Mobile uorDefender = damageable as Mobile;
+
+				// If the target is NOT Mobile, delegate or return true
+				if (uorDefender == null)
+				{
+					if (damageable is IDamageableItem)
+						return ((IDamageableItem)damageable).CheckHit(attacker);
+
+					return true;
+				}
+
+
+				int range = (attacker.Weapon != null) ? attacker.Weapon.MaxRange : 1;
+				if (!attacker.InRange(uorDefender, range))
+				{
+					return false;
+				}
+					
+
+				// Attacker weapon and skill
+				BaseWeapon uorAtkWeapon = attacker.Weapon as BaseWeapon;
+				SkillName atkSkillName = uorAtkWeapon != null ? uorAtkWeapon.Skill : SkillName.Wrestling;
+				Skill uorAtkSkill = attacker.Skills[atkSkillName];
+
+				// Defender weapon and skill
+				BaseWeapon uorDefWeapon = uorDefender.Weapon as BaseWeapon;
+				SkillName defSkillName = uorDefWeapon != null ? uorDefWeapon.Skill : SkillName.Wrestling;
+				Skill uorDefSkill = uorDefender.Skills[defSkillName];
+
+				double uorAtkValue = uorAtkSkill != null ? uorAtkSkill.Value : 0;
+				double uorDefValue = uorDefSkill != null ? uorDefSkill.Value : 0;
+
+				// Sphere-style formula: chance = (atk+1)/(atk+def+2), clamp between 10% and 95%
+				double uorChance = (uorAtkValue + 1) / (uorAtkValue + uorDefValue + 2);
+				uorChance = Math.Max(0.10, Math.Min(0.95, uorChance)); // Clamp between 10% and 95%
+
+				// DEBUG LOG: print values and chance
+				//Console.WriteLine($"[UOR HIT DEBUG] Attacker: {attacker.Name} ({uorAtkValue} {uorAtkSkill?.Name}), Defender: {uorDefender.Name} ({uorDefValue} Parry), Chance: {uorChance:P2}");
+				//Console.WriteLine($"[UOR HIT DEBUG] Attacker: {attacker.Name} ({uorAtkValue} {uorAtkSkill?.Name}), Defender: {uorDefender.Name} ({uorDefValue} {uorDefSkill?.Name}), Chance: {uorChance:P2}");
+
+				return Utility.RandomDouble() < uorChance;
+			}
+
+
+
 			Mobile defender = damageable as Mobile;
 
 			if (defender == null)
@@ -1621,6 +1670,44 @@ namespace Server.Items
 					canSwing = (p == null || p.PeacedUntil <= DateTime.UtcNow);
 				}
 			}
+
+			// ======= SWING FOR UOR =======
+
+			if (Core.UOR)
+			{
+				canSwing = (!attacker.Paralyzed && !attacker.Frozen);
+
+				if (canSwing)
+				{
+					Spell sp = attacker.Spell as Spell;
+					canSwing = (sp == null || !sp.IsCasting || !sp.BlocksMovement);
+				}
+				if (canSwing)
+				{
+					PlayerMobile p = attacker as PlayerMobile;
+					canSwing = (p == null || p.PeacedUntil <= DateTime.UtcNow);
+				}
+
+				if (canSwing && attacker.HarmfulCheck(damageable))
+				{
+					attacker.DisruptiveAction();
+					attacker.Send(new Swing(0, attacker, damageable));
+
+					TimeSpan swingDelay = GetDelay(attacker);
+					Timer.DelayCall(swingDelay, () =>
+					{
+						if (CheckHit(attacker, damageable))
+							OnHit(attacker, damageable, damageBonus);
+						else
+							OnMiss(attacker, damageable);
+					});
+				}
+				attacker.RevealingAction();
+				return GetDelay(attacker);
+			}
+
+
+    		// ======= END =======
 
 			#region Dueling
 			if (attacker is PlayerMobile)
@@ -1934,7 +2021,7 @@ namespace Server.Items
 
 		public virtual int AbsorbDamage(Mobile attacker, Mobile defender, int damage)
 		{
-			if (Core.AOS)
+			if (Core.AOS || Core.UOR)
 			{
 				return AbsorbDamageAOS(attacker, defender, damage);
 			}
@@ -4982,12 +5069,12 @@ namespace Server.Items
 
 		public override bool AllowEquipedCast(Mobile from)
 		{
-//			if (base.AllowEquipedCast(from))
-//			{
+			if (base.AllowEquipedCast(from))
+			{
 				return true;
-//			}
+			}
 
-//			return m_AosAttributes.SpellChanneling > 0 || Enhancement.GetValue(from, AosAttribute.SpellChanneling) > 0;
+			return m_AosAttributes.SpellChanneling > 0 || Enhancement.GetValue(from, AosAttribute.SpellChanneling) > 0;
 		}
 
 		public virtual int ArtifactRarity { get { return 0; } }
@@ -5723,6 +5810,11 @@ namespace Server.Items
 
 			return RootParent is Mobile && SkillMasterySpell.HasSpell((Mobile)RootParent, typeof(InjectedStrikeSpell));
 		}
+
+		public override void OnDoubleClick( Mobile from )
+        {
+            ClickToEquip.OnDoubleClick( from, this );
+        }
 
 		public override void OnSingleClick(Mobile from)
 		{

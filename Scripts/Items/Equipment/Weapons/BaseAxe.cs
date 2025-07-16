@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Server.ContextMenus;
 using Server.Engines.Harvest;
+using Server.Network;
 
 namespace Server.Items
 {
@@ -121,28 +122,50 @@ namespace Server.Items
             this.InvalidateProperties();
         }
 
+        public virtual void DisplayDurabilityTo(Mobile m)
+        {
+            this.LabelToAffix(m, 1017323, AffixType.Append, ": " + this.m_UsesRemaining.ToString()); // Durability
+        }
+
+        public override void OnSingleClick(Mobile from)
+        {
+        	if (ShowUsesRemaining)
+        	{
+        		this.DisplayDurabilityTo(from);
+        	}
+
+            base.OnSingleClick(from);
+        }
+
         public override void OnDoubleClick(Mobile from)
         {
-            if (this.HarvestSystem == null || this.Deleted)
-                return;
-
-            Point3D loc = this.GetWorldLocation();
-
-            if (!from.InLOS(loc) || !from.InRange(loc, 2))
-            {
-                from.LocalOverheadMessage(Server.Network.MessageType.Regular, 0x3E9, 1019045); // I can't reach that
-                return;
-            }
-            else if (!this.IsAccessibleTo(from))
-            {
-                this.PublicOverheadMessage(Server.Network.MessageType.Regular, 0x3E9, 1061637); // You are not allowed to access this.
-                return;
-            }
-			
-            if (!(this.HarvestSystem is Mining))
-                from.SendLocalizedMessage(1010018); // What do you want to use this item on?
-
-            this.HarvestSystem.BeginHarvesting(from, this);
+        	if (IsChildOf(from.Backpack))
+        	{
+        		ClickToEquip.OnDoubleClick(from, this);
+        	}
+        	else
+        	{
+	        	if (this.HarvestSystem == null || this.Deleted)
+	                return;
+	
+	            Point3D loc = this.GetWorldLocation();
+	
+	            if (!from.InLOS(loc) || !from.InRange(loc, 2))
+	            {
+	                from.LocalOverheadMessage(Server.Network.MessageType.Regular, 0x3E9, 1019045); // I can't reach that
+	                return;
+	            }
+	            else if (!this.IsAccessibleTo(from))
+	            {
+	                this.PublicOverheadMessage(Server.Network.MessageType.Regular, 0x3E9, 1061637); // You are not allowed to access this.
+	                return;
+	            }
+				
+	            if (!(this.HarvestSystem is Mining))
+	                from.SendLocalizedMessage(1010018); // What do you want to use this item on?
+	
+	            this.HarvestSystem.BeginHarvesting(from, this);
+	        }
         }
 
         public override void GetContextMenuEntries(Mobile from, List<ContextMenuEntry> list)

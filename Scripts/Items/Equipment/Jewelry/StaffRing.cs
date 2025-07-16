@@ -37,6 +37,8 @@ namespace Server.Items
                 from.SendMessage("Your not a Staff member, you may not wear this Item..."); 
                 this.Delete();
             }
+            
+            base.OnDoubleClick(from);
         }
 
         public override bool OnEquip(Mobile from)

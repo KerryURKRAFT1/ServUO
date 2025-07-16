@@ -42,14 +42,14 @@ namespace Server.Items
 
         public override void OnDoubleClick(Mobile from)
         {
-            if (from.Items.Contains(this))
-            {
+        	if (IsChildOf(from.Backpack))
+        	{
+        		ClickToEquip.OnDoubleClick(from, this);
+        	}
+        	else
+        	{
                 InternalTarget t = new InternalTarget(this);
                 from.Target = t;
-            }
-            else
-            {
-                from.SendMessage("You must be holding that weapon to use it.");
             }
         }
 

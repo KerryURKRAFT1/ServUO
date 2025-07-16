@@ -1,18 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<accounts count="4">
+<accounts count="8">
 	<account>
 		<username>Kerry</username>
 		<newCryptPassword>E0-62-92-41-A1-28-9F-B7-FE-46-78-62-E3-38-1D-71-6A-E3-99-36</newCryptPassword>
-		<accessLevel>Owner</accessLevel>
+		<accessLevel>Administrator</accessLevel>
 		<flags>2</flags>
 		<created>2025-03-15T11:38:23.4775774Z</created>
-		<lastLogin>2025-06-22T20:44:46.6667302Z</lastLogin>
-		<totalGameTime>P4DT15H2M34.9119612S</totalGameTime>
+		<lastLogin>2025-07-04T18:48:08.219601Z</lastLogin>
+		<totalGameTime>P4DT3H45M10.3712195S</totalGameTime>
 		<chars>
 			<char index="0">926</char>
 		</chars>
-		<addressList count="1">
+		<addressList count="2">
 			<ip>127.0.0.1</ip>
+			<ip>87.16.243.192</ip>
+		</addressList>
+		<totalCurrency>0</totalCurrency>
+	</account>
+	<account>
+		<username>Sirocco</username>
+		<newCryptPassword>D7-EB-5E-66-4C-9F-C5-BD-1D-50-0F-7F-3E-A8-0D-50-B2-45-B3-35</newCryptPassword>
+		<accessLevel>CoOwner</accessLevel>
+		<flags>2</flags>
+		<created>2025-06-19T13:07:03.6637444Z</created>
+		<lastLogin>2025-07-16T16:59:13.3382057Z</lastLogin>
+		<totalGameTime>P2DT15H1M6.0494838S</totalGameTime>
+		<chars>
+			<char index="0">66</char>
+		</chars>
+		<addressList count="4">
+			<ip>192.168.5.87</ip>
+			<ip>127.0.0.1</ip>
+			<ip>192.168.5.1</ip>
+			<ip>82.0.131.241</ip>
 		</addressList>
 		<totalCurrency>0</totalCurrency>
 	</account>
@@ -36,8 +56,8 @@
 		<newCryptPassword>22-26-9E-D2-E3-73-E5-27-80-DD-17-E8-EF-15-64-01-15-D2-36-52</newCryptPassword>
 		<flags>2</flags>
 		<created>2025-05-21T14:08:54.5644025Z</created>
-		<lastLogin>2025-06-21T12:01:12.0233362Z</lastLogin>
-		<totalGameTime>P1DT15H45M53.2430012S</totalGameTime>
+		<lastLogin>2025-06-13T16:02:46.9637668Z</lastLogin>
+		<totalGameTime>P1DT11H12M25.8418662S</totalGameTime>
 		<chars>
 			<char index="0">990</char>
 		</chars>
@@ -50,13 +70,52 @@
 		<username>tester2</username>
 		<newCryptPassword>30-15-36-29-EF-E1-5F-17-FE-89-AC-F5-21-86-B1-52-A9-32-C9-4C</newCryptPassword>
 		<created>2025-05-30T16:03:21.626709Z</created>
-		<lastLogin>2025-06-21T12:01:15.483225Z</lastLogin>
-		<totalGameTime>P1DT7H7M19.7262514S</totalGameTime>
+		<lastLogin>2025-06-10T13:44:47.7603482Z</lastLogin>
+		<totalGameTime>P1DT2H28M32.7825151S</totalGameTime>
 		<chars>
 			<char index="0">977</char>
 		</chars>
 		<addressList count="1">
 			<ip>127.0.0.1</ip>
+		</addressList>
+		<totalCurrency>0</totalCurrency>
+	</account>
+	<account>
+		<username>Test2</username>
+		<newCryptPassword>5D-47-BD-3C-5F-25-E3-CB-0A-C4-3B-22-89-33-9E-CE-C2-1E-0C-F4</newCryptPassword>
+		<flags>2</flags>
+		<created>2025-06-20T16:17:35.8589356Z</created>
+		<lastLogin>2025-07-06T13:20:14.979507Z</lastLogin>
+		<totalGameTime>PT9H48M57.6722291S</totalGameTime>
+		<chars />
+		<addressList count="2">
+			<ip>127.0.0.1</ip>
+			<ip>82.0.131.241</ip>
+		</addressList>
+		<totalCurrency>0</totalCurrency>
+	</account>
+	<account>
+		<username>Angel</username>
+		<newCryptPassword>FA-A0-77-11-DF-23-C7-25-88-EC-1B-E6-53-CA-54-3D-99-2F-DB-57</newCryptPassword>
+		<created>2025-07-03T17:10:30.773968Z</created>
+		<lastLogin>2025-07-03T17:10:46.346326Z</lastLogin>
+		<totalGameTime>PT25M14.624003S</totalGameTime>
+		<chars />
+		<addressList count="2">
+			<ip>192.168.5.1</ip>
+			<ip>192.168.5.87</ip>
+		</addressList>
+		<totalCurrency>0</totalCurrency>
+	</account>
+	<account>
+		<username>Storm</username>
+		<newCryptPassword>A8-A5-EF-DF-15-13-1E-10-FB-79-C5-A9-FF-5A-6E-57-EE-50-59-E9</newCryptPassword>
+		<created>2025-07-08T16:10:07.114987Z</created>
+		<lastLogin>2025-07-08T16:10:21.263447Z</lastLogin>
+		<totalGameTime>PT10M36.034426S</totalGameTime>
+		<chars />
+		<addressList count="1">
+			<ip>86.128.192.103</ip>
 		</addressList>
 		<totalCurrency>0</totalCurrency>
 	</account>

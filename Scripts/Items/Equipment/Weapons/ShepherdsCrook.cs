@@ -134,8 +134,15 @@ namespace Server.Items
 
         public override void OnDoubleClick(Mobile from)
         {
-            from.SendLocalizedMessage(502464); // Target the animal you wish to herd.
-            from.Target = new HerdingTarget();
+        	if (IsChildOf(from.Backpack))
+        	{
+        		ClickToEquip.OnDoubleClick(from, this);
+        	}
+        	else
+        	{
+	            from.SendLocalizedMessage(502464); // Target the animal you wish to herd.
+    	        from.Target = new HerdingTarget();
+        	}
         }
 
         private class HerdingTarget : Target
