@@ -131,15 +131,6 @@ namespace Server.Engines.Craft
             index = AddCraft(typeof(GreaterHealPotion), 1116348, 1044545, 55.0, 105.0, typeof(Ginseng), 1044356, 7, 1044364);
             AddRes(index, typeof(Bottle), 1044529, 1, 500315);
 
-			index = AddCraft(typeof(LesserManaPotion), 1116348, "lesser mana", -25.0, 25.0, typeof(SpidersSilk), 1044360, 1, 1044368);
-            AddRes(index, typeof(Bottle), 1044529, 1, 500315);
-            index = AddCraft(typeof(ManaPotion), 1116348, "mana", 15.0, 65.0, typeof(SpidersSilk), 1044360, 3, 1044368);
-            AddRes(index, typeof(Bottle), 1044529, 1, 500315);
-            index = AddCraft(typeof(GreaterManaPotion), 1116348, "greater mana", 55.0, 105.0, typeof(SpidersSilk), 1044360, 7, 1044368);
-            AddRes(index, typeof(Bottle), 1044529, 1, 500315);
-            index = AddCraft(typeof(LesserCurePotion), 1116348, 1044552, -10.0, 40.0, typeof(Garlic), 1044355, 1, 1044363);
-            AddRes(index, typeof(Bottle), 1044529, 1, 500315);
-
             index = AddCraft(typeof(CurePotion), 1116348, 1044553, 25.0, 75.0, typeof(Garlic), 1044355, 3, 1044363);
             AddRes(index, typeof(Bottle), 1044529, 1, 500315);
 

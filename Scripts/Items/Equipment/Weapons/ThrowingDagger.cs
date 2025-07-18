@@ -42,15 +42,8 @@ namespace Server.Items
 
         public override void OnDoubleClick(Mobile from)
         {
-        	if (IsChildOf(from.Backpack))
-        	{
-        		ClickToEquip.OnDoubleClick(from, this);
-        	}
-        	else
-        	{
-                InternalTarget t = new InternalTarget(this);
-                from.Target = t;
-            }
+            InternalTarget t = new InternalTarget(this);
+            from.Target = t;
         }
 
         private class InternalTarget : Target

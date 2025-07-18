@@ -1,4 +1,4 @@
-#region Header
+﻿#region Header
 // **********
 // ServUO - BaseWeapon.cs
 // **********
@@ -5810,11 +5810,6 @@ namespace Server.Items
 
 			return RootParent is Mobile && SkillMasterySpell.HasSpell((Mobile)RootParent, typeof(InjectedStrikeSpell));
 		}
-
-		public override void OnDoubleClick( Mobile from )
-        {
-            ClickToEquip.OnDoubleClick( from, this );
-        }
 
 		public override void OnSingleClick(Mobile from)
 		{

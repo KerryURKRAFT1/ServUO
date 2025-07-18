@@ -16,7 +16,6 @@ namespace Server.Factions
             typeof(GreaterStrengthPotion), typeof(GreaterStrengthPotion),
             typeof(GreaterAgilityPotion), typeof(GreaterAgilityPotion),
             typeof(TotalRefreshPotion), typeof(TotalRefreshPotion),
-             typeof(GreaterManaPotion), typeof(GreaterManaPotion),
             typeof(GreaterExplosionPotion)
         };
         private static readonly Type[] m_WeakPotions = new Type[]

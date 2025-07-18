@@ -49,29 +49,19 @@ namespace Server.Items
             }
         }
 
-        public override string DefaultName
+        public override int LabelNumber
         { 
             get
             {
-                if (m_Held > 0 && (int)m_Type >= (int)PotionEffect.Conflagration)
+                if (this.m_Held > 0 && (int)this.m_Type >= (int)PotionEffect.Conflagration)
                 {
-                    switch (m_Type)
-                    {
-                        case PotionEffect.Parasitic: return String.Format("#{0}", 1080069);
-                        case PotionEffect.Darkglow: return String.Format("#{0}", 1080070);
-                        case PotionEffect.Invisibility: return String.Format("#{0}", 1080071);
-                        case PotionEffect.Conflagration: return String.Format("#{0}", 1072658);
-                        case PotionEffect.ConflagrationGreater: return String.Format("#{0}", 1072659);
-                        case PotionEffect.ConfusionBlast: return String.Format("#{0}", 1072662);
-                        case PotionEffect.ConfusionBlastGreater: return String.Format("#{0}", 1072663);
-                        case PotionEffect.ManaLesser: return "a keg of lesser mana potions" ;
-                        case PotionEffect.Mana: return "a keg of mana potions";
-                        case PotionEffect.ManaGreater: return "a keg of greater mana potions";
+                    return 1072658 + (int)this.m_Type - (int)PotionEffect.Conflagration;
                 }
-                }
-                return String.Format("#{0}", m_Held > 0 ? 1041620 + (int)m_Type : 1041641);
+
+                return (this.m_Held > 0 ? 1041620 + (int)this.m_Type : 1041641); 
             }
         }
+        
         public static void Initialize()
         {
             TileData.ItemTable[0x1940].Height = 4;

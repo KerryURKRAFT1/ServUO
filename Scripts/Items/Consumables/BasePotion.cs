@@ -44,9 +44,6 @@ namespace Server.Items
         Urali,
         Sakkhra,
 		#endregion
-        ManaLesser,
-        Mana,
-        ManaGreater,
     }
 
     public abstract class BasePotion : Item, ICraftable, ICommodity

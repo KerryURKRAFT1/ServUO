@@ -601,7 +601,7 @@ namespace Server.Items
         public override void OnDoubleClick(Mobile from)
         {
             if (from.Talisman != this)
-                ClickToEquip.OnDoubleClick(from, this);
+				from.SendLocalizedMessage( 1042001 ); // That must be in your pack for you to use it.
             else if (this.m_ChargeTime > 0)
                 from.SendLocalizedMessage(1074882, this.m_ChargeTime.ToString()); // You must wait ~1_val~ seconds for this to recharge.
             else if (this.m_Charges == 0 && this.m_MaxCharges > 0)
