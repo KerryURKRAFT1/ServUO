@@ -3,11 +3,20 @@ using System;
 namespace Server.Mobiles
 {
     [CorpseName("a llama corpse")]
-    public class Llama : BaseCreature
+    //public class Llama : BaseCreature
+    public class Llama : BaseMount
     {
         [Constructable]
         public Llama()
-            : base(AIType.AI_Animal, FightMode.Aggressor, 10, 1, 0.2, 0.4)
+            : this("a llama")
+        {
+        }
+
+        [Constructable]
+        //public Llama()
+        //    : base(AIType.AI_Animal, FightMode.Aggressor, 10, 1, 0.2, 0.4)
+                    public Llama(string name)
+            : base(name, 0xDC, 0x3EA6, AIType.AI_Animal, FightMode.Aggressor, 10, 1, 0.2, 0.4)
         {
             this.Name = "a llama";
             this.Body = 0xDC;

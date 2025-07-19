@@ -7,7 +7,7 @@ namespace Server.Mobiles
     {
         [Constructable]
         public RidableLlama()
-            : this("a ridable llama")
+            : this("a llama")
         {
         }
 

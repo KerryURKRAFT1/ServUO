@@ -1424,6 +1424,12 @@ namespace Server.Items
             from.Send(new DisplayEquipmentInfo(this, eqInfo));
         }
 
+                // DLICK FOR SPHERE-UOR
+        public override void OnDoubleClick(Mobile from)
+        {
+                ClickToEquip.OnDoubleClick(from, this);
+        }
+
         public virtual void AddEquipInfoAttributes(Mobile from, List<EquipInfoAttribute> attrs)
         {
             if (this.DisplayLootType)

@@ -132,11 +132,20 @@ namespace Server.Items
                 this.Weight = 4.0;
         }
 
-        public override void OnDoubleClick(Mobile from)
-        {
-            from.SendLocalizedMessage(502464); // Target the animal you wish to herd.
-	        from.Target = new HerdingTarget();
-        }
+
+            public override void OnDoubleClick(Mobile from)
+            {
+                if (from.FindItemOnLayer(this.Layer) == this)
+                {
+                from.SendLocalizedMessage(502464); // Target the animal you wish to herd.
+                from.Target = new HerdingTarget();
+                }
+                else
+                {
+                    ClickToEquip.OnDoubleClick(from, this);
+                }
+            }
+
 
         private class HerdingTarget : Target
         {
@@ -153,6 +162,8 @@ namespace Server.Items
             {
             }
 
+
+
             protected override void OnTarget(Mobile from, object targ)
             {
                 if (targ is BaseCreature)
@@ -165,7 +176,7 @@ namespace Server.Items
                         {
                             bc.PrivateOverheadMessage(MessageType.Regular, 0x3B2, 502467, from.NetState); // That animal looks tame already.
                         }
-                        else 
+                        else
                         {
                             from.SendLocalizedMessage(502475); // Click where you wish the animal to go.
                             from.Target = new InternalTarget(bc);
@@ -181,6 +192,10 @@ namespace Server.Items
                     from.SendLocalizedMessage(502472); // You don't seem to be able to persuade that to move.
                 }
             }
+
+
+
+
 
             private bool IsHerdable(BaseCreature bc)
             {

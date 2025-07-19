@@ -129,9 +129,17 @@ namespace Server.Items
 			return TimeSpan.FromSeconds(0.25);
 		}
 
+        
+        // DLICK FOR SPHERE-UOR
+        public override void OnDoubleClick(Mobile from)
+        {
+                ClickToEquip.OnDoubleClick(from, this);
+        }
+
+
 		public override void OnHit(Mobile attacker, IDamageable damageable, double damageBonus)
 		{
-            if (AmmoType != null && attacker.Player && damageable is Mobile && !((Mobile)damageable).Player && (((Mobile)damageable).Body.IsAnimal || ((Mobile)damageable).Body.IsMonster) &&
+			if (AmmoType != null && attacker.Player && damageable is Mobile && !((Mobile)damageable).Player && (((Mobile)damageable).Body.IsAnimal || ((Mobile)damageable).Body.IsMonster) &&
 				0.4 >= Utility.RandomDouble())
 			{
 				((Mobile)damageable).AddToBackpack(Ammo);
@@ -139,18 +147,18 @@ namespace Server.Items
 
 			if (Core.ML && m_Velocity > 0)
 			{
-                int bonus = (int)attacker.GetDistanceToSqrt(damageable);
+				int bonus = (int)attacker.GetDistanceToSqrt(damageable);
 
 				if (bonus > 0 && m_Velocity > Utility.Random(100))
 				{
-                    AOS.Damage(damageable, attacker, bonus * 3, 100, 0, 0, 0, 0);
+					AOS.Damage(damageable, attacker, bonus * 3, 100, 0, 0, 0, 0);
 
 					if (attacker.Player)
 					{
 						attacker.SendLocalizedMessage(1072794); // Your arrow hits its mark with velocity!
 					}
 
-                    if (damageable is Mobile && ((Mobile)damageable).Player)
+					if (damageable is Mobile && ((Mobile)damageable).Player)
 					{
 						((Mobile)damageable).SendLocalizedMessage(1072795); // You have been hit by an arrow with velocity!
 					}

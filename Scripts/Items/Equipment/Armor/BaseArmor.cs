@@ -2985,7 +2985,7 @@ namespace Server.Items
             }
         }
 
-		public override void OnSingleClick(Mobile from)
+        public override void OnSingleClick(Mobile from)
         {
             List<EquipInfoAttribute> attrs = new List<EquipInfoAttribute>();
 
@@ -3035,6 +3035,12 @@ namespace Server.Items
 
             from.Send(new DisplayEquipmentInfo(this, eqInfo));
         }
+        
+        // DLICK FOR SPHERE-UOR
+        public override void OnDoubleClick(Mobile from)
+        {
+                ClickToEquip.OnDoubleClick(from, this);
+        }
 
         #region ICraftable Members
 
@@ -3048,17 +3054,17 @@ namespace Server.Items
             #region Mondain's Legacy
             if (!craftItem.ForceNonExceptional)
             {
-				if (typeRes == null)
-					typeRes = craftItem.Resources.GetAt(0).ItemType;
+                if (typeRes == null)
+                    typeRes = craftItem.Resources.GetAt(0).ItemType;
 
-				Resource = CraftResources.GetFromType(typeRes);
+                Resource = CraftResources.GetFromType(typeRes);
             }
             #endregion
 
             if (typeRes == null || craftItem.ForceNonExceptional)
-				typeRes = craftItem.Resources.GetAt(0).ItemType;
+                typeRes = craftItem.Resources.GetAt(0).ItemType;
 
-			Resource = CraftResources.GetFromType(typeRes);
+            Resource = CraftResources.GetFromType(typeRes);
 
             PlayerConstructed = true;
 
@@ -3068,7 +3074,7 @@ namespace Server.Items
                 this.Hue = 0;
 
 
-        // PATCH START UOR: Nome materiale nel nome visibile
+            // PATCH START UOR: Nome materiale nel nome visibile
             if (Core.UOR && tool is BaseTool)
             {
                 string materialName = "";

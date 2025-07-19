@@ -1,4 +1,4 @@
-﻿#region Header
+#region Header
 // **********
 // ServUO - BaseWeapon.cs
 // **********
@@ -24,6 +24,7 @@ using Server.Spells.Ninjitsu;
 using Server.Spells.Sixth;
 using Server.Spells.Spellweaving;
 using Server.Spells.SkillMasteries;
+using Server.Targets;
 #endregion
 
 namespace Server.Items
@@ -954,10 +955,15 @@ namespace Server.Items
 			{
 				m_Mobile.EndAction(typeof(BaseWeapon));
 			}
+
 		}
+
+		// REMOVED FOR UOR DCLICK FAST EQUIP
+		// METHOD IN ITEM.CS
 
 		public override bool CheckConflictingLayer(Mobile m, Item item, Layer layer)
 		{
+			/*
 			if (base.CheckConflictingLayer(m, item, layer))
 			{
 				return true;
@@ -974,7 +980,9 @@ namespace Server.Items
 				return true;
 			}
 
+			*/
 			return false;
+
 		}
 
 		public override bool AllowSecureTrade(Mobile from, Mobile to, Mobile newOwner, bool accepted)
@@ -1095,7 +1103,7 @@ namespace Server.Items
 			}
 		}
 
-		public virtual bool UseSkillMod { get { return false; } }
+		public virtual bool UseSkillMod { get { return !Core.AOS; } }
 
 		public override bool OnEquip(Mobile from)
 		{
@@ -1626,6 +1634,7 @@ namespace Server.Items
 
 		public virtual void OnBeforeSwing(Mobile attacker, IDamageable damageable)
 		{
+			
 			Mobile defender = damageable as Mobile;
 
 			WeaponAbility a = WeaponAbility.GetCurrentAbility(attacker);
@@ -1641,6 +1650,7 @@ namespace Server.Items
 			{
 				SpecialMove.ClearCurrentMove(attacker);
 			}
+			
 		}
 
 		public virtual TimeSpan OnSwing(Mobile attacker, IDamageable damageable)
@@ -1680,27 +1690,88 @@ namespace Server.Items
 				if (canSwing)
 				{
 					Spell sp = attacker.Spell as Spell;
+					// Check if the attacker is casting a spell that blocks movement
 					canSwing = (sp == null || !sp.IsCasting || !sp.BlocksMovement);
 				}
 				if (canSwing)
 				{
 					PlayerMobile p = attacker as PlayerMobile;
+					// Check if the attacker is under Peacemaking effect
 					canSwing = (p == null || p.PeacedUntil <= DateTime.UtcNow);
 				}
 
+				// Only swing if allowed and if attacker can harm the target
 				if (canSwing && attacker.HarmfulCheck(damageable))
 				{
-					attacker.DisruptiveAction();
-					attacker.Send(new Swing(0, attacker, damageable));
+					int maxRange = 1; // Replace with attacker.Weapon.MaxRange if available
 
-					TimeSpan swingDelay = GetDelay(attacker);
-					Timer.DelayCall(swingDelay, () =>
+					// Check if the target is in range BEFORE starting the swing
+					if (attacker.InRange(damageable.Location, maxRange))
 					{
-						if (CheckHit(attacker, damageable))
-							OnHit(attacker, damageable, damageBonus);
-						else
-							OnMiss(attacker, damageable);
-					});
+						attacker.DisruptiveAction();
+						attacker.Send(new Swing(0, attacker, damageable));
+
+						TimeSpan swingDelay = GetDelay(attacker);
+
+						// IMPORTANT !!!!  this is what happens during the swing delay
+
+						Timer.DelayCall(swingDelay, () =>
+						{
+							
+							// === BLOCKING CHECKS DURING SWING DELAY ===
+							// if attacker is dead / don't swing
+							if (attacker.Deleted || !attacker.Alive || attacker.Body.IsGhost)
+								return;
+
+							
+							// If attacker is paralyzed or frozen during delay, do not swing
+							if (attacker.Paralyzed || attacker.Frozen)
+								return;
+
+							// If attacker is casting a spell that blocks movement during delay, do not swing
+							Spell sp = attacker.Spell as Spell;
+							if (sp != null && sp.IsCasting && sp.BlocksMovement)
+								return;
+
+							// If attacker is under Peacemaking during delay, do not swing
+							PlayerMobile p = attacker as PlayerMobile;
+							if (p != null && p.PeacedUntil > DateTime.UtcNow)
+								return;
+							// === END BLOCKING CHECKS ===
+				
+
+							// Use the outer maxRange variable, do NOT redeclare it!
+							if (attacker.InRange(damageable.Location, maxRange))
+							{
+								// **FIX is mobile is dead**
+								if (damageable is Mobile mobileTarget)
+								{
+									// If the target is a Mobile: Check that it is alive
+									if (mobileTarget.Deleted || !mobileTarget.Alive || mobileTarget.Body.IsGhost)
+										return;
+								}
+								else if (damageable is Item itemTarget)
+								{
+									// if it's a item add controls
+								}
+
+								if (CheckHit(attacker, damageable))
+									OnHit(attacker, damageable, damageBonus);
+								else
+									OnMiss(attacker, damageable);
+							}
+							else
+							{
+								// Target out of range: do nothing, no miss, no attack!
+							}
+						});
+
+					}
+					else
+					{
+						// Target is out of range: do not swing, do not start swing timer
+						// Optionally, you can send a message or log here
+					}
 				}
 				attacker.RevealingAction();
 				return GetDelay(attacker);
@@ -1897,9 +1968,11 @@ namespace Server.Items
 			{
 				blocked = CheckParry(defender);
 				BaseWeapon weapon = defender.Weapon as BaseWeapon;
+        		Console.WriteLine($"[DEBUG AbsorbDamageAOS] Defender: {defender}, Blocked: {blocked}, Weapon: {weapon}");
 
 				if (blocked)
 				{
+					Console.WriteLine($"[DEBUG AbsorbDamageAOS] >>> BLOCK SUCCESSFUL <<<");
 					defender.FixedEffect(0x37B9, 10, 16);
 					damage = 0;
 
@@ -2021,89 +2094,93 @@ namespace Server.Items
 
 		public virtual int AbsorbDamage(Mobile attacker, Mobile defender, int damage)
 		{
-			if (Core.AOS || Core.UOR)
+			if (Core.AOS)
 			{
 				return AbsorbDamageAOS(attacker, defender, damage);
 			}
 
-			BaseShield shield = defender.FindItemOnLayer(Layer.TwoHanded) as BaseShield;
-			if (shield != null)
+			if (Core.UOR)
 			{
-				damage = shield.OnHit(this, damage);
-			}
-
-			double chance = Utility.RandomDouble();
-
-			Item armorItem;
-
-			if (chance < 0.07)
-			{
-				armorItem = defender.NeckArmor;
-			}
-			else if (chance < 0.14)
-			{
-				armorItem = defender.HandArmor;
-			}
-			else if (chance < 0.28)
-			{
-				armorItem = defender.ArmsArmor;
-			}
-			else if (chance < 0.43)
-			{
-				armorItem = defender.HeadArmor;
-			}
-			else if (chance < 0.65)
-			{
-				armorItem = defender.LegsArmor;
-			}
-			else
-			{
-				armorItem = defender.ChestArmor;
-			}
-
-			IWearableDurability armor = armorItem as IWearableDurability;
-
-			if (armor != null)
-			{
-				damage = armor.OnHit(this, damage);
-			}
-
-			int virtualArmor = defender.VirtualArmor + defender.VirtualArmorMod;
-
-			damage -= XmlAttach.OnArmorHit(attacker, defender, armorItem, this, damage);
-			damage -= XmlAttach.OnArmorHit(attacker, defender, shield, this, damage);
-
-			if (virtualArmor > 0)
-			{
-				double scalar;
-
-				if (chance < 0.14)
+				BaseShield shield = defender.FindItemOnLayer(Layer.TwoHanded) as BaseShield;
+				if (shield != null)
 				{
-					scalar = 0.07;
+					damage = shield.OnHit(this, damage);
+				}
+
+				double chance = Utility.RandomDouble();
+
+				Item armorItem;
+
+				if (chance < 0.07)
+				{
+					armorItem = defender.NeckArmor;
+				}
+				else if (chance < 0.14)
+				{
+					armorItem = defender.HandArmor;
 				}
 				else if (chance < 0.28)
 				{
-					scalar = 0.14;
+					armorItem = defender.ArmsArmor;
 				}
 				else if (chance < 0.43)
 				{
-					scalar = 0.15;
+					armorItem = defender.HeadArmor;
 				}
 				else if (chance < 0.65)
 				{
-					scalar = 0.22;
+					armorItem = defender.LegsArmor;
 				}
 				else
 				{
-					scalar = 0.35;
+					armorItem = defender.ChestArmor;
 				}
 
-				int from = (int)(virtualArmor * scalar) / 2;
-				int to = (int)(virtualArmor * scalar);
+				IWearableDurability armor = armorItem as IWearableDurability;
 
-				damage -= Utility.Random(from, (to - from) + 1);
+				if (armor != null)
+				{
+					damage = armor.OnHit(this, damage);
+				}
+
+				int virtualArmor = defender.VirtualArmor + defender.VirtualArmorMod;
+
+				damage -= XmlAttach.OnArmorHit(attacker, defender, armorItem, this, damage);
+				damage -= XmlAttach.OnArmorHit(attacker, defender, shield, this, damage);
+
+				if (virtualArmor > 0)
+				{
+					double scalar;
+
+					if (chance < 0.14)
+					{
+						scalar = 0.07;
+					}
+					else if (chance < 0.28)
+					{
+						scalar = 0.14;
+					}
+					else if (chance < 0.43)
+					{
+						scalar = 0.15;
+					}
+					else if (chance < 0.65)
+					{
+						scalar = 0.22;
+					}
+					else
+					{
+						scalar = 0.35;
+					}
+
+					int from = (int)(virtualArmor * scalar) / 2;
+					int to = (int)(virtualArmor * scalar);
+
+					damage -= Utility.Random(from, (to - from) + 1);
+				}
+
+				return damage;
 			}
-
 			return damage;
 		}
 
@@ -5069,12 +5146,12 @@ namespace Server.Items
 
 		public override bool AllowEquipedCast(Mobile from)
 		{
-			if (base.AllowEquipedCast(from))
-			{
+//			if (base.AllowEquipedCast(from))
+//			{
 				return true;
-			}
+//			}
 
-			return m_AosAttributes.SpellChanneling > 0 || Enhancement.GetValue(from, AosAttribute.SpellChanneling) > 0;
+//			return m_AosAttributes.SpellChanneling > 0 || Enhancement.GetValue(from, AosAttribute.SpellChanneling) > 0;
 		}
 
 		public virtual int ArtifactRarity { get { return 0; } }
@@ -5907,6 +5984,9 @@ namespace Server.Items
 
 			from.Send(new DisplayEquipmentInfo(this, eqInfo));
 		}
+
+
+
 
 
 

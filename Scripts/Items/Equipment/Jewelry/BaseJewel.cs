@@ -961,7 +961,7 @@ namespace Server.Items
             }
         }
 
-		public override void OnSingleClick(Mobile from)
+        public override void OnSingleClick(Mobile from)
 		{
 			base.OnSingleClick(from);
 
@@ -970,6 +970,11 @@ namespace Server.Items
 				LabelTo(from, 1050043, m_Crafter.TitleName); // crafted by ~1_NAME~
 			}
 		}
+        
+        public override void OnDoubleClick( Mobile from )
+        {
+            ClickToEquip.OnDoubleClick( from, this );
+        }
         
         public override void Serialize(GenericWriter writer)
         {
@@ -985,7 +990,7 @@ namespace Server.Items
 
             //Version 7
             writer.Write((bool)this.m_IsImbued);
-            
+
             // Version 6
             m_NegativeAttributes.Serialize(writer);
 
@@ -1003,7 +1008,7 @@ namespace Server.Items
 
             // Version 4
             writer.WriteEncodedInt((int)this.m_TimesImbued);
-           
+
             this.m_SAAbsorptionAttributes.Serialize(writer);
             #endregion
 

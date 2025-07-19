@@ -63,6 +63,13 @@ namespace Server.Items
             int version = reader.ReadInt();
         }
 
+        public override void OnDoubleClick(Mobile from)
+        {
+            
+                ClickToEquip.OnDoubleClick(from, this);
+
+        }
+
         public override void OnHit(Mobile attacker, IDamageable defender, double damageBonus)
         {
             base.OnHit(attacker, defender, damageBonus);

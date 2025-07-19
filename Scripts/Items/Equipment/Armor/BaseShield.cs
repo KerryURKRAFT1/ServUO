@@ -62,6 +62,19 @@ namespace Server.Items
             }
         }
 
+        public override void OnDoubleClick(Mobile from)
+        {
+            if (from.FindItemOnLayer(this.Layer) == this)
+            {
+
+            }
+            else
+            {
+                ClickToEquip.OnDoubleClick(from, this);
+            }
+        }
+             
+
         public override int OnHit(BaseWeapon weapon, int damage)
         {
             if (Core.AOS)
@@ -129,7 +142,7 @@ namespace Server.Items
                 if (chance < 0.01)
                     chance = 0.01;
                 /*
-                FORMULA: Displayed AR = ((Parrying Skill * Base AR of Shield) ÷ 200) + 1 
+                FORMULA: Displayed AR = ((Parrying Skill * Base AR of Shield) ï¿½ 200) + 1 
 
                 FORMULA: % Chance of Blocking = parry skill - (shieldAR * 2)
 
