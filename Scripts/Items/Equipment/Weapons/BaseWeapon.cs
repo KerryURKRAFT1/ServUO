@@ -1660,76 +1660,23 @@ namespace Server.Items
 
 		public virtual TimeSpan OnSwing(Mobile attacker, IDamageable damageable, double damageBonus)
 		{
-			bool canSwing = true;
-
-			if (Core.AOS)
-			{
-				canSwing = (!attacker.Paralyzed && !attacker.Frozen);
-
-				if (canSwing)
-				{
-					Spell sp = attacker.Spell as Spell;
-
-					canSwing = (sp == null || !sp.IsCasting || !sp.BlocksMovement);
-				}
-
-				if (canSwing)
-				{
-					PlayerMobile p = attacker as PlayerMobile;
-
-					canSwing = (p == null || p.PeacedUntil <= DateTime.UtcNow);
-				}
-			}
-			
 
 			// ======= SWING FOR UOR SPHERE-STYLE =======
 
 			if (Core.UOR)
 			{
-				canSwing = (!attacker.Paralyzed && !attacker.Frozen);
+				bool canSwing = true;
 
-				if (canSwing)
+				// ======= SWING FOR UOR SPHERE-STYLE =======
+				if (CanSwing(attacker) && attacker.HarmfulCheck(damageable))
 				{
-					Spell sp = attacker.Spell as Spell;
-					canSwing = (sp == null || !sp.IsCasting || !sp.BlocksMovement);
-				}
-				if (canSwing)
-				{
-					PlayerMobile p = attacker as PlayerMobile;
-					canSwing = (p == null || p.PeacedUntil <= DateTime.UtcNow);
-				}
+					TimeSpan swingDelay = GetDelay(attacker);
 
-				if (canSwing && attacker.HarmfulCheck(damageable))
-				{
-					int maxRange = 1; // Use attacker.Weapon.MaxRange if available
-
-					// Check if the target is in range BEFORE starting the swing
-					if (attacker.InRange(damageable.Location, maxRange))
+					if (attacker.InRange(damageable.Location, MaxRange))
 					{
-						attacker.DisruptiveAction();
-
-						TimeSpan swingDelay = GetDelay(attacker);
-
-						// === SPHERE STYLE: FIRST WAIT THE DELAY, THEN SEND SWING AND APPLY DAMAGE ===
 						Timer.DelayCall(swingDelay, () =>
 						{
-							// === CHECKS DURING THE SWING DELAY ===
-							if (attacker.Deleted || !attacker.Alive || attacker.Body.IsGhost)
-								return;
-
-							if (attacker.Paralyzed || attacker.Frozen)
-								return;
-
-							Spell sp = attacker.Spell as Spell;
-							if (sp != null && sp.IsCasting && sp.BlocksMovement)
-								return;
-
-							PlayerMobile p = attacker as PlayerMobile;
-							if (p != null && p.PeacedUntil > DateTime.UtcNow)
-								return;
-							// === END CHECKS ===
-
-							if (attacker.InRange(damageable.Location, maxRange))
+							if (CanSwing(attacker) && attacker.InRange(damageable.Location, MaxRange))
 							{
 								if (damageable is Mobile mobileTarget)
 								{
@@ -1741,14 +1688,16 @@ namespace Server.Items
 									// Add item controls here if needed
 								}
 
-								// *** NOW SEND THE SWING ANIMATION PACKET ***
 								attacker.Send(new Swing(0, attacker, damageable));
 
-								// IMMEDIATELY APPLY THE HIT OR MISS
 								if (CheckHit(attacker, damageable))
+								{
 									OnHit(attacker, damageable, damageBonus);
+								}
 								else
+								{
 									OnMiss(attacker, damageable);
+								}
 							}
 							else
 							{
@@ -1760,19 +1709,34 @@ namespace Server.Items
 					{
 						// Target is out of range: do not swing, do not start swing timer
 					}
+
+					attacker.RevealingAction();
+					return swingDelay;
 				}
+				// ======= END =======
+
 				attacker.RevealingAction();
 				return GetDelay(attacker);
 			}
+			else
+			{
+				return GetDelay(attacker);
+			}
 
-    		// ======= END =======
+		}
+		
 
+		public virtual bool CanSwing(Mobile attacker)
+		{
+			bool canSwing = true;
+
+			PlayerMobile pm = attacker as PlayerMobile;
+			
+			canSwing = (!attacker.Paralyzed && !attacker.Frozen);
 
 			#region Dueling
-			if (attacker is PlayerMobile)
-			{
-				PlayerMobile pm = (PlayerMobile)attacker;
-
+			if (pm != null)
+			{	
 				if (pm.DuelContext != null && !pm.DuelContext.CheckItemEquip(attacker, this))
 				{
 					canSwing = false;
@@ -1780,45 +1744,82 @@ namespace Server.Items
 			}
 			#endregion
 
-			if (canSwing && attacker.HarmfulCheck(damageable))
+			if (canSwing)
 			{
-				attacker.DisruptiveAction();
+				Spell sp = attacker.Spell as Spell;
 
-				if (attacker.NetState != null)
+				canSwing = (sp == null || !sp.IsCasting);
+			}
+			
+			if (canSwing)
+			{										
+				canSwing = (pm == null || pm.PeacedUntil <= DateTime.UtcNow);
+			}
+
+			return canSwing;	
+		}
+
+
+
+
+
+    		
+		/*
+			
+		#region Dueling
+		if (attacker is PlayerMobile)
+		{
+			PlayerMobile pm = (PlayerMobile)attacker;
+
+			if (pm.DuelContext != null && !pm.DuelContext.CheckItemEquip(attacker, this))
+			{
+				canSwing = false;
+			}
+		}
+		#endregion
+
+		if (canSwing && attacker.HarmfulCheck(damageable))
+		{
+			attacker.DisruptiveAction();
+
+			if (attacker.NetState != null)
+			{
+				attacker.Send(new Swing(0, attacker, damageable));
+			}
+
+			if (attacker is BaseCreature)
+			{
+				BaseCreature bc = (BaseCreature)attacker;
+				WeaponAbility ab = bc.GetWeaponAbility();
+
+				if (ab != null)
 				{
-					attacker.Send(new Swing(0, attacker, damageable));
-				}
-
-				if (attacker is BaseCreature)
-				{
-					BaseCreature bc = (BaseCreature)attacker;
-					WeaponAbility ab = bc.GetWeaponAbility();
-
-					if (ab != null)
+					if (bc.WeaponAbilityChance > Utility.RandomDouble())
 					{
-						if (bc.WeaponAbilityChance > Utility.RandomDouble())
-						{
-							WeaponAbility.SetCurrentAbility(bc, ab);
-						}
-						else
-						{
-							WeaponAbility.ClearCurrentAbility(bc);
-						}
+						WeaponAbility.SetCurrentAbility(bc, ab);
 					}
-				}
-
-				if (CheckHit(attacker, damageable))
-				{
-					OnHit(attacker, damageable, damageBonus);
-				}
-				else
-				{
-					OnMiss(attacker, damageable);
+					else
+					{
+						WeaponAbility.ClearCurrentAbility(bc);
+					}
 				}
 			}
 
-			return GetDelay(attacker);
+			if (CheckHit(attacker, damageable))
+			{
+				OnHit(attacker, damageable, damageBonus);
+			}
+			else
+			{
+				OnMiss(attacker, damageable);
+			}
 		}
+
+		return GetDelay(attacker);
+
+	}
+	*/
+
 
 		#region Sounds
 		public virtual int GetHitAttackSound(Mobile attacker, Mobile defender)

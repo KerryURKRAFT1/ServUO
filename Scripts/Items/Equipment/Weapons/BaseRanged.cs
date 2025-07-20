@@ -68,60 +68,70 @@ namespace Server.Items
 
 		public override TimeSpan OnSwing(Mobile attacker, IDamageable damageable)
 		{
-
-			// Make sure we've been standing still for .25/.5/1 second depending on Era
-			//if (Core.TickCount - attacker.LastMoveTime >= (Core.SE ? 250 : Core.AOS ? 500 : 1000) ||
-				if (m_ArchersCanMove ||
-				Core.TickCount - attacker.LastMoveTime >= (Core.SE ? 250 : Core.AOS ? 500 : 1000) ||
-				(Core.AOS && WeaponAbility.GetCurrentAbility(attacker) is MovingShot))
+			bool canMove;
+	
+			if (Core.UOR)
 			{
-				bool canSwing = true;
-
-				if (Core.AOS)
+				canMove = m_ArchersCanMove || Core.TickCount - attacker.LastMoveTime >= (1000);
+			}
+			else
+			{
+				canMove = Core.TickCount - attacker.LastMoveTime >= (Core.SE ? 250 : Core.AOS ? 500 : 1000) ||
+							(Core.AOS && WeaponAbility.GetCurrentAbility(attacker) is MovingShot);
+			}
+							
+			if (canMove)
+			{				
+				bool canSwing = true;			
+	
+				// ======= SWING FOR UOR SPHERE-STYLE =======
+				if (CanSwing(attacker) && attacker.HarmfulCheck(damageable))
 				{
-					canSwing = (!attacker.Paralyzed && !attacker.Frozen);
-
-					if (canSwing)
+					TimeSpan swingDelay = GetDelay(attacker);
+					
+					if (attacker.InRange(damageable.Location, MaxRange))
 					{
-						Spell sp = attacker.Spell as Spell;
-
-						canSwing = (sp == null || !sp.IsCasting || !sp.BlocksMovement);
-					}
-				}
-
-				#region Dueling
-				if (attacker is PlayerMobile)
-				{
-					PlayerMobile pm = (PlayerMobile)attacker;
-
-					if (pm.DuelContext != null && !pm.DuelContext.CheckItemEquip(attacker, this))
-					{
-						canSwing = false;
-					}
-				}
-				#endregion
-
-				if (canSwing && attacker.HarmfulCheck(damageable))
-				{
-					attacker.DisruptiveAction();
-					attacker.Send(new Swing(0, attacker, damageable));
-
-					if (OnFired(attacker, damageable))
-					{
-                        if (CheckHit(attacker, damageable))
+						Timer.DelayCall(swingDelay, () =>
 						{
-                            OnHit(attacker, damageable);
-						}
-						else
-						{
-                            OnMiss(attacker, damageable);
-						}
+							if (CanSwing(attacker) && attacker.InRange(damageable.Location, MaxRange))
+							{
+								if (damageable is Mobile mobileTarget)
+								{
+									if (mobileTarget.Deleted || !mobileTarget.Alive || mobileTarget.Body.IsGhost)
+										return;
+								}
+								else if (damageable is Item itemTarget)
+								{
+									// Add item controls here if needed
+								}
+	
+								attacker.Send(new Swing(0, attacker, damageable));
+	
+								if (CheckHit(attacker, damageable))
+								{
+									OnHit(attacker, damageable, 1.0);
+								}
+								else
+								{
+									OnMiss(attacker, damageable);
+								}
+							}
+							else
+							{
+								// Target out of range: do nothing, no miss, no attack!
+							}
+						});
 					}
+					else
+					{
+						// Target is out of range: do not swing, do not start swing timer
+					}
+	
+					attacker.RevealingAction();
+		
+					return swingDelay;
 				}
-
-				attacker.RevealingAction();
-
-				return GetDelay(attacker);
+    			// ======= END =======
 			}
 			
 			attacker.RevealingAction();

@@ -21,6 +21,7 @@ using Server.Regions;
 using Server.Spells;
 using Server.Spells.Spellweaving;
 using Server.Targets;
+using Server.Mobiles;
 using System.Linq;
 
 using MoveImpl = Server.Movement.MovementImpl;
@@ -2883,8 +2884,17 @@ namespace Server.Mobiles
 					if (m_Mobile.Summoned && m_Mobile.SummonMaster != null)
 					{
 						// If this is a summon, it can't target its controller.
-						if (m == m_Mobile.SummonMaster)
+						// exception UOR for Energy Vortex and Blade Spirit !
+
+						//if (m == m_Mobile.SummonMaster)
+						//	continue;
+
+					if (m_Mobile.Summoned && m_Mobile.SummonMaster != null)
+					{
+						var type = m_Mobile.GetType();
+						if (!(type.Name == "EnergyVortex" || type.Name == "BladeSpirit") && m == m_Mobile.SummonMaster)
 							continue;
+					}
 
 						// It also must abide by harmful spell rules if the master is a player.
 						if (m_Mobile.SummonMaster is PlayerMobile && !Server.Spells.SpellHelper.ValidIndirectTarget(m_Mobile.SummonMaster, m))

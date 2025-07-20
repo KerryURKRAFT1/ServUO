@@ -1,4 +1,4 @@
-﻿#region Header
+#region Header
 // **********
 // ServUO - Loot.cs
 // **********
@@ -197,14 +197,16 @@ namespace Server
 
         public static Type[] RegTypes { get { return m_RegTypes; } }
 
-        private static readonly Type[] m_NecroRegTypes = new[] { typeof(BatWing), typeof(GraveDust), typeof(DaemonBlood), typeof(NoxCrystal), typeof(PigIron) };
-
+        //private static readonly Type[] m_NecroRegTypes = new[] { typeof(BatWing), typeof(GraveDust), typeof(DaemonBlood), typeof(NoxCrystal), typeof(PigIron) };
+        // removing NECRO REAGENTS FROM LOOT FOR UOR
+        private static readonly Type[] m_NecroRegTypes = new Type[0];
         public static Type[] NecroRegTypes { get { return m_NecroRegTypes; } }
 
         private static readonly Type[] m_PotionTypes = new[]
 		{
 			typeof(AgilityPotion), typeof(StrengthPotion), typeof(RefreshPotion), typeof(LesserCurePotion),
-			typeof(LesserHealPotion), typeof(LesserPoisonPotion) 
+			typeof(LesserHealPotion), typeof(LesserPoisonPotion), 
+			typeof(LesserManaPotion)
 		};
 
         public static Type[] PotionTypes { get { return m_PotionTypes; } }
@@ -245,13 +247,19 @@ namespace Server
 			typeof(SummonEarthElementalScroll), typeof(SummonFireElementalScroll), typeof(SummonWaterElementalScroll)
 		};
 
+
+        // PATCH FOR UOR REMOVING NECRO SCROLL FROM LOOT 
+        private static readonly Type[] m_NecromancyScrollTypes = new Type[0];
+        private static readonly Type[] m_SENecromancyScrollTypes = new Type[0];
+            
+        /*    
         private static readonly Type[] m_NecromancyScrollTypes = new[]
-		{
-			typeof(AnimateDeadScroll), typeof(BloodOathScroll), typeof(CorpseSkinScroll), typeof(CurseWeaponScroll),
-			typeof(EvilOmenScroll), typeof(HorrificBeastScroll), typeof(LichFormScroll), typeof(MindRotScroll),
-			typeof(PainSpikeScroll), typeof(PoisonStrikeScroll), typeof(StrangleScroll), typeof(SummonFamiliarScroll),
-			typeof(VampiricEmbraceScroll), typeof(VengefulSpiritScroll), typeof(WitherScroll), typeof(WraithFormScroll)
-		};
+        {
+            typeof(AnimateDeadScroll), typeof(BloodOathScroll), typeof(CorpseSkinScroll), typeof(CurseWeaponScroll),
+            typeof(EvilOmenScroll), typeof(HorrificBeastScroll), typeof(LichFormScroll), typeof(MindRotScroll),
+            typeof(PainSpikeScroll), typeof(PoisonStrikeScroll), typeof(StrangleScroll), typeof(SummonFamiliarScroll),
+            typeof(VampiricEmbraceScroll), typeof(VengefulSpiritScroll), typeof(WitherScroll), typeof(WraithFormScroll)
+        };
 
         private static readonly Type[] m_SENecromancyScrollTypes = new[]
 		{
@@ -261,7 +269,7 @@ namespace Server
 			typeof(VampiricEmbraceScroll), typeof(VengefulSpiritScroll), typeof(WitherScroll), typeof(WraithFormScroll),
 			typeof(ExorcismScroll)
 		};
-
+        */
         private static readonly Type[] m_PaladinScrollTypes = new Type[0];
 
         private static Type[] m_MysticScrollTypes = new Type[]
