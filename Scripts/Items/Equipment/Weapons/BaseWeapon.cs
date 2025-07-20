@@ -1680,8 +1680,9 @@ namespace Server.Items
 					canSwing = (p == null || p.PeacedUntil <= DateTime.UtcNow);
 				}
 			}
+			
 
-			// ======= SWING FOR UOR =======
+			// ======= SWING FOR UOR SPHERE-STYLE =======
 
 			if (Core.UOR)
 			{
@@ -1690,71 +1691,60 @@ namespace Server.Items
 				if (canSwing)
 				{
 					Spell sp = attacker.Spell as Spell;
-					// Check if the attacker is casting a spell that blocks movement
 					canSwing = (sp == null || !sp.IsCasting || !sp.BlocksMovement);
 				}
 				if (canSwing)
 				{
 					PlayerMobile p = attacker as PlayerMobile;
-					// Check if the attacker is under Peacemaking effect
 					canSwing = (p == null || p.PeacedUntil <= DateTime.UtcNow);
 				}
 
-				// Only swing if allowed and if attacker can harm the target
 				if (canSwing && attacker.HarmfulCheck(damageable))
 				{
-					int maxRange = 1; // Replace with attacker.Weapon.MaxRange if available
+					int maxRange = 1; // Use attacker.Weapon.MaxRange if available
 
 					// Check if the target is in range BEFORE starting the swing
 					if (attacker.InRange(damageable.Location, maxRange))
 					{
 						attacker.DisruptiveAction();
-						attacker.Send(new Swing(0, attacker, damageable));
 
 						TimeSpan swingDelay = GetDelay(attacker);
 
-						// IMPORTANT !!!!  this is what happens during the swing delay
-
+						// === SPHERE STYLE: FIRST WAIT THE DELAY, THEN SEND SWING AND APPLY DAMAGE ===
 						Timer.DelayCall(swingDelay, () =>
 						{
-							
-							// === BLOCKING CHECKS DURING SWING DELAY ===
-							// if attacker is dead / don't swing
+							// === CHECKS DURING THE SWING DELAY ===
 							if (attacker.Deleted || !attacker.Alive || attacker.Body.IsGhost)
 								return;
 
-							
-							// If attacker is paralyzed or frozen during delay, do not swing
 							if (attacker.Paralyzed || attacker.Frozen)
 								return;
 
-							// If attacker is casting a spell that blocks movement during delay, do not swing
 							Spell sp = attacker.Spell as Spell;
 							if (sp != null && sp.IsCasting && sp.BlocksMovement)
 								return;
 
-							// If attacker is under Peacemaking during delay, do not swing
 							PlayerMobile p = attacker as PlayerMobile;
 							if (p != null && p.PeacedUntil > DateTime.UtcNow)
 								return;
-							// === END BLOCKING CHECKS ===
-				
+							// === END CHECKS ===
 
-							// Use the outer maxRange variable, do NOT redeclare it!
 							if (attacker.InRange(damageable.Location, maxRange))
 							{
-								// **FIX is mobile is dead**
 								if (damageable is Mobile mobileTarget)
 								{
-									// If the target is a Mobile: Check that it is alive
 									if (mobileTarget.Deleted || !mobileTarget.Alive || mobileTarget.Body.IsGhost)
 										return;
 								}
 								else if (damageable is Item itemTarget)
 								{
-									// if it's a item add controls
+									// Add item controls here if needed
 								}
 
+								// *** NOW SEND THE SWING ANIMATION PACKET ***
+								attacker.Send(new Swing(0, attacker, damageable));
+
+								// IMMEDIATELY APPLY THE HIT OR MISS
 								if (CheckHit(attacker, damageable))
 									OnHit(attacker, damageable, damageBonus);
 								else
@@ -1765,20 +1755,18 @@ namespace Server.Items
 								// Target out of range: do nothing, no miss, no attack!
 							}
 						});
-
 					}
 					else
 					{
 						// Target is out of range: do not swing, do not start swing timer
-						// Optionally, you can send a message or log here
 					}
 				}
 				attacker.RevealingAction();
 				return GetDelay(attacker);
 			}
 
-
     		// ======= END =======
+
 
 			#region Dueling
 			if (attacker is PlayerMobile)

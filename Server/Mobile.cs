@@ -510,6 +510,10 @@ namespace Server
     [System.Runtime.InteropServices.ComVisible(true)]
 	public class Mobile : IEntity, IHued, IComparable<Mobile>, ISerializable, ISpawnable, IDamageable
 	{
+		// for UOR SWING
+		public int OutOfRangeSwingCount = 0;
+
+
 		#region CompareTo(...)
 		public int CompareTo(IEntity other)
 		{
