@@ -1,4 +1,4 @@
-#region Header
+﻿#region Header
 // **********
 // ServUO - BaseWeapon.cs
 // **********
@@ -1326,7 +1326,7 @@ namespace Server.Items
 //				chance = ourValue / (theirValue * 2); //ServUO style
 				chance = ourValue + 1 / (ourValue + theirValue + 2); //Kerry style
 	
-				chance += (double)bonus / 100;
+				chance += (double)bonus / 100; //Accuracy bonus
 									
 				if (chance > 0.95) //clamp it
 				{
@@ -1424,7 +1424,7 @@ namespace Server.Items
 				
 				delayInSeconds -= Math.Pow(m.Dex, 2) / 50000; //High Dex bonus
 
-				m.SendMessage($"Spd: {delayInSeconds:F3}s");
+//				m.SendMessage($"Spd: {delayInSeconds:F3}s");
 
 				return TimeSpan.FromSeconds(delayInSeconds);
 			}
