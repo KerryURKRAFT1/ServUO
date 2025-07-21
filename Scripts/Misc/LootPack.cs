@@ -1,4 +1,4 @@
-#region Header
+﻿#region Header
 // **********
 // ServUO - LootPack.cs
 // **********
@@ -15,6 +15,14 @@ namespace Server
 {
 	public class LootPack
 	{
+		#region Compatibility (as needed)
+		public static LootPack AosSuperBoss { get { return OldSuperBoss; } }
+		public static LootPack AosUltraRich { get { return OldUltraRich; } }
+		public static LootPack AosFilthyRich { get { return OldFilthyRich; } }		
+		public static LootPack AosRich { get { return OldRich; } }
+		public static LootPack MlRich { get { return OldRich; } }		
+		#endregion
+
 		public static int GetLuckChance(Mobile killer, Mobile victim)
 		{
 			if (!Core.AOS)
@@ -159,271 +167,13 @@ namespace Server
 			new LootPackItem(typeof(LesserHealPotion), 1), new LootPackItem(typeof(LesserPoisonPotion), 1)
 		};
 
-		#region Old Magic Items
 		public static readonly LootPackItem[] OldMagicItems = new[]
 		{
 			new LootPackItem(typeof(BaseJewel), 1), new LootPackItem(typeof(BaseArmor), 4),
 			new LootPackItem(typeof(BaseWeapon), 3), new LootPackItem(typeof(BaseRanged), 1),
 			new LootPackItem(typeof(BaseShield), 1)
 		};
-		#endregion
 
-		#region AOS Magic Items
-		public static readonly LootPackItem[] AosMagicItemsPoor = new[]
-		{
-			new LootPackItem(typeof(BaseWeapon), 3), new LootPackItem(typeof(BaseRanged), 1),
-			new LootPackItem(typeof(BaseArmor), 4), new LootPackItem(typeof(BaseShield), 1),
-			new LootPackItem(typeof(BaseJewel), 2)
-		};
-
-		public static readonly LootPackItem[] AosMagicItemsMeagerType1 = new[]
-		{
-			new LootPackItem(typeof(BaseWeapon), 56), new LootPackItem(typeof(BaseRanged), 14),
-			new LootPackItem(typeof(BaseArmor), 81), new LootPackItem(typeof(BaseShield), 11),
-			new LootPackItem(typeof(BaseJewel), 42)
-		};
-
-		public static readonly LootPackItem[] AosMagicItemsMeagerType2 = new[]
-		{
-			new LootPackItem(typeof(BaseWeapon), 28), new LootPackItem(typeof(BaseRanged), 7),
-			new LootPackItem(typeof(BaseArmor), 40), new LootPackItem(typeof(BaseShield), 5),
-			new LootPackItem(typeof(BaseJewel), 21)
-		};
-
-		public static readonly LootPackItem[] AosMagicItemsAverageType1 = new[]
-		{
-			new LootPackItem(typeof(BaseWeapon), 90), new LootPackItem(typeof(BaseRanged), 23),
-			new LootPackItem(typeof(BaseArmor), 130), new LootPackItem(typeof(BaseShield), 17),
-			new LootPackItem(typeof(BaseJewel), 68)
-		};
-
-		public static readonly LootPackItem[] AosMagicItemsAverageType2 = new[]
-		{
-			new LootPackItem(typeof(BaseWeapon), 54), new LootPackItem(typeof(BaseRanged), 13),
-			new LootPackItem(typeof(BaseArmor), 77), new LootPackItem(typeof(BaseShield), 10),
-			new LootPackItem(typeof(BaseJewel), 40)
-		};
-
-		public static readonly LootPackItem[] AosMagicItemsRichType1 = new[]
-		{
-			new LootPackItem(typeof(BaseWeapon), 211), new LootPackItem(typeof(BaseRanged), 53),
-			new LootPackItem(typeof(BaseArmor), 303), new LootPackItem(typeof(BaseShield), 39),
-			new LootPackItem(typeof(BaseJewel), 158)
-		};
-
-		public static readonly LootPackItem[] AosMagicItemsRichType2 = new[]
-		{
-			new LootPackItem(typeof(BaseWeapon), 170), new LootPackItem(typeof(BaseRanged), 43),
-			new LootPackItem(typeof(BaseArmor), 245), new LootPackItem(typeof(BaseShield), 32),
-			new LootPackItem(typeof(BaseJewel), 128)
-		};
-
-		public static readonly LootPackItem[] AosMagicItemsFilthyRichType1 = new[]
-		{
-			new LootPackItem(typeof(BaseWeapon), 219), new LootPackItem(typeof(BaseRanged), 55),
-			new LootPackItem(typeof(BaseArmor), 315), new LootPackItem(typeof(BaseShield), 41),
-			new LootPackItem(typeof(BaseJewel), 164)
-		};
-
-		public static readonly LootPackItem[] AosMagicItemsFilthyRichType2 = new[]
-		{
-			new LootPackItem(typeof(BaseWeapon), 239), new LootPackItem(typeof(BaseRanged), 60),
-			new LootPackItem(typeof(BaseArmor), 343), new LootPackItem(typeof(BaseShield), 90),
-			new LootPackItem(typeof(BaseJewel), 45)
-		};
-
-		public static readonly LootPackItem[] AosMagicItemsUltraRich = new[]
-		{
-			new LootPackItem(typeof(BaseWeapon), 276), new LootPackItem(typeof(BaseRanged), 69),
-			new LootPackItem(typeof(BaseArmor), 397), new LootPackItem(typeof(BaseShield), 52),
-			new LootPackItem(typeof(BaseJewel), 207)
-		};
-		#endregion
-
-		#region ML definitions
-		public static readonly LootPack MlRich =
-			new LootPack(
-				new[]
-				{
-					new LootPackEntry(true, Gold, 100.00, "4d50+450"),
-					new LootPackEntry(false, AosMagicItemsRichType1, 100.00, 1, 3, 0, 75),
-					new LootPackEntry(false, AosMagicItemsRichType1, 80.00, 1, 3, 0, 75),
-					new LootPackEntry(false, AosMagicItemsRichType1, 60.00, 1, 5, 0, 100),
-					new LootPackEntry(false, Instruments, 1.00, 1)
-				});
-		#endregion
-
-		#region SE definitions
-		public static readonly LootPack SePoor =
-			new LootPack(
-				new[]
-				{
-					new LootPackEntry(true, Gold, 100.00, "2d10+20"), new LootPackEntry(false, AosMagicItemsPoor, 1.00, 1, 5, 0, 100),
-					new LootPackEntry(false, Instruments, 0.02, 1)
-				});
-
-		public static readonly LootPack SeMeager =
-			new LootPack(
-				new[]
-				{
-					new LootPackEntry(true, Gold, 100.00, "4d10+40"),
-					new LootPackEntry(false, AosMagicItemsMeagerType1, 20.40, 1, 2, 0, 50),
-					new LootPackEntry(false, AosMagicItemsMeagerType2, 10.20, 1, 5, 0, 100),
-					new LootPackEntry(false, Instruments, 0.10, 1)
-				});
-
-		public static readonly LootPack SeAverage =
-			new LootPack(
-				new[]
-				{
-					new LootPackEntry(true, Gold, 100.00, "8d10+100"),
-					new LootPackEntry(false, AosMagicItemsAverageType1, 32.80, 1, 3, 0, 50),
-					new LootPackEntry(false, AosMagicItemsAverageType1, 32.80, 1, 4, 0, 75),
-					new LootPackEntry(false, AosMagicItemsAverageType2, 19.50, 1, 5, 0, 100),
-					new LootPackEntry(false, Instruments, 0.40, 1)
-				});
-
-		public static readonly LootPack SeRich =
-			new LootPack(
-				new[]
-				{
-					new LootPackEntry(true, Gold, 100.00, "15d10+225"),
-					new LootPackEntry(false, AosMagicItemsRichType1, 76.30, 1, 4, 0, 75),
-					new LootPackEntry(false, AosMagicItemsRichType1, 76.30, 1, 4, 0, 75),
-					new LootPackEntry(false, AosMagicItemsRichType2, 61.70, 1, 5, 0, 100),
-					new LootPackEntry(false, Instruments, 1.00, 1)
-				});
-
-		public static readonly LootPack SeFilthyRich =
-			new LootPack(
-				new[]
-				{
-					new LootPackEntry(true, Gold, 100.00, "3d100+400"),
-					new LootPackEntry(false, AosMagicItemsFilthyRichType1, 79.50, 1, 5, 0, 100),
-					new LootPackEntry(false, AosMagicItemsFilthyRichType1, 79.50, 1, 5, 0, 100),
-					new LootPackEntry(false, AosMagicItemsFilthyRichType2, 77.60, 1, 5, 25, 100),
-					new LootPackEntry(false, Instruments, 2.00, 1)
-				});
-
-		public static readonly LootPack SeUltraRich =
-			new LootPack(
-				new[]
-				{
-					new LootPackEntry(true, Gold, 100.00, "6d100+600"),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 25, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 25, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 25, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 25, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 25, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 33, 100),
-					new LootPackEntry(false, Instruments, 2.00, 1)
-				});
-
-		public static readonly LootPack SeSuperBoss =
-			new LootPack(
-				new[]
-				{
-					new LootPackEntry(true, Gold, 100.00, "10d100+800"),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 25, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 25, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 25, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 25, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 33, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 33, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 33, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 33, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 50, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 50, 100),
-					new LootPackEntry(false, Instruments, 2.00, 1)
-				});
-		#endregion
-
-		#region AOS definitions
-		public static readonly LootPack AosPoor =
-			new LootPack(
-				new[]
-				{
-					new LootPackEntry(true, Gold, 100.00, "1d10+10"), new LootPackEntry(false, AosMagicItemsPoor, 0.02, 1, 5, 0, 90),
-					new LootPackEntry(false, Instruments, 0.02, 1)
-				});
-
-		public static readonly LootPack AosMeager =
-			new LootPack(
-				new[]
-				{
-					new LootPackEntry(true, Gold, 100.00, "3d10+20"),
-					new LootPackEntry(false, AosMagicItemsMeagerType1, 1.00, 1, 2, 0, 10),
-					new LootPackEntry(false, AosMagicItemsMeagerType2, 0.20, 1, 5, 0, 90),
-					new LootPackEntry(false, Instruments, 0.10, 1)
-				});
-
-		public static readonly LootPack AosAverage =
-			new LootPack(
-				new[]
-				{
-					new LootPackEntry(true, Gold, 100.00, "5d10+50"),
-					new LootPackEntry(false, AosMagicItemsAverageType1, 5.00, 1, 4, 0, 20),
-					new LootPackEntry(false, AosMagicItemsAverageType1, 2.00, 1, 3, 0, 50),
-					new LootPackEntry(false, AosMagicItemsAverageType2, 0.50, 1, 5, 0, 90),
-					new LootPackEntry(false, Instruments, 0.40, 1)
-				});
-
-		public static readonly LootPack AosRich =
-			new LootPack(
-				new[]
-				{
-					new LootPackEntry(true, Gold, 100.00, "10d10+150"),
-					new LootPackEntry(false, AosMagicItemsRichType1, 20.00, 1, 4, 0, 40),
-					new LootPackEntry(false, AosMagicItemsRichType1, 10.00, 1, 5, 0, 60),
-					new LootPackEntry(false, AosMagicItemsRichType2, 1.00, 1, 5, 0, 90), new LootPackEntry(false, Instruments, 1.00, 1)
-				});
-
-		public static readonly LootPack AosFilthyRich =
-			new LootPack(
-				new[]
-				{
-					new LootPackEntry(true, Gold, 100.00, "2d100+200"),
-					new LootPackEntry(false, AosMagicItemsFilthyRichType1, 33.00, 1, 4, 0, 50),
-					new LootPackEntry(false, AosMagicItemsFilthyRichType1, 33.00, 1, 4, 0, 60),
-					new LootPackEntry(false, AosMagicItemsFilthyRichType2, 20.00, 1, 5, 0, 75),
-					new LootPackEntry(false, AosMagicItemsFilthyRichType2, 5.00, 1, 5, 0, 100),
-					new LootPackEntry(false, Instruments, 2.00, 1)
-				});
-
-		public static readonly LootPack AosUltraRich =
-			new LootPack(
-				new[]
-				{
-					new LootPackEntry(true, Gold, 100.00, "5d100+500"),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 25, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 25, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 25, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 25, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 25, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 35, 100),
-					new LootPackEntry(false, Instruments, 2.00, 1)
-				});
-
-		public static readonly LootPack AosSuperBoss =
-			new LootPack(
-				new[]
-				{
-					new LootPackEntry(true, Gold, 100.00, "5d100+500"),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 25, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 25, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 25, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 25, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 33, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 33, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 33, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 33, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 50, 100),
-					new LootPackEntry(false, AosMagicItemsUltraRich, 100.00, 1, 5, 50, 100),
-					new LootPackEntry(false, Instruments, 2.00, 1)
-				});
-		#endregion
-
-		#region Pre-AOS definitions
 		public static readonly LootPack OldPoor =
 			new LootPack(new[] {new LootPackEntry(true, Gold, 100.00, "1d25"), new LootPackEntry(false, Instruments, 0.02, 1)});
 
@@ -496,18 +246,17 @@ namespace Server
 					new LootPackEntry(false, OldMagicItems, 100.00, 1, 1, 60, 100),
 					new LootPackEntry(false, OldMagicItems, 100.00, 1, 1, 70, 100)
 				});
-		#endregion
 
 		#region Generic accessors
-		public static LootPack Poor { get { return Core.SE ? SePoor : Core.AOS ? AosPoor : OldPoor; } }
-		public static LootPack Meager { get { return Core.SE ? SeMeager : Core.AOS ? AosMeager : OldMeager; } }
-		public static LootPack Average { get { return Core.SE ? SeAverage : Core.AOS ? AosAverage : OldAverage; } }
-		public static LootPack Rich { get { return Core.SE ? SeRich : Core.AOS ? AosRich : OldRich; } }
-		public static LootPack FilthyRich { get { return Core.SE ? SeFilthyRich : Core.AOS ? AosFilthyRich : OldFilthyRich; } }
-		public static LootPack UltraRich { get { return Core.SE ? SeUltraRich : Core.AOS ? AosUltraRich : OldUltraRich; } }
-		public static LootPack SuperBoss { get { return Core.SE ? SeSuperBoss : Core.AOS ? AosSuperBoss : OldSuperBoss; } }
+		public static LootPack Poor { get { return OldPoor; } }
+		public static LootPack Meager { get { return OldMeager; } }
+		public static LootPack Average { get { return OldAverage; } }
+		public static LootPack Rich { get { return OldRich; } }
+		public static LootPack FilthyRich { get { return OldFilthyRich; } }
+		public static LootPack UltraRich { get { return OldUltraRich; } }
+		public static LootPack SuperBoss { get { return OldSuperBoss; } }
 		#endregion
-
+		
 		public static readonly LootPack LowScrolls = new LootPack(new[] {new LootPackEntry(false, LowScrollItems, 100.00, 1)});
 
 		public static readonly LootPack MedScrolls = new LootPack(new[] {new LootPackEntry(false, MedScrollItems, 100.00, 1)});
