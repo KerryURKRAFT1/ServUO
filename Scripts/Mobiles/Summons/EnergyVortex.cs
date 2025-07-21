@@ -71,7 +71,7 @@ namespace Server.Mobiles
             {
                 return true;
             }
-        }// Or Llama vortices will appear gray.
+        }
         public override double DispelDifficulty
         {
             get

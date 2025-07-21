@@ -42,7 +42,7 @@ namespace Server.Mobiles
         {
             get
             {
-                return (this.m_Mobile.Skills[SkillName.Bushido].Base > 10.0);
+                return false;
             }
         }
 
@@ -50,7 +50,7 @@ namespace Server.Mobiles
         {
             get
             {
-                return (this.m_Mobile.Skills[SkillName.Chivalry].Base > 10.0);
+                return false;
             }
         }
 
@@ -66,7 +66,7 @@ namespace Server.Mobiles
         {
             get
             {
-                return (this.m_Mobile.Skills[SkillName.Necromancy].Base > 10.0);
+                return false;
             }
         }
 
@@ -74,7 +74,7 @@ namespace Server.Mobiles
         {
             get
             {
-                return (this.m_Mobile.Skills[SkillName.Ninjitsu].Base > 10.0);
+                return false;
             }
         }
 
@@ -82,7 +82,7 @@ namespace Server.Mobiles
         {
             get
             {
-                return (this.m_Mobile.Skills[SkillName.Spellweaving].Base >= 10.0);
+                return false;
             }
         }
 
@@ -90,7 +90,7 @@ namespace Server.Mobiles
         {
             get
             {
-                return (this.m_Mobile.Skills[SkillName.Mysticism].Base >= 10.0);
+                return false;
             }
         }
 
@@ -811,65 +811,99 @@ namespace Server.Mobiles
 
             return party;
         }
-	public static void SetRandomSkillSet(BaseCreature m, double min, double max)
-	{
-	    int numSets = Utility.RandomMinMax(1, 2); // Total max number of different skill sets
-	    m.SetSkill(SkillName.EvalInt, 0);
-	    m.SetSkill(SkillName.Magery, 0);
-	    m.SetSkill(SkillName.Necromancy, 0);
-	    m.SetSkill(SkillName.SpiritSpeak, 0);
-	    m.SetSkill(SkillName.Bushido, 0);
-	    m.SetSkill(SkillName.Parry, 0);
-	    m.SetSkill(SkillName.Ninjitsu, 0);
-	    m.SetSkill(SkillName.Hiding, 0);
-	    m.SetSkill(SkillName.Stealth, 0);
-	    m.SetSkill(SkillName.Mysticism, 0);
-	    m.SetSkill(SkillName.Musicianship, 0);
-	    m.SetSkill(SkillName.Discordance, 0);
-	    m.SetSkill(SkillName.Provocation, 0);
-	    m.SetSkill(SkillName.Peacemaking, 0);
-	    int lastSet = 0;
-	    for (int i=0; i<numSets; i++)
-	    {
-		int skillSet = lastSet;
-		while (skillSet == lastSet)
+        
+		public static void SetRandomSkillSet(BaseCreature m, double min, double max)
 		{
-		    skillSet = Utility.RandomMinMax(1, 6);
+		    int numSets = Utility.RandomMinMax(1, 2); // Total max number of different skill sets
+		    m.SetSkill(SkillName.EvalInt, 0);
+		    m.SetSkill(SkillName.Magery, 0);
+		    m.SetSkill(SkillName.Necromancy, 0);
+		    m.SetSkill(SkillName.SpiritSpeak, 0);
+		    m.SetSkill(SkillName.Bushido, 0);
+		    m.SetSkill(SkillName.Parry, 0);
+		    m.SetSkill(SkillName.Ninjitsu, 0);
+		    m.SetSkill(SkillName.Hiding, 0);
+		    m.SetSkill(SkillName.Stealth, 0);
+		    m.SetSkill(SkillName.Mysticism, 0);
+		    m.SetSkill(SkillName.Musicianship, 0);
+		    m.SetSkill(SkillName.Discordance, 0);
+		    m.SetSkill(SkillName.Provocation, 0);
+		    m.SetSkill(SkillName.Peacemaking, 0);
+	
+		    int lastSet = 0;
+	
+		    for (int i=0; i<numSets; i++)
+		    {
+	
+		    	int skillSet = lastSet;
+	
+		    	while (skillSet == lastSet)
+				{
+				    skillSet = Utility.RandomMinMax(1, 5);
+				}
+				lastSet = skillSet;
+				
+				switch (skillSet)
+				{
+				    case 1:
+					m.SetSkill(SkillName.EvalInt, 70.0);
+					m.SetSkill(SkillName.Magery, min, max);
+					break;
+				    case 2:
+					m.SetSkill(SkillName.Magery, min, max);
+					m.SetSkill(SkillName.SpiritSpeak, min, max);
+					break;
+				    case 3:
+					m.SetSkill(SkillName.Swords, min, max);
+					m.SetSkill(SkillName.Parry, min, max);
+					break;
+				    case 4:
+					m.SetSkill(SkillName.Fencing, min, max);
+					m.SetSkill(SkillName.Hiding, min, max);
+					m.SetSkill(SkillName.Stealth, min, max);
+					break;
+				    case 5:
+					m.SetSkill(SkillName.Musicianship, min, max);
+					m.SetSkill(SkillName.Provocation, min, max);
+					m.SetSkill(SkillName.Peacemaking, min, max);
+/*					
+					if (m is BaseRed)
+					{
+					    m.SetSkill(SkillName.Archery, min, max);
+					    int rangedType = Utility.RandomMinMax(1, 5);
+					    switch( rangedType )
+					    {
+						default:
+						case 1:
+						    m.AddItem( new Bow() );
+						    m.AddItem( new Arrow( Utility.Random(100, 200) ) );
+						    break;
+						case 2:
+						    m.AddItem( new CompositeBow() );
+						    m.AddItem( new Arrow( Utility.Random(100, 200) ) );
+						    break;
+						case 3:
+						    m.AddItem( new Crossbow() );
+						    m.AddItem( new Bolt( Utility.Random(100, 200) ) );
+						    break;
+						case 4:
+						    m.AddItem( new RepeatingCrossbow() );
+						    m.AddItem( new Bolt( Utility.Random(100, 200) ) );
+						    break;
+						case 5:
+						    m.AddItem( new HeavyCrossbow() );
+						    m.AddItem( new Bolt( Utility.Random(100, 200) ) );
+						    break;
+					    }
+					}
+*/					
+					break;
+					
+				    default:
+						break;
+				}
+		    }
 		}
-		lastSet = skillSet;
-		switch (skillSet)
-		{
-		    case 1:
-			m.SetSkill(SkillName.EvalInt, 70.0);
-			m.SetSkill(SkillName.Magery, min, max);
-			break;
-		    case 2:
-			m.SetSkill(SkillName.Necromancy, min, max);
-			m.SetSkill(SkillName.SpiritSpeak, min, max);
-			break;
-		    case 3:
-			m.SetSkill(SkillName.Bushido, min, max);
-			m.SetSkill(SkillName.Parry, min, max);
-			break;
-		    case 4:
-			m.SetSkill(SkillName.Ninjitsu, min, max);
-			m.SetSkill(SkillName.Hiding, min, max);
-			m.SetSkill(SkillName.Stealth, min, max);
-			break;
-		    case 5:
-			m.SetSkill(SkillName.Mysticism, min, max);
-			break;
-		    case 6:
-			m.SetSkill(SkillName.Musicianship, min, max);
-			m.SetSkill(SkillName.Discordance, min, max);
-			m.SetSkill(SkillName.Provocation, min, max);
-			m.SetSkill(SkillName.Peacemaking, min, max);
-			break;			
-		    default:
-			break;
-		}
-	    }
-	}
         #endregion
     }
 }

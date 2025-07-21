@@ -342,10 +342,13 @@ namespace Server.Mobiles
 
     public class TownCrier : Mobile, ITownCrierEntryList
     {
-        private static readonly List<TownCrier> m_Instances = new List<TownCrier>();
+    	public override bool AlwaysBlue { get { return true; } }
+
+    	private static readonly List<TownCrier> m_Instances = new List<TownCrier>();
         private List<TownCrierEntry> m_Entries;
         private Timer m_NewsTimer;
         private Timer m_AutoShoutTimer;
+
         [Constructable]
         public TownCrier()
         {
@@ -356,9 +359,11 @@ namespace Server.Mobiles
             this.Title = "the town crier";
             this.Hue = Utility.RandomSkinHue();
 
-            if (!Core.AOS)
+            if (Core.UOR)
+                this.NameHue = -1;
+            else
                 this.NameHue = 0x35;
-
+            	
             if (this.Female = Utility.RandomBool())
             {
                 this.Body = 0x191;
@@ -500,8 +505,8 @@ namespace Server.Mobiles
         {
             if (from.AccessLevel >= AccessLevel.GameMaster)
                 from.SendGump(new TownCrierGump(from, this));
-            else
-                base.OnDoubleClick(from);
+
+            base.OnDoubleClick(from);
         }
 
         public override bool HandlesOnSpeech(Mobile from)

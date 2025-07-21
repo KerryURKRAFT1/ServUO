@@ -25,6 +25,7 @@ using Server.Spells.Sixth;
 using Server.Spells.Spellweaving;
 using Server.Spells.SkillMasteries;
 using Server.Targets;
+
 #endregion
 
 namespace Server.Items
@@ -516,11 +517,15 @@ namespace Server.Items
 		public int MissSound { get { return (m_MissSound == -1 ? Core.AOS ? AosMissSound : OldMissSound : m_MissSound); } set { m_MissSound = value; } }
 
 		[CommandProperty(AccessLevel.GameMaster)]
-
-		/*  OLD DAMAVE
 		public int MinDamage
 		{
-			get { return (m_MinDamage == -1 ? Core.AOS ? AosMinDamage : OldMinDamage : m_MinDamage); }
+		get
+		{
+				int baseMin = (m_MinDamage == -1 ? Core.AOS ? AosMinDamage : OldMinDamage : m_MinDamage);
+				int bonus = GetMaterialDamage();
+				//Console.WriteLine("DEBUG MinDamage: baseMin=" + baseMin + ", bonus=" + bonus + ", totale=" + (baseMin + bonus));
+				return baseMin + bonus;
+			}
 			set
 			{
 				m_MinDamage = value;
@@ -528,59 +533,19 @@ namespace Server.Items
 			}
 		}
 
-		[CommandProperty(AccessLevel.GameMaster)]
 		public int MaxDamage
 		{
-			get { return (m_MaxDamage == -1 ? Core.AOS ? AosMaxDamage : OldMaxDamage : m_MaxDamage); }
+			get 
+			{ 
+				int baseMax = (m_MaxDamage == -1 ? Core.AOS ? AosMaxDamage : OldMaxDamage : m_MaxDamage);
+				return baseMax + GetMaterialDamage();
+			}
 			set
 			{
 				m_MaxDamage = value;
 				InvalidateProperties();
 			}
 		}
-
-		*/
-
-			//////
-			///    NEW DAMAGE FOR UOR 
-			/// 
-			public int MinDamage
-			{
-			get
-			{
-				//int baseMin = (m_MinDamage == -1 ? Core.AOS ? AosMinDamage : OldMinDamage : m_MinDamage);
-				//Console.WriteLine("DEBUG MinDamage: baseMin=" + baseMin + ", bonus=" + bonus + ", totale=" + (baseMin + bonus));
-				//return baseMin + GetMaterialDamage();
-						int baseMin = (m_MinDamage == -1 ? Core.AOS ? AosMinDamage : OldMinDamage : m_MinDamage);
-						int bonus = GetMaterialDamage();
-						//Console.WriteLine("DEBUG MinDamage: baseMin=" + baseMin + ", bonus=" + bonus + ", totale=" + (baseMin + bonus));
-						return baseMin + bonus;
-				}
-				set
-				{
-					m_MinDamage = value;
-					InvalidateProperties();
-				}
-			}
-
-			public int MaxDamage
-			{
-				get 
-				{ 
-					int baseMax = (m_MaxDamage == -1 ? Core.AOS ? AosMaxDamage : OldMaxDamage : m_MaxDamage);
-					return baseMax + GetMaterialDamage();
-				}
-				set
-				{
-					m_MaxDamage = value;
-					InvalidateProperties();
-				}
-			}
-			
-			//////
-			/// 
-			/// 
-
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public float Speed
@@ -955,34 +920,11 @@ namespace Server.Items
 			{
 				m_Mobile.EndAction(typeof(BaseWeapon));
 			}
-
 		}
-
-		// REMOVED FOR UOR DCLICK FAST EQUIP
-		// METHOD IN ITEM.CS
 
 		public override bool CheckConflictingLayer(Mobile m, Item item, Layer layer)
 		{
-			/*
-			if (base.CheckConflictingLayer(m, item, layer))
-			{
-				return true;
-			}
-
-			if (Layer == Layer.TwoHanded && layer == Layer.OneHanded)
-			{
-				m.SendLocalizedMessage(500214); // You already have something in both hands.
-				return true;
-			}
-			else if (Layer == Layer.OneHanded && layer == Layer.TwoHanded && !(item is BaseShield) && !(item is BaseEquipableLight))
-			{
-				m.SendLocalizedMessage(500215); // You can only wield one weapon at a time.
-				return true;
-			}
-
-			*/
 			return false;
-
 		}
 
 		public override bool AllowSecureTrade(Mobile from, Mobile to, Mobile newOwner, bool accepted)
@@ -1103,7 +1045,7 @@ namespace Server.Items
 			}
 		}
 
-		public virtual bool UseSkillMod { get { return !Core.AOS; } }
+		public virtual bool UseSkillMod { get { return false; } }
 
 		public override bool OnEquip(Mobile from)
 		{
@@ -1133,49 +1075,39 @@ namespace Server.Items
 				}
 			}
 
-			//from.NextCombatTime = Core.TickCount + (int)GetDelay(from).TotalMilliseconds;
-
-			// PATCH ANTI-EXPLOIT: solo se Core.UOR (o Core.UOSP o Core.UORC... aggiungi altri se serve)
-			if (Core.UOR)
+			from.NextCombatTime = Core.TickCount + (long)this.GetDelay(from).TotalMilliseconds;
+			
+			if (UseSkillMod && m_AccuracyLevel != WeaponAccuracyLevel.Regular)
 			{
-				from.NextCombatTime = Core.TickCount + (long)this.GetDelay(from).TotalMilliseconds;
+				if (m_SkillMod != null)
+				{
+					m_SkillMod.Remove();
+				}
+
+				m_SkillMod = new DefaultSkillMod(AccuracySkill, true, (int)m_AccuracyLevel * 5);
+				from.AddSkillMod(m_SkillMod);
 			}
-			else
+
+			if (Core.AOS && m_AosWeaponAttributes.MageWeapon != 0 && m_AosWeaponAttributes.MageWeapon != 30)
 			{
-				// Comportamento originale (AOS/SE/ML/etc.)
-				from.NextCombatTime = Core.TickCount + (int)GetDelay(from).TotalMilliseconds;
+				if (m_MageMod != null)
+				{
+					m_MageMod.Remove();
+				}
+
+				m_MageMod = new DefaultSkillMod(SkillName.Magery, true, -30 + m_AosWeaponAttributes.MageWeapon);
+				from.AddSkillMod(m_MageMod);
 			}
-				if (UseSkillMod && m_AccuracyLevel != WeaponAccuracyLevel.Regular)
-				{
-					if (m_SkillMod != null)
-					{
-						m_SkillMod.Remove();
-					}
 
-					m_SkillMod = new DefaultSkillMod(AccuracySkill, true, (int)m_AccuracyLevel * 5);
-					from.AddSkillMod(m_SkillMod);
-				}
-
-				if (Core.AOS && m_AosWeaponAttributes.MageWeapon != 0 && m_AosWeaponAttributes.MageWeapon != 30)
-				{
-					if (m_MageMod != null)
-					{
-						m_MageMod.Remove();
-					}
-
-					m_MageMod = new DefaultSkillMod(SkillName.Magery, true, -30 + m_AosWeaponAttributes.MageWeapon);
-					from.AddSkillMod(m_MageMod);
-				}
-
-				if (Core.TOL && m_AosWeaponAttributes.MysticWeapon != 0 && m_AosWeaponAttributes.MysticWeapon != 30)
-				{
-					AddMysticMod(from);
-				}
-
-				XmlAttach.CheckOnEquip(this, from);
-
-				return true;
+			if (Core.TOL && m_AosWeaponAttributes.MysticWeapon != 0 && m_AosWeaponAttributes.MysticWeapon != 30)
+			{
+				AddMysticMod(from);
 			}
+
+			XmlAttach.CheckOnEquip(this, from);
+
+			return true;
+		}
 
 		public override void OnAdded(object parent)
 		{
@@ -1223,7 +1155,7 @@ namespace Server.Items
 
 				if (weapon != null)
 				{
-					m.NextCombatTime = Core.TickCount + (int)weapon.GetDelay(m).TotalMilliseconds;
+					m.NextCombatTime = Core.TickCount + (long)weapon.GetDelay(m).TotalMilliseconds;
 				}
 
 				if (UseSkillMod && m_SkillMod != null)
@@ -1353,55 +1285,6 @@ namespace Server.Items
 
 		public virtual bool CheckHit(Mobile attacker, IDamageable damageable)
 		{
-			// ===== Sphere-style hit chance for Core.UOR =====
-
-			if (Core.UOR)
-			{
-				Mobile uorDefender = damageable as Mobile;
-
-				// If the target is NOT Mobile, delegate or return true
-				if (uorDefender == null)
-				{
-					if (damageable is IDamageableItem)
-						return ((IDamageableItem)damageable).CheckHit(attacker);
-
-					return true;
-				}
-
-
-				int range = (attacker.Weapon != null) ? attacker.Weapon.MaxRange : 1;
-				if (!attacker.InRange(uorDefender, range))
-				{
-					return false;
-				}
-					
-
-				// Attacker weapon and skill
-				BaseWeapon uorAtkWeapon = attacker.Weapon as BaseWeapon;
-				SkillName atkSkillName = uorAtkWeapon != null ? uorAtkWeapon.Skill : SkillName.Wrestling;
-				Skill uorAtkSkill = attacker.Skills[atkSkillName];
-
-				// Defender weapon and skill
-				BaseWeapon uorDefWeapon = uorDefender.Weapon as BaseWeapon;
-				SkillName defSkillName = uorDefWeapon != null ? uorDefWeapon.Skill : SkillName.Wrestling;
-				Skill uorDefSkill = uorDefender.Skills[defSkillName];
-
-				double uorAtkValue = uorAtkSkill != null ? uorAtkSkill.Value : 0;
-				double uorDefValue = uorDefSkill != null ? uorDefSkill.Value : 0;
-
-				// Sphere-style formula: chance = (atk+1)/(atk+def+2), clamp between 10% and 95%
-				double uorChance = (uorAtkValue + 1) / (uorAtkValue + uorDefValue + 2);
-				uorChance = Math.Max(0.10, Math.Min(0.95, uorChance)); // Clamp between 10% and 95%
-
-				// DEBUG LOG: print values and chance
-				//Console.WriteLine($"[UOR HIT DEBUG] Attacker: {attacker.Name} ({uorAtkValue} {uorAtkSkill?.Name}), Defender: {uorDefender.Name} ({uorDefValue} Parry), Chance: {uorChance:P2}");
-				//Console.WriteLine($"[UOR HIT DEBUG] Attacker: {attacker.Name} ({uorAtkValue} {uorAtkSkill?.Name}), Defender: {uorDefender.Name} ({uorDefValue} {uorDefSkill?.Name}), Chance: {uorChance:P2}");
-
-				return Utility.RandomDouble() < uorChance;
-			}
-
-
-
 			Mobile defender = damageable as Mobile;
 
 			if (defender == null)
@@ -1421,38 +1304,38 @@ namespace Server.Items
 			double atkValue = atkWeapon.GetAttackSkillValue(attacker, defender);
 			double defValue = defWeapon.GetDefendSkillValue(attacker, defender);
 
-			double ourValue, theirValue;
+			double ourValue, theirValue, chance;
 
 			int bonus = GetHitChanceBonus();
 
-			#region Stygian Abyss
-			int hciMod = 0;
-			int dciMod = 0;
-
-			if (atkWeapon is BaseThrown)
+			if (Core.UOR)
 			{
-				int min = ((BaseThrown)atkWeapon).MinThrowRange;
-				double dist = attacker.GetDistanceToSqrt(defender);
-
-				//Distance malas
-				if (attacker.InRange(defender, 1))  //Close Quarters
-					bonus -= (12 - Math.Min(12, ((int)attacker.Skills[SkillName.Throwing].Value + attacker.RawDex) / 20));
-				else if (dist < min)                //too close
-					bonus -= 12;
-
-				//shield penalty
-				BaseShield shield = attacker.FindItemOnLayer(Layer.TwoHanded) as BaseShield;
-
-				if (shield != null)
+				if (atkValue <= 0.0)
 				{
-					double skill = Math.Max(1.0, attacker.Skills[SkillName.Parry].Value);
-
-					hciMod = (int)Math.Min(50, 1200 / skill);
+					atkValue = 0.1;
 				}
-			}
-			#endregion
 
-			if (Core.AOS)
+				if (defValue <= 0.0)
+				{
+					defValue = 0.1;
+				}
+
+				ourValue = (atkValue * 0.5) + 50.0;
+				theirValue = defValue;
+
+//				chance = ourValue / (theirValue * 2); //ServUO style
+				chance = ourValue + 1 / (ourValue + theirValue + 2); //Kerry style
+	
+				chance += (double)bonus / 100;
+									
+				if (chance > 0.95) //clamp it
+				{
+					chance = 0.95;
+				}
+				
+				return attacker.CheckSkill(atkSkill.SkillName, chance);
+			}			
+			else if (Core.AOS)
 			{
 				if (atkValue <= -20.0)
 					atkValue = -19.9;
@@ -1461,12 +1344,6 @@ namespace Server.Items
 					defValue = -19.9;
 
 				bonus += AosAttributes.GetValue(attacker, AosAttribute.AttackChance);
-
-				#region SA
-				// this value will not be shown on the status bar
-				if (hciMod > 0)
-					bonus -= (int)(((double)bonus * ((double)hciMod / 100)));
-				#endregion
 
 				//SA Gargoyle cap is 50, else 45
 				bonus = Math.Min(attacker.Race == Race.Gargoyle ? 50 : 45, bonus);
@@ -1479,25 +1356,6 @@ namespace Server.Items
 
 				if (info != null && info.Defender == defender)
 					bonus -= info.DefenseChanceMalus;
-
-				#region SA
-				// Like HitChance, this value is not shown in the status window
-				if (defWeapon is BaseThrown)
-				{
-					BaseShield shield = defender.FindItemOnLayer(Layer.TwoHanded) as BaseShield;
-
-					if (shield != null)
-					{
-						double skill = Math.Max(1.0, defender.Skills[SkillName.Parry].Value);
-
-						dciMod = (int)Math.Min(50, 1200 / skill);
-					}
-				}
-
-				if (dciMod > 0)
-					bonus -= (int)(((double)bonus * ((double)dciMod / 100)));
-
-				#endregion
 
 				int max = 45 + BaseArmor.GetRefinedDefenseChance(defender);
 
@@ -1525,7 +1383,7 @@ namespace Server.Items
 				theirValue = (defValue + 50.0);
 			}
 
-			double chance = ourValue / (theirValue * 2.0);
+			chance = ourValue / (theirValue * 2.0);
 
 			chance *= 1.0 + ((double)bonus / 100);
 
@@ -1539,7 +1397,7 @@ namespace Server.Items
 
 			return attacker.CheckSkill(atkSkill.SkillName, chance);
 		}
-
+		
 		public virtual TimeSpan GetDelay(Mobile m)
 		{
 			double speed = Speed;
@@ -1551,6 +1409,25 @@ namespace Server.Items
 
 			double delayInSeconds;
 
+			if (Core.UOR)
+			{
+//				int v = (m.Stam + 100) * (int)speed; //runuo style
+
+				int v = ((int)(m.Stam * 0.75) + 125) * (int)speed; //slight increase in spd at low stam
+				
+				if (v <= 0)
+				{
+					v = 1;
+				}
+
+				delayInSeconds = 15000.0 / v;
+				
+				delayInSeconds -= Math.Pow(m.Dex, 2) / 50000; //High Dex bonus
+
+				m.SendMessage($"Spd: {delayInSeconds:F3}s");
+
+				return TimeSpan.FromSeconds(delayInSeconds);
+			}
 			if (Core.SE)
 			{
 				/*
@@ -1559,7 +1436,7 @@ namespace Server.Items
                 * The old formula left in for AOS for legacy & because we aren't quite 100%
                 * Sure that AOS has THIS formula
                 */
-		int bonus = AosAttributes.GetValue(m, AosAttribute.WeaponSpeed);
+				int bonus = AosAttributes.GetValue(m, AosAttribute.WeaponSpeed);
 
 				if (bonus > 60)
 				{
@@ -1634,7 +1511,6 @@ namespace Server.Items
 
 		public virtual void OnBeforeSwing(Mobile attacker, IDamageable damageable)
 		{
-			
 			Mobile defender = damageable as Mobile;
 
 			WeaponAbility a = WeaponAbility.GetCurrentAbility(attacker);
@@ -1650,7 +1526,6 @@ namespace Server.Items
 			{
 				SpecialMove.ClearCurrentMove(attacker);
 			}
-			
 		}
 
 		public virtual TimeSpan OnSwing(Mobile attacker, IDamageable damageable)
@@ -1660,71 +1535,57 @@ namespace Server.Items
 
 		public virtual TimeSpan OnSwing(Mobile attacker, IDamageable damageable, double damageBonus)
 		{
-
 			// ======= SWING FOR UOR SPHERE-STYLE =======
-
-			if (Core.UOR)
+			if (CanSwing(attacker) && attacker.HarmfulCheck(damageable))
 			{
-				bool canSwing = true;
-
-				// ======= SWING FOR UOR SPHERE-STYLE =======
-				if (CanSwing(attacker) && attacker.HarmfulCheck(damageable))
+				TimeSpan swingDelay = GetDelay(attacker);
+				
+				if (attacker.InRange(damageable.Location, MaxRange))
 				{
-					TimeSpan swingDelay = GetDelay(attacker);
-
-					if (attacker.InRange(damageable.Location, MaxRange))
+					Timer.DelayCall(swingDelay, () =>
 					{
-						Timer.DelayCall(swingDelay, () =>
+						if (CanSwing(attacker) && attacker.InRange(damageable.Location, MaxRange))
 						{
-							if (CanSwing(attacker) && attacker.InRange(damageable.Location, MaxRange))
+							if (damageable is Mobile mobileTarget)
 							{
-								if (damageable is Mobile mobileTarget)
-								{
-									if (mobileTarget.Deleted || !mobileTarget.Alive || mobileTarget.Body.IsGhost)
-										return;
-								}
-								else if (damageable is Item itemTarget)
-								{
-									// Add item controls here if needed
-								}
+								if (mobileTarget.Deleted || !mobileTarget.Alive || mobileTarget.Body.IsGhost)
+									return;
+							}
+							else if (damageable is Item itemTarget)
+							{
+								// Add item controls here if needed
+							}
 
-								attacker.Send(new Swing(0, attacker, damageable));
+							attacker.Send(new Swing(0, attacker, damageable));
 
-								if (CheckHit(attacker, damageable))
-								{
-									OnHit(attacker, damageable, damageBonus);
-								}
-								else
-								{
-									OnMiss(attacker, damageable);
-								}
+							if (CheckHit(attacker, damageable))
+							{
+								OnHit(attacker, damageable, damageBonus);
 							}
 							else
 							{
-								// Target out of range: do nothing, no miss, no attack!
+								OnMiss(attacker, damageable);
 							}
-						});
-					}
-					else
-					{
-						// Target is out of range: do not swing, do not start swing timer
-					}
-
-					attacker.RevealingAction();
-					return swingDelay;
+						}
+						else
+						{
+							// Target out of range: do nothing, no miss, no attack!
+						}
+					});
 				}
-				// ======= END =======
+				else
+				{
+					// Target is out of range: do not swing, do not start swing timer
+				}
 
 				attacker.RevealingAction();
-				return GetDelay(attacker);
+				return swingDelay;
 			}
-			else
-			{
-				return GetDelay(attacker);
-			}
+    		// ======= END =======
 
+			attacker.RevealingAction();
+			return GetDelay(attacker);
 		}
-		
 
 		public virtual bool CanSwing(Mobile attacker)
 		{
@@ -1758,68 +1619,6 @@ namespace Server.Items
 
 			return canSwing;	
 		}
-
-
-
-
-
-    		
-		/*
-			
-		#region Dueling
-		if (attacker is PlayerMobile)
-		{
-			PlayerMobile pm = (PlayerMobile)attacker;
-
-			if (pm.DuelContext != null && !pm.DuelContext.CheckItemEquip(attacker, this))
-			{
-				canSwing = false;
-			}
-		}
-		#endregion
-
-		if (canSwing && attacker.HarmfulCheck(damageable))
-		{
-			attacker.DisruptiveAction();
-
-			if (attacker.NetState != null)
-			{
-				attacker.Send(new Swing(0, attacker, damageable));
-			}
-
-			if (attacker is BaseCreature)
-			{
-				BaseCreature bc = (BaseCreature)attacker;
-				WeaponAbility ab = bc.GetWeaponAbility();
-
-				if (ab != null)
-				{
-					if (bc.WeaponAbilityChance > Utility.RandomDouble())
-					{
-						WeaponAbility.SetCurrentAbility(bc, ab);
-					}
-					else
-					{
-						WeaponAbility.ClearCurrentAbility(bc);
-					}
-				}
-			}
-
-			if (CheckHit(attacker, damageable))
-			{
-				OnHit(attacker, damageable, damageBonus);
-			}
-			else
-			{
-				OnMiss(attacker, damageable);
-			}
-		}
-
-		return GetDelay(attacker);
-
-	}
-	*/
-
 
 		#region Sounds
 		public virtual int GetHitAttackSound(Mobile attacker, Mobile defender)
@@ -1957,11 +1756,9 @@ namespace Server.Items
 			{
 				blocked = CheckParry(defender);
 				BaseWeapon weapon = defender.Weapon as BaseWeapon;
-        		Console.WriteLine($"[DEBUG AbsorbDamageAOS] Defender: {defender}, Blocked: {blocked}, Weapon: {weapon}");
 
 				if (blocked)
 				{
-					Console.WriteLine($"[DEBUG AbsorbDamageAOS] >>> BLOCK SUCCESSFUL <<<");
 					defender.FixedEffect(0x37B9, 10, 16);
 					damage = 0;
 
@@ -2088,88 +1885,84 @@ namespace Server.Items
 				return AbsorbDamageAOS(attacker, defender, damage);
 			}
 
-			if (Core.UOR)
+			BaseShield shield = defender.FindItemOnLayer(Layer.TwoHanded) as BaseShield;
+			if (shield != null)
 			{
-				BaseShield shield = defender.FindItemOnLayer(Layer.TwoHanded) as BaseShield;
-				if (shield != null)
-				{
-					damage = shield.OnHit(this, damage);
-				}
+				damage = shield.OnHit(this, damage);
+			}
 
-				double chance = Utility.RandomDouble();
+			double chance = Utility.RandomDouble();
 
-				Item armorItem;
+			Item armorItem;
 
-				if (chance < 0.07)
+			if (chance < 0.07)
+			{
+				armorItem = defender.NeckArmor;
+			}
+			else if (chance < 0.14)
+			{
+				armorItem = defender.HandArmor;
+			}
+			else if (chance < 0.28)
+			{
+				armorItem = defender.ArmsArmor;
+			}
+			else if (chance < 0.43)
+			{
+				armorItem = defender.HeadArmor;
+			}
+			else if (chance < 0.65)
+			{
+				armorItem = defender.LegsArmor;
+			}
+			else
+			{
+				armorItem = defender.ChestArmor;
+			}
+
+			IWearableDurability armor = armorItem as IWearableDurability;
+
+			if (armor != null)
+			{
+				damage = armor.OnHit(this, damage);
+			}
+
+			int virtualArmor = defender.VirtualArmor + defender.VirtualArmorMod;
+
+			damage -= XmlAttach.OnArmorHit(attacker, defender, armorItem, this, damage);
+			damage -= XmlAttach.OnArmorHit(attacker, defender, shield, this, damage);
+
+			if (virtualArmor > 0)
+			{
+				double scalar;
+
+				if (chance < 0.14)
 				{
-					armorItem = defender.NeckArmor;
-				}
-				else if (chance < 0.14)
-				{
-					armorItem = defender.HandArmor;
+					scalar = 0.07;
 				}
 				else if (chance < 0.28)
 				{
-					armorItem = defender.ArmsArmor;
+					scalar = 0.14;
 				}
 				else if (chance < 0.43)
 				{
-					armorItem = defender.HeadArmor;
+					scalar = 0.15;
 				}
 				else if (chance < 0.65)
 				{
-					armorItem = defender.LegsArmor;
+					scalar = 0.22;
 				}
 				else
 				{
-					armorItem = defender.ChestArmor;
+					scalar = 0.35;
 				}
 
-				IWearableDurability armor = armorItem as IWearableDurability;
+				int from = (int)(virtualArmor * scalar) / 2;
+				int to = (int)(virtualArmor * scalar);
 
-				if (armor != null)
-				{
-					damage = armor.OnHit(this, damage);
-				}
-
-				int virtualArmor = defender.VirtualArmor + defender.VirtualArmorMod;
-
-				damage -= XmlAttach.OnArmorHit(attacker, defender, armorItem, this, damage);
-				damage -= XmlAttach.OnArmorHit(attacker, defender, shield, this, damage);
-
-				if (virtualArmor > 0)
-				{
-					double scalar;
-
-					if (chance < 0.14)
-					{
-						scalar = 0.07;
-					}
-					else if (chance < 0.28)
-					{
-						scalar = 0.14;
-					}
-					else if (chance < 0.43)
-					{
-						scalar = 0.15;
-					}
-					else if (chance < 0.65)
-					{
-						scalar = 0.22;
-					}
-					else
-					{
-						scalar = 0.35;
-					}
-
-					int from = (int)(virtualArmor * scalar) / 2;
-					int to = (int)(virtualArmor * scalar);
-
-					damage -= Utility.Random(from, (to - from) + 1);
-				}
-
-				return damage;
+				damage -= Utility.Random(from, (to - from) + 1);
 			}
+
 			return damage;
 		}
 
@@ -3526,10 +3319,10 @@ namespace Server.Items
 
 		public virtual int GetHitChanceBonus()
 		{
-			if (!Core.AOS)
-			{
-				return 0;
-			}
+//			if (!Core.AOS)
+//			{
+//				return 0;
+//			}
 
 			int bonus = 0;
 
@@ -5135,12 +4928,12 @@ namespace Server.Items
 
 		public override bool AllowEquipedCast(Mobile from)
 		{
-//			if (base.AllowEquipedCast(from))
-//			{
+			if (base.AllowEquipedCast(from))
+			{
 				return true;
-//			}
+			}
 
-//			return m_AosAttributes.SpellChanneling > 0 || Enhancement.GetValue(from, AosAttribute.SpellChanneling) > 0;
+			return m_AosAttributes.SpellChanneling > 0 || Enhancement.GetValue(from, AosAttribute.SpellChanneling) > 0;
 		}
 
 		public virtual int ArtifactRarity { get { return 0; } }
@@ -5973,11 +5766,6 @@ namespace Server.Items
 
 			from.Send(new DisplayEquipmentInfo(this, eqInfo));
 		}
-
-
-
-
-
 
 		public static BaseWeapon Fists { get; set; }
 

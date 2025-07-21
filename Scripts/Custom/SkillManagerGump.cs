@@ -36,9 +36,9 @@ namespace Server.Custom
         private int m_SelectedStatIdx;
         private List<SkillName> m_SkillNames;
         private static readonly string[] StatNames = { "Strength", "Dexterity", "Intelligence" };
-        private const int GumpWidth = 1050;
+        private const int GumpWidth = 1030;
         private const int GumpHeight = 780;
-        private const int SkillColumnWidth = 170;
+        private const int SkillColumnWidth = 150;
         private const int SkillColumnPadding = 20;
         private const int SkillRadioHeight = 22;
         private const int SkillRadiosPerCol = 13;
@@ -54,10 +54,15 @@ namespace Server.Custom
             Closable = true;
             AddPage(0);
 
-            AddBackground(0, 0, GumpWidth, GumpHeight, 9200); // Light background
+			CustomBackground(0, 0, GumpWidth, GumpHeight, 9270, 2624);
+//			AddBackground(0, 0, GumpWidth, GumpHeight, 9200); // Light background
 
-            AddLabel(40, 20, 1154, "Skill & Stat Manager");
-            AddLabel(40, 48, 54, $"Skill Cap: {user.Skills.Cap / 10.0:F1}   Total: {user.Skills.Total / 10.0:F1}");
+            AddLabel(40, 20, 60, "Skill & Stat Manager");
+            AddImageTiled(30, 50, GumpWidth - 60, 2, 9304); // Divider line
+
+            AddLabel(40, 65, 1153, "Skill Management");
+            AddLabel(40 + 230 * 3, 65, 54, $"Skill Cap: {user.Skills.Cap / 10.0:F1}");
+            AddLabel(40 + 120 + 230 * 3, 65, 54, $"Total: {user.Skills.Total / 10.0:F1}");
 
             // Compile list of visible skills
             for (int i = 0; i < user.Skills.Length; i++)
@@ -67,17 +72,18 @@ namespace Server.Custom
             }
 
             // Skill radio selection (up to 4 columns)
-            AddLabel(40, 80, 1153, "Select a skill:");
+//            AddLabel(40, 80, 1153, "Select a skill:");
             int radiosPerCol = SkillRadiosPerCol;
             int maxColumns = (int)Math.Ceiling(m_SkillNames.Count / (double)radiosPerCol);
             int radio = 0;
             int col = 0;
+
             for (int i = 0; i < m_SkillNames.Count; i++)
             {
                 int rx = 40 + (col * (SkillColumnWidth + SkillColumnPadding));
                 int ry = 110 + (radio * SkillRadioHeight);
                 AddRadio(rx, ry, 210, 211, i == m_SelectedSkillIdx, i);
-                AddLabel(rx + 25, ry, 1150, m_User.Skills[m_SkillNames[i]].Info.Name);
+                AddLabel(rx + 25, ry, 60, m_User.Skills[m_SkillNames[i]].Info.Name);
 
                 radio++;
                 if (radio >= radiosPerCol)
@@ -93,23 +99,23 @@ namespace Server.Custom
             SkillName selectedSkill = m_SkillNames[Math.Max(0, Math.Min(m_SelectedSkillIdx, m_SkillNames.Count - 1))];
             Skill skill = m_User.Skills[selectedSkill];
 
-            AddLabel(skillDetailX, skillDetailY, 1154, $"Skill: {skill.Info.Name}");
-            AddLabel(skillDetailX, skillDetailY + 30, 54, $"Current: {skill.Base / 10.0:F1}");
-            AddLabel(skillDetailX, skillDetailY + 60, 54, $"Cap: {skill.Cap / 10.0:F1}");
+            AddLabel(skillDetailX+30, skillDetailY, 54, $"Skill: {skill.Info.Name}");
+            AddLabel(skillDetailX+30, skillDetailY + 30, 54, $"Current: {skill.Base:F1}");
+            AddLabel(skillDetailX+30, skillDetailY + 60, 54, $"Cap: {skill.Cap:F1}");
 
-            int btnY = skillDetailY + 120;
+            int btnY = skillDetailY + 100;
             int btnSpacing = 48;
-            AddButton(skillDetailX, btnY, 4014, 4015, ButtonsStartId + 0, GumpButtonType.Reply, 0);
-            AddLabel(skillDetailX + 40, btnY + 3, 33, "-10");
+            AddButton(skillDetailX+30, btnY, 4014, 4015, ButtonsStartId + 0, GumpButtonType.Reply, 0);
+            AddLabel(skillDetailX+70, btnY + 3, 33, "-10");
 
-            AddButton(skillDetailX, btnY + btnSpacing, 4014, 4015, ButtonsStartId + 1, GumpButtonType.Reply, 0);
-            AddLabel(skillDetailX + 40, btnY + btnSpacing + 3, 33, "-1");
+            AddButton(skillDetailX+30, btnY + btnSpacing, 4014, 4015, ButtonsStartId + 1, GumpButtonType.Reply, 0);
+            AddLabel(skillDetailX+70, btnY + btnSpacing + 3, 33, "-1");
 
-            AddButton(skillDetailX, btnY + btnSpacing * 2, 4011, 4012, ButtonsStartId + 2, GumpButtonType.Reply, 0);
-            AddLabel(skillDetailX + 40, btnY + btnSpacing * 2 + 3, 33, "+1");
+            AddButton(skillDetailX+30, btnY + btnSpacing * 2, 4011, 4012, ButtonsStartId + 2, GumpButtonType.Reply, 0);
+            AddLabel(skillDetailX+70, btnY + btnSpacing * 2 + 3, 33, "+1");
 
-            AddButton(skillDetailX, btnY + btnSpacing * 3, 4011, 4012, ButtonsStartId + 3, GumpButtonType.Reply, 0);
-            AddLabel(skillDetailX + 40, btnY + btnSpacing * 3 + 3, 33, "+10");
+            AddButton(skillDetailX+30, btnY + btnSpacing * 3, 4011, 4012, ButtonsStartId + 3, GumpButtonType.Reply, 0);
+            AddLabel(skillDetailX+70, btnY + btnSpacing * 3 + 3, 33, "+10");
 
             // Skillcap status message
             int msgY = btnY + btnSpacing * 4 + 10;
@@ -135,7 +141,7 @@ namespace Server.Custom
                 bool isSelected = (s == m_SelectedStatIdx);
 
                 AddRadio(sx, sy, 210, 211, isSelected, 100 + s); // stat selection radios
-                AddLabel(sx + 25, sy, 1150, StatNames[s]);
+                AddLabel(sx + 25, sy, 60, StatNames[s]);
 
                 int statValue = 0, statCap = 0;
                 switch (s)
@@ -152,27 +158,27 @@ namespace Server.Custom
                 int statBtnY = sy + 4;
                 int statBtnSpacing = 27;
                 AddButton(sx + 95, statBtnY, 4014, 4015, StatsButtonsStartId + (s * 4) + 0, GumpButtonType.Reply, 0); // -10
-                AddLabel(sx + 125, statBtnY + 3, 33, "-10");
+                AddLabel(sx + 135, statBtnY + 3, 33, "-10");
 
                 AddButton(sx + 95, statBtnY + statBtnSpacing, 4014, 4015, StatsButtonsStartId + (s * 4) + 1, GumpButtonType.Reply, 0); // -1
-                AddLabel(sx + 125, statBtnY + statBtnSpacing + 3, 33, "-1");
+                AddLabel(sx + 135, statBtnY + statBtnSpacing + 3, 33, "-1");
 
                 AddButton(sx + 95, statBtnY + statBtnSpacing * 2, 4011, 4012, StatsButtonsStartId + (s * 4) + 2, GumpButtonType.Reply, 0); // +1
-                AddLabel(sx + 125, statBtnY + statBtnSpacing * 2 + 3, 33, "+1");
+                AddLabel(sx + 135, statBtnY + statBtnSpacing * 2 + 3, 33, "+1");
 
                 AddButton(sx + 95, statBtnY + statBtnSpacing * 3, 4011, 4012, StatsButtonsStartId + (s * 4) + 3, GumpButtonType.Reply, 0); // +10
-                AddLabel(sx + 125, statBtnY + statBtnSpacing * 3 + 3, 33, "+10");
+                AddLabel(sx + 135, statBtnY + statBtnSpacing * 3 + 3, 33, "+10");
             }
 
             // Stat cap info
             int statTotal = m_User.RawStr + m_User.RawDex + m_User.RawInt;
-            AddLabel(statBaseX + statColWidth * 3, statBaseY, 1154, $"Stat Cap: {m_User.StatCap}");
-            AddLabel(statBaseX + statColWidth * 3, statBaseY + 28, 54, $"Total: {statTotal}");
+            AddLabel(statBaseX + statColWidth * 3, statSectionY, 54, $"Stat Cap: {m_User.StatCap}");
+            AddLabel(statBaseX + 120 + statColWidth * 3, statSectionY, 54, $"Total: {statTotal}");
 
             // Stat cap status message
             int statMsgY = statBaseY + statRowSpacing + 20;
             if (statTotal >= m_User.StatCap)
-                AddLabel(statBaseX + statColWidth * 3, statMsgY, 33, "You have reached your stat cap! You cannot raise further stats.");
+                AddLabel(statBaseX + statColWidth, statMsgY + 50, 33, "You have reached your stat cap! You cannot raise further stats.");
 
             // --- Utility Buttons Section (bottom left) ---
             int utilBtnY = GumpHeight - 120;
@@ -192,9 +198,16 @@ namespace Server.Custom
 
             // OK/Close button bottom right
             AddButton(GumpWidth - 110, GumpHeight - 60, 4023, 4024, 9000, GumpButtonType.Reply, 0);
-            AddLabel(GumpWidth - 78, GumpHeight - 57, 54, "OK");
+//            AddLabel(GumpWidth - 78, GumpHeight - 57, 54, "OK");
         }
 
+		public void CustomBackground( int x, int y, int width, int height, int bg, int it )
+		{
+			AddBackground (x, y, width, height, bg);
+			AddImageTiled( x+5, y+5, width-10, height-10, it );
+			AddAlphaRegion( x+5, y+5, width-10, height-10 );
+		}
+		
         public override void OnResponse(Server.Network.NetState sender, RelayInfo info)
         {
             int selectedSkillIdx = m_SelectedSkillIdx;
@@ -221,18 +234,14 @@ namespace Server.Custom
             SkillName selectedSkill = skillNames[Math.Max(0, Math.Min(selectedSkillIdx, skillNames.Count - 1))];
             Skill skill = m_User.Skills[selectedSkill];
             double cap = m_User.Skills.Cap;
-
-            bool redraw = true;
-
+            
             switch (info.ButtonID)
             {
-                case 0: // Radio selection, nothing
-                    redraw = true;
-                    break;
-                case 9000: // OK/Close
-                    redraw = false;
-                    break;
-                // Skill buttons
+                case 0: //Close
+                case 9000: // OK
+					return;
+
+				// Skill buttons
                 case ButtonsStartId + 0: // -10
                     if (skill.Base >= 10)
                         { skill.Base -= 10; m_User.SendMessage(33, $"-10 to {skill.Info.Name}. New value: {skill.Base / 10.0:F1}"); }
@@ -281,12 +290,12 @@ namespace Server.Custom
                         int statCap = m_User.StatCap;
                         int statTotal = str + dex + intel;
 
-                        ref int stat = ref str;
+                        int stat = str;
                         switch (statIndex)
                         {
-                            case 0: stat = ref str; break;
-                            case 1: stat = ref dex; break;
-                            case 2: stat = ref intel; break;
+                            case 0: stat = str; break;
+                            case 1: stat = dex; break;
+                            case 2: stat = intel; break;
                         }
 
                         int amount = 0;
@@ -322,6 +331,14 @@ namespace Server.Custom
                             else
                                 m_User.SendMessage(33, "You have reached your stat cap!");
                         }
+						
+                        //modded here
+                        switch (statIndex)
+                        {
+                            case 0: str = stat; break;
+                            case 1: dex = stat; break;
+                            case 2: intel = stat; break;
+                        }
 
                         // Apply changes
                         m_User.RawStr = str;
@@ -333,6 +350,7 @@ namespace Server.Custom
                     {
                         // Bank Check 100k in bank
                         BankCheck check = new BankCheck(100000);
+                        check.LootType = LootType.Blessed;
                         if (m_User.BankBox != null && m_User.BankBox.TryDropItem(m_User, check, false))
                             m_User.SendMessage(68, "You received a 100,000 gold bank check in your bank.");
                         else
@@ -358,13 +376,13 @@ namespace Server.Custom
                             m_User.SendMessage(33, "Could not place the full spellbook in your backpack.");
                     }
                     else
-                        redraw = false;
+                    {
+                    	return;
+                    }
                     break;
             }
 
-            // Redraw gump after each action
-            if (redraw)
-                m_User.SendGump(new SkillManagerGump(m_User, selectedSkillIdx, selectedStatIdx));
+            m_User.SendGump(new SkillManagerGump(m_User, selectedSkillIdx, selectedStatIdx));
         }
     }
 }

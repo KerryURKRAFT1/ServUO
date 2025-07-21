@@ -96,19 +96,15 @@ namespace Server.Items
         {
             get
             {
-                {
-                    int[] sounds = { 0x13A, 0x13B, 0x13C, 0x13D };
-                    return sounds[Utility.Random(sounds.Length)];
-                }
-                //return -1;
-                
+                int[] sounds = { 0x13A, 0x13B, 0x13C, 0x13D };
+				
+                return sounds[Utility.Random(sounds.Length)];
             }
         }
         public override int DefMissSound
         {
             get
             {
-                //return -1;
                 return 0x238;
             }
         }

@@ -621,10 +621,14 @@ namespace Server
 	[PropertyObject]
 	public class Skills : IEnumerable<Skill>
 	{
+        public int TotalSkillCap = Config.Get("PlayerCaps.TotalSkillCap", 7000);
+
 		private readonly Mobile m_Owner;
 		private readonly Skill[] m_Skills;
 		private int m_Total, m_Cap;
 		private Skill m_Highest;
+		
+		public static bool WaitMsg { get; set; } = true;
 
 		#region Skill Getters & Setters
 		[CommandProperty(AccessLevel.Counselor)]
@@ -879,7 +883,7 @@ namespace Server
 
 						return true;
 					}
-					else
+					else if (WaitMsg)
 					{
 						from.SendSkillMessage();
 					}
@@ -955,7 +959,7 @@ namespace Server
 		public Skills(Mobile owner)
 		{
 			m_Owner = owner;
-            m_Cap = Config.Get("PlayerCaps.TotalSkillCap", 7000); ;
+            m_Cap = TotalSkillCap;
 
 			var info = SkillInfo.Table;
 
@@ -980,6 +984,11 @@ namespace Server
 				case 2:
 					{
 						m_Cap = reader.ReadInt();
+						
+						if (m_Cap != TotalSkillCap)
+						{
+							m_Cap = TotalSkillCap;
+						}
 
 						goto case 1;
 					}

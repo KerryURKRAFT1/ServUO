@@ -28,7 +28,7 @@ namespace Server.Mobiles
         {
         }
 
-        public virtual bool IsInvulnerable
+        public override bool IsInvulnerable
         {
             get
             {

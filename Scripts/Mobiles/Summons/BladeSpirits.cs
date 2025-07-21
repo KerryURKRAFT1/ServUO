@@ -53,7 +53,7 @@ namespace Server.Mobiles
         {
             get
             {
-                return Core.UOR; //haha watch out
+                return true;
             }
         }
         public override bool DeleteCorpseOnDeath

@@ -9,7 +9,7 @@ namespace Server.Mobiles
 {    
 	public class JosefSkimmons : Mobile
     {
-        public virtual bool IsInvulnerable { get { return true; } }
+        public override bool IsInvulnerable { get { return true; } }
 
         [Constructable]
 		public JosefSkimmons()

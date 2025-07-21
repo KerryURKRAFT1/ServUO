@@ -313,7 +313,7 @@ namespace Server.Engines.ConPVP
         public static void CancelSpell(Mobile mob)
         {
             if (mob.Spell is Spells.Spell)
-                ((Spells.Spell)mob.Spell).Disturb(Spells.DisturbType.Kill);
+                ((Spells.Spell)mob.Spell).Disturb(DisturbType.Kill);
 
             Targeting.Target.Cancel(mob);
         }

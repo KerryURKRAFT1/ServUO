@@ -2,6 +2,7 @@ using System;
 using Server.Items;
 using Server.Mobiles;
 using Server.Network;
+using System.Collections.Generic;
 
 namespace Server.Spells
 {
@@ -50,9 +51,9 @@ namespace Server.Spells
 			int circle = (int)Circle;
 
 			if ( this.Scroll != null )
-				circle -= 2;
+				circle -= Math.Max (0, circle - 2);
 
-			double avg = 100.0 * circle / 7;
+			double avg = 100.0 * (circle + 1) / 8;
 
 			min = avg - 20;
 			max = avg + 20;
@@ -66,7 +67,19 @@ namespace Server.Spells
             return m_ManaTable[(int)this.Circle];
         }
 
-        public override double GetResistSkill(Mobile m)
+		public override int ScaleMana(int mana)
+		{
+			double scalar = 1.0;
+
+//			if (this.Scroll != null)
+//			{
+//				scalar = 0.5;
+//			}
+			
+			return (int)(mana * scalar);
+		}
+		
+		public override double GetResistSkill(Mobile m)
         {
             int maxSkill = (1 + (int)this.Circle) * 10;
             maxSkill += (1 + ((int)this.Circle / 6)) * 25;

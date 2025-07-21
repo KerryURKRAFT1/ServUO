@@ -67,7 +67,7 @@ namespace Server.Mobiles
 
         public virtual bool ChangeRace { get { return true; } }
 
-		public override bool IsInvulnerable { get { return true; } }
+        public override bool IsInvulnerable { get { return ((Map.Rules & MapRules.HarmfulRestrictions) != 0); } }
 
 		public virtual DateTime NextTrickOrTreat { get; set; }
 

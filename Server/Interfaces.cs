@@ -70,12 +70,16 @@ namespace Server
 	{
 		bool IsCasting { get; }
 		void OnCasterHurt();
-		void OnCasterKilled();
+		bool OnCasterKilled();
 		void OnConnectionChanged();
 		bool OnCasterMoving(Direction d);
 		bool OnCasterEquiping(Item item);
 		bool OnCasterUsingObject(object o);
 		bool OnCastInTown(Region r);
+ 		void Disturb(DisturbType type);
+		bool OnWarModeChange();
+		bool OnDamage();		
+		bool OnParalyze();		
 	}
 
 	public interface IParty

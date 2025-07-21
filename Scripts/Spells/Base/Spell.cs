@@ -296,9 +296,9 @@ namespace Server.Spells
             }
         }
 
-		public virtual void OnCasterKilled()
+		public virtual bool OnCasterKilled()
 		{
-			Disturb(DisturbType.Kill);
+			return IsCasting;
 		}
 
 		public virtual void OnConnectionChanged()
@@ -313,22 +313,12 @@ namespace Server.Spells
 
 		public virtual bool OnCasterEquiping(Item item)
 		{
-			if (IsCasting)
-			{
-				Disturb(DisturbType.EquipRequest);
-			}
-
-			return true;
+			return IsCasting;
 		}
 
 		public virtual bool OnCasterUsingObject(object o)
-		{
-			if (IsCasting)
-			{
-				Disturb(DisturbType.UseRequest);
-			}
-
-			return true;
+		{	
+			return IsCasting && o is BasePotion;
 		}
 
 		public virtual bool OnCastInTown(Region r)
@@ -336,6 +326,26 @@ namespace Server.Spells
 			return m_Info.AllowTown;
 		}
 		
+		public virtual bool OnWarModeChange()
+		{
+			return IsCasting;
+		}
+
+		public virtual bool OnDamage()
+		{
+			return IsCasting;
+		}
+
+		public virtual bool OnParalyze()
+		{
+			return IsCasting;
+		}
+
+		public virtual void Disturb(DisturbType type)
+		{
+			Disturb(type, true, false);
+		}
+
 		public virtual bool ConsumeReagents()
 		{			
             GMRobe robe = m_Caster.FindItemOnLayer(Layer.OuterTorso) as GMRobe; 
@@ -545,11 +555,6 @@ namespace Server.Spells
 		private CastTimer m_CastTimer;
 		private AnimTimer m_AnimTimer;
 
-		public void Disturb(DisturbType type)
-		{
-			Disturb(type, true, false);
-		}
-
 		public virtual bool CheckDisturb(DisturbType type, bool firstCircle, bool resistable)
 		{
 			if (resistable && m_Scroll is BaseWand)
@@ -567,7 +572,7 @@ namespace Server.Spells
 				return;
 			}
 			
-			if (m_State == SpellState.Precasting || (m_State == SpellState.Sequencing && !firstCircle && this is MagerySpell && ((MagerySpell)this).Circle != SpellCircle.First))
+			if (IsCasting || (m_State == SpellState.Sequencing && !firstCircle && this is MagerySpell && ((MagerySpell)this).Circle != SpellCircle.First))
 			{
 				m_Disturbed = true;
 								
@@ -806,7 +811,7 @@ namespace Server.Spells
 			}
 
             lmc += BaseArmor.GetInherentLowerManaCost(m_Caster);
-
+ 
 			scalar -= (double)lmc / 100;
 
 			return (int)(mana * scalar);
@@ -1203,7 +1208,6 @@ namespace Server.Spells
 				{
                     m_Spell.FinishSequence();
 				}
-				
 				else if (m_Spell.m_CastTime <= Core.TickCount)
                 {
                     m_Spell.CastSequence();

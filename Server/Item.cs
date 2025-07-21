@@ -5326,7 +5326,9 @@ namespace Server
 
         #region OnDoubleClick[...]
         public virtual void OnDoubleClick(Mobile from)
-        { }
+        { 
+			from.Turn(this);
+        }
 
         public virtual void OnDoubleClickOutOfRange(Mobile from)
         { }
@@ -5351,7 +5353,9 @@ namespace Server
         #endregion
 
         public virtual void OnSnoop(Mobile from)
-        { }
+        { 
+			from.Turn(this);        
+        }
 
         public bool InSecureTrade { get { return (GetSecureTradeCont() != null); } }
 

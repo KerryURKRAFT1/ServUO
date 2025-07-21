@@ -665,8 +665,8 @@ namespace Server.Mobiles
 
         public virtual double TeleportChance { get { return 0.05; } }
         public virtual bool AttacksFocus { get { return false; } }
-        public virtual bool ShowSpellMantra { get { return false; } }
-        public virtual bool FreezeOnCast { get { return ShowSpellMantra; } }
+        public virtual bool ShowSpellMantra { get { return true; } }
+        public virtual bool FreezeOnCast { get { return false; } }
 
         #region High Seas
         public virtual bool TaintedLifeAura { get { return false; } }
@@ -993,7 +993,7 @@ namespace Server.Mobiles
         }
         #endregion
 
-        public virtual bool IsInvulnerable { get { return false; } }
+        public override bool IsInvulnerable { get { return false; } }
 
         public BaseAI AIObject { get { return m_AI; } }
 
@@ -1497,7 +1497,7 @@ namespace Server.Mobiles
             }
         }
 
-        public virtual bool InitialInnocent
+        public override bool InitialInnocent
         {
             get
             {
@@ -1507,7 +1507,7 @@ namespace Server.Mobiles
             }
         }
 
-        public virtual bool AlwaysMurderer
+        public override bool AlwaysMurderer
         {
             get
             {
@@ -1674,7 +1674,33 @@ namespace Server.Mobiles
             }
         }
 
-        public override void OnDamage(int amount, Mobile from, bool willKill)
+		public override void OnWarmodeChanged()
+		{ 
+			if (this.Spell != null && this.Spell.OnWarModeChange())
+        	{
+				((Spell)this.Spell).Disturb(DisturbType.EquipRequest);
+			}
+		}
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public override bool Paralyzed
+		{
+			get { return base.Paralyzed; }
+			set
+			{
+				base.Paralyzed = value;
+
+				if (value)
+				{
+					if (this.Spell != null && this.Spell.OnParalyze())
+		        	{
+						((Spell)this.Spell).Disturb(DisturbType.Paralyzed);
+					}
+				}
+			}
+		}		
+		
+		public override void OnDamage(int amount, Mobile from, bool willKill)
         {
             if (BardPacified && (HitsMax - Hits) * 0.001 > Utility.RandomDouble())
             {
@@ -1682,7 +1708,7 @@ namespace Server.Mobiles
             }
 
             int disruptThreshold;
-            //NPCs can use bandages too!
+ 
             if (!Core.AOS)
             {
                 disruptThreshold = 0;
@@ -1704,6 +1730,11 @@ namespace Server.Mobiles
                 {
                     c.Slip();
                 }
+
+				if (this.Spell != null && this.Spell.IsCasting)
+            	{
+					((Spell)this.Spell).Disturb(DisturbType.Hurt);
+				}
             }
 
             if (Confidence.IsRegenerating(this))
@@ -2844,57 +2875,51 @@ namespace Server.Mobiles
 
             switch (NewAI)
             {
+                case AIType.AI_Mage:
+                case AIType.AI_NecroMage:
+                case AIType.AI_Spellweaving:
+                case AIType.AI_Spellbinder:
+                case AIType.AI_Mystic:
+                    m_AI = new MageAI(this);
+                    break;
+
                 case AIType.AI_Melee:
+                case AIType.AI_Predator:
+                case AIType.AI_Samurai:
                     m_AI = new MeleeAI(this);
                     break;
+
+                case AIType.AI_Archer:
+                case AIType.AI_Ninja:
+                    m_AI = new ArcherAI(this);
+                    break;
+					
                 case AIType.AI_Animal:
                     m_AI = new AnimalAI(this);
                     break;
+					
                 case AIType.AI_Berserk:
                     m_AI = new BerserkAI(this);
                     break;
-                case AIType.AI_Archer:
-                    m_AI = new ArcherAI(this);
-                    break;
+
                 case AIType.AI_Healer:
                     m_AI = new HealerAI(this);
                     break;
+					
                 case AIType.AI_Vendor:
                     m_AI = new VendorAI(this);
                     break;
-                case AIType.AI_Mage:
-                    m_AI = new MageAI(this);
-                    break;
-                case AIType.AI_Predator:
-                    //m_AI = new PredatorAI(this);
-                    m_AI = new MeleeAI(this);
-                    break;
+
                 case AIType.AI_Thief:
                     m_AI = new ThiefAI(this);
                     break;
-                case AIType.AI_NecroMage:
-                    m_AI = new NecroMageAI(this);
-                    break;
+
                 case AIType.AI_OrcScout:
                     m_AI = new OrcScoutAI(this);
                     break;
-                case AIType.AI_Samurai:
-                    m_AI = new SamuraiAI(this);
-                    break;
-                case AIType.AI_Ninja:
-                    m_AI = new NinjaAI(this);
-                    break;
-                case AIType.AI_Spellweaving:
-                    m_AI = new SpellweavingAI(this);
-                    break;
-                case AIType.AI_Mystic:
-                    m_AI = new MysticAI(this);
-                    break;
+
                 case AIType.AI_Paladin:
-                    m_AI = new PaladinAI(this);
-                    break;
-                case AIType.AI_Spellbinder:
-                    m_AI = new SpellbinderAI(this);
+                    m_AI = new MeleeAI(this);
                     break;
             }
         }

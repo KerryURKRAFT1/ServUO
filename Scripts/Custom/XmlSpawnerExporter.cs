@@ -11,7 +11,7 @@ namespace Server.Misc
 		public List<(string maps, string regs, XmlSpawner spawners)> SpawnerEntry = new List<(string, string, XmlSpawner)>();
 		
 		
-		private static bool m_Enabled = true; //true: On WorldSave
+		private static bool m_Enabled = false; //true: On WorldSave
 		
 		public static string RootPath = XmlSpawner.XmlSpawnDir;
 		
@@ -25,6 +25,7 @@ namespace Server.Misc
 			}
 
 			CommandSystem.Register( "XmlSpawnerExporter", AccessLevel.Developer, new CommandEventHandler( XmlSpawnerExporter_OnCommand ) );
+    		CommandSystem.Register( "XSE", AccessLevel.Developer, new CommandEventHandler( XmlSpawnerExporter_OnCommand ) );
 
             if (!Directory.Exists(RootPath))
             {

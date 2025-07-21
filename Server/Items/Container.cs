@@ -1823,6 +1823,8 @@ namespace Server.Items
 		{
 			ProcessOpeners(to);
 
+			to.Turn(this);
+			
 			NetState ns = to.NetState;
 
 			if (ns == null)

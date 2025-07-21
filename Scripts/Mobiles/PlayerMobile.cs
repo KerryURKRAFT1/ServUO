@@ -3076,12 +3076,10 @@ namespace Server.Mobiles
 					c.Slip();
 				}
 
-				//Disturb mod
-				if (this.Spell != null && this.Spell.IsCasting)
+				if (this.Spell != null && this.Spell.OnDamage())
             	{
 					((Spell)this.Spell).Disturb(DisturbType.Hurt);
 				}
-				//end
 			}
 
 			if (Confidence.IsRegenerating(this))
@@ -3174,6 +3172,11 @@ namespace Server.Mobiles
 			if (!Warmode)
 			{
 				Timer.DelayCall(TimeSpan.FromSeconds(10), RecoverAmmo);
+			}
+		
+			if (this.Spell != null && this.Spell.OnWarModeChange())
+        	{
+				((Spell)this.Spell).Disturb(DisturbType.EquipRequest);
 			}
 		}
 
@@ -4898,6 +4901,11 @@ namespace Server.Mobiles
 				if (value)
 				{
 					AddBuff(new BuffInfo(BuffIcon.Paralyze, 1075827)); //Paralyze/You are frozen and can not move
+
+					if (this.Spell != null && this.Spell.OnParalyze())
+		        	{
+						((Spell)this.Spell).Disturb(DisturbType.Paralyzed);
+					}
 				}
 				else
 				{
@@ -5000,6 +5008,11 @@ namespace Server.Mobiles
 			{
 				if (m_PeacedUntil > DateTime.UtcNow)
 				{
+					if (this.Spell != null && this.Spell.OnParalyze())
+	            	{
+						((Spell)this.Spell).Disturb(DisturbType.Paralyzed);
+					}
+					
 					return true;
 				}
 

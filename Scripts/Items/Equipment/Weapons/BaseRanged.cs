@@ -82,8 +82,6 @@ namespace Server.Items
 							
 			if (canMove)
 			{				
-				bool canSwing = true;			
-	
 				// ======= SWING FOR UOR SPHERE-STYLE =======
 				if (CanSwing(attacker) && attacker.HarmfulCheck(damageable))
 				{
@@ -138,14 +136,12 @@ namespace Server.Items
 
 			return TimeSpan.FromSeconds(0.25);
 		}
-
         
         // DLICK FOR SPHERE-UOR
         public override void OnDoubleClick(Mobile from)
         {
-                ClickToEquip.OnDoubleClick(from, this);
+        	ClickToEquip.OnDoubleClick(from, this);
         }
-
 
 		public override void OnHit(Mobile attacker, IDamageable damageable, double damageBonus)
 		{
@@ -236,7 +232,7 @@ namespace Server.Items
 				return true;
 			}
 
-			if (attacker.Player)
+			if (attacker is PlayerMobile)
 			{
 				BaseQuiver quiver = attacker.FindItemOnLayer(Layer.Cloak) as BaseQuiver;
 				Container pack = attacker.Backpack;

@@ -470,6 +470,17 @@ namespace Server
 		HigherPoisonActive,
 		Cured
 	}
+
+	public enum DisturbType
+    {
+        Unspecified,
+        EquipRequest,
+        UseRequest,
+        Hurt,
+        Kill,
+        NewCast,
+        Paralyzed
+    }
 	#endregion
 
 	[Serializable]
@@ -510,10 +521,6 @@ namespace Server
     [System.Runtime.InteropServices.ComVisible(true)]
 	public class Mobile : IEntity, IHued, IComparable<Mobile>, ISerializable, ISpawnable, IDamageable
 	{
-		// for UOR SWING
-		public int OutOfRangeSwingCount = 0;
-
-
 		#region CompareTo(...)
 		public int CompareTo(IEntity other)
 		{
@@ -1618,6 +1625,7 @@ namespace Server
 		public int BAC { get { return m_BAC; } set { m_BAC = value; } }
 
 		private long m_LastMoveTime;
+		private bool m_MeditationLock;
 
 		/// <summary>
 		///     Gets or sets the number of steps this player may take when hidden before being revealed.
@@ -1689,6 +1697,8 @@ namespace Server
 		}
 
 		public long LastMoveTime { get { return m_LastMoveTime; } set { m_LastMoveTime = value; } }
+		
+		public bool MeditationLock { get { return m_MeditationLock; } set { m_MeditationLock = value; } }		
 
 		[CommandProperty(AccessLevel.GameMaster)]
 		public virtual bool Paralyzed
@@ -1708,6 +1718,8 @@ namespace Server
 						m_ParaTimer.Stop();
 						m_ParaTimer = null;
 					}
+
+					DisruptiveAction();
 				}
 			}
 		}
@@ -1728,6 +1740,8 @@ namespace Server
 						_SleepTimer.Stop();
 						_SleepTimer = null;
 					}
+
+					DisruptiveAction();
 				}
 			}
 		}
@@ -1770,6 +1784,8 @@ namespace Server
 						m_FrozenTimer.Stop();
 						m_FrozenTimer = null;
 					}
+
+					DisruptiveAction();
 				}
 			}
 		}
@@ -3622,6 +3638,16 @@ public ContextMenu ContextMenu
 				return true;
 			}
 
+			if (!IsStaff())
+			{
+				RevealingAction();
+			}
+
+			if (!m.IsStaff())
+			{
+				m.RevealingAction();
+			}
+			
 			return m.CheckShove(this);
 		}
 
@@ -3654,8 +3680,6 @@ public ContextMenu ContextMenu
 						{
 							number = shoved.m_Hidden ? 1019043 : 1019042;
 							Stam -= 10;
-
-							RevealingAction();
 						}
 						else
 						{
@@ -3729,7 +3753,7 @@ public ContextMenu ContextMenu
 
 		public virtual bool IsStaff()
 		{
-			return Utilities.IsStaff(this);
+			return this.AccessLevel >= AccessLevel.Counselor;
 		}
 
 		public virtual bool IsOwner()
@@ -4133,11 +4157,10 @@ public ContextMenu ContextMenu
 				m_NetState.CancelAllTrades();
 			}
 
-			if (m_Spell != null)
+			if (m_Spell != null && m_Spell.OnCasterKilled())
 			{
-				m_Spell.OnCasterKilled();
+				m_Spell.Disturb( DisturbType.Kill );
 			}
-			//m_Spell.Disturb( DisturbType.Kill );
 
 			if (m_Target != null)
 			{
@@ -4493,7 +4516,10 @@ public ContextMenu ContextMenu
 				return;
 			}
 
-			DisruptiveAction();
+			if (m_Spell != null || (m_Spell != null && !m_Spell.OnCasterUsingObject(item)))
+			{
+				DisruptiveAction();
+			}
 
 			if (m_Spell != null && !m_Spell.OnCasterUsingObject(item))
 			{
@@ -10853,15 +10879,13 @@ public ContextMenu ContextMenu
 
 			if (CheckEquip(item) && OnEquip(item) && item.OnEquip(this))
 			{
-				if (m_Spell != null && !m_Spell.OnCasterEquiping(item))
+				if (m_Spell != null && m_Spell.OnCasterEquiping(item))
 				{
-					return false;
+					m_Spell.Disturb(DisturbType.EquipRequest);
 				}
 
-				//if ( m_Spell != null && m_Spell.State == SpellState.Casting )
-				//	m_Spell.Disturb( DisturbType.EquipRequest );
-
 				AddItem(item);
+
 				return true;
 			}
 
@@ -12049,6 +12073,8 @@ public ContextMenu ContextMenu
 			if (CanPaperdollBeOpenedBy(from))
 			{
 				DisplayPaperdollTo(from);
+
+				from.Turn(this);
 			}
 		}
 
@@ -12078,6 +12104,8 @@ public ContextMenu ContextMenu
 			if (CanPaperdollBeOpenedBy(from))
 			{
 				DisplayPaperdollTo(from);
+
+				from.Turn(this);
 			}
 		}
 		#endregion
@@ -12202,7 +12230,76 @@ public ContextMenu ContextMenu
 
 		public virtual bool ShowFameTitle { get { return true; } } //(m_Player || m_Body.IsHuman) && m_Fame >= 10000; } 
 
-		/// <summary>
+
+        public virtual bool IsInvulnerable 
+        { 
+        	get 
+        	{ 
+        		return false; 
+        	} 
+        }
+
+        public virtual bool InitialInnocent
+        {
+            get
+            {
+				return false;
+            }
+        }
+
+        public virtual bool AlwaysGrey
+        {
+            get
+            {
+				return false;
+            }
+        }
+
+        public virtual bool AlwaysRed
+        {
+            get
+            {
+				return Karma < -800 || AlwaysMurderer;
+            }
+        }
+
+        public virtual bool AlwaysBlue
+        {
+            get
+            {
+				return InitialInnocent || IsInvulnerable;
+            }
+        }
+
+        public virtual bool AlwaysMurderer
+        {
+            get
+            {
+				return false;
+            }
+        }
+        
+        public void Turn(object to)
+        {
+            IPoint3D target = to as IPoint3D;
+
+            if (target == null)
+                return;
+
+            if (target is Item)
+            {
+                Item item = (Item)target;
+
+                if (this != item.RootParent)
+                    Direction = GetDirectionTo(item.GetWorldLocation());
+            }
+            else if (this != target)
+            {
+                Direction = GetDirectionTo(target);
+            }
+        }
+        
+        /// <summary>
 		///     Overridable. Event invoked when the Mobile is single clicked.
 		/// </summary>
 		public virtual void OnSingleClick(Mobile from)
@@ -12244,8 +12341,8 @@ public ContextMenu ContextMenu
 					}
 					
 					string text = String.Format(title.Length <= 0 ? "[{1}]{2}" : "[{0}, {1}]{2}", title, guild.Abbreviation, type);
-					PrivateOverheadMessage(MessageType.Regular, SpeechHue, true, text, from.NetState);
 					
+					PrivateOverheadMessage(MessageType.Regular, SpeechHue, true, text, from.NetState);					
 				}
 			}
 
@@ -12253,11 +12350,19 @@ public ContextMenu ContextMenu
 
 			if (m_NameHue != -1)
 			{
-				hue = 89;
+				hue = m_NameHue;
 			}
-			else if (IsStaff())
+			else if (AlwaysBlue)
 			{
-				hue = 11;
+				hue = 0x059; //blue
+			}
+			else if (AlwaysGrey)
+			{
+				hue = 0x3B2; //grey
+			}
+			else if (AlwaysRed)
+			{
+				hue = 0x022; //red
 			}
 			else
 			{
@@ -12304,6 +12409,15 @@ public ContextMenu ContextMenu
 			else
 			{
 				val = name;
+			}
+			
+			if (IsStaff())
+			{
+				hue = 11; //purple
+
+				string text = $"[{this.AccessLevel}]";
+				
+				val = String.Concat(name, " ", text);
 			}
 
 			PrivateOverheadMessage(MessageType.Label, hue, m_AsciiClickMessage, val, from.NetState);
@@ -12362,8 +12476,13 @@ public ContextMenu ContextMenu
 		{
 			if (Meditating)
 			{
-				Meditating = false;
-				SendLocalizedMessage(500134); // You stop meditating.
+				double chance = 75 + (((Skills[SkillName.Meditation].Base - 1.0) / 100) / 4);
+									
+				if (chance < Utility.RandomDouble())
+				{
+					Meditating = false;
+					SendLocalizedMessage(500134); // You stop meditating.
+				}
 			}
 		}
 

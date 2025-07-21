@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Server.ContextMenus;
 using Server.Engines.Harvest;
+using Server.Network;
 
 namespace Server.Items
 {
@@ -120,7 +121,21 @@ namespace Server.Items
             this.m_UsesRemaining = ((this.m_UsesRemaining * scale) + 99) / 100;
             this.InvalidateProperties();
         }
-        
+
+        public virtual void DisplayDurabilityTo(Mobile m)
+        {
+            this.LabelToAffix(m, 1017323, AffixType.Append, ": " + this.m_UsesRemaining.ToString()); // Durability
+        }
+
+        public override void OnSingleClick(Mobile from)
+        {
+        	if (ShowUsesRemaining)
+        	{
+        		this.DisplayDurabilityTo(from);
+        	}
+
+            base.OnSingleClick(from);
+        }
 
         public override void OnDoubleClick(Mobile from)
         {
@@ -154,181 +169,6 @@ namespace Server.Items
                 ClickToEquip.OnDoubleClick(from, this);
             }
         }
- 
- /*
-        
-        public override void OnDoubleClick(Mobile from)
-        {
-            // UOR behavior for equipping the axe
-            if (Core.UOR)
-            {
-                // If the item is inside the backpack or inside any container within the backpack
-                if (IsAccessibleFromBackpack(from.Backpack))
-                {
-                    RemoveHandItemsForEquip(from, this.Layer);
-
-                    // Try to equip this item
-                    if (from.EquipItem(this))
-                    {
-                        from.PlaySound(0x57); // Equip sound
-                    }
-                    else
-                    {
-                        from.SendMessage("You cannot equip this item.");
-                    }
-                    return;
-                }
-                // If the item is on the ground, within 2 tiles, movable, and with line of sight
-                else if (this.Parent == null && this.Map == from.Map && from.InRange(this.GetWorldLocation(), 2) && this.Movable && from.CanSee(this) && from.InLOS(this))
-                {
-                    // Try to pick up the item and move it to the backpack
-                    if (from.Backpack != null && from.Backpack.TryDropItem(from, this, false))
-                    {
-                        RemoveHandItemsForEquip(from, this.Layer);
-
-                        // Try to equip this item
-                        if (from.EquipItem(this))
-                        {
-                            from.PlaySound(0x57);
-                        }
-                        else
-                        {
-                            from.SendMessage("You cannot equip this item.");
-                        }
-                    }
-                    else
-                    {
-                        from.SendMessage("You cannot pick up or equip this item.");
-                    }
-                    return;
-                }
-                // If already equipped, start targeting logic for harvesting
-                else if (from.FindItemOnLayer(Layer.OneHanded) == this || from.FindItemOnLayer(Layer.TwoHanded) == this)
-                {
-                    if (this.HarvestSystem == null || this.Deleted)
-                        return;
-
-                    Point3D loc = this.GetWorldLocation();
-
-                    if (!from.InLOS(loc) || !from.InRange(loc, 2))
-                    {
-                        from.LocalOverheadMessage(Server.Network.MessageType.Regular, 0x3E9, 1019045); // I can't reach that
-                        return;
-                    }
-                    else if (!this.IsAccessibleTo(from))
-                    {
-                        this.PublicOverheadMessage(Server.Network.MessageType.Regular, 0x3E9, 1061637); // You are not allowed to access this.
-                        return;
-                    }
-
-                    if (!(this.HarvestSystem is Mining))
-                        from.SendLocalizedMessage(1010018); // What do you want to use this item on?
-
-                    this.HarvestSystem.BeginHarvesting(from, this);
-                    return;
-                }
-                else
-                {
-                    from.SendMessage("You must equip the item to use it.");
-                    return;
-                }
-            }
-            else
-            {
-                // Default behavior for non-UOR cores (original harvesting logic)
-                if (this.HarvestSystem == null || this.Deleted)
-                    return;
-
-                Point3D loc = this.GetWorldLocation();
-
-                if (!from.InLOS(loc) || !from.InRange(loc, 2))
-                {
-                    from.LocalOverheadMessage(Server.Network.MessageType.Regular, 0x3E9, 1019045); // I can't reach that
-                    return;
-                }
-                else if (!this.IsAccessibleTo(from))
-                {
-                    this.PublicOverheadMessage(Server.Network.MessageType.Regular, 0x3E9, 1061637); // You are not allowed to access this.
-                    return;
-                }
-
-                if (!(this.HarvestSystem is Mining))
-                    from.SendLocalizedMessage(1010018); // What do you want to use this item on?
-
-                this.HarvestSystem.BeginHarvesting(from, this);
-            }
-        }
-
-        // Utility: Recursively checks if the item is inside any container within the backpack
-        private bool IsAccessibleFromBackpack(Container backpack)
-        {
-            Item current = this;
-            while (current.Parent is Container container)
-            {
-                if (container == backpack)
-                    return true;
-                current = container;
-            }
-            return false;
-        }
-
-        
-        // Utility: Removes the correct item/equipment based on the layer of the item you are about to equip
-        private void RemoveHandItemsForEquip(Mobile from, Layer itemLayer)
-        {
-            if (itemLayer == Layer.TwoHanded)
-            {
-                // Remove both main hand and offhand items (weapon + shield)
-                Item oneHanded = from.FindItemOnLayer(Layer.OneHanded);
-                if (oneHanded != null && from.Backpack != null)
-                    from.Backpack.TryDropItem(from, oneHanded, false);
-
-                Item twoHanded = from.FindItemOnLayer(Layer.TwoHanded);
-                if (twoHanded != null && from.Backpack != null)
-                    from.Backpack.TryDropItem(from, twoHanded, false);
-            }
-            else if (itemLayer == Layer.OneHanded)
-            {
-                // Remove any item equipped in the OneHanded layer (weapon)
-                Item oneHanded = from.FindItemOnLayer(Layer.OneHanded);
-                if (oneHanded != null && from.Backpack != null)
-                    from.Backpack.TryDropItem(from, oneHanded, false);
-
-                // If there is a TwoHanded weapon (not a shield or equipable light), remove it too
-                Item twoHanded = from.FindItemOnLayer(Layer.TwoHanded);
-                if (twoHanded != null && from.Backpack != null && !(twoHanded is BaseShield) && !(twoHanded is BaseEquipableLight))
-                    from.Backpack.TryDropItem(from, twoHanded, false);
-                // A shield stays equipped!
-            }
-        }
-        */
-       
-
-        /*
-        public override void OnDoubleClick(Mobile from)
-        {
-            if (this.HarvestSystem == null || this.Deleted)
-                return;
-
-            Point3D loc = this.GetWorldLocation();
-
-            if (!from.InLOS(loc) || !from.InRange(loc, 2))
-            {
-                from.LocalOverheadMessage(Server.Network.MessageType.Regular, 0x3E9, 1019045); // I can't reach that
-                return;
-            }
-            else if (!this.IsAccessibleTo(from))
-            {
-                this.PublicOverheadMessage(Server.Network.MessageType.Regular, 0x3E9, 1061637); // You are not allowed to access this.
-                return;
-            }
-
-            if (!(this.HarvestSystem is Mining))
-                from.SendLocalizedMessage(1010018); // What do you want to use this item on?
-
-            this.HarvestSystem.BeginHarvesting(from, this);
-        }
-        */
 
         public override void GetContextMenuEntries(Mobile from, List<ContextMenuEntry> list)
         {
