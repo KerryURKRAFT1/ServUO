@@ -46,6 +46,11 @@ namespace Server
 
         public static int Compute(Mobile source, IDamageable target)
 		{
+        	if (source.Player && target is Mobile m && !m.Player && m.Karma < -800)
+      		{	
+        		return Notoriety.Murderer;
+        	}
+        			
 			return m_Handler == null ? CanBeAttacked : m_Handler(source, target);
 		}
 	}

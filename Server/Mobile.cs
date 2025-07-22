@@ -521,6 +521,8 @@ namespace Server
     [System.Runtime.InteropServices.ComVisible(true)]
 	public class Mobile : IEntity, IHued, IComparable<Mobile>, ISerializable, ISpawnable, IDamageable
 	{
+		private static readonly bool m_StaffKarmaTitles = Config.Get("Custom_Settings.StaffKarmaTitles", false);
+
 		#region CompareTo(...)
 		public int CompareTo(IEntity other)
 		{
@@ -6330,8 +6332,7 @@ public ContextMenu ContextMenu
 			* */
 
 			if (m_Player)
-			m_FollowersMax = 6; // <-- sET TO 6 MAX pet counts FOR UOR
-			
+				m_FollowersMax = 6; // <-- sET TO 6 MAX pet counts FOR UOR			
 		}
 
 		public void ConvertHair()
@@ -12255,7 +12256,7 @@ public ContextMenu ContextMenu
         {
             get
             {
-            	return !m_Player && (m_Karma > -800 || m_Criminal);
+            	return !m_Player && (m_Criminal || (m_Karma > -800 && m_Karma < -1));
             }
         }
 
@@ -12263,7 +12264,7 @@ public ContextMenu ContextMenu
         {
             get
             {
-            	return !m_Player && (m_Karma < -800 || AlwaysMurderer);
+            	return !m_Player && (m_Karma <= -800 || AlwaysMurderer);
             }
         }
 
@@ -12366,6 +12367,8 @@ public ContextMenu ContextMenu
 			}
 			else if (AlwaysRed)
 			{
+				Notoriety.Compute(from, this);
+					
 				hue = 0x022; //red
 			}
 			else
@@ -12405,9 +12408,9 @@ public ContextMenu ContextMenu
 						prefix = "Infamous";
 					}
 
-					if (hue == 0x059 || hue == 0x03F)
+					if (m_Player && (hue == 0x059 || hue == 0x03F))
 					{
-						hue = 0x3B2
+						hue = 0x3B2;
 					}					
 				}
 				else if (m_Fame >= 2000)
@@ -12467,11 +12470,19 @@ public ContextMenu ContextMenu
 
 				string text = $"[{this.AccessLevel}]";
 				
-				val = String.Concat(name, " ", text);
+				if (m_StaffKarmaTitles)
+				{
+					PrivateOverheadMessage(MessageType.Label, hue, m_AsciiClickMessage, val, from.NetState);
+					
+					val = text;
+				}
+				else
+				{									
+					val = String.Concat(name, " ", text);
+				}				
 			}
 
 			PrivateOverheadMessage(MessageType.Label, hue, m_AsciiClickMessage, val, from.NetState);
-
 		}
 
 		public bool CheckSkill(SkillName skill, double minSkill, double maxSkill)
