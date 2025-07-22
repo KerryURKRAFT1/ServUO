@@ -358,11 +358,6 @@ namespace Server.Mobiles
 
             this.Title = "the town crier";
             this.Hue = Utility.RandomSkinHue();
-
-            if (Core.UOR)
-                this.NameHue = -1;
-            else
-                this.NameHue = 0x35;
             	
             if (this.Female = Utility.RandomBool())
             {
@@ -559,7 +554,7 @@ namespace Server.Mobiles
 
             int version = reader.ReadInt();
 
-            if (Core.AOS && this.NameHue == 0x35)
+            if (this.NameHue == 0x35)
                 this.NameHue = -1;
         }
 

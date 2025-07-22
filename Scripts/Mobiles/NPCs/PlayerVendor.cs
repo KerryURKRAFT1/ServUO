@@ -347,9 +347,6 @@ namespace Server.Mobiles
 
             this.CantWalk = true;
 
-            if (!Core.AOS)
-                this.NameHue = 0x35;
-
             this.InitStats(100, 100, 100);
             this.InitBody();
             this.InitOutfit();
@@ -659,9 +656,6 @@ namespace Server.Mobiles
         {
             this.Hue = Utility.RandomSkinHue();
             this.SpeechHue = 0x3B2;
-
-            if (!Core.AOS)
-                this.NameHue = 0x35;
 
             if (this.Female = Utility.RandomBool())
             {

@@ -9,9 +9,6 @@ namespace Server.Mobiles
         {
             this.Title = "the healer";
 
-            if (!Core.AOS)
-                this.NameHue = 0x35;
-
             this.SetSkill(SkillName.Forensics, 80.0, 100.0);
             this.SetSkill(SkillName.SpiritSpeak, 80.0, 100.0);
             this.SetSkill(SkillName.Swords, 80.0, 100.0);

@@ -2102,11 +2102,6 @@ namespace Server.Mobiles
                 speechType.OnConstruct(this);
             }
 
-            if (IsInvulnerable && !Core.AOS)
-            {
-                NameHue = 0x35;
-            }
-
             Timer.DelayCall(() =>GenerateLoot(true));
         }
 
