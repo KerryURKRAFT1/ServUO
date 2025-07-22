@@ -3286,7 +3286,33 @@ namespace Server.Mobiles
         }
 
         [CommandProperty(AccessLevel.Administrator)]
-        public int ControlSlots { get { return m_iControlSlots; } set { m_iControlSlots = value; } }
+
+
+        // CHANGE FOR UOR - SPHERE
+        //public int ControlSlots { get { return m_iControlSlots; } set { m_iControlSlots = value; } }
+
+        public virtual int ControlSlots
+        {
+            get
+            {
+                var t = this.GetType();
+                if (Core.UOR)
+                {
+                    // BladeSpirits (with S!) and EnergyVortex summons do NOT count in slots (0 slot)
+                    if ((t.Name == "BladeSpirits" || t.Name == "EnergyVortex") && Summoned)
+                        return 0;
+
+                    // All other tamed or summoned creatures count as 1 slot
+                    if (Controlled || Summoned)
+                        return 1;
+                }
+                return m_iControlSlots;
+            }
+            set
+            {
+                m_iControlSlots = value;
+            }
+        }
 
         public virtual bool NoHouseRestrictions { get { return false; } }
         public virtual bool IsHouseSummonable { get { return false; } }
@@ -6036,13 +6062,16 @@ namespace Server.Mobiles
 
             m_Summoning = true;
 
+            // ======= here guarantees the exact allocation of slots FOR UOR =======
+            creature.Summoned = true;
+            //==================================================================//
             if (controlled)
             {
                 creature.SetControlMaster(caster);
             }
 
             creature.RangeHome = 10;
-            creature.Summoned = true;
+            // creature.Summoned = true;  OLD 
 
             creature.SummonMaster = caster;
 
