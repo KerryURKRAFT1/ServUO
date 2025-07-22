@@ -992,10 +992,9 @@ namespace Server.Spells
 
             GuardedRegion reg = (GuardedRegion)Region.Find(loc, map).GetRegion(typeof(GuardedRegion));
 
-            return (reg != null && !reg.IsDisabled());
+            return (reg != null && !reg.IsDisabled() && !caster.Spell.OnCastInTown(reg));
         }
 
-        // ============modified for UOR ================ //
         public static bool CheckTown(IPoint3D loc, Mobile caster)
         {
             if (loc is Item)
@@ -1003,14 +1002,13 @@ namespace Server.Spells
             return CheckTown(new Point3D(loc), caster);
         }
         
-        // ======Casting always allowed in cities ====== //
         public static bool CheckTown(Point3D loc, Mobile caster)
         {
-            //if (IsTown(loc, caster))
-            //{
-            //    caster.SendLocalizedMessage(500946); // You cannot cast this in town!
-            //    return false;
-            //}
+            if (IsTown(loc, caster))
+            {
+                caster.SendLocalizedMessage(500946); // You cannot cast this in town!
+                return false;
+            }
 
             return true;
         }

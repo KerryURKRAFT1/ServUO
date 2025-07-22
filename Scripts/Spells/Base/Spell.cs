@@ -323,7 +323,7 @@ namespace Server.Spells
 
 		public virtual bool OnCastInTown(Region r)
 		{
-			return m_Info.AllowTown;
+			return true; //m_Info.AllowTown;
 		}
 		
 		public virtual bool OnWarModeChange()

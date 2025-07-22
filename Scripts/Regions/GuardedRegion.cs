@@ -1,4 +1,4 @@
-#region Header
+﻿#region Header
 // **********
 // ServUO - GuardedRegion.cs
 // **********
@@ -105,15 +105,14 @@ namespace Server.Regions
 			return (from.Kills < 5);
 		}
 
-		// ============modified for UOR ================ //
-		// ======Casting always allowed in cities ====== //
 		public override bool OnBeginSpellCast(Mobile m, ISpell s)
 		{
-			//if (!IsDisabled() && !s.OnCastInTown(this))
-			//{
-			//	m.SendLocalizedMessage(500946); // You cannot cast this in town!
-			//	return false;
-			//}
+			if (!IsDisabled() && !s.OnCastInTown(this))
+			{
+				m.SendLocalizedMessage(500946); // You cannot cast this in town!
+				return false;
+			}
+
 			return base.OnBeginSpellCast(m, s);
 		}
 
@@ -301,11 +300,8 @@ namespace Server.Regions
 
 			foreach (Mobile m in eable)
 			{
-				//===========FOR UOR Guards are called=======//
-				// for  PK - Red Mobs - Summon Red========= //
-				//if (IsGuardCandidate(m) &&
-				//	((!AllowReds && m.Kills >= 5 && m.Region.IsPartOf(this)) || m_GuardCandidates.ContainsKey(m)))
-				if (IsGuardCandidate(m) && m.Region.IsPartOf(this))
+				if (IsGuardCandidate(m) &&
+					((!AllowReds && m.Kills >= 5 && m.Region.IsPartOf(this)) || m_GuardCandidates.ContainsKey(m)))
 				{
 					GuardTimer timer = null;
 					m_GuardCandidates.TryGetValue(m, out timer);
@@ -327,7 +323,6 @@ namespace Server.Regions
 
 		public bool IsGuardCandidate(Mobile m)
 		{
-			/*
 			if (m is BaseGuard || !m.Alive || m.IsStaff() || m.Blessed || (m is BaseCreature && ((BaseCreature)m).IsInvulnerable) ||
 				IsDisabled())
 			{
@@ -335,24 +330,6 @@ namespace Server.Regions
 			}
 
 			return (!AllowReds && m.Kills >= 5) || m.Criminal;
-			*/
-
-			if (m is BaseGuard || !m.Alive || m.IsStaff() || m.Blessed || (m is BaseCreature && ((BaseCreature)m).IsInvulnerable) || IsDisabled())
-			return false;
-
-			// Attack red players
-			if (!AllowReds && m.Kills >= 5)
-				return true;
-
-			// Attack criminals
-			if (m.Criminal)
-				return true;
-
-			// Attack mob or summon cwith karma ≤ -800
-			if (m is BaseCreature bc && bc.Karma <= -800)
-				return true;
-
-			return false;
 		}
 
 		[Usage("CheckGuarded")]
