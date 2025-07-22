@@ -1,4 +1,4 @@
-#region Header
+﻿#region Header
 // **********
 // ServUO - Mobile.cs
 // **********
@@ -3722,7 +3722,7 @@ public ContextMenu ContextMenu
 			}
 
 			Criminal = true;
-
+			
 			Region.OnCriminalAction(this, message);
 		}
 
@@ -12251,7 +12251,7 @@ public ContextMenu ContextMenu
         {
             get
             {
-				return false;
+            	return !m_Player && (m_Karma > -800 || m_Criminal);
             }
         }
 
@@ -12259,7 +12259,7 @@ public ContextMenu ContextMenu
         {
             get
             {
-				return Karma < -800 || AlwaysMurderer;
+            	return !m_Player && (m_Karma < -800 || AlwaysMurderer);
             }
         }
 
@@ -12267,7 +12267,7 @@ public ContextMenu ContextMenu
         {
             get
             {
-				return InitialInnocent || IsInvulnerable;
+            	return !m_Player && (InitialInnocent || IsInvulnerable);
             }
         }
 
@@ -12347,7 +12347,7 @@ public ContextMenu ContextMenu
 			}
 
 			int hue;
-
+	
 			if (m_NameHue != -1)
 			{
 				hue = m_NameHue;
@@ -12368,7 +12368,7 @@ public ContextMenu ContextMenu
 			{
 				hue = Notoriety.GetHue(Notoriety.Compute(from, this));
 			}
-
+			
 			string name = Name;
 
 			if (name == null)
@@ -12378,10 +12378,56 @@ public ContextMenu ContextMenu
 
 			string prefix = "";
 
-			if (ShowFameTitle && (m_Player || m_Body.IsHuman) && m_Fame >= 10000)
-			{
-				prefix = (m_Female ? "Lady" : "Lord");
-			}
+			if (ShowFameTitle && (m_Player || m_Body.IsHuman))
+		    {
+				if (m_Karma <= -2000)
+				{
+					prefix = "Dishonorable";
+					
+					if (m_Karma <= -20000)
+					{
+						prefix = (m_Female ? "Dread Lady" : "Dread Lord");
+					}
+					else if (m_Karma <= -15000)
+					{
+						prefix = (m_Female ? "Evil Lady" : "Evil Lord");
+					}
+					else if (m_Karma <= -10000)
+					{
+						prefix = (m_Female ? "Dark Lady" : "Dark Lord");
+					}
+					else if (m_Karma <= -5000)
+					{
+						prefix = "Infamous";
+					}
+
+					if (hue == 0x059 || hue == 0x03F)
+					{
+						hue = 0x3B2
+					}					
+				}
+				else if (m_Fame >= 2000)
+				{					
+					prefix = "Honorable";						
+
+					if (m_Fame >= 20000)
+					{
+						prefix = (m_Female ? "Great Lady" : "Great Lord");
+					}
+					else if (m_Fame >= 15000)
+					{
+						prefix = (m_Female ? "Noble Lady" : "Noble Lord");
+					}
+					else if (m_Fame >= 10000)
+					{
+						prefix = (m_Female ? "Lady" : "Lord");
+					}
+					else if (m_Fame >= 5000)
+					{
+						prefix = "Noble";
+					}
+				}				
+		    }
 
 			string suffix = "";
 
