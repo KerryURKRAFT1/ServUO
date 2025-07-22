@@ -5950,33 +5950,33 @@ public ContextMenu ContextMenu
 
 			switch (version)
 			{
-                case 33:
-                    {
-                        m_SpecialSlayerMechanics = reader.ReadBool();
+				case 33:
+					{
+						m_SpecialSlayerMechanics = reader.ReadBool();
 
-                        if (reader.ReadBool())
-                        {
-                            int length = reader.ReadInt();
+						if (reader.ReadBool())
+						{
+							int length = reader.ReadInt();
 
-                            for (int i = 0; i < length; i++)
-                            {
-                                m_SlayerVulnerabilities.Add(reader.ReadString());
-                            }
+							for (int i = 0; i < length; i++)
+							{
+								m_SlayerVulnerabilities.Add(reader.ReadString());
+							}
 
-                        }
-                        else
-                        {
-                            m_SlayerVulnerabilities = new List<string>();
-                        }
+						}
+						else
+						{
+							m_SlayerVulnerabilities = new List<string>();
+						}
 
-                        goto case 32;
-                    }
-                case 32:
-                    {
-                        m_IgnoreMobiles = reader.ReadBool();
+						goto case 32;
+					}
+				case 32:
+					{
+						m_IgnoreMobiles = reader.ReadBool();
 
-                        goto case 31;
-                    }
+						goto case 31;
+					}
 				case 31:
 					{
 						m_LastStrGain = reader.ReadDeltaTime();
@@ -6198,7 +6198,7 @@ public ContextMenu ContextMenu
 						if (version < 15)
 						{
 							m_Followers = 0;
-							m_FollowersMax = 5;
+							m_FollowersMax = 6;
 						}
 
 						m_Location = reader.ReadPoint3D();
@@ -6328,6 +6328,10 @@ public ContextMenu ContextMenu
 			if( version < 30 )
 			Timer.DelayCall( TimeSpan.Zero, new TimerCallback( ConvertHair ) );
 			* */
+
+			if (m_Player)
+			m_FollowersMax = 6; // <-- sET TO 6 MAX pet counts FOR UOR
+			
 		}
 
 		public void ConvertHair()
@@ -10939,7 +10943,7 @@ public ContextMenu ContextMenu
 		public void DefaultMobileInit()
 		{
             m_StatCap = Config.Get("PlayerCaps.TotalStatCap", 225); ;
-			m_FollowersMax = 5;
+			m_FollowersMax = 6;
 			m_Skills = new Skills(this);
 			m_Items = new List<Item>();
 			m_StatMods = new List<StatMod>();

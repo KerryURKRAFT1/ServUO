@@ -995,21 +995,22 @@ namespace Server.Spells
             return (reg != null && !reg.IsDisabled());
         }
 
+        // ============modified for UOR ================ //
         public static bool CheckTown(IPoint3D loc, Mobile caster)
         {
             if (loc is Item)
                 loc = ((Item)loc).GetWorldLocation();
-
             return CheckTown(new Point3D(loc), caster);
         }
-
+        
+        // ======Casting always allowed in cities ====== //
         public static bool CheckTown(Point3D loc, Mobile caster)
         {
-            if (IsTown(loc, caster))
-            {
-                caster.SendLocalizedMessage(500946); // You cannot cast this in town!
-                return false;
-            }
+            //if (IsTown(loc, caster))
+            //{
+            //    caster.SendLocalizedMessage(500946); // You cannot cast this in town!
+            //    return false;
+            //}
 
             return true;
         }
