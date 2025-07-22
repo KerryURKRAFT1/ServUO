@@ -185,6 +185,7 @@ namespace Server.Mobiles
     {
 		public static readonly bool StamBlock = Config.Get("Custom_Settings.StamBlock", false);
 		private static readonly bool m_MobsPassThroughObjects = Config.Get("Custom_Settings.MobsPassThroughObjects", false);
+		private static readonly bool m_MobsEmotePowerWords = Config.Get("Custom_Settings.MobsEmotePowerWords", false);
 
 		public const int MaxLoyalty = 100;
 
@@ -665,7 +666,7 @@ namespace Server.Mobiles
 
         public virtual double TeleportChance { get { return 0.05; } }
         public virtual bool AttacksFocus { get { return false; } }
-        public virtual bool ShowSpellMantra { get { return true; } }
+        public virtual bool ShowSpellMantra { get { return m_MobsEmotePowerWords; } }
         public virtual bool FreezeOnCast { get { return false; } }
 
         #region High Seas
