@@ -16,7 +16,7 @@
 
 	Compile with Compile.WIN - Debug.bat
 
-	Execute ServUO.exe
+	Execute ServUO.exe (optionally with -Debug)
 
    LINUX
 
