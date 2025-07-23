@@ -1,7 +1,7 @@
 
-   ROB INSTALL
+   RoB INSTALL
 
-   Download Server files at branch ServUO-UPDATED (https://github.com/KerryURKRAFT1/ServUO/tree/ServUO-UPDATED)
+   Download Server files at (https://github.com/KerryURKRAFT1/ServUO/tree/ServUO-UPDATED)
 
 	Copy your client into /Client
 
