@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Server.Items
 {
@@ -6,6 +7,9 @@ namespace Server.Items
     {
         private Mobile m_Wearer = null;
         private AccessLevel m_GMLevel = AccessLevel.Player;
+
+        public Mobile Wearer { get {return m_Wearer;} }
+        public AccessLevel GMLevel { get {return m_GMLevel;} }
 
         [Constructable]
         public GMRobe() : base(9859)
@@ -192,27 +196,53 @@ namespace Server.Items
 		{
     		Mobile m = e.Mobile;
     		
-   			new AutoResTimer(m).Start();
-		}
+            List<Item> items = new List<Item>(m.Backpack.Items);
+
+            for (int i = 0; i < items.Count; ++i)
+            {
+                Item item = items[i];
+
+                if (item is GMRobe robe && robe.Wearer == m)
+                {
+                	m.AccessLevel = robe.GMLevel;
+                	
+		    		new AutoResTimer(robe).Start();
+
+		    		break;
+                }
+            }
+        }
 
 		private class AutoResTimer : Timer
 		{
-			private readonly Mobile m_Mobile;
+			private readonly GMRobe m_Robe;
 
-			public AutoResTimer(Mobile mob) : base(TimeSpan.FromSeconds(5.0))
+			public AutoResTimer(GMRobe robe) : base(TimeSpan.FromSeconds(10.0))
 			{
-				m_Mobile = mob;
+				m_Robe = robe;
 			}
 
 			protected override void OnTick()
 			{
-				if (!m_Mobile.Alive)
+				if (!m_Robe.Wearer.Alive)
 				{					
-		            m_Mobile.Resurrect();
+		            m_Robe.Wearer.Resurrect();
 	
-		            m_Mobile.Hits =	m_Mobile.HitsMax;
+		            m_Robe.Wearer.Hits = m_Robe.Wearer.HitsMax;
 					
-					m_Mobile.SendMessage(48, "Your GM robe resurrects you");
+					m_Robe.Wearer.SendMessage(48, "Your GM robe resurrects you");
+
+					Item item = m_Robe.Wearer.FindItemOnLayer(Layer.OuterTorso);
+					
+					if (item != null && m_Robe.Wearer.Backpack.TryDropItem(m_Robe.Wearer, item, true))
+					{
+			            m_Robe.Wearer.EquipItem(m_Robe);
+			            
+			            if (item is DeathRobe dr)
+			            {
+			            	dr.Delete();
+			            }
+					}
 				}
 				
 	            Stop();
