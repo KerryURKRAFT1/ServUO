@@ -49,16 +49,16 @@ namespace Server.Mobiles
 
 			switch (Utility.Random(60))
             {
-                case 0: PackItem(new AnimateDeadScroll()); break;
-                case 1: PackItem(new BloodOathScroll()); break;
-                case 2: PackItem(new CorpseSkinScroll()); break;
-                case 3: PackItem(new CurseWeaponScroll()); break;
-				case 4: PackItem(new EvilOmenScroll()); break;
-				case 5: PackItem(new HorrificBeastScroll()); break;
-				case 6: PackItem(new MindRotScroll()); break;
-				case 7: PackItem(new PainSpikeScroll()); break;
-				case 8: PackItem(new WraithFormScroll()); break;
-				case 9: PackItem(new PoisonStrikeScroll()); break; 
+                case 0: /*PackItem(new*scroll());*/ break;
+                case 1: /*PackItem(new*scroll());*/ break;
+                case 2: /*PackItem(new*scroll());*/ break;
+                case 3: /*PackItem(new*scroll());*/ break;
+				case 4: /*PackItem(new*scroll());*/ break;
+				case 5: /*PackItem(new*scroll());*/ break;
+				case 6: /*PackItem(new*scroll());*/ break;
+				case 7: /*PackItem(new*scroll());*/ break;
+				case 8: /*PackItem(new*scroll());*/ break;
+				case 9: /*PackItem(new*scroll());*/ break; 
 			}
         }
 

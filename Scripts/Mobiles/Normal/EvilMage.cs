@@ -44,9 +44,9 @@ namespace Server.Mobiles
             this.PackItem(new Sandals());
 			switch (Utility.Random(18))
             {
-                case 0: PackItem(new BloodOathScroll()); break;
-                case 1: PackItem(new CurseWeaponScroll()); break;
-                case 2: PackItem(new StrangleScroll()); break;
+                case 0: /*PackItem(new*scroll());*/ break;
+                case 1: /*PackItem(new*scroll());*/ break;
+                case 2: /*PackItem(new*scroll());*/ break;
 			}
         }
 

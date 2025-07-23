@@ -34,13 +34,13 @@ namespace Server.Mobiles
             this.SetSkill(SkillName.Tactics, 30.0, 50.0);
             this.SetSkill(SkillName.Wrestling, 30.0, 80.0);
 
-            if (0.1 > Utility.RandomDouble())
-                this.PackItem(new VialOfVitriol());
+            //if (0.1 > Utility.RandomDouble())
+            //    this.PackItem(new VialOfVitriol());
 
-            if (0.75 > Utility.RandomDouble())
-                this.PackItem(new AcidSac());
+            //if (0.75 > Utility.RandomDouble())
+            //    this.PackItem(new AcidSac());
 
-            this.PackItem(new CongealedSlugAcid());
+            //this.PackItem(new CongealedSlugAcid());
         }
 
         public AcidSlug(Serial serial)

@@ -49,7 +49,7 @@ namespace Server.Mobiles
             this.VirtualArmor = 55;
             this.QLPoints = 50;
                         
-            this.PackItem(new EssencePassion());
+            //this.PackItem(new EssencePassion());
         }
 
         public FireDaemonRenowned(Serial serial)

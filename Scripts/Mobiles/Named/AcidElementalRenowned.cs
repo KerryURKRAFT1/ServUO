@@ -45,7 +45,7 @@ namespace Server.Mobiles
             this.VirtualArmor = 70;
             this.QLPoints = 50;
 
-            this.PackItem(new EssenceSingularity());
+            //this.PackItem(new EssenceSingularity());
 
             this.PackItem(new Nightshade(4));
             this.PackItem(new LesserPoisonPotion());

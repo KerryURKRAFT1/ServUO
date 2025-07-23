@@ -5226,16 +5226,16 @@ namespace Server.Mobiles
                     switch (Utility.Random(4))
                     {
                         case 0:
-                            PackItem(new CocoaButter());
+                            //PackItem(new CocoaButter());
                             break;
                         case 1:
-                            PackItem(new CocoaLiquor());
+                            //PackItem(new CocoaLiquor());
                             break;
                         case 2:
-                            PackItem(new SackOfSugar());
+                            //PackItem(new SackOfSugar());
                             break;
                         case 3:
-                            PackItem(new Vanilla());
+                            //PackItem(new Vanilla());
                             break;
                     }
                 }

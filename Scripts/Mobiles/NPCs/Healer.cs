@@ -88,9 +88,6 @@ namespace Server.Mobiles
             base.Deserialize(reader);
 
             int version = reader.ReadInt();
-
-            if (Core.AOS && this.NameHue == 0x35)
-                this.NameHue = -1;
         }
     }
 }

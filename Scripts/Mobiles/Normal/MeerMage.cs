@@ -46,8 +46,8 @@ namespace Server.Mobiles
 
 			switch (Utility.Random(8))
             {
-                case 0: PackItem(new StrangleScroll()); break;
-                case 1: PackItem(new WitherScroll()); break;
+                case 0: /*PackItem(new*scroll());*/ break;
+                case 1: /*PackItem(new*scroll());*/ break;
 			}
 
             this.m_NextAbilityTime = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(2, 5));

@@ -43,7 +43,7 @@ namespace Server.Mobiles
 
             this.VirtualArmor = 44;
 
-            this.PackNecroReg(24, 45);
+            //this.PackNecroReg(24, 45);
         }
 
         public Devourer(Serial serial)

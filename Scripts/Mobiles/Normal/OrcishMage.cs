@@ -46,7 +46,7 @@ namespace Server.Mobiles
 
 			switch (Utility.Random(8))
             {
-                case 0: PackItem(new CorpseSkinScroll()); break;
+                case 0: /*PackItem(new*scroll());*/ break;
 			}
 
             if (0.05 > Utility.RandomDouble())

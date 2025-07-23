@@ -159,22 +159,22 @@ namespace Server.Mobiles
                 switch( Utility.Random(6) )
                 {
                     case 0:
-                        this.PackItem(new Blight());
+                        //this.PackItem(new Blight());
                         break;
                     case 1:
-                        this.PackItem(new Scourge());
+                        //this.PackItem(new Scourge());
                         break;
                     case 2:
-                        this.PackItem(new Taint());
+                        //this.PackItem(new Taint());
                         break;
                     case 3:
-                        this.PackItem(new Putrefication());
+                        //this.PackItem(new Putrefication());
                         break;
                     case 4:
-                        this.PackItem(new Corruption());
+                        //this.PackItem(new Corruption());
                         break;
                     case 5:
-                        this.PackItem(new Muculent());
+                        //this.PackItem(new Muculent());
                         break;
                 }
         }

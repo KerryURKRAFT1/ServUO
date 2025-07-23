@@ -42,7 +42,7 @@ namespace Server.Mobiles
 
             VirtualArmor = 50;
 
-            PackItem(new DaemonBone(15));
+            //PackItem(new DaemonBone(15));
 
             QLPoints = 20;
         }

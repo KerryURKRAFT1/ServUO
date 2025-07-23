@@ -46,7 +46,7 @@ namespace Server.Mobiles
             this.VirtualArmor = 80;
             this.QLPoints = 50;
 		
-            this.PackItem(new EssencePersistence());
+            //this.PackItem(new EssencePersistence());
         }
 
         public SkeletalDragonRenowned(Serial serial)

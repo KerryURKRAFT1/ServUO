@@ -46,7 +46,7 @@ namespace Server.Mobiles
             SetSkill( SkillName.Necromancy, 120.0 );
             SetSkill( SkillName.SpiritSpeak, 120.0 );     
 
-			PackNecroReg( 12, 24 ); /// Stratics didn't specify
+			//PackNecroReg( 12, 24 ); /// Stratics didn't specify
 
             Fame = 15000;
             Karma = -15000;

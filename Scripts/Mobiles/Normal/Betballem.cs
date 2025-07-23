@@ -41,7 +41,7 @@ namespace Server.Mobiles
             AddItem(new LightSource());
 
             PackItem(new FertileDirt(Utility.RandomMinMax(1, 4)));
-            PackItem(new DaemonBone(5)); // TODO: Five small iron ore
+            //PackItem(new DaemonBone(5)); // TODO: Five small iron ore
         }
 
         public Betballem(Serial serial)

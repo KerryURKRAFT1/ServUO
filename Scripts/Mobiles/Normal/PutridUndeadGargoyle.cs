@@ -53,7 +53,7 @@ namespace Server.Mobiles
                 PackItem(new UndyingFlesh());
 
             if (0.05 > Utility.RandomDouble())
-                PackItem(new TatteredAncientScroll());
+                /*PackItem(new*scroll());*/
 
             if (0.10 > Utility.RandomDouble())
                 PackItem(new InfusedGlassStave());

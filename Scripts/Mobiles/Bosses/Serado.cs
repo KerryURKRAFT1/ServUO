@@ -44,7 +44,7 @@ namespace Server.Mobiles
             this.Fame = 22500;
             this.Karma = -22500;
 
-            this.PackItem(Engines.Plants.Seed.RandomBonsaiSeed());
+            //this.PackItem(Engines.Plants.Seed.RandomBonsaiSeed());
         }
 
         public Serado(Serial serial)

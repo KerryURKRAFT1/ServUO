@@ -43,7 +43,7 @@ namespace Server.Mobiles
 
             this.VirtualArmor = 50;
             //PackItem( new GnarledStaff() );
-            this.PackNecroReg(17, 24);
+            //this.PackNecroReg(17, 24);
         }
 
         public ShadowDweller(Serial serial)

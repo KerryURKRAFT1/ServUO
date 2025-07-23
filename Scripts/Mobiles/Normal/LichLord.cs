@@ -46,15 +46,15 @@ namespace Server.Mobiles
 
             this.VirtualArmor = 50;
             this.PackItem(new GnarledStaff());
-            this.PackNecroReg(12, 40);
+            //this.PackNecroReg(12, 40);
 
 			switch (Utility.Random(15))
             {
-                case 0: PackItem(new LichFormScroll()); break;
-                case 1: PackItem(new PoisonStrikeScroll()); break;
-                case 2: PackItem(new StrangleScroll()); break;
-                case 3: PackItem(new VengefulSpiritScroll()); break;
-				case 4: PackItem(new WitherScroll()); break;
+                case 0: /*PackItem(new*scroll());*/ break;
+                case 1: /*PackItem(new*scroll());*/ break;
+                case 2: /*PackItem(new*scroll());*/ break;
+                case 3: /*PackItem(new*scroll());*/ break;
+				case 4: /*PackItem(new*scroll());*/ break;
 			}
         }
 

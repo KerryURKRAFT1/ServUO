@@ -40,7 +40,7 @@ namespace Server.Mobiles
             this.Karma = -18000;
 
             this.PackReg(3);
-            this.PackNecroReg(1, 10);
+            //this.PackNecroReg(1, 10);
 
             for (int i = 0; i < Utility.RandomMinMax(0, 1); i++)
             {

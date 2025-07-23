@@ -37,7 +37,7 @@ namespace Server.Mobiles
 
             this.QLPoints = 15;
 
-            this.PackNecroReg(10, 15); /// Stratics didn't specify
+            //this.PackNecroReg(10, 15); /// Stratics didn't specify
         }
 
         public PutridUndeadGuardian(Serial serial)

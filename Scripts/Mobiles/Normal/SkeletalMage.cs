@@ -43,7 +43,7 @@ namespace Server.Mobiles
 
             this.VirtualArmor = 38;
             this.PackReg(3);
-            this.PackNecroReg(3, 10);
+            //this.PackNecroReg(3, 10);
             this.PackItem(new Bone());
         }
 

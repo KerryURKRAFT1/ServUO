@@ -48,16 +48,16 @@ namespace Server.Mobiles
 
 			switch (Utility.Random(25))
             {
-                case 0: PackItem(new LichFormScroll()); break;
-                case 1: PackItem(new PoisonStrikeScroll()); break;
-                case 2: PackItem(new StrangleScroll()); break;
-                case 3: PackItem(new VengefulSpiritScroll()); break;
-				case 4: PackItem(new WitherScroll()); break;
+                case 0: /*PackItem(new*scroll());*/ break;
+                case 1: /*PackItem(new*scroll());*/ break;
+                case 2: /*PackItem(new*scroll());*/ break;
+                case 3: /*PackItem(new*scroll());*/ break;
+				case 4: /*PackItem(new*scroll());*/ break;
 			}
 
 
             this.PackItem(new GnarledStaff());
-            this.PackNecroReg(17, 24);
+            //this.PackNecroReg(17, 24);
         }
 
         public Lich(Serial serial)

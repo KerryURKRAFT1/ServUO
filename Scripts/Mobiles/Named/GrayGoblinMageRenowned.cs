@@ -45,7 +45,7 @@ namespace Server.Mobiles
             this.VirtualArmor = 28;
             this.QLPoints = 50;
 
-            this.PackItem(new EssenceControl());
+            //this.PackItem(new EssenceControl());
 			
             switch ( Utility.Random(20) )
             {

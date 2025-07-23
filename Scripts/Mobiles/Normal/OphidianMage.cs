@@ -51,7 +51,7 @@ namespace Server.Mobiles
 
 			switch (Utility.Random(6))
             {
-                case 0: PackItem(new PainSpikeScroll()); break;
+                case 0: /*PackItem(new*scroll());*/ break;
 			}
 
         }

@@ -3379,15 +3379,29 @@ namespace Server.Mobiles
 		public override void OnDeath(Container c)
 		{
 			PlayerMobile killer = null;
+			PlayerMobile caster = null;
 			Mobile m = FindMostRecentDamager(false);
-			killer = m as PlayerMobile;
+			killer = m as PlayerMobile;			
+			
 			if(killer == null)
 			{
-				if(m is BaseCreature)
+				if(m is BaseCreature bc)
 				{
-					killer = ((BaseCreature)m).ControlMaster as PlayerMobile;
+					if (bc.ControlMaster != null)
+					{
+						killer = bc.ControlMaster as PlayerMobile;
+					}
+					if (bc.SummonMaster != null)
+					{
+						caster = bc.SummonMaster as PlayerMobile;
+						
+						if (caster != this)
+						{
+							caster.Kills++;
+						}
+					}
 				}
-			}
+			}						
 			
 			if (m_NonAutoreinsuredItems > 0)
 			{

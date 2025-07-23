@@ -46,10 +46,10 @@ namespace Server.Mobiles
             this.VirtualArmor = 65;
             this.SpeechHue = Utility.RandomDyedHue();
 
-            this.PackItem(new PowerCrystal());
+            //this.PackItem(new PowerCrystal());
 
-            if (0.02 > Utility.RandomDouble())
-                this.PackItem(new BlackthornWelcomeBook());
+            //if (0.02 > Utility.RandomDouble())
+                //this.PackItem(new BlackthornWelcomeBook());
 
             this.m_NextAbilityTime = DateTime.UtcNow + TimeSpan.FromSeconds(Utility.RandomMinMax(5, 30));
         }

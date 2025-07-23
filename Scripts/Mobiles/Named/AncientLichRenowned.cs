@@ -46,9 +46,9 @@ namespace Server.Mobiles
             this.VirtualArmor = 60;
             this.QLPoints = 50;
 
-            this.PackItem(new EssenceDirection());
+            //this.PackItem(new EssenceDirection());
 
-            this.PackNecroReg(30, 275);
+            //this.PackNecroReg(30, 275);
         }
 
         public AncientLichRenowned(Serial serial)

@@ -44,7 +44,7 @@ namespace Server.Mobiles
             this.VirtualArmor = 28;
             this.QLPoints = 50;
 
-            this.PackItem(new EssenceBalance());
+            //this.PackItem(new EssenceBalance());
         }
 
         public TikitaviRenowned(Serial serial)

@@ -46,7 +46,7 @@ namespace Server.Mobiles
             this.VirtualArmor = 40;
             this.QLPoints = 50;
 
-            this.PackItem(new EssencePrecision());
+            //this.PackItem(new EssencePrecision());
 
             this.ControlSlots = 4;
 

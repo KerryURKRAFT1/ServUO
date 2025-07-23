@@ -44,7 +44,7 @@ namespace Server.Mobiles
 
             QLPoints = 10;
 
-            PackItem(new DaemonBone(5));
+            //PackItem(new DaemonBone(5));
         }
 
         public Anlorzen(Serial serial)

@@ -45,7 +45,7 @@ namespace Server.Mobiles
 
             QLPoints = 50;
 
-            PackItem(new DaemonBone(30));
+            //PackItem(new DaemonBone(30));
         }
 
         public Anlorvaglem(Serial serial)

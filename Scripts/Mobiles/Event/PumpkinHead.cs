@@ -90,26 +90,26 @@ namespace Server.Mobiles
                 switch( Utility.Random(5) )
                 {
                     case 0:
-                        this.PackItem(new PaintedEvilClownMask());
+                        //this.PackItem(new PaintedEvilClownMask());
                         break;
                     case 1:
-                        this.PackItem(new PaintedDaemonMask());
+                        //this.PackItem(new PaintedDaemonMask());
                         break;
                     case 2:
-                        this.PackItem(new PaintedPlagueMask());
+                        //this.PackItem(new PaintedPlagueMask());
                         break;
                     case 3:
-                        this.PackItem(new PaintedEvilJesterMask());
+                        //this.PackItem(new PaintedEvilJesterMask());
                         break;
                     case 4:
-                        this.PackItem(new PaintedPorcelainMask());
+                        //this.PackItem(new PaintedPorcelainMask());
                         break;
                     default:
                         break;
                 }
             }
 
-            this.PackItem(new WrappedCandy());
+            //this.PackItem(new WrappedCandy());
             this.AddLoot(LootPack.UltraRich, 2);
         }
 

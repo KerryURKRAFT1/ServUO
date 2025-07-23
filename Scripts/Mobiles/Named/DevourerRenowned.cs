@@ -46,9 +46,9 @@ namespace Server.Mobiles
             this.VirtualArmor = 44;
             this.QLPoints = 50;
 
-            this.PackItem(new EssenceAchievement());
+            //this.PackItem(new EssenceAchievement());
 
-            this.PackNecroReg(24, 45);
+            //this.PackNecroReg(24, 45);
         }
 
         public DevourerRenowned(Serial serial)

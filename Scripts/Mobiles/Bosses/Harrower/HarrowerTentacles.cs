@@ -58,13 +58,12 @@ namespace Server.Mobiles
             this.m_Timer.Start();
 
             this.PackReg(50);
-            this.PackNecroReg(15, 75);
+            //this.PackNecroReg(15, 75);
 
 			switch (Utility.Random(3))
             {
-                case 0: PackItem(new VampiricEmbraceScroll()); break;
+            	case 0: /*PackItem(new*scroll());*/ break;
 			}
-
         }
 
         public HarrowerTentacles(Serial serial)

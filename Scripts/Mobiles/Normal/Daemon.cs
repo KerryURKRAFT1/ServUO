@@ -48,19 +48,19 @@ namespace Server.Mobiles
             switch (Utility.Random(20))
             {
                 case 0:
-                    PackItem(new LichFormScroll());
+                    /*PackItem(new*scroll());*/
                     break;
                 case 1:
-                    PackItem(new PoisonStrikeScroll());
+                    /*PackItem(new*scroll());*/
                     break;
                 case 2:
-                    PackItem(new StrangleScroll());
+                    /*PackItem(new*scroll());*/
                     break;
                 case 3:
-                    PackItem(new VengefulSpiritScroll());
+                    /*PackItem(new*scroll());*/
                     break;
                 case 4:
-                    PackItem(new WitherScroll());
+                    /*PackItem(new*scroll());*/
                     break;
             }
 
