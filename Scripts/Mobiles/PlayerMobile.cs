@@ -3391,15 +3391,6 @@ namespace Server.Mobiles
 					{
 						killer = bc.ControlMaster as PlayerMobile;
 					}
-					if (bc.SummonMaster != null)
-					{
-						caster = bc.SummonMaster as PlayerMobile;
-						
-						if (caster != this)
-						{
-							caster.Kills++;
-						}
-					}
 				}
 			}						
 			
