@@ -98,6 +98,7 @@ namespace Server.Items
 		private AccessLevel m_AccessLevel; // Which AccessLevel the owner had when he died
 		private readonly Guild m_Guild; // Which Guild the owner was in when he died
 		private int m_Kills; // How many kills the owner had when he died
+		private int m_Karma; // Karma
 
 		private DateTime m_TimeOfDeath; // What time was this corpse created?
 
@@ -338,6 +339,9 @@ namespace Server.Items
 		public int Kills { get { return m_Kills; } set { m_Kills = value; } }
 
 		[CommandProperty(AccessLevel.GameMaster)]
+		public int Karma { get { return m_Karma; } set { m_Karma = value; } }
+
+		[CommandProperty(AccessLevel.GameMaster)]
 		public bool Criminal { get { return GetFlag(CorpseFlag.Criminal); } set { SetFlag(CorpseFlag.Criminal, value); } }
 
 		[CommandProperty(AccessLevel.GameMaster)]
@@ -558,6 +562,7 @@ namespace Server.Items
 			m_AccessLevel = owner.AccessLevel;
 			m_Guild = owner.Guild as Guild;
 			m_Kills = owner.Kills;
+			m_Karma = owner.Karma;
 			SetFlag(CorpseFlag.Criminal, owner.Criminal);
 
 			m_Hair = hair;
@@ -653,7 +658,10 @@ namespace Server.Items
 		{
 			base.Serialize(writer);
 
-			writer.Write(12); // version
+			writer.Write(13); // version
+			
+			//version 13
+			writer.Write(m_Kills);
 
 			if (m_RestoreEquip == null)
 			{
@@ -724,6 +732,12 @@ namespace Server.Items
 
 			switch (version)
 			{
+				case 13:
+					{
+						m_Karma = reader.ReadInt();
+
+						goto case 12;
+					}
 				case 12:
 					{
 						if (reader.ReadBool())
@@ -1373,6 +1387,8 @@ namespace Server.Items
 			{
 				from.Send(new MessageLocalized(Serial, ItemID, MessageType.Label, hue, 3, 1046414, "", Name));
 			}
+			
+			from.Face(this);
 		}
 
 		public void Carve(Mobile from, Item item)

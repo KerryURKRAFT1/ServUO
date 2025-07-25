@@ -1822,8 +1822,6 @@ namespace Server.Items
 		public virtual void DisplayTo(Mobile to)
 		{
 			ProcessOpeners(to);
-
-			to.Turn(this);
 			
 			NetState ns = to.NetState;
 

@@ -626,7 +626,7 @@ namespace Server
 		public virtual void OnExit(Mobile m)
 		{ }
 
-		public virtual void MakeGuard(Mobile focus)
+		public virtual void MakeGuard(Mobile focus, int count = 0)
 		{
 			if (m_Parent != null)
 			{

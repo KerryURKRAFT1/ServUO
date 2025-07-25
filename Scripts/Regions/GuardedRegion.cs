@@ -121,7 +121,7 @@ namespace Server.Regions
 			return false;
 		}
 
-		public override void MakeGuard(Mobile focus)
+		public override void MakeGuard(Mobile focus, int count = 0)
 		{
 			BaseGuard useGuard = null;
 

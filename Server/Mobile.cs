@@ -522,6 +522,7 @@ namespace Server
 	public class Mobile : IEntity, IHued, IComparable<Mobile>, ISerializable, ISpawnable, IDamageable
 	{
 		private static readonly bool m_StaffKarmaTitles = Config.Get("Custom_Settings.StaffKarmaTitles", false);
+		private static readonly bool m_TurnToFace = Config.Get("Custom_Settings.TurnToFace", true);
 
 		#region CompareTo(...)
 		public int CompareTo(IEntity other)
@@ -12079,7 +12080,7 @@ public ContextMenu ContextMenu
 			{
 				DisplayPaperdollTo(from);
 
-				from.Turn(this);
+				from.Face(this);
 			}
 		}
 
@@ -12110,7 +12111,7 @@ public ContextMenu ContextMenu
 			{
 				DisplayPaperdollTo(from);
 
-				from.Turn(this);
+				from.Face(this);
 			}
 		}
 		#endregion
@@ -12283,24 +12284,22 @@ public ContextMenu ContextMenu
 				return false;
             }
         }
-        
-        public void Turn(object to)
+        		
+        public void Face(object to)
         {
-            IPoint3D target = to as IPoint3D;
-
-            if (target == null)
-                return;
-
-            if (target is Item)
+            if (!m_TurnToFace)
+        	{
+        		return;
+        	}
+            
+			if (to is IPoint3D p && InRange(p, 12))
             {
-                Item item = (Item)target;
-
-                if (this != item.RootParent)
-                    Direction = GetDirectionTo(item.GetWorldLocation());
-            }
-            else if (this != target)
-            {
-                Direction = GetDirectionTo(target);
+				Item item = to as Item;
+				
+                if (item == null || this != item.RootParent)
+                {
+	            	Direction = GetDirectionTo(new Point3D(p.X, p.Y, p.Z));
+                }
             }
         }
         
@@ -12316,6 +12315,11 @@ public ContextMenu ContextMenu
 			else if (IsPlayer() && DisableHiddenSelfClick && Hidden && from == this)
 			{
 				return;
+			}
+				
+			if (m_TurnToFace)
+			{
+				from.Face(this);
 			}
 
 			if (m_GuildClickMessage)

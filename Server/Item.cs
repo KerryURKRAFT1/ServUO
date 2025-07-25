@@ -5327,7 +5327,6 @@ namespace Server
         #region OnDoubleClick[...]
         public virtual void OnDoubleClick(Mobile from)
         { 
-			from.Turn(this);
         }
 
         public virtual void OnDoubleClickOutOfRange(Mobile from)
@@ -5354,7 +5353,7 @@ namespace Server
 
         public virtual void OnSnoop(Mobile from)
         { 
-			from.Turn(this);        
+			from.Face(this);        
         }
 
         public bool InSecureTrade { get { return (GetSecureTradeCont() != null); } }
@@ -5625,7 +5624,9 @@ namespace Server
                 LabelLootTypeTo(from);
             }
 
-            NetState ns = from.NetState;
+			from.Face(this);
+
+			NetState ns = from.NetState;
 
             if (ns != null)
             {

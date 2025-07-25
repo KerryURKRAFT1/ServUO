@@ -2885,24 +2885,16 @@ namespace Server.Mobiles
 					{
 						// If this is a summon, it can't target its controller.
 						// exception UOR for Energy Vortex and Blade Spirit !
-
-						//if (m == m_Mobile.SummonMaster)
-						//	continue;
-
-					if (m_Mobile.Summoned && m_Mobile.SummonMaster != null)
-					{
-						var type = m_Mobile.GetType();
-						if (!(type.Name == "EnergyVortex" || type.Name == "BladeSpirit") && m == m_Mobile.SummonMaster)
-							continue;
-					}
-
-						// It also must abide by harmful spell rules if the master is a player.
-						if (m_Mobile.SummonMaster is PlayerMobile && !Server.Spells.SpellHelper.ValidIndirectTarget(m_Mobile.SummonMaster, m))
-							continue;
-
-						// Players animated creatures cannot attack other players directly.
-						if (m is PlayerMobile && m_Mobile.IsAnimatedDead && m_Mobile.SummonMaster is PlayerMobile)
-							continue;
+						if (Core.UOR && (m_Mobile is BladeSpirits || m_Mobile is EnergyVortex))
+						{
+							// It also must abide by harmful spell rules if the master is a player.
+							if (m_Mobile.SummonMaster is PlayerMobile && !Server.Spells.SpellHelper.ValidIndirectTarget(m_Mobile.SummonMaster, m))
+								continue;
+	
+							// Players animated creatures cannot attack other players directly.
+							if (m is PlayerMobile && m_Mobile.IsAnimatedDead && m_Mobile.SummonMaster is PlayerMobile)
+								continue;
+						}
 					}
 
 					// If we only want faction friends
