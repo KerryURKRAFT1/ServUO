@@ -19,7 +19,10 @@ namespace Server.Mobiles
 
 		public BaseFamiliar()
 			: base(AIType.AI_Melee, FightMode.Closest, 10, 1, -1, -1)
-		{ }
+		{ 
+            this.Fame = 0;
+            this.Karma = -1000;
+		}
 
 		public BaseFamiliar(Serial serial)
 			: base(serial)

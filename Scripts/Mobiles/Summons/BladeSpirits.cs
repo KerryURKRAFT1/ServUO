@@ -38,7 +38,7 @@ namespace Server.Mobiles
             this.SetSkill(SkillName.Wrestling, 90.0);
 
             this.Fame = 0;
-            this.Karma = 0;
+            this.Karma = -1000;
 
             this.VirtualArmor = 40;
             this.ControlSlots = (Core.UOR) ? 0 : (Core.SE) ? 2 : 1; //Can cast Unlimited Bladespirits however > 5 in range 6 will still trigger dispel
