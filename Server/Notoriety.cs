@@ -3,7 +3,6 @@
 // ServUO - Notoriety.cs
 // **********
 #endregion
-using System;
 
 namespace Server
 {
@@ -23,25 +22,18 @@ namespace Server
 
 		public static NotorietyHandler Handler { get { return m_Handler; } set { m_Handler = value; } }
 
-		private static int[] m_Hues = {0x000, 0x059, 0x03F, 0x3B2, 0x3B2, 0x022, 0x022, 0x059};
+		private static int[] m_Hues = new[] {0x000, 0x059, 0x03F, 0x3B2, 0x3B2, 0x022, 0x022, 0x059};
 
 		public static int[] Hues { get { return m_Hues; } set { m_Hues = value; } }
 
 		public static int GetHue(int noto)
 		{
-			switch (noto)
+			if (noto < 0 || noto >= m_Hues.Length)
 			{
-				case 1: return 0x059; //blue
-				case 2: return 0x03F; //green
-				case 3: 
-				case 4: return 0x3B2; //grey
-				case 5:
-				case 6: return 0x022; //red
-				case 7: return 0x059; //blue
-				default: break;
+				return 0;
 			}
 
-			return 0;
+			return m_Hues[noto];
 		}
 
         public static int Compute(Mobile source, IDamageable target)
