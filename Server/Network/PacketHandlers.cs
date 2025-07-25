@@ -135,6 +135,8 @@ namespace Server.Network
 			Register(0xF4, 0, false, CrashReport);
 			Register(0xF8, 106, false, CreateCharacter70160);
 
+			Register(0xFB, 2, false, PublicHouseContent);
+
 			Register6017(0x08, 15, true, DropReq6017);
 
 			RegisterExtended(0x05, false, ScreenSize);
@@ -2861,7 +2863,13 @@ namespace Server.Network
 			}
 		}
 
-		private static bool m_ClientVerification = true;
+        public static void PublicHouseContent(NetState state, PacketReader pvSrc)
+        {
+            int value = pvSrc.ReadByte();
+            state.Mobile.PublicHouseContent = Convert.ToBoolean(value);
+        }
+
+        private static bool m_ClientVerification = true;
 
 		public static bool ClientVerification { get { return m_ClientVerification; } set { m_ClientVerification = value; } }
 

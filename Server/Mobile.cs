@@ -869,7 +869,10 @@ namespace Server
 			}
 		}
 
-		protected virtual void OnRaceChange(Race oldRace)
+        [CommandProperty(AccessLevel.GameMaster)]
+        public bool PublicHouseContent { get; set; }
+
+        protected virtual void OnRaceChange(Race oldRace)
 		{ }
 
 		public virtual double RacialSkillBonus { get { return 0; } }
