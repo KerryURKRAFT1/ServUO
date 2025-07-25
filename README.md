@@ -1,11 +1,12 @@
 
-   ROB INSTALL
+   RoB INSTALL
 
-   Download Server files at branch ServUO-UPDATED (https://github.com/KerryURKRAFT1/ServUO/tree/ServUO-UPDATED)
+   Download Server files at https://github.com/KerryURKRAFT1/ServUO/tree/ServUO-UPDATED
 
 	Copy your client into /Client
 
-	We will be using 5.0.8.3 but for testing you can use any client although I recommend staying with or below 7.0.24
+	We will be using 5.0.8.3 but for testing you can use any client although I recommend staying with or
+ 	below 7.0.24
 
 	Load up Classic UO with the same client (but not the same folder)
 
@@ -15,7 +16,7 @@
 
 	Compile with Compile.WIN - Debug.bat
 
-	Execute ServUO.exe
+	Execute ServUO.exe (optionally with -Debug)
 
    LINUX
 
@@ -25,7 +26,7 @@
 
    Linux Dependencies
 
-   I use Debian 12 here is my list note: this covers ModernUO also so you may not need everything
+   I use Debian 12 here is my list note: this covers ModernUO/ServUO/RunUO so you may not need everything
 
 	Dotnet SDK
 	Mono-Complete
