@@ -12,6 +12,7 @@ using Server.Factions;
 using Server.Gumps;
 using Server.Mobiles;
 using Server.Targeting;
+using Server.SkillHandlers;
 #endregion
 
 namespace Server.Items
@@ -72,14 +73,14 @@ namespace Server.Items
 
 		public override void OnDoubleClick(Mobile from)
 		{
-			if (from.InRange(GetWorldLocation(), Range))
+        	if (from.InRange(GetWorldLocation(), Range))
 			{
 				from.RevealingAction();
 
 				from.SendLocalizedMessage(500948); // Who will you use the bandages on?
 
 				from.Target = new InternalTarget(this);
-			}
+        	}
 			else
 			{
 				from.SendLocalizedMessage(500295); // You are too far away to do that.
@@ -132,7 +133,7 @@ namespace Server.Items
 			protected override void OnTarget(Mobile from, object targeted)
 			{
 				if (m_Bandage.Deleted)
-				{
+				{					
 					return;
 				}
 
@@ -160,7 +161,7 @@ namespace Server.Items
 				else
 				{
 					from.SendLocalizedMessage(500970); // Bandages can not be used on that.
-				}
+				}				
 			}
 
 			protected override void OnNonlocalTarget(Mobile from, object targeted)
