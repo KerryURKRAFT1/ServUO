@@ -3,6 +3,7 @@ using Server.Engines.Craft;
 using Server.Network;
 using Server.Mobiles;
 using Server.Gumps;
+using Server.SkillHandlers;
 
 namespace Server.Items
 {
@@ -154,70 +155,105 @@ namespace Server.Items
             base.OnSingleClick(from);
         }
 
-        public override void OnDoubleClick(Mobile from)
+        public override void OnDoubleClick(Mobile m)
         {
-            if (this.IsChildOf(from.Backpack) || this.Parent == from)
+            if (this.IsChildOf(m.Backpack) || this.Parent == m)
             {
-                CraftSystem system = this.CraftSystem;
-
-                int num = system.CanCraft(from, this, null);
-
-                if (num > 0 && (num != 1044267 || !Core.SE))
-                {
-                    from.SendLocalizedMessage(num);
-                }
-                else
-                {
-            
-                    // Apri direttamente il menu appropriato in base al sistema di crafting del tool
-                    
-                    if (system == DefCarpentry.CraftSystem)
-                    {
-                        NewCarpentryMenu.CreateMenu(from, system, this, 0, true);
-                    }
-                    else if (system == DefTinkering.CraftSystem)
-                    {
-                        NewTinkeringMenu.CreateMenu(from, system, this, 0, true);
-                    }
-                    else if (system == DefClassicTailoring.CraftSystem)
-                    {
-                        NewTailoringMenu.CreateMenu(from, system, this, 0, true);
-                    }
-                    else if (system == DefClassicBlacksmithy.CraftSystem)
-                    {
-                        NewBlacksmithyMenu.CreateMenu(from, system, this, 0, true);
-                    }
-                    else if (system == DefClassicBowFletching.CraftSystem)
-                    {
-                        NewFletchingMenu.CreateMenu(from, system, this, 0, true);
-                    }
-                    else if (system == DefClassicAlchemy.CraftSystem)
-                    {
-                        NewAlchemyMenu.CreateMenu(from, system, this, 0, true);
-                    }
-                    else if (system == DefClassicInscription.CraftSystem)
-                    {
-                        NewInscriptionMenu.CreateMenu(from, system, this, 0, true);
-                    }
-                    else if (system == DefCartography.CraftSystem)
-                    {
-                        NewCartographyMenu.CreateMenu(from, system, this, 0, true);
-                    }
-                    else if (system == DefClassicCooking.CraftSystem)
-                    {
-                        NewCookingMenu.CreateMenu(from, system, this, 0, true);
-                    }
-                    else
-                    {
-                        from.SendMessage("Sistema di crafting non supportato."); // Messaggio di fallback per sistemi non supportati
-                    }
-
-                }
+	    		if (!SkillRegistry.Contains(m))
+	    		{
+		    		SkillRegistry.Add(m);
+		        	
+		        	if (!TriggerSkill(m))
+		        	{
+			    		SkillRegistry.Remove(m);
+		        	}
+	    		}
+	    		else if (SkillRegistry.WaitMsg)
+	    		{
+	                m.SendMessage("You must wait to perform another action.");
+	    		}
             }
             else
             {
-                from.SendLocalizedMessage(1042001); // That must be in your pack for you to use it.
+                m.SendLocalizedMessage(1042001); // That must be in your pack for you to use it.
             }
+        }
+
+        public bool TriggerSkill(Mobile m)
+        {
+            new SkillTimer(m, this, SkillRegistry.ShortDelay).Start();
+            
+			return true;
+        }
+        private class SkillTimer : Timer
+		{
+			private readonly Mobile m_Owner;
+			private readonly BaseTool m_BaseTool;
+
+            public SkillTimer(Mobile owner, BaseTool tool, TimeSpan delay) : base(delay)
+			{
+				m_Owner = owner;
+				m_BaseTool = tool;
+
+				Priority = TimerPriority.TwoFiftyMS;
+			}
+
+			protected override void OnTick()
+			{
+                CraftSystem system = m_BaseTool.CraftSystem;
+
+                int num = system.CanCraft(m_Owner, m_BaseTool, null);
+
+                if (num > 0 && (num != 1044267 || !Core.SE))
+                {
+                    m_Owner.SendLocalizedMessage(num);
+                }
+                else
+                {                    
+                    if (system == DefCarpentry.CraftSystem)
+                    {
+                        NewCarpentryMenu.CreateMenu(m_Owner, system, m_BaseTool, 0, true);
+                    }
+                    else if (system == DefTinkering.CraftSystem)
+                    {
+                        NewTinkeringMenu.CreateMenu(m_Owner, system, m_BaseTool, 0, true);
+                    }
+                    else if (system == DefClassicTailoring.CraftSystem)
+                    {
+                        NewTailoringMenu.CreateMenu(m_Owner, system, m_BaseTool, 0, true);
+                    }
+                    else if (system == DefClassicBlacksmithy.CraftSystem)
+                    {
+                        NewBlacksmithyMenu.CreateMenu(m_Owner, system, m_BaseTool, 0, true);
+                    }
+                    else if (system == DefClassicBowFletching.CraftSystem)
+                    {
+                        NewFletchingMenu.CreateMenu(m_Owner, system, m_BaseTool, 0, true);
+                    }
+                    else if (system == DefClassicAlchemy.CraftSystem)
+                    {
+                        NewAlchemyMenu.CreateMenu(m_Owner, system, m_BaseTool, 0, true);
+                    }
+                    else if (system == DefClassicInscription.CraftSystem)
+                    {
+                        NewInscriptionMenu.CreateMenu(m_Owner, system, m_BaseTool, 0, true);
+                    }
+                    else if (system == DefCartography.CraftSystem)
+                    {
+                        NewCartographyMenu.CreateMenu(m_Owner, system, m_BaseTool, 0, true);
+                    }
+                    else if (system == DefClassicCooking.CraftSystem)
+                    {
+                        NewCookingMenu.CreateMenu(m_Owner, system, m_BaseTool, 0, true);
+                    }
+                    else
+                    {
+		                m_Owner.SendLocalizedMessage(1005213); // You can't do that
+                    }
+                }
+                
+				SkillRegistry.Remove(m_Owner);
+			}
         }
 
         public override void Serialize(GenericWriter writer)
