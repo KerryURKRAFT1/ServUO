@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using Server.Mobiles;
+using Server.SkillHandlers;
 
 namespace Server.Items
 {
@@ -70,20 +72,22 @@ namespace Server.Items
 
         public override void Drink(Mobile from)
         {
-            if (from.Hidden)
+            PlayerMobile pm = from as PlayerMobile;
+
+            if (from.Hidden || (pm != null && pm.IsStealthing))
             {
                 from.SendLocalizedMessage(1073185); // You are already unseen.
                 return;
             }
-			
-            if (HasTimer(from))
+
+        	if (HasTimer(from))
             {
                 from.SendLocalizedMessage(1073186); // An invisibility potion is already taking effect on your person.
                 return;
             }
 			
             this.Consume();
-            Timer.DelayCall(TimeSpan.FromSeconds(2), new TimerStateCallback(Hide_Callback), from);			
+            Timer.DelayCall(SkillRegistry.ShortDelay, new TimerStateCallback(Hide_Callback), from);			
             PlayDrinkEffect(from);
         }
 

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Server.Network;
 using Server.Regions;
+using Server.SkillHandlers;
 
 namespace Server.Items
 {
@@ -41,38 +42,78 @@ namespace Server.Items
             int version = reader.ReadInt();
         }
 
-        public override void OnDoubleClick(Mobile from)
+        public override void OnDoubleClick(Mobile m)
         {
-            if (!this.VerifyMove(from))
-                return;
-
-            if (!from.InRange(this.GetWorldLocation(), 2))
+            if (!m.InRange(this.GetWorldLocation(), 2))
             {
-                from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1019045); // I can't reach that.
-                return;
+                m.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1019045); // I can't reach that.
             }
-
-            Point3D fireLocation = this.GetFireLocation(from);
-
-            if (fireLocation == Point3D.Zero)
-            {
-                from.SendLocalizedMessage(501695); // There is not a spot nearby to place your campfire.
-            }
-            else if (!from.CheckSkill(SkillName.Camping, 0.0, 100.0))
-            {
-                from.SendLocalizedMessage(501696); // You fail to ignite the campfire.
-            }
-            else
-            {
-                this.Consume();
-
-                if (!this.Deleted && this.Parent == null)
-                    from.PlaceInBackpack(this);
-
-                new Campfire().MoveToWorld(fireLocation, from.Map);
-            }
+    		else if (!SkillRegistry.Contains(m))
+    		{
+	    		SkillRegistry.Add(m);
+	        	
+	        	if (!TriggerSkill(m))
+	        	{
+		    		SkillRegistry.Remove(m);
+	        	}
+    		}
+    		else if (SkillRegistry.WaitMsg)
+    		{
+                m.SendMessage("You must wait to perform another action.");
+    		}
         }
 
+        public bool TriggerSkill(Mobile m)
+        {
+            if (!this.VerifyMove(m))
+                return false;
+
+            new SkillTimer(m, this, SkillRegistry.Delay).Start();
+            
+            m.SendMessage("You attempt to light a fire");
+
+			return true;
+        }
+
+        private class SkillTimer : Timer
+		{
+			private readonly Mobile m_Owner;
+			private readonly Kindling m_Kindling;
+
+            public SkillTimer(Mobile owner, Kindling kindling, TimeSpan delay) : base(delay)
+			{
+				m_Owner = owner;
+				m_Kindling = kindling;
+
+				Priority = TimerPriority.TwoFiftyMS;
+			}
+
+			protected override void OnTick()
+			{
+	            Point3D fireLocation = m_Kindling.GetFireLocation(m_Owner);
+	
+	            if (fireLocation == Point3D.Zero)
+	            {
+	                m_Owner.SendLocalizedMessage(501695); // There is not a spot nearby to place your campfire.
+	            }
+	            else if (!m_Owner.CheckSkill(SkillName.Camping, 0.0, 100.0))
+	            {
+	                m_Owner.SendLocalizedMessage(501696); // You fail to ignite the campfire.
+	            }
+	            else
+	            {
+	                m_Kindling.Consume();
+	
+	                if (!m_Kindling.Deleted && m_Kindling.Parent == null)
+	                    m_Owner.PlaceInBackpack(m_Kindling);
+	
+	                new Campfire().MoveToWorld(fireLocation, m_Owner.Map);
+	            }
+
+				SkillRegistry.Remove(m_Owner);
+			}
+        }
+        
         private Point3D GetFireLocation(Mobile from)
         {
             if (from.Region.IsPartOf(typeof(DungeonRegion)))

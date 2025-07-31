@@ -86,8 +86,6 @@ namespace Server.Items
 
                     if (((ILockpickable)targeted).Locked)
                     {
-                        from.PlaySound(0x241);
-
                         new InternalTimer(from, (ILockpickable)targeted, this.m_Item).Start();
                     }
                     else
@@ -131,6 +129,10 @@ namespace Server.Items
                         if (!m_Lockpick.IsSkeletonKey)
                             this.m_Lockpick.Consume();
                     }
+                    else
+                    {
+                    	this.m_From.PlaySound(0x241);
+                    }
                 }
 
                 protected override void OnTick()
@@ -142,6 +144,7 @@ namespace Server.Items
 
                     if (this.m_Item.LockLevel == 0 || this.m_Item.LockLevel == -255)
                     {
+                        this.m_From.PlaySound(0x241);
                         // LockLevel of 0 means that the door can't be picklocked
                         // LockLevel of -255 means it's magic locked
                         item.SendLocalizedMessageTo(this.m_From, 502073); // This lock cannot be picked by normal means
@@ -150,6 +153,7 @@ namespace Server.Items
 
                     if (m_From.Skills[SkillName.Lockpicking].Value < m_Item.RequiredSkill - m_Lockpick.SkillBonus)
                     {
+                        this.m_From.PlaySound(0x241);
                         /*
                         // Do some training to gain skills
                         m_From.CheckSkill( SkillName.Lockpicking, 0, m_Item.LockLevel );*/
