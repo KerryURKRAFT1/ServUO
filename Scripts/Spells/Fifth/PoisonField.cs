@@ -14,7 +14,6 @@ namespace Server.Spells.Fifth
             "Poison Field", "In Nox Grav",
             230,
             9052,
-            false,
             Reagent.BlackPearl,
             Reagent.Nightshade,
             Reagent.SpidersSilk);

@@ -12,7 +12,6 @@ namespace Server.Spells.Seventh
             "Meteor Swarm", "Flam Kal Des Ylem",
             233,
             9042,
-            false,
             Reagent.Bloodmoss,
             Reagent.MandrakeRoot,
             Reagent.SulfurousAsh,

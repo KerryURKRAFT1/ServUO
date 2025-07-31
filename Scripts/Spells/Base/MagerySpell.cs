@@ -8,8 +8,6 @@ namespace Server.Spells
 {
     public abstract class MagerySpell : Spell
     {
-		private static readonly bool m_ScrollsUseHalfMana = Config.Get("Custom_Settings.ScrollsUseHalfMana", false);
-
     	private static readonly int[] m_ManaTable = new int[] { 4, 6, 9, 11, 14, 20, 40, 50 };
         private const double ChanceOffset = 20.0, ChanceLength = 100.0 / 7.0;
         
@@ -72,12 +70,7 @@ namespace Server.Spells
 		public override int ScaleMana(int mana)
 		{
 			double scalar = 1.0;
-
-			if (m_ScrollsUseHalfMana && this.Scroll != null)
-			{
-				scalar = 0.5;
-			}
-			
+		
 			return (int)(mana * scalar);
 		}
 		
@@ -137,6 +130,6 @@ namespace Server.Spells
             }
 	
             return base.GetCastDelay();
-        }
+        } 
     }
 }

@@ -12,7 +12,6 @@ namespace Server.Spells.Sixth
             "Mass Curse", "Vas Des Sanct",
             218,
             9031,
-            false,
             Reagent.Garlic,
             Reagent.Nightshade,
             Reagent.MandrakeRoot,

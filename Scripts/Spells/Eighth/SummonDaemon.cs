@@ -9,7 +9,6 @@ namespace Server.Spells.Eighth
             "Summon Daemon", "Kal Vas Xen Corp",
             269,
             9050,
-            false,
             Reagent.Bloodmoss,
             Reagent.MandrakeRoot,
             Reagent.SpidersSilk,

@@ -11,7 +11,6 @@ namespace Server.Spells.Fifth
             "Blade Spirits", "In Jux Hur Ylem",
             266,
             9040,
-            false,
             Reagent.BlackPearl,
             Reagent.MandrakeRoot,
             Reagent.Nightshade);

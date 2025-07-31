@@ -11,7 +11,6 @@ namespace Server.Spells.Eighth
             "Energy Vortex", "Vas Corp Por",
             260,
             9032,
-            false,
             Reagent.Bloodmoss,
             Reagent.BlackPearl,
             Reagent.MandrakeRoot,

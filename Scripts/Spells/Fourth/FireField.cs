@@ -14,7 +14,6 @@ namespace Server.Spells.Fourth
             "Fire Field", "In Flam Grav",
             215,
             9041,
-            false,
             Reagent.BlackPearl,
             Reagent.SpidersSilk,
             Reagent.SulfurousAsh);

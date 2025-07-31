@@ -13,7 +13,6 @@ namespace Server.Spells.Sixth
             "Paralyze Field", "In Ex Grav",
             230,
             9012,
-            false,
             Reagent.BlackPearl,
             Reagent.Ginseng,
             Reagent.SpidersSilk);

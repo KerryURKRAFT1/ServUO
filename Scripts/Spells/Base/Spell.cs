@@ -72,7 +72,7 @@ namespace Server.Spells
 	public abstract class Spell : ISpell
 	{
 		private readonly Mobile m_Caster;
-		private readonly Item m_Scroll;
+		private Item m_Scroll;
 		private readonly SpellInfo m_Info;
 		private SpellState m_State;
 		private long m_StartCastTime;
@@ -87,7 +87,7 @@ namespace Server.Spells
 		public string Name { get { return m_Info.Name; } }
 		public string Mantra { get { return m_Info.Mantra; } }
 		public Type[] Reagents { get { return m_Info.Reagents; } }
-		public Item Scroll { get { return m_Scroll; } }
+		public Item Scroll { get { return m_Scroll; } set { m_Scroll = value; } }
 		public long StartCastTime { get { return m_StartCastTime; } }
 		public long CastTime { get { return m_CastTime; }}
 		public bool Disturbed { get { return m_Disturbed; }}
@@ -323,7 +323,7 @@ namespace Server.Spells
 
 		public virtual bool OnCastInTown(Region r)
 		{
-			return true;
+			return m_Info.AllowTown;
 		}
 		
 		public virtual bool OnWarModeChange()

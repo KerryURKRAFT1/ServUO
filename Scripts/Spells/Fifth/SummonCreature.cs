@@ -9,7 +9,6 @@ namespace Server.Spells.Fifth
         private static readonly SpellInfo m_Info = new SpellInfo(
             "Summon Creature", "Kal Xen",
             16,
-            false,
             Reagent.Bloodmoss,
             Reagent.MandrakeRoot,
             Reagent.SpidersSilk);

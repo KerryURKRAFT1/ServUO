@@ -10,7 +10,6 @@ namespace Server.Spells.Eighth
             "Earthquake", "In Vas Por",
             233,
             9012,
-            false,
             Reagent.Bloodmoss,
             Reagent.Ginseng,
             Reagent.MandrakeRoot,

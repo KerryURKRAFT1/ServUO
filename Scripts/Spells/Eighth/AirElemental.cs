@@ -9,7 +9,6 @@ namespace Server.Spells.Eighth
             "Air Elemental", "Kal Vas Xen Hur",
             269,
             9010,
-            false,
             Reagent.Bloodmoss,
             Reagent.MandrakeRoot,
             Reagent.SpidersSilk);

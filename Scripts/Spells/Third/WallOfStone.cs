@@ -12,7 +12,6 @@ namespace Server.Spells.Third
             "Wall of Stone", "In Sanct Ylem",
             227,
             9011,
-            false,
             Reagent.Bloodmoss,
             Reagent.Garlic);
         public WallOfStoneSpell(Mobile caster, Item scroll)

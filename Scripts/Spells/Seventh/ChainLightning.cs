@@ -12,7 +12,6 @@ namespace Server.Spells.Seventh
             "Chain Lightning", "Vas Ort Grav",
             209,
             9022,
-            false,
             Reagent.BlackPearl,
             Reagent.Bloodmoss,
             Reagent.MandrakeRoot,
