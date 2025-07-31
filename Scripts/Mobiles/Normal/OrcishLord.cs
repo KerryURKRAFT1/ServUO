@@ -15,9 +15,9 @@ namespace Server.Mobiles
             this.Body = 138;
             this.BaseSoundID = 0x45A;
 
-            this.SetStr(147, 215);
-            this.SetDex(91, 115);
-            this.SetInt(61, 85);
+            this.SetStr(147, 320);
+            this.SetDex(65, 109);
+            this.SetInt(95, 190);
 
             this.SetHits(95, 123);
 
@@ -31,6 +31,7 @@ namespace Server.Mobiles
             this.SetResistance(ResistanceType.Poison, 30, 40);
             this.SetResistance(ResistanceType.Energy, 30, 40);
 
+            this.SetSkill(SkillName.Parry, 60.1, 85.0);
             this.SetSkill(SkillName.MagicResist, 70.1, 85.0);
             this.SetSkill(SkillName.Swords, 60.1, 85.0);
             this.SetSkill(SkillName.Tactics, 75.1, 90.0);
