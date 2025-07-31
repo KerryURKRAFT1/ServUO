@@ -4,6 +4,7 @@ using Server.Engines.Craft;
 using Server.Mobiles;
 using Server.Network;
 using Server.Targeting;
+using Server.SkillHandlers;
 
 namespace Server.Items
 {
@@ -627,30 +628,78 @@ namespace Server.Items
             this.CheckReplenishUses();
         }
 
-        public override void OnDoubleClick(Mobile from)
+        public override void OnDoubleClick(Mobile m)
         {
-            if (!from.InRange(this.GetWorldLocation(), 1))
+            if (!m.InRange(this.GetWorldLocation(), 1))
             {
-                from.SendLocalizedMessage(500446); // That is too far away.
+                m.SendLocalizedMessage(500446); // That is too far away.
             }
-            else if (from.BeginAction(typeof(BaseInstrument)))
-            {
-                SetInstrument(from, this);
-
-                // Delay of 7 second before beign able to play another instrument again
-                new InternalTimer(from).Start();
-
-                if (CheckMusicianship(from))
-                    this.PlayInstrumentWell(from);
-                else
-                    this.PlayInstrumentBadly(from);
-            }
-            else
-            {
-                from.SendLocalizedMessage(500119); // You must wait to perform another action
-            }
+    		if (!SkillRegistry.Contains(m))
+    		{
+	    		SkillRegistry.Add(m);
+	        	
+	        	if (!TriggerSkill(m))
+	        	{
+		    		SkillRegistry.Remove(m);
+	        	}
+    		}
+    		else if (SkillRegistry.WaitMsg)
+    		{
+                m.SendMessage("You must wait to perform another action.");
+    		}
         }
 
+        public bool TriggerSkill(Mobile m)
+        {
+            SetInstrument(m, this);
+
+            new SkillTimer(m, this, SkillRegistry.ShortDelay).Start();
+            
+            m.SendMessage("You attempt to play music");
+
+			return true;
+        }
+        
+        private class SkillTimer : Timer
+		{
+			private readonly Mobile m_Owner;
+			private readonly BaseInstrument m_Instrument;
+
+            public SkillTimer(Mobile owner, BaseInstrument instrument, TimeSpan delay) : base(delay)
+			{
+				m_Owner = owner;
+				m_Instrument = instrument;
+
+				Priority = TimerPriority.TwoFiftyMS;
+			}
+
+			protected override void OnTick()
+			{
+	            if (BaseInstrument.CheckMusicianship(m_Owner))
+	                m_Instrument.PlayInstrumentWell(m_Owner);
+	            else
+	                m_Instrument.PlayInstrumentBadly(m_Owner);
+
+	            new InternalTimer(m_Owner, SkillRegistry.MusicDelay).Start();
+			}
+
+	        private class InternalTimer : Timer
+	        {
+	            private readonly Mobile m_From;
+	
+	            public InternalTimer(Mobile from, TimeSpan delay) : base(delay)
+	            {
+	                this.m_From = from;
+	                this.Priority = TimerPriority.TwoFiftyMS;
+	            }
+	
+	            protected override void OnTick()
+	            {                
+					SkillRegistry.Remove(m_From);
+	            }
+        	}        
+        }
+        
         public static bool CheckMusicianship(Mobile m)
         {
             m.CheckSkill(SkillName.Musicianship, 0.0, 120.0);
@@ -666,23 +715,6 @@ namespace Server.Items
         public void PlayInstrumentBadly(Mobile from)
         {
             from.PlaySound(this.m_BadlySound);
-        }
-
-        private class InternalTimer : Timer
-        {
-            private readonly Mobile m_From;
-
-            public InternalTimer(Mobile from)
-                : base(TimeSpan.FromSeconds(6.0))
-            {
-                this.m_From = from;
-                this.Priority = TimerPriority.TwoFiftyMS;
-            }
-
-            protected override void OnTick()
-            {
-                this.m_From.EndAction(typeof(BaseInstrument));
-            }
         }
         #region ICraftable Members
 
