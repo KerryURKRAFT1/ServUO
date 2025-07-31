@@ -20,7 +20,7 @@ namespace System
         {
             get
             {
-                return String.Format("{0:D2}:{1:D2}:{2:D2} ", DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+                return String.Format("[{0:D2}:{1:D2}:{2:D2}] ", DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
             }
         }
         public static void Initialize()
@@ -35,7 +35,7 @@ namespace System
 
         public override void WriteLine(string value)
         {
-            if (m_Newline)
+            if (m_Newline && !value.StartsWith( "-" ))
             {
                 value = this.Timestamp + value;
             }
@@ -48,7 +48,7 @@ namespace System
 
         public override void Write(string value)
         {
-            if (m_Newline)
+            if (m_Newline && !value.StartsWith( "-" ))
             {
                 value = this.Timestamp + value;
             }

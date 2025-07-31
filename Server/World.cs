@@ -58,7 +58,7 @@ namespace Server
 		{
 			if (m_DiskWriteHandle.Set())
 			{
-				Console.WriteLine("Closing Save Files. ");
+				Console.WriteLine(" Closing save files.");
 			}
 		}
 
@@ -1104,7 +1104,7 @@ namespace Server
 			SaveStrategy strategy = SaveStrategy.Acquire();
 			Console.WriteLine("Core: Using {0} save strategy", strategy.Name.ToLowerInvariant());
 
-			Console.WriteLine("World: Saving...");
+			Console.Write("World: Saving...");
 
 			Stopwatch watch = Stopwatch.StartNew();
 

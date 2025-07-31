@@ -1062,9 +1062,8 @@ namespace Server.Network
 						m_Socket.BeginSend(gram.Buffer, 0, gram.Length, SocketFlags.None, m_OnSend, m_Socket);
 						return true;
 					}
-					catch (Exception ex)
+					catch
 					{
-						TraceException(ex);
 						Dispose(false);
 					}
 				}

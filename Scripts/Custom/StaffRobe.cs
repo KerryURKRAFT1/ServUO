@@ -217,7 +217,7 @@ namespace Server.Items
 		{
 			private readonly GMRobe m_Robe;
 
-			public AutoResTimer(GMRobe robe) : base(TimeSpan.FromSeconds(10.0))
+			public AutoResTimer(GMRobe robe) : base(TimeSpan.FromSeconds(5.0))
 			{
 				m_Robe = robe;
 			}

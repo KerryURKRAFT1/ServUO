@@ -533,6 +533,7 @@ namespace Server.Items
 			}
 		}
 
+		[CommandProperty(AccessLevel.GameMaster)]
 		public int MaxDamage
 		{
 			get 
@@ -1306,7 +1307,7 @@ namespace Server.Items
 
 			double ourValue, theirValue, chance;
 
-			int bonus = GetHitChanceBonus();
+			double bonus = GetAccuracyLevelBonus();
 
 			if (Core.UOR)
 			{
@@ -1326,7 +1327,7 @@ namespace Server.Items
 //				chance = ourValue / (theirValue * 2); //ServUO style
 				chance = ourValue + 1 / (ourValue + theirValue + 2); //Kerry style
 	
-				chance += (double)bonus / 100; //Accuracy bonus
+				chance += (double)bonus / 100;
 									
 				if (chance > 0.95) //clamp it
 				{
@@ -3282,25 +3283,9 @@ namespace Server.Items
 
 			GetBaseDamageRange(attacker, out min, out max);
 
-			int damage = Utility.RandomMinMax(min, max);
+			double damage = Utility.RandomMinMax(min, max);
 
-			if (Core.AOS)
-			{
-				return damage;
-			}
-
-			/* Apply damage level offset
-             * : Regular : 0
-             * : Ruin    : 1
-             * : Might   : 3
-             * : Force   : 5
-             * : Power   : 7
-             * : Vanq    : 9
-             */
-			if (m_DamageLevel != WeaponDamageLevel.Regular)
-			{
-				damage += (2 * (int)m_DamageLevel) - 1;
-			}
+			damage += GetDamageLevelBonus();
 
 			return damage;
 		}
@@ -3317,14 +3302,9 @@ namespace Server.Items
 			return bonus / 100;
 		}
 
-		public virtual int GetHitChanceBonus()
+		public double GetAccuracyLevelBonus()
 		{
-//			if (!Core.AOS)
-//			{
-//				return 0;
-//			}
-
-			int bonus = 0;
+			double bonus = 0;
 
 			switch (m_AccuracyLevel)
 			{
@@ -3338,7 +3318,7 @@ namespace Server.Items
 					bonus += 06;
 					break;
 				case WeaponAccuracyLevel.Exceedingly:
-					bonus += 08;
+					bonus += 8;
 					break;
 				case WeaponAccuracyLevel.Supremely:
 					bonus += 10;
@@ -3348,45 +3328,51 @@ namespace Server.Items
 			return bonus;
 		}
 
-		public virtual int GetDamageBonus()
+		public virtual double GetQualityLevelBonus()
 		{
-			#region Stygian Abyss
-			if (m_DImodded)
-				return 0;
-			#endregion
+			double bonus = 0;
+			
+			//bonus = (((int)m_Quality - 1) * 0.2);
 
-			int bonus = VirtualDamageBonus;
-
-			if (!Core.AOS)
+			switch (m_Quality)
 			{
-				switch (m_Quality)
-				{
-					case WeaponQuality.Low:
-						bonus -= 20;
-						break;
-					case WeaponQuality.Exceptional:
-						bonus += 20;
-						break;
-				}
+				case WeaponQuality.Low: //not used
+					bonus -= 0.2;
+					break;
+				case WeaponQuality.Regular:
+					bonus += 0.0;
+					break;
+				case WeaponQuality.Exceptional:
+					bonus += 0.2;
+					break;
+			}
 
-				switch (m_DamageLevel)
-				{
-					case WeaponDamageLevel.Ruin:
-						bonus += 15;
-						break;
-					case WeaponDamageLevel.Might:
-						bonus += 20;
-						break;
-					case WeaponDamageLevel.Force:
-						bonus += 25;
-						break;
-					case WeaponDamageLevel.Power:
-						bonus += 30;
-						break;
-					case WeaponDamageLevel.Vanq:
-						bonus += 35;
-						break;
-				}
+			return bonus;
+		}
+
+		public virtual double GetDamageLevelBonus()
+		{
+			double bonus = 0;
+
+			//bonus = (2 * (int)m_DamageLevel) - 1;
+			
+			switch (m_DamageLevel)
+			{
+				case WeaponDamageLevel.Ruin:
+					bonus += 1;
+					break;
+				case WeaponDamageLevel.Might:
+					bonus += 3;
+					break;
+				case WeaponDamageLevel.Force:
+					bonus += 5;
+					break;
+				case WeaponDamageLevel.Power:
+					bonus += 7;
+					break;
+				case WeaponDamageLevel.Vanq:
+					bonus += 10;
+					break;
 			}
 
 			return bonus;
@@ -3455,7 +3441,7 @@ namespace Server.Items
 			#endregion
 
 			double totalBonus = strengthBonus + anatomyBonus + tacticsBonus + lumberBonus +
-								((GetDamageBonus() + damageBonus) / 100.0);
+								((GetDamageLevelBonus() + damageBonus) / 100.0);
 
 			return damage + (int)(damage * totalBonus);
 		}
@@ -3527,16 +3513,7 @@ namespace Server.Items
 			}
 
 			// New quality bonus:
-			if (m_Quality != WeaponQuality.Regular)
-			{
-				modifiers += (((int)m_Quality - 1) * 0.2);
-			}
-
-			// Virtual damage bonus:
-			if (VirtualDamageBonus != 0)
-			{
-				modifiers += (VirtualDamageBonus / 100.0);
-			}
+			modifiers += GetQualityLevelBonus();
 
 			// Apply bonuses
 			damage += (damage * modifiers);
@@ -3569,6 +3546,11 @@ namespace Server.Items
 			if (defender is PlayerMobile || !(attacker is PlayerMobile))
 			{
 				damage = (int)(damage / 2.0);
+			}
+			
+			if(attacker.IsStaff())
+			{
+				attacker.SendMessage($"Dam: {damage}");
 			}
 
 			return damage;
@@ -5200,7 +5182,7 @@ namespace Server.Items
 				list.Add(1060400); // use best weapon skill
 			}
 
-			if ((prop = (GetDamageBonus() + m_AosAttributes.WeaponDamage + damBonus)) != 0)
+			if ((prop = ((int)GetDamageLevelBonus() + m_AosAttributes.WeaponDamage + damBonus)) != 0)
 			{
 				list.Add(1060401, prop.ToString()); // damage increase ~1_val~%
 			}
@@ -5225,7 +5207,7 @@ namespace Server.Items
 				list.Add(1060413, prop.ToString()); // faster casting ~1_val~
 			}
 
-			if ((prop = (GetHitChanceBonus() + m_AosAttributes.AttackChance)) != 0)
+			if ((prop = ((int)GetAccuracyLevelBonus() + m_AosAttributes.AttackChance)) != 0)
 			{
 				list.Add(1060415, prop.ToString()); // hit chance increase ~1_val~%
 			}
@@ -5669,6 +5651,11 @@ namespace Server.Items
 
 			return RootParent is Mobile && SkillMasterySpell.HasSpell((Mobile)RootParent, typeof(InjectedStrikeSpell));
 		}
+
+		public override void OnDoubleClick( Mobile from )
+        {
+            ClickToEquip.OnDoubleClick( from, this );
+        }
 
 		public override void OnSingleClick(Mobile from)
 		{

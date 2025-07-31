@@ -49,9 +49,7 @@ namespace Joeku.SR
         {
            	SR_Load.ReadData(Path.Combine(SavePath, FileName));
 
-			Utility.PushColor(ConsoleColor.DarkGreen);
-			Console.WriteLine(new String('-', Console.BufferWidth-10));
-			Utility.PopColor();
+			Console.WriteLine(new String('-', Console.BufferWidth-1));
         }
         
         [Usage("StaffRunebook")]

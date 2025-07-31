@@ -41,16 +41,15 @@ namespace Joeku.SR
                     }
                     catch
                     {
-                        Console.WriteLine("  Warning: Staff Runebook load failed.");
+                        Console.WriteLine("Warning: Staff Runebook load failed.");
                     }
                 }
             }
-            Console.WriteLine();
         }
 
         public static void ReadAccountNode(XmlElement parent)
         {
-            Console.Write("  Account: {0}... ", parent.GetAttribute("Username"));
+            Console.Write("Account: {0}... ", parent.GetAttribute("Username"));
             try
             {
                 SR_RuneAccount acc = new SR_RuneAccount(parent.GetAttribute("Username"));
@@ -63,12 +62,6 @@ namespace Joeku.SR
                         child = child.NextSibling as XmlElement;
                         acc.AddRune(ReadRuneNode(child));
                     }
-                    /*foreach( XmlElement child in parent.GetElementsByTagName("Runebook") )
-                    if( child != null )
-                    acc.AddRune(ReadRunebookNode(child));
-                    foreach( XmlElement child in parent.GetElementsByTagName("Rune") )
-                    if( child != null )
-                    acc.AddRune(ReadRuneNode(child));*/
                 }
             }
             catch
@@ -95,27 +88,8 @@ namespace Joeku.SR
                 }
                 return runebook;
             }
-            //else if( parent.LocalName == "Rune" )
 
             return new SR_Rune(parent.GetAttribute("Name"), Map.Parse(parent.GetAttribute("TargetMap")), new Point3D(Utility.ToInt32(parent.GetAttribute("X")),Utility.ToInt32(parent.GetAttribute("Y")),Utility.ToInt32(parent.GetAttribute("Z"))));
         }
-        /*public static SR_Rune ReadRunebookNode( XmlElement parent )
-        {
-        SR_Rune rune = new SR_Rune(parent.GetAttribute("Name"), true);
-        if( parent.HasChildNodes )
-        {
-        foreach( XmlElement child in parent.GetElementsByTagName("Runebook") )
-        if( child != null )
-        rune.AddRune(ReadRunebookNode(child));
-        foreach( XmlElement child in parent.GetElementsByTagName("Rune") )
-        if( child != null )
-        rune.AddRune(ReadRuneNode(child));
-        }
-        return rune;
-        }
-        public static SR_Rune ReadRuneNode( XmlElement rune )
-        {
-        return new SR_Rune(rune.GetAttribute("Name"), Map.Parse(rune.GetAttribute("TargetMap")), new Point3D(Utility.ToInt32(rune.GetAttribute("X")),Utility.ToInt32(rune.GetAttribute("Y")),Utility.ToInt32(rune.GetAttribute("Z"))) );
-        }*/
     }
 }

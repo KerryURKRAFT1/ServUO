@@ -133,8 +133,11 @@ namespace Server.Network
 					{
 						if (ipep.AddressFamily == unicast.Address.AddressFamily)
 						{
+							Utility.PushColor(ConsoleColor.Cyan);
+							Console.Write("Listening: ");
+							Utility.PopColor();
 							Utility.PushColor(ConsoleColor.Green);
-							Console.WriteLine("Listening: {0}:{1}", unicast.Address, ipep.Port);
+							Console.WriteLine("{0}:{1}", unicast.Address, ipep.Port);
 							Utility.PopColor();
 						}
 					}
@@ -152,14 +155,15 @@ namespace Server.Network
 			}
 			else
 			{
+				Utility.PushColor(ConsoleColor.Cyan);
+				Console.Write("Listening: ");
+				Utility.PopColor();
 				Utility.PushColor(ConsoleColor.Green);
-				Console.WriteLine("Listening: {0}:{1}", ipep.Address, ipep.Port);
+				Console.WriteLine("{0}:{1}", ipep.Address, ipep.Port);
 				Utility.PopColor();
 			}
 
-			Utility.PushColor(ConsoleColor.DarkGreen);
-			Console.WriteLine(new String('-', Console.BufferWidth-10));
-			Utility.PopColor();
+			Console.WriteLine(new String('-', Console.BufferWidth-1));
 		}
 
 #if NewAsyncSockets

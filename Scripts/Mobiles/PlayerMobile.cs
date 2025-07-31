@@ -112,8 +112,8 @@ namespace Server.Mobiles
 	}
 	#endregion
 
-	public class PlayerMobile : Mobile, IHonorTarget
-	{
+	public partial class PlayerMobile : Mobile, IHonorTarget
+	{			
 		#region Mount Blocking
 		public void SetMountBlock(BlockMountType type, TimeSpan duration, bool dismount)
 		{
@@ -3379,7 +3379,6 @@ namespace Server.Mobiles
 		public override void OnDeath(Container c)
 		{
 			PlayerMobile killer = null;
-			PlayerMobile caster = null;
 			Mobile m = FindMostRecentDamager(false);
 			killer = m as PlayerMobile;			
 			
@@ -4319,6 +4318,11 @@ namespace Server.Mobiles
 			if (Hidden) //Hiding is the only buff where it has an effect that's serialized.
 			{
 				AddBuff(new BuffInfo(BuffIcon.HidingAndOrStealth, 1075655));
+			}
+ 
+			if (FollowersMax < 6)
+			{
+				FollowersMax = 6;
 			}
 		}
 

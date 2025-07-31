@@ -435,9 +435,7 @@ namespace Server
 			Version ver = Assembly.GetName().Version;
 
 			// Added to help future code support on forums, as a 'check' people can ask for to it see if they recompiled core or not
-			Utility.PushColor(ConsoleColor.DarkGreen);
 			Console.WriteLine(new String('-', Console.BufferWidth-1));
-			Utility.PopColor();
 			Utility.PushColor(ConsoleColor.Cyan);
 			Console.WriteLine(
 				"ServUO - [http://www.servuo.com] Version {0}.{1}, Build {2}.{3}",
@@ -446,13 +444,21 @@ namespace Server
 				ver.Build,
 				ver.Revision);
 			Utility.PopColor();
+//			Console.WriteLine(new String('-', Console.BufferWidth-1));
+			Utility.PushColor(ConsoleColor.Cyan);
+			Console.WriteLine("ServUO - [https://github.com/KerryURKRAFT1/ServUO]");
+			Utility.PopColor();
+			Console.WriteLine(new String('-', Console.BufferWidth-1));
 
 			string s = Arguments;
 
 			if (s.Length > 0)
 			{
 				Utility.PushColor(ConsoleColor.Yellow);
-				Console.WriteLine("Core: Running with arguments: {0}", s);
+				Console.Write("Core: Running with arguments: ");
+				Utility.PopColor();
+				Utility.PushColor(ConsoleColor.Green);
+				Console.WriteLine("{0}", s);
 				Utility.PopColor();
 			}
 
@@ -465,9 +471,11 @@ namespace Server
 
 			if (MultiProcessor || Is64Bit)
 			{
+				Utility.PushColor(ConsoleColor.DarkYellow);
+				Console.Write("Core: Optimizing...");
+				Utility.PopColor();
 				Utility.PushColor(ConsoleColor.Green);
-				Console.WriteLine(
-					"Core: Optimizing for {0} {2}processor{1}",
+				Console.WriteLine("{0} {2}processor{1}",
 					ProcessorCount,
 					ProcessorCount == 1 ? "" : "s",
 					Is64Bit ? "64-bit " : "");
@@ -480,8 +488,11 @@ namespace Server
 			{
 				// MS 4, MONO 128
 				Unix = true;
-				Utility.PushColor(ConsoleColor.Yellow);
-				Console.WriteLine("Core: Unix environment detected");
+				Utility.PushColor(ConsoleColor.DarkYellow);
+				Console.Write("Core: Environment...");
+				Utility.PopColor();
+				Utility.PushColor(ConsoleColor.Green);
+				Console.WriteLine("Unix");
 				Utility.PopColor();
 			}
 			else
@@ -493,25 +504,32 @@ namespace Server
 			if (GCSettings.IsServerGC)
 			{
 				Utility.PushColor(ConsoleColor.DarkYellow);
-				Console.WriteLine("Core: Server garbage collection mode enabled");
+				Console.Write("Core: Server garbage collection...");
+				Utility.PopColor();
+				Utility.PushColor(ConsoleColor.Green);
+				Console.WriteLine("({0})", "done");
 				Utility.PopColor();
 			}
 
 			if (_UseHRT)
 			{
 				Utility.PushColor(ConsoleColor.DarkYellow);
-				Console.WriteLine(
-					"Core: Requested high resolution timing ({0})",
-					UsingHighResolutionTiming ? "Supported" : "Unsupported");
+				Console.Write("Core: High resolution timing...");
+				Utility.PopColor();
+				Utility.PushColor(ConsoleColor.Green);
+				Console.WriteLine("({0})", UsingHighResolutionTiming ? "Supported" : "Unsupported");
 				Utility.PopColor();
 			}
 
 			Utility.PushColor(ConsoleColor.DarkYellow);
-			Console.WriteLine("RandomImpl: {0} ({1})", RandomImpl.Type.Name, RandomImpl.IsHardwareRNG ? "Hardware" : "Software");
+			Console.Write("Core: RandomImpl Loading...");
+			Utility.PopColor();
+			Utility.PushColor(ConsoleColor.Green);
+			Console.WriteLine("{0} ({1})", RandomImpl.Type.Name, RandomImpl.IsHardwareRNG ? "Hardware" : "Software");
 			Utility.PopColor();
 
 			Utility.PushColor(ConsoleColor.DarkYellow);
-			Console.Write("Core: Loading config...");
+			Console.Write("Core: Config Loading...");
 			Utility.PopColor();
 			Config.Load();
 			Utility.PushColor(ConsoleColor.Green);

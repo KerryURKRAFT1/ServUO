@@ -80,9 +80,7 @@ namespace Server.Misc
 
             World.Save(true, permitBackgroundWrite);
 
-			Utility.PushColor(ConsoleColor.DarkGreen);
-			Console.WriteLine(new String('-', Console.BufferWidth-10));
-			Utility.PopColor();
+			Console.WriteLine(new String('-', Console.BufferWidth-1));
         }
 
         protected override void OnTick()

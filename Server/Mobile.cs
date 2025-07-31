@@ -8855,7 +8855,7 @@ public ContextMenu ContextMenu
 				}
 			}
 		}
-
+		
 		public virtual void OnHiddenChanged()
 		{
 			m_AllowedStealthSteps = 0;
@@ -8893,7 +8893,7 @@ public ContextMenu ContextMenu
 				eable.Free();
 			}
 		}
-
+ 
 		public virtual void OnConnected()
 		{ }
 

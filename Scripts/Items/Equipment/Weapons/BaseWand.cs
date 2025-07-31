@@ -219,30 +219,6 @@ namespace Server.Items
             }
         }
 
-
-        /*
-        public override void OnDoubleClick(Mobile from)
-        {
-            if (!from.CanBeginAction(typeof(BaseWand)))
-            {
-                from.SendLocalizedMessage(1070860); // You must wait a moment for the wand to recharge.
-                return;
-            }
-
-            if (this.Parent == from)
-            {
-                if (this.Charges > 0)
-                    this.OnWandUse(from);
-                else
-                    from.SendLocalizedMessage(1019073); // This item is out of charges.
-            }
-            else
-            {
-                from.SendLocalizedMessage(502641); // You must equip this item to use it.
-            }
-        }
-        */
-
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

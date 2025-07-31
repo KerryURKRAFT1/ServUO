@@ -114,20 +114,31 @@ namespace Server.Misc
 		{
 			if (!HasPublicIPAddress())
 			{
-				Utility.PushColor(ConsoleColor.Yellow);
-				Console.WriteLine("ServerList: Auto-detecting public IP address...");
+				Utility.PushColor(ConsoleColor.Cyan);
+				Console.Write("ServerList: ");
+				Utility.PopColor();
+				Utility.PushColor(ConsoleColor.Green);
+				Console.WriteLine("Auto-detecting public IP address...");
+				Utility.PopColor();
 				
 				_PublicAddress = FindPublicAddress(IPServices);
 
 				if (_PublicAddress != null)
 				{
-					Console.WriteLine("ServerList: Done: '{0}'", _PublicAddress);
+					Utility.PushColor(ConsoleColor.Cyan);
+					Console.Write("ServerList Public IP: ");
+					Utility.PopColor();
+					Utility.PushColor(ConsoleColor.Green);
+					Console.WriteLine(" {0}", _PublicAddress);
+					Utility.PopColor();
 				}
 				else
 				{
 					_PublicAddress = IPAddress.Any;
 
+					Utility.PushColor(ConsoleColor.Red);
 					Console.WriteLine("ServerList: Failed: reverting to private IP address...");
+					Utility.PopColor();
 				}
 
 				Utility.PopColor();
@@ -230,14 +241,24 @@ namespace Server.Misc
 				{
 					uri = new Uri(service);
 
-					Console.WriteLine("ServerList: >>> {0}", uri.Host);
+					Utility.PushColor(ConsoleColor.Cyan);
+					Console.Write("ServerList: ");
+					Utility.PopColor();
+					Utility.PushColor(ConsoleColor.Green);
+					Console.WriteLine(">>> {0}", uri.Host);
+					Utility.PopColor();
 
 					using (var client = new WebClient())
 					{
 						data = client.DownloadString(uri);
 					}
 
-					Console.WriteLine("ServerList: <<< {0}", data);
+					Utility.PushColor(ConsoleColor.Cyan);
+					Console.Write("ServerList: ");
+					Utility.PopColor();
+					Utility.PushColor(ConsoleColor.Green);
+					Console.WriteLine("<<< {0}", data);
+					Utility.PopColor();
 
 					match = _AddressPattern.Match(data);
 
@@ -248,7 +269,9 @@ namespace Server.Misc
 				}
 				catch (UriFormatException)
 				{
+					Utility.PushColor(ConsoleColor.Red);
 					Console.WriteLine("ServerList: Invalid IP service Uri '{0}'", service);
+					Utility.PopColor();
 
 					ip = null;
 				}
