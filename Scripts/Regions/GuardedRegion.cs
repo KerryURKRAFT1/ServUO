@@ -11,6 +11,7 @@ using System.Xml;
 
 using Server.Commands;
 using Server.Mobiles;
+using Server.Items;
 #endregion
 
 namespace Server.Regions
@@ -18,15 +19,22 @@ namespace Server.Regions
 	public class GuardedRegion : BaseRegion
 	{
 		private static readonly object[] m_GuardParams = new object[1];
-		private readonly Type m_GuardType;
+
 		private readonly Dictionary<Mobile, GuardTimer> m_GuardCandidates = new Dictionary<Mobile, GuardTimer>();
+
+		private readonly Type m_GuardType;
+
 		private bool m_Disabled;
+		
+		public bool NotAllowedEntry(Mobile m) => !AllowReds && (m.Kills >= 5 || m.Karma <= -800);
+		
+		public bool NotAllowed(Mobile m) => !AllowReds && (m.Kills >= 5 || m.Karma <= -800 || m.Criminal);
 
 		public GuardedRegion(string name, Map map, int priority, params Rectangle3D[] area)
 			: base(name, map, priority, area)
 		{
 			m_GuardType = DefaultGuardType;
-		}
+		   }
 
 		public GuardedRegion(string name, Map map, int priority, params Rectangle2D[] area)
 			: base(name, map, priority, area)
@@ -34,8 +42,7 @@ namespace Server.Regions
 			m_GuardType = DefaultGuardType;
 		}
 
-		public GuardedRegion(XmlElement xml, Map map, Region parent)
-			: base(xml, map, parent)
+		public GuardedRegion(XmlElement xml, Map map, Region parent) : base(xml, map, parent)
 		{
 			XmlElement el = xml["guards"];
 
@@ -53,14 +60,18 @@ namespace Server.Regions
 			}
 
 			bool disabled = false;
+			
 			if (ReadBoolean(el, "disabled", ref disabled, false))
 			{
 				Disabled = disabled;
 			}
 		}
 
+		[CommandProperty(AccessLevel.GameMaster)]
 		public bool Disabled { get { return m_Disabled; } set { m_Disabled = value; } }
-		public virtual bool AllowReds { get { return Core.AOS; } }
+
+		[CommandProperty(AccessLevel.GameMaster)]
+		public virtual bool AllowReds { get { return false; } }
 
 		public virtual Type DefaultGuardType
 		{
@@ -68,11 +79,11 @@ namespace Server.Regions
 			{
 				if (Map == Map.Ilshenar || Map == Map.Malas)
 				{
-					return typeof(ArcherGuard);
+					return typeof(KillableArcherGuard);
 				}
 				else
 				{
-					return typeof(WarriorGuard);
+					return typeof(KillableWarriorGuard);
 				}
 			}
 		}
@@ -102,7 +113,7 @@ namespace Server.Regions
 				return true;
 			}
 
-			return (from.Kills < 5);
+			return NotAllowed(from);
 		}
 
 		public override bool OnBeginSpellCast(Mobile m, ISpell s)
@@ -122,38 +133,75 @@ namespace Server.Regions
 		}
 
 		public override void MakeGuard(Mobile focus, int count = 0)
-		{
-			BaseGuard useGuard = null;
-
-			foreach (Mobile m in focus.GetMobilesInRange(8))
+		{          		            			
+			while (count -- >= 0)
 			{
-				if (m is BaseGuard)
+				GuardTimer timer = null;
+				m_GuardCandidates.TryGetValue(focus, out timer);
+				
+				if (timer == null)
 				{
-					BaseGuard g = (BaseGuard)m;
-
-					if (g.Focus == null) // idling
+					timer = new GuardTimer(focus, m_GuardCandidates);
+					timer.Start();
+		
+					m_GuardCandidates[focus] = timer;
+									
+					m_GuardParams[0] = focus;
+		
+					try
 					{
-						useGuard = g;
-						break;
+			            KillableBaseGuard spawn = Activator.CreateInstance(m_GuardType, m_GuardParams) as KillableBaseGuard;
+			            	
+		                if( spawn != null )
+		                {             					
+		                	spawn.MoveToWorld( SpawnLoc(focus), focus.Map );
+		                }
 					}
+					catch{ }
+				}
+			}
+		}
+
+		private Point3D SpawnLoc(Mobile m)
+		{
+			int x, y;
+           	Point3D newloc;
+           	Point3D loc = m.Location;
+           	Map map = m.Map;
+			
+           	for (int i = 0; i < 20; i++)
+           	{           		
+           		x = loc.X + (int)Utility.Random(18) - 9;
+                y = loc.Y + (int)Utility.Random(18) - 9;
+
+           		newloc = new Point3D (x, y, loc.Z);
+
+    	    	if (map.CanFit( newloc, 16, false, false) && m.InLOS(new Point3D(newloc)))
+    	    	{		
+    	    		return newloc;
+    	    	}
+           	}
+			
+			return loc;
+		}
+		
+		public bool CountGuards(Mobile focus)
+		{
+			int c = 0;
+			
+			IPooledEnumerable eable = focus.GetMobilesInRange(30);		
+						            
+            foreach (Mobile m in eable)
+			{
+				if (m is KillableBaseGuard)
+				{									
+					c++;
 				}
 			}
 
-			if (useGuard == null)
-			{
-				m_GuardParams[0] = focus;
-
-				try
-				{
-					Activator.CreateInstance(m_GuardType, m_GuardParams);
-				}
-				catch
-				{ }
-			}
-			else
-			{
-				useGuard.Focus = focus;
-			}
+            eable.Free();
+            
+            return c <= 10;
 		}
 
 		public override void OnEnter(Mobile m)
@@ -163,9 +211,9 @@ namespace Server.Regions
 				return;
 			}
 
-			if (!AllowReds && m.Kills >= 5)
+			if (NotAllowedEntry(m))
 			{
-				CheckGuardCandidate(m);
+				CheckGuardCandidate(m, true);
 			}
 		}
 
@@ -196,9 +244,9 @@ namespace Server.Regions
 		{
 			base.OnAggressed(aggressor, aggressed, criminal);
 
-			if (!IsDisabled() && aggressor != aggressed && criminal)
+            if (!IsDisabled() && aggressor != aggressed && criminal && Utility.InRange(aggressor.Location, aggressed.Location, 12))
 			{
-				CheckGuardCandidate(aggressor);
+            	CheckGuardCandidate(aggressor, NotAllowed(aggressor));
 			}
 		}
 
@@ -229,7 +277,12 @@ namespace Server.Regions
 			}
 		}
 
-		public void CheckGuardCandidate(Mobile m)
+        public void CheckGuardCandidate(Mobile m)
+        {
+            CheckGuardCandidate(m, false);
+        }
+
+		public void CheckGuardCandidate(Mobile m, bool autoCallGuards)
 		{
 			if (IsDisabled())
 			{
@@ -241,13 +294,22 @@ namespace Server.Regions
 				GuardTimer timer = null;
 				m_GuardCandidates.TryGetValue(m, out timer);
 
-				if (timer == null)
+                if (autoCallGuards)
+                {
+                	MakeGuard(m, Utility.RandomList(1, 1, 2));
+
+                    if (timer != null)
+                    {
+                        timer.Stop();
+                        m_GuardCandidates.Remove(m);
+                    }
+                }
+				else if (timer == null)
 				{
 					timer = new GuardTimer(m, m_GuardCandidates);
 					timer.Start();
 
 					m_GuardCandidates[m] = timer;
-					m.SendLocalizedMessage(502275); // Guards can now be called on you!
 
 					Map map = m.Map;
 
@@ -273,11 +335,10 @@ namespace Server.Regions
 
 						if (fakeCall != null)
 						{
-							fakeCall.Say(Utility.RandomList(1007037, 501603, 1013037, 1013038, 1013039, 1013041, 1013042, 1013043, 1013052));
-							MakeGuard(m);
+							MakeGuard(m, Utility.RandomList(1, 2, 2, 2));
 							timer.Stop();
 							m_GuardCandidates.Remove(m);
-							m.SendLocalizedMessage(502276); // Guards can no longer be called on you.
+							fakeCall.Say(Utility.RandomList(1007037, 501603, 1013037, 1013038, 1013039, 1013041, 1013042, 1013043, 1013052));
 						}
 					}
 				}
@@ -300,20 +361,24 @@ namespace Server.Regions
 
 			foreach (Mobile m in eable)
 			{
-				if (IsGuardCandidate(m) &&
-					((!AllowReds && m.Kills >= 5 && m.Region.IsPartOf(this)) || m_GuardCandidates.ContainsKey(m)))
+				if (IsGuardCandidate(m))
 				{
-					GuardTimer timer = null;
-					m_GuardCandidates.TryGetValue(m, out timer);
+					if (m_GuardCandidates.ContainsKey(m) || (NotAllowed(m) && m.Region.IsPartOf(this)))
+                    {
+                        GuardTimer timer = null;
+                        m_GuardCandidates.TryGetValue(m, out timer);
 
-					if (timer != null)
-					{
-						timer.Stop();
-						m_GuardCandidates.Remove(m);
-					}
+                        if (timer != null)
+                        {
+                            timer.Stop();
+                            m_GuardCandidates.Remove(m);
+                        }
+						else
+						{
+							MakeGuard(m, 1);
+						}
+                    }
 
-					MakeGuard(m);
-					m.SendLocalizedMessage(502276); // Guards can no longer be called on you.
 					break;
 				}
 			}
@@ -323,13 +388,12 @@ namespace Server.Regions
 
 		public bool IsGuardCandidate(Mobile m)
 		{
-			if (m is BaseGuard || !m.Alive || m.IsStaff() || m.Blessed || (m is BaseCreature && ((BaseCreature)m).IsInvulnerable) ||
-				IsDisabled())
+			if (!m.Alive || m.IsStaff() || m.Blessed || (m is BaseCreature && ((BaseCreature)m).IsInvulnerable) || IsDisabled())
 			{
 				return false;
 			}
 
-			return (!AllowReds && m.Kills >= 5) || m.Criminal;
+			return (NotAllowed(m) && CountGuards(m));
 		}
 
 		[Usage("CheckGuarded")]
@@ -432,7 +496,6 @@ namespace Server.Regions
 				if (m_Table.ContainsKey(m_Mobile))
 				{
 					m_Table.Remove(m_Mobile);
-					m_Mobile.SendLocalizedMessage(502276); // Guards can no longer be called on you.
 				}
 			}
 		}
