@@ -817,16 +817,16 @@ namespace Server.Mobiles
 		    int numSets = Utility.RandomMinMax(1, 2); // Total max number of different skill sets
 		    m.SetSkill(SkillName.EvalInt, 0);
 		    m.SetSkill(SkillName.Magery, 0);
-		    m.SetSkill(SkillName.Necromancy, 0);
+//		    m.SetSkill(SkillName.Necromancy, 0);
 		    m.SetSkill(SkillName.SpiritSpeak, 0);
-		    m.SetSkill(SkillName.Bushido, 0);
+//		    m.SetSkill(SkillName.Bushido, 0);
 		    m.SetSkill(SkillName.Parry, 0);
-		    m.SetSkill(SkillName.Ninjitsu, 0);
+//		    m.SetSkill(SkillName.Ninjitsu, 0);
 		    m.SetSkill(SkillName.Hiding, 0);
 		    m.SetSkill(SkillName.Stealth, 0);
-		    m.SetSkill(SkillName.Mysticism, 0);
+//		    m.SetSkill(SkillName.Mysticism, 0);
 		    m.SetSkill(SkillName.Musicianship, 0);
-		    m.SetSkill(SkillName.Discordance, 0);
+//		    m.SetSkill(SkillName.Discordance, 0);
 		    m.SetSkill(SkillName.Provocation, 0);
 		    m.SetSkill(SkillName.Peacemaking, 0);
 	
