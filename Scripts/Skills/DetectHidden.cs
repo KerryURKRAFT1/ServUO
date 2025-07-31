@@ -4,6 +4,7 @@ using Server.Mobiles;
 using Server.Multis;
 using Server.Targeting;
 using Server.Engines.VvV;
+using Server.Network;
 
 namespace Server.SkillHandlers
 {
@@ -14,60 +15,115 @@ namespace Server.SkillHandlers
             SkillInfo.Table[(int)SkillName.DetectHidden].Callback = new SkillUseCallback(OnUse);
         }
 
-        public static TimeSpan OnUse(Mobile src)
+    	public static TimeSpan OnUse(Mobile m)
         {
-            src.SendLocalizedMessage(500819);//Where will you search?
-            src.Target = new InternalTarget();
+    		if (!SkillRegistry.Contains(m))
+    		{
+	    		SkillRegistry.Add(m);
+	        	
+	        	if (!TriggerSkill(m))
+	        	{
+		    		SkillRegistry.Remove(m);
+	        	}
+    		}
+    		else if (SkillRegistry.WaitMsg)
+    		{
+                m.SendMessage("You must wait to perform another action.");
+    		}
+        	
+        	return TimeSpan.Zero;
+        }
 
-            return TimeSpan.FromSeconds(6.0);
+        public static bool TriggerSkill(Mobile m)
+
+        {
+            m.SendLocalizedMessage(500819);//Where will you search?
+            m.Target = new InternalTarget();
+
+            return true;
         }
 
         private class InternalTarget : Target
         {
-            public InternalTarget()
-                : base(12, true, TargetFlags.None)
+            public InternalTarget() : base(12, true, TargetFlags.None)
             {
             }
 
             protected override void OnTarget(Mobile src, object targ)
+            {			
+	            new SkillTimer(src, targ, SkillRegistry.Delay).Start();
+            }
+
+            protected override void OnTargetCancel(Mobile from, TargetCancelType cancelType)
             {
-                bool foundAnyone = false;
+                SkillRegistry.Remove(from);
+            }
 
+            protected override void OnTargetOutOfRange(Mobile from, object targeted)
+            {
+				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1076203); // Target out of range.	
+				SkillRegistry.Remove(from);
+            }
+
+	        protected override void OnTargetOutOfLOS(Mobile from, object o)
+	        {
+				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237);// Target can not be seen.
+                SkillRegistry.Remove(from);
+	        }
+        }   
+
+        private class SkillTimer : Timer
+		{
+			private readonly Mobile m_Owner;
+			private readonly object m_Targ;
+
+            public SkillTimer(Mobile owner, object targ, TimeSpan delay) : base(delay)
+			{
+				m_Owner = owner;
+				m_Targ = targ;
+
+				Priority = TimerPriority.TwoFiftyMS;
+			}
+
+			protected override void OnTick()
+			{
+               	bool foundAnyone = false;
+               	
                 Point3D p;
-                if (targ is Mobile)
-                    p = ((Mobile)targ).Location;
-                else if (targ is Item)
-                    p = ((Item)targ).Location;
-                else if (targ is IPoint3D)
-                    p = new Point3D((IPoint3D)targ);
+                if (m_Targ is Mobile)
+                    p = ((Mobile)m_Targ).Location;
+                else if (m_Targ is Item)
+                    p = ((Item)m_Targ).Location;
+                else if (m_Targ is IPoint3D)
+                    p = new Point3D((IPoint3D)m_Targ);
                 else 
-                    p = src.Location;
+                    p = m_Owner.Location;
 
-                double srcSkill = src.Skills[SkillName.DetectHidden].Value;
+                double srcSkill = m_Owner.Skills[SkillName.DetectHidden].Value;
                 int range = (int)(srcSkill / 10.0);
 
-                if (!src.CheckSkill(SkillName.DetectHidden, 0.0, 100.0))
+                if (!m_Owner.CheckSkill(SkillName.DetectHidden, 0.0, 100.0))
                     range /= 2;
 
-                BaseHouse house = BaseHouse.FindHouseAt(p, src.Map, 16);
+                BaseHouse house = BaseHouse.FindHouseAt(p, m_Owner.Map, 16);
 
-                bool inHouse = (house != null && house.IsFriend(src));
+                bool inHouse = (house != null && house.IsFriend(m_Owner));
 
                 if (inHouse)
                     range = 22;
 
                 if (range > 0)
-                {
-                    IPooledEnumerable inRange = src.Map.GetMobilesInRange(p, range);
+                {	                
+                    IPooledEnumerable inRange = m_Owner.Map.GetMobilesInRange(p, range);
 
                     foreach (Mobile trg in inRange)
                     {
-                        if (trg.Hidden && src != trg)
+                        if (trg.Hidden && m_Owner != trg)
                         {
                             double ss = srcSkill + Utility.Random(21) - 10;
                             double ts = trg.Skills[SkillName.Hiding].Value + Utility.Random(21) - 10;
 
-                            if (src.AccessLevel >= trg.AccessLevel && (ss >= ts || (inHouse && house.IsInside(trg))))
+                            if (m_Owner.AccessLevel >= trg.AccessLevel && (ss >= ts || (inHouse && house.IsInside(trg))))
                             {
                                 if (trg is ShadowKnight && (trg.X != p.X || trg.Y != p.Y))
                                     continue;
@@ -81,12 +137,12 @@ namespace Server.SkillHandlers
 
                     inRange.Free();
 
-                    bool faction = Faction.Find(src) != null;
-                    bool vvv = ViceVsVirtueSystem.IsVvV(src);
+                    bool faction = Faction.Find(m_Owner) != null;
+                    bool vvv = ViceVsVirtueSystem.IsVvV(m_Owner);
 
                     if (faction || vvv)
                     {
-                        IPooledEnumerable itemsInRange = src.Map.GetItemsInRange(p, range);
+                        IPooledEnumerable itemsInRange = m_Owner.Map.GetItemsInRange(p, range);
 
                         foreach (Item item in itemsInRange)
                         {
@@ -94,9 +150,9 @@ namespace Server.SkillHandlers
                             {
                                 BaseFactionTrap trap = (BaseFactionTrap)item;
 
-                                if (src.CheckTargetSkill(SkillName.DetectHidden, trap, 80.0, 100.0))
+                                if (m_Owner.CheckTargetSkill(SkillName.DetectHidden, trap, 80.0, 100.0))
                                 {
-                                    src.SendLocalizedMessage(1042712, true, " " + (trap.Faction == null ? "" : trap.Faction.Definition.FriendlyName)); // You reveal a trap placed by a faction:
+                                    m_Owner.SendLocalizedMessage(1042712, true, " " + (trap.Faction == null ? "" : trap.Faction.Definition.FriendlyName)); // You reveal a trap placed by a faction:
 
                                     trap.Visible = true;
                                     trap.BeginConceal();
@@ -107,7 +163,7 @@ namespace Server.SkillHandlers
                             else if (vvv && (item is VvVSigil || item is VvVTrap) && Utility.Random(100) <= srcSkill)
                             {
                                 if (item is VvVTrap && item.ItemID == VvVTrap.HiddenID)
-                                    ((VvVTrap)item).OnRevealed(src);
+                                    ((VvVTrap)item).OnRevealed(m_Owner);
                                 else if (!item.Visible)
                                     item.Visible = true;
                             }
@@ -119,10 +175,12 @@ namespace Server.SkillHandlers
 
                 if (!foundAnyone)
                 {
-                    src.SendLocalizedMessage(500817); // You can see nothing hidden there.
+                    m_Owner.SendLocalizedMessage(500817); // You can see nothing hidden there.
                 }
-            }
-        }
+
+				SkillRegistry.Remove(m_Owner);
+			}
+		}
 
         public static void DoPassiveDetect(Mobile src)
         {

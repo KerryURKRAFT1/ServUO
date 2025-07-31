@@ -21,81 +21,115 @@ namespace Server.SkillHandlers
 			SkillInfo.Table[32].Callback = OnUse;
 		}
 
-		public static TimeSpan OnUse(Mobile m)
+    	public static TimeSpan OnUse(Mobile m)
+        {
+    		if (!SkillRegistry.Contains(m))
+    		{
+	    		SkillRegistry.Add(m);
+	        	
+	        	if (!TriggerSkill(m))
+	        	{
+		    		SkillRegistry.Remove(m);
+	        	}
+    		}
+    		else if (SkillRegistry.WaitMsg)
+    		{
+                m.SendMessage("You must wait to perform another action.");
+    		}
+        	
+        	return TimeSpan.Zero;
+        }
+
+        public static bool TriggerSkill(Mobile m)
 		{
+            m.SendMessage("You whisper into the unknown.");
+
 			if (Core.AOS)
 			{
 				Spell spell = new SpiritSpeakSpell(m);
 
-				spell.Cast();
-
-				if (spell.IsCasting)
-				{
-					return TimeSpan.FromSeconds(5.0);
-				}
-
-				return TimeSpan.Zero;
-			}
-
-			m.RevealingAction();
-
-			if (m.CheckSkill(SkillName.SpiritSpeak, 0, 100))
-			{
-				if (!m.CanHearGhosts)
-				{
-					Timer t = new SpiritSpeakTimer(m);
-					double secs = m.Skills[SkillName.SpiritSpeak].Base / 50;
-					secs *= 90;
-					if (secs < 15)
-					{
-						secs = 15;
-					}
-
-					t.Delay = TimeSpan.FromSeconds(secs); //15seconds to 3 minutes
-					t.Start();
-					m.CanHearGhosts = true;
-				}
-
-				m.PlaySound(0x24A);
-				m.SendLocalizedMessage(502444); //You contact the neitherworld.
+				spell.Cast();				
 			}
 			else
 			{
-				m.SendLocalizedMessage(502443); //You fail to contact the neitherworld.
-				m.CanHearGhosts = false;
+				m.RevealingAction();
+			
+    	        new SkillTimer(m, SkillRegistry.Delay).Start();
 			}
-
-			return TimeSpan.FromSeconds(1.0);
+			
+            return true;
 		}
 
-		private class SpiritSpeakTimer : Timer
+        private class SkillTimer : Timer
 		{
 			private readonly Mobile m_Owner;
 
-			public SpiritSpeakTimer(Mobile m)
-				: base(TimeSpan.FromMinutes(2.0))
+            public SkillTimer(Mobile owner, TimeSpan delay) : base(delay)
 			{
-				m_Owner = m;
-				Priority = TimerPriority.FiveSeconds;
+				m_Owner = owner;
+
+				Priority = TimerPriority.TwoFiftyMS;
 			}
 
 			protected override void OnTick()
 			{
-				m_Owner.CanHearGhosts = false;
-				m_Owner.SendLocalizedMessage(502445); //You feel your contact with the neitherworld fading.
+				if (m_Owner.CheckSkill(SkillName.SpiritSpeak, 0, 100))
+				{
+					if (!m_Owner.CanHearGhosts)
+					{
+						double secs = m_Owner.Skills[SkillName.SpiritSpeak].Base / 50;
+
+						secs *= 90;
+
+						if (secs < 15)
+						{
+							secs = 15;
+						}
+	
+						new SpiritSpeakTimer(m_Owner, TimeSpan.FromSeconds(secs)).Start();
+						
+						m_Owner.CanHearGhosts = true;
+					}
+	
+					m_Owner.PlaySound(0x24A);
+					m_Owner.SendLocalizedMessage(502444); //You contact the neitherworld.
+				}
+				else
+				{
+					m_Owner.SendLocalizedMessage(502443); //You fail to contact the neitherworld.
+					m_Owner.CanHearGhosts = false;
+				}
+
+				SkillRegistry.Remove(m_Owner);				
 			}
-		}
+
+	        private class SpiritSpeakTimer : Timer
+			{
+				private readonly Mobile m_Owner;
+	
+				public SpiritSpeakTimer(Mobile m, TimeSpan delay) : base(delay)
+				{
+					m_Owner = m;
+					Priority = TimerPriority.FiveSeconds;
+				}
+	
+				protected override void OnTick()
+				{
+					m_Owner.CanHearGhosts = false;
+					m_Owner.SendLocalizedMessage(502445); //You feel your contact with the neitherworld fading.
+				}
+			}
+        }
 
 		private class SpiritSpeakSpell : Spell
 		{
 			private static readonly SpellInfo m_Info = new SpellInfo("Spirit Speak", "", 269);
 
-			public SpiritSpeakSpell(Mobile caster)
-				: base(caster, null, m_Info)
-			{ }
+			public SpiritSpeakSpell(Mobile caster) : base(caster, null, m_Info)
+			{}
 
 			public override bool BlockedByHorrificBeast { get { return false; } }
-			public override bool ClearHandsOnCast { get { return false; } }
+			public override bool ClearHandsOnCast { get { return true; } }
 			public override double CastDelayFastScalar { get { return 0; } }
 			public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds(1.0); } }
 			public override bool CheckNextSpellTime { get { return false; } }
@@ -110,6 +144,8 @@ namespace Server.SkillHandlers
 				if (IsCasting)
 				{
 					Disturb(DisturbType.Hurt, false, true);
+
+					SkillRegistry.Remove(this.Caster);
 				}
 			}
 
@@ -125,8 +161,8 @@ namespace Server.SkillHandlers
 
 			public override void OnDisturb(DisturbType type, bool message)
 			{
-				Caster.NextSkillTime = Core.TickCount;
-
+				SkillRegistry.Remove(this.Caster);
+				
 				base.OnDisturb(type, message);
 			}
 
@@ -137,6 +173,8 @@ namespace Server.SkillHandlers
 					return false;
 				}
 
+				SkillRegistry.Remove(this.Caster);
+				
 				return true;
 			}
 
@@ -212,6 +250,8 @@ namespace Server.SkillHandlers
 				}
 
 				FinishSequence();
+
+				SkillRegistry.Remove(this.Caster);
 			}
 		}
 	}

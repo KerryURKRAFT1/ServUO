@@ -1,8 +1,10 @@
 using System;
 using Server.Mobiles;
 using Server.Targeting;
+using Server.Items;
+using Server.Network;
 
-namespace Server.Items
+namespace Server.SkillHandlers
 {
     public class ItemIdentification
     {
@@ -11,12 +13,31 @@ namespace Server.Items
             SkillInfo.Table[(int)SkillName.ItemID].Callback = new SkillUseCallback(OnUse);
         }
 
-        public static TimeSpan OnUse(Mobile from)
+    	public static TimeSpan OnUse(Mobile m)
+        {
+    		if (!SkillRegistry.Contains(m))
+    		{
+	    		SkillRegistry.Add(m);
+	        	
+	        	if (!TriggerSkill(m))
+	        	{
+		    		SkillRegistry.Remove(m);
+	        	}
+    		}
+    		else if (SkillRegistry.WaitMsg)
+    		{
+                m.SendMessage("You must wait to perform another action.");
+    		}
+        	
+        	return TimeSpan.Zero;
+        }
+
+        public static bool TriggerSkill(Mobile from)
         {
             from.SendLocalizedMessage(500343); // What do you wish to appraise and identify?
             from.Target = new InternalTarget();
 
-            return TimeSpan.FromSeconds(1.0);
+            return true;
         }
 
         [PlayerVendorTarget]
@@ -28,36 +49,72 @@ namespace Server.Items
                 this.AllowNonlocal = true;
             }
 
-            protected override void OnTarget(Mobile from, object o)
+            protected override void OnTarget(Mobile from, object targeted)
             {
-                if (o is Item)
-                {
-                    if (from.CheckTargetSkill(SkillName.ItemID, o, 0, 100))
-                    {
-                        if (o is BaseWeapon)
-                            ((BaseWeapon)o).Identified = true;
-                        else if (o is BaseArmor)
-                            ((BaseArmor)o).Identified = true;
+            	if (targeted is Item)
+            	{
+            		new SkillTimer(from, targeted, SkillRegistry.Delay).Start();
+            		
+            		return;
+            	}
 
-                        if (!Core.AOS)
-                        //if (Core.AOS)
-                            ((Item)o).OnSingleClick(from);
-                    }
-                    else
-                    {
-                        from.SendLocalizedMessage(500353); // You are not certain...
-                    }
-                }
-                else if (o is Mobile)
+                from.SendLocalizedMessage(1046439); // That is not a valid target.
+
+                SkillRegistry.Remove(from);
+            }
+
+            protected override void OnTargetCancel(Mobile from, TargetCancelType cancelType)
+            {
+                SkillRegistry.Remove(from);
+            }
+
+            protected override void OnTargetOutOfRange(Mobile from, object targeted)
+            {
+				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1076203); // Target out of range.	
+				SkillRegistry.Remove(from);
+            }
+
+	        protected override void OnTargetOutOfLOS(Mobile from, object o)
+	        {
+				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237);// Target can not be seen.
+                SkillRegistry.Remove(from);
+	        }
+        }
+
+        private class SkillTimer : Timer
+		{
+			private readonly Mobile m_Owner;
+			private readonly object m_Targ;
+
+			public SkillTimer(Mobile owner, object targ, TimeSpan delay) : base(delay)
+			{
+				m_Owner = owner;
+				m_Targ = targ;
+
+				Priority = TimerPriority.TwoFiftyMS;
+			}
+
+			protected override void OnTick()
+			{
+                if (m_Owner.CheckTargetSkill(SkillName.ItemID, m_Targ, 0, 100))
                 {
-                    ((Mobile)o).OnSingleClick(from);
+                    if (m_Targ is BaseWeapon)
+                        ((BaseWeapon)m_Targ).Identified = true;
+                    else if (m_Targ is BaseArmor)
+                        ((BaseArmor)m_Targ).Identified = true;
+
+                    if (!Core.AOS)
+                        ((Item)m_Targ).OnSingleClick(m_Owner);
+
+	                Server.Engines.XmlSpawner2.XmlAttach.RevealAttachments(m_Owner, m_Targ);
                 }
                 else
                 {
-                    from.SendLocalizedMessage(500353); // You are not certain...
+                    m_Owner.SendLocalizedMessage(500353); // You are not certain...
                 }
-                Server.Engines.XmlSpawner2.XmlAttach.RevealAttachments(from, o);
-            }
-        }
+					
+                SkillRegistry.Remove(m_Owner);
+			}
+		}
     }
 }

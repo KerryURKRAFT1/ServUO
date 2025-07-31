@@ -20,7 +20,7 @@ namespace Server.SkillHandlers
         {
             LoadImbuingDefinitions();
 
-            SkillInfo.Table[(int)SkillName.Imbuing].Callback = new SkillUseCallback(OnUse);
+//            SkillInfo.Table[(int)SkillName.Imbuing].Callback = new SkillUseCallback(OnUse);
 
             CommandSystem.Register("GetTotalWeight", AccessLevel.GameMaster, new CommandEventHandler(GetTotalWeight_OnCommand));
             CommandSystem.Register("GetTotalMods", AccessLevel.GameMaster, new CommandEventHandler(GetTotalMods_OnCommand));

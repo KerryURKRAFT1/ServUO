@@ -2,6 +2,7 @@ using System;
 using Server.Gumps;
 using Server.Mobiles;
 using Server.Targeting;
+using Server.Network;
 
 namespace Server.SkillHandlers
 {
@@ -12,35 +13,37 @@ namespace Server.SkillHandlers
             SkillInfo.Table[(int)SkillName.AnimalLore].Callback = new SkillUseCallback(OnUse);
         }
 
-        public static TimeSpan OnUse(Mobile m)
+    	public static TimeSpan OnUse(Mobile m)
+        {
+    		if (!SkillRegistry.Contains(m))
+    		{
+	    		SkillRegistry.Add(m);
+	        	
+	        	if (!TriggerSkill(m))
+	        	{
+		    		SkillRegistry.Remove(m);
+	        	}
+    		}
+    		else if (SkillRegistry.WaitMsg)
+    		{
+                m.SendMessage("You must wait to perform another action.");
+    		}
+        	
+        	return TimeSpan.Zero;
+        }
+
+        public static bool TriggerSkill(Mobile m)
         {
             m.Target = new InternalTarget();
 
             m.SendLocalizedMessage(500328); // What animal should I look at?
 
-            return TimeSpan.FromSeconds(1.0);
+            return true;
         }
 
         private class InternalTarget : Target
         {
-			private static void SendGump(Mobile from, BaseCreature c)
-			{
-                from.CheckTargetSkill(SkillName.AnimalLore, c, 0.0, 120.0);
-
-				from.CloseGump(typeof(AnimalLoreGump));
-				from.SendGump(new AnimalLoreGump(c));
-			}
-
-			private static void Check(Mobile from, BaseCreature c, double min)
-			{
-				if (from.CheckTargetSkill(SkillName.AnimalLore, c, min, 120.0))
-					SendGump(from, c);
-				else
-					from.SendLocalizedMessage(500334); // You can't think of anything you know offhand.
-			}
-
-            public InternalTarget()
-                : base(8, false, TargetFlags.None)
+            public InternalTarget() : base(8, false, TargetFlags.None)
             {
             }
 
@@ -58,32 +61,9 @@ namespace Server.SkillHandlers
                     {
                         if (c.Body.IsAnimal || c.Body.IsMonster || c.Body.IsSea)
                         {
-							double skill = from.Skills[SkillName.AnimalLore].Value;
-							if(skill < 100.0)
-                            {
-								if (c.Controlled)
-									SendGump(from, c);
-								else
-									from.SendLocalizedMessage(1049674); // At your skill level, you can only lore tamed creatures.
-                            }
-                            else if (skill < 110.0)
-                            {
-								if (c.Controlled)
-									SendGump(from, c);
-								else if (c.Tamable)
-									Check(from, c, 80.0);
-								else
-									from.SendLocalizedMessage(1049675); // At your skill level, you can only lore tamed or tameable creatures.
-                            }
-                            else
-                            {
-								if (c.Controlled)
-									SendGump(from, c);
-								else if (c.Tamable)
-									Check(from, c, 80.0);
-								else
-									Check(from, c, 100.0);
-                            }
+				            new SkillTimer(from, c, SkillRegistry.Delay).Start();
+						
+				            return;
                         }
                         else
                         {
@@ -99,8 +79,90 @@ namespace Server.SkillHandlers
                 {
                     from.SendLocalizedMessage(500329); // That's not an animal!
                 }
+				
+                SkillRegistry.Remove(from);
             }
+
+            protected override void OnTargetCancel(Mobile from, TargetCancelType cancelType)
+            {
+                SkillRegistry.Remove(from);
+            }
+
+            protected override void OnTargetOutOfRange(Mobile from, object targeted)
+            {
+				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1076203); // Target out of range.	
+				SkillRegistry.Remove(from);
+            }
+
+	        protected override void OnTargetOutOfLOS(Mobile from, object o)
+	        {
+				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237);// Target can not be seen.
+                SkillRegistry.Remove(from);
+	        }
         }
+
+        private class SkillTimer : Timer
+		{
+			private readonly Mobile m_Owner;
+			private readonly BaseCreature m_Targ;
+
+			private static void SendGump(Mobile from, BaseCreature c)
+			{
+                from.CheckTargetSkill(SkillName.AnimalLore, c, 0.0, 120.0);
+
+				from.CloseGump(typeof(AnimalLoreGump));
+				from.SendGump(new AnimalLoreGump(c));
+			}
+
+			private static void Check(Mobile from, BaseCreature c, double min)
+			{
+				if (from.CheckTargetSkill(SkillName.AnimalLore, c, min, 100.0))
+					SendGump(from, c);
+				else
+					from.SendLocalizedMessage(500334); // You can't think of anything you know offhand.
+			}
+
+            public SkillTimer(Mobile owner, BaseCreature targ, TimeSpan delay) : base(delay)
+			{
+				m_Owner = owner;
+				m_Targ = targ;
+
+				Priority = TimerPriority.TwoFiftyMS;
+			}
+
+			protected override void OnTick()
+			{
+            	double skill = m_Owner.Skills[SkillName.AnimalLore].Value;
+            	
+				if(skill < 100.0)
+                {
+					if (m_Targ.Controlled)
+						SendGump(m_Owner, m_Targ);
+					else
+						m_Owner.SendLocalizedMessage(1049674); // At your skill level, you can only lore tamed creatures.
+                }
+                else if (skill < 100.0)
+                {
+					if (m_Targ.Controlled)
+						SendGump(m_Owner, m_Targ);
+					else if (m_Targ.Tamable)
+						Check(m_Owner, m_Targ, 80.0);
+					else
+						m_Owner.SendLocalizedMessage(1049675); // At your skill level, you can only lore tamed or tameable creatures.
+                }
+                else
+                {
+					if (m_Targ.Controlled)
+						SendGump(m_Owner, m_Targ);
+					else if (m_Targ.Tamable)
+						Check(m_Owner, m_Targ, 80.0);
+					else
+						Check(m_Owner, m_Targ, 100.0);
+                }
+			
+                SkillRegistry.Remove(m_Owner);
+			}
+		}
     }
 
     public class AnimalLoreGump : Gump

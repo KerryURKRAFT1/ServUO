@@ -1,6 +1,7 @@
 using System;
 using Server.Items;
 using Server.Targeting;
+using Server.Network;
 
 namespace Server.SkillHandlers
 {
@@ -11,19 +12,37 @@ namespace Server.SkillHandlers
             SkillInfo.Table[(int)SkillName.Poisoning].Callback = new SkillUseCallback(OnUse);
         }
 
-        public static TimeSpan OnUse(Mobile m)
+    	public static TimeSpan OnUse(Mobile m)
+        {
+    		if (!SkillRegistry.Contains(m))
+    		{
+	    		SkillRegistry.Add(m);
+	        	
+	        	if (!TriggerSkill(m))
+	        	{
+		    		SkillRegistry.Remove(m);
+	        	}
+    		}
+    		else if (SkillRegistry.WaitMsg)
+    		{
+                m.SendMessage("You must wait to perform another action.");
+    		}
+        	
+        	return TimeSpan.Zero;
+        }
+
+        public static bool TriggerSkill(Mobile m)
         {
             m.Target = new InternalTargetPoison();
 
             m.SendLocalizedMessage(502137); // Select the poison you wish to use
 
-            return TimeSpan.FromSeconds(10.0); // 10 second delay before beign able to re-use a skill
+            return true;
         }
 
         private class InternalTargetPoison : Target
         {
-            public InternalTargetPoison()
-                : base(2, false, TargetFlags.None)
+            public InternalTargetPoison() : base(2, false, TargetFlags.None)
             {
             }
 
@@ -37,14 +56,32 @@ namespace Server.SkillHandlers
                 else // Not a Poison Potion
                 {
                     from.SendLocalizedMessage(502139); // That is not a poison potion.
+	                SkillRegistry.Remove(from);
                 }
             }
 
+            protected override void OnTargetCancel(Mobile from, TargetCancelType cancelType)
+            {
+                SkillRegistry.Remove(from);
+            }
+
+            protected override void OnTargetOutOfRange(Mobile from, object targeted)
+            {
+				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1076203); // Target out of range.	
+				SkillRegistry.Remove(from);
+            }
+
+	        protected override void OnTargetOutOfLOS(Mobile from, object o)
+	        {
+				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237);// Target can not be seen.
+                SkillRegistry.Remove(from);
+	        }
+	        
             private class InternalTarget : Target
             {
                 private readonly BasePoisonPotion m_Potion;
-                public InternalTarget(BasePoisonPotion potion)
-                    : base(2, false, TargetFlags.None)
+                
+                public InternalTarget(BasePoisonPotion potion) : base(2, false, TargetFlags.None)
                 {
                     this.m_Potion = potion;
                 }
@@ -52,7 +89,10 @@ namespace Server.SkillHandlers
                 protected override void OnTarget(Mobile from, object targeted)
                 {
                     if (this.m_Potion.Deleted)
-                        return;
+                    {
+                    	SkillRegistry.Remove(from);
+                    	return;
+                    }
 
                     bool startTimer = false;
 
@@ -68,10 +108,19 @@ namespace Server.SkillHandlers
                         {
                             startTimer = (weapon.PrimaryAbility == WeaponAbility.InfectiousStrike || weapon.SecondaryAbility == WeaponAbility.InfectiousStrike);
                         }
-                        else if (weapon.Layer == Layer.OneHanded)
+                        else
                         {
-                            // Only Bladed or Piercing weapon can be poisoned
-                            startTimer = (weapon.Type == WeaponType.Slashing || weapon.Type == WeaponType.Piercing);
+                        	if (weapon.Layer == Layer.OneHanded)
+	                        {
+	                           startTimer = (weapon.Type == WeaponType.Slashing ||
+	                                          weapon.Type == WeaponType.Piercing ||
+	                            			  weapon.Type == WeaponType.Axe
+	                                         );
+	                        }
+	                        else
+	                        {
+	                           startTimer = (weapon is BasePoleArm);
+	                        }
                         }
                     }
 
@@ -93,18 +142,37 @@ namespace Server.SkillHandlers
                             from.SendLocalizedMessage(1060204); // You cannot poison that! You can only poison infectious weapons, food or drink.
                         else
                             from.SendLocalizedMessage(502145); // You cannot poison that! You can only poison bladed or piercing weapons, food or drink.
+
+						SkillRegistry.Remove(from);
                     }
                 }
 
-                private class InternalTimer : Timer
+	            protected override void OnTargetCancel(Mobile from, TargetCancelType cancelType)
+	            {
+	                SkillRegistry.Remove(from);
+	            }
+	
+	            protected override void OnTargetOutOfRange(Mobile from, object targeted)
+	            {
+					from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1076203); // Target out of range.	
+					SkillRegistry.Remove(from);
+	            }
+	
+		        protected override void OnTargetOutOfLOS(Mobile from, object o)
+		        {
+					from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237);// Target can not be seen.
+	                SkillRegistry.Remove(from);
+		        }
+
+		        private class InternalTimer : Timer
                 {
                     private readonly Mobile m_From;
                     private readonly Item m_Target;
                     private readonly Poison m_Poison;
                     private readonly double m_MinSkill;
                     private readonly double m_MaxSkill;
-                    public InternalTimer(Mobile from, Item target, BasePoisonPotion potion)
-                        : base(TimeSpan.FromSeconds(2.0))
+                    
+                    public InternalTimer(Mobile from, Item target, BasePoisonPotion potion) : base(TimeSpan.FromSeconds(2.0))
                     {
                         this.m_From = from;
                         this.m_Target = target;
@@ -167,6 +235,8 @@ namespace Server.SkillHandlers
                                 }
                             }
                         }
+
+                        SkillRegistry.Remove(this.m_From);
                     }
                 }
             }

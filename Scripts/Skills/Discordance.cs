@@ -1,19 +1,11 @@
-#region Header
-// **********
-// ServUO - Discordance.cs
-// **********
-#endregion
-
-#region References
 using System;
 using System.Collections;
-
 using Server.Engines.XmlSpawner2;
 using Server.Items;
 using Server.Mobiles;
 using Server.Targeting;
 using Server.Engines.Quests;
-#endregion
+using Server.Network;
 
 namespace Server.SkillHandlers
 {
@@ -23,16 +15,38 @@ namespace Server.SkillHandlers
 
 		public static void Initialize()
 		{
-			SkillInfo.Table[(int)SkillName.Discordance].Callback = OnUse;
+//			SkillInfo.Table[(int)SkillName.Discordance].Callback = OnUse;
 		}
 
-		public static TimeSpan OnUse(Mobile m)
+    	public static TimeSpan OnUse(Mobile m)
+        {
+    		if (!SkillRegistry.Contains(m))
+    		{
+	    		SkillRegistry.Add(m);
+	        	
+	        	if (!TriggerSkill(m))
+	        	{
+		    		SkillRegistry.Remove(m);
+	        	}
+    		}
+    		else if (SkillRegistry.WaitMsg)
+    		{
+                m.SendMessage("You must wait to perform another action.");
+    		}
+        	
+        	return TimeSpan.Zero;
+        }
+
+        public static bool TriggerSkill(Mobile m)
 		{
 			m.RevealingAction();
 
-			BaseInstrument.PickInstrument(m, OnPickedInstrument);
+			if (BaseInstrument.PickInstrument(m, OnPickedInstrument))
+			{
+				return false;
+			}
 
-			return TimeSpan.FromSeconds(1.0); // Cannot use another skill for 1 second
+			return true;
 		}
 
 		public static void OnPickedInstrument(Mobile from, BaseInstrument instrument)
@@ -40,7 +54,6 @@ namespace Server.SkillHandlers
 			from.RevealingAction();
 			from.SendLocalizedMessage(1049541); // Choose the target for your song of discordance.
 			from.Target = new DiscordanceTarget(from, instrument);
-			from.NextSkillTime = Core.TickCount + 6000;
 		}
 
 		public static bool GetEffect(Mobile targ, ref int effect)
@@ -110,8 +123,7 @@ namespace Server.SkillHandlers
 		{
 			private readonly BaseInstrument m_Instrument;
 
-			public DiscordanceTarget(Mobile from, BaseInstrument inst)
-				: base(BaseInstrument.GetBardRange(from, SkillName.Discordance), false, TargetFlags.None)
+			public DiscordanceTarget(Mobile from, BaseInstrument inst) : base(BaseInstrument.GetBardRange(from, SkillName.Discordance), false, TargetFlags.None)
 			{
 				m_Instrument = inst;
 			}
@@ -119,7 +131,6 @@ namespace Server.SkillHandlers
 			protected override void OnTarget(Mobile from, object target)
 			{
 				from.RevealingAction();
-				from.NextSkillTime = Core.TickCount + 1000;
 
 				if (!m_Instrument.IsChildOf(from.Backpack))
 				{
@@ -131,7 +142,7 @@ namespace Server.SkillHandlers
 
 					if (targ == from ||
 						(targ is BaseCreature && (((BaseCreature)targ).BardImmune || !from.CanBeHarmful(targ, false)) &&
-						 ((BaseCreature)targ).ControlMaster != from))
+						 ((BaseCreature)targ).ControlMaster != from) && from.AccessLevel == AccessLevel.Player)
 					{
 						from.SendLocalizedMessage(1049535); // A song of discord would have no effect on that.
 					}
@@ -170,83 +181,9 @@ namespace Server.SkillHandlers
 						}
 						else if (from.CheckTargetSkill(SkillName.Discordance, target, diff - 25.0, diff + 25.0))
 						{
-							from.SendLocalizedMessage(1049539); // You play the song surpressing your targets strength
-							m_Instrument.PlayInstrumentWell(from);
-							m_Instrument.ConsumeUse(from);
-
-							ArrayList mods = new ArrayList();
-							int effect;
-							double scalar;
-
-							if (Core.AOS)
-							{
-								double discord = from.Skills[SkillName.Discordance].Value;
-
-								if (discord > 100.0)
-								{
-									effect = -20 + (int)((discord - 100.0) / -2.5);
-								}
-								else
-								{
-									effect = (int)(discord / -5.0);
-								}
-
-								if (Core.SE && BaseInstrument.GetBaseDifficulty(targ) >= 160.0)
-								{
-									effect /= 2;
-								}
-
-								scalar = effect * 0.01;
-
-								mods.Add(new ResistanceMod(ResistanceType.Physical, effect));
-								mods.Add(new ResistanceMod(ResistanceType.Fire, effect));
-								mods.Add(new ResistanceMod(ResistanceType.Cold, effect));
-								mods.Add(new ResistanceMod(ResistanceType.Poison, effect));
-								mods.Add(new ResistanceMod(ResistanceType.Energy, effect));
-
-								for (int i = 0; i < targ.Skills.Length; ++i)
-								{
-									if (targ.Skills[i].Value > 0)
-									{
-										mods.Add(new DefaultSkillMod((SkillName)i, true, targ.Skills[i].Value * scalar));
-									}
-								}
-							}
-							else
-							{
-								effect = (int)(from.Skills[SkillName.Discordance].Value / -5.0);
-								scalar = effect * 0.01;
-
-								mods.Add(new StatMod(StatType.Str, "DiscordanceStr", (int)(targ.RawStr * scalar), TimeSpan.Zero));
-								mods.Add(new StatMod(StatType.Int, "DiscordanceInt", (int)(targ.RawInt * scalar), TimeSpan.Zero));
-								mods.Add(new StatMod(StatType.Dex, "DiscordanceDex", (int)(targ.RawDex * scalar), TimeSpan.Zero));
-
-								for (int i = 0; i < targ.Skills.Length; ++i)
-								{
-									if (targ.Skills[i].Value > 0)
-									{
-										mods.Add(new DefaultSkillMod((SkillName)i, true, targ.Skills[i].Value * scalar));
-									}
-								}
-							}
-
-							DiscordanceInfo info = new DiscordanceInfo(from, targ, Math.Abs(effect), mods);
-							info.m_Timer = Timer.DelayCall(TimeSpan.Zero, TimeSpan.FromSeconds(1.25), ProcessDiscordance, info);
-
-                            #region Bard Mastery Quest
-                            if (from is PlayerMobile)
-                            {
-                                BaseQuest quest = QuestHelper.GetQuest((PlayerMobile)from, typeof(WieldingTheSonicBladeQuest));
-
-                                if (quest != null)
-                                {
-                                    foreach (BaseObjective objective in quest.Objectives)
-                                        objective.Update(targ);
-                                }
-                            }
-                            #endregion
-
-							m_Table[targ] = info;
+							new SkillTimer(from, targ, m_Instrument, SkillRegistry.Delay).Start();
+							
+							return;
 						}
 						else
 						{
@@ -254,8 +191,6 @@ namespace Server.SkillHandlers
 							m_Instrument.PlayInstrumentBadly(from);
 							m_Instrument.ConsumeUse(from);
 						}
-
-						from.NextSkillTime = Core.TickCount + 12000;
 					}
 					else
 					{
@@ -266,10 +201,128 @@ namespace Server.SkillHandlers
 				{
 					from.SendLocalizedMessage(1049535); // A song of discord would have no effect on that.
 				}
+
+                SkillRegistry.Remove(from);
+			}
+
+            protected override void OnTargetCancel(Mobile from, TargetCancelType cancelType)
+            {
+                SkillRegistry.Remove(from);
+            }
+
+            protected override void OnTargetOutOfRange(Mobile from, object targeted)
+            {
+				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1076203); // Target out of range.	
+				SkillRegistry.Remove(from);
+            }
+
+	        protected override void OnTargetOutOfLOS(Mobile from, object o)
+	        {
+				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237);// Target can not be seen.
+                SkillRegistry.Remove(from);
+	        }
+		}
+
+        private class SkillTimer : Timer
+		{
+			private readonly Mobile m_Owner;
+			private readonly Mobile m_Targ;
+			private readonly BaseInstrument m_Instrument;
+
+            public SkillTimer(Mobile owner, Mobile targ, BaseInstrument instrument, TimeSpan delay) : base(delay)
+			{
+				m_Owner = owner;
+				m_Targ = targ;
+				m_Instrument = instrument;
+
+				Priority = TimerPriority.TwoFiftyMS;
+			}
+
+			protected override void OnTick()
+			{
+				m_Owner.SendLocalizedMessage(1049539); // You play the song surpressing your targets strength
+				m_Instrument.PlayInstrumentWell(m_Owner);
+				m_Instrument.ConsumeUse(m_Owner);
+
+				ArrayList mods = new ArrayList();
+				int effect;
+				double scalar;
+
+				if (Core.AOS)
+				{
+					double discord = m_Owner.Skills[SkillName.Discordance].Value;
+
+					if (discord > 100.0)
+					{
+						effect = -20 + (int)((discord - 100.0) / -2.5);
+					}
+					else
+					{
+						effect = (int)(discord / -5.0);
+					}
+
+					if (Core.SE && BaseInstrument.GetBaseDifficulty(m_Targ) >= 160.0)
+					{
+						effect /= 2;
+					}
+
+					scalar = effect * 0.01;
+
+					mods.Add(new ResistanceMod(ResistanceType.Physical, effect));
+					mods.Add(new ResistanceMod(ResistanceType.Fire, effect));
+					mods.Add(new ResistanceMod(ResistanceType.Cold, effect));
+					mods.Add(new ResistanceMod(ResistanceType.Poison, effect));
+					mods.Add(new ResistanceMod(ResistanceType.Energy, effect));
+
+					for (int i = 0; i < m_Targ.Skills.Length; ++i)
+					{
+						if (m_Targ.Skills[i].Value > 0)
+						{
+							mods.Add(new DefaultSkillMod((SkillName)i, true, m_Targ.Skills[i].Value * scalar));
+						}
+					}
+				}
+				else
+				{
+					effect = (int)(m_Owner.Skills[SkillName.Discordance].Value / -5.0);
+					scalar = effect * 0.01;
+
+					mods.Add(new StatMod(StatType.Str, "DiscordanceStr", (int)(m_Targ.RawStr * scalar), TimeSpan.Zero));
+					mods.Add(new StatMod(StatType.Int, "DiscordanceInt", (int)(m_Targ.RawInt * scalar), TimeSpan.Zero));
+					mods.Add(new StatMod(StatType.Dex, "DiscordanceDex", (int)(m_Targ.RawDex * scalar), TimeSpan.Zero));
+
+					for (int i = 0; i < m_Targ.Skills.Length; ++i)
+					{
+						if (m_Targ.Skills[i].Value > 0)
+						{
+							mods.Add(new DefaultSkillMod((SkillName)i, true, m_Targ.Skills[i].Value * scalar));
+						}
+					}
+				}
+
+				DiscordanceInfo info = new DiscordanceInfo(m_Owner, m_Targ, Math.Abs(effect), mods);
+				info.m_Timer = Timer.DelayCall(TimeSpan.Zero, TimeSpan.FromSeconds(1.25), ProcessDiscordance, info);
+
+                #region Bard Mastery Quest
+                if (m_Owner is PlayerMobile)
+                {
+                    BaseQuest quest = QuestHelper.GetQuest((PlayerMobile)m_Owner, typeof(WieldingTheSonicBladeQuest));
+
+                    if (quest != null)
+                    {
+                        foreach (BaseObjective objective in quest.Objectives)
+                            objective.Update(m_Targ);
+                    }
+                }
+                #endregion
+
+				m_Table[m_Targ] = info;
+				
+				SkillRegistry.Remove(m_Owner);
 			}
 		}
 
-		private class DiscordanceInfo
+        private class DiscordanceInfo
 		{
 			public readonly Mobile m_From;
 			public readonly Mobile m_Creature;

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Server.Items;
 using Server.Targeting;
+using Server.Network;
 
 namespace Server.SkillHandlers
 {
@@ -13,14 +14,33 @@ namespace Server.SkillHandlers
             SkillInfo.Table[(int)SkillName.Inscribe].Callback = new SkillUseCallback(OnUse);
         }
 
-        public static TimeSpan OnUse(Mobile m)
+    	public static TimeSpan OnUse(Mobile m)
+        {
+    		if (!SkillRegistry.Contains(m))
+    		{
+	    		SkillRegistry.Add(m);
+	        	
+	        	if (!TriggerSkill(m))
+	        	{
+		    		SkillRegistry.Remove(m);
+	        	}
+    		}
+    		else if (SkillRegistry.WaitMsg)
+    		{
+                m.SendMessage("You must wait to perform another action.");
+    		}
+        	
+        	return TimeSpan.Zero;
+        }
+
+        public static bool TriggerSkill(Mobile m)
         {
             Target target = new InternalTargetSrc();
             m.Target = target;
             m.SendLocalizedMessage(1046295); // Target the book you wish to copy.
-            target.BeginTimeout(m, TimeSpan.FromMinutes(1.0));
+            target.BeginTimeout(m, TimeSpan.FromSeconds(10.0));
 
-            return TimeSpan.FromSeconds(1.0);
+            return true;
         }
 
         public static Mobile GetUser(BaseBook book)
@@ -92,17 +112,54 @@ namespace Server.SkillHandlers
                     Target target = new InternalTargetDst(book);
                     from.Target = target;
                     from.SendLocalizedMessage(501612); // Select a book to copy this to.
-                    target.BeginTimeout(from, TimeSpan.FromMinutes(1.0));
-                    Inscribe.SetUser(book, from);
+                    target.BeginTimeout(from, TimeSpan.FromSeconds(10.0));
+                    
+   		            new SkillTimer(from, book, SkillRegistry.Delay).Start();
+   		            
+   		            return;
                 }
+
+                SkillRegistry.Remove(from);
             }
 
             protected override void OnTargetCancel(Mobile from, TargetCancelType cancelType)
             {
-                if (cancelType == TargetCancelType.Timeout)
-                    from.SendLocalizedMessage(501619); // You have waited too long to make your inscribe selection, your inscription attempt has timed out.
+				SkillRegistry.Remove(from);
             }
+
+            protected override void OnTargetOutOfRange(Mobile from, object targeted)
+            {
+				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1076203); // Target out of range.	
+				SkillRegistry.Remove(from);
+            }
+
+	        protected override void OnTargetOutOfLOS(Mobile from, object o)
+	        {
+				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237);// Target can not be seen.
+                SkillRegistry.Remove(from);
+	        }
         }
+
+        private class SkillTimer : Timer
+		{
+			private readonly Mobile m_Owner;
+			private readonly BaseBook m_Targ;
+
+            public SkillTimer(Mobile owner, BaseBook targ, TimeSpan delay) : base(delay)
+			{
+				m_Owner = owner;
+				m_Targ = targ;
+
+				Priority = TimerPriority.TwoFiftyMS;
+			}
+
+			protected override void OnTick()
+			{
+                Inscribe.SetUser(m_Targ, m_Owner);
+                
+                SkillRegistry.Remove(m_Owner);
+			}
+		}
 
         private class InternalTargetDst : Target
         {
