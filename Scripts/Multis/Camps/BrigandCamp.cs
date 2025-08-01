@@ -67,7 +67,7 @@ namespace Server.Multis
 			
             for (int i = 0; i < 4; i ++)
             { 
-                this.AddMobile(this.Brigands, 6, Utility.RandomMinMax(-7, 7), Utility.RandomMinMax(-7, 7), 0);
+                this.AddMobile(this.Brigands, 6, Utility.RandomMinMax(0, 14) - 7 , Utility.RandomMinMax(0, 14) - 7, 0);
             }
 			
             switch ( Utility.Random(2) )
@@ -88,7 +88,7 @@ namespace Server.Multis
             bc.CantWalk = true;
 			
             this.m_Prisoner.YellHue = Utility.RandomList(0x57, 0x67, 0x77, 0x87, 0x117);
-            this.AddMobile(this.m_Prisoner, 2, Utility.RandomMinMax(-2, 2), Utility.RandomMinMax(-2, 2), 0);
+            this.AddMobile(this.m_Prisoner, 2, Utility.RandomMinMax(0, 4) - 2, Utility.RandomMinMax(0, 4) - 2, 0);
         }
 
         // Don't refresh decay timer
