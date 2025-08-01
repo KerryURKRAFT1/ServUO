@@ -4,19 +4,34 @@ using Server;
 using Server.Gumps;
 using Server.Mobiles;
 using Server.Targeting;
-using Server.Items; // Necessario per BaseDoor e Key
+using Server.Items; // Needed for BaseDoor and Key
 
 namespace Server.StaticHouse
 {
+    [Flipable(0x0BD1, 0xBD2)]
     public class StaticHouseSign : Item
     {
+        public string OriginalHouseName { get; set; }
         private string m_HouseName;
         private Mobile m_Owner;
         private bool m_ForSale;
         private int m_SalePrice;
         private bool m_ForRent;
         private int m_RentPrice;
-        private Rectangle2D m_HouseArea;
+
+        // --- VECCHIO SISTEMA: UN SOLO RETTANGOLO ---
+        //private Rectangle2D m_HouseArea; // <<--- COMMENTATO MA NON RIMOSSO
+        // public Rectangle2D HouseArea { get { return m_HouseArea; } set { m_HouseArea = value; } } // <<--- COMMENTATO MA NON RIMOSSO
+
+        // --- NUOVO SISTEMA: LISTA DI RETTANGOLI ---
+        private List<Rectangle2D> m_HouseAreas = new List<Rectangle2D>();
+
+        public List<Rectangle2D> HouseAreas
+        {
+            get { return m_HouseAreas; }
+            set { m_HouseAreas = value; }
+        }
+
         private DateTime m_LastRefresh;
         private TimeSpan m_DecayPeriod;
         private List<BaseDoor> m_AssociatedDoors;
@@ -26,6 +41,35 @@ namespace Server.StaticHouse
 
         private static readonly TimeSpan DefaultDecay = TimeSpan.FromDays(21);
         private static readonly TimeSpan DowngradedDecay = TimeSpan.FromDays(7);
+
+        /// <summary>
+        /// /  FRIENDS TAB
+        /// </summary>
+        private List<Mobile> m_Friends = new List<Mobile>();
+        private List<Mobile> m_CoOwners = new List<Mobile>();
+        private List<Mobile> m_Bans = new List<Mobile>();
+
+        public List<Mobile> Friends => m_Friends;
+        public List<Mobile> CoOwners => m_CoOwners;
+        public List<Mobile> Bans => m_Bans;
+
+        public void AddFriend(Mobile m) { if (!m_Friends.Contains(m)) m_Friends.Add(m); }
+        public void RemoveFriend(Mobile m) { m_Friends.Remove(m); }
+        public void ClearFriends() { m_Friends.Clear(); }
+
+        public void AddCoOwner(Mobile m) { if (!m_CoOwners.Contains(m)) m_CoOwners.Add(m); }
+        public void RemoveCoOwner(Mobile m) { m_CoOwners.Remove(m); }
+        public void ClearCoOwners() { m_CoOwners.Clear(); }
+
+        public void AddBan(Mobile m) { if (!m_Bans.Contains(m)) m_Bans.Add(m); }
+        public void RemoveBan(Mobile m) { m_Bans.Remove(m); }
+        public void ClearBans() { m_Bans.Clear(); }
+
+        public bool IsFriend(Mobile m) => m_Owner == m || m_Friends.Contains(m) || m_CoOwners.Contains(m);
+        public bool IsCoOwner(Mobile m) => m_Owner == m || m_CoOwners.Contains(m);
+        public bool IsBanned(Mobile m) => m_Bans.Contains(m);
+
+        public StaticHouseDefaults DefaultSettings = new StaticHouseDefaults();
 
         [CommandProperty(AccessLevel.GameMaster)]
         public int RequiredKarma
@@ -41,20 +85,19 @@ namespace Server.StaticHouse
             set { m_RequiredFame = value; InvalidateProperties(); }
         }
 
-
         [Constructable]
         public StaticHouseSign()
             : base(0xBD2)
         {
-            Name = "Insegna Casa Statica";
-            Movable = false;
+            Name = "Static House Sign";
+            Movable = true; // MODIFICA: ora è movibile!
             m_ForSale = false;
             m_ForRent = false;
             m_SalePrice = 0;
             m_RentPrice = 0;
             m_HouseName = null;
             m_Owner = null;
-            m_HouseArea = new Rectangle2D(this.X, this.Y, 0, 0);
+            //m_HouseArea = new Rectangle2D(this.X, this.Y, 0, 0); // VECCHIO SISTEMA: LASCIARE PER COMPATIBILITÀ
             m_LastRefresh = DateTime.UtcNow;
             m_DecayPeriod = DefaultDecay;
             m_AssociatedDoors = new List<BaseDoor>();
@@ -75,7 +118,12 @@ namespace Server.StaticHouse
         public string HouseName
         {
             get { return m_HouseName; }
-            set { m_HouseName = value; InvalidateProperties(); }
+            set
+            {
+                m_HouseName = value;
+                Name = !string.IsNullOrEmpty(m_HouseName) ? m_HouseName : "Static House Sign"; // MODIFICA: aggiorna il nome visualizzato!
+                InvalidateProperties();
+            }
         }
         public Mobile Owner
         {
@@ -102,11 +150,14 @@ namespace Server.StaticHouse
             get { return m_RentPrice; }
             set { m_RentPrice = value; InvalidateProperties(); }
         }
-        public Rectangle2D HouseArea
-        {
-            get { return m_HouseArea; }
-            set { m_HouseArea = value; }
-        }
+
+        // --- VECCHIO SISTEMA ---
+        // public Rectangle2D HouseArea
+        // {
+        //     get { return m_HouseArea; }
+        //     set { m_HouseArea = value; }
+        // }
+
         public DateTime LastRefresh
         {
             get { return m_LastRefresh; }
@@ -127,10 +178,28 @@ namespace Server.StaticHouse
             set { m_HouseKeyValue = value; }
         }
 
+        // --- NUOVA FUNZIONE: VERIFICA SE UN PUNTO È DENTRO LA CASA (ANY RECTANGLE) ---
+        public bool IsInsideHouse(Point3D loc)
+        {
+            foreach (var rect in m_HouseAreas)
+                //if (rect.Contains(loc.X, loc.Y))
+                if (rect.Contains(new Point2D(loc.X, loc.Y))) // NUOVO SISTEMA
+                    return true;
+            return false;
+        }
+
+        public bool IsInsideHouse(Point2D loc)
+        {
+            foreach (var rect in m_HouseAreas)
+                if (rect.Contains(loc))
+                    return true;
+            return false;
+        }
+
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
-            writer.Write((int)5); // versione aggiornata!
+            writer.Write((int)6); // updated version! Incrementa la versione
 
             writer.Write(m_HouseName);
             writer.Write(m_Owner);
@@ -139,23 +208,33 @@ namespace Server.StaticHouse
             writer.Write(m_ForRent);
             writer.Write(m_RentPrice);
 
-            // Rectangle2D manuale
-            writer.Write(m_HouseArea.Start.X);
-            writer.Write(m_HouseArea.Start.Y);
-            writer.Write(m_HouseArea.Width);
-            writer.Write(m_HouseArea.Height);
+            // Rectangle2D manual (VECCHIO SISTEMA)
+            //writer.Write(m_HouseArea.Start.X);
+            //writer.Write(m_HouseArea.Start.Y);
+            //writer.Write(m_HouseArea.Width);
+            //writer.Write(m_HouseArea.Height);
+
+            // --- NUOVO SISTEMA: SERIALIZZAZIONE LISTA DI RETTANGOLI ---
+            writer.Write(m_HouseAreas.Count);
+            foreach (var rect in m_HouseAreas)
+            {
+                writer.Write(rect.Start.X);
+                writer.Write(rect.Start.Y);
+                writer.Write(rect.Width);
+                writer.Write(rect.Height);
+            }
 
             writer.Write(m_LastRefresh);
             writer.Write(m_DecayPeriod);
 
-            // Porte abbinate
+            // Associated doors
             writer.Write(m_AssociatedDoors.Count);
             for (int i = 0; i < m_AssociatedDoors.Count; i++)
                 writer.Write(m_AssociatedDoors[i]);
 
             writer.Write(m_HouseKeyValue);
 
-            // Nuovi parametri
+            // New parameters
             writer.Write(m_RequiredKarma);
             writer.Write(m_RequiredFame);
         }
@@ -166,17 +245,31 @@ namespace Server.StaticHouse
             int version = reader.ReadInt();
 
             m_HouseName = reader.ReadString();
+            Name = !string.IsNullOrEmpty(m_HouseName) ? m_HouseName : "Static House Sign"; // MODIFICA: nome sempre valorizzato!
             m_Owner = reader.ReadMobile();
             m_ForSale = reader.ReadBool();
             m_SalePrice = reader.ReadInt();
             m_ForRent = reader.ReadBool();
             m_RentPrice = reader.ReadInt();
 
-            int x = reader.ReadInt();
-            int y = reader.ReadInt();
-            int w = reader.ReadInt();
-            int h = reader.ReadInt();
-            m_HouseArea = new Rectangle2D(x, y, w, h);
+            // Vecchio rettangolo (compatibilità)
+            //int x = reader.ReadInt();
+            //int y = reader.ReadInt();
+            //int w = reader.ReadInt();
+            //int h = reader.ReadInt();
+            //m_HouseArea = new Rectangle2D(x, y, w, h);
+
+            // --- NUOVO: LEGGI LA LISTA DI RETTANGOLI ---
+            int count = reader.ReadInt();
+            m_HouseAreas = new List<Rectangle2D>(count);
+            for (int i = 0; i < count; i++)
+            {
+                int rx = reader.ReadInt();
+                int ry = reader.ReadInt();
+                int rw = reader.ReadInt();
+                int rh = reader.ReadInt();
+                m_HouseAreas.Add(new Rectangle2D(rx, ry, rw, rh));
+            }
 
             if (version >= 4)
             {
@@ -202,8 +295,8 @@ namespace Server.StaticHouse
             m_AssociatedDoors = new List<BaseDoor>();
             if (version >= 2)
             {
-                int count = reader.ReadInt();
-                for (int i = 0; i < count; i++)
+                int doorCount = reader.ReadInt();
+                for (int i = 0; i < doorCount; i++)
                 {
                     BaseDoor door = reader.ReadItem() as BaseDoor;
                     if (door != null)
@@ -228,7 +321,21 @@ namespace Server.StaticHouse
             }
         }
 
-
+        /// <summary>
+        /// /  FOR DEFAULT SETTINGS
+        /// </summary>
+        public class StaticHouseDefaults
+        {
+            public string HouseName;
+            public int SalePrice;
+            public int RentPrice;
+            // public Rectangle2D HouseArea; // VECCHIO SISTEMA
+            public List<Rectangle2D> HouseAreas = new List<Rectangle2D>(); // NUOVO SISTEMA
+            public bool ForSale;
+            public bool ForRent;
+            public int RequiredKarma;
+            public int RequiredFame;
+        }
 
         public override void OnDoubleClick(Mobile from)
         {
@@ -244,9 +351,13 @@ namespace Server.StaticHouse
             {
                 from.SendGump(new StaticHouseSignGumpOwner(this, from));
             }
+            else if (IsCoOwner(from))
+            {
+                from.SendGump(new StaticHouseSignGumpCoOwner(this, from));
+            }
             else
             {
-                from.SendMessage("Questa casa non è disponibile.");
+                from.SendMessage("This house is not available.");
             }
         }
 
@@ -257,22 +368,20 @@ namespace Server.StaticHouse
 
         public void CheckDecay()
         {
-            // Se non c'è owner, non fare nulla
             if (m_Owner == null)
                 return;
 
-            // --- NUOVA LOGICA: se owner NON ha più il titolo richiesto, decay a 7 giorni ---
             bool hasTitle = OwnerHasRequiredTitle();
 
             if (!hasTitle && m_DecayPeriod != DowngradedDecay)
             {
                 m_DecayPeriod = DowngradedDecay;
-                m_Owner.SendMessage(33, "Hai perso il titolo richiesto per questa casa: ora il decay è di 7 giorni!");
+                m_Owner.SendMessage(33, "You have lost the required title for this house: decay is now set to 7 days!");
             }
             else if (hasTitle && m_DecayPeriod != DefaultDecay)
             {
                 m_DecayPeriod = DefaultDecay;
-                m_Owner.SendMessage(33, "Hai recuperato il titolo richiesto: il decay è tornato normale.");
+                m_Owner.SendMessage(33, "You have regained the required title: decay is now back to normal.");
             }
 
             if (DateTime.UtcNow > (m_LastRefresh + m_DecayPeriod))
@@ -286,17 +395,14 @@ namespace Server.StaticHouse
             if (m_Owner == null)
                 return false;
 
-            // Confronta titolo attuale con quello richiesto
             string actual = GetTitleFromKarmaFame(m_Owner.Karma, m_Owner.Fame);
             string required = GetTitleFromKarmaFame(m_RequiredKarma, m_RequiredFame);
 
-            // Serve >= titolo richiesto (puoi rendere più sofisticato il confronto)
             return actual == required || OwnerIsHigherTitle(m_Owner.Karma, m_Owner.Fame, m_RequiredKarma, m_RequiredFame);
         }
 
         private bool OwnerIsHigherTitle(int ownerKarma, int ownerFame, int reqKarma, int reqFame)
         {
-            // Usa il punteggio combinato per semplicità (puoi fare una tabella di ranking)
             int ownerScore = Math.Max(ownerFame, Math.Abs(ownerKarma));
             int reqScore = Math.Max(reqFame, Math.Abs(reqKarma));
             return ownerScore > reqScore;
@@ -304,30 +410,57 @@ namespace Server.StaticHouse
 
         private void OnDecayExpired()
         {
-            // RemoveDoorsInArea(); 
+            // RemoveDoorsInArea();
             UnassignKeysFromDoors();
             m_Owner = null;
-            m_ForSale = true; // Back for Sale
-            m_HouseName = null; // Reset home name !
+            m_ForSale = true;
+            m_HouseName = null;
             InvalidateProperties();
         }
 
+        // --- VECCHIO SISTEMA: SOLO 1 RETTANGOLO ---
+        // private void RemoveDoorsInArea()
+        // {
+        //     if (this.Map == null || this.Map == Map.Internal)
+        //         return;
+        //
+        //     IPooledEnumerable e = this.Map.GetItemsInBounds(m_HouseArea);
+        //     List<Item> toRemove = new List<Item>();
+        //
+        //     foreach (Item item in e)
+        //     {
+        //         if (item is BaseDoor && m_HouseArea.Contains(item.Location))
+        //         {
+        //             toRemove.Add(item);
+        //         }
+        //     }
+        //     e.Free();
+        //
+        //     for (int i = 0; i < toRemove.Count; i++)
+        //     {
+        //         toRemove[i].Delete();
+        //     }
+        // }
+
+        // --- NUOVO SISTEMA: SU TUTTI I RETTANGOLI ---
         private void RemoveDoorsInArea()
         {
             if (this.Map == null || this.Map == Map.Internal)
                 return;
 
-            IPooledEnumerable e = this.Map.GetItemsInBounds(m_HouseArea);
             List<Item> toRemove = new List<Item>();
-
-            foreach (Item item in e)
+            foreach (var rect in m_HouseAreas)
             {
-                if (item is BaseDoor && m_HouseArea.Contains(item.Location))
+                IPooledEnumerable e = this.Map.GetItemsInBounds(rect);
+                foreach (Item item in e)
                 {
-                    toRemove.Add(item);
+                    if (item is BaseDoor && rect.Contains(item.Location))
+                    {
+                        toRemove.Add(item);
+                    }
                 }
+                e.Free();
             }
-            e.Free();
 
             for (int i = 0; i < toRemove.Count; i++)
             {
@@ -343,11 +476,11 @@ namespace Server.StaticHouse
             {
                 if (door != null)
                 {
-                    door.KeyValue = 0;   // Nessuna serratura
-                    door.Locked = false; // (opzionale: la porta si apre senza chiave)
+                    door.KeyValue = 0;
+                    door.Locked = false;
                 }
             }
-            m_HouseKeyValue = 0; // azzera la casa, nuove chiavi future saranno diverse
+            m_HouseKeyValue = 0;
         }
 
         private void RemoveKeysFromContainer(Container cont)
@@ -363,68 +496,80 @@ namespace Server.StaticHouse
                 key.Delete();
         }
 
-        // Per GM: Associa una porta alla casa statica
+        public void BeginAssociateDoor(Mobile from, Gump gumpToReturn)
+        {
+            from.SendMessage("Select the door to associate with this house.");
+            from.Target = new DoorTarget(this, gumpToReturn);
+        }
         public void BeginAssociateDoor(Mobile from)
         {
-            from.SendMessage("Seleziona la porta da abbinare a questa casa.");
-            from.Target = new DoorTarget(this);
+            from.SendMessage("Select the door to associate with this house.");
+            from.Target = new DoorTarget(this, null);
         }
 
         private class DoorTarget : Target
         {
             private StaticHouseSign m_Sign;
-            public DoorTarget(StaticHouseSign sign)
+            private Gump m_ReturnGump;
+
+            public DoorTarget(StaticHouseSign sign, Gump gumpToReturn)
                 : base(10, false, TargetFlags.None)
             {
                 m_Sign = sign;
+                m_ReturnGump = gumpToReturn;
             }
+
             protected override void OnTarget(Mobile from, object targeted)
             {
-                if (targeted is BaseDoor)
+                if (targeted is BaseDoor door)
                 {
-                    BaseDoor door = (BaseDoor)targeted;
                     if (!m_Sign.AssociatedDoors.Contains(door))
                     {
                         m_Sign.AssociatedDoors.Add(door);
-                        from.SendMessage("Porta abbinata con successo.");
+                        from.SendMessage("Door successfully associated.");
                     }
                     else
                     {
-                        from.SendMessage("Questa porta è già abbinata!");
+                        from.SendMessage("This door is already associated!");
                     }
                 }
                 else
                 {
-                    from.SendMessage("Seleziona una porta valida.");
+                    from.SendMessage("Select a valid door.");
                 }
+
+                if (m_ReturnGump != null)
+                    from.SendGump(m_ReturnGump);
             }
         }
 
-        // Quando il player compra la casa: imposta KeyValue porte e genera chiavi
         public void AssignKeysToOwner(Mobile newOwner)
         {
-            m_HouseKeyValue = Key.RandomValue();
-            for (int i = 0; i < m_AssociatedDoors.Count; i++)
+            if (m_AssociatedDoors == null || m_AssociatedDoors.Count == 0)
+                return;
+
+            foreach (BaseDoor door in m_AssociatedDoors)
             {
-                if (m_AssociatedDoors[i] != null)
+                if (door != null)
                 {
-                    m_AssociatedDoors[i].KeyValue = m_HouseKeyValue;
-                    m_AssociatedDoors[i].Locked = true;
+                    uint keyVal = Key.RandomValue();
+                    door.KeyValue = keyVal;
+                    door.Locked = true;
+
+                    Key key1 = new Key(keyVal);
+                    key1.LootType = LootType.Blessed;
+                    key1.Description = $"Key of {(this.HouseName != null ? this.HouseName : "")} [{door.Serial}]";
+                    newOwner.AddToBackpack(key1);
+
+                    Key key2 = new Key(keyVal);
+                    key2.LootType = LootType.Blessed;
+                    key2.Description = $"Key of {(this.HouseName != null ? this.HouseName : "")} [{door.Serial}]";
+                    if (newOwner.BankBox != null)
+                        newOwner.BankBox.DropItem(key2);
                 }
             }
-
-            // Genera le chiavi in zaino e banca
-            Key key1 = new Key(m_HouseKeyValue);
-            key1.Description = string.Format("Chiave di {0}", (this.HouseName != null ? this.HouseName : ""));
-            newOwner.AddToBackpack(key1);
-
-            Key key2 = new Key(m_HouseKeyValue);
-            key2.Description = string.Format("Chiave di {0}", (this.HouseName != null ? this.HouseName : ""));
-            if (newOwner.BankBox != null)
-                newOwner.BankBox.DropItem(key2);
         }
 
-        // --- UTILITY: calcola titolo da Karma/Fama ---
         public static string GetTitleFromKarmaFame(int karma, int fame)
         {
             if (fame >= 10000 && karma >= 10000)
@@ -442,6 +587,60 @@ namespace Server.StaticHouse
             if (fame >= 625)
                 return "Peasant";
             return "Commoner";
+        }
+
+        public override void AddNameProperty(ObjectPropertyList list)
+        {
+            if (!string.IsNullOrEmpty(HouseName))
+                list.Add(HouseName);
+            else
+                base.AddNameProperty(list);
+        }
+
+        public override bool OnDragLift(Mobile from)
+        {
+            // Solo GM e superiori possono spostare il cartello
+            if (from.AccessLevel >= AccessLevel.GameMaster)
+                return true;
+            from.SendMessage("Only a GM can move this sign.");
+            return false;
+        }
+
+        // --- VECCHIO SISTEMA: SOLO 1 RETTANGOLO ---
+        // public void UnlockAllItemsInHouse()
+        // {
+        //     if (this.Map == null || this.Map == Map.Internal)
+        //         return;
+        //
+        //     IPooledEnumerable e = this.Map.GetItemsInBounds(this.HouseArea);
+        //     foreach (Item item in e)
+        //     {
+        //         if (item != null && !item.Deleted && !item.Movable && !(item is StaticHouseSign))
+        //         {
+        //             item.Movable = true;
+        //         }
+        //     }
+        //     e.Free();
+        // }
+
+        // --- NUOVO SISTEMA: SU TUTTI I RETTANGOLI ---
+        public void UnlockAllItemsInHouse()
+        {
+            if (this.Map == null || this.Map == Map.Internal)
+                return;
+
+            foreach (var rect in m_HouseAreas)
+            {
+                IPooledEnumerable e = this.Map.GetItemsInBounds(rect);
+                foreach (Item item in e)
+                {
+                    if (item != null && !item.Deleted && !item.Movable && !(item is StaticHouseSign))
+                    {
+                        item.Movable = true;
+                    }
+                }
+                e.Free();
+            }
         }
     }
 }
