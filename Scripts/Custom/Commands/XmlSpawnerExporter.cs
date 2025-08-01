@@ -97,8 +97,25 @@ namespace Server.Misc
 		}
  		
  		private static string GetRegionName(XmlSpawner spawner)
- 		{
- 			Region reg = Region.Find (spawner.Location, spawner.Map);
+ 		{			
+			var loc = spawner.Location;
+			var map = spawner.Map;
+
+			if (spawner.RootParent != null)
+			{
+				if (spawner.RootParent is Mobile m)				
+				{
+					loc = m.Location;
+					map = m.Map;
+				}
+				else if (spawner.RootParent is Item i)				
+				{
+					loc = i.Location;
+					map = i.Map;
+				}
+			}
+
+ 			Region reg = Region.Find (loc, map);
 				
 			string region = "Wilderness";
 
