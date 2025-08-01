@@ -244,12 +244,18 @@ namespace Server.Items
             // Does this key open a static house that the player owns?
             foreach (Item item in World.Items.Values)
             {
-                Server.StaticHouse.StaticHouseSign sh = item as Server.StaticHouse.StaticHouseSign;
-                if (sh != null && sh.HouseKeyValue == this.KeyValue && sh.Owner == from)
+                var sh = item as Server.StaticHouse.StaticHouseSign;
+                if (sh == null) continue;
+                if (sh.Owner != from && !sh.IsCoOwner(from)) continue;
+
+                foreach (BaseDoor door in sh.AssociatedDoors)
                 {
-                    from.SendMessage("Select the object on the ground that you want to lock down in your home.");
-                    from.Target = new Server.StaticHouse.StaticLockdownTarget(sh);
-                    return; // DO NOT perform the basic key logic!
+                    if (door != null && door.KeyValue == this.KeyValue)
+                    {
+                        from.SendMessage("Select the object on the ground or the door you want to lock/unlock in your home.");
+                        from.Target = new Server.StaticHouse.StaticLockdownTarget(sh, this); // <-- passa la chiave!
+                        return;
+                    }
                 }
             }
 

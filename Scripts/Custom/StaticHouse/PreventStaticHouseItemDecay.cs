@@ -35,15 +35,30 @@ namespace Server.StaticHouse
                     if (house == null || house.Owner == null)
                         continue;
 
-                    IPooledEnumerable e = house.Map.GetItemsInBounds(house.HouseArea);
-                    foreach (Item inside in e)
+                    // VECCHIO SISTEMA: UN SOLO RETTANGOLO
+                    // IPooledEnumerable e = house.Map.GetItemsInBounds(house.HouseArea);
+                    // foreach (Item inside in e)
+                    // {
+                    //     if (inside == null || inside.Deleted)
+                    //         continue;
+                    //     inside.LastMoved = DateTime.UtcNow;
+                    //     count++;
+                    // }
+                    // e.Free();
+
+                    // NUOVO SISTEMA: PIÙ RETTANGOLI
+                    foreach (var rect in house.HouseAreas)
                     {
-                        if (inside == null || inside.Deleted)
-                            continue;
-                        inside.LastMoved = DateTime.UtcNow;
-                        count++;
+                        IPooledEnumerable e = house.Map.GetItemsInBounds(rect);
+                        foreach (Item inside in e)
+                        {
+                            if (inside == null || inside.Deleted)
+                                continue;
+                            inside.LastMoved = DateTime.UtcNow;
+                            count++;
+                        }
+                        e.Free();
                     }
-                    e.Free();
                 }
                 // Console.WriteLine("[PreventStaticHouseItemDecay] Refreshed {0} items in static houses.", count);
             }

@@ -139,22 +139,22 @@ namespace Server.Items
 
 		public override bool CheckLift(Mobile from, Item item, ref LRReason reject)
 		{
-			if (!from.IsStaff() && IsDecoContainer)
-			{
-				reject = LRReason.CannotLift;
-				return false;
-			}
+			//if (!from.IsStaff() && IsDecoContainer)
+			//{
+			//	reject = LRReason.CannotLift;
+			//	return false;
+			//}
 
 			return base.CheckLift(from, item, ref reject);
 		}
 
 		public override bool CheckItemUse(Mobile from, Item item)
 		{
-			if (item != this && from.AccessLevel < AccessLevel.GameMaster && IsDecoContainer)
-			{
-				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1019045); // I can't reach that.
-				return false;
-			}
+			//if (item != this && from.AccessLevel < AccessLevel.GameMaster && IsDecoContainer)
+			//{
+			//	from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 1019045); // I can't reach that.
+			//	return false;
+			//}
 
 			return base.CheckItemUse(from, item);
 		}
@@ -175,15 +175,16 @@ namespace Server.Items
 
 			if (!m.IsStaff())
 			{
-				if (IsDecoContainer)
-				{
-					if (message)
-					{
-						SendCantStoreMessage(m, item);
-					}
-
-					return false;
-				}
+				// PATCH UOR - ALL PLAYER CAN STORE IN DECOCONTAINER
+				//if (IsDecoContainer)
+				//{
+				//	if (message)
+				//	{
+				//		SendCantStoreMessage(m, item);
+				//	}
+				//
+				//	return false;
+				//}
 
 				int maxItems = MaxItems;
 
