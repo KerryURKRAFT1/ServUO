@@ -538,8 +538,9 @@ namespace Server.StaticHouse
                     from.SendMessage("Select a valid door.");
                 }
 
-                if (m_ReturnGump != null)
-                    from.SendGump(m_ReturnGump);
+                //if (m_ReturnGump != null)
+                //    from.SendGump(m_ReturnGump);
+                from.SendGump(new StaticHouseSignGumpGM(m_Sign, from, 2));
             }
         }
 
