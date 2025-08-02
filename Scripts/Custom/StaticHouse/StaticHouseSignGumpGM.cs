@@ -107,8 +107,8 @@ namespace Server.StaticHouse
             }
 
             // --- PULSANTI FINALI NEL GUMP (in basso) ---
-            AddButton(50, 410, 247, 248, 1, GumpButtonType.Reply, 0);
-            AddLabel(90, 410, 0, "Save");
+            AddButton(50, 410, 238, 239, 1, GumpButtonType.Reply, 0);
+            AddLabel(120, 410, 0, "Save");
 
             // --- DOOR MANAGEMENT ---
             AddButton(300, 410, 4011, 4012, 100, GumpButtonType.Reply, 0);
@@ -175,7 +175,7 @@ namespace Server.StaticHouse
 
         private void BuildDoorPage()
         {
-            AddPage(2);
+            //AddPage(2);
             AddBackground(0, 0, 460, 460, 5054);
             AddBackground(10, 10, 440, 440, 3000);
             AddImage(150, -50, 100);
@@ -315,6 +315,7 @@ namespace Server.StaticHouse
                 {
                     m_User.SendMessage("Select a door to associate with this house.");
                     m_Sign.BeginAssociateDoor(m_User, this);
+                    //m_User.SendGump(new StaticHouseSignGumpGM(m_Sign, m_User, 2));
                 }
                 else if (info.ButtonID == 102)
                 {
@@ -328,7 +329,9 @@ namespace Server.StaticHouse
                         m_Sign.AssociatedDoors.RemoveAt(idx);
                         m_User.SendMessage("Door removed from the house.");
                     }
+                    Timer.DelayCall(TimeSpan.Zero, () => {
                     m_User.SendGump(new StaticHouseSignGumpGM(m_Sign, m_User, 2));
+                    });
                 }
             }
         }
