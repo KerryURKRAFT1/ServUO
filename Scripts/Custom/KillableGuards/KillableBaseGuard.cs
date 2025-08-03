@@ -17,8 +17,8 @@ namespace Server.Mobiles
 		public override bool IsEnemy(Mobile m) => m.Kills >= 5 || m.Karma <= -800 || m.Criminal;
 
 		public bool Bandaging = false;
-		public bool CanTeleport = false;
-		public bool CanCall = false;
+		public bool BlockTeleport = false;
+		public bool BlockCall = false;
 		
 		private Timer m_AttackTimer, m_IdleTimer;
 		
@@ -277,7 +277,7 @@ namespace Server.Mobiles
 		public virtual void InitWeapon() {}
 
 		[CommandProperty(AccessLevel.GameMaster)]
-		public Mobile Focus
+		public virtual Mobile Focus
 		{
 			get { return m_Focus; }
 			
@@ -306,11 +306,11 @@ namespace Server.Mobiles
 						Say("Thou hast suffered thy punishment, scoundrel.");
 					}
 
-					if (value != null && !CanCall)
+					if (value != null && !BlockCall)
 					{
 						Say(500131); // Thou wilt regret thine actions, swine!
 						
-						CanCall = true;
+						BlockCall = true;
 
 						Timer.DelayCall (TimeSpan.FromSeconds(20.0), () => EndCallLock());
 					}
@@ -360,7 +360,7 @@ namespace Server.Mobiles
 
 		private void EndCallLock()
 		{
-			CanCall = false;
+			BlockCall = false;
 		}
 		        
 		public override void OnAfterDelete()
@@ -568,7 +568,7 @@ namespace Server.Mobiles
 
 			protected override void OnTick()
 			{
-				if (m_Owner.Deleted)
+				if (m_Owner == null || m_Owner.Deleted)
 				{
 					Stop();
 					
@@ -581,8 +581,6 @@ namespace Server.Mobiles
 				
 				m_Owner.Stam = m_Owner.StamMax;
 
-				Mobile target = m_Owner.Focus;
-
                	GuardedRegion region = m_Owner.Region.GetRegion(typeof(GuardedRegion)) as GuardedRegion;
                	
                	if (region != null && region.Disabled)
@@ -594,7 +592,13 @@ namespace Server.Mobiles
 	            	Stop();
                	}
 
-				if (target.Deleted || !target.Alive)
+				Mobile target = m_Owner.Focus;
+
+				if (target == null)
+				{
+					Stop();
+				}
+				else if (target.Deleted || !target.Alive)
 				{
 					m_Owner.Focus = null;
 					
@@ -614,43 +618,38 @@ namespace Server.Mobiles
 				}
 				else if (m_Owner.Weapon is Fists)
 				{
-					m_Owner.Kill();
-					
-					Stop();
+					Effects.SendLocationParticles(EffectItem.Create(m_Owner.Location, m_Owner.Map, EffectItem.DefaultDuration), 0x3728, 10, 10, 2023);
+					            	
+	            	m_Owner.Delete();
+
+	            	Stop();
 					
 					return;
 				}
 
-				if (target != null && m_Owner.Combatant != target)
+				if (m_Owner.Combatant != target)
 				{
 					m_Owner.Combatant = target;
 				}
 
-				if (target == null)
+				if (!m_Owner.BlockTeleport)
 				{
-					Stop();
+					TeleportTo(target);
 				}
-				else
+				
+				if (Utility.Random(100) < 1 || (m_Owner.Hits < m_Owner.HitsMax / 4))
 				{
-					if (!m_Owner.CanTeleport)
-					{
-						TeleportTo(target);
-					}
-					
-					if (Utility.Random(100) < 1 || (m_Owner.Hits < m_Owner.HitsMax / 4))
-					{
-						Spawn(m_Owner, target, Utility.RandomList(1, 2, 2, 2, 3));
-					}
+					Spawn(m_Owner, target, Utility.RandomList(1, 2, 2, 2, 3));
+				}
 
-					if (target is BaseCreature)
-					{
-						((BaseCreature)target).NoKillAwards = true;
-					}
-		
-					m_Owner.Focus = null;
-					
-					Stop();
+				if (target is BaseCreature)
+				{
+					((BaseCreature)target).NoKillAwards = true;
 				}
+	
+				m_Owner.Focus = null;
+				
+				Stop();
 			}
 
 			private void TeleportTo(Mobile target)
@@ -667,14 +666,14 @@ namespace Server.Mobiles
 
 				m_Owner.PlaySound(0x1FE);
 				
-				m_Owner.CanTeleport = true;
+				m_Owner.BlockTeleport = true;
 				
 				Timer.DelayCall (TimeSpan.FromSeconds(30.0), () => EndLock());
 			}
 
 			private void EndLock()
 			{
-				m_Owner.CanTeleport = false;
+				m_Owner.BlockTeleport = false;
 			}
 		}
 
