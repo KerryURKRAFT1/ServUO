@@ -24,7 +24,16 @@ namespace Server.Gumps
 		public static ItemInfo[] m_Types = new ItemInfo[]
 		{
             #region Walls
-            new ItemInfo(2081), new ItemInfo(2082), new ItemInfo(2083), new ItemInfo(2084), new ItemInfo(2085), new ItemInfo(2086), new ItemInfo(2087), new ItemInfo(2088), new ItemInfo(2089), 
+            new ItemInfo(0x0821), new ItemInfo(0x0822), new ItemInfo(0x0823),
+            new ItemInfo(0x0835), new ItemInfo(0x0836), new ItemInfo(0x0837), new ItemInfo(0x0838),            	
+            new ItemInfo(0x085C), new ItemInfo(0x085D), new ItemInfo(0x085E), new ItemInfo(0x0860), new ItemInfo(0x0861), new ItemInfo(0x0862), new ItemInfo(0x0863), new ItemInfo(0x0864),  new ItemInfo(0x0865),            
+            new ItemInfo(0x0877), new ItemInfo(0x0878),             
+            new ItemInfo(0x088A), new ItemInfo(0x088B),             
+            new ItemInfo(0x088A), new ItemInfo(0x088B),             
+            new ItemInfo(0x08EB), new ItemInfo(0x08EC),  new ItemInfo(0x08ED), new ItemInfo(0x08EE), new ItemInfo(0x08EF),  new ItemInfo(0x08F0), new ItemInfo(0x08F1), new ItemInfo(0x08F2),  new ItemInfo(0x08F3),
+            new ItemInfo(0x08F4), new ItemInfo(0x08F5),  new ItemInfo(0x08F6), new ItemInfo(0x08F7), new ItemInfo(0x08F8),  new ItemInfo(0x08F9), new ItemInfo(0x08FA), new ItemInfo(0x08FB),  new ItemInfo(0x08FC),
+
+            /*new ItemInfo(2081), new ItemInfo(2082), new ItemInfo(2083), new ItemInfo(2084), new ItemInfo(2085), new ItemInfo(2086), new ItemInfo(2087), new ItemInfo(2088), new ItemInfo(2089),
             new ItemInfo(2090), new ItemInfo(2091), new ItemInfo(2092), new ItemInfo(2093), new ItemInfo(2094), new ItemInfo(2095), new ItemInfo(2096), new ItemInfo(2097), new ItemInfo(2098), 
             new ItemInfo(2099), new ItemInfo(2101), new ItemInfo(2102), new ItemInfo(2103), new ItemInfo(2104), new ItemInfo(2105), new ItemInfo(2106), new ItemInfo(2107), 
             new ItemInfo(2108), new ItemInfo(2109), new ItemInfo(2110), new ItemInfo(2111), new ItemInfo(2112), new ItemInfo(2113), new ItemInfo(2114), new ItemInfo(2115), new ItemInfo(2116), 
@@ -41,7 +50,9 @@ namespace Server.Gumps
             new ItemInfo(2247), new ItemInfo(2248), new ItemInfo(2249), new ItemInfo(2250), new ItemInfo(2251), new ItemInfo(2252), new ItemInfo(2253), new ItemInfo(2254), new ItemInfo(2283), 
             new ItemInfo(2284), new ItemInfo(2285), new ItemInfo(2286), new ItemInfo(2287), new ItemInfo(2288), new ItemInfo(2289), new ItemInfo(2290), new ItemInfo(2291), new ItemInfo(2292), 
             new ItemInfo(2293), new ItemInfo(2294), new ItemInfo(2295), new ItemInfo(2296), new ItemInfo(2297), new ItemInfo(2298), new ItemInfo(2299), new ItemInfo(2300), new ItemInfo(20316), 
-            new ItemInfo(20317), new ItemInfo(20318), new ItemInfo(20319), new ItemInfo(20320), new ItemInfo(20321)/*, new ItemInfo(39483), new ItemInfo(39484), new ItemInfo(39485), new ItemInfo(39486), 
+            new ItemInfo(20317), new ItemInfo(20318), new ItemInfo(20319), new ItemInfo(20320), new ItemInfo(20321)*/
+            	
+            /*, new ItemInfo(39483), new ItemInfo(39484), new ItemInfo(39485), new ItemInfo(39486),
             new ItemInfo(39487), new ItemInfo(39488), new ItemInfo(39489), new ItemInfo(39490), new ItemInfo(39491), new ItemInfo(39492), new ItemInfo(39493), new ItemInfo(39494), new ItemInfo(39495), 
             new ItemInfo(39496), new ItemInfo(39497), new ItemInfo(39498), new ItemInfo(40227), new ItemInfo(40228), new ItemInfo(40229), new ItemInfo(40230), new ItemInfo(40293), new ItemInfo(40294), 
 			new ItemInfo(40295)*/
@@ -96,15 +107,21 @@ namespace Server.Gumps
 			for (int i = 0; i < 12; ++i)
 			{
 				int index = (page * 12) + i;
-				if(index >= m_Types.Length) break;
+
+				if(index >= m_Types.Length)
+					break;
 
 				int button = 1000000 + index;
+
 				int offset = (i + 1) * 50;
+				
+				if(index <= 12)
+					offset = (int)(offset * 1.01);
 
 				if (m_Types[index].m_BaseID > 0)
 				{
 					AddButton(45 + offset, 20, 0x2624, 0x2625, button, GumpButtonType.Reply, m_Types[index].m_BaseID);
-					AddItem(50 + offset, 40, m_Types[index].m_BaseID);
+					AddItem(25 + offset, 40, m_Types[index].m_BaseID);
 				}
 				else
 				{

@@ -13,7 +13,11 @@ namespace Server.Gumps
             new DoorInfo(typeof(RattanDoor), 0x695),
             new DoorInfo(typeof(DarkWoodDoor), 0x6A5),
             new DoorInfo(typeof(LightWoodDoor), 0x6D5),
-            new DoorInfo(typeof(StrongWoodDoor), 0x6E5)
+            new DoorInfo(typeof(StrongWoodDoor), 0x6E5),
+            new DoorInfo(typeof(IronGate), 0x0828),
+            new DoorInfo(typeof(IronGateShort), 0x84C),
+            new DoorInfo(typeof(LightWoodGate), 0x0839),
+            new DoorInfo(typeof(DarkWoodGate), 0x0866)
         };
         private readonly int m_Type;
         public AddDoorGump()
@@ -50,7 +54,7 @@ namespace Server.Gumps
             }
             else
             {
-                this.AddBlueBack(265, 145);
+                this.AddBlueBack(460, 145);
 
                 for (int i = 0; i < m_Types.Length; ++i)
                 {
