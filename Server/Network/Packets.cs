@@ -2887,7 +2887,7 @@ m_Stream.Write( (int) renderMode );
 
 			if (m_PackBuffer.Length < wantLength)
 			{
-				Console.WriteLine("Notice: DisplayGumpPacked creating new {0} byte buffer", wantLength);
+//				Console.WriteLine("Notice: DisplayGumpPacked creating new {0} byte buffer", wantLength);
 				m_PackBuffer = new byte[wantLength];
 			}
 
