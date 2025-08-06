@@ -189,7 +189,7 @@ namespace Server.Mobiles
 
 		public const int MaxLoyalty = 100;
 
-        #region Var declarations
+		#region Var declarations
         private BaseAI m_AI; // THE AI
 
         private AIType m_CurrentAI; // The current AI
@@ -280,6 +280,9 @@ namespace Server.Mobiles
             set { m_HasBeenStolen = value; }
         }
         #endregion
+
+        [CommandProperty(AccessLevel.GameMaster)]
+        public bool IsGuardExempt { get; set; }
 
         public virtual InhumanSpeech SpeechType { get { return null; } }
 
@@ -1112,7 +1115,7 @@ namespace Server.Mobiles
                 return true;
             }
 
-            if (m is BaseGuard)
+            if (m is BaseKillableGuard)
             {
                 return false;
             }
@@ -2118,7 +2121,7 @@ namespace Server.Mobiles
         {
             base.Serialize(writer);
 
-            writer.Write(21); // version
+            writer.Write(22); // version
 
             writer.Write((int)m_CurrentAI);
             writer.Write((int)m_DefaultAI);
@@ -2251,6 +2254,8 @@ namespace Server.Mobiles
 
             //Version 20 Queens Loyalty
             //writer.Write(m_QLPoints);
+
+            writer.Write((bool)IsGuardExempt);
         }
 
         private static readonly double[] m_StandardActiveSpeeds = new[] { 0.175, 0.1, 0.15, 0.2, 0.25, 0.3, 0.4, 0.5, 0.6, 0.8 };
@@ -2525,6 +2530,11 @@ namespace Server.Mobiles
             if (version <= 20)
             {
                 reader.ReadInt();
+            }
+
+            if (version >= 22)
+            {
+                IsGuardExempt = reader.ReadBool();
             }
 
             if (version <= 14 && m_Paragon && Hue == 0x31)
@@ -4630,7 +4640,10 @@ namespace Server.Mobiles
 
         public virtual void GenerateLoot(bool spawning)
         {
-            if (m_NoLootOnDeath)
+        	if (LastKiller is BaseKillableGuard && !this.Controlled)
+				return;
+			
+        	if (m_NoLootOnDeath)
                 return;
 
             m_Spawning = spawning;
@@ -5678,7 +5691,19 @@ namespace Server.Mobiles
 
         public override void OnDeath(Container c)
         {
-            MeerMage.StopEffect(this, false);
+        	if (LastKiller is BaseKillableGuard && !this.Controlled)
+        	{
+
+        		foreach (Item item in new List<Item>(c.Items))
+        		{
+        			if (item is Gold au)
+        			{
+        				au.Delete();
+        			}
+        		}
+        	}
+        	
+        	MeerMage.StopEffect(this, false);
 
             if (IsBonded)
             {
