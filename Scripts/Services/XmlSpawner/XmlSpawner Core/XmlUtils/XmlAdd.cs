@@ -1110,7 +1110,7 @@ namespace Server.Mobiles
 					defs.MinDelay, defs.MaxDelay, defs.Duration, defs.ProximityRange, defs.ProximitySound, 1,
 					defs.Team, defs.HomeRange, defs.HomeRangeIsRelative, new XmlSpawner.SpawnObject[0], defs.RefractMin, defs.RefractMax,
 					defs.TODStart, defs.TODEnd, null, defs.TriggerObjectProp, defs.ProximityMsg, defs.TriggerOnCarried, defs.NoTriggerOnCarried,
-					defs.SpeechTrigger, null, null, defs.PlayerTriggerProp, defs.TriggerProbability , null, defs.Group, defs.TODMode, defs.KillReset, defs.ExternalTriggering,
+					defs.SpeechTrigger, null, null, defs.PlayerTriggerProp, defs.TriggerProbability , null, defs.Group, false, defs.TODMode, defs.KillReset, defs.ExternalTriggering,
 					defs.SequentialSpawn, null, defs.AllowGhostTrig, defs.AllowNPCTrig, defs.SpawnOnTrigger, null, defs.DespawnTime, defs.SkillTrigger, defs.SmartSpawning, null);
 
 				spawner.PlayerCreated = true;

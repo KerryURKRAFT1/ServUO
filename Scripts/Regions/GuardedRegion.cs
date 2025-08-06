@@ -28,7 +28,7 @@ namespace Server.Regions
 		
 		public bool NotAllowedEntry(Mobile m) => !AllowReds && (m.Kills >= 5 || m.Karma <= -800);
 		
-		public bool NotAllowed(Mobile m) => !AllowReds && (m.Kills >= 5 || m.Karma <= -800 || m.Criminal);
+		public bool NotAllowed(Mobile m) => !AllowReds && (m.Kills >= 5 || (!m.Player && m.Karma < 0) || m.Criminal);
 
 		public GuardedRegion(string name, Map map, int priority, params Rectangle3D[] area)
 			: base(name, map, priority, area)
@@ -150,7 +150,7 @@ namespace Server.Regions
 		
 					try
 					{
-			            KillableBaseGuard spawn = Activator.CreateInstance(m_GuardType, m_GuardParams) as KillableBaseGuard;
+			            BaseKillableGuard spawn = Activator.CreateInstance(m_GuardType, m_GuardParams) as BaseKillableGuard;
 			            	
 		                if( spawn != null )
 		                {             					
@@ -193,7 +193,7 @@ namespace Server.Regions
 						            
             foreach (Mobile m in eable)
 			{
-				if (m is KillableBaseGuard)
+				if (m is BaseKillableGuard)
 				{									
 					c++;
 				}
@@ -361,6 +361,11 @@ namespace Server.Regions
 
 			foreach (Mobile m in eable)
 			{
+				if (m is BaseCreature bc && NotAllowed(bc) && bc.IsGuardExempt)
+				{
+					bc.IsGuardExempt = false;
+				}
+				    
 				if (IsGuardCandidate(m))
 				{
 					if (m_GuardCandidates.ContainsKey(m) || (NotAllowed(m) && m.Region.IsPartOf(this)))
@@ -388,7 +393,7 @@ namespace Server.Regions
 
 		public bool IsGuardCandidate(Mobile m)
 		{
-			if (!m.Alive || m.IsStaff() || m.Blessed || (m is BaseCreature && ((BaseCreature)m).IsInvulnerable) || IsDisabled())
+			if (!m.Alive || m.IsStaff() || m.Blessed || (m is BaseCreature bc && (bc.IsInvulnerable || bc.IsGuardExempt)) || IsDisabled())
 			{
 				return false;
 			}

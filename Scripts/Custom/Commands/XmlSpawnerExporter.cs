@@ -3,14 +3,16 @@ using Server.Commands;
 using Server.Mobiles;
 using System.IO;
 using System.Collections.Generic;
+using Server.Regions;
+using Server.Engines.XmlSpawner2;
+using Server.Engines.Quests;
 
 namespace Server.Misc
 {
 	class XmlSpawnerExporter
 	{
 		public List<(string maps, string regs, XmlSpawner spawners)> SpawnerEntry = new List<(string, string, XmlSpawner)>();
-		
-		
+				
 		private static bool m_Enabled = false; //true: On WorldSave
 		
 		public static string RootPath = XmlSpawner.XmlSpawnDir;
@@ -49,7 +51,7 @@ namespace Server.Misc
 		{
             m_SpawnList = new List<SpawnerEntries>();
 
-            string date = DateTime.UtcNow.ToString ("[yyyy-MM-dd] [HH-mm-ss]");
+            string date = DateTime.Now.ToString ("[yyyy-MM-dd] [HH-mm-ss]");
 
 			string datefolder = Path.Combine (RootPath, date);
 
@@ -81,21 +83,79 @@ namespace Server.Misc
 	 				
 					if (sp != null && !sp.Deleted && !(sp.RootParent is Mobile))
 					{
-						xml.Add(sp);
+						if (DoRegionFix(sp))
+						{
+							xml.Add(sp);
+						}
 					}
             	}
  			}
- 			
+ 			           	
             for (int i = 0; i < xml.Count; i++)
-            {
+            {            		
             	string region = GetRegionName(xml[i]);
                 
-				xml[i].Name = String.Format ("{0} [{1}]", region, i);
+            	xml[i].Name = String.Format ("[{0}] {1}",i ,TypeList(xml[i]));
 				
 				m_SpawnList.Add (new SpawnerEntries( xml[i].Map.ToString(), region, xml[i]));
 			}
 		}
- 		
+		
+		private static string TypeList(XmlSpawner spawner)
+		{
+			System.Text.StringBuilder sb = new System.Text.StringBuilder();
+
+			int max = 2; //truncate name at <max> entries
+						
+			if (spawner.SpawnObjects.Length > 0)
+			{
+				for (int i = 0; i < spawner.SpawnObjects.Length; i++)
+				{
+					XmlSpawner.SpawnObject so = spawner.SpawnObjects[i];
+											
+					if (sb.Length > 0 && i < sb.Length-1)
+					{
+						sb.Append("-");
+					}
+					
+					sb.Append($"{so.TypeName[0].ToString().ToUpper()}{so.TypeName.Substring(1)}");
+					
+					Type type = SpawnerType.GetType(so.TypeName);
+					
+					if(type != null && type.IsSubclassOf(typeof(MondainQuester)))
+				    {
+						sb.Append("-MLQuester");
+				    }
+					
+					if (i == max-1)
+					{
+						sb.Append("-Etc");
+
+						break;
+					}
+				}
+			}
+
+			return sb.ToString();
+		}
+				
+		private static bool DoRegionFix(XmlSpawner spawner)
+		{
+			if (spawner.RootParent == null)
+			{
+				Region reg = Region.Find (spawner.Location, spawner.Map);
+
+				GuardedRegion region = reg.GetRegion(typeof(GuardedRegion)) as GuardedRegion;
+		   	
+			   	if (region != null && !spawner.IsGuardExempt)
+		   		{
+		   			spawner.IsGuardExempt = true;
+		   		}
+			}
+			
+		   	return true;
+		}
+		
  		private static string GetRegionName(XmlSpawner spawner)
  		{			
 			var loc = spawner.Location;

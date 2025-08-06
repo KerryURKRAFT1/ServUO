@@ -22,6 +22,7 @@ using Server.Accounting;
 using System.Diagnostics;
 using Server.Misc;
 using Server.Engines.XmlSpawner2;
+using Server.Regions;
 
 /*
 ** XmlSpawner2
@@ -129,6 +130,7 @@ namespace Server.Mobiles
 		private static TimeSpan defDuration = TimeSpan.FromMinutes(0);
 		private static TimeSpan defDespawnTime = TimeSpan.FromHours(0);
 		private static bool defIsGroup = false;
+		private static bool defIsGuardExempt = false;
 		private static int defTeam = 0;
 		private static int defProximityTriggerSound = defaultTriggerSound;
 		private static int defAmount = 1;
@@ -181,6 +183,7 @@ namespace Server.Mobiles
 		private InternalTimer m_DurTimer;
 		private InternalTimer3 m_RefractoryTimer;
 		private bool m_Running;
+		private bool m_IsGuardExempt;
 		private bool m_Group;
 		private int m_X;
 		private int m_Y;
@@ -1807,6 +1810,13 @@ namespace Server.Mobiles
 		}
 
 		[CommandProperty(AccessLevel.GameMaster)]
+		public bool IsGuardExempt
+		{
+			get { return m_IsGuardExempt; }
+			set { m_IsGuardExempt = value; InvalidateProperties(); }
+		}
+
+		[CommandProperty(AccessLevel.GameMaster)]
 		public bool Group
 		{
 			get { return m_Group; }
@@ -2092,7 +2102,13 @@ namespace Server.Mobiles
 			list.Add(1060656, m_Count.ToString()); // amount to make: ~1_val~
 			list.Add(1061169, m_HomeRange.ToString()); // range ~1_val~
 
-			int nlist_items = 6;
+			int nlist_items = 7;
+
+			if (m_IsGuardExempt)
+			{
+				list.Add("Guards Exempt");
+				nlist_items--;
+			}
 
 			if (m_Group)
 			{
@@ -2142,10 +2158,63 @@ namespace Server.Mobiles
 
 		public override void OnSingleClick(Mobile from)
 		{
-			LabelTo(from, "XmlSpawner");
-			LabelTo(from, Name + (m_Running == true ? " [On]" : " [Off]"));
-		}
+			System.Text.StringBuilder sb = new System.Text.StringBuilder();
 
+			sb.Append(m_Running == true ? "[On] " : "[Off] ");
+
+			string[] substrings = Name.Split(' ');
+
+			if (substrings.Length > 0)
+			{
+				sb.AppendFormat("Spawner {0}", substrings[0]);
+			}
+			else
+			{
+				sb.Append("Spawner");
+			}
+			
+			LabelTo(from, sb.ToString());
+						
+			if (m_Running)
+			{	
+				sb = new System.Text.StringBuilder();
+
+				int load = 2;
+				
+				if (load > SpawnObjects.Length)
+				{
+					load = SpawnObjects.Length;
+				}
+				
+				if (SpawnObjects.Length > 0)
+				{
+					for (int i = 0; i < load; i++)
+					{
+						XmlSpawner.SpawnObject so = SpawnObjects[i];
+												
+						if (sb.Length > 0 && i < sb.Length-1)
+						{
+							sb.Append(", ");
+						}
+						
+						sb.Append($"{so.TypeName[0].ToString().ToUpper()}{so.TypeName.Substring(1)}");
+						
+						if (i == load)
+						{
+							sb.Append(" ...");
+						}
+					}
+				}
+	
+				LabelTo(from, sb.ToString());
+				
+				sb = new System.Text.StringBuilder();
+	
+				sb.AppendFormat("MC:{0} HR:{1} D:{2:F0}", MaxCount, HomeRange, MaxDelay.TotalMinutes);
+							
+				LabelTo(from, sb.ToString());
+			}
+		}
 
 		public override void OnDelete()
 		{
@@ -2597,6 +2666,11 @@ namespace Server.Mobiles
 							try { boolEntry = bool.Parse((string)dr["ExternalTriggering"]); }
 							catch { valid_entry = false; }
 							if (valid_entry) { m_ExternalTriggering = boolEntry; }
+
+							valid_entry = true;
+							try { boolEntry = bool.Parse((string)dr["IsGuardExempt"]); }
+							catch { valid_entry = false; }
+							if (valid_entry) { m_IsGuardExempt = boolEntry; }
 
 							valid_entry = true;
 							try { boolEntry = bool.Parse((string)dr["IsGroup"]); }
@@ -3950,9 +4024,15 @@ public static void _TraceEnd(int index)
 				xml.WriteStartElement("defDuration");
 				xml.WriteString(XmlSpawner.defDuration.ToString());
 				xml.WriteEndElement();
+				
 				xml.WriteStartElement("defIsGroup");
 				xml.WriteString(XmlSpawner.defIsGroup.ToString());
 				xml.WriteEndElement();
+
+				xml.WriteStartElement("defIsGuardExempt");
+				xml.WriteString(XmlSpawner.defIsGuardExempt.ToString());
+				xml.WriteEndElement();
+
 				xml.WriteStartElement("defTeam");
 				xml.WriteString(XmlSpawner.defTeam.ToString());
 				xml.WriteEndElement();
@@ -4027,6 +4107,10 @@ public static void _TraceEnd(int index)
 			catch { }
 			try { XmlSpawner.defIsGroup = bool.Parse(node["defIsGroup"].InnerText); }
 			catch { }
+
+			try { XmlSpawner.defIsGuardExempt = bool.Parse(node["defIsGuardExempt"].InnerText); }
+			catch { }
+						
 			try { XmlSpawner.defTeam = int.Parse(node["defTeam"].InnerText); }
 			catch { }
 			try { XmlSpawner.defRelativeHome = bool.Parse(node["defRelativeHome"].InnerText); }
@@ -4204,6 +4288,16 @@ public static void _TraceEnd(int index)
 																				}
 																				catch { m.SendMessage("invalid value : {0}", e.Arguments[1]); }
 																			}
+																		else	
+																			if (e.Arguments[0].ToLower() == "isguardexempt")
+																			{
+																				try
+																				{
+																					XmlSpawner.defIsGuardExempt = Convert.ToBoolean(e.Arguments[1]);
+																					m.SendMessage("IsGuardExempt = {0}", XmlSpawner.defIsGuardExempt);
+																				}
+																				catch { m.SendMessage("invalid value : {0}", e.Arguments[1]); }
+																			}
 																			else
 																				if (e.Arguments[0].ToLower() == "team")
 																				{
@@ -4275,6 +4369,9 @@ public static void _TraceEnd(int index)
 				m.SendMessage("StackAmount = {0}", XmlSpawner.defAmount);
 				m.SendMessage("Duration = {0}", XmlSpawner.defDuration);
 				m.SendMessage("Group = {0}", XmlSpawner.defIsGroup);
+
+				m.SendMessage("IsGuardExempt = {0}", XmlSpawner.defIsGuardExempt);
+
 				m.SendMessage("Team = {0}", XmlSpawner.defTeam);
 				m.SendMessage("RelativeHome = {0}", XmlSpawner.defRelativeHome);
 				m.SendMessage("SpawnRange = {0}", XmlSpawner.defSpawnRange);
@@ -4328,7 +4425,6 @@ public static void _TraceEnd(int index)
 
 					xml_item.m_ShowContainerStatic = s;
 				}
-
 			}
 		}
 
@@ -5225,7 +5321,7 @@ public static void _TraceEnd(int index)
 										TimeSpan.FromMinutes(mindelay), TimeSpan.FromMinutes(maxdelay), TimeSpan.FromMinutes(0), -1, defaultTriggerSound, 1,
 										0, homerange, false, so, TimeSpan.FromMinutes(0), TimeSpan.FromMinutes(0), TimeSpan.FromMinutes(0),
 										TimeSpan.FromMinutes(0), null, null, null, null, null,
-										null, null, null, null, 1, null, false, defTODMode, defKillReset, false, -1, null, false, false, false, null,
+										null, null, null, null, 1, null, false, false, defTODMode, defKillReset, false, -1, null, false, false, false, null,
 										TimeSpan.FromHours(0), null, false, null);
 
 								if (hasvendor)
@@ -5264,7 +5360,7 @@ public static void _TraceEnd(int index)
 										TimeSpan.FromMinutes(mindelay), TimeSpan.FromMinutes(maxdelay), TimeSpan.FromMinutes(0), -1, defaultTriggerSound, 1,
 										0, homerange, false, so, TimeSpan.FromMinutes(0), TimeSpan.FromMinutes(0), TimeSpan.FromMinutes(0),
 										TimeSpan.FromMinutes(0), null, null, null, null, null,
-										null, null, null, null, 1, null, false, defTODMode, defKillReset, false, -1, null, false, false, false, null,
+										null, null, null, null, 1, null, false, false, defTODMode, defKillReset, false, -1, null, false, false, false, null,
 										TimeSpan.FromHours(0), null, false, null);
 
 									spawner.SpawnRange = spawnrange;
@@ -5486,7 +5582,7 @@ public static void _TraceEnd(int index)
 									TimeSpan.FromMinutes(mindelay), TimeSpan.FromMinutes(maxdelay), TimeSpan.FromMinutes(0), -1, defaultTriggerSound, 1,
 									0, homerange, false, so, TimeSpan.FromMinutes(0), TimeSpan.FromMinutes(0), TimeSpan.FromMinutes(0),
 									TimeSpan.FromMinutes(0), null, null, null, null, null,
-									null, null, null, null, 1, null, false, defTODMode, defKillReset, false, -1, null, false, false, false, null,
+									null, null, null, null, 1, null, false, false, defTODMode, defKillReset, false, -1, null, false, false, false, null,
 									TimeSpan.FromHours(0), null, false, null);
 
 								if (hasvendor)
@@ -5525,7 +5621,7 @@ public static void _TraceEnd(int index)
 										TimeSpan.FromMinutes(mindelay), TimeSpan.FromMinutes(maxdelay), TimeSpan.FromMinutes(0), -1, defaultTriggerSound, 1,
 										0, homerange, false, so, TimeSpan.FromMinutes(0), TimeSpan.FromMinutes(0), TimeSpan.FromMinutes(0),
 										TimeSpan.FromMinutes(0), null, null, null, null, null,
-										null, null, null, null, 1, null, false, defTODMode, defKillReset, false, -1, null, false, false, false, null,
+										null, null, null, null, 1, null, false, false, defTODMode, defKillReset, false, -1, null, false, false, false, null,
 										TimeSpan.FromHours(0), null, false, null);
 
 									spawner.SpawnRange = spawnrange;
@@ -5619,6 +5715,7 @@ public static void _TraceEnd(int index)
 
 			int team = int.Parse(GetText(node["team"], "0"));
 			bool group = bool.Parse(GetText(node["group"], "False"));
+			bool exempt = bool.Parse(GetText(node["guardsexempt"], "False"));
 			TimeSpan maxDelay = TimeSpan.Parse(GetText(node["maxdelay"], "10:00"));
 			TimeSpan minDelay = TimeSpan.Parse(GetText(node["mindelay"], "05:00"));
 			List<string> creaturesName = LoadCreaturesName(node["creaturesname"]);
@@ -5653,7 +5750,7 @@ public static void _TraceEnd(int index)
 				minDelay, maxDelay, TimeSpan.FromMinutes(0), -1, defaultTriggerSound, 1,
 				team, homeRange, false, so, TimeSpan.FromMinutes(0), TimeSpan.FromMinutes(0), TimeSpan.FromMinutes(0),
 				TimeSpan.FromMinutes(0), null, null, null, null, null,
-				null, null, null, null, 1, null, group, defTODMode, defKillReset, false, -1, null, false, false, false, null, defDespawnTime, null, false, null);
+				null, null, null, null, 1, null, group, exempt, defTODMode, defKillReset, false, -1, null, false, false, false, null, defDespawnTime, null, false, null);
 
 			if (hasvendor)
 			{
@@ -5750,6 +5847,7 @@ public static void _TraceEnd(int index)
 
 			int team = 0;
 			bool group = false;
+			bool exempt = false;
 			int maxcount = 0;  // default maxcount of the spawner
 			int homeRange = 4; // default homerange
 			int spawnRange = 4; // default homerange
@@ -5787,6 +5885,7 @@ public static void _TraceEnd(int index)
 								// get the spawner defaults from the first entry
 								// dont handle the individually specified entry attributes
 								group = bool.Parse(GetText(entrynode["GroupSpawn"], "False"));
+								exempt = bool.Parse(GetText(entrynode["IsGuardExempt"], "False"));
 								maxDelay = TimeSpan.FromSeconds(int.Parse(GetText(entrynode["MaxDelay"], "10:00")));
 								minDelay = TimeSpan.FromSeconds(int.Parse(GetText(entrynode["MinDelay"], "05:00")));
 								homeRange = int.Parse(GetText(entrynode["WalkRange"], "10"));
@@ -5925,7 +6024,7 @@ public static void _TraceEnd(int index)
 				minDelay, maxDelay, TimeSpan.FromMinutes(0), -1, defaultTriggerSound, 1,
 				team, homeRange, false, so, TimeSpan.FromMinutes(0), TimeSpan.FromMinutes(0), TimeSpan.FromMinutes(0),
 				TimeSpan.FromMinutes(0), null, null, null, null, null,
-				null, null, null, null, 1, null, group, defTODMode, defKillReset, false, -1, null, false, false, false, null, defDespawnTime, null, false, null);
+				null, null, null, null, 1, null, group, exempt, defTODMode, defKillReset, false, -1, null, false, false, false, null, defDespawnTime, null, false, null);
 
 			spawner.SpawnRange = spawnRange;
 			spawner.m_PlayerCreated = true;
@@ -6501,6 +6600,11 @@ public static void _TraceEnd(int index)
 							bool SpawnIsGroup = false;
 							try { SpawnIsGroup = bool.Parse((string)dr["IsGroup"]); }
 							catch { questionable_spawner = true; }
+
+							bool SpawnIsGuardExempt = false;
+							try { SpawnIsGuardExempt = bool.Parse((string)dr["IsGuardExempt"]); }
+							catch {} //dont report this one
+
 							bool SpawnIsRunning = false;
 							try { SpawnIsRunning = bool.Parse((string)dr["IsRunning"]); }
 							catch { questionable_spawner = true; }
@@ -6617,7 +6721,7 @@ public static void _TraceEnd(int index)
 									SpawnTeam, SpawnHomeRange, SpawnIsRelativeHomeRange, Spawns, SpawnMinRefractory, SpawnMaxRefractory, SpawnTODStart,
 									SpawnTODEnd, SpawnObjectPropertyItem, SpawnObjectPropertyName, SpawnProximityMessage, SpawnItemTriggerName, SpawnNoItemTriggerName,
 									SpawnSpeechTrigger, SpawnMobTriggerName, SpawnMobPropertyName, SpawnPlayerPropertyName, SpawnTriggerProbability,
-									SpawnSetPropertyItem, SpawnIsGroup, SpawnTODMode, SpawnKillReset, SpawnExternalTriggering, SpawnSequentialSpawning,
+									SpawnSetPropertyItem, SpawnIsGroup, SpawnIsGuardExempt, SpawnTODMode, SpawnKillReset, SpawnExternalTriggering, SpawnSequentialSpawning,
 									SpawnRegionName, SpawnAllowGhost, SpawnAllowNPC, SpawnSpawnOnTrigger, SpawnConfigFile, SpawnDespawnTime, SpawnSkillTrigger, SpawnSmartSpawning, SpawnWaypoint);
 								TheSpawn.m_DisableGlobalAutoReset=TickReset;
 								//TheSpawn.Group = SpawnIsGroup;\
@@ -7352,13 +7456,14 @@ public static void _TraceEnd(int index)
 			ds.Tables[SpawnTablePointName].Columns.Add("SpawnOnTrigger");
 			ds.Tables[SpawnTablePointName].Columns.Add("ConfigFile");
 			ds.Tables[SpawnTablePointName].Columns.Add("SmartSpawning");
+			ds.Tables[SpawnTablePointName].Columns.Add("IsGuardExempt");
 			ds.Tables[SpawnTablePointName].Columns.Add("TickReset");
 
 			ds.Tables[SpawnTablePointName].Columns.Add("WayPoint");
 			ds.Tables[SpawnTablePointName].Columns.Add("Team");
 			// amount for stacked item spawns
 			ds.Tables[SpawnTablePointName].Columns.Add("Amount");
-			ds.Tables[SpawnTablePointName].Columns.Add("IsGroup");
+			ds.Tables[SpawnTablePointName].Columns.Add("IsGroup");			
 			ds.Tables[SpawnTablePointName].Columns.Add("IsRunning");
 			ds.Tables[SpawnTablePointName].Columns.Add("IsHomeRangeRelative");
 			if (oldformat)
@@ -7520,6 +7625,9 @@ public static void _TraceEnd(int index)
 				dr["WayPoint"] = waystr;
 
 				dr["IsGroup"] = (bool)sp.m_Group;
+				
+				dr["IsGuardExempt"] = (bool)sp.m_IsGuardExempt;
+				
 				dr["IsRunning"] = (bool)sp.m_Running;
 				dr["IsHomeRangeRelative"] = (bool)sp.m_HomeRangeIsRelative;
 				if (oldformat)
@@ -7804,7 +7912,7 @@ public static void _TraceEnd(int index)
 
 			InitSpawn(0, 0, m_Width, m_Height, string.Empty, 0, defMinDelay, defMaxDelay, defDuration,
 				defProximityRange, defProximityTriggerSound, defAmount, defTeam, defHomeRange, defRelativeHome, new SpawnObject[0], defMinRefractory, defMaxRefractory,
-				defTODStart, defTODEnd, null, null, null, null, null, null, null, null, null, defTriggerProbability, null, defIsGroup, defTODMode,
+				defTODStart, defTODEnd, null, null, null, null, null, null, null, null, null, defTriggerProbability, null, defIsGroup, defIsGuardExempt, defTODMode,
 				defKillReset, false, -1, null, false, false, false, null, defDespawnTime, null, false, null);
 		}
 
@@ -7820,7 +7928,7 @@ public static void _TraceEnd(int index)
 
 			InitSpawn(0, 0, m_Width, m_Height, string.Empty, amount, TimeSpan.FromMinutes(minDelay), TimeSpan.FromMinutes(maxDelay), defDuration,
 				defProximityRange, defProximityTriggerSound, defAmount, team, homeRange, defRelativeHome, so, defMinRefractory, defMaxRefractory,
-				defTODStart, defTODEnd, null, null, null, null, null, null, null, null, null, defTriggerProbability, null, defIsGroup, defTODMode,
+				defTODStart, defTODEnd, null, null, null, null, null, null, null, null, null, defTriggerProbability, null, defIsGroup, defIsGuardExempt, defTODMode,
 				defKillReset, false, -1, null, false, false, false, null, defDespawnTime, null, false, null);
 		}
 
@@ -7836,7 +7944,7 @@ public static void _TraceEnd(int index)
 
 			InitSpawn(0, 0, m_Width, m_Height, string.Empty, amount, TimeSpan.FromMinutes(minDelay), TimeSpan.FromMinutes(maxDelay), defDuration,
 				defProximityRange, defProximityTriggerSound, defAmount, team, homeRange, defRelativeHome, so, defMinRefractory, defMaxRefractory,
-				defTODStart, defTODEnd, null, null, null, null, null, null, null, null, null, defTriggerProbability, null, defIsGroup, defTODMode,
+				defTODStart, defTODEnd, null, null, null, null, null, null, null, null, null, defTriggerProbability, null, defIsGroup, defIsGuardExempt, defTODMode,
 				defKillReset, false, -1, null, false, false, false, null, defDespawnTime, null, false, null);
 		}
 
@@ -7852,7 +7960,7 @@ public static void _TraceEnd(int index)
 
 			InitSpawn(0, 0, m_Width, m_Height, string.Empty, 1, defMinDelay, defMaxDelay, defDuration,
 				defProximityRange, defProximityTriggerSound, defAmount, defTeam, defHomeRange, defRelativeHome, so, defMinRefractory, defMaxRefractory,
-				defTODStart, defTODEnd, null, null, null, null, null, null, null, null, null, defTriggerProbability, null, defIsGroup, defTODMode,
+				defTODStart, defTODEnd, null, null, null, null, null, null, null, null, null, defTriggerProbability, null, defIsGroup, defIsGuardExempt, defTODMode,
 				defKillReset, false, -1, null, false, false, false, null, defDespawnTime, null, false, null);
 		}
 
@@ -7860,7 +7968,7 @@ public static void _TraceEnd(int index)
 			int proximityRange, int proximityTriggerSound, int amount, int team, int homeRange, bool isRelativeHomeRange, SpawnObject[] spawnObjects,
 			TimeSpan minRefractory, TimeSpan maxRefractory, TimeSpan todstart, TimeSpan todend, Item objectPropertyItem, string objectPropertyName, string proximityMessage,
 			string itemTriggerName, string noitemTriggerName, string speechTrigger, string mobTriggerName, string mobPropertyName, string playerPropertyName, double triggerProbability,
-			Item setPropertyItem, bool isGroup, TODModeType todMode, int killReset, bool externalTriggering, int sequentialSpawning, string regionName,
+			Item setPropertyItem, bool isGroup, bool IsGuardExempt, TODModeType todMode, int killReset, bool externalTriggering, int sequentialSpawning, string regionName,
 			bool allowghost, bool allownpc, bool spawnontrigger, string configfile, TimeSpan despawnTime, string skillTrigger, bool smartSpawning, WayPoint wayPoint)
 			: base(BaseItemId)
 		{
@@ -7868,7 +7976,7 @@ public static void _TraceEnd(int index)
 			InitSpawn(x, y, width, height, name, maxCount, minDelay, maxDelay, duration,
 				proximityRange, proximityTriggerSound, amount, team, homeRange, isRelativeHomeRange, spawnObjects, minRefractory, maxRefractory, todstart, todend,
 				objectPropertyItem, objectPropertyName, proximityMessage, itemTriggerName, noitemTriggerName, speechTrigger, mobTriggerName, mobPropertyName, playerPropertyName,
-				triggerProbability, setPropertyItem, isGroup, todMode, killReset, externalTriggering, sequentialSpawning, regionName, allowghost, allownpc, spawnontrigger, configfile,
+				triggerProbability, setPropertyItem, isGroup, IsGuardExempt, todMode, killReset, externalTriggering, sequentialSpawning, regionName, allowghost, allownpc, spawnontrigger, configfile,
 				despawnTime, skillTrigger, smartSpawning, wayPoint);
 		}
 
@@ -7877,7 +7985,7 @@ public static void _TraceEnd(int index)
 			int proximityRange, int proximityTriggerSound, int amount, int team, int homeRange, bool isRelativeHomeRange, SpawnObject[] objectsToSpawn,
 			TimeSpan minRefractory, TimeSpan maxRefractory, TimeSpan todstart, TimeSpan todend, Item objectPropertyItem, string objectPropertyName, string proximityMessage,
 			string itemTriggerName, string noitemTriggerName, string speechTrigger, string mobTriggerName, string mobPropertyName, string playerPropertyName, double triggerProbability,
-			Item setPropertyItem, bool isGroup, TODModeType todMode, int killReset, bool externalTriggering, int sequentialSpawning, string regionName, bool allowghost, bool allownpc, bool spawnontrigger,
+			Item setPropertyItem, bool isGroup, bool IsGuardExempt, TODModeType todMode, int killReset, bool externalTriggering, int sequentialSpawning, string regionName, bool allowghost, bool allownpc, bool spawnontrigger,
 			string configfile, TimeSpan despawnTime, string skillTrigger, bool smartSpawning, WayPoint wayPoint)
 		{
 
@@ -7895,6 +8003,7 @@ public static void _TraceEnd(int index)
 				m_SpawnRange = -1;
 			m_Running = true;
 			m_Group = isGroup;
+			m_IsGuardExempt = IsGuardExempt;
 
 			if ((name != null) && (name.Length > 0))
 				Name = name;
@@ -9292,6 +9401,21 @@ public static void _TraceEnd(int index)
 									m.OnBeforeSpawn(loc, map);
 								}
 
+								GuardedRegion region = Region.Find(loc, map).GetRegion(typeof(GuardedRegion)) as GuardedRegion;
+		   	
+								if (region != null)
+								{
+									if (!IsGuardExempt)
+									{
+										IsGuardExempt = true;
+									}
+									
+							   		if (m is BaseCreature bc)
+							   		{
+							   			bc.IsGuardExempt = true;
+							   		}
+								}
+								
 								m.MoveToWorld(loc, map);
 
 								if (m is BaseCreature)
@@ -11606,7 +11730,10 @@ public static void _TraceEnd(int index)
 		{
 			base.Serialize(writer);
 
-			writer.Write((int)31); // version
+			writer.Write((int)32); // version
+
+			// version 32
+			writer.Write(m_IsGuardExempt);
 			// version 31
 			writer.Write(m_DisableGlobalAutoReset);
 			// Version 30
@@ -11902,6 +12029,11 @@ public static void _TraceEnd(int index)
 
 			switch (version)
 			{
+				case 32:
+					{
+						m_IsGuardExempt = reader.ReadBool();
+						goto case 31;
+					}
 				case 31:
 					{
 						m_DisableGlobalAutoReset = reader.ReadBool();
