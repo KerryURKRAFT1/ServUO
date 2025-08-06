@@ -8,7 +8,7 @@ using Server.Items;
 
 namespace Server.Mobiles
 {
-	public class KillableWarriorGuard : KillableBaseGuard
+	public class KillableWarriorGuard : BaseKillableGuard
 	{
 		[Constructable]
 		public KillableWarriorGuard() : base( AIType.AI_Melee, FightMode.Closest, 15, 1, 0.1, 0.2 )

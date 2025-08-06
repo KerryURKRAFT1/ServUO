@@ -12,9 +12,17 @@ using Server.Regions;
 
 namespace Server.Mobiles
 {
-	public class KillableBaseGuard : BaseCreature
+	public class BaseKillableGuard : BaseCreature
 	{
-		public override bool IsEnemy(Mobile m) => m.Kills >= 5 || m.Karma <= -800 || m.Criminal;
+		public override bool IsEnemy(Mobile m)
+		{
+			if (m is BaseCreature bc && bc.IsGuardExempt)
+			{
+				return false;
+			}
+
+			return (m.Kills >= 5 || (!m.Player && m.Karma < 0) || m.Criminal);
+		}
 
 		public bool Bandaging = false;
 		public bool BlockTeleport = false;
@@ -24,9 +32,9 @@ namespace Server.Mobiles
 		
 		private Mobile m_Focus;
 		
-		public KillableBaseGuard(AIType ai, FightMode fm, int PR, int FR, double AS, double PS) : base( ai, fm, PR, FR, AS, PS )
+		public BaseKillableGuard(AIType ai, FightMode fm, int PR, int FR, double AS, double PS) : base( ai, fm, PR, FR, AS, PS )
 		{
-            SpeechHue = Utility.RandomDyedHue();
+			SpeechHue = Utility.RandomDyedHue();
 
 			Hue = Utility.RandomSkinHue();
 
@@ -189,42 +197,44 @@ namespace Server.Mobiles
 
 		public virtual void InitSkills()
 		{
-            SetSkill(SkillName.Anatomy, 120, 200);
-            SetSkill(SkillName.Tactics, 120, 200);
-            SetSkill(SkillName.Wrestling, 65, 120);
-            SetSkill(SkillName.Healing, 65, 75);
-            SetSkill(SkillName.MagicResist, 80, 120);
-            SetSkill(SkillName.DetectHidden, 120, 200);
+			SetSkill(SkillName.Anatomy, 120, 200);
+			SetSkill(SkillName.Tactics, 120, 200);
+			SetSkill(SkillName.Wrestling, 65, 120);
+			SetSkill(SkillName.Healing, 65, 75);
+			SetSkill(SkillName.MagicResist, 80, 120);
+			SetSkill(SkillName.DetectHidden, 120, 200);
 
-		    if (Utility.Random(1, 2) == 2)
-			OmniAI.SetRandomSkillSet(this, 70.0, 110.0);
+			if (Utility.Random(1, 2) == 2)
+			{
+				OmniAI.SetRandomSkillSet(this, 70.0, 110.0);
+			}
 		}
 		
 		public virtual void InitPots()
 		{
-		    for (int i = 0; i < 10; i++)
-		    {
+			for (int i = 0; i < 10; i++)
+			{
 				PackItem( new GreaterCurePotion() );
 				PackItem( new GreaterHealPotion() );
 				PackItem( new TotalRefreshPotion() );
-		    }
+			}
 	
-		    PackItem(new Bandage(Utility.RandomMinMax(30, 50)));
+			PackItem(new Bandage(Utility.RandomMinMax(30, 50)));
 		}
 		
 		protected override BaseAI ForcedAI
 		{
-		    get
-		    {
+			get
+			{
 				return new OmniAI(this);
-		    }
+			}
 		}
 
 		public override bool CanHeal { get { return true; } }
 	
 		public override void OnThink()
 		{
-		    base.OnThink();
+			base.OnThink();
 	
 			if ( this.Poisoned )
 			{
@@ -362,7 +372,7 @@ namespace Server.Mobiles
 		{
 			BlockCall = false;
 		}
-		        
+				
 		public override void OnAfterDelete()
 		{
 			if (m_AttackTimer != null)
@@ -382,115 +392,115 @@ namespace Server.Mobiles
 			base.OnAfterDelete();
 		}
 
-        public override bool CanBeHarmful(IDamageable target, bool message, bool ignoreOurBlessedness)
-        {
-        	if (target is Mobile m)
-        	{
-        	    if (m.Player)
-        	    {
-	        		if (!m.IsStaff() && IsEnemy(m) && !m.Blessed && !m.Hidden)
-	        		{
-	        			return true;
-	        		}
-	        		else
-	        		{
-	        			return false;
-	        		}
-        	    }
-        	    else if (m is BaseGuard || m is KillableBaseGuard || m is BaseVendor || m is PlayerVendor || m is TownCrier || m is SilverTrader)
-	            {
-	                return false;
-	            }
+		public override bool CanBeHarmful(IDamageable target, bool message, bool ignoreOurBlessedness)
+		{
+			if (target is Mobile m)
+			{
+				if (m.Player)
+				{
+					if (!m.IsStaff() && IsEnemy(m) && !m.Blessed && !m.Hidden)
+					{
+						return true;
+					}
+					else
+					{
+						return false;
+					}
+				}
+				else if (m is BaseKillableGuard || m is BaseVendor || m is PlayerVendor || m is TownCrier || m is SilverTrader)
+				{
+					return false;
+				}
 
-        	    if (target is BaseCreature bc && (bc.ControlMaster != null || bc.SummonMaster != null)) //kill pets that attack
+				if (target is BaseCreature bc && (bc.ControlMaster != null || bc.SummonMaster != null)) //kill pets that attack
 				{
 					return true;
 				}
-        	}
+			}
 
-            return base.CanBeHarmful(target, message, ignoreOurBlessedness);
-        }
+			return base.CanBeHarmful(target, message, ignoreOurBlessedness);
+		}
 
-        public override bool HandlesOnSpeech(Mobile from) { return true; }
+		public override bool HandlesOnSpeech(Mobile from) { return true; }
 
-        public override void OnSpeech(SpeechEventArgs e)
-        {
-            if (e.Handled || !e.Mobile.InRange(Location, 18))
-            {
-            	return;
-            }
+		public override void OnSpeech(SpeechEventArgs e)
+		{
+			if (e.Handled || !e.Mobile.InRange(Location, 18))
+			{
+				return;
+			}
 
-            if (e.Speech.ToLower().Contains("guard") || e.Speech.ToLower().Contains("help"))
-            {
-                Direction = GetDirectionTo(e.Mobile);
+			if (e.Speech.ToLower().Contains("guard") || e.Speech.ToLower().Contains("help"))
+			{
+				Direction = GetDirectionTo(e.Mobile);
 
-                if (e.Mobile.Combatant != null && CanBeHarmful(e.Mobile.Combatant as Mobile))
-                {
-                    Say(speech[Utility.Random(speech.Length)]);
-                                        
-                    m_Focus = e.Mobile.Combatant as Mobile;
-                }
-                else if (CanBeHarmful(e.Mobile))
-                {
-                    Say(speech[Utility.Random(speech.Length)]);
-                                        
-                    m_Focus = e.Mobile;
-                }
-                else
-                {
-                    Emote("looks around");
-                                        
-                    m_Focus = null;;
-                }
-            }
-        }
+				if (e.Mobile.Combatant != null && CanBeHarmful(e.Mobile.Combatant as Mobile))
+				{
+					Say(speech[Utility.Random(speech.Length)]);
+										
+					m_Focus = e.Mobile.Combatant as Mobile;
+				}
+				else if (CanBeHarmful(e.Mobile))
+				{
+					Say(speech[Utility.Random(speech.Length)]);
+										
+					m_Focus = e.Mobile;
+				}
+				else
+				{
+					Emote("looks around");
+										
+					m_Focus = null;;
+				}
+			}
+		}
 
 		public override bool OnBeforeDeath()
-        {
+		{
 			PlayerMobile pm = Combatant as PlayerMobile;
 			
 			BaseCreature m = Combatant as BaseCreature;
-        	
-            if (pm != null)
-            {
-            	pm.Kills += 1;
-            }
-           	else if (m != null && m.ControlMaster is PlayerMobile cm)
-           	{
-           		cm.Kills += 1;
-            }
-            
-            if (Mounted)
-            {
-	           	KillableGuardMount mount = Mount as KillableGuardMount;
-            	
-	           	if (mount != null)
-	           	{
-		           	mount.Rider = null;
-	            	
-	            	mount.Name = "a murdered guard's horse";
+			
+			if (pm != null)
+			{
+				pm.Kills += 1;
+			}
+		   	else if (m != null && m.ControlMaster is PlayerMobile cm)
+		   	{
+		   		cm.Kills += 1;
+			}
+			
+			if (Mounted)
+			{
+			   	KillableGuardMount mount = Mount as KillableGuardMount;
+				
+			   	if (mount != null)
+			   	{
+				   	mount.Rider = null;
+					
+					mount.Name = "a murdered guard's horse";
 	
 					mount.IdleTime = DateTime.UtcNow + TimeSpan.FromMinutes(60);
-	           	}
-            }
-            		                        				            
-            return true;
-        }
+			   	}
+			}
+																		
+			return true;
+		}
 
-        public static void Spawn(Mobile caller, Mobile target, int amount)
-        {
+		public static void Spawn(Mobile caller, Mobile target, int amount)
+		{
 			int tomake = amount;
 			
-        	if (target != null && !target.Deleted)
-            {
-	            while (tomake-- > 0)
-	            {
-	            	caller.Region.MakeGuard(target, amount);
-	            }
-        	}
-        }
+			if (target != null && !target.Deleted)
+			{
+				while (tomake-- > 0)
+				{
+					caller.Region.MakeGuard(target, amount);
+				}
+			}
+		}
 
-        public KillableBaseGuard( Serial serial ) : base( serial )
+		public BaseKillableGuard( Serial serial ) : base( serial )
 		{
 		}
 
@@ -535,9 +545,9 @@ namespace Server.Mobiles
 		
 		private class BandageTimer : Timer
 		{
-			private KillableBaseGuard m_Owner;
+			private BaseKillableGuard m_Owner;
 
-			public BandageTimer( KillableBaseGuard owner ) : base( TimeSpan.FromSeconds( Utility.RandomMinMax(4,7) ) )
+			public BandageTimer( BaseKillableGuard owner ) : base( TimeSpan.FromSeconds( Utility.RandomMinMax(4,7) ) )
 			{
 				m_Owner = owner;
 				
@@ -552,9 +562,9 @@ namespace Server.Mobiles
 		
 		public class AttackTimer : Timer
 		{
-			private readonly KillableBaseGuard m_Owner;
+			private readonly BaseKillableGuard m_Owner;
 
-			public AttackTimer(KillableBaseGuard owner) : base(TimeSpan.FromSeconds(1.0), TimeSpan.FromSeconds(1.0))
+			public AttackTimer(BaseKillableGuard owner) : base(TimeSpan.FromSeconds(1.0), TimeSpan.FromSeconds(1.0))
 			{
 				m_Owner = owner;
 				
@@ -581,24 +591,27 @@ namespace Server.Mobiles
 				
 				m_Owner.Stam = m_Owner.StamMax;
 
-               	GuardedRegion region = m_Owner.Region.GetRegion(typeof(GuardedRegion)) as GuardedRegion;
-               	
-               	if (region != null && region.Disabled)
-               	{
+			   	GuardedRegion region = m_Owner.Region.GetRegion(typeof(GuardedRegion)) as GuardedRegion;
+			   	
+			   	if (region != null && region.Disabled)
+			   	{
 					Effects.SendLocationParticles(EffectItem.Create(m_Owner.Location, m_Owner.Map, EffectItem.DefaultDuration), 0x3728, 10, 10, 2023);
-					            	
-	            	m_Owner.Delete();
+									
+					m_Owner.Delete();
 
-	            	Stop();
-               	}
-
+					Stop();
+			   	}
+				
 				Mobile target = m_Owner.Focus;
 
 				if (target == null)
 				{
 					Stop();
+
+					return;
 				}
-				else if (target.Deleted || !target.Alive)
+
+				if (target.Deleted || !target.Alive)
 				{
 					m_Owner.Focus = null;
 					
@@ -606,7 +619,8 @@ namespace Server.Mobiles
 					
 					return;
 				}
-				else if (!m_Owner.CanBeHarmful(target) || region == null)
+				
+				if (!m_Owner.CanBeHarmful(target) || region == null)
 				{
 					m_Owner.Focus = null;
 					
@@ -616,13 +630,14 @@ namespace Server.Mobiles
 					
 					return;
 				}
-				else if (m_Owner.Weapon is Fists)
+				
+				if (m_Owner.Weapon is Fists)
 				{
 					Effects.SendLocationParticles(EffectItem.Create(m_Owner.Location, m_Owner.Map, EffectItem.DefaultDuration), 0x3728, 10, 10, 2023);
-					            	
-	            	m_Owner.Delete();
+									
+					m_Owner.Delete();
 
-	            	Stop();
+					Stop();
 					
 					return;
 				}
@@ -654,21 +669,24 @@ namespace Server.Mobiles
 
 			private void TeleportTo(Mobile target)
 			{
-				Point3D from = m_Owner.Location;
+				if (m_Owner != null && !m_Owner.Deleted && target != null)
+				{
+					Point3D from = m_Owner.Location;
+					
+					Point3D to = target.Location;
+	
+					m_Owner.Location = to;
+	
+					Effects.SendLocationParticles(EffectItem.Create(from, m_Owner.Map, EffectItem.DefaultDuration), 0x3728, 10, 10, 2023);
+					
+					Effects.SendLocationParticles(EffectItem.Create(to, m_Owner.Map, EffectItem.DefaultDuration), 0x3728, 10, 10, 5023);
+	
+					m_Owner.PlaySound(0x1FE);
+					
+					m_Owner.BlockTeleport = true;
 				
-				Point3D to = target.Location;
-
-				m_Owner.Location = to;
-
-				Effects.SendLocationParticles(EffectItem.Create(from, m_Owner.Map, EffectItem.DefaultDuration), 0x3728, 10, 10, 2023);
-				
-				Effects.SendLocationParticles(EffectItem.Create(to, m_Owner.Map, EffectItem.DefaultDuration), 0x3728, 10, 10, 5023);
-
-				m_Owner.PlaySound(0x1FE);
-				
-				m_Owner.BlockTeleport = true;
-				
-				Timer.DelayCall (TimeSpan.FromSeconds(30.0), () => EndLock());
+					Timer.DelayCall (TimeSpan.FromSeconds(30.0), () => EndLock());
+				}
 			}
 
 			private void EndLock()
@@ -677,99 +695,99 @@ namespace Server.Mobiles
 			}
 		}
 
-        public class IdleTimer : Timer
+		public class IdleTimer : Timer
 		{
-			private readonly KillableBaseGuard m_Owner;
+			private readonly BaseKillableGuard m_Owner;
 			
 			private readonly DateTime m_End;
 			
 			private int m_Stage;
 			
-			public IdleTimer(KillableBaseGuard owner) : base(TimeSpan.FromSeconds(5.0), TimeSpan.FromSeconds(5.0))
+			public IdleTimer(BaseKillableGuard owner) : base(TimeSpan.FromSeconds(5.0), TimeSpan.FromSeconds(5.0))
 			{
 				m_Owner = owner;
 				
-				m_End = DateTime.UtcNow + TimeSpan.FromMinutes(Utility.RandomMinMax(5,20));
+				m_End = DateTime.UtcNow + TimeSpan.FromMinutes(Utility.RandomMinMax(1, 10));
 
 				Priority = TimerPriority.FiveSeconds;
 			}
 
 			protected override void OnTick()
 			{
-	            if (m_Owner.Deleted)
+				if (m_Owner.Deleted)
 				{
 					return;
 				}
-               	
-               	GuardedRegion region = m_Owner.Region.GetRegion(typeof(GuardedRegion)) as GuardedRegion;
-               	
-               	if (region == null || (region != null && region.Disabled))
-               	{
+			   	
+			   	GuardedRegion region = m_Owner.Region.GetRegion(typeof(GuardedRegion)) as GuardedRegion;
+			   	
+			   	if (region == null || (region != null && region.Disabled))
+			   	{
 					Effects.SendLocationParticles(EffectItem.Create(m_Owner.Location, m_Owner.Map, EffectItem.DefaultDuration), 0x3728, 10, 10, 2023);
-					            	                	
-	            	m_Owner.Delete();
+														
+					m_Owner.Delete();
 
-                	Stop();
-               	}
+					Stop();
+			   	}
 
-	            if ((m_Stage++ % 20) == 0 || !m_Owner.Move(m_Owner.Direction))
+				if ((m_Stage++ % 20) == 0 || !m_Owner.Move(m_Owner.Direction))
 				{
 					m_Owner.Direction = (Direction)Utility.Random(8);
 				}
 
 				if (m_Owner.Mounted)
 				{
-	            	KillableGuardMount mount = m_Owner.Mount as KillableGuardMount;
-        	
-	            	mount.Rider = null;
-            	
-	            	mount.Delete();
-	            }
+					KillableGuardMount mount = m_Owner.Mount as KillableGuardMount;
+			
+					mount.Rider = null;
+				
+					mount.Delete();
+				}
 
-	            if (m_End < DateTime.UtcNow)
+				if (m_End < DateTime.UtcNow)
 				{
 					Effects.SendLocationParticles(EffectItem.Create(m_Owner.Location, m_Owner.Map, EffectItem.DefaultDuration), 0x3728, 10, 10, 2023);
-					            	
-	            	m_Owner.Delete();
+									
+					m_Owner.Delete();
 				}
 				
 				m_Owner.Focus = null;
 				
 				m_Owner.Combatant = null;
 
-               	IPooledEnumerable eable = m_Owner.GetMobilesInRange(18);
+			   	IPooledEnumerable eable = m_Owner.GetMobilesInRange(18);
 	
-	            foreach (Mobile m in eable)
-	            {
-	            	if (!m.Deleted && m.Alive && m_Owner.IsEnemy(m) && !m.IsStaff())
-	                {
-	                	m_Owner.Focus = m;
-	                	
-	                	Stop();
-	                }
-	            }
+				foreach (Mobile m in eable)
+				{
+					if (!m.Deleted && m.Alive && m_Owner.IsEnemy(m) && !m.IsStaff())
+					{
+						m_Owner.Focus = m;
+						
+						Stop();
+					}
+				}
 	
-	            eable.Free();
+				eable.Free();
 			}
-        }
-        
-        static string[] speech =
-        {
-            "To the fight!",
-            "To arms!",
-            "Attack!",
-            "The battle is on!",
-            "To your weapons!",
-            "I have my eye on my enemy!",
-            "Time to die!",
-            "Nothing walks away!",
-            "I have sight of my enemy!",
-            "You will not prevail!",
-            "To my side!",
-            "We must defend our land!",
-            "Fight for our people!",
-            "I see them!",
-            "Destroy them all!"
-        };
+		}
+		
+		static string[] speech =
+		{
+			"To the fight!",
+			"To arms!",
+			"Attack!",
+			"The battle is on!",
+			"To your weapons!",
+			"I have my eye on my enemy!",
+			"Time to die!",
+			"Nothing walks away!",
+			"I have sight of my enemy!",
+			"You will not prevail!",
+			"To my side!",
+			"We must defend our land!",
+			"Fight for our people!",
+			"I see them!",
+			"Destroy them all!"
+		};
 	}
 }
