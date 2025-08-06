@@ -33,13 +33,6 @@ namespace Server.Mobiles
                 return true;
             }
         }
-        public override bool ClickTitle
-        {
-            get
-            {
-                return true;
-            }
-        }
         public override VendorShoeType ShoeType
         {
             get

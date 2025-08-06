@@ -27,13 +27,6 @@ namespace Server.Mobiles
                 return true;
             }
         }
-        public override bool ClickTitle
-        {
-            get
-            {
-                return false;
-            }
-        }// Do not display 'the noble' when single-clicking
         public override void InitOutfit()
         {
             if (this.Female)

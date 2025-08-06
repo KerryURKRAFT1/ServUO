@@ -781,13 +781,6 @@ namespace Server.Engines.Quests
                 return true;
             }
         }
-        public override bool ClickTitle
-        {
-            get
-            {
-                return false;
-            }
-        }
         public override void InitOutfit()
         {
             if (this.Female)
@@ -852,13 +845,6 @@ namespace Server.Engines.Quests
                 return true;
             }
         }
-        public override bool ClickTitle
-        {
-            get
-            {
-                return false;
-            }
-        }
         public override void InitOutfit()
         {
             this.AddItem(new Robe(this.GetRandomHue()));
@@ -903,13 +889,6 @@ namespace Server.Engines.Quests
         {
         }
 
-        public override bool ClickTitle
-        {
-            get
-            {
-                return false;
-            }
-        }
         public override void InitOutfit()
         {
             if (this.Female)
@@ -973,13 +952,6 @@ namespace Server.Engines.Quests
         {
         }
 
-        public override bool ClickTitle
-        {
-            get
-            {
-                return false;
-            }
-        }
         public override void InitOutfit()
         {
             if (this.Female)
@@ -1045,13 +1017,6 @@ namespace Server.Engines.Quests
                 return true;
             }
         }
-        public override bool ClickTitle
-        {
-            get
-            {
-                return false;
-            }
-        }
         public override void InitOutfit()
         {
             if (this.Female)
@@ -1110,13 +1075,6 @@ namespace Server.Engines.Quests
         {
         }
 
-        public override bool ClickTitle
-        {
-            get
-            {
-                return false;
-            }
-        }
         public override void InitOutfit()
         {
             if (this.Female)
@@ -1171,13 +1129,6 @@ namespace Server.Engines.Quests
         {
         }
 
-        public override bool ClickTitle
-        {
-            get
-            {
-                return false;
-            }
-        }
         public override void InitOutfit()
         {
             if (this.Female)
@@ -1269,13 +1220,6 @@ namespace Server.Engines.Quests
         {
         }
 
-        public override bool ClickTitle
-        {
-            get
-            {
-                return false;
-            }
-        }
         public override bool CanTeach
         {
             get

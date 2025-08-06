@@ -30,13 +30,6 @@ namespace Server.Mobiles
                 return NpcGuild.TailorsGuild;
             }
         }
-        public override bool ClickTitle
-        {
-            get
-            {
-                return false;
-            }
-        }
         public override void InitBody()
         {
             this.InitStats(100, 100, 100);

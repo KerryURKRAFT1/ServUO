@@ -29,13 +29,6 @@ namespace Server.Mobiles
                 return true;
             }
         }
-        public override bool ClickTitle
-        {
-            get
-            {
-                return false;
-            }
-        }// Do not display 'the mage' when single-clicking
         public override void InitOutfit()
         {
             this.AddItem(new Robe(GetRandomHue()));

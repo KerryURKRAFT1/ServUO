@@ -26,13 +26,6 @@ namespace Server.Engines.Quests.Doom
                 return 6159;
             }
         }// Ask about Chyloth
-        public override bool ClickTitle
-        {
-            get
-            {
-                return true;
-            }
-        }
         public override bool IsActiveVendor
         {
             get

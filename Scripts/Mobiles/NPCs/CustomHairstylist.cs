@@ -84,7 +84,6 @@ namespace Server.Mobiles
 			: base(serial)
 		{ }
 
-		public override bool ClickTitle { get { return false; } }
 		public override bool IsActiveBuyer { get { return false; } }
 		public override bool IsActiveSeller { get { return true; } }
 		public override VendorShoeType ShoeType { get { return Utility.RandomBool() ? VendorShoeType.Shoes : VendorShoeType.Sandals; } }

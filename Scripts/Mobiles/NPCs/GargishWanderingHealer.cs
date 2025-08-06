@@ -31,13 +31,6 @@ namespace Server.Mobiles
                 return true;
             }
         }
-        public override bool ClickTitle
-        {
-            get
-            {
-                return false;
-            }
-        }// Do not display title in OnSingleClick
         public override bool CheckTeach(SkillName skill, Mobile from)
         {
             if (!base.CheckTeach(skill, from))

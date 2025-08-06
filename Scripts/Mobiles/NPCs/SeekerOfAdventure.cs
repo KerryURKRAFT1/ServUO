@@ -27,13 +27,6 @@ namespace Server.Mobiles
         {
         }
 
-        public override bool ClickTitle
-        {
-            get
-            {
-                return false;
-            }
-        }// Do not display 'the seeker of adventure' when single-clicking
         public override string[] GetPossibleDestinations()
         {
             if (Core.ML)

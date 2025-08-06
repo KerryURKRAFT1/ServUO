@@ -23,13 +23,6 @@ namespace Server.Mobiles
                 return true;
             }
         }
-        public override bool ClickTitle
-        {
-            get
-            {
-                return false;
-            }
-        }// Do not display 'the messenger' when single-clicking
         public override void InitOutfit()
         {
             if (this.Female)

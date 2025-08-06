@@ -24,7 +24,6 @@ namespace Server.Mobiles
 
 		public override bool IsActiveVendor { get { return false; } }
 		public override NpcGuild NpcGuild { get { return NpcGuild.None; } }
-		public override bool ClickTitle { get { return false; } }
 
 		public override void InitOutfit()
 		{

@@ -39,13 +39,6 @@ namespace Server.Engines.Quests.Haven
                 return false;
             }
         }
-        public override bool ClickTitle
-        {
-            get
-            {
-                return true;
-            }
-        }
         public override bool CanTeach
         {
             get
