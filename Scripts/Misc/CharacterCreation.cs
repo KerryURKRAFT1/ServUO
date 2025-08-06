@@ -49,7 +49,7 @@ namespace Server.Misc
             
             PackItem(new SpellbookFull());             
             PackItem(new Runebook());             
-        }
+         }
 
         private static void AddShirt(Mobile m, int shirtHue)
         {
