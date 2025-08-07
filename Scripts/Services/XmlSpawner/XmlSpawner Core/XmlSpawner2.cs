@@ -2166,7 +2166,7 @@ namespace Server.Mobiles
 
 			if (substrings.Length > 0)
 			{
-				sb.AppendFormat("Spawner {0}", substrings[0]);
+				sb.AppendFormat("Spawner [{0}]", substrings[0]);
 			}
 			else
 			{

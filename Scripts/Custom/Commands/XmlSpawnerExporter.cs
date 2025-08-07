@@ -10,14 +10,16 @@ using Server.Engines.Quests;
 namespace Server.Misc
 {
 	class XmlSpawnerExporter
-	{
-		public List<(string maps, string regs, XmlSpawner spawners)> SpawnerEntry = new List<(string, string, XmlSpawner)>();
-				
+	{			
 		private static bool m_Enabled = false; //true: On WorldSave
 		
 		public static string RootPath = XmlSpawner.XmlSpawnDir;
 		
 		private static List<SpawnerEntries> m_SpawnList;
+
+		private static List<string> m_RegionList;
+
+		private static List<string> m_MapList;
 
 		public static void Initialize()
 		{
@@ -51,6 +53,10 @@ namespace Server.Misc
 		{
             m_SpawnList = new List<SpawnerEntries>();
 
+            m_RegionList = new List<string>();
+            
+            m_MapList = new List<string>();
+
             string date = DateTime.Now.ToString ("[yyyy-MM-dd] [HH-mm-ss]");
 
 			string datefolder = Path.Combine (RootPath, date);
@@ -80,8 +86,13 @@ namespace Server.Misc
             	if (items[i] is XmlSpawner)
             	{
 	            	XmlSpawner sp = items[i] as XmlSpawner;
-	 				
-					if (sp != null && !sp.Deleted && !(sp.RootParent is Mobile))
+	 							
+					if (!m_MapList.Contains(sp.Map.ToString()))
+				    {
+						m_MapList.Add(sp.Map.ToString());
+				    }
+					
+	            	if (sp != null && !sp.Deleted && !(sp.RootParent is Mobile))
 					{
 						if (DoRegionFix(sp))
 						{
@@ -95,7 +106,7 @@ namespace Server.Misc
             {            		
             	string region = GetRegionName(xml[i]);
                 
-            	xml[i].Name = String.Format ("[{0}] {1}",i ,TypeList(xml[i]));
+            	xml[i].Name = String.Format ("{0}", TypeList(xml[i]));
 				
 				m_SpawnList.Add (new SpawnerEntries( xml[i].Map.ToString(), region, xml[i]));
 			}
@@ -195,37 +206,73 @@ namespace Server.Misc
                 }
 			}
 			
+			if (!m_RegionList.Contains(region))
+		    {
+		    	m_RegionList.Add(region);
+		    }
+
 			return region;
  		}
  		
  		public static void ExportSpawns(string path)
 		{
- 			foreach (SpawnerEntries entry in m_SpawnList)
+ 			for (int k = 0; k < m_MapList.Count; k++)
 			{
-				string mapfolder = Path.Combine (path, entry.Maps);
-
+ 				string map = m_MapList[k];
+ 				
+ 				string mapfolder = Path.Combine (path, map);
+		
 				if (!Directory.Exists(mapfolder))
 				{
 	            	Directory.CreateDirectory (mapfolder);
 	            }
-
-				string regfolder = Path.Combine (mapfolder, entry.Regs);
- 
-				if (!Directory.Exists (regfolder))
+			
+	 			for (int j = 0; j < m_RegionList.Count; j++)
 				{
-	            	Directory.CreateDirectory (regfolder);
-	            }
-				
-				List<XmlSpawner> xml = new List<XmlSpawner>();
-				
-				xml.Add (entry.Spawners);
-				
-				XmlSpawner.SaveSpawnList (null, xml, Path.Combine( regfolder, String.Format("{0}.xml", entry.Spawners.Name )), false, false);
- 			}
-		}
+	 				string region = m_RegionList[j];
+	 				
+	 				int num = 1;
+	 				
+					List<XmlSpawner> xml = new List<XmlSpawner>();
+	
+	 				for (int i = 0; i < m_SpawnList.Count; i++)
+					{
+		 				SpawnerEntries entry = m_SpawnList[i];
+													
+						if (entry.Regs == region && entry.Maps == map)
+						{						
+							entry.Spawners.Name = String.Format("{0} {1}", num++, entry.Spawners.Name);
+							
+							xml.Add (entry.Spawners);
+						}
+		 			}
+						
+	 				if (num > 1)
+	 				{	 					
+			            xml.Sort(InternalComparer.Instance);
+
+	 					XmlSpawner.SaveSpawnList (null, xml, Path.Combine( mapfolder, String.Format("{0}.xml", region )), false, false);
+	 				}
+	 			}
+			}
+ 		} 		
 	}
 	
-	public class SpawnerEntries
+    public class InternalComparer : IComparer<XmlSpawner>
+    {
+        public static readonly IComparer<XmlSpawner> Instance = new InternalComparer();
+        
+        public InternalComparer()
+        {
+        }
+
+        public int Compare(XmlSpawner x, XmlSpawner y)
+        {
+        	return Insensitive.Compare(x.Name, y.Name);
+        }
+    }
+	
+    public class SpawnerEntries
 	{
 		private string m_Maps;
 		private string m_Regs;
