@@ -3469,8 +3469,6 @@ public ContextMenu ContextMenu
 				{
 					return false;
 				}
-
-				DisruptiveAction();
 			}
 
 			if (m_NetState != null)
