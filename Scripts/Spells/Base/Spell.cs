@@ -572,6 +572,8 @@ namespace Server.Spells
 				return;
 			}
 			
+            m_Caster.DisruptiveAction();
+
 			if (IsCasting || (m_State == SpellState.Sequencing && !firstCircle && this is MagerySpell && ((MagerySpell)this).Circle != SpellCircle.First))
 			{
 				m_Disturbed = true;
@@ -654,7 +656,7 @@ namespace Server.Spells
 			m_ObjectTargeted = target;
 			
 			m_StartCastTime = Core.TickCount;
-
+					
 			if (!m_Caster.CheckAlive())
 			{
 				return false;
@@ -759,6 +761,8 @@ namespace Server.Spells
             {
             	SpellHelper.Turn(m_Caster, m_ObjectTargeted);
             }
+			
+            m_Caster.DisruptiveAction();
 		}
 
 		public virtual void GetCastSkills(out double min, out double max)
