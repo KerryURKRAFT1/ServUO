@@ -27,7 +27,8 @@ using Server.Mobiles;
 using Server.Network;
 using Server.Prompts;
 using Server.Targeting;
-
+using Server.Collections;
+using System.Reflection;
 #endregion
 
 namespace Server
@@ -809,6 +810,8 @@ namespace Server
 		private DateTime m_LastIntGain;
 		private DateTime m_LastDexGain;
 		private Race m_Race;
+		private List<object> m_LosCurrent = new List<object>();
+        private TemporalCache<Object,Object> m_LosRecent;
         #endregion
 
         private static readonly TimeSpan WarmodeSpamCatch = TimeSpan.FromSeconds((Core.SE ? 1.0 : 0.5));
@@ -1119,6 +1122,10 @@ namespace Server
 
 		public virtual void OnAosSingleClick(Mobile from)
 		{
+            if( from.m_LosRecent.ContainsKey( this ) ) 
+            {
+                return;
+            }
 			ObjectPropertyList opl = PropertyList;
 
 			if (opl.Header > 0)
@@ -4332,6 +4339,7 @@ public ContextMenu ContextMenu
 
 						if (!state.Mobile.CanSee(this))
 						{
+                            state.Mobile.RemoveLos( this );
 							state.Send(RemovePacket);
 						}
 					}
@@ -7258,13 +7266,17 @@ public ContextMenu ContextMenu
 		{
 			if (m_Map != null)
 			{
+				Packet p = null;
 				var eable = m_Map.GetClientsInRange(m_Location);
 
 				foreach (NetState state in eable)
 				{
 					if (state != m_NetState && (everyone || !state.Mobile.CanSee(this)))
 					{
-						state.Send(RemovePacket);
+//						state.Send(RemovePacket);
+                        if ( p == null ) p = this.RemovePacket;
+                        state.Mobile.RemoveLos( this );
+                        state.Send( p );
 					}
 				}
 
@@ -7282,6 +7294,7 @@ public ContextMenu ContextMenu
 
 				foreach (IEntity o in eable)
 				{
+                    RemoveLos( (object)o );
 					if (o is Mobile)
 					{
 						Mobile m = (Mobile)o;
@@ -8874,6 +8887,8 @@ public ContextMenu ContextMenu
 					{
 						state.Send(MobileIncoming.Create(state, state.Mobile, this));
 
+                        state.Mobile.RemoveLos( this );
+
 						if (IsDeadBondedPet)
 						{
 							state.Send(new BondedStatus(0, m_Serial, 1));
@@ -9047,69 +9062,229 @@ public ContextMenu ContextMenu
 
 		public virtual bool CanSee(Item item)
 		{
-			if (m_Map == Map.Internal)
-			{
-				return false;
-			}
-			else if (item.Map == Map.Internal)
-			{
-				return false;
-			}
+            bool canSee = true;
 
-			if (item.Parent != null)
-			{
-				if (item.Parent is Item)
-				{
-					Item parent = item.Parent as Item;
+            if (m_Deleted || item.Deleted || m_Map == Map.Internal || item.Map == Map.Internal || m_Map != item.Map) 
+            {
+            	canSee = false;
+            }
 
-					if (!(CanSee(parent) && parent.IsChildVisibleTo(this, item)))
-					{
-						return false;
-					}
-				}
-				else if (item.Parent is Mobile)
-				{
-					if (!CanSee((Mobile)item.Parent))
-					{
-						return false;
-					}
-				}
-			}
+            else if (item.Parent != null)
+            {
+                if (item.Parent is Item)
+                {
+                    if (!CanSee((Item) item.Parent)) 
+                    {
+                    	canSee = false;
+                    }                    
+                    else 
+                    {
+                    	canSee = (m_AccessLevel > AccessLevel.Counselor || item.Visible);
+                    }                                                                                               
+                }
+                else if (item.Parent is Mobile)
+                {
+                    if (!CanSee((Mobile) item.Parent)) 
+                    {
+                    	canSee = false;
+                    }
+                    else 
+                    {
+                    	canSee = m_AccessLevel > AccessLevel.Counselor || item.Visible;
+                    }
+                }
+            }
+            else if ( item is BankBox )
+            {
+                BankBox box = item as BankBox;
 
-			if (item is BankBox)
-			{
-				BankBox box = item as BankBox;
+                if ( box != null && m_AccessLevel <= AccessLevel.Counselor && ( box.Owner != this || !box.Opened ) )
+                {
+                	canSee = false;
+                }
+            }
+            else if ( item is SecureTradeContainer )
+            {
+                SecureTrade trade = ((SecureTradeContainer) item).Trade;
 
-				if (box != null && IsPlayer() && (box.Owner != this || !box.Opened))
-				{
-					return false;
-				}
-			}
-			else if (item is SecureTradeContainer)
-			{
-				SecureTrade trade = ((SecureTradeContainer)item).Trade;
+                if (trade != null && trade.From.Mobile != this && trade.To.Mobile != this)
+                {
+                	canSee = false;
+                }
+            }
+            else if (!Utility.InRange (this.Location, item.Location, 15)) 
+            {
+                canSee = false; 
+            }
+            else 
+            {
+                canSee = m_AccessLevel > AccessLevel.Counselor || (item.Visible && CheckLos (item));
+            }
 
-				if (trade != null && trade.From.Mobile != this && trade.To.Mobile != this)
-				{
-					return false;
-				}
-			}
-
-			return !item.Deleted && item.Map == m_Map && (item.Visible || IsStaff());
+            return canSee;
 		}
 
 		public virtual bool CanSee(Mobile m)
 		{
-			if (m_Deleted || m.m_Deleted || m_Map == Map.Internal || m.m_Map == Map.Internal)
-			{
-				return false;
-			}
+           bool canSee = true;
 
-			return this == m ||
-				   (m.m_Map == m_Map && (!m.Hidden || (IsStaff() && m_AccessLevel >= m.AccessLevel)) &&
-					((m.Alive || (Core.SE && Skills.SpiritSpeak.Value >= 100.0)) || !Alive || IsStaff() || m.Warmode));
-		}
+            if (this == m) 
+            {
+            	canSee = true;
+            }
+            else if (!Utility.InRange (this.Location, m.Location, 15)) 
+            {
+            	canSee = false;
+            }
+            else if (m_Deleted || m.m_Deleted || m_Map == Map.Internal || m.m_Map == Map.Internal || this.m_Map != m.m_Map) 
+            {
+            	canSee = false;
+            }
+            else if (this.AccessLevel > AccessLevel.Player && (this.AccessLevel >= m.AccessLevel || this.AccessLevel >= AccessLevel.Administrator)) 
+            {
+            	canSee = true;
+            }
+            else 
+            {
+            	canSee = !m.Hidden && ((m.Alive || (Core.SE && Skills.SpiritSpeak.Value >= 100.0) || !this.Alive || m.Warmode) && CheckLos(m));
+            }
+            
+            return canSee;
+        }
+		
+        public bool CheckLos( IEntity o )
+        {
+            Point3D viewer = this.Location;
+            
+            Point3D target = o.Location;
+            
+            if ( o is Item )
+            {
+                Item item = (Item) o;
+                
+                if( !item.Movable )
+                {
+                    if( LOS.Values.Corpse.IsInstanceOfType( item ) )
+                    {
+                        PropertyInfo info = LOS.Values.Corpse.GetProperty("Owner");
+                        
+                        Mobile owner = (Mobile) info.GetValue( item, null );
 
+                        if( owner == this ) return true;
+                    }
+                    else 
+                    {
+                    	return true;
+                    }
+                }
+                if( LOS.Config.GetInstance().NotLossed( item.ItemID | 0x4000 ) )
+                {
+                    return true;
+                }
+                if( !LOS.Config.GetInstance().Items )                     
+                {
+                    return true;  
+                }
+            }
+            else if (o is Mobile)
+            {
+                if (this.Player)
+                {
+                    if (!LOS.Config.GetInstance().Mobiles)  
+                    {
+                        return true;  // if mobile is off, we can see all mobiles
+                    }
+                }
+                else
+                {
+                    if (!LOS.Config.GetInstance().LosForMobs)  
+                    {
+                        return true;  // if this is an npc mob, and los for npcs if off, the npc mob sees all
+                    }
+                    else if (Utility.InRange (viewer, target, 7))
+                    {
+                        return true;
+                    }
+                }
+            }
+            if (!LOS.Config.GetInstance().FacetOn(this.Map.Name))
+            {
+                return true;
+            }
+            if (!LOS.Config.GetInstance().On)                                           
+            {
+                return true;  
+            }
+            
+            if (LOS.Config.GetInstance().Symmetric)
+            {
+                return this.Map.LOS.Visible(viewer, target) && this.Map.LOS.Visible(target, viewer);
+            }
+            else
+            {
+                return this.Map.LOS.Visible(viewer, target);
+            }
+        }
+        
+        public void InvalidateLos()
+        {
+            if (m_LosCurrent.Count > 0)
+            {
+            	List<object> culls = new List<object>();
+
+                foreach (Object o in m_LosCurrent)
+                {
+                	if ((o is Mobile m && !CanSee(m)) || (o is Item i && !CanSee(i)))
+                    {
+	                   	culls.Add (o);
+                    }
+                }
+
+                foreach (Object o in culls)
+                {
+                    RemoveLos(o);
+                    
+                    Packet p = o is Mobile ? ((Mobile)o).RemovePacket : ((Item)o).RemovePacket;
+                    
+                    NetState state = this.NetState;
+                    
+                    if ( state != null )
+                    {
+                        state.Send( p );
+                    }
+                }
+            }
+        }
+    
+        public bool InLos( Object o )
+        {
+            if (m_LosCurrent.Contains(o)) 
+            {
+            	return true;
+            }
+            
+            else return false;
+        }
+
+        public void AddLos( Object o )
+        {
+            if( m_NetState == null ) return; // things without a netstate cannot benefit from LOS list optimization
+            
+            if (!m_LosCurrent.Contains(o)) 
+            {
+            	m_LosCurrent.Add(o);
+            }
+        }
+    
+        public void RemoveLos( Object o )
+        {
+            if( m_NetState == null ) return; // things without a netstate cannot benefit from LOS list optimization
+
+            if (m_LosCurrent.Contains(o))
+            {
+            	m_LosCurrent.Remove(o);
+            }
+        }
 		public virtual bool CanBeRenamedBy(Mobile from)
 		{
 			return (from.AccessLevel >= AccessLevel.Decorator && from.m_AccessLevel > m_AccessLevel);
@@ -9983,18 +10158,34 @@ public ContextMenu ContextMenu
 
 				if (map != null)
 				{
-					// First, send a remove message to everyone who can no longer see us. (inOldRange && !inNewRange)
+                    if( m_NetState != null ) InvalidateLos( ); // things without netstate do not benefit from Los mgmt
+
+                    Packet removeThis = null;
 
 					var eable = map.GetClientsInRange(oldLocation);
 
 					foreach (NetState ns in eable)
 					{
-						if (ns != m_NetState && !Utility.InUpdateRange(newLocation, ns.Mobile.Location))
-						{
-							ns.Send(RemovePacket);
-						}
-					}
+                        if
+                        ( 
+                            ns != m_NetState 
+                            && 
+                            ( 
+                                !Utility.InUpdateRange( newLocation, ns.Mobile.Location ) 
+                                ||
+                                !ns.Mobile.CanSee( this )
+                            )
+                        )
+                        {
+                            if ( removeThis == null ) removeThis = this.RemovePacket;
 
+                            ns.Mobile.RemoveLos( this );
+                            
+                            ns.Send( removeThis );
+                        }
+
+					}
+					
 					eable.Free();
 
 					NetState ourState = m_NetState;
@@ -10012,12 +10203,13 @@ public ContextMenu ContextMenu
 							{
 								Item item = (Item)o;
 
-								int range = item.GetUpdateRange(this);
-								Point3D loc = item.Location;
+//								int range = item.GetUpdateRange(this);
+//								Point3D loc = item.Location;
 
-								if (!Utility.InRange(oldLocation, loc, range) && Utility.InRange(newLocation, loc, range) && CanSee(item))
+								if( CanSee( item ) ) 
 								{
 									item.SendInfoTo(ourState);
+                                    this.AddLos( item ); // optimization
 								}
 							}
 							else if (o != this && o is Mobile)
@@ -10029,72 +10221,55 @@ public ContextMenu ContextMenu
 									continue;
 								}
 
-								bool inOldRange = Utility.InUpdateRange(oldLocation, m.m_Location);
+                               	if (m.m_NetState != null && !InLos( this ) && m.CanSee( this ))
+                                {
+                                    if( LOS.Config.GetInstance().SquelchNames > 0 )
+                                    {
+                                    	m_LosRecent.Update( m, m );
+                                    }
 
-								if (m.m_NetState != null && ((isTeleport && (!m.m_NetState.HighSeas || !m_NoMoveHS)) || !inOldRange) &&
-									m.CanSee(this))
-								{
+                                    m.AddLos (this);
+
 									m.m_NetState.Send(MobileIncoming.Create(m.m_NetState, m, this));
 
-									if (m.m_NetState.StygianAbyss)
-									{
-										if (m_Poison != null)
-										{
-											m.m_NetState.Send(new HealthbarPoison(this));
-										}
+                                    if ( IsDeadBondedPet ) 
+                                    {
+                                    	m.m_NetState.Send( new BondedStatus( 0, m_Serial, 1 ) );
+                                    }
 
-										if (m_Blessed || m_YellowHealthbar)
-										{
-											m.m_NetState.Send(new HealthbarYellow(this));
-										}
-									}
+                                    if ( ObjectPropertyList.Enabled )
+                                    {
+                                        m.m_NetState.Send( OPLPacket );
+                                    }
+                                }
 
-									if (IsDeadBondedPet)
-									{
-										m.m_NetState.Send(new BondedStatus(0, m_Serial, 1));
-									}
+                                //----------------------------------------------
+                                // this player; update my view based on my move
+                                //----------------------------------------------
 
-									if (ObjectPropertyList.Enabled)
-									{
-										m.m_NetState.Send(OPLPacket);
+                                if (!InLos( m ) && this.CanSee( m ))
+                                {
+                                    if( LOS.Config.GetInstance().SquelchNames > 0 ) 
+                                    {
+                                    	m_LosRecent.Update( m, m );
+                                    }
 
-										foreach ( Item item in m_Items )
-											m.m_NetState.Send( item.OPLPacket );
-									}
-								}
+                                    this.AddLos( m ); // optimization
 
-								if (!inOldRange && CanSee(m))
-								{
 									ourState.Send(MobileIncoming.Create(ourState, this, m));
 
-									if (ourState.StygianAbyss)
-									{
-										if (m.Poisoned)
-										{
-											ourState.Send(new HealthbarPoison(m));
-										}
+                                    if ( m.IsDeadBondedPet ) 
+                                    {
+                                    	ourState.Send( new BondedStatus( 0, m.m_Serial, 1 ) );
+                                    }
 
-										if (m.Blessed || m.YellowHealthbar)
-										{
-											ourState.Send(new HealthbarYellow(m));
-										}
-									}
-
-									if (m.IsDeadBondedPet)
-									{
-										ourState.Send(new BondedStatus(0, m.m_Serial, 1));
-									}
-
-									if (ObjectPropertyList.Enabled)
-									{
-										ourState.Send(m.OPLPacket);
-
-										//foreach ( Item item in m.m_Items )
-										//	ourState.Send( item.OPLPacket );
-									}
-								}
-							}
-						}
+                                    if ( ObjectPropertyList.Enabled )
+                                    {
+                                        ourState.Send( m.OPLPacket );
+                                    }
+                                }
+							}			
+ 						}
 
 						eeable.Free();
 					}
@@ -10105,9 +10280,12 @@ public ContextMenu ContextMenu
 						// We're not attached to a client, so simply send an Incoming
 						foreach (NetState ns in eable)
 						{
-							if (((isTeleport && (!ns.HighSeas || !m_NoMoveHS)) || !Utility.InUpdateRange(oldLocation, ns.Mobile.Location)) &&
-								ns.Mobile.CanSee(this))
+                            if (!ns.Mobile.InLos( this ) && ns.Mobile.CanSee( this ))
 							{
+                                if( LOS.Config.GetInstance().SquelchNames > 0 ) m_LosRecent.Update( ns.Mobile, ns.Mobile ); 
+
+                                ns.Mobile.AddLos( this ); // optimization
+
 								ns.Send(MobileIncoming.Create(ns, ns.Mobile, this));
 
 								if (ns.StygianAbyss)
@@ -10905,12 +11083,17 @@ public ContextMenu ContextMenu
 
 		public Mobile(Serial serial)
 		{
+			int razorSuppress = LOS.Config.GetInstance().SquelchNames;
+
 			m_Region = Map.Internal.DefaultRegion;
 			m_Serial = serial;
 			m_Aggressors = new List<AggressorInfo>();
 			m_Aggressed = new List<AggressorInfo>();
 			m_NextSkillTime = Core.TickCount;
 			m_DamageEntries = new List<DamageEntry>();
+			
+			m_LosCurrent = new List<object>();            
+			m_LosRecent = new TemporalCache<Object,Object>( 250, razorSuppress > 0 ? razorSuppress : 0 );
 
 			Type ourType = GetType();
 			m_TypeRef = World.m_MobileTypes.IndexOf(ourType);
@@ -10928,6 +11111,9 @@ public ContextMenu ContextMenu
 		{
 			m_Region = Map.Internal.DefaultRegion;
 			m_Serial = Serial.NewMobile;
+			m_LosCurrent = new List<object>();            
+			int razorSuppress = LOS.Config.GetInstance().SquelchNames;
+			m_LosRecent = new TemporalCache<Object,Object>( 250, razorSuppress > 0 ? razorSuppress : 0 );
 
 			DefaultMobileInit();
 
@@ -11363,6 +11549,7 @@ public ContextMenu ContextMenu
 					{
 						if (sendRemove)
 						{
+                            state.Mobile.RemoveLos( this );
 							state.Send(RemovePacket);
 						}
 
@@ -12311,6 +12498,11 @@ public ContextMenu ContextMenu
 		/// </summary>
 		public virtual void OnSingleClick(Mobile from)
 		{
+            if( from.m_LosRecent.ContainsKey( this ) ) 
+            {
+                return;
+            }
+			
 			if (m_Deleted)
 			{
 				return;
@@ -12544,13 +12736,9 @@ public ContextMenu ContextMenu
 		{
 			if (Meditating)
 			{
-				double chance = 75 + (((Skills[SkillName.Meditation].Base - 1.0) / 100) / 4);
-									
-				if (chance < Utility.RandomDouble())
-				{
-					Meditating = false;
-					SendLocalizedMessage(500134); // You stop meditating.
-				}
+				Meditating = false;
+					
+				SendLocalizedMessage(500134); // You stop meditating.
 			}
 		}
 
@@ -12654,6 +12842,8 @@ public ContextMenu ContextMenu
 		public int RawStatTotal { get { return RawStr + RawDex + RawInt; } }
 
 		public long NextSpellTime { get; set; }
+		
+        public List<object> LosCurrent { get { return m_LosCurrent; } }
 
 		/// <summary>
 		///     Overridable. Virtual event invoked when the sector this Mobile is in gets <see cref="Sector.Activate">activated</see>.
