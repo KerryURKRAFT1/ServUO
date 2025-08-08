@@ -113,7 +113,9 @@ namespace Server.Mobiles
 	#endregion
 
 	public partial class PlayerMobile : Mobile, IHonorTarget
-	{			
+	{		
+		public bool PrioritzeScrolls { get; set; }
+		
 		#region Mount Blocking
 		public void SetMountBlock(BlockMountType type, TimeSpan duration, bool dismount)
 		{
@@ -3076,7 +3078,7 @@ namespace Server.Mobiles
 					c.Slip();
 				}
 
-				if (this.Spell != null && this.Spell.OnDamage())
+				if (this.Spell != null && this.Spell.OnDamage() && amount > 0)
             	{
 					((Spell)this.Spell).Disturb(DisturbType.Hurt);
 				}

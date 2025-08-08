@@ -1735,7 +1735,7 @@ namespace Server.Mobiles
                     c.Slip();
                 }
 
-				if (this.Spell != null && this.Spell.IsCasting)
+				if (this.Spell != null && this.Spell.IsCasting && amount > 0)
             	{
 					((Spell)this.Spell).Disturb(DisturbType.Hurt);
 				}
