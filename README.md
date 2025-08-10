@@ -26,7 +26,7 @@
 
    Linux Dependencies
 
-   I use Debian 13 here is my list note: this covers ModernUO/ServUO/RunUO so you may not need everything
+   I am using Debian 13, this is my list, note: covers ModernUO/ServUO/RunUO/ClassicUO
 
 	Dotnet SDK
 	Mono-Complete
