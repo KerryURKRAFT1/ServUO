@@ -133,6 +133,18 @@ namespace Server.StaticHouse
             m_Key = key;
         }
 
+        private void SetLockdownRecursive(Item item, bool lockDown)
+        {
+            item.Movable = !lockDown;
+            if (item is Container c)
+            {
+                foreach (Item sub in c.Items)
+                {
+                    SetLockdownRecursive(sub, lockDown);
+                }
+            }
+        }
+
         protected override void OnTarget(Mobile from, object targeted)
         {
             Item item = targeted as Item;
@@ -188,6 +200,7 @@ namespace Server.StaticHouse
             }
 
             // TOGGLE: lock or unlock
+            /*
             if (!item.Movable)
             {
                 item.Movable = true;
@@ -198,6 +211,15 @@ namespace Server.StaticHouse
                 item.Movable = false;
                 item.SendLocalizedMessageTo(from, 1048000); // You lock it.
             }
+            */
+            bool lockDown = item.Movable; // Se è movable, lo lockkiamo
+            SetLockdownRecursive(item, lockDown);
+
+            if (lockDown)
+                item.SendLocalizedMessageTo(from, 1048000); // You lock it.
+            else
+                item.SendLocalizedMessageTo(from, 1048001); // You unlock it.
+
         }
     }
 }

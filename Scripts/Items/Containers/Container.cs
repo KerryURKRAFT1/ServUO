@@ -222,42 +222,60 @@ namespace Server.Items
 
 		public override void OnDoubleClick(Mobile from)
 		{           
-            // DEBUG INIZIALE
-//                    from.SendMessage("DEBUG: OnDoubleClick chiamato da: " + from.Name + " [" + from.Serial.ToString() + "]");
+            
+            
+            //from.SendMessage("DEBUG: OnDoubleClick chiamato da: " + from.Name + " [" + from.Serial.ToString() + "]");
             if (this.Parent == null && this.Map != Map.Internal)
             {
+               
                 StaticHouseSign house = StaticHouseHelper.FindStaticHouseAt(this.Location, this.Map);
 
+                /*
+                // DEBUG 
+                //from.SendMessage("DEBUG: StaticHouseSign trovato: " + (house != null ? "Sì" : "No"))
                 if (house == null)
                 {
-                    from.SendMessage("DEBUG: Nessuna casa trovata in questa posizione!");
+                    //from.SendMessage("DEBUG: Nessuna casa trovata in questa posizione!");
                 }
                 else
                 {
-                    from.SendMessage("DEBUG: Casa trovata: " + (house.HouseName ?? "N/A"));
+                    //from.SendMessage("DEBUG: Casa trovata: " + (house.HouseName ?? "N/A"));
                     if (house.Owner == null)
                     {
-                        from.SendMessage("DEBUG: Questa casa NON ha owner.");
+                        //from.SendMessage("DEBUG: Questa casa NON ha owner.");
                     }
                     else
                     {
-                        from.SendMessage("DEBUG: Owner della casa: " + house.Owner.Name + " [" + house.Owner.Serial.ToString() + "]");
+                        //from.SendMessage("DEBUG: Owner della casa: " + house.Owner.Name + " [" + house.Owner.Serial.ToString() + "]");
                         if (house.Owner == from)
                         {
-                            from.SendMessage("DEBUG: Sei il proprietario della casa (owner match).");
+                            //from.SendMessage("DEBUG: Sei il proprietario della casa (owner match).");
                         }
                         else
                         {
-                            from.SendMessage("DEBUG: NON sei il proprietario! Il tuo serial: " + from.Serial.ToString() + ", owner serial: " + house.Owner.Serial.ToString());
+                            //rom.SendMessage("DEBUG: NON sei il proprietario! Il tuo serial: " + from.Serial.ToString() + ", owner serial: " + house.Owner.Serial.ToString());
                         }
                     }
+
                 }
-                // BLOCCO PERMESSI
+                */
+
+                // PERMIT
                 //if (house != null && house.Owner != null && house.Owner != from)
-                if (house != null && house.Owner != null && house.Owner != from && from.AccessLevel < AccessLevel.GameMaster)
+                if (house != null && house.Owner != null && from.AccessLevel < AccessLevel.GameMaster)
                 {
-                    from.SendMessage("Non puoi accedere a questo contenitore: non sei il proprietario della casa.");
-                    return;
+                    bool isOwner = house.Owner == from;
+                    bool isCoOwner = false;
+
+                    // CHECK IF THERE'S A CO OWNER AND IF FROM IS ONE OF THOSE
+                    if (house.CoOwners != null)
+                        isCoOwner = house.CoOwners.Contains(from);
+
+                    if (!isOwner && !isCoOwner)
+                    {
+                        from.SendMessage("Access denied, you are not the Owner or Co-Owner.");
+                        return;
+                    }
                 }
             }                      
         
