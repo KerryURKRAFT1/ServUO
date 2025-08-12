@@ -11,10 +11,15 @@ namespace Server.Mobiles
             : base(AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4)
         { 
             this.Name = NameList.RandomName("evil mage lord");
-            this.Body = Utility.RandomList(125, 126);
+            //this.Body = Utility.RandomList(125, 126);
+            this.Body = Utility.RandomList(0x190, 0x191); // FIX BODY
 
-            this.PackItem(new Robe(Utility.RandomMetalHue())); 
-            this.PackItem(new WizardsHat(Utility.RandomMetalHue())); 
+            //his.PackItem(new Robe(Utility.RandomMetalHue())); 
+            //this.PackItem(new WizardsHat(Utility.RandomMetalHue())); 
+
+            this.AddItem(new Robe(Utility.RandomNeutralHue()));
+            this.AddItem(new Sandals());
+            this.AddItem(new WizardsHat(Utility.RandomMetalHue())); 
 
             this.SetStr(81, 105);
             this.SetDex(191, 215);
