@@ -37,7 +37,13 @@ namespace Server.Mobiles
             this.SetSkill(SkillName.Wrestling, 60.1, 80.0);
 
             this.Fame = 2500;
-            this.Karma = Utility.RandomMinMax(-1200, -600);
+            
+            this.Karma = -1200;
+            
+            if (Utility.RandomBool())
+            {
+            	this.Karma += 600;
+            }
 
             this.VirtualArmor = 22;
 
