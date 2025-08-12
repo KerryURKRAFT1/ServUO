@@ -12,7 +12,9 @@ namespace Server.Mobiles
         { 
             this.Name = NameList.RandomName("evil mage");
             this.Title = "the evil mage";
-            this.Body = 124;
+            //this.Body = 124;
+            this.Body = Utility.RandomList(0x190, 0x191); // FIX BODY
+
 
             this.SetStr(81, 105);
             this.SetDex(91, 115);
@@ -40,8 +42,11 @@ namespace Server.Mobiles
 
             this.VirtualArmor = 16;
             this.PackReg(6);
-            this.PackItem(new Robe(Utility.RandomNeutralHue())); // TODO: Proper hue
-            this.PackItem(new Sandals());
+            //this.PackItem(new Robe(Utility.RandomNeutralHue())); // TODO: Proper hue
+            //this.PackItem(new Sandals());
+            this.AddItem(new Robe(Utility.RandomNeutralHue()));
+            this.AddItem(new Sandals());
+            this.AddItem(new WizardsHat(Utility.RandomMetalHue())); 
 			switch (Utility.Random(18))
             {
                 case 0: /*PackItem(new*scroll());*/ break;
