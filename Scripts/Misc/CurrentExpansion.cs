@@ -40,23 +40,23 @@ namespace Server
 			Mobile.GuildClickMessage = true; // Già corretto per Renaissance
 			
 			Mobile.AsciiClickMessage = true; // Già corretto per Renaissance
-
-			SupportedFeatures.Value = FeatureFlags.ExpansionSA;		
 			
 			Mobile.ActionDelay = 50;
 
 			if (Core.AOS)
 			{
 				AOS.DisableStatInfluences();
-	
-				if (ObjectPropertyList.Enabled)
-				{
-					PacketHandlers.SingleClickProps = true; // single click for everything is overriden to check object property list
-				}
-	
+		
 				Mobile.ActionDelay = 1000;
 				
-				Mobile.AOSStatusHandler = AOS.GetStatus;			
+				Mobile.AOSStatusHandler = AOS.GetStatus;
+
+				SupportedFeatures.Value = FeatureFlags.ExpansionSA;
+			}
+
+			if (ObjectPropertyList.Enabled)
+			{
+				PacketHandlers.SingleClickProps = true; // single click for everything is overriden to check object property list
 			}
 		}
 	}

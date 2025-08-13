@@ -1,12 +1,12 @@
 <Spawns>
   <Points>
     <Name>1 EvilHealer</Name>
-    <UniqueId>f33ccddb-3ce1-4f79-aff6-ec7c9f072fc1</UniqueId>
+    <UniqueId>df2bbe16-f589-4bac-9266-d50dc2912d9d</UniqueId>
     <Map>Felucca</Map>
-    <X>1295</X>
-    <Y>1064</Y>
-    <Width>10</Width>
-    <Height>10</Height>
+    <X>1300</X>
+    <Y>1069</Y>
+    <Width>0</Width>
+    <Height>0</Height>
     <CentreX>1300</CentreX>
     <CentreY>1069</CentreY>
     <CentreZ>0</CentreZ>
@@ -32,14 +32,14 @@
     <AllowGhostTriggering>False</AllowGhostTriggering>
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
-    <SmartSpawning>True</SmartSpawning>
+    <SmartSpawning>False</SmartSpawning>
     <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
-    <IsHomeRangeRelative>True</IsHomeRangeRelative>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
     <Objects2>EvilHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
 </Spawns>

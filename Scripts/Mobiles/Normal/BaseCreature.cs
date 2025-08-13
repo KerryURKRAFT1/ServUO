@@ -1441,6 +1441,20 @@ namespace Server.Mobiles
             return (p != null && p.RealLevel >= poison.RealLevel);
         }
 
+		private bool m_PoisonBlock = false;
+		
+        public override void OnPoisonImmunity(Mobile from, Poison poison)
+		{
+        	if (!m_PoisonBlock)
+        	{
+        		m_PoisonBlock = true;
+        		
+        		PublicOverheadMessage(MessageType.Emote, 0x3B2, 1005534); // * The poison seems to have no effect. *
+        		
+	            Timer.DelayCall( TimeSpan.FromSeconds(5.0), () => {m_PoisonBlock = false;} ); //spam, spam, less spam
+        	}
+		}
+
         [CommandProperty(AccessLevel.GameMaster)]
         public int Loyalty { get { return m_Loyalty; } set { m_Loyalty = Math.Min(Math.Max(value, 0), MaxLoyalty); } }
 
@@ -1539,8 +1553,8 @@ namespace Server.Mobiles
             }
         }
 
-        public virtual bool HoldSmartSpawning { get { return IsParagon; } }
         public virtual bool UseSmartAI { get { return false; } }
+        public override bool HoldSmartSpawning { get { return IsParagon || Rummage(); } }
 
         [CommandProperty(AccessLevel.GameMaster)]
         public virtual int DamageMin { get { return m_DamageMin; } set { m_DamageMin = value; } }

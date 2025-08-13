@@ -75,6 +75,7 @@ namespace Server.Mobiles
                 return false;
             }
         }
+
         public override OppositionGroup OppositionGroup
         {
             get

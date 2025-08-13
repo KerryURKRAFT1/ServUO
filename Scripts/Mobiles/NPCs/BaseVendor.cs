@@ -57,6 +57,7 @@ namespace Server.Mobiles
 		public override bool PlayerRangeSensitive { get { return true; } }
 
         public override bool UseSmartAI { get { return true; } }
+        public override bool HoldSmartSpawning { get { return true; } }
 
 		public virtual bool IsActiveVendor { get { return true; } }
 		public virtual bool IsActiveBuyer { get { return IsActiveVendor; } } // response to vendor SELL

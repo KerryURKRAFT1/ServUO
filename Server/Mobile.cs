@@ -811,6 +811,8 @@ namespace Server
 		private Race m_Race;
         #endregion
 
+        public virtual bool HoldSmartSpawning { get { return false; } }
+
         private static readonly TimeSpan WarmodeSpamCatch = TimeSpan.FromSeconds((Core.SE ? 1.0 : 0.5));
 		private static readonly TimeSpan WarmodeSpamDelay = TimeSpan.FromSeconds((Core.SE ? 4.0 : 2.0));
 

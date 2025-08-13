@@ -8,6 +8,9 @@ namespace Server.Items
         private short m_MaxSpawnTime = 60;
         private short m_MinSpawnTime = 10;
         private TreasureResetTimer m_ResetTimer;
+
+        public override bool HoldSmartSpawning { get { return true; } }
+
         public BaseTreasureChest(int itemID)
             : this(itemID, TreasureLevel.Level2)
         {

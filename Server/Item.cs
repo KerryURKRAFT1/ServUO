@@ -1141,6 +1141,8 @@ namespace Server
             }
         }
 
+        public virtual bool HoldSmartSpawning { get { return false; } }
+
         /// <summary>
         ///     Overridable. Virtual event invoked when a client, <paramref name="from" />, invokes a 'help request' for the Item. Seemingly no longer functional in newer clients.
         /// </summary>

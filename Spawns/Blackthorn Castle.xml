@@ -1,19 +1,19 @@
 <Spawns>
   <Points>
-    <Name>2 Zombie</Name>
-    <UniqueId>01f789ee-d7ba-4923-bfe1-f54385a2e43b</UniqueId>
+    <Name>1 ChaosGuard</Name>
+    <UniqueId>344d1d49-463f-47d9-ad9d-259b297915dd</UniqueId>
     <Map>Felucca</Map>
-    <X>2046</X>
-    <Y>225</Y>
-    <Width>2</Width>
-    <Height>2</Height>
-    <CentreX>2047</CentreX>
-    <CentreY>226</CentreY>
-    <CentreZ>14</CentreZ>
-    <Range>7</Range>
+    <X>1525</X>
+    <Y>1457</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>1525</CentreX>
+    <CentreY>1457</CentreY>
+    <CentreZ>15</CentreZ>
+    <Range>1</Range>
     <MaxCount>1</MaxCount>
-    <MinDelay>60</MinDelay>
-    <MaxDelay>120</MaxDelay>
+    <MinDelay>5</MinDelay>
+    <MaxDelay>10</MaxDelay>
     <DelayInSec>False</DelayInSec>
     <Duration>0</Duration>
     <DespawnTime>0</DespawnTime>
@@ -33,30 +33,30 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
+    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Zombie:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>ChaosGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 Zombie</Name>
-    <UniqueId>9b73aedb-d962-4eef-aa17-99722de4d0ab</UniqueId>
+    <Name>2 ChaosGuard</Name>
+    <UniqueId>fcc2c0ee-01d9-429e-abd1-5afc0c151838</UniqueId>
     <Map>Felucca</Map>
-    <X>2035</X>
-    <Y>225</Y>
-    <Width>2</Width>
-    <Height>2</Height>
-    <CentreX>2036</CentreX>
-    <CentreY>226</CentreY>
-    <CentreZ>14</CentreZ>
-    <Range>7</Range>
+    <X>1521</X>
+    <Y>1457</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>1521</CentreX>
+    <CentreY>1457</CentreY>
+    <CentreZ>15</CentreZ>
+    <Range>1</Range>
     <MaxCount>1</MaxCount>
-    <MinDelay>60</MinDelay>
-    <MaxDelay>120</MaxDelay>
+    <MinDelay>5</MinDelay>
+    <MaxDelay>10</MaxDelay>
     <DelayInSec>False</DelayInSec>
     <Duration>0</Duration>
     <DespawnTime>0</DespawnTime>
@@ -76,13 +76,13 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
+    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Zombie:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>ChaosGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
 </Spawns>

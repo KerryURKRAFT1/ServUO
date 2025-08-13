@@ -89,6 +89,8 @@ namespace Server.Items
 
 		public virtual bool AllowsRelativeDrop { get { return false; } }
 
+    	public override bool HoldSmartSpawning { get { return true; } }
+
 		public override int GetMaxUpdateRange()
 		{
 			return 22;

@@ -18,7 +18,9 @@ namespace Server.Items
 		public override Rectangle2D Bounds{ get{ return new Rectangle2D( 20, 105, 150, 180 ); } }
 		public override bool IsDecoContainer{get{ return false; }}
 		
-		public BaseTreasureChestMod( int itemID ) : base ( itemID )
+        public override bool HoldSmartSpawning { get { return true; } }
+
+        public BaseTreasureChestMod( int itemID ) : base ( itemID )
 		{
 			Locked = true;
 			Movable = false;
