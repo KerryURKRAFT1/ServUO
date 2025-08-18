@@ -337,7 +337,7 @@ namespace Server.Items
             }
             else if (armsValue >= 80.0 && wresValue >= 80.0)
             {
-                m.DisruptiveAction();
+//                m.DisruptiveAction();
                 m.DisarmReady = !m.DisarmReady;
                 m.SendLocalizedMessage(m.DisarmReady ? 1019013 : 1019014);
             }
@@ -370,7 +370,7 @@ namespace Server.Items
             }
             else if (anatValue >= 80.0 && wresValue >= 80.0)
             {
-                m.DisruptiveAction();
+//                m.DisruptiveAction();
                 m.StunReady = !m.StunReady;
                 m.SendLocalizedMessage(m.StunReady ? 1019011 : 1019012);
             }
