@@ -16,12 +16,25 @@ namespace Server.Mobiles
 	{
 		public override bool IsEnemy(Mobile m)
 		{
-			if (m is BaseCreature bc && bc.IsGuardExempt)
+			if (m.Deleted || !m.Alive || m.Blessed || m.Hidden || AlwaysInnocent || m.IsStaff())
 			{
 				return false;
 			}
+				
+			if (m is BaseCreature bc)
+			{
+			    if (bc.IsGuardExempt || bc.IsInitialInnocent)
+				{
+					return false;
+				}
 
-			return (m.Kills >= 5 || (!m.Player && m.Karma < 0) || m.Criminal);
+				if ((bc.Controlled || bc.Summoned) && bc.ControlMaster.Kills >= 5)
+				{
+					return true;
+				}
+			}
+
+			return m.Kills >= 5 || m.Karma < 0 || m.Criminal;
 		}
 
 		public bool Bandaging = false;
@@ -392,35 +405,6 @@ namespace Server.Mobiles
 			base.OnAfterDelete();
 		}
 
-		public override bool CanBeHarmful(IDamageable target, bool message, bool ignoreOurBlessedness)
-		{
-			if (target is Mobile m)
-			{
-				if (m.Player)
-				{
-					if (!m.IsStaff() && IsEnemy(m) && !m.Blessed && !m.Hidden)
-					{
-						return true;
-					}
-					else
-					{
-						return false;
-					}
-				}
-				else if (m is BaseKillableGuard || m is BaseVendor || m is PlayerVendor || m is TownCrier || m is SilverTrader)
-				{
-					return false;
-				}
-
-				if (target is BaseCreature bc && (bc.ControlMaster != null || bc.SummonMaster != null)) //kill pets that attack
-				{
-					return true;
-				}
-			}
-
-			return base.CanBeHarmful(target, message, ignoreOurBlessedness);
-		}
-
 		public override bool HandlesOnSpeech(Mobile from) { return true; }
 
 		public override void OnSpeech(SpeechEventArgs e)
@@ -434,17 +418,11 @@ namespace Server.Mobiles
 			{
 				Direction = GetDirectionTo(e.Mobile);
 
-				if (e.Mobile.Combatant != null && CanBeHarmful(e.Mobile.Combatant as Mobile))
+				if (e.Mobile.Combatant != null && IsEnemy(e.Mobile.Combatant as Mobile))
 				{
 					Say(speech[Utility.Random(speech.Length)]);
 										
 					m_Focus = e.Mobile.Combatant as Mobile;
-				}
-				else if (CanBeHarmful(e.Mobile))
-				{
-					Say(speech[Utility.Random(speech.Length)]);
-										
-					m_Focus = e.Mobile;
 				}
 				else
 				{
@@ -620,7 +598,7 @@ namespace Server.Mobiles
 					return;
 				}
 				
-				if (!m_Owner.CanBeHarmful(target) || region == null)
+				if (!m_Owner.IsEnemy(target) || region == null)
 				{
 					m_Owner.Focus = null;
 					
@@ -669,6 +647,13 @@ namespace Server.Mobiles
 
 			private void TeleportTo(Mobile target)
 			{
+				if (0.8 > Utility.RandomDouble())
+				{
+					m_Owner.BlockTeleport = true;
+
+					return;
+				}
+				
 				if (m_Owner != null && !m_Owner.Deleted && target != null)
 				{
 					Point3D from = m_Owner.Location;
@@ -719,7 +704,7 @@ namespace Server.Mobiles
 					return;
 				}
 			   	
-			   	GuardedRegion region = m_Owner.Region.GetRegion(typeof(GuardedRegion)) as GuardedRegion;
+				GuardedRegion region = m_Owner.Region.GetRegion(typeof(GuardedRegion)) as GuardedRegion;
 			   	
 			   	if (region == null || (region != null && region.Disabled))
 			   	{
@@ -759,7 +744,7 @@ namespace Server.Mobiles
 	
 				foreach (Mobile m in eable)
 				{
-					if (!m.Deleted && m.Alive && m_Owner.IsEnemy(m) && !m.IsStaff())
+					if (m_Owner.IsEnemy(m))
 					{
 						m_Owner.Focus = m;
 						
