@@ -49,7 +49,7 @@ namespace Server.Mobiles
         {
         }
 
-        public override bool AlwaysAttackable
+        public override bool AlwaysCriminal
         {
             get
             {
