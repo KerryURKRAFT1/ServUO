@@ -73,7 +73,7 @@ namespace Server.Mobiles
                 return this.m_Target;
             }
         }
-        public override bool AlwaysAttackable
+        public override bool AlwaysCriminal
         {
             get
             {
