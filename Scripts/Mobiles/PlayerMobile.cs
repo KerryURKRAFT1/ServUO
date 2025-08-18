@@ -114,8 +114,6 @@ namespace Server.Mobiles
 
 	public partial class PlayerMobile : Mobile, IHonorTarget
 	{		
-		public bool PrioritzeScrolls { get; set; }
-		
 		#region Mount Blocking
 		public void SetMountBlock(BlockMountType type, TimeSpan duration, bool dismount)
 		{
@@ -607,6 +605,80 @@ namespace Server.Mobiles
 			}
 		}
 
+		#region New Noto		
+		public override string FameTitle()
+        {
+        	string prefix = string.Empty;
+        		
+			if (ShowFameTitle && Body.IsHuman)
+		    {
+				if (Karma <= -2000)
+				{
+					prefix = "Dishonorable";
+					
+					if (Karma <= -20000)
+					{
+						prefix = (Female ? "Dread Lady" : "Dread Lord");
+					}
+					else if (Karma <= -15000)
+					{
+						prefix = (Female ? "Evil Lady" : "Evil Lord");
+					}
+					else if (Karma <= -10000)
+					{
+						prefix = (Female ? "Dark Lady" : "Dark Lord");
+					}
+					else if (Karma <= -5000)
+					{
+						prefix = "Infamous";
+					}
+
+					if (Hue == 0x059 || Hue == 0x03F)
+					{
+						Hue = 0x3B2;
+					}					
+				}
+				else if (Fame >= 2000)
+				{					
+					prefix = "Honorable";						
+
+					if (Fame >= 20000)
+					{
+						prefix = (Female ? "Great Lady" : "Great Lord");
+					}
+					else if (Fame >= 15000)
+					{
+						prefix = (Female ? "Noble Lady" : "Noble Lord");
+					}
+					else if (Fame >= 10000)
+					{
+						prefix = (Female ? "Lady" : "Lord");
+					}
+					else if (Fame >= 5000)
+					{
+						prefix = "Noble";
+					}
+				}				
+		    }
+			
+        	return prefix;
+        }
+
+        public override int NotoHue(Mobile from)
+        {       	
+			if (NameHue != -1)
+			{
+				return NameHue;
+			}
+			else if (IsStaff())
+			{
+				return 11; //purple
+			}
+
+			return Notoriety.GetHue(Notoriety.Compute(from, this));
+        }
+        #endregion
+        
 		#region Scroll of Alacrity
 		[CommandProperty(AccessLevel.GameMaster)]
 		public DateTime AcceleratedStart { get; set; }
@@ -2661,14 +2733,14 @@ namespace Server.Mobiles
 			}
 		}
 
-		public override void DisruptiveAction()
+		public override void DisruptiveAction(string disrupt)
 		{
 			if (Meditating)
 			{
 				RemoveBuff(BuffIcon.ActiveMeditation);
 			}
 
-			base.DisruptiveAction();
+			base.DisruptiveAction(disrupt);
 		}
 
         public override bool Meditating
