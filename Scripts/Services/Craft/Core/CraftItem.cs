@@ -2207,7 +2207,7 @@ namespace Server.Engines.Craft
 			{
 				m_iCount++;
 
-				m_From.DisruptiveAction();
+				m_From.DisruptiveAction("OnCraft");
 
 				if (m_iCount < m_iCountMax)
 				{
