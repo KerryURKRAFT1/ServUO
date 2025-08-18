@@ -19,7 +19,7 @@ namespace Server.Misc
             Notoriety.Hues[Notoriety.Ally] = 0x3F;
             Notoriety.Hues[Notoriety.CanBeAttacked] = 0x3B2;
             Notoriety.Hues[Notoriety.Criminal] = 0x3B2;
-            Notoriety.Hues[Notoriety.Enemy] = 0x90;
+            Notoriety.Hues[Notoriety.Enemy] = 0x22;
             Notoriety.Hues[Notoriety.Murderer] = 0x22;
             Notoriety.Hues[Notoriety.Invulnerable] = 0x35;
 
@@ -397,7 +397,7 @@ namespace Server.Misc
                     }
                 }
 
-                if (target.Owner != null && target.Owner is BaseCreature && ((BaseCreature)target.Owner).AlwaysAttackable)
+                if (target.Owner != null && target.Owner is BaseCreature && ((BaseCreature)target.Owner).AlwaysCriminal)
                     return Notoriety.CanBeAttacked;
 
                 if (CheckHouseFlag(source, target.Owner, target.Location, target.Map))
@@ -438,6 +438,9 @@ namespace Server.Misc
                     return pmFrom.DuelContext.IsAlly(pmFrom, pmTarg) ? Notoriety.Ally : Notoriety.Enemy;
             }
             #endregion
+
+           	if (target.InitialInnocent)
+                return Notoriety.Innocent;
 
             if (target.IsStaff())
                 return Notoriety.CanBeAttacked;
@@ -516,13 +519,13 @@ namespace Server.Misc
             if (SkillHandlers.Stealing.ClassicMode && target is PlayerMobile && ((PlayerMobile)target).PermaFlags.Contains(source))
                 return Notoriety.CanBeAttacked;
 
-            if (target is BaseCreature && ((BaseCreature)target).AlwaysAttackable)
+            if (target is BaseCreature && ((BaseCreature)target).AlwaysCriminal)
                 return Notoriety.CanBeAttacked;
 
             if (CheckHouseFlag(source, target, target.Location, target.Map))
                 return Notoriety.CanBeAttacked;
 
-            if (!(target is BaseCreature && ((BaseCreature)target).InitialInnocent))   //If Target is NOT A baseCreature, OR it's a BC and the BC is initial innocent...
+            if (!(target is BaseCreature) || ((BaseCreature)target).InitialInnocent)  //If Target is NOT A baseCreature, OR it's a BC and the BC is initial innocent...
             {
                 if (!target.Body.IsHuman && !target.Body.IsGhost && !IsPet(target as BaseCreature) && !(target is PlayerMobile) || !Core.ML && !target.CanBeginAction(typeof(Server.Spells.Seventh.PolymorphSpell)))
                     return Notoriety.CanBeAttacked;
