@@ -37,13 +37,18 @@ namespace Server
 		}
 
         public static int Compute(Mobile source, IDamageable target)
-		{
-        	if (source.Player && target is Mobile m && !m.Player && m.Karma < -800)
-      		{	
-        		return Notoriety.Murderer;
+		{        			
+        	if (target is Mobile m && m.InitialInnocent) //killable guard mod
+        	{
+        		if (m.IsInitialInnocent)
+        		{
+        			return Notoriety.Innocent;
+        		}
+
+       			return Notoriety.Murderer;
         	}
-        			
-			return m_Handler == null ? CanBeAttacked : m_Handler(source, target);
+
+        	return m_Handler == null ? CanBeAttacked : m_Handler(source, target);
 		}
 	}
 }
