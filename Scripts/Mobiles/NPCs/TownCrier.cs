@@ -342,7 +342,8 @@ namespace Server.Mobiles
 
     public class TownCrier : Mobile, ITownCrierEntryList
     {
-    	public override bool AlwaysBlue { get { return true; } }
+    	public override bool AlwaysInnocent { get { return true; } }
+    	
     	public override bool HoldSmartSpawning { get { return true; } }
 
     	private static readonly List<TownCrier> m_Instances = new List<TownCrier>();
