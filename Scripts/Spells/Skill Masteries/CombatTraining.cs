@@ -112,7 +112,7 @@ namespace Server.Spells.SkillMasteries
         protected override void DoEffects()
         {
             Caster.FixedParticles(0x376A, 10, 30, 5052, 1261, 0, EffectLayer.LeftFoot, 0);
-            Caster.DisruptiveAction();
+//            Caster.DisruptiveAction();
         }
 
         public override bool OnTick()
