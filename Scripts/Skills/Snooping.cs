@@ -31,7 +31,7 @@ namespace Server.SkillHandlers
 
             BaseCreature cret = to as BaseCreature;
 
-            if (to.Body.IsHuman && (cret == null || (!cret.AlwaysAttackable && !cret.AlwaysMurderer)))
+            if (to.Body.IsHuman && (cret == null || (!cret.AlwaysCriminal && !cret.AlwaysMurderer)))
                 return false; // in town we cannot snoop blue human npcs
 
             return true;
