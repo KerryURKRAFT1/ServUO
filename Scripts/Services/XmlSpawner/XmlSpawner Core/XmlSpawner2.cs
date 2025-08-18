@@ -2164,13 +2164,13 @@ namespace Server.Mobiles
 
 			string[] substrings = Name.Split(' ');
 
-			if (substrings.Length > 0)
-			{
+			if (substrings.Length > 0 && !substrings[0].StartsWith("Spawner") && !substrings[0].StartsWith("XmlSpawner"))
+			{				
 				sb.AppendFormat("Spawner [{0}]", substrings[0]);
 			}
 			else
 			{
-				sb.Append("Spawner");
+				sb.Append("Spawner [new]");
 			}
 			
 			LabelTo(from, sb.ToString());

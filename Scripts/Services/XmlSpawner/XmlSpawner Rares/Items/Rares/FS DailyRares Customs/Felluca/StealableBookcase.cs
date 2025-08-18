@@ -1,0 +1,41 @@
+using System;
+
+namespace Server.Items
+{
+	[Flipable( 0xA97, 0xA99 )]
+	public class StealableBookcase : RaresBaseContainer
+	{
+		public override int DefaultGumpID{ get{ return 0x4D; } }
+		public override int DefaultDropSound{ get{ return 0x42; } }
+
+		public override Rectangle2D Bounds
+		{
+			get{ return new Rectangle2D( 80, 5, 140, 70 ); }
+		}
+
+		[Constructable]
+		public StealableBookcase() : base( 0xA97 )
+		{
+			Movable = false;
+			ItemFlags.SetStealable(this,true);
+		}
+
+		public StealableBookcase( Serial serial ) : base( serial )
+		{
+		}
+
+		public override void Serialize( GenericWriter writer )
+		{
+			base.Serialize( writer );
+
+			writer.Write( (int) 0 ); // version
+		}
+
+		public override void Deserialize( GenericReader reader )
+		{
+			base.Deserialize( reader );
+
+			int version = reader.ReadInt();
+		}
+	}
+}
