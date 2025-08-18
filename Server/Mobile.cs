@@ -1727,7 +1727,7 @@ namespace Server
 						m_ParaTimer = null;
 					}
 
-					DisruptiveAction();
+					DisruptiveAction("OnParalyzed");
 				}
 			}
 		}
@@ -1749,7 +1749,7 @@ namespace Server
 						_SleepTimer = null;
 					}
 
-					DisruptiveAction();
+					DisruptiveAction("OnSleep");;
 				}
 			}
 		}
@@ -1793,7 +1793,7 @@ namespace Server
 						m_FrozenTimer = null;
 					}
 
-					DisruptiveAction();
+					DisruptiveAction("OnFrozen");
 				}
 			}
 		}
@@ -2004,6 +2004,18 @@ namespace Server
 				if (m_Owner.CanRegenHits) // m_Owner.Alive && !m_Owner.Poisoned )
 				{
 					m_Owner.Hits++;
+
+					if (m_Owner.InitialInnocent)
+					{
+						if (m_Owner.Hits < m_Owner.HitsMax)
+						{
+							m_Owner.IsInitialInnocent = false;
+						}
+						else
+						{
+							m_Owner.IsInitialInnocent = true;
+						}
+					}
 				}
 
 				Delay = Interval = GetHitsRegenRate(m_Owner);
@@ -4173,7 +4185,7 @@ public ContextMenu ContextMenu
 				m_Target.Cancel(this, TargetCancelType.Canceled);
 			}
 
-			DisruptiveAction();
+			DisruptiveAction("OnKill");
 
 			Warmode = false;
 
@@ -4524,7 +4536,7 @@ public ContextMenu ContextMenu
 
 			if (m_Spell != null || (m_Spell != null && !m_Spell.OnCasterUsingObject(item)))
 			{
-				DisruptiveAction();
+				DisruptiveAction("OnItemUse");
 			}
 
 			if (m_Spell != null && !m_Spell.OnCasterUsingObject(item))
@@ -4598,7 +4610,7 @@ public ContextMenu ContextMenu
 				return;
 			}
 
-			DisruptiveAction();
+			DisruptiveAction("OnMobileUse");
 
 			if (m_Spell != null && !m_Spell.OnCasterUsingObject(m))
 			{
@@ -4644,7 +4656,7 @@ public ContextMenu ContextMenu
 			{
 				if (from.CheckAlive())
 				{
-					from.DisruptiveAction();
+					from.DisruptiveAction("OnLift");
 
 					if (from.Holding != null)
 					{
@@ -5715,7 +5727,7 @@ public ContextMenu ContextMenu
 					RegisterDamage(amount, from);
 				}
 
-				DisruptiveAction();
+				DisruptiveAction("OnDamage");
 
 				Paralyzed = false;
 
@@ -7110,7 +7122,7 @@ public ContextMenu ContextMenu
 
             m_IsStealthing = false;
 
-			DisruptiveAction(); // Anything that unhides you will also distrupt meditation
+			DisruptiveAction("OnRevealingAction"); // Anything that unhides you will also distrupt meditation
 		}
 
 		#region Say/SayTo/Emote/Whisper/Yell
@@ -8420,16 +8432,21 @@ public ContextMenu ContextMenu
 					if (CanRegenHits)
 					{
 						if (m_HitsTimer == null)
-						{
+						{							
 							m_HitsTimer = new HitsTimer(this);
 						}
 
 						m_HitsTimer.Start();
 					}
 					else if (m_HitsTimer != null)
-					{
+					{						
 						m_HitsTimer.Stop();
 					}
+				}
+
+				if (InitialInnocent && m_Hits >= HitsMax)
+				{
+					IsInitialInnocent = true;
 				}
 
 				if (m_Hits != value)
@@ -8855,7 +8872,7 @@ public ContextMenu ContextMenu
 				}
 			}
 		}
-
+		
 		public virtual void OnHiddenChanged()
 		{
 			m_AllowedStealthSteps = 0;
@@ -9378,6 +9395,8 @@ public ContextMenu ContextMenu
 		/// </summary>
 		public virtual void OnPoisoned(Mobile from, Poison poison, Poison oldPoison)
 		{
+			DisruptiveAction("OnPoisoned");	
+			
 			if (poison != null)
 			{
 				#region Mondain's Legacy
@@ -12256,27 +12275,19 @@ public ContextMenu ContextMenu
             }
         }
 
-        public virtual bool AlwaysGrey
+        public virtual bool AlwaysCriminal
         {
             get
             {
-            	return !m_Player && (m_Criminal || (m_Karma > -800 && m_Karma < -1));
+            	return m_Criminal;
             }
         }
 
-        public virtual bool AlwaysRed
+        public virtual bool AlwaysInnocent
         {
             get
             {
-            	return !m_Player && (m_Karma <= -800 || AlwaysMurderer);
-            }
-        }
-
-        public virtual bool AlwaysBlue
-        {
-            get
-            {
-            	return !m_Player && (InitialInnocent || IsInvulnerable);
+            	return IsInvulnerable;
             }
         }
 
@@ -12288,6 +12299,39 @@ public ContextMenu ContextMenu
             }
         }
         		
+        public virtual void GuildMessage(Mobile from)
+        {
+			BaseGuild guild = m_Guild;
+
+			if (guild != null && (m_DisplayGuildTitle || (m_Player && guild.Type != GuildType.Regular)))
+			{
+				string title = GuildTitle;
+				string type;
+
+				if (title == null)
+				{
+					title = "";
+				}
+				else
+				{
+					title = title.Trim();
+				}
+
+				if (guild.Type >= 0 && (int)guild.Type < m_GuildTypes.Length)
+				{
+					type = m_GuildTypes[(int)guild.Type];
+				}
+				else
+				{
+					type = "";
+				}
+				
+				string text = String.Format(title.Length <= 0 ? "[{1}]{2}" : "[{0}, {1}]{2}", title, guild.Abbreviation, type);
+				
+				PrivateOverheadMessage(MessageType.Regular, SpeechHue, true, text, from.NetState);					
+			}
+        }
+
         public void Face(object to)
         {
             if (!m_TurnToFace)
@@ -12305,94 +12349,42 @@ public ContextMenu ContextMenu
                 }
             }
         }
+
+        [CommandProperty(AccessLevel.GameMaster)]
+        public bool IsInitialInnocent { get; set; }
         
-        /// <summary>
-		///     Overridable. Event invoked when the Mobile is single clicked.
-		/// </summary>
-		public virtual void OnSingleClick(Mobile from)
-		{
-			if (m_Deleted)
-			{
-				return;
-			}
-			else if (IsPlayer() && DisableHiddenSelfClick && Hidden && from == this)
-			{
-				return;
-			}
-				
-			if (m_TurnToFace)
-			{
-				from.Face(this);
-			}
-
-			if (m_GuildClickMessage)
-			{
-				BaseGuild guild = m_Guild;
-
-				if (guild != null && (m_DisplayGuildTitle || (m_Player && guild.Type != GuildType.Regular)))
-				{
-					string title = GuildTitle;
-					string type;
-
-					if (title == null)
-					{
-						title = "";
-					}
-					else
-					{
-						title = title.Trim();
-					}
-
-					if (guild.Type >= 0 && (int)guild.Type < m_GuildTypes.Length)
-					{
-						type = m_GuildTypes[(int)guild.Type];
-					}
-					else
-					{
-						type = "";
-					}
-					
-					string text = String.Format(title.Length <= 0 ? "[{1}]{2}" : "[{0}, {1}]{2}", title, guild.Abbreviation, type);
-					
-					PrivateOverheadMessage(MessageType.Regular, SpeechHue, true, text, from.NetState);					
-				}
-			}
-
-			int hue;
-	
+        public virtual int NotoHue(Mobile from)
+        {       	       		
 			if (m_NameHue != -1)
 			{
-				hue = m_NameHue;
+				return m_NameHue;
 			}
-			else if (AlwaysBlue)
+			else if (AlwaysInnocent)
 			{
-				hue = 0x059; //blue
+				return 0x059; //blue
 			}
-			else if (AlwaysGrey)
+			else if (AlwaysCriminal)
 			{
-				hue = 0x3B2; //grey
+				return 0x3B2; //grey
 			}
-			else if (AlwaysRed)
-			{
-				Notoriety.Compute(from, this);
-					
-				hue = 0x022; //red
-			}
-			else
-			{
-				hue = Notoriety.GetHue(Notoriety.Compute(from, this));
-			}
-			
-			string name = Name;
-
-			if (name == null)
-			{
-				name = String.Empty;
+			else if (AlwaysMurderer)
+			{								
+				return 0x022; //red
 			}
 
-			string prefix = "";
+			return Notoriety.GetHue(Notoriety.Compute(from, this));
+        }        
+        
+        public virtual string FameTitle()
+        {
+        	if (InitialInnocent && IsInitialInnocent)
+        	{
+        		return string.Empty;
+        	}
+        		
+        	string prefix = string.Empty;
 
-			if (ShowFameTitle && (m_Player || m_Body.IsHuman))
+        	if (ShowFameTitle && Body.IsHuman)
 		    {
 				if (m_Karma <= -2000)
 				{
@@ -12415,33 +12407,50 @@ public ContextMenu ContextMenu
 						prefix = "Infamous";
 					}
 
-					if (m_Player && (hue == 0x059 || hue == 0x03F))
+					if (m_Hue == 0x059 || m_Hue == 0x03F)
 					{
-						hue = 0x3B2;
+						m_Hue = 0x3B2;
 					}					
 				}
-				else if (m_Fame >= 2000)
-				{					
-					prefix = "Honorable";						
-
-					if (m_Fame >= 20000)
-					{
-						prefix = (m_Female ? "Great Lady" : "Great Lord");
-					}
-					else if (m_Fame >= 15000)
-					{
-						prefix = (m_Female ? "Noble Lady" : "Noble Lord");
-					}
-					else if (m_Fame >= 10000)
-					{
-						prefix = (m_Female ? "Lady" : "Lord");
-					}
-					else if (m_Fame >= 5000)
-					{
-						prefix = "Noble";
-					}
-				}				
 		    }
+			
+        	return prefix;
+        }
+        
+        /// <summary>
+		///     Overridable. Event invoked when the Mobile is single clicked.
+		/// </summary>
+		public virtual void OnSingleClick(Mobile from)
+		{		
+			if (m_Deleted)
+			{
+				return;
+			}
+			else if (IsPlayer() && DisableHiddenSelfClick && Hidden && from == this)
+			{
+				return;
+			}
+				
+			if (m_TurnToFace)
+			{
+				from.Face(this);
+			}
+
+			if (m_GuildClickMessage)
+			{
+				GuildMessage(from);
+			}
+				
+			string name = Name;
+
+			if (name == null)
+			{
+				name = String.Empty;
+			}
+
+			int hue = NotoHue(from);
+
+			string prefix = FameTitle();
 
 			string suffix = "";
 
@@ -12473,8 +12482,6 @@ public ContextMenu ContextMenu
 			
 			if (IsStaff())
 			{
-				hue = 11; //purple
-
 				string text = $"[{this.AccessLevel}]";
 				
 				if (m_StaffKarmaTitles)
@@ -12540,13 +12547,19 @@ public ContextMenu ContextMenu
 			}
 		}
 
-		public virtual void DisruptiveAction()
+		public virtual void DisruptiveAction(string disrupt)
 		{
 			if (Meditating)
 			{
 				Meditating = false;
 					
 				SendLocalizedMessage(500134); // You stop meditating.
+
+//				Debug
+//				if (IsStaff())
+//				{
+//					SendMessage("$[{disrupt}]");
+//				}
 			}
 		}
 
