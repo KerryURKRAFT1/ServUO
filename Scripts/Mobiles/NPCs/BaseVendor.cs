@@ -1,4 +1,4 @@
-#region Header
+﻿#region Header
 // **********
 // ServUO - BaseVendor.cs
 // **********
@@ -68,6 +68,7 @@ namespace Server.Mobiles
 
         public virtual bool ChangeRace { get { return true; } }
 
+    	public override bool AlwaysInnocent { get { return true; } }
         public override bool IsInvulnerable { get { return ((Map.Rules & MapRules.HarmfulRestrictions) != 0); } }
 
 		public virtual DateTime NextTrickOrTreat { get; set; }
@@ -216,6 +217,9 @@ namespace Server.Mobiles
 			pack.Movable = false;
 			pack.Visible = false;
 			AddItem(pack);
+
+			Fame = 1000;
+   	        Karma = 1000;
 
 			m_LastRestock = DateTime.UtcNow;
 		}
