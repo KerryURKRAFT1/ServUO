@@ -877,7 +877,7 @@ namespace Server
 				{
 					if (Core.TickCount - from.NextSkillTime >= 0 && from.Spell == null)
 					{
-						from.DisruptiveAction();
+						from.DisruptiveAction("OnUseSkill");
 
 						from.NextSkillTime = Core.TickCount + (int)(info.Callback(from)).TotalMilliseconds;
 
