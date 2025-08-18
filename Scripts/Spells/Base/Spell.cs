@@ -572,7 +572,7 @@ namespace Server.Spells
 				return;
 			}
 			
-            m_Caster.DisruptiveAction();
+            m_Caster.DisruptiveAction("OnDisturb");
 
 			if (IsCasting || (m_State == SpellState.Sequencing && !firstCircle && this is MagerySpell && ((MagerySpell)this).Circle != SpellCircle.First))
 			{
@@ -762,7 +762,7 @@ namespace Server.Spells
             	SpellHelper.Turn(m_Caster, m_ObjectTargeted);
             }
 			
-            m_Caster.DisruptiveAction();
+            m_Caster.DisruptiveAction("OnBeginCast");
 		}
 
 		public virtual void GetCastSkills(out double min, out double max)
