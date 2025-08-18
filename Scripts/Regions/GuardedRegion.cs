@@ -22,6 +22,8 @@ namespace Server.Regions
 
 		private readonly Dictionary<Mobile, GuardTimer> m_GuardCandidates = new Dictionary<Mobile, GuardTimer>();
 
+		private readonly Dictionary<Mobile, ShoutTimer> m_Shout = new Dictionary<Mobile, ShoutTimer>();
+
 		private readonly Type m_GuardType;
 
 		private bool m_Disabled;
@@ -236,7 +238,23 @@ namespace Server.Regions
 
 			if (args.Mobile.Alive && args.HasKeyword(0x0007)) // *guards*
 			{
-				CallGuards(args.Mobile.Location);
+				ShoutTimer timer = null; //anti guard spam
+
+				if (m_Shout != null || m_Shout.Count > 0)
+				{					
+					m_Shout.TryGetValue(args.Mobile, out timer);
+				}
+				
+				if (timer == null)
+				{
+					timer = new ShoutTimer(args.Mobile, m_Shout);
+					
+					timer.Start();
+		
+					m_Shout[args.Mobile] = timer;
+
+					CallGuards(args.Mobile.Location);
+				}
 			}
 		}
 
@@ -488,6 +506,29 @@ namespace Server.Regions
 			private readonly Dictionary<Mobile, GuardTimer> m_Table;
 
 			public GuardTimer(Mobile m, Dictionary<Mobile, GuardTimer> table)
+				: base(TimeSpan.FromSeconds(15.0))
+			{
+				Priority = TimerPriority.TwoFiftyMS;
+
+				m_Mobile = m;
+				m_Table = table;
+			}
+
+			protected override void OnTick()
+			{
+				if (m_Table.ContainsKey(m_Mobile))
+				{
+					m_Table.Remove(m_Mobile);
+				}
+			}
+		}
+
+		private class ShoutTimer : Timer
+		{
+			private readonly Mobile m_Mobile;
+			private readonly Dictionary<Mobile, ShoutTimer> m_Table;
+
+			public ShoutTimer(Mobile m, Dictionary<Mobile, ShoutTimer> table)
 				: base(TimeSpan.FromSeconds(15.0))
 			{
 				Priority = TimerPriority.TwoFiftyMS;
