@@ -127,7 +127,7 @@ namespace Server
             }
 
             BaseCreature cret = target as BaseCreature;
-            if (target.Body.IsHuman && (cret == null || (!cret.AlwaysAttackable && !cret.AlwaysMurderer)))
+            if (target.Body.IsHuman && (cret == null || (!cret.AlwaysCriminal && !cret.AlwaysMurderer)))
             {
                 if (reg == null || reg.IsDisabled())
                 { 
