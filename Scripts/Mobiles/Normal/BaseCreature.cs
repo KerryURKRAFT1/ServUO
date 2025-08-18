@@ -1515,13 +1515,24 @@ namespace Server.Mobiles
             }
         }
 
-        public override bool InitialInnocent
+		#region New Noto
+		public override bool AlwaysInnocent
         {
             get
             {
                 XmlData x = (XmlData)XmlAttach.FindAttachment(this, typeof(XmlData), "Notoriety");
 
-                return x != null && x.Data == "blue";
+                return IsInvulnerable || (x != null && x.Data == "blue");
+            }
+        }
+
+        public override bool AlwaysCriminal
+        {
+            get
+            {
+                XmlData x = (XmlData)XmlAttach.FindAttachment(this, typeof(XmlData), "Notoriety");
+
+                return (Karma > -800 && Kills < 5) || (x != null && x.Data == "gray");
             }
         }
 
@@ -1531,19 +1542,10 @@ namespace Server.Mobiles
             {
                 XmlData x = (XmlData)XmlAttach.FindAttachment(this, typeof(XmlData), "Notoriety");
 
-                return x != null && x.Data == "red";
+                return (InitialInnocent && !IsInitialInnocent) && (Karma <= -800 || Kills >= 5 || (x != null && x.Data == "red")) ;
             }
         }
-
-        public virtual bool AlwaysAttackable
-        {
-            get
-            {
-                XmlData x = (XmlData)XmlAttach.FindAttachment(this, typeof(XmlData), "Notoriety");
-
-                return x != null && x.Data == "gray";
-            }
-        }
+		#endregion
 
         public virtual bool ForceNotoriety
         {
@@ -4289,7 +4291,7 @@ namespace Server.Mobiles
                 return;
             }
 
-            if (!Body.IsHuman || Kills >= 5 || AlwaysMurderer || AlwaysAttackable || m.Kills < 5 || !m.InRange(Location, 12) ||
+            if (!Body.IsHuman || Kills >= 5 || AlwaysMurderer || AlwaysCriminal|| m.Kills < 5 || !m.InRange(Location, 12) ||
                 !m.Alive)
             {
                 return;
