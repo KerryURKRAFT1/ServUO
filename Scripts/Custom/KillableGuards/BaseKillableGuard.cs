@@ -22,13 +22,18 @@ namespace Server.Mobiles
 			}
 				
 			if (m is BaseCreature bc)
-			{
-			    if (bc.IsGuardExempt || bc.IsInitialInnocent)
+			{	
+				if (InitialInnocent && !bc.IsInitialInnocent)
+				{
+					return true;
+				}
+				
+			    if (bc.IsGuardExempt)
 				{
 					return false;
 				}
 
-				if ((bc.Controlled || bc.Summoned) && bc.ControlMaster.Kills >= 5)
+			    if ((bc.Controlled || bc.Summoned) && bc.ControlMaster.Kills >= 5)
 				{
 					return true;
 				}
