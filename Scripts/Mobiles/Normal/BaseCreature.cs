@@ -1700,6 +1700,11 @@ namespace Server.Mobiles
         	{
 				((Spell)this.Spell).Disturb(DisturbType.EquipRequest);
 			}
+
+			if (!Warmode && InitialInnocent)
+			{
+				IsInitialInnocent = true;
+			}
 		}
 
 		[CommandProperty(AccessLevel.GameMaster)]
@@ -2119,6 +2124,11 @@ namespace Server.Mobiles
             if (speechType != null)
             {
                 speechType.OnConstruct(this);
+            }
+            
+            if (InitialInnocent)
+            {
+            	IsInitialInnocent = true;
             }
 
             Timer.DelayCall(() =>GenerateLoot(true));
