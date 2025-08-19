@@ -376,7 +376,7 @@ namespace Server.Gumps
 
                         this.AddButtonLabeled(20, 150, this.GetButtonID(3, 101), "Create World");
                         this.AddButtonLabeled(20, 175, this.GetButtonID(3, 102), "Delete World");
-                        this.AddButtonLabeled(20, 200, this.GetButtonID(3, 103), "Recreate World");
+                        //this.AddButtonLabeled(20, 200, this.GetButtonID(3, 103), "Recreate World");
 
                         this.AddHtml(20, 275, 400, 30, this.Color(this.Center("Statics"), LabelColor32), false, false);
 
@@ -1783,17 +1783,17 @@ namespace Server.Gumps
                                 page = AdminGumpPage.Administer_Commands;
                                 break;
                             case 101:
-                                this.InvokeCommand("CreateWorld nogump");
+                                this.InvokeCommand("CreateWorld");
                                 notice = "The world has been created.";
                                 break;
                             case 102:
-                                this.InvokeCommand("DeleteWorld nogump");
+                                this.InvokeCommand("DeleteWorld");
                                 notice = "The world has been deleted.";
                                 break;
-                            case 103:
-                                this.InvokeCommand("RecreateWorld nogump");
-                                notice = "The world has been recreated.";
-                                break;
+//                            case 103:
+//                                this.InvokeCommand("RecreateWorld nogump");
+//                                notice = "The world has been recreated.";
+//                                break;
                             case 107:
                                 this.InvokeCommand("RebuildCategorization");
                                 notice = "Categorization menu has been regenerated. The server should be restarted.";
