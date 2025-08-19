@@ -171,7 +171,14 @@ namespace Server.Misc
 
             gc *= skill.Info.GainFactor;
 
-            if (gc < 0.01)
+			#region Power Hour
+			if (from is PlayerMobile pm)
+            {
+            	gc = pm.PowerHourRunning(skill, gc);
+            }
+            #endregion
+
+			if (gc < 0.01)
                 gc = 0.01;
 
 			//boost

@@ -1128,9 +1128,11 @@ namespace Server.Mobiles
 				return;
 			}
 
-			if (from is PlayerMobile)
+			if (from is PlayerMobile pm)
 			{
-				((PlayerMobile)from).ClaimAutoStabledPets();
+				pm.ClaimAutoStabledPets();
+
+				Timer.DelayCall (TimeSpan.FromSeconds(10.0), () => pm.PowerHourConfigureSequence());
 			}
 		}
 
@@ -2735,6 +2737,16 @@ namespace Server.Mobiles
 
 		public override void DisruptiveAction(string disrupt)
 		{
+			if (disrupt == "OnUseSkill")
+			{
+				if (this.Spell != null)
+            	{
+					((Spell)this.Spell).Disturb(DisturbType.NewCast);
+				}
+				
+				return;
+			}
+
 			if (Meditating)
 			{
 				RemoveBuff(BuffIcon.ActiveMeditation);
@@ -3991,6 +4003,11 @@ namespace Server.Mobiles
 
 			switch (version)
 			{
+                case 34:
+                    {
+						DeserializeExt(reader);
+						goto case 33;
+                    }
                 case 33:
                     {
                         m_ExploringTheDeepQuest = (ExploringTheDeepQuestChain)reader.ReadInt();
@@ -4426,8 +4443,12 @@ namespace Server.Mobiles
 
 			base.Serialize(writer);
 
-			writer.Write(33); // version
+			writer.Write(34); // version
 
+			//version 34
+			SerializeExt(writer);
+			
+			//version 33
             writer.Write((int)m_ExploringTheDeepQuest);
 
             // Version 31/32 Titles
