@@ -2004,18 +2004,6 @@ namespace Server
 				if (m_Owner.CanRegenHits) // m_Owner.Alive && !m_Owner.Poisoned )
 				{
 					m_Owner.Hits++;
-
-					if (m_Owner.InitialInnocent)
-					{
-						if (m_Owner.Hits < m_Owner.HitsMax)
-						{
-							m_Owner.IsInitialInnocent = false;
-						}
-						else
-						{
-							m_Owner.IsInitialInnocent = true;
-						}
-					}
 				}
 
 				Delay = Interval = GetHitsRegenRate(m_Owner);
@@ -8444,11 +8432,6 @@ public ContextMenu ContextMenu
 					}
 				}
 
-				if (InitialInnocent && m_Hits >= HitsMax)
-				{
-					IsInitialInnocent = true;
-				}
-
 				if (m_Hits != value)
 				{
 					int oldValue = m_Hits;
@@ -8822,6 +8805,12 @@ public ContextMenu ContextMenu
 					}
 
 					m_Warmode = value;
+
+					if (InitialInnocent)
+					{
+						IsInitialInnocent = !m_Warmode;
+					}
+
 					Delta(MobileDelta.Flags);
 
 					if (m_NetState != null)
