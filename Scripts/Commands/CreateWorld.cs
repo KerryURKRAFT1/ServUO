@@ -87,6 +87,8 @@ namespace Server.Commands
 			new CommandEntry("Reagent Spawners",	"XmlLoad Spawns/Felucca/Reagents",	501, 	false),
 			new CommandEntry("Rares Spawners",		"XmlLoad Spawns/Felucca/Rares",		502, 	false),
 			new CommandEntry("Stealable Spawners",	"XmlLoad Spawns/Felucca/Stealables",503, 	false),
+			new CommandEntry(600), //Spacer
+			new CommandEntry("SmartSpawn",			"OptimalSmartSpawning 100",		   	601, 	false),
 		});
 
 		public CreateWorld()
