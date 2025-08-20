@@ -57,7 +57,7 @@ namespace Server.Misc
             
             m_MapList = new List<string>();
 
-            string date = DateTime.Now.ToString ("[yyyy-MM-dd] [HH-mm-ss]");
+            string date = DateTime.Now.ToString ("[yyyy-MM-dd HH-mm-ss]");
 
 			string datefolder = Path.Combine (RootPath, date);
 
@@ -72,7 +72,7 @@ namespace Server.Misc
 
 			if ( m != null )
 			{
-				m.SendMessage( "World Backup Complete" );
+				m.SendMessage(2042, $"XmlSpawner Export Complete '{date}'" );
 			}
 		}
 
