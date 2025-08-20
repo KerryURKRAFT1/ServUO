@@ -375,16 +375,22 @@ namespace Server.Gumps
                         this.AddHtml(10, 125, 400, 20, this.Color(this.Center("Generating"), LabelColor32), false, false);
 
                         this.AddButtonLabeled(20, 150, this.GetButtonID(3, 101), "Create World");
-                        this.AddButtonLabeled(20, 200, this.GetButtonID(3, 102), "Delete World");
-                        this.AddButtonLabeled(220, 150, this.GetButtonID(3, 103), "Add/Change Spawns");
-                        this.AddButtonLabeled(220, 175, this.GetButtonID(3, 104), "Remove XmlSpawners");
-                        this.AddButtonLabeled(220, 200, this.GetButtonID(3, 105), "Export XmlSpawners");
+                        this.AddButtonLabeled(20, 175, this.GetButtonID(3, 102), "Delete World");
+                        //103
+                        //104
+                        //105
+                        
+                        this.AddButtonLabeled(220, 150, this.GetButtonID(3, 106), "Add/Change Spawns");
+                        this.AddButtonLabeled(220, 175, this.GetButtonID(3, 107), "Remove XmlSpawners");
+                        this.AddButtonLabeled(220, 200, this.GetButtonID(3, 108), "Export XmlSpawners");
+                        this.AddButtonLabeled(220, 225, this.GetButtonID(3, 109), "Respawn Spawners");
+                        this.AddButtonLabeled(220, 250, this.GetButtonID(3, 110), "SmartSpawn");
 
                         this.AddHtml(20, 275, 400, 30, this.Color(this.Center("Statics"), LabelColor32), false, false);
 
-                        this.AddButtonLabeled(20, 300, this.GetButtonID(3, 110), "Freeze (Target)");
-                        this.AddButtonLabeled(20, 325, this.GetButtonID(3, 111), "Freeze (World)");
-                        this.AddButtonLabeled(20, 350, this.GetButtonID(3, 112), "Freeze (Map)");
+                        this.AddButtonLabeled(20, 300, this.GetButtonID(3, 111), "Freeze (Target)");
+                        this.AddButtonLabeled(20, 325, this.GetButtonID(3, 112), "Freeze (World)");
+                        this.AddButtonLabeled(20, 350, this.GetButtonID(3, 113), "Freeze (Map)");
 
                         this.AddButtonLabeled(220, 300, this.GetButtonID(3, 120), "Unfreeze (Target)");
                         this.AddButtonLabeled(220, 325, this.GetButtonID(3, 121), "Unfreeze (World)");
@@ -1792,23 +1798,27 @@ namespace Server.Gumps
                                 this.InvokeCommand("DeleteWorld");
                                 notice = "Delete World gump.";
                                 break;
-                            case 103:
+                            case 106:
                                 this.InvokeCommand("AddXmlSpawners");
                                 notice = "Creates checked options and removes unchecked options, does not allow duplicates.";
                                 break;
-                            case 104:
+                            case 107:
                                 this.InvokeCommand("XmlSpawnerWipeAll");
                                 notice = "All XmlSpawners have been removed.";
                                 break;
-                            case 105:
+                            case 108:
                                 this.InvokeCommand("XmlSpawnerExporter");
                                 notice = "XmlSpawners exported to XSE format.";
                                 break;
-                            case 107:
-                                this.InvokeCommand("RebuildCategorization");
-                                notice = "Categorization menu has been regenerated. The server should be restarted.";
+                            case 109:
+                                this.InvokeCommand("XmlSpawnerRespawnAll");
+                                notice = "Respawned XmlSpawners.";
                                 break;
                             case 110:
+                                this.InvokeCommand("OptimalSmartSpawning 100");
+                                notice = "Activated SmartSpawning.";
+                                break;
+                            case 111:
                                 this.InvokeCommand("Freeze");
                                 notice = "Target bounding points.";
                                 break;
@@ -2072,10 +2082,10 @@ namespace Server.Gumps
                             case 400:
                                 this.InvokeCommand("Add");
                                 break;
-                            case 111:
+                            case 112:
                                 this.InvokeCommand("FreezeWorld");
                                 break;
-                            case 112:
+                            case 113:
                                 this.InvokeCommand("FreezeMap");
                                 break;
                             case 121:
