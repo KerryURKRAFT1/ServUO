@@ -166,6 +166,15 @@ namespace Server.Commands
 			
 			string prefix = Server.Commands.CommandSystem.Prefix;
 			
+			switch (type)
+			{
+				case CreateWorld.GumpType.Create:
+				case CreateWorld.GumpType.Spawn:
+					CommandSystem.Handle(from, prefix + "XmlSpawnerWipeAll"); //dont dupe					
+					break;
+				default: break;
+			}
+			
 			foreach (int sel in selections)
 			{
 				foreach (CreateWorld.CommandEntry entry in CreateWorld.Commands)
@@ -187,7 +196,6 @@ namespace Server.Commands
 								break;
 							case CreateWorld.GumpType.Spawn:
 								from.Say("Spawning " + entry.Name);
-								CommandSystem.Handle(from, prefix + "XmlSpawnerWipeAll"); //dont dupe
 								CommandSystem.Handle(from, prefix + entry.CreateCommand);
 								break;
 						}
