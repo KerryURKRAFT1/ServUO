@@ -11,7 +11,7 @@ namespace Server.Commands
 	{
 		public enum GumpType 
 		{ 
-			Create, Delete 
+			Create, Delete, Spawn
 		}
 
 		public struct CommandEntry
@@ -78,6 +78,17 @@ namespace Server.Commands
 			new CommandEntry("Spawners",			"XmlSpawnerWipeAll", 	401),
 		});
 
+		public static List<CommandEntry> XmlSpawnersCommand = new List<CommandEntry>(new CommandEntry[]
+		{
+			new CommandEntry("Regular Spawners",	"XmlLoad Spawns/Felucca/Spawns",	101, 	true),
+			new CommandEntry(200), //Spacer
+			new CommandEntry("Khaldun Spawners", 	"XmlLoad Spawns/Felucca/Khaldun", 	302, 	false),
+			new CommandEntry(400), //Spacer
+			new CommandEntry("Reagent Spawners",	"XmlLoad Spawns/Felucca/Reagents",	501, 	false),
+			new CommandEntry("Rares Spawners",		"XmlLoad Spawns/Felucca/Rares",		502, 	false),
+			new CommandEntry("Stealable Spawners",	"XmlLoad Spawns/Felucca/Stealables",503, 	false),
+		});
+
 		public CreateWorld()
 		{
 		}
@@ -86,9 +97,10 @@ namespace Server.Commands
 		{
 			CommandSystem.Register("Createworld", AccessLevel.Administrator, new CommandEventHandler(Create_OnCommand));
 			CommandSystem.Register("DeleteWorld", AccessLevel.Administrator, new CommandEventHandler(Delete_OnCommand));
+			CommandSystem.Register("AddXmlSpawners", AccessLevel.Administrator, new CommandEventHandler(AddXmlSpawners_OnCommand));
 		}
 
-		[Usage("CreateWorld [nogump]")]
+		[Usage("CreateWorld")]
 		[Description("Generates the world with a menu.")]
 		private static void Create_OnCommand(CommandEventArgs e)
 		{
@@ -126,6 +138,26 @@ namespace Server.Commands
 			}
 		}
 
+		[Usage("AddXmlSpawners")]
+		[Description("Adds XmlSpawners to the world with a menu.")]
+		private static void AddXmlSpawners_OnCommand(CommandEventArgs e)
+		{
+			if (String.IsNullOrEmpty(e.ArgString))
+			{
+				Commands = new List<CommandEntry>(XmlSpawnersCommand);
+				
+				e.Mobile.SendGump(new CreateWorldGump(e, GumpType.Spawn));
+			}
+			else
+			{
+				if (e.Mobile != null)
+				{
+					e.Mobile.SendMessage("Usage: AddXmlSpawners");
+				}
+			}
+		}
+		
+		
 		public static void DoCommands(int[] selections, GumpType type, Mobile from)
 		{
 			World.Broadcast(0x35, false, "The dark side is generating. This may take some time...");
@@ -150,6 +182,11 @@ namespace Server.Commands
 									from.Say("Deleting " + entry.Name);
 									CommandSystem.Handle(from, prefix + entry.DeleteCommand);
 								}
+								break;
+							case CreateWorld.GumpType.Spawn:
+								from.Say("Spawning " + entry.Name);
+								CommandSystem.Handle(from, prefix + "XmlSpawnerWipeAll"); //dont dupe
+								CommandSystem.Handle(from, prefix + entry.CreateCommand);
 								break;
 						}
 					}
@@ -188,6 +225,9 @@ namespace Server.Gumps
 			{
 				case CreateWorld.GumpType.Create:
 					AddLabel(50, 7, 60, "CREATE WORLD GUMP");
+					break;
+				case CreateWorld.GumpType.Spawn:
+					AddLabel(50, 7, 60, "SPAWN WORLD GUMP");
 					break;
 				case CreateWorld.GumpType.Delete:
 					AddLabel(50, 7, 60, "DELETE WORLD GUMP");
