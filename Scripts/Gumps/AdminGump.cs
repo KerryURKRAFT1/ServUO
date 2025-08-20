@@ -1786,7 +1786,7 @@ namespace Server.Gumps
                                 break;
                             case 101:
                                 this.InvokeCommand("CreateWorld");
-                                notice = "Create World gump.";
+                                notice = "Create World gump";
                                 break;
                             case 102:
                                 this.InvokeCommand("DeleteWorld");
