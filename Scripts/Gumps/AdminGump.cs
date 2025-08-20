@@ -376,7 +376,8 @@ namespace Server.Gumps
 
                         this.AddButtonLabeled(20, 150, this.GetButtonID(3, 101), "Create World");
                         this.AddButtonLabeled(20, 175, this.GetButtonID(3, 102), "Delete World");
-                        //this.AddButtonLabeled(20, 200, this.GetButtonID(3, 103), "Recreate World");
+                        this.AddButtonLabeled(20, 200, this.GetButtonID(3, 103), "Add XmlSpawners");
+                        this.AddButtonLabeled(20, 225, this.GetButtonID(3, 104), "Remove XmlSpawners");
 
                         this.AddHtml(20, 275, 400, 30, this.Color(this.Center("Statics"), LabelColor32), false, false);
 
@@ -1790,10 +1791,14 @@ namespace Server.Gumps
                                 this.InvokeCommand("DeleteWorld");
                                 notice = "The world has been deleted.";
                                 break;
-//                            case 103:
-//                                this.InvokeCommand("RecreateWorld nogump");
-//                                notice = "The world has been recreated.";
-//                                break;
+                            case 103:
+                                this.InvokeCommand("AddXmlSpawners");
+                                notice = "XmlSpawners have been spawned.";
+                                break;
+                            case 104:
+                                this.InvokeCommand("XmlSpawnerWipeAll");
+                                notice = "All XmlSpawners have been removed.";
+                                break;
                             case 107:
                                 this.InvokeCommand("RebuildCategorization");
                                 notice = "Categorization menu has been regenerated. The server should be restarted.";
