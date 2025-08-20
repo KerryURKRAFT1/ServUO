@@ -375,9 +375,10 @@ namespace Server.Gumps
                         this.AddHtml(10, 125, 400, 20, this.Color(this.Center("Generating"), LabelColor32), false, false);
 
                         this.AddButtonLabeled(20, 150, this.GetButtonID(3, 101), "Create World");
-                        this.AddButtonLabeled(20, 175, this.GetButtonID(3, 102), "Delete World");
-                        this.AddButtonLabeled(20, 200, this.GetButtonID(3, 103), "Add XmlSpawners");
-                        this.AddButtonLabeled(20, 225, this.GetButtonID(3, 104), "Remove XmlSpawners");
+                        this.AddButtonLabeled(20, 200, this.GetButtonID(3, 102), "Delete World");
+                        this.AddButtonLabeled(220, 150, this.GetButtonID(3, 103), "Add/Change Spawns");
+                        this.AddButtonLabeled(220, 175, this.GetButtonID(3, 104), "Remove XmlSpawners");
+                        this.AddButtonLabeled(220, 200, this.GetButtonID(3, 105), "Export XmlSpawners");
 
                         this.AddHtml(20, 275, 400, 30, this.Color(this.Center("Statics"), LabelColor32), false, false);
 
@@ -1785,19 +1786,23 @@ namespace Server.Gumps
                                 break;
                             case 101:
                                 this.InvokeCommand("CreateWorld");
-                                notice = "The world has been created.";
+                                notice = "Create World gump.";
                                 break;
                             case 102:
                                 this.InvokeCommand("DeleteWorld");
-                                notice = "The world has been deleted.";
+                                notice = "Delete World gump.";
                                 break;
                             case 103:
                                 this.InvokeCommand("AddXmlSpawners");
-                                notice = "XmlSpawners have been spawned.";
+                                notice = "Creates checked options and removes unchecked options, does not allow duplicates.";
                                 break;
                             case 104:
                                 this.InvokeCommand("XmlSpawnerWipeAll");
                                 notice = "All XmlSpawners have been removed.";
+                                break;
+                            case 105:
+                                this.InvokeCommand("XmlSpawnerExporter");
+                                notice = "XmlSpawners exported to XSE format.";
                                 break;
                             case 107:
                                 this.InvokeCommand("RebuildCategorization");
