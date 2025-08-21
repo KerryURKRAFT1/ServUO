@@ -102,7 +102,23 @@ namespace Server.Mobiles
             return base.IsEnemy(m);
         }
 
-		public override void OnWarmodeChanged()
+        public override bool HandlesOnSpeech(Mobile from)
+        {
+            return true;
+        }
+
+        // Temporary 
+        public override void OnSpeech(SpeechEventArgs e)
+        {
+            base.OnSpeech(e);
+             
+            if (e.Speech.ToLower().StartsWith("don"))
+            {
+            	Say( TrumpQuotes[Utility.Random(TrumpQuotes.Count)] );
+            }
+        }        
+
+        public override void OnWarmodeChanged()
 		{ 
 			if (this.Spell != null && this.Spell.OnWarModeChange())
         	{
