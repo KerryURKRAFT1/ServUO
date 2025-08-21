@@ -8416,7 +8416,7 @@ public ContextMenu ContextMenu
 				}
 
 				if (value < HitsMax)
-				{
+				{					
 					if (CanRegenHits)
 					{
 						if (m_HitsTimer == null)
@@ -8806,9 +8806,9 @@ public ContextMenu ContextMenu
 
 					m_Warmode = value;
 
-					if (InitialInnocent)
+					if (Warmode && InitialInnocent)
 					{
-						IsInitialInnocent = !m_Warmode;
+						IsInitialInnocent = false;
 					}
 
 					Delta(MobileDelta.Flags);
