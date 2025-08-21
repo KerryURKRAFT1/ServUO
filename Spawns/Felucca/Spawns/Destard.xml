@@ -1,19 +1,19 @@
 <Spawns>
   <Points>
-    <Name>28 ShadowWyrm</Name>
-    <UniqueId>0cf7ff30-764c-4007-92c8-8ed361baf693</UniqueId>
+    <Name>67 Dragon</Name>
+    <UniqueId>001dee19-388b-401b-95c2-0c99efd6755a</UniqueId>
     <Map>Felucca</Map>
-    <X>5127</X>
-    <Y>844</Y>
-    <Width>50</Width>
-    <Height>50</Height>
-    <CentreX>5152</CentreX>
-    <CentreY>869</CentreY>
-    <CentreZ>0</CentreZ>
-    <Range>50</Range>
-    <MaxCount>3</MaxCount>
-    <MinDelay>5</MinDelay>
-    <MaxDelay>10</MaxDelay>
+    <X>5154</X>
+    <Y>992</Y>
+    <Width>18</Width>
+    <Height>18</Height>
+    <CentreX>5163</CentreX>
+    <CentreY>1001</CentreY>
+    <CentreZ>-5</CentreZ>
+    <Range>9</Range>
+    <MaxCount>1</MaxCount>
+    <MinDelay>10</MinDelay>
+    <MaxDelay>20</MaxDelay>
     <DelayInSec>False</DelayInSec>
     <Duration>0</Duration>
     <DespawnTime>0</DespawnTime>
@@ -40,64 +40,150 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>ShadowWyrm:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>Dragon:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>27 TreasureLevel3-TreasureLevel4-Etc</Name>
-    <UniqueId>15ddc016-1cfb-425b-b04d-ef263821c8b4</UniqueId>
+    <Name>66 Wyvern</Name>
+    <UniqueId>058d3ba1-c690-422e-86b2-2df0544af815</UniqueId>
     <Map>Felucca</Map>
-    <X>5310</X>
-    <Y>973</Y>
-    <Width>14</Width>
-    <Height>14</Height>
-    <CentreX>5317</CentreX>
-    <CentreY>980</CentreY>
-    <CentreZ>0</CentreZ>
-    <Range>7</Range>
-    <MaxCount>3</MaxCount>
-    <MinDelay>5</MinDelay>
-    <MaxDelay>10</MaxDelay>
-    <DelayInSec>False</DelayInSec>
-    <Duration>0</Duration>
-    <DespawnTime>0</DespawnTime>
-    <ProximityRange>-1</ProximityRange>
-    <ProximityTriggerSound>500</ProximityTriggerSound>
-    <TriggerProbability>1</TriggerProbability>
-    <InContainer>False</InContainer>
-    <MinRefractory>0</MinRefractory>
-    <MaxRefractory>0</MaxRefractory>
-    <TODStart>0</TODStart>
-    <TODEnd>0</TODEnd>
-    <TODMode>0</TODMode>
-    <KillReset>1</KillReset>
-    <ExternalTriggering>False</ExternalTriggering>
-    <SequentialSpawning>-1</SequentialSpawning>
-    <AllowGhostTriggering>False</AllowGhostTriggering>
-    <AllowNPCTriggering>False</AllowNPCTriggering>
-    <SpawnOnTrigger>False</SpawnOnTrigger>
-    <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
-    <TickReset>False</TickReset>
-    <Team>0</Team>
-    <Amount>1</Amount>
-    <IsGroup>False</IsGroup>
-    <IsRunning>True</IsRunning>
-    <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>TreasureLevel3:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TreasureLevel4:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
-  </Points>
-  <Points>
-    <Name>26 Dragon-Drake-Etc</Name>
-    <UniqueId>1e83be41-8e5c-4c62-9250-0e328e4bcd06</UniqueId>
-    <Map>Felucca</Map>
-    <X>5179</X>
-    <Y>935</Y>
-    <Width>60</Width>
-    <Height>60</Height>
-    <CentreX>5209</CentreX>
-    <CentreY>965</CentreY>
+    <X>5214</X>
+    <Y>917</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5214</CentreX>
+    <CentreY>917</CentreY>
     <CentreZ>-40</CentreZ>
-    <Range>50</Range>
-    <MaxCount>4</MaxCount>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Wyvern:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>54 Dragon</Name>
+    <UniqueId>06bf7ab7-537a-485f-98a0-125246ef3fdf</UniqueId>
+    <Map>Felucca</Map>
+    <X>5247</X>
+    <Y>956</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5247</CentreX>
+    <CentreY>956</CentreY>
+    <CentreZ>-40</CentreZ>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Dragon:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>30 GiantSerpent</Name>
+    <UniqueId>10074635-df5e-4239-b927-99046a1b19e4</UniqueId>
+    <Map>Felucca</Map>
+    <X>5157</X>
+    <Y>997</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5157</CentreX>
+    <CentreY>997</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>GiantSerpent:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>5 ShadowWyrm</Name>
+    <UniqueId>1ae0e1d8-10e8-4f7c-be69-7171a6a4f4d4</UniqueId>
+    <Map>Felucca</Map>
+    <X>5257</X>
+    <Y>782</Y>
+    <Width>10</Width>
+    <Height>10</Height>
+    <CentreX>5262</CentreX>
+    <CentreY>787</CentreY>
+    <CentreZ>40</CentreZ>
+    <Range>10</Range>
+    <MaxCount>1</MaxCount>
     <MinDelay>5</MinDelay>
     <MaxDelay>10</MaxDelay>
     <DelayInSec>False</DelayInSec>
@@ -126,22 +212,194 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Dragon:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Drake:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Wyvern:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>ShadowWyrm:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 Drake-Wyvern-Etc</Name>
-    <UniqueId>25c1b188-f67c-4697-9a90-10f6de11adfe</UniqueId>
+    <Name>8 Dragon</Name>
+    <UniqueId>219986b9-ac54-4222-9199-49fbab8c6329</UniqueId>
     <Map>Felucca</Map>
-    <X>5196</X>
-    <Y>796</Y>
-    <Width>60</Width>
-    <Height>60</Height>
+    <X>5269</X>
+    <Y>811</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5269</CentreX>
+    <CentreY>811</CentreY>
+    <CentreZ>7</CentreZ>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Dragon:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>10 Drake</Name>
+    <UniqueId>22043236-5aaa-44d5-9f11-46f515b37eb5</UniqueId>
+    <Map>Felucca</Map>
+    <X>5280</X>
+    <Y>955</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5280</CentreX>
+    <CentreY>955</CentreY>
+    <CentreZ>-40</CentreZ>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Drake:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>26 Drake</Name>
+    <UniqueId>2227d973-bb02-440c-8356-4f0b10cc6033</UniqueId>
+    <Map>Felucca</Map>
+    <X>5214</X>
+    <Y>917</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5214</CentreX>
+    <CentreY>917</CentreY>
+    <CentreZ>-40</CentreZ>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Drake:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>35 GiantSerpent</Name>
+    <UniqueId>223ba22a-9298-492c-9fe8-50248058d793</UniqueId>
+    <Map>Felucca</Map>
+    <X>5161</X>
+    <Y>940</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5161</CentreX>
+    <CentreY>940</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>GiantSerpent:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>65 Drake</Name>
+    <UniqueId>238aa4f0-f4a1-4a9b-928a-3b53a9902213</UniqueId>
+    <Map>Felucca</Map>
+    <X>5226</X>
+    <Y>826</Y>
+    <Width>0</Width>
+    <Height>0</Height>
     <CentreX>5226</CentreX>
     <CentreY>826</CentreY>
     <CentreZ>0</CentreZ>
-    <Range>50</Range>
-    <MaxCount>4</MaxCount>
-    <MinDelay>5</MinDelay>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
     <MaxDelay>10</MaxDelay>
     <DelayInSec>False</DelayInSec>
     <Duration>0</Duration>
@@ -169,20 +427,149 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Drake:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Wyvern:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>Drake:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>2 Drake-Wyvern-Etc</Name>
-    <UniqueId>3750afdc-5395-4b73-bd77-b3a43f81ae10</UniqueId>
+    <Name>24 Wyvern</Name>
+    <UniqueId>2a4af932-3ffc-419d-808f-c619e11190c7</UniqueId>
     <Map>Felucca</Map>
-    <X>5277</X>
-    <Y>785</Y>
-    <Width>60</Width>
-    <Height>60</Height>
+    <X>5141</X>
+    <Y>834</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5141</CentreX>
+    <CentreY>834</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Wyvern:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>53 SkeletalKnight</Name>
+    <UniqueId>2a7aea08-abe2-4841-8a73-40e77625ddac</UniqueId>
+    <Map>Felucca</Map>
+    <X>5315</X>
+    <Y>842</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5315</CentreX>
+    <CentreY>842</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>0</Range>
+    <MaxCount>1</MaxCount>
+    <MinDelay>11</MinDelay>
+    <MaxDelay>15</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>SkeletalKnight:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>13 Wyvern</Name>
+    <UniqueId>303f49ac-f6f9-4cb8-83a8-560997239357</UniqueId>
+    <Map>Felucca</Map>
+    <X>5307</X>
+    <Y>815</Y>
+    <Width>0</Width>
+    <Height>0</Height>
     <CentreX>5307</CentreX>
     <CentreY>815</CentreY>
     <CentreZ>0</CentreZ>
-    <Range>50</Range>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Wyvern:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>64 EvilMage</Name>
+    <UniqueId>34864a2c-3ed8-444e-a099-2191e1af8376</UniqueId>
+    <Map>Felucca</Map>
+    <X>5264</X>
+    <Y>788</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5264</CentreX>
+    <CentreY>788</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>5</Range>
     <MaxCount>2</MaxCount>
     <MinDelay>5</MinDelay>
     <MaxDelay>10</MaxDelay>
@@ -212,22 +599,22 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Drake:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Wyvern:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>EvilMage:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 TreasureLevel2-TreasureLevel3-Etc</Name>
-    <UniqueId>4b498311-ba86-4153-9129-58199c24b520</UniqueId>
+    <Name>19 WaterElemental</Name>
+    <UniqueId>367b8672-3161-4a25-b4a9-c44d7353a4c1</UniqueId>
     <Map>Felucca</Map>
-    <X>5219</X>
-    <Y>831</Y>
-    <Width>20</Width>
-    <Height>20</Height>
-    <CentreX>5229</CentreX>
-    <CentreY>841</CentreY>
-    <CentreZ>1</CentreZ>
+    <X>5294</X>
+    <Y>842</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5294</CentreX>
+    <CentreY>842</CentreY>
+    <CentreZ>0</CentreZ>
     <Range>10</Range>
-    <MaxCount>3</MaxCount>
-    <MinDelay>5</MinDelay>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
     <MaxDelay>10</MaxDelay>
     <DelayInSec>False</DelayInSec>
     <Duration>0</Duration>
@@ -255,22 +642,65 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>TreasureLevel2:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TreasureLevel3:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>WaterElemental:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>4 FireElemental</Name>
-    <UniqueId>50d21ca3-cdea-446a-98dd-a57d488a4452</UniqueId>
+    <Name>16 AncientLich</Name>
+    <UniqueId>45c337cc-6a3b-4312-b713-6986771cf267</UniqueId>
     <Map>Felucca</Map>
-    <X>5131</X>
-    <Y>958</Y>
-    <Width>20</Width>
-    <Height>20</Height>
+    <X>5307</X>
+    <Y>827</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5307</CentreX>
+    <CentreY>827</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>0</Range>
+    <MaxCount>1</MaxCount>
+    <MinDelay>60</MinDelay>
+    <MaxDelay>120</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>AncientLich:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>22 FireElemental</Name>
+    <UniqueId>468f8a72-c083-40bc-8e19-9b915a7b4054</UniqueId>
+    <Map>Felucca</Map>
+    <X>5141</X>
+    <Y>968</Y>
+    <Width>0</Width>
+    <Height>0</Height>
     <CentreX>5141</CentreX>
     <CentreY>968</CentreY>
     <CentreZ>0</CentreZ>
     <Range>10</Range>
-    <MaxCount>1</MaxCount>
-    <MinDelay>5</MinDelay>
+    <MaxCount>10</MaxCount>
+    <MinDelay>2</MinDelay>
     <MaxDelay>10</MaxDelay>
     <DelayInSec>False</DelayInSec>
     <Duration>0</Duration>
@@ -298,21 +728,150 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>FireElemental:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>FireElemental:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>5 TreasureLevel4-TreasureLevel3-Etc</Name>
-    <UniqueId>5cb905f1-e9f6-4403-841f-0bd86d05223f</UniqueId>
+    <Name>63 SkeletalKnight</Name>
+    <UniqueId>4a89ce93-32b9-4258-aa09-0b44fb36336b</UniqueId>
     <Map>Felucca</Map>
-    <X>5113</X>
-    <Y>802</Y>
-    <Width>80</Width>
-    <Height>80</Height>
-    <CentreX>5153</CentreX>
-    <CentreY>842</CentreY>
+    <X>5141</X>
+    <Y>839</Y>
+    <Width>10</Width>
+    <Height>10</Height>
+    <CentreX>5146</CentreX>
+    <CentreY>844</CentreY>
+    <CentreZ>20</CentreZ>
+    <Range>5</Range>
+    <MaxCount>3</MaxCount>
+    <MinDelay>15</MinDelay>
+    <MaxDelay>120</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>SkeletalKnight:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>62 GiantSerpent</Name>
+    <UniqueId>4b3528f1-fc48-4bc1-a43b-067cc7ebb4af</UniqueId>
+    <Map>Felucca</Map>
+    <X>5248</X>
+    <Y>874</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5248</CentreX>
+    <CentreY>874</CentreY>
+    <CentreZ>1</CentreZ>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>GiantSerpent:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>23 SkeletalKnight</Name>
+    <UniqueId>55d0a0be-dae5-4694-bfa5-d6c8c029472c</UniqueId>
+    <Map>Felucca</Map>
+    <X>5315</X>
+    <Y>845</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5315</CentreX>
+    <CentreY>845</CentreY>
     <CentreZ>0</CentreZ>
-    <Range>40</Range>
-    <MaxCount>4</MaxCount>
+    <Range>0</Range>
+    <MaxCount>1</MaxCount>
+    <MinDelay>11</MinDelay>
+    <MaxDelay>15</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>SkeletalKnight:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>50 Drake</Name>
+    <UniqueId>584acdfa-f0f8-45ba-80f3-e202a7d4a3d0</UniqueId>
+    <Map>Felucca</Map>
+    <X>5128</X>
+    <Y>844</Y>
+    <Width>10</Width>
+    <Height>10</Height>
+    <CentreX>5133</CentreX>
+    <CentreY>849</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>5</Range>
+    <MaxCount>2</MaxCount>
     <MinDelay>5</MinDelay>
     <MaxDelay>10</MaxDelay>
     <DelayInSec>False</DelayInSec>
@@ -341,22 +900,108 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>TreasureLevel4:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TreasureLevel3:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>Drake:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>6 TreasureLevel3-TreasureLevel4-Etc</Name>
-    <UniqueId>65c2009d-5ce1-40c1-8595-f7a33ee79870</UniqueId>
+    <Name>15 Wyvern</Name>
+    <UniqueId>5ba4d831-2735-4934-a6ab-b75af961d156</UniqueId>
     <Map>Felucca</Map>
-    <X>5173</X>
-    <Y>997</Y>
-    <Width>20</Width>
-    <Height>20</Height>
-    <CentreX>5183</CentreX>
-    <CentreY>1007</CentreY>
+    <X>5269</X>
+    <Y>811</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5269</CentreX>
+    <CentreY>811</CentreY>
+    <CentreZ>7</CentreZ>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Wyvern:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>25 Drake</Name>
+    <UniqueId>5db3c31e-d5e5-4fba-ab22-1cb8c0552cc2</UniqueId>
+    <Map>Felucca</Map>
+    <X>5269</X>
+    <Y>811</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5269</CentreX>
+    <CentreY>811</CentreY>
+    <CentreZ>7</CentreZ>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Drake:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>33 Daemon</Name>
+    <UniqueId>5e767c25-e48d-4c84-b7d4-339d006cdbea</UniqueId>
+    <Map>Felucca</Map>
+    <X>5169</X>
+    <Y>836</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5169</CentreX>
+    <CentreY>836</CentreY>
     <CentreZ>0</CentreZ>
     <Range>10</Range>
-    <MaxCount>3</MaxCount>
-    <MinDelay>5</MinDelay>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
     <MaxDelay>10</MaxDelay>
     <DelayInSec>False</DelayInSec>
     <Duration>0</Duration>
@@ -384,108 +1029,22 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>TreasureLevel3:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TreasureLevel4:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>Daemon:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>7 Dragon-Drake-Etc</Name>
-    <UniqueId>6b5be050-1cf1-4116-a6d6-ef2ea8e2514a</UniqueId>
+    <Name>44 WaterElemental</Name>
+    <UniqueId>62ef8b8d-a4df-4a9e-9ea5-326a21966c12</UniqueId>
     <Map>Felucca</Map>
-    <X>5250</X>
-    <Y>925</Y>
-    <Width>60</Width>
-    <Height>60</Height>
-    <CentreX>5280</CentreX>
-    <CentreY>955</CentreY>
-    <CentreZ>-40</CentreZ>
-    <Range>50</Range>
-    <MaxCount>4</MaxCount>
-    <MinDelay>5</MinDelay>
-    <MaxDelay>10</MaxDelay>
-    <DelayInSec>False</DelayInSec>
-    <Duration>0</Duration>
-    <DespawnTime>0</DespawnTime>
-    <ProximityRange>-1</ProximityRange>
-    <ProximityTriggerSound>500</ProximityTriggerSound>
-    <TriggerProbability>1</TriggerProbability>
-    <InContainer>False</InContainer>
-    <MinRefractory>0</MinRefractory>
-    <MaxRefractory>0</MaxRefractory>
-    <TODStart>0</TODStart>
-    <TODEnd>0</TODEnd>
-    <TODMode>0</TODMode>
-    <KillReset>1</KillReset>
-    <ExternalTriggering>False</ExternalTriggering>
-    <SequentialSpawning>-1</SequentialSpawning>
-    <AllowGhostTriggering>False</AllowGhostTriggering>
-    <AllowNPCTriggering>False</AllowNPCTriggering>
-    <SpawnOnTrigger>False</SpawnOnTrigger>
-    <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
-    <TickReset>False</TickReset>
-    <Team>0</Team>
-    <Amount>1</Amount>
-    <IsGroup>False</IsGroup>
-    <IsRunning>True</IsRunning>
-    <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Dragon:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Drake:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Wyvern:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
-  </Points>
-  <Points>
-    <Name>14 Wyvern</Name>
-    <UniqueId>6e945dc0-79fe-482b-ba47-e84901d22ec4</UniqueId>
-    <Map>Felucca</Map>
-    <X>5137</X>
-    <Y>977</Y>
-    <Width>40</Width>
-    <Height>40</Height>
-    <CentreX>5157</CentreX>
-    <CentreY>997</CentreY>
-    <CentreZ>0</CentreZ>
-    <Range>50</Range>
-    <MaxCount>3</MaxCount>
-    <MinDelay>5</MinDelay>
-    <MaxDelay>10</MaxDelay>
-    <DelayInSec>False</DelayInSec>
-    <Duration>0</Duration>
-    <DespawnTime>0</DespawnTime>
-    <ProximityRange>-1</ProximityRange>
-    <ProximityTriggerSound>500</ProximityTriggerSound>
-    <TriggerProbability>1</TriggerProbability>
-    <InContainer>False</InContainer>
-    <MinRefractory>0</MinRefractory>
-    <MaxRefractory>0</MaxRefractory>
-    <TODStart>0</TODStart>
-    <TODEnd>0</TODEnd>
-    <TODMode>0</TODMode>
-    <KillReset>1</KillReset>
-    <ExternalTriggering>False</ExternalTriggering>
-    <SequentialSpawning>-1</SequentialSpawning>
-    <AllowGhostTriggering>False</AllowGhostTriggering>
-    <AllowNPCTriggering>False</AllowNPCTriggering>
-    <SpawnOnTrigger>False</SpawnOnTrigger>
-    <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
-    <TickReset>False</TickReset>
-    <Team>0</Team>
-    <Amount>1</Amount>
-    <IsGroup>False</IsGroup>
-    <IsRunning>True</IsRunning>
-    <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Wyvern:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
-  </Points>
-  <Points>
-    <Name>13 WaterElemental</Name>
-    <UniqueId>71401ab9-9d1b-47ba-8fa3-68157aa682fd</UniqueId>
-    <Map>Felucca</Map>
-    <X>5191</X>
-    <Y>775</Y>
-    <Width>24</Width>
-    <Height>24</Height>
+    <X>5203</X>
+    <Y>787</Y>
+    <Width>0</Width>
+    <Height>0</Height>
     <CentreX>5203</CentreX>
     <CentreY>787</CentreY>
     <CentreZ>5</CentreZ>
-    <Range>25</Range>
-    <MaxCount>4</MaxCount>
-    <MinDelay>5</MinDelay>
+    <Range>10</Range>
+    <MaxCount>25</MaxCount>
+    <MinDelay>2</MinDelay>
     <MaxDelay>10</MaxDelay>
     <DelayInSec>False</DelayInSec>
     <Duration>0</Duration>
@@ -513,22 +1072,22 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>WaterElemental:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>WaterElemental:MX=25:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>12 Dragon-Drake-Etc</Name>
-    <UniqueId>73a8d46a-4eeb-4cbe-9e76-97b80b038431</UniqueId>
+    <Name>9 Dragon</Name>
+    <UniqueId>69e8bcba-db44-4390-a31b-503458f02d90</UniqueId>
     <Map>Felucca</Map>
-    <X>5184</X>
-    <Y>887</Y>
-    <Width>60</Width>
-    <Height>60</Height>
-    <CentreX>5214</CentreX>
-    <CentreY>917</CentreY>
+    <X>5284</X>
+    <Y>926</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5284</CentreX>
+    <CentreY>926</CentreY>
     <CentreZ>-40</CentreZ>
-    <Range>50</Range>
-    <MaxCount>4</MaxCount>
-    <MinDelay>5</MinDelay>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
     <MaxDelay>10</MaxDelay>
     <DelayInSec>False</DelayInSec>
     <Duration>0</Duration>
@@ -556,22 +1115,22 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Dragon:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Drake:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Wyvern:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>Dragon:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>11 Drake-ShadowWyrm-Etc</Name>
-    <UniqueId>78533907-883d-42a6-9505-6aed0104341b</UniqueId>
+    <Name>14 Drake</Name>
+    <UniqueId>6bd69de6-ca34-4cd2-a153-2813bd8a06ea</UniqueId>
     <Map>Felucca</Map>
-    <X>5111</X>
-    <Y>804</Y>
-    <Width>60</Width>
-    <Height>60</Height>
+    <X>5141</X>
+    <Y>834</Y>
+    <Width>0</Width>
+    <Height>0</Height>
     <CentreX>5141</CentreX>
     <CentreY>834</CentreY>
     <CentreZ>0</CentreZ>
-    <Range>50</Range>
-    <MaxCount>3</MaxCount>
-    <MinDelay>5</MinDelay>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
     <MaxDelay>10</MaxDelay>
     <DelayInSec>False</DelayInSec>
     <Duration>0</Duration>
@@ -599,23 +1158,23 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Drake:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=ShadowWyrm:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>Drake:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>10 WaterElemental</Name>
-    <UniqueId>80c8c1f6-4eef-4079-8fa4-09785420baed</UniqueId>
+    <Name>32 SkeletalKnight</Name>
+    <UniqueId>6c7c7cba-8588-490f-8938-0c87068653b3</UniqueId>
     <Map>Felucca</Map>
-    <X>5264</X>
-    <Y>812</Y>
-    <Width>60</Width>
-    <Height>60</Height>
-    <CentreX>5294</CentreX>
-    <CentreY>842</CentreY>
+    <X>5310</X>
+    <Y>845</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5310</CentreX>
+    <CentreY>845</CentreY>
     <CentreZ>0</CentreZ>
-    <Range>50</Range>
-    <MaxCount>4</MaxCount>
-    <MinDelay>5</MinDelay>
-    <MaxDelay>10</MaxDelay>
+    <Range>0</Range>
+    <MaxCount>1</MaxCount>
+    <MinDelay>11</MinDelay>
+    <MaxDelay>15</MaxDelay>
     <DelayInSec>False</DelayInSec>
     <Duration>0</Duration>
     <DespawnTime>0</DespawnTime>
@@ -642,65 +1201,22 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>WaterElemental:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>SkeletalKnight:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>9 TreasureLevel2-TreasureLevel3-Etc</Name>
-    <UniqueId>861e3841-c15a-4a2d-9fac-295ad700c560</UniqueId>
+    <Name>4 Dragon</Name>
+    <UniqueId>7077e4b2-cac2-413e-8de7-a64466dcb799</UniqueId>
     <Map>Felucca</Map>
-    <X>5116</X>
-    <Y>890</Y>
-    <Width>50</Width>
-    <Height>50</Height>
-    <CentreX>5141</CentreX>
-    <CentreY>915</CentreY>
-    <CentreZ>0</CentreZ>
-    <Range>25</Range>
-    <MaxCount>3</MaxCount>
-    <MinDelay>5</MinDelay>
-    <MaxDelay>10</MaxDelay>
-    <DelayInSec>False</DelayInSec>
-    <Duration>0</Duration>
-    <DespawnTime>0</DespawnTime>
-    <ProximityRange>-1</ProximityRange>
-    <ProximityTriggerSound>500</ProximityTriggerSound>
-    <TriggerProbability>1</TriggerProbability>
-    <InContainer>False</InContainer>
-    <MinRefractory>0</MinRefractory>
-    <MaxRefractory>0</MaxRefractory>
-    <TODStart>0</TODStart>
-    <TODEnd>0</TODEnd>
-    <TODMode>0</TODMode>
-    <KillReset>1</KillReset>
-    <ExternalTriggering>False</ExternalTriggering>
-    <SequentialSpawning>-1</SequentialSpawning>
-    <AllowGhostTriggering>False</AllowGhostTriggering>
-    <AllowNPCTriggering>False</AllowNPCTriggering>
-    <SpawnOnTrigger>False</SpawnOnTrigger>
-    <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
-    <TickReset>False</TickReset>
-    <Team>0</Team>
-    <Amount>1</Amount>
-    <IsGroup>False</IsGroup>
-    <IsRunning>True</IsRunning>
-    <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>TreasureLevel2:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TreasureLevel3:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
-  </Points>
-  <Points>
-    <Name>8 Dragon-Drake-Etc</Name>
-    <UniqueId>88939de5-eab0-4bed-9834-7b875b825cc1</UniqueId>
-    <Map>Felucca</Map>
-    <X>5217</X>
-    <Y>926</Y>
-    <Width>60</Width>
-    <Height>60</Height>
-    <CentreX>5247</CentreX>
-    <CentreY>956</CentreY>
+    <X>5280</X>
+    <Y>955</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5280</CentreX>
+    <CentreY>955</CentreY>
     <CentreZ>-40</CentreZ>
-    <Range>50</Range>
-    <MaxCount>3</MaxCount>
-    <MinDelay>5</MinDelay>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
     <MaxDelay>10</MaxDelay>
     <DelayInSec>False</DelayInSec>
     <Duration>0</Duration>
@@ -728,21 +1244,193 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Dragon:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Drake:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>Dragon:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>25 Dragon-Drake-Etc</Name>
-    <UniqueId>8e306ba3-b025-47eb-89bd-0c10fe2fd93c</UniqueId>
+    <Name>3 AncientWyrm</Name>
+    <UniqueId>7bc6411b-e09b-4d2d-a9d1-92a08742c485</UniqueId>
     <Map>Felucca</Map>
-    <X>5134</X>
-    <Y>892</Y>
-    <Width>30</Width>
-    <Height>30</Height>
-    <CentreX>5149</CentreX>
-    <CentreY>907</CentreY>
+    <X>5183</X>
+    <Y>1008</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5183</CentreX>
+    <CentreY>1008</CentreY>
+    <CentreZ>1</CentreZ>
+    <Range>15</Range>
+    <MaxCount>20</MaxCount>
+    <MinDelay>5</MinDelay>
+    <MaxDelay>15</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>AncientWyrm:MX=20:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>31 Drake</Name>
+    <UniqueId>7e6da9f5-c4b2-49eb-a9b1-1543ef2cc977</UniqueId>
+    <Map>Felucca</Map>
+    <X>5307</X>
+    <Y>815</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5307</CentreX>
+    <CentreY>815</CentreY>
     <CentreZ>0</CentreZ>
-    <Range>20</Range>
-    <MaxCount>3</MaxCount>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Drake:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>49 Drake</Name>
+    <UniqueId>7f0b17f3-8b4f-41aa-bc03-50fcc94b16cd</UniqueId>
+    <Map>Felucca</Map>
+    <X>5152</X>
+    <Y>869</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5152</CentreX>
+    <CentreY>869</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Drake:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>61 Wyvern</Name>
+    <UniqueId>8308a28c-11d1-41b7-bd1c-cdccb18f85a3</UniqueId>
+    <Map>Felucca</Map>
+    <X>5280</X>
+    <Y>955</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5280</CentreX>
+    <CentreY>955</CentreY>
+    <CentreZ>-40</CentreZ>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Wyvern:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>20 FireElemental</Name>
+    <UniqueId>858620b5-2fed-48ae-a2db-774ffb089888</UniqueId>
+    <Map>Felucca</Map>
+    <X>5245</X>
+    <Y>793</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5245</CentreX>
+    <CentreY>793</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>5</Range>
+    <MaxCount>2</MaxCount>
     <MinDelay>5</MinDelay>
     <MaxDelay>10</MaxDelay>
     <DelayInSec>False</DelayInSec>
@@ -771,22 +1459,151 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Dragon:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Drake:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>FireElemental:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>24 WaterElemental</Name>
-    <UniqueId>92127791-af73-449d-8e97-0c522c78aaf6</UniqueId>
+    <Name>60 EvilMage</Name>
+    <UniqueId>8727528a-76ec-4069-a27c-c25a25c0e914</UniqueId>
     <Map>Felucca</Map>
-    <X>5342</X>
-    <Y>924</Y>
-    <Width>20</Width>
-    <Height>20</Height>
+    <X>5169</X>
+    <Y>836</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5169</CentreX>
+    <CentreY>836</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>EvilMage:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>41 AncientWyrm</Name>
+    <UniqueId>8811f133-8bc3-40b6-93c9-7ba7242e49f4</UniqueId>
+    <Map>Felucca</Map>
+    <X>5350</X>
+    <Y>923</Y>
+    <Width>18</Width>
+    <Height>18</Height>
+    <CentreX>5359</CentreX>
+    <CentreY>932</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>5</Range>
+    <MaxCount>2</MaxCount>
+    <MinDelay>60</MinDelay>
+    <MaxDelay>120</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>AncientWyrm:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>48 EvilMage</Name>
+    <UniqueId>8d1f6c00-41e8-4f7e-b8b6-3dea3e6f26df</UniqueId>
+    <Map>Felucca</Map>
+    <X>5250</X>
+    <Y>809</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5250</CentreX>
+    <CentreY>809</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>5</Range>
+    <MaxCount>2</MaxCount>
+    <MinDelay>5</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>EvilMage:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>18 WaterElemental</Name>
+    <UniqueId>8f96cdce-e48e-4123-b26f-c12772d5518f</UniqueId>
+    <Map>Felucca</Map>
+    <X>5352</X>
+    <Y>934</Y>
+    <Width>0</Width>
+    <Height>0</Height>
     <CentreX>5352</CentreX>
     <CentreY>934</CentreY>
     <CentreZ>-5</CentreZ>
     <Range>10</Range>
-    <MaxCount>4</MaxCount>
-    <MinDelay>5</MinDelay>
+    <MaxCount>10</MaxCount>
+    <MinDelay>2</MinDelay>
     <MaxDelay>10</MaxDelay>
     <DelayInSec>False</DelayInSec>
     <Duration>0</Duration>
@@ -814,23 +1631,23 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>WaterElemental:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>WaterElemental:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>23 TreasureLevel3</Name>
-    <UniqueId>93fbb62c-b2a8-4bdf-b652-578e641884f1</UniqueId>
+    <Name>42 Drake</Name>
+    <UniqueId>911dc4fe-db75-4da5-a015-3bcacee06807</UniqueId>
     <Map>Felucca</Map>
-    <X>5198</X>
-    <Y>771</Y>
-    <Width>14</Width>
-    <Height>14</Height>
-    <CentreX>5205</CentreX>
-    <CentreY>778</CentreY>
+    <X>5334</X>
+    <Y>946</Y>
+    <Width>10</Width>
+    <Height>10</Height>
+    <CentreX>5339</CentreX>
+    <CentreY>951</CentreY>
     <CentreZ>0</CentreZ>
-    <Range>7</Range>
-    <MaxCount>1</MaxCount>
-    <MinDelay>5</MinDelay>
-    <MaxDelay>10</MaxDelay>
+    <Range>5</Range>
+    <MaxCount>2</MaxCount>
+    <MinDelay>10</MinDelay>
+    <MaxDelay>15</MaxDelay>
     <DelayInSec>False</DelayInSec>
     <Duration>0</Duration>
     <DespawnTime>0</DespawnTime>
@@ -857,23 +1674,23 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>TreasureLevel3:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>Drake:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>22 GiantSerpent</Name>
-    <UniqueId>9c123f54-4ee3-457f-b165-d3873aea9a30</UniqueId>
+    <Name>2 Dragon</Name>
+    <UniqueId>9390baa5-609b-476d-afcf-7436fe39271d</UniqueId>
     <Map>Felucca</Map>
-    <X>5141</X>
-    <Y>920</Y>
-    <Width>40</Width>
-    <Height>40</Height>
-    <CentreX>5161</CentreX>
-    <CentreY>940</CentreY>
+    <X>5204</X>
+    <Y>782</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5204</CentreX>
+    <CentreY>782</CentreY>
     <CentreZ>0</CentreZ>
-    <Range>50</Range>
-    <MaxCount>6</MaxCount>
+    <Range>15</Range>
+    <MaxCount>15</MaxCount>
     <MinDelay>5</MinDelay>
-    <MaxDelay>10</MaxDelay>
+    <MaxDelay>15</MaxDelay>
     <DelayInSec>False</DelayInSec>
     <Duration>0</Duration>
     <DespawnTime>0</DespawnTime>
@@ -900,65 +1717,22 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>GiantSerpent:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>Dragon:MX=15:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>21 Dragon-Drake-Etc</Name>
-    <UniqueId>b3ea61db-9ad8-4e16-94c6-7b88056dde2d</UniqueId>
+    <Name>29 ShadowWyrm</Name>
+    <UniqueId>9ef39754-bbc6-4c1d-9074-c6f1438d8f8a</UniqueId>
     <Map>Felucca</Map>
-    <X>5239</X>
-    <Y>781</Y>
-    <Width>60</Width>
-    <Height>60</Height>
-    <CentreX>5269</CentreX>
-    <CentreY>811</CentreY>
-    <CentreZ>7</CentreZ>
-    <Range>50</Range>
-    <MaxCount>4</MaxCount>
-    <MinDelay>5</MinDelay>
-    <MaxDelay>10</MaxDelay>
-    <DelayInSec>False</DelayInSec>
-    <Duration>0</Duration>
-    <DespawnTime>0</DespawnTime>
-    <ProximityRange>-1</ProximityRange>
-    <ProximityTriggerSound>500</ProximityTriggerSound>
-    <TriggerProbability>1</TriggerProbability>
-    <InContainer>False</InContainer>
-    <MinRefractory>0</MinRefractory>
-    <MaxRefractory>0</MaxRefractory>
-    <TODStart>0</TODStart>
-    <TODEnd>0</TODEnd>
-    <TODMode>0</TODMode>
-    <KillReset>1</KillReset>
-    <ExternalTriggering>False</ExternalTriggering>
-    <SequentialSpawning>-1</SequentialSpawning>
-    <AllowGhostTriggering>False</AllowGhostTriggering>
-    <AllowNPCTriggering>False</AllowNPCTriggering>
-    <SpawnOnTrigger>False</SpawnOnTrigger>
-    <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
-    <TickReset>False</TickReset>
-    <Team>0</Team>
-    <Amount>1</Amount>
-    <IsGroup>False</IsGroup>
-    <IsRunning>True</IsRunning>
-    <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Dragon:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Drake:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Wyvern:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
-  </Points>
-  <Points>
-    <Name>20 GiantSerpent</Name>
-    <UniqueId>c311b0bd-2058-470b-889c-d4e0505f5431</UniqueId>
-    <Map>Felucca</Map>
-    <X>5220</X>
-    <Y>839</Y>
-    <Width>60</Width>
-    <Height>60</Height>
-    <CentreX>5250</CentreX>
+    <X>5152</X>
+    <Y>869</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5152</CentreX>
     <CentreY>869</CentreY>
     <CentreZ>0</CentreZ>
-    <Range>50</Range>
-    <MaxCount>6</MaxCount>
-    <MinDelay>5</MinDelay>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
     <MaxDelay>10</MaxDelay>
     <DelayInSec>False</DelayInSec>
     <Duration>0</Duration>
@@ -986,22 +1760,65 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>GiantSerpent:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>ShadowWyrm:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>19 Dragon-Wyvern-Etc</Name>
-    <UniqueId>c4bdc6aa-dff8-4287-98a2-92b581b66890</UniqueId>
+    <Name>43 Drake</Name>
+    <UniqueId>a8b37258-84fe-4cde-8534-edee8e0b504a</UniqueId>
     <Map>Felucca</Map>
-    <X>5254</X>
-    <Y>896</Y>
-    <Width>60</Width>
-    <Height>60</Height>
+    <X>5247</X>
+    <Y>956</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5247</CentreX>
+    <CentreY>956</CentreY>
+    <CentreZ>-40</CentreZ>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Drake:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>28 Wyvern</Name>
+    <UniqueId>b16f1eac-75cc-4c54-a6c5-07989dc1eabb</UniqueId>
+    <Map>Felucca</Map>
+    <X>5284</X>
+    <Y>926</Y>
+    <Width>0</Width>
+    <Height>0</Height>
     <CentreX>5284</CentreX>
     <CentreY>926</CentreY>
     <CentreZ>-40</CentreZ>
-    <Range>50</Range>
-    <MaxCount>4</MaxCount>
-    <MinDelay>5</MinDelay>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
     <MaxDelay>10</MaxDelay>
     <DelayInSec>False</DelayInSec>
     <Duration>0</Duration>
@@ -1029,23 +1846,23 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Dragon:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Wyvern:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>Wyvern:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>18 Daemon-EvilMage-Etc</Name>
-    <UniqueId>dbc8e92e-cf00-4653-b7f4-85a10c630fb9</UniqueId>
+    <Name>34 Dragon</Name>
+    <UniqueId>b5aa6bfa-dba7-4145-a947-5b500a78596e</UniqueId>
     <Map>Felucca</Map>
-    <X>5139</X>
-    <Y>806</Y>
-    <Width>60</Width>
-    <Height>60</Height>
-    <CentreX>5169</CentreX>
-    <CentreY>836</CentreY>
+    <X>5140</X>
+    <Y>982</Y>
+    <Width>10</Width>
+    <Height>10</Height>
+    <CentreX>5145</CentreX>
+    <CentreY>987</CentreY>
     <CentreZ>0</CentreZ>
-    <Range>50</Range>
-    <MaxCount>3</MaxCount>
-    <MinDelay>5</MinDelay>
-    <MaxDelay>10</MaxDelay>
+    <Range>5</Range>
+    <MaxCount>2</MaxCount>
+    <MinDelay>10</MinDelay>
+    <MaxDelay>20</MaxDelay>
     <DelayInSec>False</DelayInSec>
     <Duration>0</Duration>
     <DespawnTime>0</DespawnTime>
@@ -1072,20 +1889,20 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Daemon:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=EvilMage:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>Dragon:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>17 AncientWyrm</Name>
-    <UniqueId>f6a2de08-8702-40a9-84af-a13b33acca51</UniqueId>
+    <Name>47 Daemon</Name>
+    <UniqueId>b752e134-f155-4b98-ae27-25e407c433a3</UniqueId>
     <Map>Felucca</Map>
-    <X>5165</X>
-    <Y>986</Y>
-    <Width>40</Width>
-    <Height>40</Height>
-    <CentreX>5185</CentreX>
-    <CentreY>1006</CentreY>
-    <CentreZ>0</CentreZ>
-    <Range>50</Range>
+    <X>5284</X>
+    <Y>820</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5284</CentreX>
+    <CentreY>820</CentreY>
+    <CentreZ>3</CentreZ>
+    <Range>5</Range>
     <MaxCount>1</MaxCount>
     <MinDelay>5</MinDelay>
     <MaxDelay>10</MaxDelay>
@@ -1115,22 +1932,22 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>AncientWyrm:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>Daemon:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>16 TreasureLevel3-TreasureLevel4-Etc</Name>
-    <UniqueId>fb23ac17-6c40-43c8-85c9-97aaf6d2c5be</UniqueId>
+    <Name>39 ShadowWyrm</Name>
+    <UniqueId>c4546bf7-16ba-4ea3-b63e-abe2d768a2f7</UniqueId>
     <Map>Felucca</Map>
-    <X>5133</X>
-    <Y>976</Y>
-    <Width>20</Width>
-    <Height>20</Height>
-    <CentreX>5143</CentreX>
-    <CentreY>986</CentreY>
+    <X>5141</X>
+    <Y>834</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5141</CentreX>
+    <CentreY>834</CentreY>
     <CentreZ>0</CentreZ>
     <Range>10</Range>
-    <MaxCount>3</MaxCount>
-    <MinDelay>5</MinDelay>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
     <MaxDelay>10</MaxDelay>
     <DelayInSec>False</DelayInSec>
     <Duration>0</Duration>
@@ -1158,20 +1975,192 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>TreasureLevel3:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TreasureLevel4:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>ShadowWyrm:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>15 TreasureLevel3-TreasureLevel4-Etc</Name>
-    <UniqueId>fc983d2e-49b7-4a5a-a24a-dd7cead45fe1</UniqueId>
+    <Name>7 GiantSerpent</Name>
+    <UniqueId>c5c52ae4-ac41-4b55-a9db-27099c84f7d2</UniqueId>
     <Map>Felucca</Map>
-    <X>5231</X>
-    <Y>935</Y>
-    <Width>20</Width>
-    <Height>20</Height>
-    <CentreX>5241</CentreX>
-    <CentreY>945</CentreY>
+    <X>5205</X>
+    <Y>950</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5205</CentreX>
+    <CentreY>950</CentreY>
+    <CentreZ>-40</CentreZ>
+    <Range>15</Range>
+    <MaxCount>15</MaxCount>
+    <MinDelay>5</MinDelay>
+    <MaxDelay>15</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>GiantSerpent:MX=15:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>46 Drake</Name>
+    <UniqueId>c6d65ce4-6c6d-4697-a9aa-0dd283e3ac37</UniqueId>
+    <Map>Felucca</Map>
+    <X>5284</X>
+    <Y>926</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5284</CentreX>
+    <CentreY>926</CentreY>
     <CentreZ>-40</CentreZ>
     <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Drake:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>59 AncientWyrm</Name>
+    <UniqueId>d128d356-264f-421c-8187-e33af8536fc1</UniqueId>
+    <Map>Felucca</Map>
+    <X>5137</X>
+    <Y>962</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5137</CentreX>
+    <CentreY>962</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>3</Range>
+    <MaxCount>2</MaxCount>
+    <MinDelay>1</MinDelay>
+    <MaxDelay>1</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>AncientWyrm:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>40 OrcishLord</Name>
+    <UniqueId>d2f65daa-6225-45fe-acda-877b6d76078a</UniqueId>
+    <Map>Felucca</Map>
+    <X>5150</X>
+    <Y>864</Y>
+    <Width>10</Width>
+    <Height>10</Height>
+    <CentreX>5155</CentreX>
+    <CentreY>869</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>8</Range>
+    <MaxCount>9</MaxCount>
+    <MinDelay>15</MinDelay>
+    <MaxDelay>25</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>OrcishLord:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>58 Dragon</Name>
+    <UniqueId>d4b56c29-f8a1-44c3-97fa-747795791aa7</UniqueId>
+    <Map>Felucca</Map>
+    <X>5136</X>
+    <Y>809</Y>
+    <Width>10</Width>
+    <Height>10</Height>
+    <CentreX>5141</CentreX>
+    <CentreY>814</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>8</Range>
     <MaxCount>3</MaxCount>
     <MinDelay>5</MinDelay>
     <MaxDelay>10</MaxDelay>
@@ -1201,6 +2190,694 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>TreasureLevel3:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TreasureLevel4:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>Dragon:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>21 Dragon</Name>
+    <UniqueId>d683cccc-dcf3-4af8-8801-cc66adbe1554</UniqueId>
+    <Map>Felucca</Map>
+    <X>5214</X>
+    <Y>917</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5214</CentreX>
+    <CentreY>917</CentreY>
+    <CentreZ>-40</CentreZ>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Dragon:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>11 Wyvern</Name>
+    <UniqueId>d72e555b-6bca-471c-8c82-714f3eb159ea</UniqueId>
+    <Map>Felucca</Map>
+    <X>5209</X>
+    <Y>965</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5209</CentreX>
+    <CentreY>965</CentreY>
+    <CentreZ>-40</CentreZ>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Wyvern:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>17 Daemon</Name>
+    <UniqueId>daa60518-77fd-49de-80b7-883e768303e0</UniqueId>
+    <Map>Felucca</Map>
+    <X>5269</X>
+    <Y>831</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5269</CentreX>
+    <CentreY>831</CentreY>
+    <CentreZ>43</CentreZ>
+    <Range>5</Range>
+    <MaxCount>1</MaxCount>
+    <MinDelay>5</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Daemon:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>52 Dragon</Name>
+    <UniqueId>deddd670-e816-4f7c-86a5-f5bf6e8d7486</UniqueId>
+    <Map>Felucca</Map>
+    <X>5248</X>
+    <Y>874</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5248</CentreX>
+    <CentreY>874</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>10</Range>
+    <MaxCount>25</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Dragon:MX=25:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>6 Dragon</Name>
+    <UniqueId>e0c1f29e-f89c-475a-b975-0d07be4ff45d</UniqueId>
+    <Map>Felucca</Map>
+    <X>5226</X>
+    <Y>826</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5226</CentreX>
+    <CentreY>826</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Dragon:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>57 Wyvern</Name>
+    <UniqueId>e6485c5f-c2f4-440c-913d-fc40faf6a197</UniqueId>
+    <Map>Felucca</Map>
+    <X>5152</X>
+    <Y>869</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5152</CentreX>
+    <CentreY>869</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Wyvern:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>37 Drake</Name>
+    <UniqueId>e6a7a043-44f9-43e1-9357-f4a0184af20b</UniqueId>
+    <Map>Felucca</Map>
+    <X>5209</X>
+    <Y>965</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5209</CentreX>
+    <CentreY>965</CentreY>
+    <CentreZ>-40</CentreZ>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Drake:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>1 Dragon</Name>
+    <UniqueId>ed8f0a38-8b0b-4e08-8aad-fa82bc0738a0</UniqueId>
+    <Map>Felucca</Map>
+    <X>5149</X>
+    <Y>907</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5149</CentreX>
+    <CentreY>907</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>10</Range>
+    <MaxCount>20</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Dragon:MX=20:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>36 Drake</Name>
+    <UniqueId>ee8a9572-462a-4f16-86f9-732e46b6f50f</UniqueId>
+    <Map>Felucca</Map>
+    <X>5149</X>
+    <Y>907</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5149</CentreX>
+    <CentreY>907</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>10</Range>
+    <MaxCount>20</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Drake:MX=20:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>45 Dragon</Name>
+    <UniqueId>f12f56dc-5673-4bae-a36e-9455e0a397b3</UniqueId>
+    <Map>Felucca</Map>
+    <X>5315</X>
+    <Y>969</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5315</CentreX>
+    <CentreY>969</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>10</Range>
+    <MaxCount>25</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Dragon:MX=25:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>38 SkeletalKnight</Name>
+    <UniqueId>f1ab9334-a61e-4288-86f3-1dc79bb567a4</UniqueId>
+    <Map>Felucca</Map>
+    <X>5310</X>
+    <Y>842</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5310</CentreX>
+    <CentreY>842</CentreY>
+    <CentreZ>1</CentreZ>
+    <Range>0</Range>
+    <MaxCount>1</MaxCount>
+    <MinDelay>11</MinDelay>
+    <MaxDelay>15</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>SkeletalKnight:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>27 Wyvern</Name>
+    <UniqueId>f475e18b-b1ab-4c7d-9cfc-af1cfbc77199</UniqueId>
+    <Map>Felucca</Map>
+    <X>5226</X>
+    <Y>826</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5226</CentreX>
+    <CentreY>826</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Wyvern:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>12 Wyvern</Name>
+    <UniqueId>f493c1d4-dbb4-4e04-acc9-520429526782</UniqueId>
+    <Map>Felucca</Map>
+    <X>5149</X>
+    <Y>907</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5149</CentreX>
+    <CentreY>907</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>10</Range>
+    <MaxCount>20</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Wyvern:MX=20:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>51 LavaSnake</Name>
+    <UniqueId>f5e4b468-d500-4053-914f-b776d9d27a35</UniqueId>
+    <Map>Felucca</Map>
+    <X>5319</X>
+    <Y>949</Y>
+    <Width>6</Width>
+    <Height>6</Height>
+    <CentreX>5322</CentreX>
+    <CentreY>952</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>10</Range>
+    <MaxCount>10</MaxCount>
+    <MinDelay>12</MinDelay>
+    <MaxDelay>20</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>LavaSnake:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>56 WaterElemental</Name>
+    <UniqueId>f79c6635-97a3-4a53-a214-c2276beb04ef</UniqueId>
+    <Map>Felucca</Map>
+    <X>5234</X>
+    <Y>810</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5234</CentreX>
+    <CentreY>810</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>10</Range>
+    <MaxCount>25</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>WaterElemental:MX=25:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>55 Dragon</Name>
+    <UniqueId>fbfdb60d-c8d4-4728-b693-0a1a92440430</UniqueId>
+    <Map>Felucca</Map>
+    <X>5209</X>
+    <Y>965</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>5209</CentreX>
+    <CentreY>965</CentreY>
+    <CentreZ>-40</CentreZ>
+    <Range>10</Range>
+    <MaxCount>50</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Dragon:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
 </Spawns>

@@ -1,17 +1,17 @@
 <Spawns>
   <Points>
-    <Name>3 HireBard-HireRangerArcher-Etc</Name>
-    <UniqueId>84119cf8-5d91-4c06-a8ca-a457ff3df7f7</UniqueId>
+    <Name>3 Zombie</Name>
+    <UniqueId>35e385ab-09dd-40d7-b031-6dd764f93df8</UniqueId>
     <Map>Felucca</Map>
-    <X>1389</X>
-    <Y>3733</Y>
-    <Width>20</Width>
-    <Height>20</Height>
-    <CentreX>1399</CentreX>
-    <CentreY>3743</CentreY>
-    <CentreZ>-21</CentreZ>
-    <Range>10</Range>
-    <MaxCount>10</MaxCount>
+    <X>1287</X>
+    <Y>3748</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>1287</CentreX>
+    <CentreY>3748</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>3</Range>
+    <MaxCount>5</MaxCount>
     <MinDelay>5</MinDelay>
     <MaxDelay>10</MaxDelay>
     <DelayInSec>False</DelayInSec>
@@ -40,20 +40,63 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>HireBard:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=HireRangerArcher:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=HireSailor:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=HireThief:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=HirePaladin:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>Zombie:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>2 Fisherman</Name>
-    <UniqueId>da42453a-2771-4cf2-80ad-11d9a81bf2a5</UniqueId>
+    <Name>6 Spectre</Name>
+    <UniqueId>4a9ea102-eb36-4000-b538-ad116f35aede</UniqueId>
     <Map>Felucca</Map>
-    <X>1512</X>
-    <Y>3989</Y>
+    <X>1291</X>
+    <Y>3745</Y>
+    <Width>2</Width>
+    <Height>2</Height>
+    <CentreX>1292</CentreX>
+    <CentreY>3746</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>3</Range>
+    <MaxCount>4</MaxCount>
+    <MinDelay>5</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Spectre:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>1 Zombie</Name>
+    <UniqueId>6bd57075-afa2-40ad-8e96-299e2378c082</UniqueId>
+    <Map>Felucca</Map>
+    <X>1292</X>
+    <Y>3749</Y>
     <Width>0</Width>
     <Height>0</Height>
-    <CentreX>1512</CentreX>
-    <CentreY>3989</CentreY>
-    <CentreZ>-3</CentreZ>
-    <Range>5</Range>
+    <CentreX>1292</CentreX>
+    <CentreY>3749</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>3</Range>
     <MaxCount>1</MaxCount>
     <MinDelay>5</MinDelay>
     <MaxDelay>10</MaxDelay>
@@ -83,21 +126,21 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Fisherman:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>Zombie:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 Spectre-Shade-Etc</Name>
-    <UniqueId>e8faea20-17a1-421f-a520-4bcdcec1008a</UniqueId>
+    <Name>2 Spectre</Name>
+    <UniqueId>b49c909b-9c80-4a74-aa76-85eeac42ae7f</UniqueId>
     <Map>Felucca</Map>
-    <X>1275</X>
+    <X>1276</X>
     <Y>3721</Y>
     <Width>20</Width>
     <Height>20</Height>
-    <CentreX>1285</CentreX>
+    <CentreX>1286</CentreX>
     <CentreY>3731</CentreY>
     <CentreZ>0</CentreZ>
     <Range>15</Range>
-    <MaxCount>9</MaxCount>
+    <MaxCount>2</MaxCount>
     <MinDelay>5</MinDelay>
     <MaxDelay>10</MaxDelay>
     <DelayInSec>False</DelayInSec>
@@ -126,6 +169,92 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Spectre:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Shade:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Skeleton:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Zombie:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>Spectre:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>4 Zombie</Name>
+    <UniqueId>e3a99265-61dd-4e40-ba9b-46d62338854a</UniqueId>
+    <Map>Felucca</Map>
+    <X>1287</X>
+    <Y>3744</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>1287</CentreX>
+    <CentreY>3744</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>3</Range>
+    <MaxCount>1</MaxCount>
+    <MinDelay>5</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Zombie:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>5 Fisherman</Name>
+    <UniqueId>ee1e28a9-6240-4084-a60a-3022c755555d</UniqueId>
+    <Map>Felucca</Map>
+    <X>1512</X>
+    <Y>3989</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>1512</CentreX>
+    <CentreY>3989</CentreY>
+    <CentreZ>-3</CentreZ>
+    <Range>5</Range>
+    <MaxCount>1</MaxCount>
+    <MinDelay>2</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Fisherman:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
 </Spawns>
