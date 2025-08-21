@@ -1703,7 +1703,7 @@ namespace Server.Mobiles
 
 			if (!Warmode && InitialInnocent)
 			{
-				IsInitialInnocent = true;
+				Timer.DelayCall( TimeSpan.FromSeconds(60.0), () => {IsInitialInnocent  = true;} );
 			}
 		}
 

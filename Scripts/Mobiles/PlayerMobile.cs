@@ -113,7 +113,7 @@ namespace Server.Mobiles
 	#endregion
 
 	public partial class PlayerMobile : Mobile, IHonorTarget
-	{		
+	{			
 		#region Mount Blocking
 		public void SetMountBlock(BlockMountType type, TimeSpan duration, bool dismount)
 		{
@@ -4449,7 +4449,7 @@ namespace Server.Mobiles
 			SerializeExt(writer);
 			
 			//version 33
-            writer.Write((int)m_ExploringTheDeepQuest);
+			writer.Write((int)m_ExploringTheDeepQuest);
 
             // Version 31/32 Titles
             writer.Write(m_ShowGuildAbbreviation);
