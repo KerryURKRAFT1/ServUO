@@ -1,3 +1,5 @@
+//Original Script by JustIn Time
+
 using System;
 using System.Collections;
 using Server.Items;
