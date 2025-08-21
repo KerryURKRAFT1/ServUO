@@ -749,7 +749,7 @@ namespace Server.Mobiles
 	
 				foreach (Mobile m in eable)
 				{
-					if (m_Owner.IsEnemy(m))
+					if ((m is BaseKillableGuard bg && bg.Focus != null) || m_Owner.IsEnemy(m))
 					{
 						m_Owner.Focus = m;
 						
