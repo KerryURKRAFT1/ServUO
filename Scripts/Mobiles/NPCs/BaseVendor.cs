@@ -21,8 +21,52 @@ using Server.Network;
 using Server.Regions;
 #endregion
 
+using Server;
+using Server.Commands;
+using Server.Mobiles.Data;
+using System.Threading;
+using System.Runtime.Remoting.Messaging;
+
+
 namespace Server.Mobiles
 {
+    #region Speech Objects
+    public struct SpeechResponse
+    {
+        public string Response;
+        public Mobile Speaker;
+        public int Animation;
+        public int Reaction;
+        public string Reward;
+        public string DelObject;
+
+        public SpeechResponse(string response, Mobile speaker, int animationID, int reactionID, string rewardObject, string QuestObject2Delete)
+        {
+            Response = response;
+            Speaker = speaker;
+            Animation = animationID;
+            Reaction = reactionID;
+            Reward = rewardObject;
+            DelObject = QuestObject2Delete;
+        }
+    }
+
+    public class ReactionCallBackState
+    {
+        private Mobile m_Mobile;
+        private int m_Reaction;
+
+        public Mobile Mobile { get { return m_Mobile; } }
+        public int Reaction { get { return m_Reaction; } }
+
+        public ReactionCallBackState(Mobile speaker, int reactNum)
+        {
+            m_Mobile = speaker;
+            m_Reaction = reactNum;
+        }
+    }
+    #endregion
+    
 	public enum VendorShoeType
 	{
 		None,
@@ -32,8 +76,127 @@ namespace Server.Mobiles
 		ThighBoots
 	}
 
-	public abstract class BaseVendor : BaseCreature, IVendor
+    public enum LogLevel
+    {
+        None,
+        Basic,
+        Debug
+    }
+
+    public abstract class BaseVendor : BaseCreature, IVendor
 	{
+        #region Variables
+
+        // change to true for non-Threaded operation.
+        // for debugging use only!
+        private static bool synchronousCall = false;
+        public static bool Synchronous
+        {
+            get { return synchronousCall; }
+        }
+
+        public static LogLevel Logging { get { return LogLevel.Debug; } }
+
+        public enum Attitude { Good = 1, Bad, Indifferent };
+        public enum Wealth { Poor, Normal, Rich };
+
+        private Attitude m_attitude;
+        private Wealth m_wealth;
+        private string[] m_greetings;
+        private PauseTimer m_pausetimer;
+        private GreetTimer m_greettimer;
+        private Mobile inConversation;
+        private bool wasFrozen;
+        private Direction oldDirection;
+        private BaseWeapon m_weapon;
+        private BaseWeapon m_staff;
+        private Timer m_combattimer;
+        private string m_tagText;
+        private AccessLevel m_accessLevel;
+
+        // these greetings should work coming or going
+        private static string[] goodGreetings = 
+		{
+			"*waves*", "*nods*", "*smiles*", "g'day", 
+			"*waves*", "*nods*", "*smiles*", "g'day", 
+			"*waves*", "*nods*", "*smiles*", "g'day", 
+			"good day", "Well met", "Good to see you.", 
+			"good day", "Well met", "It's good to see you.", 
+			"Peace be with you", "May the Virtues guide you" 
+		};
+        private static string[] badGreetings = 
+		{
+			"*nods*", "*frowns*", "*nods*", "*frowns*", 
+			"*coughs*", "*hrumph*", "*grunts*", "yeah"
+		};
+        private static string[] indifGreetings = 
+		{
+			"*waves*", "*nods*", "*waves*", "*nods*", 
+			"*smiles*", "*coughs*", "g'day" 
+		};
+        // How close the Player must be
+        public virtual int ConverseRange { get { return 3; } }
+
+        // How long the NPC stands still waiting for another speech event
+        public virtual TimeSpan PauseDelay { get { return TimeSpan.FromSeconds(9); } }
+
+        public override bool CanOpenDoors { get { return true; } }
+        public override bool Unprovokable { get { return true; } }
+        public override bool Commandable { get { return false; } }
+
+        [CommandProperty(AccessLevel.GameMaster)]
+        public Attitude attitude
+        {
+            get { return m_attitude; }
+            set
+            {
+                m_attitude = value;
+                UpdateGreetings();
+            }
+        }
+
+        [CommandProperty(AccessLevel.GameMaster)]
+        public Wealth wealth
+        {
+            get { return m_wealth; }
+            set
+            {
+                m_wealth = value;
+                if (m_staff != null) m_staff.Delete();
+                if (m_weapon != null) m_weapon.Delete();
+                Strip(this);
+                InitOutfit();
+                PackRandomWeapon();
+            }
+        }
+
+        // flag to prevent spam
+        private bool m_busy = false;
+        public virtual bool Busy
+        {
+            get { return m_busy; }
+            set { m_busy = value; }
+        }
+
+        // Property to use to filter responses
+        [CommandProperty(AccessLevel.GameMaster)]
+        public string Tag
+        {
+            get { return m_tagText; }
+            set { m_tagText = value; }
+        }
+
+        // Does the Attacker become Criminal?
+        private bool m_criminalAction = false; //default
+
+        [CommandProperty(AccessLevel.GameMaster)]
+        public bool AttackIsCriminal
+        {
+            get { return m_criminalAction; }
+            set { m_criminalAction = value; }
+        }
+        #endregion
+        
 		public static List<BaseVendor> AllVendors { get; private set; }
 
 		static BaseVendor()
@@ -222,6 +385,27 @@ namespace Server.Mobiles
    	        Karma = 1000;
 
 			m_LastRestock = DateTime.UtcNow;
+
+            // set NPC wealth
+            Double dbl = Utility.RandomDouble();
+            if (dbl > .875)
+                m_wealth = Wealth.Rich;
+            else if (dbl < .25)
+                m_wealth = Wealth.Poor;
+            else
+                m_wealth = Wealth.Normal;
+
+            //set NPC attitude
+            dbl = Utility.RandomDouble();
+            if (dbl > .45)
+                m_attitude = Attitude.Good;
+            else if (dbl < .2)
+                m_attitude = Attitude.Bad;
+            else
+                m_attitude = Attitude.Indifferent;
+
+			UpdateGreetings();
+            PackRandomWeapon();
 		}
 
 		public BaseVendor(Serial serial)
@@ -241,6 +425,14 @@ namespace Server.Mobiles
 		{
 			base.OnAfterDelete();
 			
+            if (m_pausetimer != null)
+                m_pausetimer.Stop();
+            m_pausetimer = null;
+
+            if (m_greettimer != null)
+                m_greettimer.Stop();
+            m_greettimer = null;
+
 			AllVendors.Remove(this);
 		}
 
@@ -640,6 +832,231 @@ namespace Server.Mobiles
 			return Utility.RandomHairHue();
 		}
 
+        public virtual void InitOutfit()
+        {
+            int hueRange;
+
+            // shoes (hehe - figure this one out)
+            switch ((Utility.Random(3) + 1) * ((int)m_wealth + 1))
+            {
+                case 1: break; // barefoot poor
+                case 2: AddItem(new Shoes(GetShoeHue())); break; // poor, normal
+                case 3: AddItem(new Sandals(GetShoeHue())); break; // poor, rich
+                default:
+                case 4: AddItem(new Shoes(GetShoeHue())); break; // normal
+                case 6: AddItem(new Boots(GetShoeHue())); break; // normal, rich
+                case 9: AddItem(new ThighBoots(GetShoeHue())); break; // rich
+            }
+
+            if (Female)
+            {
+                hueRange = Utility.Random(5); //get a color scheme
+                switch ((int)m_wealth)
+                {
+                    case 0: // Poor
+                        {
+                            switch (Utility.Random(2))
+                            {
+                                case 0: AddItem(new ShortPants(GetRandomHueRange(hueRange))); break;
+                                case 1: AddItem(new Kilt(GetRandomHueRange(hueRange))); break;
+                            }
+
+                            DoShirt(hueRange);
+
+                            switch (Utility.Random(7))
+                            {
+                                default: break;
+                                case 0: AddItem(new Bandana(GetRandomHueRange(hueRange))); break;
+                                case 1: AddItem(new FloppyHat(Utility.RandomNeutralHue())); break;
+                                case 2: AddItem(new StrawHat(Utility.RandomNeutralHue())); break;
+                            }
+                            break;
+                        }
+                    case 1: // Normal
+                        {
+                            switch (Utility.Random(4))
+                            {
+                                case 0:
+                                    {
+                                        AddItem(new PlainDress(GetRandomHueRange(hueRange)));
+                                        break;
+                                    }
+                                case 1:
+                                    {
+                                        AddItem(new Skirt(GetRandomHueRange(hueRange)));
+                                        AddItem(new Shirt(GetRandomHueRange(hueRange)));
+                                        break;
+                                    }
+                                case 2:
+                                    {
+                                        AddItem(new LongPants(GetRandomHueRange(hueRange)));
+                                        DoShirt(hueRange);
+                                        break;
+                                    }
+                                case 3:
+                                    {
+                                        AddItem(new ShortPants(GetRandomHueRange(hueRange)));
+                                        DoShirt(hueRange);
+                                        break;
+                                    }
+                            }
+
+                            switch (Utility.Random(5))
+                            {
+                                default: break;
+                                case 0: AddItem(new Bonnet(GetRandomHueRange(hueRange))); break;
+                                case 1: AddItem(new FloppyHat(GetRandomHueRange(hueRange))); break;
+                                case 2: AddItem(new Cap(GetRandomHueRange(hueRange))); break;
+                            }
+
+                            if (Utility.RandomDouble() < .08)
+                                AddItem(new FullApron(Utility.RandomNeutralHue()));
+
+                            if (Utility.RandomBool())
+                                AddItem(new GoldRing());
+
+                            break;
+                        }
+                    case 2: // Rich
+                        {
+                            switch (Utility.Random(2))
+                            {
+                                case 0:
+                                    {
+                                        AddItem(new Skirt(GetRandomHueRange(hueRange)));
+                                        switch (Utility.Random(2))
+                                        {
+                                            case 0: AddItem(new FancyShirt(GetRandomHueRange(hueRange))); break;
+                                            case 1: AddItem(new Shirt(GetRandomHueRange(hueRange))); break;
+                                        }
+                                        break;
+                                    }
+                                case 1:
+                                    {
+                                        AddItem(new FancyDress(GetRandomHueRange(hueRange)));
+                                        if (Utility.RandomDouble() < .667)
+                                            AddItem(new Cloak(GetRandomHueRange(hueRange)));
+
+                                        break;
+                                    }
+                            }
+
+                            switch (Utility.Random(3))
+                            {
+                                default: break;
+                                case 0: AddItem(new Bonnet(GetRandomHueRange(hueRange))); break;
+                                case 1: AddItem(new FeatheredHat(GetRandomHueRange(hueRange))); break;
+                            }
+
+                            if (Utility.RandomDouble() < .333)
+                            {
+                                m_staff = new GnarledStaff();
+                                EquipItem(m_staff);
+                            }
+
+                            if (Utility.RandomBool())
+                                AddItem(new GoldRing());
+                            if (Utility.RandomBool())
+                                AddItem(new GoldEarrings());
+                            if (Utility.RandomDouble() < .2)
+                                AddItem(new GoldBracelet());
+                            if (Utility.RandomDouble() < .2)
+                                AddItem(new GoldBeadNecklace());
+                            else if (Utility.RandomDouble() < .2)
+                                AddItem(new GoldNecklace());
+
+                            break;
+                        }
+                }
+            }
+
+            else // Male 
+            {
+                hueRange = Utility.Random(3);
+                switch ((int)m_wealth)
+                {
+                    case 0: // Poor
+                        {
+                            switch (Utility.Random(2))
+                            {
+                                case 0: AddItem(new LongPants(Utility.RandomNeutralHue())); break;
+                                case 1: AddItem(new ShortPants(Utility.RandomNeutralHue())); break;
+                            }
+                            DoShirt(0);
+                            break;
+                        }
+                    case 1: // Normal
+                        {
+                            switch (Utility.Random(3))
+                            {
+                                case 0: AddItem(new FancyShirt(GetRandomHueRange(hueRange))); break;
+                                case 1: AddItem(new Doublet(GetRandomHueRange(hueRange))); break;
+                                case 2: AddItem(new Shirt(GetRandomHueRange(hueRange))); break;
+                            }
+
+                            switch (Utility.Random(2))
+                            {
+                                case 0: AddItem(new LongPants(GetRandomHueRange(hueRange))); break;
+                                case 1: AddItem(new ShortPants(GetRandomHueRange(hueRange))); break;
+                            }
+
+                            switch (Utility.Random(5))
+                            {
+                                default: break;
+                                case 0: AddItem(new FloppyHat(Utility.RandomNeutralHue())); break;
+                                case 1: AddItem(new FeatheredHat(GetRandomHueRange(hueRange))); break;
+                            }
+
+                            if (Utility.RandomDouble() < .16)
+                                AddItem(new FullApron(Utility.RandomNeutralHue()));
+
+                            if (Utility.RandomBool())
+                                AddItem(new GoldRing());
+
+                            break;
+                        }
+                    case 2: // Rich 
+                        {
+                            AddItem(new LongPants(GetRandomHueRange(hueRange)));
+
+                            switch (Utility.Random(2))
+                            {
+                                case 0: AddItem(new FancyShirt(GetRandomHueRange(hueRange))); break;
+                                case 1: AddItem(new Shirt(GetRandomHueRange(hueRange))); break;
+                            }
+
+                            int accyHue = GetRandomHueRange(hueRange);
+
+                            if (Utility.RandomBool())
+                                AddItem(new Cloak(accyHue));
+                            if (Utility.RandomBool())
+                                AddItem(new BodySash(accyHue));
+
+                            if (Utility.RandomBool())
+                            {
+                                BaseHat hat = new TricorneHat(accyHue);
+                                if (Utility.RandomBool())
+                                    hat = new FeatheredHat(accyHue);
+                                AddItem(hat);
+                            }
+
+                            if (Utility.RandomDouble() < .333)
+                            {
+                                m_staff = new GnarledStaff();
+                                EquipItem(m_staff);
+                            }
+
+                            if (Utility.RandomBool())
+                                AddItem(new GoldRing());
+                            if (Utility.RandomDouble() < .2)
+                                AddItem(new GoldBracelet());
+
+                            break;
+                        }
+                }
+            }
+        }		
+/*
 		public virtual void InitOutfit()
 		{
 			switch (Utility.Random(3))
@@ -714,7 +1131,7 @@ namespace Server.Mobiles
 
 			PackGold(100, 200);
 		}
-
+*/
 		#region SA
 		public virtual void InitGargOutfit()
 		{
@@ -1843,7 +2260,14 @@ namespace Server.Mobiles
 		{
 			base.Serialize(writer);
 
-			writer.Write(1); // version
+			writer.Write(2); // version
+
+            writer.Write((string)m_tagText);
+            writer.Write((Item)m_weapon);
+            writer.Write((Item)m_staff);
+            writer.Write((bool)m_criminalAction);
+            writer.Write((int)m_attitude);
+            writer.Write((int)m_wealth);
 
 			var sbInfos = SBInfos;
 
@@ -1898,14 +2322,35 @@ namespace Server.Mobiles
 
 			int version = reader.ReadInt();
 
-			LoadSBInfo();
-
-			var sbInfos = SBInfos;
-
 			switch (version)
 			{
+                case 2:
+                    {
+                        m_tagText = reader.ReadString();
+                        Item i1 = reader.ReadItem();
+                        Item i2 = reader.ReadItem();
+                        m_criminalAction = reader.ReadBool();
+                        m_attitude = (Attitude)reader.ReadInt();
+                        m_wealth = (Wealth)reader.ReadInt();
+
+			            if (i1 != null && i1 is BaseWeapon)
+			                m_weapon = (BaseWeapon)i1;
+			            else
+			                m_weapon = new ButcherKnife();
+			
+			            if (i2 != null && i2 is BaseWeapon)
+			                m_staff = (BaseWeapon)i2;
+			
+			            UpdateGreetings();
+
+                        goto case 1;
+					}
 				case 1:
 					{
+						LoadSBInfo();
+			
+						var sbInfos = SBInfos;
+
 						int index;
 
 						while ((index = reader.ReadEncodedInt()) > 0)
@@ -2001,6 +2446,656 @@ namespace Server.Mobiles
 		{
 			return (IBuyItemInfo[])m_ArmorBuyInfo.ToArray(typeof(IBuyItemInfo));
 		}
+
+
+       #region Utility
+        public static bool CheckTOD(Mobile m, int i)
+        {
+            if (i < 1) return true; // Zero = Any
+            if (i > 6) return false; // Out of Range
+            if (m == null || m.Deleted) return false;
+
+            int hours, minutes;
+            Map map = m.Map;
+            int x = m.X;
+            int y = m.Y;
+
+            Clock.GetTime(map, x, y, out hours, out minutes);
+
+            /* RunUO times: (from LightCycle.cs)
+             * 
+             * 10:00 PM -> 11:59 PM : Scale to night
+             * Midnight ->  3:59 AM : Night
+             *  4:00 AM ->  5:59 AM : Scale to day
+             *  6:00 AM ->  9:59 PM : Day
+             */
+
+            switch (i)
+            {
+                case 1: return (hours >= 6 && hours < 12); // morning
+                case 2: return (hours >= 12 && hours < 18); // afternoon
+                case 3: return (hours >= 18 && hours < 24); // evening
+                case 4: return (hours >= 0 && hours < 6); // night
+                case 5: return (hours >= 5 && hours < 23); // daytime
+                case 6: return (!(hours >= 5 && hours < 23)); // nighttime
+            }
+            return false;
+        }
+
+        public virtual void UpdateGreetings()
+        {
+            switch ((int)m_attitude)
+            {
+                case 1: m_greetings = goodGreetings; break;
+                case 2: m_greetings = badGreetings; break;
+                default:
+                case 3: m_greetings = indifGreetings; break;
+            }
+        }
+/*
+        public virtual void UpdateKarmaFame()
+        {
+            this.Fame = (int)m_wealth * 533 + Utility.RandomMinMax(0, 533); // 0 to 1599 based on Wealth
+            this.Karma = (int)m_attitude * 533 + Utility.RandomMinMax(0, 533) - 1333; // -800 to 799 based on Attitude
+        }
+
+        public static void SetSkills(Townsperson m)
+        {
+            // Sets all skills to just below trainable level.
+            Server.Skills skills = m.Skills;
+            for (int i = 0; i < skills.Length; ++i)
+                skills[i].Base = 59.9;
+        }
+
+        public virtual void AddTrainingSkill() // Adds one random skill to Train (overridable)
+        {
+            // Training: if ( skill >= 60 ) can teach skill/3 points to max of 42
+            // i.e. if (skill == 60 ) can teach 60/3 = 20 points.
+            // Utility.Random( 0, 90 ) = 0 to 90 gives 33% chance to teach 20 to 30 points
+            // Utility.Random( 30, 60 ) = 30 to 90 gives 50% chance to teach 20 to 30 points
+            // Utility.Random( 60, 30 ) = 60 to 90 gives 100% chance to teach 20 to 30 points
+            int index = Utility.Random(SkillInfo.Table.Length);
+            Skills[index].Base = Utility.Random(30, 60);
+        }
+*/
+        public virtual int GetRandomHueRange(int range)
+        {
+            // Used to create color coordinated outfits.
+            // Passing 0-4 will return a random hue in a set range
+            // 5-9 will return a Netural hue, above 9 is modded to 0-9
+            switch (range % 10)
+            {
+                default:
+                case 0: return Utility.RandomNeutralHue();
+                case 1: return Utility.RandomBlueHue();
+                case 2: return Utility.RandomGreenHue();
+                case 3: return Utility.RandomRedHue();
+                case 4: return Utility.RandomYellowHue();
+            }
+        }
+
+        public virtual void DoShirt(int hues)
+        {
+            switch (Utility.Random(2))
+            {
+                case 0: AddItem(new Doublet(GetRandomHueRange(hues))); break;
+                case 1: AddItem(new Shirt(GetRandomHueRange(hues))); break;
+            }
+        }
+
+        private static Type typeofItem = typeof(Item);
+        public static Item CheckInventory(Mobile from, string str)
+        {
+            str = str.Trim();
+            if (str == null || str == "") return null;
+
+            Type type = SpawnerType.GetType(str);
+
+            if (type.IsSubclassOf(typeofItem))
+            {
+                // check equiped
+                foreach (Item item in from.Items)
+                    if (item != null && item.GetType() == type)
+                        return item;
+
+                // check pack
+                return from.Backpack.FindItemByType(type, true);
+            }
+            else return null;
+        }
+
+        private static Type[] weaponTypes = new Type[]
+			{
+                typeof( Dagger ), // 0
+				typeof( Dagger ),				typeof( Dagger ),			    typeof( Dagger ),//poor good 
+				typeof( Club ),			    	typeof( Club ),			        typeof( Club ),//poor bad 
+				typeof( Dagger ),				typeof( Club ),			        typeof( Hatchet ),//poor indif
+				typeof( QuarterStaff ),			typeof( Kryss ),			    typeof( Katana ),//norm good 
+				typeof( BattleAxe ),			typeof( Broadsword ),			typeof( GnarledStaff ),//norm bad
+				typeof( Kryss ),			    typeof( Cutlass ),			    typeof( Broadsword ),//norm indif
+				typeof( Scimitar ),				typeof( Katana ),			    typeof( QuarterStaff ),//rich good 
+				typeof( Kryss ),				typeof( Scimitar ),			    typeof( Broadsword ),//rich bad
+				typeof( Katana ),			    typeof( Scimitar ),			    typeof( Longsword ),//rich indif
+            };
+
+        public virtual Type GetRandomWeaponType()
+        {
+            Type type;
+            int index = (int)m_wealth * 3 + (int)m_attitude; // 0, 3, 6 + 1, 2, 3
+            int num = Utility.Random(((index - 1) * 3 + 1), 3);
+
+            try { type = weaponTypes[num]; }
+            catch { type = typeof(Spear); }
+
+            return type;
+        }
+
+        public virtual void PackRandomWeapon()
+        {
+            Item item = Loot.Construct(GetRandomWeaponType());
+            if (item is BaseWeapon)
+                m_weapon = (BaseWeapon)item;
+            else
+                m_weapon = new Cleaver();
+            PackItem(m_weapon);
+        }
+
+        public override void AggressiveAction(Mobile aggressor, bool criminal)
+        {
+            base.AggressiveAction(aggressor, m_criminalAction);
+
+            if (m_combattimer != null)
+                return;
+
+            ClearHands();
+            EquipItem(m_weapon);
+
+            m_combattimer = Timer.DelayCall(TimeSpan.FromSeconds(60.0), new TimerCallback(CombatCallBack));
+        }
+
+        public override void OnDamage(int amount, Mobile from, bool willKill)
+        {
+            base.OnDamage(amount, from, willKill);
+
+            if (Hits < HitsMax * .25)
+                BeginFlee(TimeSpan.FromSeconds(12));
+        }
+
+        private void AddGreetTime(TimeSpan delay)
+        {
+            if (m_greettimer != null)
+                m_greettimer.AddTime(delay);
+            else
+            {
+                m_greettimer = new GreetTimer(this, delay);
+                m_greettimer.Start();
+            }
+        }
+
+        public static void Strip(Mobile from)
+        {
+            DeleteByLayer(from, Layer.OneHanded);
+            DeleteByLayer(from, Layer.TwoHanded);
+            DeleteByLayer(from, Layer.Shoes);
+            DeleteByLayer(from, Layer.Pants);
+            DeleteByLayer(from, Layer.Shirt);
+            DeleteByLayer(from, Layer.Helm);
+            DeleteByLayer(from, Layer.Gloves);
+            DeleteByLayer(from, Layer.Ring);
+            DeleteByLayer(from, Layer.Neck);
+            DeleteByLayer(from, Layer.Talisman);
+            DeleteByLayer(from, Layer.Waist);
+            DeleteByLayer(from, Layer.InnerTorso);
+            DeleteByLayer(from, Layer.Bracelet);
+            DeleteByLayer(from, Layer.MiddleTorso);
+            DeleteByLayer(from, Layer.Earrings);
+            DeleteByLayer(from, Layer.Arms);
+            DeleteByLayer(from, Layer.Cloak);
+            DeleteByLayer(from, Layer.OuterTorso);
+            DeleteByLayer(from, Layer.OuterLegs);
+            DeleteByLayer(from, Layer.InnerLegs);
+        }
+
+        private static void DeleteByLayer(Mobile from, Layer layer)
+        {
+            Item item = from.FindItemOnLayer(layer);
+
+            if (item != null && item.Movable)
+                item.Delete();
+        }
+
+        private static string nz(string test)
+        {
+            return test == null ? "" : test;
+        }
+
+        private static bool isEmpty(string str)
+        {
+            return (str == null || str == "");
+        }
+
+        #endregion
+
+        #region SpeechHandlers
+        public override void OnMovement(Mobile m, Point3D oldLocation)
+        {
+            if (Utility.RandomBool() && !m.Player) return;
+
+            if (!Hidden && !m_busy && Utility.RandomDouble() < .06 && m.Alive && !m.Hidden && m.InRange(this, ConverseRange))
+            {
+	          	try 
+	          	{
+                	Say(m_greetings[Utility.Random(m_greetings.Length)]);
+ 	          	}
+	          	catch {}
+
+                //timer to prevent spam
+                AddGreetTime(PauseDelay);
+
+                return;
+            }
+        }
+
+        public override bool HandlesOnSpeech(Mobile from)
+        {
+            if (!Hidden && from.Player && from.Alive && InLOS(from))
+                return true;
+            else
+                return false;
+        }
+
+        public void ResetState()
+        {
+            if (inConversation == null)
+                return;
+
+            inConversation = null;
+            this.Direction = oldDirection;
+            Frozen = wasFrozen;
+        }
+
+        public override void OnSpeech(SpeechEventArgs e)
+        {
+            base.OnSpeech(e);
+
+            Mobile from = e.Mobile;
+            int[] keywords = e.Keywords;
+            string lc_speech = (e.Speech).ToLower();
+
+            string arg0 = this.Name;
+            string arg1 = from.NameMod == null ? from.Name : from.NameMod;
+            string arg2 = this.Region.Name;
+
+            if (from.Hidden)
+            {
+                // TODO: Enable Localization
+                Emote("*looks startled*");
+                e.Handled = true;
+                return;
+            }
+
+            if (!e.Handled && from.InRange(this, ConverseRange))
+            {
+                e.Handled = true;
+                if (inConversation == null)
+                {
+                    inConversation = from;
+                    oldDirection = this.Direction;
+                    wasFrozen = Frozen;
+                }
+
+                if (m_pausetimer != null && m_pausetimer.Running)
+                {
+                    m_pausetimer.EndTime = DateTime.Now + PauseDelay;
+                }
+                else
+                {
+                    m_pausetimer = new PauseTimer(this, PauseDelay);
+                    m_pausetimer.Start();
+                }
+                this.Direction = GetDirectionTo(from);
+
+                if (synchronousCall)
+                {
+                    Response response = new Response();
+                    SpeechResponse ret = response.GetResponse(lc_speech, from, this);
+                    this.SpeechHandler(ret);
+                }
+                else // Make Asynchronous call to Datahandler
+                {
+                    // Create the object to do the work, and a delegate to the worker method.
+                    Response response = new Response();
+                    GetResponseDelegate rd = new GetResponseDelegate(response.GetResponse);
+
+                    // Define the AsyncCallback delegate.
+                    AsyncCallback cb = new AsyncCallback(this.SpeechCallback);
+
+                    if (Logging == LogLevel.Debug)
+                        BaseVendorLogging.WriteLine(this, "Making Asynchronous call on: \"{0}\"", lc_speech);
+
+                    // Asynchronously invoke the GetResponse method.
+                    IAsyncResult ar = rd.BeginInvoke(lc_speech, from, this, cb, null);
+                }
+            }
+        }
+
+        // Return method of Asynchronous call to Datahandler
+        public void SpeechCallback(IAsyncResult ar)
+        {
+            // Retrieve the delegate.
+            GetResponseDelegate rd = (GetResponseDelegate)((AsyncResult)ar).AsyncDelegate;
+
+            // Call EndInvoke on the delegate to retrieve the results.
+            SpeechResponse ret = rd.EndInvoke(ar);
+
+            // Process the return value
+            this.SpeechHandler(ret);
+
+            if (Logging == LogLevel.Debug)
+                BaseVendorLogging.WriteLine(ret.Speaker, "Return from Asynchronous call: \"{0}\"", ret.Response);
+        }
+
+        public virtual void SpeechHandler(SpeechResponse sr)
+        {
+            string m_name = (sr.Speaker.NameMod == null ? sr.Speaker.Name : sr.Speaker.NameMod);
+            string m_response = String.Format(sr.Response, this.Name, m_name, this.Region);
+
+            if (!isEmpty(sr.Response))
+                Say(m_response);
+
+            if (sr.Animation > 0)
+                Animate(sr.Animation, 5, 1, true, false, 0);
+
+            if (sr.Reaction > 0)
+            {
+                ReactionCallBackState rcbs = new ReactionCallBackState(sr.Speaker, sr.Reaction);
+                Timer.DelayCall(TimeSpan.FromMilliseconds(1800), new TimerStateCallback(ReactionCallBack), rcbs);
+            }
+
+            if (Logging == LogLevel.Basic || Logging == LogLevel.Debug)
+                BaseVendorLogging.WriteLine(this, "Responding to Speech Event: \"{0}\"", m_response);
+
+            if (!isEmpty(sr.Reward))
+            {
+                if (Logging >= LogLevel.Basic)
+                    BaseVendorLogging.WriteLine(sr.Speaker, "{0} in {1} Creating {2}", this.Name, this.Region, sr.Reward);
+
+                Type type = SpawnerType.GetType(sr.Reward);
+
+                try
+                {
+                    object o = Activator.CreateInstance(type);
+
+                    if (o is Item)
+                    {
+                        Item item = (Item)o;
+                        sr.Speaker.AddToBackpack(item);
+                    }
+                    else if (o is Mobile)
+                    {
+                        Mobile mob = (Mobile)o;
+                        mob.MoveToWorld(this.Location, this.Map);
+                    }
+                }
+                catch
+                {
+                    BaseVendorLogging.WriteLine(sr.Speaker, "{0} Exception Caught creating {1}", this.Name, sr.Reward);
+                    sr.Speaker.SendMessage("Exception Caught creating " + sr.Reward); // debugging
+                }
+
+            }
+
+            if (!isEmpty(sr.DelObject))
+            {
+                if (Logging >= LogLevel.Basic)
+                    BaseVendorLogging.WriteLine(sr.Speaker, "{0} in {1} Deleting {2}", this.Name, this.Region, sr.DelObject);
+
+                Type type = SpawnerType.GetType(sr.DelObject);
+
+                bool ActionTaken = false;
+
+                try
+                {
+                    for (int i = 0; i < sr.Speaker.Items.Count; ++i)
+                    {
+                        Item item = (Item)sr.Speaker.Items[i];
+
+                        if (item.GetType() == type)
+                        {
+                            item.Consume();
+                            ActionTaken = true;
+                            break;
+                        }
+                    }
+                    if (!ActionTaken)
+                    {
+                        sr.Speaker.Backpack.ConsumeTotal(type, 1, true);
+                    }
+                }
+                catch
+                {
+                    BaseVendorLogging.WriteLine(sr.Speaker, "{0} Exception Caught consuming {1}", this.Name, sr.DelObject);
+                    sr.Speaker.SendMessage("Exception Caught consuming " + sr.DelObject); // debugging
+                }
+            }
+        }
+        #endregion
+
+        # region Serialize
+/*
+        public Townsperson(Serial serial)
+            : base(serial)
+        {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)3);
+            writer.Write((string)m_tagText);
+            writer.Write((Item)m_weapon);
+            writer.Write((Item)m_staff);
+            writer.Write((bool)m_criminalAction);
+            writer.Write((int)m_attitude);
+            writer.Write((int)m_wealth);
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            int version = reader.ReadInt();
+            Item i1 = null;
+            Item i2 = null;
+
+            switch (version)
+            {
+                case 3:
+                    {
+                        m_tagText = reader.ReadString();
+                        goto case 2;
+                    }
+                case 2:
+                    {
+                        i1 = reader.ReadItem();
+                        i2 = reader.ReadItem();
+                        m_criminalAction = reader.ReadBool();
+                        goto case 1;
+                    }
+                case 1:
+                    {
+                        m_attitude = (Attitude)reader.ReadInt();
+                        m_wealth = (Wealth)reader.ReadInt();
+                        break;
+                    }
+                case 0:
+                    {
+                        // obsolete version
+                        break;
+                    }
+            }
+
+            if (i1 != null && i1 is BaseWeapon)
+                m_weapon = (BaseWeapon)i1;
+            else
+                m_weapon = new ButcherKnife();
+
+            if (i2 != null && i2 is BaseWeapon)
+                m_staff = (BaseWeapon)i2;
+
+            UpdateGreetings();
+        }
+*/
+        # endregion
+
+        # region Overrides
+        public override void OnThink()
+        {
+            if (Combatant == null && Hits < HitsMax && Utility.RandomBool())
+                Hits++;
+
+            base.OnThink(); 
+        }
+        # endregion
+
+        # region Timer CallBacks
+        private void ReactionCallBack(object obj)
+        {
+            ReactionCallBackState state;
+
+            if (obj is ReactionCallBackState)
+                state = (ReactionCallBackState)obj;
+            else
+                return;
+
+            Mobile speaker = state.Mobile;
+            int reactID = state.Reaction;
+            state = null;
+
+            if (reactID < 1 || reactID > 6 || !speaker.Player) return;
+            switch (reactID)
+            {
+                default: return;
+                case 1: // Attack
+                    AttackIsCriminal = false;
+                    Combatant = speaker;
+                    AddGreetTime(TimeSpan.FromSeconds(60));
+                    break;
+                case 2: // Flee
+                    FocusMob = speaker;
+                    BeginFlee(TimeSpan.FromSeconds(18));
+                    AddGreetTime(TimeSpan.FromSeconds(18));
+                    break;
+                case 3: // Criminal
+                    AttackIsCriminal = false;
+                    Criminal = true;
+                    break;
+                case 4: // Hide
+                    //set to GM and allow to roam
+                    m_accessLevel = this.AccessLevel;
+                    AccessLevel = AccessLevel.GameMaster;
+                    Hidden = true;
+                    Timer.DelayCall(TimeSpan.FromMinutes(5), new TimerCallback(UnHideCallBack));
+                    AddGreetTime(TimeSpan.FromMinutes(5));
+                    //if (m_pausetimer != null)
+                    //    m_pausetimer.EndTime = DateTime.Now + TimeSpan.FromMinutes(5);
+                    break;
+                case 5: // Die
+                    Kill();
+                    break;
+                case 6: // Delete
+                    Delete();
+                    break;
+            }
+        }
+
+        private void UnHideCallBack()
+        {
+            Hidden = false;
+            AccessLevel = m_accessLevel;
+        }
+
+        private void CombatCallBack()
+        {
+            if (Combatant != null)
+            {
+                m_combattimer = Timer.DelayCall(TimeSpan.FromSeconds(30.0), new TimerCallback(CombatCallBack));
+                return;
+            }
+
+            m_combattimer = null;
+            ClearHand(m_weapon);
+            Warmode = false;
+
+            if (m_staff != null)
+                EquipItem(m_staff);
+        }
+        # endregion
+
+        # region Timers
+        private class PauseTimer : Timer
+        {
+            private BaseVendor m_from;
+            private DateTime m_endtime;
+
+            public DateTime EndTime
+            {
+                get { return m_endtime; }
+                set { m_endtime = value; }
+            }
+
+            public PauseTimer(BaseVendor from, TimeSpan delay) : base(TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(1))
+            {
+                m_from = from;
+                m_endtime = DateTime.Now + delay;
+
+                from.Frozen = true;
+
+                Priority = TimerPriority.TwoFiftyMS;
+            }
+
+            protected override void OnTick()
+            {
+                if (DateTime.Now >= m_endtime)
+                {
+                    m_from.ResetState();
+
+                    this.Stop();
+                }
+            }
+        }
+
+        private class GreetTimer : Timer
+        {
+            private BaseVendor m_from;
+            private DateTime m_endtime;
+
+            public void AddTime(TimeSpan value)
+            {
+                m_endtime += value;
+            }
+
+            public GreetTimer(BaseVendor from, TimeSpan delay) : base(TimeSpan.FromSeconds(1), TimeSpan.FromSeconds(1))
+            {
+                m_from = from;
+                m_endtime = DateTime.Now + delay;
+
+                from.Busy = true;
+
+                Priority = TimerPriority.TwoFiftyMS;
+            }
+
+            protected override void OnTick()
+            {
+                if (DateTime.Now >= m_endtime)
+                {
+                    if (m_from is BaseVendor)
+                        ((BaseVendor)m_from).Busy = false;
+
+                    this.Stop();
+                }
+            }
+        }
+        # endregion
 	}
 }
 
