@@ -114,7 +114,7 @@ namespace Server.Mobiles
         {
             base.OnSpeech(e);
              
-            if (e.Speech.ToLower().StartsWith("don"))
+            if (e.Speech.ToLower().Contains("don") || e.Speech.ToLower().Contains("trump"))
             {
             	Say( TrumpQuotes[Utility.Random(TrumpQuotes.Count)] );
             }
@@ -139,7 +139,7 @@ namespace Server.Mobiles
         {
             base.AggressiveAction(aggressor, criminal);
 			
-            Spam (TimeSpan.FromSeconds(5.0));
+            Spam (TimeSpan.FromSeconds(15.0));
         }
 
         private void Spam (TimeSpan delay)
@@ -177,6 +177,22 @@ namespace Server.Mobiles
         	"We have the greatest people on Earth, but they're depleted",
         	"I won't take no for an answer",
         	"Our leaders are stupid. Our politicians are stupid",
+			"We will make America strong again. We will make America proud again. We will make America safe again. And we will make America great again",
+			"Sometimes by losing a battle you find a new way to win the war",
+			"You have to think anyway, so why not think big?",
+			"No dream is too big. No challenge is too great. Nothing we want for our future is beyond our reach",
+			"When somebody challenges you, fight back. Be brutal, be tough",
+			"I actually don't have a bad hairline",
+			"Without passion you don't have energy, with out energy you have nothing",
+			"I've always won, and I'm going to continue to win. And that's the way it is",
+			"My whole life is about winning. I don't lose often. I almost never lose",
+			"We share one heart, one home, and one glorious destiny",
+			"Sometimes your best investments are the ones you don't make",
+			"We need a president with tremendous intelligence, smarts, cunning, strength and stamina",
+			"America will start winning again, winning like never before",
+			"We need a great president",
+			"I feel a lot of people listen to what I have to say",
+			"I'm worth far too much money. I don't need anybody's money",
         };
 
 		public override bool ClickTitle{ get{ return false; } }

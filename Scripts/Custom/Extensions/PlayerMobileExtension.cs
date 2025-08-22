@@ -1,4 +1,7 @@
-﻿using System;
+﻿//This is the most simplistic Power Hour Script ive ever made
+//Carlin4737 Aug25
+
+using System;
 
 namespace Server.Mobiles
 {
@@ -9,6 +12,7 @@ namespace Server.Mobiles
 
 	public partial class PlayerMobile : Mobile
 	{
+		#region configure			
 		public static bool PowerHourEnabled = Config.Get("Custom_PowerHour.PowerHourEnabled", true);
 		public static bool PowerHourStaffEnabled = Config.Get("Custom_PowerHour.PowerHourStaffEnabled", false);
 		
@@ -63,26 +67,27 @@ namespace Server.Mobiles
 				PowerHourTimer.AddTimer(this);
 			}
 		}
+		#endregion
 				
-		public void PowerHourConfigureSequence() //triggered by startup
+		#region Sequence
+		public void PowerHourConfigureSequence() //triggered by startup (Configure it)
 		{
 			if (!PowerHourEnabled || (IsStaff() && !PowerHourStaffEnabled))
 				return;
 						
-			if (PowerHourTime <= DateTime.MinValue)
-				PowerHourAction = PowerHourActions.Initial; //detect new start
+			if (PowerHourTime <= DateTime.MinValue) //detect new start
+				PowerHourAction = PowerHourActions.Initial; 
 			else if (PowerHourTime > DateTime.Now + PowerHourDelay) //incase delay is changed to a shorter value
 				PowerHourAction = PowerHourActions.Delay;
-
 			else if (PowerHourActive || PowerHourTime < DateTime.Now) // if Active or deactive then continue
 				PowerHourAction = PowerHourActions.Activate;
 			else
 				PowerHourAction = PowerHourActions.DeActivate;
 
-			PowerHourConfigured = true;
+			PowerHourConfigured = true; //loading message off
 		}
 		
-		public bool PowerHourChangeSequence() //triggered by Timer
+		public bool PowerHourChangeSequence() //triggered by Timer (Swap Status)
 		{
 			if (PowerHourTime > DateTime.Now)
 				return false;
@@ -95,7 +100,7 @@ namespace Server.Mobiles
 			return true;
 		}
 
-		public void PowerHourReadySequence() //triggered by command
+		public void PowerHourReadySequence() //triggered by command (Activate it)
 		{
 			if (!PowerHourActive)
 			{
@@ -112,7 +117,7 @@ namespace Server.Mobiles
 				PowerHourActiveMessage();
 		}
 
-		public void PowerHourQuerySequence() //triggered by command
+		public void PowerHourQuerySequence() //triggered by command (Answer it)
 		{
 			if (!PowerHourConfigured)
 				PowerHourLoadingMessage();
@@ -125,7 +130,9 @@ namespace Server.Mobiles
 			else
 				PowerHourDeActivateMessage();
 		}
-
+		#endregion
+		
+		#region Messages
 		public void PowerHourReadyMessage()
 		{
 			if (PowerHourAction == PowerHourActions.Activate)
@@ -170,7 +177,9 @@ namespace Server.Mobiles
 		{
 			SendMessage (48, "Your power hour is loading, please wait a few seconds...");
 		}
+		#endregion
 				
+		#region Gains
 		public double PowerHourRunning(Skill skill, double gc)
 		{
 			if (CanGain())
@@ -189,6 +198,7 @@ namespace Server.Mobiles
 									
 			return PowerHourActive;
 		}
+		#endregion
 		
 		public void SerializeExt(GenericWriter writer)
 		{
@@ -213,5 +223,6 @@ namespace Server.Mobiles
 				}
 			}
 		}
+
 	}
 }

@@ -21,6 +21,11 @@ namespace Server.Mobiles
 				return false;
 			}
 				
+			if (!InLOS(m))
+			{
+				return false;
+			}
+			
 			if (m is BaseCreature bc)
 			{	
 				if (InitialInnocent && !bc.IsInitialInnocent)
@@ -432,8 +437,13 @@ namespace Server.Mobiles
 				else
 				{
 					Emote("looks around");
-										
+					
 					m_Focus = null;;
+
+					if (e.Mobile is BaseKillableGuard bkg)
+					{
+						bkg.LooksAround();
+					}
 				}
 			}
 		}
@@ -481,6 +491,31 @@ namespace Server.Mobiles
 					caller.Region.MakeGuard(target, amount);
 				}
 			}
+		}
+
+		public void LooksAround()
+		{
+			m_Focus = null;;
+
+		   	IPooledEnumerable eable = GetMobilesInRange(18);
+
+			foreach (Mobile m in eable)
+			{
+				if (m is BaseKillableGuard bkg && bkg.Focus != null && InLOS(bkg) && InLOS(m))
+				{
+					m_Focus = bkg.Focus;
+					
+					m_IdleTimer?.Stop();
+				}
+				else if (IsEnemy(m))
+				{
+					m_Focus = m;
+					
+					m_IdleTimer?.Stop();
+				}
+			}
+
+			eable.Free();
 		}
 
 		public BaseKillableGuard( Serial serial ) : base( serial )
@@ -697,7 +732,7 @@ namespace Server.Mobiles
 			{
 				m_Owner = owner;
 				
-				m_End = DateTime.UtcNow + TimeSpan.FromMinutes(Utility.RandomMinMax(1, 10));
+				m_End = DateTime.UtcNow + TimeSpan.FromMinutes(Utility.RandomMinMax(2, 5));
 
 				Priority = TimerPriority.FiveSeconds;
 			}
@@ -739,25 +774,15 @@ namespace Server.Mobiles
 					Effects.SendLocationParticles(EffectItem.Create(m_Owner.Location, m_Owner.Map, EffectItem.DefaultDuration), 0x3728, 10, 10, 2023);
 									
 					m_Owner.Delete();
+					
+					Stop();
 				}
 				
 				m_Owner.Focus = null;
 				
 				m_Owner.Combatant = null;
 
-			   	IPooledEnumerable eable = m_Owner.GetMobilesInRange(18);
-	
-				foreach (Mobile m in eable)
-				{
-					if ((m is BaseKillableGuard bg && bg.Focus != null) || m_Owner.IsEnemy(m))
-					{
-						m_Owner.Focus = m;
-						
-						Stop();
-					}
-				}
-	
-				eable.Free();
+				m_Owner.LooksAround();
 			}
 		}
 		
