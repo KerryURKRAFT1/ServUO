@@ -43,6 +43,8 @@ namespace Server.SkillHandlers
 
     	public static TimeSpan MeditateStamRate = TimeSpan.FromSeconds(2.0);
 
+    	public static double MeditateHitsRate = 0.2;
+
     	public static double MeditateSlowRate = 0.4;
     	public static double MeditateFastRate = 0.25;
 
