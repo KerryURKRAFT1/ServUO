@@ -1,6 +1,52 @@
 <Spawns>
   <Points>
-    <Name>4 Armorer</Name>
+    <Name>35 StealableBananas-StealableCheeseWedge-Etc</Name>
+    <UniqueId>00916961-c0e9-48c0-ad50-3799e707c571</UniqueId>
+    <Map>Felucca</Map>
+    <X>60</X>
+    <Y>90</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>1468</CentreX>
+    <CentreY>1667</CentreY>
+    <CentreZ>5</CentreZ>
+    <Range>0</Range>
+    <MaxCount>2</MaxCount>
+    <MinDelay>60</MinDelay>
+    <MaxDelay>120</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>60</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>True</InContainer>
+    <ContainerX>60</ContainerX>
+    <ContainerY>90</ContainerY>
+    <ContainerZ>0</ContainerZ>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>True</IsHomeRangeRelative>
+    <Objects2>StealableBananas:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableCheeseWedge:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableLemons:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableLimes:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableBaconSlab:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>36 Armorer</Name>
     <UniqueId>095ee742-1dd5-42c6-9f05-447994de32d8</UniqueId>
     <Map>Felucca</Map>
     <X>1633</X>
@@ -43,7 +89,7 @@
     <Objects2>Armorer:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>16 Healer</Name>
+    <Name>19 Healer</Name>
     <UniqueId>0aa398d5-9aab-4fb5-b7fa-66f3c123f4eb</UniqueId>
     <Map>Felucca</Map>
     <X>1471</X>
@@ -86,7 +132,7 @@
     <Objects2>Healer:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>77 TailorGuildmaster</Name>
+    <Name>18 TailorGuildmaster</Name>
     <UniqueId>134b1240-0400-48d7-ac17-bf93871a329b</UniqueId>
     <Map>Felucca</Map>
     <X>1546</X>
@@ -129,7 +175,7 @@
     <Objects2>TailorGuildmaster:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>42 TownCrier</Name>
+    <Name>20 TownCrier</Name>
     <UniqueId>1709fef6-cef8-4a48-b0c8-a43aa5978044</UniqueId>
     <Map>Felucca</Map>
     <X>1433</X>
@@ -172,7 +218,7 @@
     <Objects2>TownCrier:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>43 Banker</Name>
+    <Name>29 Banker</Name>
     <UniqueId>173b5fcb-89c9-4918-ac62-c272258d6689</UniqueId>
     <Map>Felucca</Map>
     <X>1431</X>
@@ -215,7 +261,7 @@
     <Objects2>Banker:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>44 Alchemist</Name>
+    <Name>28 Alchemist</Name>
     <UniqueId>1ad1e696-0674-4262-841b-7ec36c044ece</UniqueId>
     <Map>Felucca</Map>
     <X>1590</X>
@@ -258,7 +304,50 @@
     <Objects2>Alchemist:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>64 Herbalist</Name>
+    <Name>30 StealableEmptyBasin-StealableWaterBasin-Etc</Name>
+    <UniqueId>1e490764-4ac6-4d6a-969d-abaff64922af</UniqueId>
+    <Map>Felucca</Map>
+    <X>0</X>
+    <Y>0</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>1473</CentreX>
+    <CentreY>1608</CentreY>
+    <CentreZ>26</CentreZ>
+    <Range>0</Range>
+    <MaxCount>1</MaxCount>
+    <MinDelay>1080</MinDelay>
+    <MaxDelay>1440</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>180</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>True</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>True</IsHomeRangeRelative>
+    <Objects2>StealableEmptyBasin:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableWaterBasin:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>24 Herbalist</Name>
     <UniqueId>1f695a90-abfa-4a9e-84dd-9f9a9f61d64a</UniqueId>
     <Map>Felucca</Map>
     <X>1500</X>
@@ -301,7 +390,7 @@
     <Objects2>Herbalist:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>45 GabrielPiete</Name>
+    <Name>23 GabrielPiete</Name>
     <UniqueId>1fd43941-1a87-4e2e-8fa7-edd0b9d91718</UniqueId>
     <Map>Felucca</Map>
     <X>1439</X>
@@ -344,7 +433,7 @@
     <Objects2>GabrielPiete:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>63 InnKeeper</Name>
+    <Name>25 InnKeeper</Name>
     <UniqueId>26ec611c-52b1-4aca-87f5-177b600487e0</UniqueId>
     <Map>Felucca</Map>
     <X>1493</X>
@@ -387,7 +476,7 @@
     <Objects2>InnKeeper:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>30 Blacksmith</Name>
+    <Name>10 Blacksmith</Name>
     <UniqueId>280ede34-1652-47b3-a984-0d1eb85138a2</UniqueId>
     <Map>Felucca</Map>
     <X>1448</X>
@@ -430,7 +519,7 @@
     <Objects2>Blacksmith:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>23 FarmableCotton</Name>
+    <Name>11 FarmableCotton</Name>
     <UniqueId>2868e1d0-9a68-4c4a-a529-23eabd51b2dd</UniqueId>
     <Map>Felucca</Map>
     <X>1145</X>
@@ -473,7 +562,7 @@
     <Objects2>FarmableCotton:MX=20:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>76 Waiter</Name>
+    <Name>7 Waiter</Name>
     <UniqueId>2aaf0f60-2b34-496f-8c84-3db76070019f</UniqueId>
     <Map>Felucca</Map>
     <X>1495</X>
@@ -516,7 +605,7 @@
     <Objects2>Waiter:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>29 Barkeeper</Name>
+    <Name>12 Barkeeper</Name>
     <UniqueId>2f54ce6b-ed8a-4d7f-a1a1-99e2f74beb45</UniqueId>
     <Map>Felucca</Map>
     <X>1490</X>
@@ -559,7 +648,7 @@
     <Objects2>Barkeeper:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>2 Cobbler</Name>
+    <Name>13 Cobbler</Name>
     <UniqueId>2f55ea10-5e9c-46a5-9eca-7c1d02cbed6a</UniqueId>
     <Map>Felucca</Map>
     <X>1466</X>
@@ -602,7 +691,7 @@
     <Objects2>Cobbler:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>75 Cook</Name>
+    <Name>6 Cook</Name>
     <UniqueId>2f8cee10-fb08-474d-a789-f2908337debb</UniqueId>
     <Map>Felucca</Map>
     <X>1450</X>
@@ -645,7 +734,7 @@
     <Objects2>Cook:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>65 Tinker</Name>
+    <Name>5 Tinker</Name>
     <UniqueId>308fa621-d515-4c30-801b-a35c85f2f844</UniqueId>
     <Map>Felucca</Map>
     <X>1474</X>
@@ -688,7 +777,7 @@
     <Objects2>Tinker:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>56 Veterinarian</Name>
+    <Name>4 Veterinarian</Name>
     <UniqueId>31ab0d2f-1af9-4a19-974a-1d3336223424</UniqueId>
     <Map>Felucca</Map>
     <X>1512</X>
@@ -731,7 +820,7 @@
     <Objects2>Veterinarian:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>17 FishMonger-MLQuester</Name>
+    <Name>14 FishMonger-MLQuester</Name>
     <UniqueId>32ca5021-c6ac-4a04-8160-4d45ef5aa76b</UniqueId>
     <Map>Felucca</Map>
     <X>1438</X>
@@ -774,7 +863,50 @@
     <Objects2>FishMonger:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>25 Tailor</Name>
+    <Name>2 ChaosGuard</Name>
+    <UniqueId>344d1d49-463f-47d9-ad9d-259b297915dd</UniqueId>
+    <Map>Felucca</Map>
+    <X>1525</X>
+    <Y>1457</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>1525</CentreX>
+    <CentreY>1457</CentreY>
+    <CentreZ>15</CentreZ>
+    <Range>1</Range>
+    <MaxCount>1</MaxCount>
+    <MinDelay>5</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>True</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>ChaosGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>17 Tailor</Name>
     <UniqueId>35da056a-a4b0-4475-a0e6-f53a20ab5523</UniqueId>
     <Map>Felucca</Map>
     <X>1471</X>
@@ -817,7 +949,7 @@
     <Objects2>Tailor:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>74 Banker</Name>
+    <Name>32 Banker</Name>
     <UniqueId>38a15ed6-98e9-4df6-be9a-f86ce9cb32ed</UniqueId>
     <Map>Felucca</Map>
     <X>1571</X>
@@ -860,7 +992,7 @@
     <Objects2>Banker:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>26 TinkerGuildmaster</Name>
+    <Name>31 TinkerGuildmaster</Name>
     <UniqueId>3a4dc63d-e994-43bf-a85d-cf2109958e4f</UniqueId>
     <Map>Felucca</Map>
     <X>1422</X>
@@ -903,7 +1035,7 @@
     <Objects2>TinkerGuildmaster:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>38 Mongbat</Name>
+    <Name>79 Mongbat</Name>
     <UniqueId>3a6ee5b8-8e3e-456d-b461-cf93ca4f9c1a</UniqueId>
     <Map>Felucca</Map>
     <X>1485</X>
@@ -946,7 +1078,7 @@
     <Objects2>Mongbat:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>5 Tailor</Name>
+    <Name>80 Tailor</Name>
     <UniqueId>3cb4da97-553e-4352-a422-d89d438697fb</UniqueId>
     <Map>Felucca</Map>
     <X>1467</X>
@@ -989,7 +1121,7 @@
     <Objects2>Tailor:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>31 Impresario</Name>
+    <Name>75 Impresario</Name>
     <UniqueId>3cce6fb9-ed74-4382-8b45-f593918ad5da</UniqueId>
     <Map>Felucca</Map>
     <X>1451</X>
@@ -1032,7 +1164,7 @@
     <Objects2>Impresario:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>18 Thief</Name>
+    <Name>76 Thief</Name>
     <UniqueId>3e25e420-82ed-45d7-b76e-8a5b1777a7b2</UniqueId>
     <Map>Felucca</Map>
     <X>1633</X>
@@ -1075,7 +1207,7 @@
     <Objects2>Thief:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>61 MinerGuildmaster</Name>
+    <Name>71 MinerGuildmaster</Name>
     <UniqueId>44d545b0-244a-4e86-972a-0b2707db4fd9</UniqueId>
     <Map>Felucca</Map>
     <X>1417</X>
@@ -1118,7 +1250,7 @@
     <Objects2>MinerGuildmaster:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>28 InnKeeper</Name>
+    <Name>72 InnKeeper</Name>
     <UniqueId>4824fd99-d9ca-47a4-986c-397235c84c5b</UniqueId>
     <Map>Felucca</Map>
     <X>1476</X>
@@ -1161,7 +1293,7 @@
     <Objects2>InnKeeper:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>73 Naturalist</Name>
+    <Name>65 Naturalist</Name>
     <UniqueId>48b0752a-c7f0-411b-a0bd-cc494e586e84</UniqueId>
     <Map>Felucca</Map>
     <X>1495</X>
@@ -1204,7 +1336,7 @@
     <Objects2>Naturalist:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>55 InnKeeper</Name>
+    <Name>66 InnKeeper</Name>
     <UniqueId>4afe8f00-b978-4488-86a4-ae43cf8c6869</UniqueId>
     <Map>Felucca</Map>
     <X>1593</X>
@@ -1247,7 +1379,7 @@
     <Objects2>InnKeeper:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>13 Armorer</Name>
+    <Name>61 Armorer</Name>
     <UniqueId>525bbc40-e405-4bdc-aa5d-4facb9cb46d7</UniqueId>
     <Map>Felucca</Map>
     <X>1482</X>
@@ -1290,7 +1422,7 @@
     <Objects2>Armorer:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>57 ThiefGuildmaster</Name>
+    <Name>62 ThiefGuildmaster</Name>
     <UniqueId>57b42708-bb41-4a7f-9cc1-ee4bcd769cbd</UniqueId>
     <Map>Felucca</Map>
     <X>1626</X>
@@ -1333,7 +1465,7 @@
     <Objects2>ThiefGuildmaster:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>72 Waiter</Name>
+    <Name>57 Waiter</Name>
     <UniqueId>58faa4a1-9b0a-43fc-8544-7638fd24060c</UniqueId>
     <Map>Felucca</Map>
     <X>1430</X>
@@ -1376,7 +1508,7 @@
     <Objects2>Waiter:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>15 Cobbler</Name>
+    <Name>58 Cobbler</Name>
     <UniqueId>5a7ba035-29f4-4031-af1d-20fd115bbde0</UniqueId>
     <Map>Felucca</Map>
     <X>1602</X>
@@ -1419,7 +1551,53 @@
     <Objects2>Cobbler:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>62 Apple</Name>
+    <Name>53 StealableBananas-StealableCheeseWedge-Etc</Name>
+    <UniqueId>5f636090-7830-437c-9742-8d042fc0acd9</UniqueId>
+    <Map>Felucca</Map>
+    <X>60</X>
+    <Y>90</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>1467</CentreX>
+    <CentreY>1668</CentreY>
+    <CentreZ>5</CentreZ>
+    <Range>0</Range>
+    <MaxCount>2</MaxCount>
+    <MinDelay>60</MinDelay>
+    <MaxDelay>120</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>60</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>True</InContainer>
+    <ContainerX>60</ContainerX>
+    <ContainerY>90</ContainerY>
+    <ContainerZ>0</ContainerZ>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>True</IsHomeRangeRelative>
+    <Objects2>StealableBananas:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableCheeseWedge:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableLemons:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableLimes:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableBaconSlab:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>54 Apple</Name>
     <UniqueId>5fcbc88f-d6cd-4e55-a619-2ad306caaa7b</UniqueId>
     <Map>Felucca</Map>
     <X>1436</X>
@@ -1462,7 +1640,7 @@
     <Objects2>Apple:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 Furtrader</Name>
+    <Name>49 Furtrader</Name>
     <UniqueId>622756d6-7c9f-40ca-9d66-21ffff0c9e6c</UniqueId>
     <Map>Felucca</Map>
     <X>1431</X>
@@ -1505,7 +1683,7 @@
     <Objects2>Furtrader:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>36 BardGuildmaster</Name>
+    <Name>50 BardGuildmaster</Name>
     <UniqueId>63e3709f-109a-43ce-b28e-4e5bea75ffb2</UniqueId>
     <Map>Felucca</Map>
     <X>1455</X>
@@ -1548,7 +1726,7 @@
     <Objects2>BardGuildmaster:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>71 Muffins</Name>
+    <Name>43 Muffins</Name>
     <UniqueId>653ec37d-bffe-4003-ba32-a7b8eca56dfc</UniqueId>
     <Map>Felucca</Map>
     <X>1452</X>
@@ -1591,50 +1769,7 @@
     <Objects2>Muffins:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>35 Dragon</Name>
-    <UniqueId>6aa173c6-14fc-4a7c-9e00-a58ba50191f6</UniqueId>
-    <Map>Felucca</Map>
-    <X>1457</X>
-    <Y>1641</Y>
-    <Width>0</Width>
-    <Height>0</Height>
-    <CentreX>1457</CentreX>
-    <CentreY>1641</CentreY>
-    <CentreZ>40</CentreZ>
-    <Range>2</Range>
-    <MaxCount>13</MaxCount>
-    <MinDelay>5</MinDelay>
-    <MaxDelay>10</MaxDelay>
-    <DelayInSec>False</DelayInSec>
-    <Duration>0</Duration>
-    <DespawnTime>0</DespawnTime>
-    <ProximityRange>-1</ProximityRange>
-    <ProximityTriggerSound>500</ProximityTriggerSound>
-    <TriggerProbability>1</TriggerProbability>
-    <InContainer>False</InContainer>
-    <MinRefractory>0</MinRefractory>
-    <MaxRefractory>0</MaxRefractory>
-    <TODStart>0</TODStart>
-    <TODEnd>0</TODEnd>
-    <TODMode>0</TODMode>
-    <KillReset>1</KillReset>
-    <ExternalTriggering>False</ExternalTriggering>
-    <SequentialSpawning>-1</SequentialSpawning>
-    <AllowGhostTriggering>False</AllowGhostTriggering>
-    <AllowNPCTriggering>False</AllowNPCTriggering>
-    <SpawnOnTrigger>False</SpawnOnTrigger>
-    <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
-    <TickReset>False</TickReset>
-    <Team>0</Team>
-    <Amount>1</Amount>
-    <IsGroup>False</IsGroup>
-    <IsRunning>True</IsRunning>
-    <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Dragon:MX=13:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
-  </Points>
-  <Points>
-    <Name>14 Tanner</Name>
+    <Name>44 Tanner</Name>
     <UniqueId>6c1dc2a3-0d2a-4cb2-9c74-3b9092f8513f</UniqueId>
     <Map>Felucca</Map>
     <X>1431</X>
@@ -1677,7 +1812,7 @@
     <Objects2>Tanner:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>6 Butcher</Name>
+    <Name>41 Butcher</Name>
     <UniqueId>734e08ca-2799-4a45-9633-f1344111004f</UniqueId>
     <Map>Felucca</Map>
     <X>1450</X>
@@ -1720,7 +1855,7 @@
     <Objects2>Butcher:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>7 AnimalTrainer</Name>
+    <Name>42 AnimalTrainer</Name>
     <UniqueId>788292bf-41d0-4d5f-a4b6-428c813d0c30</UniqueId>
     <Map>Felucca</Map>
     <X>1510</X>
@@ -1763,7 +1898,7 @@
     <Objects2>AnimalTrainer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>40 Scribe</Name>
+    <Name>39 Scribe</Name>
     <UniqueId>81179248-1b9e-44a6-82b8-d25c74edd01b</UniqueId>
     <Map>Felucca</Map>
     <X>1412</X>
@@ -1806,7 +1941,7 @@
     <Objects2>Scribe:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>54 Cook</Name>
+    <Name>40 Cook</Name>
     <UniqueId>82ff2e92-4f85-4d51-9a3b-6f84b0d14ece</UniqueId>
     <Map>Felucca</Map>
     <X>1487</X>
@@ -1849,7 +1984,7 @@
     <Objects2>Cook:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>11 Mage</Name>
+    <Name>37 Mage</Name>
     <UniqueId>835ddfe0-172c-4a9b-9646-6dd57725b4cf</UniqueId>
     <Map>Felucca</Map>
     <X>1489</X>
@@ -1892,7 +2027,7 @@
     <Objects2>Mage:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 OrderGuard</Name>
+    <Name>38 OrderGuard</Name>
     <UniqueId>86d8f121-578e-4b7d-8cc9-e1c03950b925</UniqueId>
     <Map>Felucca</Map>
     <X>1405</X>
@@ -1935,7 +2070,7 @@
     <Objects2>OrderGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>22 Gypsy</Name>
+    <Name>33 Gypsy</Name>
     <UniqueId>870df89c-6558-4cf5-a674-0cd9eb3590f6</UniqueId>
     <Map>Felucca</Map>
     <X>1670</X>
@@ -1978,18 +2113,18 @@
     <Objects2>Gypsy:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>41 Cat</Name>
+    <Name>34 Cat-Dog-Etc</Name>
     <UniqueId>875af699-37e1-473a-b7bc-d6a8fc27f3e5</UniqueId>
     <Map>Felucca</Map>
-    <X>1425</X>
-    <Y>1676</Y>
-    <Width>4</Width>
-    <Height>4</Height>
-    <CentreX>1427</CentreX>
-    <CentreY>1678</CentreY>
+    <X>1343</X>
+    <Y>1577</Y>
+    <Width>200</Width>
+    <Height>200</Height>
+    <CentreX>1443</CentreX>
+    <CentreY>1677</CentreY>
     <CentreZ>0</CentreZ>
     <Range>2</Range>
-    <MaxCount>206</MaxCount>
+    <MaxCount>16</MaxCount>
     <MinDelay>1</MinDelay>
     <MaxDelay>1</MaxDelay>
     <DelayInSec>False</DelayInSec>
@@ -2018,7 +2153,50 @@
     <IsGroup>False</IsGroup>
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Cat:MX=206:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+    <Objects2>Cat:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Dog:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bird:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Rat:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>26 BlackPearl-Bloodmoss-Etc</Name>
+    <UniqueId>87f2c889-29fc-4475-818e-b1d0a1b50935</UniqueId>
+    <Map>Felucca</Map>
+    <X>1316</X>
+    <Y>1393</Y>
+    <Width>400</Width>
+    <Height>400</Height>
+    <CentreX>1516</CentreX>
+    <CentreY>1593</CentreY>
+    <CentreZ>12</CentreZ>
+    <Range>200</Range>
+    <MaxCount>160</MaxCount>
+    <MinDelay>11</MinDelay>
+    <MaxDelay>23</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>True</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
     <Name>27 Noble</Name>
@@ -2064,7 +2242,7 @@
     <Objects2>Noble:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>12 TailorGuildmaster</Name>
+    <Name>21 TailorGuildmaster</Name>
     <UniqueId>90d9324c-e0a1-42ee-a927-251bab72505a</UniqueId>
     <Map>Felucca</Map>
     <X>1467</X>
@@ -2107,7 +2285,7 @@
     <Objects2>TailorGuildmaster:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>53 Bowyer</Name>
+    <Name>22 Bowyer</Name>
     <UniqueId>92fafecb-cfad-45a6-990e-de633bce6e0c</UniqueId>
     <Map>Felucca</Map>
     <X>1470</X>
@@ -2150,7 +2328,7 @@
     <Objects2>Bowyer:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>34 Bard</Name>
+    <Name>9 Bard</Name>
     <UniqueId>9480c6f9-77af-446d-b09e-7bdbb2261049</UniqueId>
     <Map>Felucca</Map>
     <X>1455</X>
@@ -2193,7 +2371,7 @@
     <Objects2>Bard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>70 Healer</Name>
+    <Name>8 Healer</Name>
     <UniqueId>9bcb0953-f8b0-4cca-9fdd-590c20290497</UniqueId>
     <Map>Felucca</Map>
     <X>1651</X>
@@ -2236,7 +2414,7 @@
     <Objects2>Healer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>37 Apple</Name>
+    <Name>3 Apple</Name>
     <UniqueId>a1b5ce2b-cba0-45f4-9bb3-5450050beb28</UniqueId>
     <Map>Felucca</Map>
     <X>1411</X>
@@ -2279,7 +2457,7 @@
     <Objects2>Apple:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>52 Fisherman</Name>
+    <Name>15 Fisherman</Name>
     <UniqueId>a23c91c3-01ea-4b9e-bf83-eeffe5805902</UniqueId>
     <Map>Felucca</Map>
     <X>1470</X>
@@ -2322,7 +2500,7 @@
     <Objects2>Fisherman:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>60 Glassblower</Name>
+    <Name>16 Glassblower</Name>
     <UniqueId>a4da0017-e5f8-47f3-94a4-45a3cc57238c</UniqueId>
     <Map>Felucca</Map>
     <X>1492</X>
@@ -2365,7 +2543,7 @@
     <Objects2>Glassblower:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>9 Horse</Name>
+    <Name>81 Horse</Name>
     <UniqueId>ac4409fc-30be-47df-9d37-9acda5670fa7</UniqueId>
     <Map>Felucca</Map>
     <X>1515</X>
@@ -2408,7 +2586,7 @@
     <Objects2>Horse:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>51 MetalBox</Name>
+    <Name>82 MetalBox</Name>
     <UniqueId>adf8da73-5e8c-4b5d-9b81-7089eab4eb62</UniqueId>
     <Map>Felucca</Map>
     <X>1424</X>
@@ -2451,7 +2629,7 @@
     <Objects2>MetalBox:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>33 Fisherman</Name>
+    <Name>77 Fisherman</Name>
     <UniqueId>b04daa8e-59b5-4bc1-9ee7-0303d20ec193</UniqueId>
     <Map>Felucca</Map>
     <X>1485</X>
@@ -2494,7 +2672,7 @@
     <Objects2>Fisherman:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>69 Alchemist</Name>
+    <Name>78 Alchemist</Name>
     <UniqueId>b086aca0-51b8-4e58-8700-103e2a58684a</UniqueId>
     <Map>Felucca</Map>
     <X>1499</X>
@@ -2537,7 +2715,7 @@
     <Objects2>Alchemist:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>68 OrderGuard</Name>
+    <Name>73 OrderGuard</Name>
     <UniqueId>b15a82e0-e2f8-4a78-b4e4-8ef69dd4d934</UniqueId>
     <Map>Felucca</Map>
     <X>1512</X>
@@ -2580,7 +2758,7 @@
     <Objects2>OrderGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>50 Jeweler</Name>
+    <Name>74 Jeweler</Name>
     <UniqueId>b59215e3-8910-4202-a05b-68d52613dfac</UniqueId>
     <Map>Felucca</Map>
     <X>1650</X>
@@ -2623,7 +2801,7 @@
     <Objects2>Jeweler:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>21 StoneCrafter</Name>
+    <Name>69 StoneCrafter</Name>
     <UniqueId>bc9c2216-1b18-4de8-91e0-fc8c8bca54fc</UniqueId>
     <Map>Felucca</Map>
     <X>1467</X>
@@ -2666,7 +2844,7 @@
     <Objects2>StoneCrafter:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>10 Bard</Name>
+    <Name>70 Bard</Name>
     <UniqueId>c15ecefe-5bf4-47fc-bb7a-70c27374d065</UniqueId>
     <Map>Felucca</Map>
     <X>1425</X>
@@ -2709,7 +2887,7 @@
     <Objects2>Bard:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>8 Bird</Name>
+    <Name>67 Bird</Name>
     <UniqueId>c1bf80ce-3b6c-4cd3-96b0-bf51144ac0c7</UniqueId>
     <Map>Felucca</Map>
     <X>1430</X>
@@ -2752,7 +2930,7 @@
     <Objects2>Bird:MX=24:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>20 Shipwright</Name>
+    <Name>68 Shipwright</Name>
     <UniqueId>d6500fd8-280c-405f-96d3-62d59144eb9f</UniqueId>
     <Map>Felucca</Map>
     <X>1416</X>
@@ -2795,7 +2973,7 @@
     <Objects2>Shipwright:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>47 Barkeeper</Name>
+    <Name>63 Barkeeper</Name>
     <UniqueId>d8cfe08a-003b-487a-abe8-3176f142b48b</UniqueId>
     <Map>Felucca</Map>
     <X>1427</X>
@@ -2838,7 +3016,7 @@
     <Objects2>Barkeeper:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>49 TavernKeeper</Name>
+    <Name>64 TavernKeeper</Name>
     <UniqueId>db8c2d7d-2813-439f-b492-3b04d798cd85</UniqueId>
     <Map>Felucca</Map>
     <X>1550</X>
@@ -2881,7 +3059,7 @@
     <Objects2>TavernKeeper:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>39 WarriorGuildmaster</Name>
+    <Name>59 WarriorGuildmaster</Name>
     <UniqueId>dc2257e4-55cc-4cf5-919e-d5bbf4e5e1c8</UniqueId>
     <Map>Felucca</Map>
     <X>1402</X>
@@ -2924,7 +3102,7 @@
     <Objects2>WarriorGuildmaster:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>48 Provisioner</Name>
+    <Name>60 Provisioner</Name>
     <UniqueId>df8be2bc-8fd2-473e-9b5b-a4146a13255d</UniqueId>
     <Map>Felucca</Map>
     <X>1602</X>
@@ -2967,50 +3145,7 @@
     <Objects2>Provisioner:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>67 Dragon</Name>
-    <UniqueId>dfded66f-2779-4fff-b811-feda29f9b38e</UniqueId>
-    <Map>Felucca</Map>
-    <X>1490</X>
-    <Y>1638</Y>
-    <Width>6</Width>
-    <Height>6</Height>
-    <CentreX>1493</CentreX>
-    <CentreY>1641</CentreY>
-    <CentreZ>40</CentreZ>
-    <Range>2</Range>
-    <MaxCount>2</MaxCount>
-    <MinDelay>5</MinDelay>
-    <MaxDelay>10</MaxDelay>
-    <DelayInSec>False</DelayInSec>
-    <Duration>0</Duration>
-    <DespawnTime>0</DespawnTime>
-    <ProximityRange>-1</ProximityRange>
-    <ProximityTriggerSound>500</ProximityTriggerSound>
-    <TriggerProbability>1</TriggerProbability>
-    <InContainer>False</InContainer>
-    <MinRefractory>0</MinRefractory>
-    <MaxRefractory>0</MaxRefractory>
-    <TODStart>0</TODStart>
-    <TODEnd>0</TODEnd>
-    <TODMode>0</TODMode>
-    <KillReset>1</KillReset>
-    <ExternalTriggering>False</ExternalTriggering>
-    <SequentialSpawning>-1</SequentialSpawning>
-    <AllowGhostTriggering>False</AllowGhostTriggering>
-    <AllowNPCTriggering>False</AllowNPCTriggering>
-    <SpawnOnTrigger>False</SpawnOnTrigger>
-    <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
-    <TickReset>False</TickReset>
-    <Team>0</Team>
-    <Amount>1</Amount>
-    <IsGroup>False</IsGroup>
-    <IsRunning>True</IsRunning>
-    <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Dragon:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
-  </Points>
-  <Points>
-    <Name>58 Weaponsmith</Name>
+    <Name>55 Weaponsmith</Name>
     <UniqueId>e36bd55e-cc95-4b15-b475-a528699304ee</UniqueId>
     <Map>Felucca</Map>
     <X>1418</X>
@@ -3053,7 +3188,7 @@
     <Objects2>Weaponsmith:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>59 Carpenter</Name>
+    <Name>56 Carpenter</Name>
     <UniqueId>e5eee540-74a6-4f10-91c1-d12bc505ff48</UniqueId>
     <Map>Felucca</Map>
     <X>1432</X>
@@ -3096,7 +3231,7 @@
     <Objects2>Carpenter:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>66 MageGuildmaster</Name>
+    <Name>51 MageGuildmaster</Name>
     <UniqueId>e6cc4730-a9d3-4258-96a9-2a1af6c65d2a</UniqueId>
     <Map>Felucca</Map>
     <X>1590</X>
@@ -3139,7 +3274,7 @@
     <Objects2>MageGuildmaster:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>46 AncientLich</Name>
+    <Name>52 AncientLich</Name>
     <UniqueId>ea5d0096-7d7c-47ba-8e12-eaccd1609c45</UniqueId>
     <Map>Felucca</Map>
     <X>1611</X>
@@ -3182,7 +3317,50 @@
     <Objects2>AncientLich:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>32 Mage</Name>
+    <Name>47 ProvisionersMetalBox</Name>
+    <UniqueId>ec9df140-40ea-43e5-9a73-60b4483b39c0</UniqueId>
+    <Map>Felucca</Map>
+    <X>0</X>
+    <Y>0</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>1468</CentreX>
+    <CentreY>1671</CentreY>
+    <CentreZ>6</CentreZ>
+    <Range>0</Range>
+    <MaxCount>1</MaxCount>
+    <MinDelay>60</MinDelay>
+    <MaxDelay>120</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>60</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>True</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>True</IsHomeRangeRelative>
+    <Objects2>ProvisionersMetalBox:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>48 Mage</Name>
     <UniqueId>f04f24a4-b83d-4962-b81d-5560fc68afc5</UniqueId>
     <Map>Felucca</Map>
     <X>1596</X>
@@ -3225,7 +3403,7 @@
     <Objects2>Mage:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>24 OrderGuard</Name>
+    <Name>45 OrderGuard</Name>
     <UniqueId>f633eb0b-32df-4104-ae35-392212749f10</UniqueId>
     <Map>Felucca</Map>
     <X>1420</X>
@@ -3268,7 +3446,7 @@
     <Objects2>OrderGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>19 Jeweler</Name>
+    <Name>46 Jeweler</Name>
     <UniqueId>f9b14d12-f26e-4a67-9e8a-93db75d23f18</UniqueId>
     <Map>Felucca</Map>
     <X>1451</X>
@@ -3309,5 +3487,48 @@
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>False</IsHomeRangeRelative>
     <Objects2>Jeweler:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>1 ChaosGuard</Name>
+    <UniqueId>fcc2c0ee-01d9-429e-abd1-5afc0c151838</UniqueId>
+    <Map>Felucca</Map>
+    <X>1521</X>
+    <Y>1457</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>1521</CentreX>
+    <CentreY>1457</CentreY>
+    <CentreZ>15</CentreZ>
+    <Range>1</Range>
+    <MaxCount>1</MaxCount>
+    <MinDelay>5</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>True</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>ChaosGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
 </Spawns>

@@ -1,0 +1,45 @@
+<Spawns>
+  <Points>
+    <Name>1 AirElemental</Name>
+    <UniqueId>a5645dc6-a3dc-4bae-a12c-cfb21765733a</UniqueId>
+    <Map>Felucca</Map>
+    <X>1571</X>
+    <Y>590</Y>
+    <Width>120</Width>
+    <Height>120</Height>
+    <CentreX>1631</CentreX>
+    <CentreY>650</CentreY>
+    <CentreZ>16</CentreZ>
+    <Range>80</Range>
+    <MaxCount>32</MaxCount>
+    <MinDelay>22</MinDelay>
+    <MaxDelay>80</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>AirElemental:MX=32:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+</Spawns>
