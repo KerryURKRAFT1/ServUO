@@ -26,12 +26,8 @@ namespace Server.Misc
             Mobile.DefaultManaRate = TimeSpan.FromSeconds(7.0);
 
             Mobile.ManaRegenRateHandler = new RegenRateHandler(Mobile_ManaRegenRate);
-
-            if (Core.AOS)
-            {
-                Mobile.StamRegenRateHandler = new RegenRateHandler(Mobile_StamRegenRate);
-                Mobile.HitsRegenRateHandler = new RegenRateHandler(Mobile_HitsRegenRate);
-            }
+            Mobile.StamRegenRateHandler = new RegenRateHandler(Mobile_StamRegenRate);
+            Mobile.HitsRegenRateHandler = new RegenRateHandler(Mobile_HitsRegenRate);
         }
 
         public static double GetArmorOffset(Mobile from)
@@ -67,18 +63,30 @@ namespace Server.Misc
 
         private static TimeSpan Mobile_HitsRegenRate(Mobile from)
         {
-            int points = AosAttributes.GetValue(from, AosAttribute.RegenHits);
+        	double points = 0.1;
+        	
+        	if (from.RawStr > from.RawInt && from.RawDex > from.RawInt)
+        	{
+        		if (from.RawStr > 100)
+        			points += 0.25;
 
-            if (from is BaseCreature && !((BaseCreature)from).IsAnimatedDead)
-                points += 4;
+        		points += 0.25;
+        	}
+        	    
+        	if (from.RawDex > from.RawInt)
+        	{
+        		if (from.RawDex > 100)
+        			points += 0.25;
 
-            if ((from is BaseCreature && ((BaseCreature)from).IsParagon) || from is Leviathan)
-                points += 40;
-          
-            if (points < 0)
-                points = 0;
+        		points += 0.25;
+        	}
+        		        	        		
+    	    if (from.Meditating)
+    	    {
+    	    	points *= (1 + SkillRegistry.MeditateHitsRate);
+    	    }
 
-            return TimeSpan.FromSeconds(1.0 / (0.1 * (1 + points)));
+        	return TimeSpan.FromSeconds(1.2 / (0.1 * (1 + points)));
         }
 
         private static TimeSpan Mobile_StamRegenRate(Mobile from)
