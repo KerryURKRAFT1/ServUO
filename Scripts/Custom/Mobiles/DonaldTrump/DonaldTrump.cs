@@ -109,7 +109,6 @@ namespace Server.Mobiles
             return true;
         }
 
-        // Temporary 
         public override void OnSpeech(SpeechEventArgs e)
         {
             base.OnSpeech(e);
@@ -119,6 +118,27 @@ namespace Server.Mobiles
             	Say( TrumpQuotes[Utility.Random(TrumpQuotes.Count)] );
             }
         }        
+
+		private bool m_BlockGreet = false;
+
+        public override void OnMovement(Mobile m, Point3D oldLocation)
+        {
+            if (Utility.RandomBool() && !m.Player) return;
+
+            if (!Hidden && Utility.RandomDouble() < 0.35 && m.Alive && m.InRange(this, 2))
+            {
+				if (!m_BlockGreet)
+				{
+	            	Say( TrumpQuotes[Utility.Random(TrumpQuotes.Count)] );
+					
+					m_BlockGreet = true;
+
+					Timer.DelayCall (TimeSpan.FromSeconds(10.0), () => { m_BlockGreet = false; });
+				}
+
+                return;
+            }
+        }
 
         public override void OnWarmodeChanged()
 		{ 

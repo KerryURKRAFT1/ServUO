@@ -50,6 +50,7 @@ namespace Server.Mobiles
 		public bool Bandaging = false;
 		public bool BlockTeleport = false;
 		public bool BlockCall = false;
+		public bool BlockGreet = false;
 		
 		private Timer m_AttackTimer, m_IdleTimer;
 		
@@ -345,7 +346,7 @@ namespace Server.Mobiles
 						
 						BlockCall = true;
 
-						Timer.DelayCall (TimeSpan.FromSeconds(20.0), () => EndCallLock());
+						Timer.DelayCall (TimeSpan.FromSeconds(20.0), () => { BlockCall = false; });
 					}
 					
 					if (m_AttackTimer != null)
@@ -390,11 +391,6 @@ namespace Server.Mobiles
 				}
 			}
 		}
-
-		private void EndCallLock()
-		{
-			BlockCall = false;
-		}
 				
 		public override void OnAfterDelete()
 		{
@@ -415,7 +411,7 @@ namespace Server.Mobiles
 			base.OnAfterDelete();
 		}
 
-		public override bool HandlesOnSpeech(Mobile from) { return true; }
+        public override bool HandlesOnSpeech(Mobile from) { return true; }
 
 		public override void OnSpeech(SpeechEventArgs e)
 		{
@@ -447,6 +443,25 @@ namespace Server.Mobiles
 				}
 			}
 		}
+
+        public override void OnMovement(Mobile m, Point3D oldLocation)
+        {
+            if (Utility.RandomBool() && !m.Player) return;
+
+            if (!Hidden && Utility.RandomDouble() < 0.35 && m.Alive && m.InRange(this, 3))
+            {
+				if (!BlockGreet)
+				{
+                	Say(greet[Utility.Random(greet.Length)]);
+					
+					BlockGreet = true;
+
+					Timer.DelayCall (TimeSpan.FromSeconds(5.0), () => { BlockGreet = false; });
+				}
+
+                return;
+            }
+        }
 
 		public override bool OnBeforeDeath()
 		{
@@ -786,6 +801,26 @@ namespace Server.Mobiles
 			}
 		}
 		
+		static string[] greet =
+		{
+			"To the fight!",
+			"To arms!",
+			"Where away!",
+			"The battle awaits!",
+			"Mind your weapons!",
+			"I keep my eye on my enemy!",
+			"Now is the time to fight!",
+			"Nothing walks away!",
+			"We must defend our land!",
+			"Fight for our people!",
+			"Out of my Way!",
+			"Move aside!",
+			"*Mumbles*",
+			"Beware!",
+			"Watch out!",
+			"Coming through!"
+		};
+
 		static string[] speech =
 		{
 			"To the fight!",
