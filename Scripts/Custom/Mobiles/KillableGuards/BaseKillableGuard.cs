@@ -448,7 +448,7 @@ namespace Server.Mobiles
         {
             if (Utility.RandomBool() && !m.Player) return;
 
-            if (!Hidden && Utility.RandomDouble() < 0.35 && m.Alive && m.InRange(this, 3))
+            if (!Hidden && Utility.RandomDouble() < 0.35 && m.Alive && !m.Hidden && m.InRange(this, 3))
             {
 				if (!BlockGreet)
 				{
