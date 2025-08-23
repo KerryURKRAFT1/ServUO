@@ -46,7 +46,7 @@
     <Objects2>StealableBananas:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableCheeseWedge:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableLemons:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableLimes:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableBaconSlab:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 ProvisionersMetalBox</Name>
+    <Name>3 ProvisionersMetalBox</Name>
     <UniqueId>cf01a0d6-ef49-4918-a9ca-440cf3cbca13</UniqueId>
     <Map>Felucca</Map>
     <X>0</X>
@@ -89,7 +89,7 @@
     <Objects2>ProvisionersMetalBox:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 ProvisionersMetalBox</Name>
+    <Name>1 ProvisionersMetalBox</Name>
     <UniqueId>d392998e-677f-4079-ae8e-008445b2d39d</UniqueId>
     <Map>Felucca</Map>
     <X>0</X>

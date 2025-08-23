@@ -1,6 +1,6 @@
 <Spawns>
   <Points>
-    <Name>152 Phoenix</Name>
+    <Name>10 Phoenix</Name>
     <UniqueId>006a00d6-f355-4f45-bf4d-d3b9b34bdf8c</UniqueId>
     <Map>Felucca</Map>
     <X>5735</X>
@@ -43,7 +43,7 @@
     <Objects2>Phoenix:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>421 Ettin</Name>
+    <Name>88 Ettin</Name>
     <UniqueId>00864acd-ded6-486a-89f0-d2c3b668da7c</UniqueId>
     <Map>Felucca</Map>
     <X>5668</X>
@@ -86,7 +86,7 @@
     <Objects2>Ettin:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>7 WanderingHealer</Name>
+    <Name>11 WanderingHealer</Name>
     <UniqueId>00b4cdfd-0016-4eaf-ae7b-16cca3fba94f</UniqueId>
     <Map>Felucca</Map>
     <X>4692</X>
@@ -129,7 +129,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>29 Blacksmith</Name>
+    <Name>115 Blacksmith</Name>
     <UniqueId>0106eb67-e7cb-4f6a-929c-6cd16d7f2142</UniqueId>
     <Map>Felucca</Map>
     <X>2465</X>
@@ -172,7 +172,7 @@
     <Objects2>Blacksmith:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>420 Apple</Name>
+    <Name>67 Apple</Name>
     <UniqueId>01269f32-d2d2-4a6e-98a2-2def35da6a98</UniqueId>
     <Map>Felucca</Map>
     <X>2071</X>
@@ -215,7 +215,7 @@
     <Objects2>Apple:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>17 StonePaversDark</Name>
+    <Name>66 StonePaversDark</Name>
     <UniqueId>01f884e7-dc1d-43d4-b970-e5aae35f4793</UniqueId>
     <Map>Felucca</Map>
     <X>5428</X>
@@ -258,7 +258,7 @@
     <Objects2>StonePaversDark:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>6 FrostTroll</Name>
+    <Name>111 FrostTroll</Name>
     <UniqueId>02838e49-d60f-40c3-bb34-fa292032ed3e</UniqueId>
     <Map>Felucca</Map>
     <X>5461</X>
@@ -301,7 +301,50 @@
     <Objects2>FrostTroll:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>183 FireColumnTrap-Cat-Etc</Name>
+    <Name>94 TreasureLevel2</Name>
+    <UniqueId>02bd46ad-2c96-4078-82a8-74085efa9037</UniqueId>
+    <Map>Felucca</Map>
+    <X>5996</X>
+    <Y>144</Y>
+    <Width>2</Width>
+    <Height>2</Height>
+    <CentreX>5997</CentreX>
+    <CentreY>145</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>1</Range>
+    <MaxCount>1</MaxCount>
+    <MinDelay>5</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>TreasureLevel2:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>83 FireColumnTrap-Cat-Etc</Name>
     <UniqueId>03889f78-1fa4-4908-b63d-0ccf4cc8f93a</UniqueId>
     <Map>Felucca</Map>
     <X>5204</X>
@@ -344,7 +387,7 @@
     <Objects2>FireColumnTrap:MX=1007:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Cat:MX=1007:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>92 Sheep</Name>
+    <Name>153 Sheep</Name>
     <UniqueId>05de9897-4077-4ae4-af13-aad197054d4b</UniqueId>
     <Map>Felucca</Map>
     <X>748</X>
@@ -387,7 +430,7 @@
     <Objects2>Sheep:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>16 ElderGazer</Name>
+    <Name>166 ElderGazer</Name>
     <UniqueId>0606520e-9a6c-4df6-9042-2e2b05bfde8e</UniqueId>
     <Map>Felucca</Map>
     <X>5346</X>
@@ -430,7 +473,7 @@
     <Objects2>ElderGazer:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>422 OrcBomber</Name>
+    <Name>163 OrcBomber</Name>
     <UniqueId>06f41a9f-98af-48d6-bc8f-cf71cb9d2ae1</UniqueId>
     <Map>Felucca</Map>
     <X>623</X>
@@ -473,7 +516,7 @@
     <Objects2>OrcBomber:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>273 OphidianArchmage</Name>
+    <Name>232 OphidianArchmage</Name>
     <UniqueId>07459563-a6b8-44a9-8b27-952a113b1e58</UniqueId>
     <Map>Felucca</Map>
     <X>5485</X>
@@ -516,7 +559,7 @@
     <Objects2>OphidianArchmage:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>91 Troll</Name>
+    <Name>230 Troll</Name>
     <UniqueId>076ab18f-51bf-4c11-b3c6-ea30f47b12a8</UniqueId>
     <Map>Felucca</Map>
     <X>1298</X>
@@ -559,7 +602,7 @@
     <Objects2>Troll:MX=50:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>166 Drake</Name>
+    <Name>231 Drake</Name>
     <UniqueId>09065c27-1efa-4af4-be74-83272902fb2f</UniqueId>
     <Map>Felucca</Map>
     <X>5696</X>
@@ -602,7 +645,7 @@
     <Objects2>Drake:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>167 Dragon</Name>
+    <Name>255 Dragon</Name>
     <UniqueId>09075521-41b0-4fe3-b772-c76c30b0bc72</UniqueId>
     <Map>Felucca</Map>
     <X>5487</X>
@@ -645,50 +688,7 @@
     <Objects2>Dragon:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>133 Lich</Name>
-    <UniqueId>09196a4c-96d0-4953-817a-965e045b74e2</UniqueId>
-    <Map>Felucca</Map>
-    <X>2743</X>
-    <Y>857</Y>
-    <Width>2</Width>
-    <Height>2</Height>
-    <CentreX>2744</CentreX>
-    <CentreY>858</CentreY>
-    <CentreZ>1</CentreZ>
-    <Range>5</Range>
-    <MaxCount>4</MaxCount>
-    <MinDelay>5</MinDelay>
-    <MaxDelay>20</MaxDelay>
-    <DelayInSec>False</DelayInSec>
-    <Duration>0</Duration>
-    <DespawnTime>0</DespawnTime>
-    <ProximityRange>-1</ProximityRange>
-    <ProximityTriggerSound>500</ProximityTriggerSound>
-    <TriggerProbability>1</TriggerProbability>
-    <InContainer>False</InContainer>
-    <MinRefractory>0</MinRefractory>
-    <MaxRefractory>0</MaxRefractory>
-    <TODStart>0</TODStart>
-    <TODEnd>0</TODEnd>
-    <TODMode>0</TODMode>
-    <KillReset>1</KillReset>
-    <ExternalTriggering>False</ExternalTriggering>
-    <SequentialSpawning>-1</SequentialSpawning>
-    <AllowGhostTriggering>False</AllowGhostTriggering>
-    <AllowNPCTriggering>False</AllowNPCTriggering>
-    <SpawnOnTrigger>False</SpawnOnTrigger>
-    <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
-    <TickReset>False</TickReset>
-    <Team>0</Team>
-    <Amount>1</Amount>
-    <IsGroup>False</IsGroup>
-    <IsRunning>True</IsRunning>
-    <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Lich:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
-  </Points>
-  <Points>
-    <Name>419 Wisp</Name>
+    <Name>256 Wisp</Name>
     <UniqueId>093bb5c5-c7b2-43f3-bcca-833921274ec3</UniqueId>
     <Map>Felucca</Map>
     <X>5216</X>
@@ -731,7 +731,7 @@
     <Objects2>Wisp:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>259 StonePaversDark</Name>
+    <Name>254 StonePaversDark</Name>
     <UniqueId>0a1e6299-aae7-46d4-9889-7ea9b1690405</UniqueId>
     <Map>Felucca</Map>
     <X>5418</X>
@@ -774,7 +774,7 @@
     <Objects2>StonePaversDark:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>110 LavaLizard</Name>
+    <Name>308 LavaLizard</Name>
     <UniqueId>0bac0587-cd8a-46b8-a2e4-41f3e9637e26</UniqueId>
     <Map>Felucca</Map>
     <X>1984</X>
@@ -817,7 +817,7 @@
     <Objects2>LavaLizard:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>101 Cougar</Name>
+    <Name>306 Cougar</Name>
     <UniqueId>0bd0cc49-75aa-4621-9bda-5f654a8178d2</UniqueId>
     <Map>Felucca</Map>
     <X>3103</X>
@@ -860,7 +860,7 @@
     <Objects2>Cougar:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>418 GiantSpider</Name>
+    <Name>307 GiantSpider</Name>
     <UniqueId>0d585b0f-66fa-43b8-8a8f-988b7d3cd8ec</UniqueId>
     <Map>Felucca</Map>
     <X>5154</X>
@@ -903,50 +903,7 @@
     <Objects2>GiantSpider:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>349 Zombie</Name>
-    <UniqueId>0dbd6432-a593-433e-bdc7-f1119f46cad3</UniqueId>
-    <Map>Felucca</Map>
-    <X>2757</X>
-    <Y>865</Y>
-    <Width>0</Width>
-    <Height>0</Height>
-    <CentreX>2757</CentreX>
-    <CentreY>865</CentreY>
-    <CentreZ>0</CentreZ>
-    <Range>30</Range>
-    <MaxCount>3</MaxCount>
-    <MinDelay>30</MinDelay>
-    <MaxDelay>60</MaxDelay>
-    <DelayInSec>False</DelayInSec>
-    <Duration>0</Duration>
-    <DespawnTime>0</DespawnTime>
-    <ProximityRange>-1</ProximityRange>
-    <ProximityTriggerSound>500</ProximityTriggerSound>
-    <TriggerProbability>1</TriggerProbability>
-    <InContainer>False</InContainer>
-    <MinRefractory>0</MinRefractory>
-    <MaxRefractory>0</MaxRefractory>
-    <TODStart>0</TODStart>
-    <TODEnd>0</TODEnd>
-    <TODMode>0</TODMode>
-    <KillReset>1</KillReset>
-    <ExternalTriggering>False</ExternalTriggering>
-    <SequentialSpawning>-1</SequentialSpawning>
-    <AllowGhostTriggering>False</AllowGhostTriggering>
-    <AllowNPCTriggering>False</AllowNPCTriggering>
-    <SpawnOnTrigger>False</SpawnOnTrigger>
-    <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
-    <TickReset>False</TickReset>
-    <Team>0</Team>
-    <Amount>1</Amount>
-    <IsGroup>False</IsGroup>
-    <IsRunning>True</IsRunning>
-    <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Zombie:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
-  </Points>
-  <Points>
-    <Name>272 LichLord</Name>
+    <Name>339 LichLord</Name>
     <UniqueId>0dbfa021-61ae-4fbb-b2c3-a5d2f3f3be4d</UniqueId>
     <Map>Felucca</Map>
     <X>1986</X>
@@ -989,7 +946,7 @@
     <Objects2>LichLord:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>179 LichLord</Name>
+    <Name>337 LichLord</Name>
     <UniqueId>0dd47580-d218-4780-88f6-a8cff1f6a9b3</UniqueId>
     <Map>Felucca</Map>
     <X>1986</X>
@@ -1032,7 +989,7 @@
     <Objects2>LichLord:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>417 EvilWanderingHealer</Name>
+    <Name>338 EvilWanderingHealer</Name>
     <UniqueId>0dda5988-5221-4042-8c86-9b77ef466507</UniqueId>
     <Map>Felucca</Map>
     <X>2888</X>
@@ -1075,7 +1032,7 @@
     <Objects2>EvilWanderingHealer:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>437 GiantSerpent</Name>
+    <Name>367 GiantSerpent</Name>
     <UniqueId>0ffe7f4a-532e-447e-9264-bc8f4bd2f2ae</UniqueId>
     <Map>Felucca</Map>
     <X>1012</X>
@@ -1118,7 +1075,7 @@
     <Objects2>GiantSerpent:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>436 Zombie</Name>
+    <Name>365 Zombie</Name>
     <UniqueId>1025b520-3b74-47a2-9995-5d663412100a</UniqueId>
     <Map>Felucca</Map>
     <X>2324</X>
@@ -1161,7 +1118,7 @@
     <Objects2>Zombie:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>416 Succubus</Name>
+    <Name>366 Succubus</Name>
     <UniqueId>1291891d-ac4d-4c57-a649-8e2a0772c2e8</UniqueId>
     <Map>Felucca</Map>
     <X>5151</X>
@@ -1204,7 +1161,7 @@
     <Objects2>Succubus:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>415 Mongbat</Name>
+    <Name>399 Mongbat</Name>
     <UniqueId>129de72a-0cd8-4580-8227-86fc49a71ab0</UniqueId>
     <Map>Felucca</Map>
     <X>1692</X>
@@ -1247,7 +1204,7 @@
     <Objects2>Mongbat:MX=56:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>78 Healer</Name>
+    <Name>397 Healer</Name>
     <UniqueId>12ad7757-f346-44d5-9633-c32bf9455db0</UniqueId>
     <Map>Felucca</Map>
     <X>1794</X>
@@ -1290,7 +1247,7 @@
     <Objects2>Healer:MX=79:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>271 Daemon</Name>
+    <Name>398 Daemon</Name>
     <UniqueId>12f18e26-8a14-42a3-9123-3e0bd5dc6a8c</UniqueId>
     <Map>Felucca</Map>
     <X>1144</X>
@@ -1333,7 +1290,7 @@
     <Objects2>Daemon:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>134 Mummy</Name>
+    <Name>13 Mummy</Name>
     <UniqueId>14ed1de2-bc2b-4562-823d-607d5032b3e4</UniqueId>
     <Map>Felucca</Map>
     <X>5204</X>
@@ -1376,7 +1333,7 @@
     <Objects2>Mummy:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>414 WanderingHealer</Name>
+    <Name>52 WanderingHealer</Name>
     <UniqueId>14f6deab-522a-4541-a7f9-2f1986564496</UniqueId>
     <Map>Felucca</Map>
     <X>1884</X>
@@ -1419,7 +1376,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>413 LavaLizard</Name>
+    <Name>65 LavaLizard</Name>
     <UniqueId>1529eaac-c546-4229-ab24-343c3a1b8fc4</UniqueId>
     <Map>Felucca</Map>
     <X>5905</X>
@@ -1462,7 +1419,7 @@
     <Objects2>LavaLizard:MX=15:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>306 WanderingHealer</Name>
+    <Name>93 WanderingHealer</Name>
     <UniqueId>1540efe2-4929-42bd-99b6-9a0ff88893da</UniqueId>
     <Map>Felucca</Map>
     <X>951</X>
@@ -1505,7 +1462,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>305 OrcishLord</Name>
+    <Name>82 OrcishLord</Name>
     <UniqueId>156c4449-f6fe-4823-b608-168e6a8c9883</UniqueId>
     <Map>Felucca</Map>
     <X>623</X>
@@ -1548,7 +1505,7 @@
     <Objects2>OrcishLord:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>427 RuneBeetle</Name>
+    <Name>46 RuneBeetle</Name>
     <UniqueId>15bf69fd-320a-4da3-8dee-54086db7fcfc</UniqueId>
     <Map>Felucca</Map>
     <X>5825</X>
@@ -1591,7 +1548,7 @@
     <Objects2>RuneBeetle:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>270 LeatherWorker</Name>
+    <Name>41 LeatherWorker</Name>
     <UniqueId>16622b3b-3fd0-4048-956b-8939f988a983</UniqueId>
     <Map>Felucca</Map>
     <X>2003</X>
@@ -1634,7 +1591,7 @@
     <Objects2>LeatherWorker:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>76 Cougar</Name>
+    <Name>244 Cougar</Name>
     <UniqueId>16855fb3-7e3a-443e-bdb8-02eab37bc589</UniqueId>
     <Map>Felucca</Map>
     <X>3109</X>
@@ -1677,7 +1634,7 @@
     <Objects2>Cougar:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>336 Lich</Name>
+    <Name>242 Lich</Name>
     <UniqueId>17b179f6-81e0-4a79-8b47-4e815a28c724</UniqueId>
     <Map>Felucca</Map>
     <X>1975</X>
@@ -1720,7 +1677,7 @@
     <Objects2>Lich:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>335 OrcCaptain</Name>
+    <Name>243 OrcCaptain</Name>
     <UniqueId>17b8dba3-8c7b-4806-99c1-5d54d75cf082</UniqueId>
     <Map>Felucca</Map>
     <X>623</X>
@@ -1763,7 +1720,7 @@
     <Objects2>OrcCaptain:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>75 StonePaversDark</Name>
+    <Name>212 StonePaversDark</Name>
     <UniqueId>184fde56-ffc2-4153-8874-4e54e4344c86</UniqueId>
     <Map>Felucca</Map>
     <X>5470</X>
@@ -1806,7 +1763,7 @@
     <Objects2>StonePaversDark:MX=32:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>428 WanderingHealer</Name>
+    <Name>210 WanderingHealer</Name>
     <UniqueId>19335f6c-bc40-4b69-8700-023637a05ea9</UniqueId>
     <Map>Felucca</Map>
     <X>1230</X>
@@ -1849,7 +1806,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>105 LavaLizard</Name>
+    <Name>211 LavaLizard</Name>
     <UniqueId>1a745311-55f3-428c-b77d-7be3edc31a16</UniqueId>
     <Map>Felucca</Map>
     <X>1806</X>
@@ -1892,7 +1849,7 @@
     <Objects2>LavaLizard:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>102 Scorpion</Name>
+    <Name>274 Scorpion</Name>
     <UniqueId>1ca6334c-8788-45d2-886e-9932e3997218</UniqueId>
     <Map>Felucca</Map>
     <X>5290</X>
@@ -1935,7 +1892,7 @@
     <Objects2>Scorpion:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>269 AncientLich</Name>
+    <Name>272 AncientLich</Name>
     <UniqueId>1cc21728-87c7-4c6f-9f5c-4fec5f195394</UniqueId>
     <Map>Felucca</Map>
     <X>5218</X>
@@ -1978,7 +1935,7 @@
     <Objects2>AncientLich:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>337 Reaper</Name>
+    <Name>273 Reaper</Name>
     <UniqueId>1d3c9d8d-bbda-456f-9ce5-fd9e8082c063</UniqueId>
     <Map>Felucca</Map>
     <X>5855</X>
@@ -2021,7 +1978,7 @@
     <Objects2>Reaper:MX=35:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>412 OrcCaptain</Name>
+    <Name>327 OrcCaptain</Name>
     <UniqueId>1d7d8fc4-7abf-4b71-93ba-ca3e5273fcc9</UniqueId>
     <Map>Felucca</Map>
     <X>1791</X>
@@ -2064,7 +2021,7 @@
     <Objects2>OrcCaptain:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>267 RedSolenMatriarch</Name>
+    <Name>325 RedSolenMatriarch</Name>
     <UniqueId>1d96f54a-34fc-4a33-95b5-6d82be742eb0</UniqueId>
     <Map>Felucca</Map>
     <X>5776</X>
@@ -2107,7 +2064,7 @@
     <Objects2>RedSolenMatriarch:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>62 Drake</Name>
+    <Name>326 Drake</Name>
     <UniqueId>1e726a64-e1c9-4f7f-a8f1-dd1b5f4c4573</UniqueId>
     <Map>Felucca</Map>
     <X>4612</X>
@@ -2150,7 +2107,7 @@
     <Objects2>Drake:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>67 SeaSerpent</Name>
+    <Name>14 SeaSerpent</Name>
     <UniqueId>1f12fe35-e2f2-41ea-a69f-b1fb9f6d2b1e</UniqueId>
     <Map>Felucca</Map>
     <X>4739</X>
@@ -2193,7 +2150,7 @@
     <Objects2>SeaSerpent:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>411 StoneHarpy</Name>
+    <Name>77 StoneHarpy</Name>
     <UniqueId>1f8ee320-2d90-43ee-8134-ae64e0e6276f</UniqueId>
     <Map>Felucca</Map>
     <X>2575</X>
@@ -2236,7 +2193,7 @@
     <Objects2>StoneHarpy:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>18 Cougar</Name>
+    <Name>87 Cougar</Name>
     <UniqueId>1f91afc9-4f38-4f66-8a02-cbe41d9a3675</UniqueId>
     <Map>Felucca</Map>
     <X>3117</X>
@@ -2279,7 +2236,7 @@
     <Objects2>Cougar:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>74 WanderingHealer</Name>
+    <Name>208 WanderingHealer</Name>
     <UniqueId>1fd4951f-20a8-4d73-96e7-06dd7a1357ed</UniqueId>
     <Map>Felucca</Map>
     <X>1722</X>
@@ -2322,7 +2279,7 @@
     <Objects2>WanderingHealer:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>112 WanderingHealer</Name>
+    <Name>209 WanderingHealer</Name>
     <UniqueId>206adbef-fa34-4a4f-8374-3d1328d862ed</UniqueId>
     <Map>Felucca</Map>
     <X>1699</X>
@@ -2365,7 +2322,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>174 Dolphin</Name>
+    <Name>207 Dolphin</Name>
     <UniqueId>208d756b-a89a-4e8f-ae13-290103acc03d</UniqueId>
     <Map>Felucca</Map>
     <X>5435</X>
@@ -2408,7 +2365,7 @@
     <Objects2>Dolphin:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>96 RaiJu</Name>
+    <Name>206 RaiJu</Name>
     <UniqueId>21642c1b-ccd6-4104-97ab-1e7d3197e67c</UniqueId>
     <Map>Felucca</Map>
     <X>1978</X>
@@ -2451,7 +2408,7 @@
     <Objects2>RaiJu:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>153 WanderingHealer</Name>
+    <Name>205 WanderingHealer</Name>
     <UniqueId>220dde1e-a103-405a-b6f3-30f3370789a0</UniqueId>
     <Map>Felucca</Map>
     <X>1888</X>
@@ -2494,7 +2451,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>154 OrcishMage</Name>
+    <Name>15 OrcishMage</Name>
     <UniqueId>2341c80d-b3bd-463d-813f-95586c9e3e74</UniqueId>
     <Map>Felucca</Map>
     <X>1720</X>
@@ -2537,7 +2494,7 @@
     <Objects2>OrcishMage:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>266 OphidianMage</Name>
+    <Name>35 OphidianMage</Name>
     <UniqueId>23b7de93-d94d-46a6-8e87-94e2ba59e47b</UniqueId>
     <Map>Felucca</Map>
     <X>5427</X>
@@ -2580,7 +2537,7 @@
     <Objects2>OphidianMage:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>425 Mongbat</Name>
+    <Name>47 Mongbat</Name>
     <UniqueId>23bf24e6-4078-4986-b903-294c65770876</UniqueId>
     <Map>Felucca</Map>
     <X>5694</X>
@@ -2623,7 +2580,7 @@
     <Objects2>Mongbat:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>410 LavaLizard</Name>
+    <Name>50 LavaLizard</Name>
     <UniqueId>2416c388-5336-4c15-a801-b54260650958</UniqueId>
     <Map>Felucca</Map>
     <X>6044</X>
@@ -2666,7 +2623,7 @@
     <Objects2>LavaLizard:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>73 HellHound</Name>
+    <Name>5 HellHound</Name>
     <UniqueId>2421e775-cb61-4adb-a191-c70357bf43fa</UniqueId>
     <Map>Felucca</Map>
     <X>5660</X>
@@ -2709,7 +2666,7 @@
     <Objects2>HellHound:MX=57:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>424 AdmiralsHeartyRum</Name>
+    <Name>121 AdmiralsHeartyRum</Name>
     <UniqueId>2483154c-f16b-4394-ad8f-f549ef2b4396</UniqueId>
     <Map>Felucca</Map>
     <X>4590</X>
@@ -2752,7 +2709,7 @@
     <Objects2>AdmiralsHeartyRum:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>72 StonePaversDark</Name>
+    <Name>119 StonePaversDark</Name>
     <UniqueId>24a6b669-03d1-473e-b5a1-74deb1207b03</UniqueId>
     <Map>Felucca</Map>
     <X>5425</X>
@@ -2795,7 +2752,7 @@
     <Objects2>StonePaversDark:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>25 Cat</Name>
+    <Name>7 Cat</Name>
     <UniqueId>24d48dec-8baa-4428-998d-b4419d88445a</UniqueId>
     <Map>Felucca</Map>
     <X>1348</X>
@@ -2838,7 +2795,7 @@
     <Objects2>Cat:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>265 GiantToad</Name>
+    <Name>86 GiantToad</Name>
     <UniqueId>2562ed2b-302e-485c-9c7f-5d9df6e00d52</UniqueId>
     <Map>Felucca</Map>
     <X>5662</X>
@@ -2881,7 +2838,7 @@
     <Objects2>GiantToad:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>423 EvilWanderingHealer</Name>
+    <Name>157 EvilWanderingHealer</Name>
     <UniqueId>2572b2fb-b339-49b2-b43b-5848208ffe44</UniqueId>
     <Map>Felucca</Map>
     <X>5189</X>
@@ -2924,7 +2881,7 @@
     <Objects2>EvilWanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>264 Lich</Name>
+    <Name>156 Lich</Name>
     <UniqueId>25be3e36-c44e-485e-8551-162302615c92</UniqueId>
     <Map>Felucca</Map>
     <X>5238</X>
@@ -2967,7 +2924,7 @@
     <Objects2>Lich:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>441 GreatHart</Name>
+    <Name>141 GreatHart</Name>
     <UniqueId>26a281bf-faee-483a-be88-0795a6f7734d</UniqueId>
     <Map>Felucca</Map>
     <X>5653</X>
@@ -3010,7 +2967,7 @@
     <Objects2>GreatHart:MX=33:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>263 Cougar</Name>
+    <Name>142 Cougar</Name>
     <UniqueId>26cd5023-4831-4cf9-b4f5-723d2ef63ef7</UniqueId>
     <Map>Felucca</Map>
     <X>3128</X>
@@ -3053,7 +3010,7 @@
     <Objects2>Cougar:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>442 Ettin</Name>
+    <Name>324 Ettin</Name>
     <UniqueId>26fac658-2953-4d5d-96a0-ac34ae19a571</UniqueId>
     <Map>Felucca</Map>
     <X>5857</X>
@@ -3096,7 +3053,7 @@
     <Objects2>Ettin:MX=31:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>262 Lizardman</Name>
+    <Name>323 Lizardman</Name>
     <UniqueId>270c2de1-883e-46c9-89a7-c7ef95b9de5c</UniqueId>
     <Map>Felucca</Map>
     <X>2067</X>
@@ -3139,7 +3096,7 @@
     <Objects2>Lizardman:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>230 Barkeeper</Name>
+    <Name>347 Barkeeper</Name>
     <UniqueId>28af399e-dda4-4df5-af4d-aec6894d4f96</UniqueId>
     <Map>Felucca</Map>
     <X>5273</X>
@@ -3182,7 +3139,7 @@
     <Objects2>Barkeeper:MX=8:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>69 StonePaversDark</Name>
+    <Name>346 StonePaversDark</Name>
     <UniqueId>28c0ebdf-c793-4b3f-b704-de35a01bedde</UniqueId>
     <Map>Felucca</Map>
     <X>5420</X>
@@ -3225,7 +3182,7 @@
     <Objects2>StonePaversDark:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>339 Walrus</Name>
+    <Name>364 Walrus</Name>
     <UniqueId>2b56a033-a84e-413c-899f-44135b961c1f</UniqueId>
     <Map>Felucca</Map>
     <X>5461</X>
@@ -3268,7 +3225,7 @@
     <Objects2>Walrus:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>409 Gorilla</Name>
+    <Name>363 Gorilla</Name>
     <UniqueId>2bc2bfc2-b1fc-4371-882a-22ebbe93c556</UniqueId>
     <Map>Felucca</Map>
     <X>5385</X>
@@ -3311,7 +3268,7 @@
     <Objects2>Gorilla:MX=20:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>214 Walrus</Name>
+    <Name>288 Walrus</Name>
     <UniqueId>2bdbc8cc-4257-4a3c-b99f-ba44fd707452</UniqueId>
     <Map>Felucca</Map>
     <X>6058</X>
@@ -3354,7 +3311,7 @@
     <Objects2>Walrus:MX=25:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>261 Reaper-BloodElemental-Etc</Name>
+    <Name>287 Reaper-BloodElemental-Etc</Name>
     <UniqueId>2c86328f-fd88-4fed-b535-80c21289f600</UniqueId>
     <Map>Felucca</Map>
     <X>5252</X>
@@ -3397,7 +3354,7 @@
     <Objects2>Reaper:MX=57:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=BloodElemental:MX=57:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>260 Cyclops</Name>
+    <Name>16 Cyclops</Name>
     <UniqueId>2ce29bc0-e354-4c14-9c00-ef8a4764f5fa</UniqueId>
     <Map>Felucca</Map>
     <X>5402</X>
@@ -3440,7 +3397,7 @@
     <Objects2>Cyclops:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>284 FarmableWheat</Name>
+    <Name>38 FarmableWheat</Name>
     <UniqueId>2ce3cee1-fb29-4f94-ac59-2c907992a68f</UniqueId>
     <Map>Felucca</Map>
     <X>4638</X>
@@ -3483,7 +3440,7 @@
     <Objects2>FarmableWheat:MX=11:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>283 Brigand</Name>
+    <Name>51 Brigand</Name>
     <UniqueId>2d0078ae-5a14-4d1c-84b1-e7192c78932d</UniqueId>
     <Map>Felucca</Map>
     <X>3396</X>
@@ -3526,7 +3483,7 @@
     <Objects2>Brigand:MX=14:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>224 StretchedHideArtifact</Name>
+    <Name>91 StretchedHideArtifact</Name>
     <UniqueId>2d61566a-c9d8-404f-bc83-29bb907cb970</UniqueId>
     <Map>Felucca</Map>
     <X>3337</X>
@@ -3569,7 +3526,7 @@
     <Objects2>StretchedHideArtifact:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>280 LavaLizard</Name>
+    <Name>78 LavaLizard</Name>
     <UniqueId>2d7e9208-ab89-4401-a71e-89ff6b24e770</UniqueId>
     <Map>Felucca</Map>
     <X>1801</X>
@@ -3612,7 +3569,7 @@
     <Objects2>LavaLizard:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>281 OgreLord</Name>
+    <Name>32 OgreLord</Name>
     <UniqueId>2d838424-e076-405a-90f7-5e55633c1d78</UniqueId>
     <Map>Felucca</Map>
     <X>6108</X>
@@ -3655,7 +3612,7 @@
     <Objects2>OgreLord:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>282 Horse</Name>
+    <Name>124 Horse</Name>
     <UniqueId>2dcc7882-5336-4904-97c0-93c1b69b0510</UniqueId>
     <Map>Felucca</Map>
     <X>750</X>
@@ -3698,7 +3655,7 @@
     <Objects2>Horse:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>408 Scorpion</Name>
+    <Name>123 Scorpion</Name>
     <UniqueId>2f476061-18d3-4d35-b053-5f9a6b2500bb</UniqueId>
     <Map>Felucca</Map>
     <X>5544</X>
@@ -3741,7 +3698,7 @@
     <Objects2>Scorpion:MX=40:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>407 LichLord</Name>
+    <Name>92 LichLord</Name>
     <UniqueId>2f6d9c3f-9328-4d26-bc44-4f4d908bd883</UniqueId>
     <Map>Felucca</Map>
     <X>3597</X>
@@ -3784,7 +3741,7 @@
     <Objects2>LichLord:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>256 Orc</Name>
+    <Name>17 Orc</Name>
     <UniqueId>30ca29fd-11fa-44c0-9958-3e4387a2c1aa</UniqueId>
     <Map>Felucca</Map>
     <X>1740</X>
@@ -3827,7 +3784,7 @@
     <Objects2>Orc:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>37 LavaLizard</Name>
+    <Name>139 LavaLizard</Name>
     <UniqueId>315ab9d1-a3ce-4606-a857-d012d9d82fb8</UniqueId>
     <Map>Felucca</Map>
     <X>1859</X>
@@ -3870,7 +3827,7 @@
     <Objects2>LavaLizard:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>52 EvilMageLord</Name>
+    <Name>140 EvilMageLord</Name>
     <UniqueId>329fb354-f77a-4748-9d79-31eb06a5bd81</UniqueId>
     <Map>Felucca</Map>
     <X>2577</X>
@@ -3913,7 +3870,7 @@
     <Objects2>EvilMageLord:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>308 FlameSpurtTrap</Name>
+    <Name>102 FlameSpurtTrap</Name>
     <UniqueId>32e3d3e9-2d8b-46af-9e1a-11c6e6aaf7c8</UniqueId>
     <Map>Felucca</Map>
     <X>5170</X>
@@ -3956,7 +3913,7 @@
     <Objects2>FlameSpurtTrap:MX=46:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>307 OrcishLord</Name>
+    <Name>74 OrcishLord</Name>
     <UniqueId>345f0d88-137e-4e01-9adc-956f56ab7382</UniqueId>
     <Map>Felucca</Map>
     <X>5669</X>
@@ -3999,7 +3956,7 @@
     <Objects2>OrcishLord:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>8 Cougar</Name>
+    <Name>114 Cougar</Name>
     <UniqueId>365685c3-087f-4576-96fe-d273ce69766b</UniqueId>
     <Map>Felucca</Map>
     <X>3122</X>
@@ -4042,7 +3999,7 @@
     <Objects2>Cougar:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>151 Daemon</Name>
+    <Name>113 Daemon</Name>
     <UniqueId>369777d1-f690-4410-a581-11c9f0f46388</UniqueId>
     <Map>Felucca</Map>
     <X>1050</X>
@@ -4085,7 +4042,7 @@
     <Objects2>Daemon:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>406 Horse</Name>
+    <Name>81 Horse</Name>
     <UniqueId>36b05ac3-21cd-435c-8d77-bada3124bcdd</UniqueId>
     <Map>Felucca</Map>
     <X>1300</X>
@@ -4128,7 +4085,7 @@
     <Objects2>Horse:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>45 OphidianWarrior</Name>
+    <Name>18 OphidianWarrior</Name>
     <UniqueId>37ae99c7-bae1-43e9-980a-3fb22df14b30</UniqueId>
     <Map>Felucca</Map>
     <X>5485</X>
@@ -4171,7 +4128,7 @@
     <Objects2>OphidianWarrior:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>63 Cat</Name>
+    <Name>19 Cat</Name>
     <UniqueId>382efe10-3d5c-4380-9f03-6874c7c5daab</UniqueId>
     <Map>Felucca</Map>
     <X>1333</X>
@@ -4214,7 +4171,7 @@
     <Objects2>Cat:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>5 BaseEscortable</Name>
+    <Name>136 BaseEscortable</Name>
     <UniqueId>38a214f8-caa7-4169-9dab-886e3a45edcb</UniqueId>
     <Map>Felucca</Map>
     <X>4055</X>
@@ -4257,7 +4214,7 @@
     <Objects2>BaseEscortable:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>252 Cat</Name>
+    <Name>20 Cat</Name>
     <UniqueId>38e68a05-352b-4290-906f-f1e20716d5bb</UniqueId>
     <Map>Felucca</Map>
     <X>1350</X>
@@ -4300,7 +4257,7 @@
     <Objects2>Cat:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>56 Rat</Name>
+    <Name>21 Rat</Name>
     <UniqueId>39259094-31e5-457b-9d69-76337cb31419</UniqueId>
     <Map>Felucca</Map>
     <X>310</X>
@@ -4343,7 +4300,7 @@
     <Objects2>Rat:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>251 SnowElemental</Name>
+    <Name>76 SnowElemental</Name>
     <UniqueId>3943389d-cfe4-44d0-a5f3-d3fd3ed03770</UniqueId>
     <Map>Felucca</Map>
     <X>5917</X>
@@ -4386,7 +4343,7 @@
     <Objects2>SnowElemental:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>180 AncientWyrm</Name>
+    <Name>2 AncientWyrm</Name>
     <UniqueId>3a0506e0-5c39-477f-8bf8-109d1cdf2811</UniqueId>
     <Map>Felucca</Map>
     <X>1321</X>
@@ -4429,7 +4386,7 @@
     <Objects2>AncientWyrm:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>44 Daemon</Name>
+    <Name>3 Daemon</Name>
     <UniqueId>3a9effb8-3ee7-4c3a-a0db-2b6388e60df7</UniqueId>
     <Map>Felucca</Map>
     <X>4585</X>
@@ -4472,7 +4429,7 @@
     <Objects2>Daemon:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>405 Cat</Name>
+    <Name>43 Cat</Name>
     <UniqueId>3b4ccea9-1d66-4a7c-ad36-ab19aa086bf8</UniqueId>
     <Map>Felucca</Map>
     <X>1349</X>
@@ -4515,7 +4472,7 @@
     <Objects2>Cat:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>321 WanderingHealer</Name>
+    <Name>8 WanderingHealer</Name>
     <UniqueId>3c4da451-17a2-4f57-b641-3c566c77ad11</UniqueId>
     <Map>Felucca</Map>
     <X>2188</X>
@@ -4558,7 +4515,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>249 AnimalTrainer</Name>
+    <Name>22 AnimalTrainer</Name>
     <UniqueId>3d760eb2-2b89-4fe0-b046-94511ea54bd8</UniqueId>
     <Map>Felucca</Map>
     <X>752</X>
@@ -4601,7 +4558,7 @@
     <Objects2>AnimalTrainer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>58 WanderingHealer</Name>
+    <Name>104 WanderingHealer</Name>
     <UniqueId>3d8acdb2-6bba-45f9-998a-44cbfebb7c10</UniqueId>
     <Map>Felucca</Map>
     <X>3506</X>
@@ -4644,7 +4601,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>248 Orc</Name>
+    <Name>105 Orc</Name>
     <UniqueId>3ee78a69-8ae2-4c9a-add6-6c07fa2a2924</UniqueId>
     <Map>Felucca</Map>
     <X>1708</X>
@@ -4687,7 +4644,7 @@
     <Objects2>Orc:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>200 PolarBear</Name>
+    <Name>108 PolarBear</Name>
     <UniqueId>3f329e8a-8506-45e5-8123-f4fef5052803</UniqueId>
     <Map>Felucca</Map>
     <X>5311</X>
@@ -4730,7 +4687,7 @@
     <Objects2>PolarBear:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>213 WanderingHealer</Name>
+    <Name>170 WanderingHealer</Name>
     <UniqueId>3f9d4bbd-fe06-48d6-a721-dcd2020f83bb</UniqueId>
     <Map>Felucca</Map>
     <X>1865</X>
@@ -4773,7 +4730,7 @@
     <Objects2>WanderingHealer:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>341 AnimalTrainer</Name>
+    <Name>110 AnimalTrainer</Name>
     <UniqueId>3fb7eb84-c982-4281-9fcf-80d4d30c93e3</UniqueId>
     <Map>Felucca</Map>
     <X>1296</X>
@@ -4816,7 +4773,7 @@
     <Objects2>AnimalTrainer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>192 Mummy</Name>
+    <Name>109 Mummy</Name>
     <UniqueId>413556da-ee6a-43a6-a65e-29282657924e</UniqueId>
     <Map>Felucca</Map>
     <X>1969</X>
@@ -4859,7 +4816,7 @@
     <Objects2>Mummy:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>346 Lich</Name>
+    <Name>237 Lich</Name>
     <UniqueId>4191d5e9-a9ee-4e4c-a2fd-b2a87da5a9e3</UniqueId>
     <Map>Felucca</Map>
     <X>1969</X>
@@ -4902,7 +4859,7 @@
     <Objects2>Lich:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>347 FarmableCotton</Name>
+    <Name>236 FarmableCotton</Name>
     <UniqueId>42ba8170-e9f0-42ee-80ed-94c426a2415a</UniqueId>
     <Map>Felucca</Map>
     <X>4637</X>
@@ -4945,7 +4902,7 @@
     <Objects2>FarmableCotton:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>431 OrcishMage</Name>
+    <Name>235 OrcishMage</Name>
     <UniqueId>431931f9-6203-4fce-b9ea-52d2f0ed5d53</UniqueId>
     <Map>Felucca</Map>
     <X>624</X>
@@ -4988,7 +4945,7 @@
     <Objects2>OrcishMage:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>345 Barkeeper</Name>
+    <Name>238 Barkeeper</Name>
     <UniqueId>43792b1a-faad-49ed-be8a-25ffa5772932</UniqueId>
     <Map>Felucca</Map>
     <X>1990</X>
@@ -5031,7 +4988,7 @@
     <Objects2>Barkeeper:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>404 FetidEssence</Name>
+    <Name>233 FetidEssence</Name>
     <UniqueId>43c74692-aa42-4486-81cc-cc9354e678ed</UniqueId>
     <Map>Felucca</Map>
     <X>5734</X>
@@ -5074,7 +5031,7 @@
     <Objects2>FetidEssence:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>65 Blacksmith</Name>
+    <Name>234 Blacksmith</Name>
     <UniqueId>43efb98e-509a-4d5c-aac6-c7b1b3ac0700</UniqueId>
     <Map>Felucca</Map>
     <X>371</X>
@@ -5117,7 +5074,7 @@
     <Objects2>Blacksmith:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>86 EvilHealer</Name>
+    <Name>40 EvilHealer</Name>
     <UniqueId>44715014-e2e1-4caa-aeae-fe822fe88237</UniqueId>
     <Map>Felucca</Map>
     <X>1994</X>
@@ -5160,7 +5117,7 @@
     <Objects2>EvilHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>403 Walrus</Name>
+    <Name>36 Walrus</Name>
     <UniqueId>447b4701-336f-4654-b496-b198e43a8577</UniqueId>
     <Map>Felucca</Map>
     <X>5311</X>
@@ -5203,7 +5160,7 @@
     <Objects2>Walrus:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>332 Ogre</Name>
+    <Name>118 Ogre</Name>
     <UniqueId>448d8972-1913-4076-9f15-1735cf2aa7fd</UniqueId>
     <Map>Felucca</Map>
     <X>2844</X>
@@ -5246,7 +5203,7 @@
     <Objects2>Ogre:MX=8:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>331 WanderingHealer</Name>
+    <Name>53 WanderingHealer</Name>
     <UniqueId>45c597b4-2f2f-4f6e-9546-7a50d4cf667d</UniqueId>
     <Map>Felucca</Map>
     <X>1152</X>
@@ -5289,7 +5246,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>258 Reaper</Name>
+    <Name>116 Reaper</Name>
     <UniqueId>45d2cacc-8ba1-4791-8c20-01100896af00</UniqueId>
     <Map>Felucca</Map>
     <X>5446</X>
@@ -5332,7 +5289,7 @@
     <Objects2>Reaper:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>245 FireElemental-MageGuildmaster-Etc</Name>
+    <Name>117 FireElemental-MageGuildmaster-Etc</Name>
     <UniqueId>4638fa31-1110-4114-9879-179c6752c1d2</UniqueId>
     <Map>Felucca</Map>
     <X>5175</X>
@@ -5375,7 +5332,7 @@
     <Objects2>FireElemental:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MageGuildmaster:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Cat:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>402 Snake</Name>
+    <Name>285 Snake</Name>
     <UniqueId>46b69806-f634-4759-8e2d-e7632819984d</UniqueId>
     <Map>Felucca</Map>
     <X>1006</X>
@@ -5418,7 +5375,7 @@
     <Objects2>Snake:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>330 Skeleton</Name>
+    <Name>284 Skeleton</Name>
     <UniqueId>46db2940-83e8-4d73-b91d-ef4cc6c9e3a8</UniqueId>
     <Map>Felucca</Map>
     <X>3599</X>
@@ -5461,7 +5418,7 @@
     <Objects2>Skeleton:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>253 StoneGargoyle</Name>
+    <Name>283 StoneGargoyle</Name>
     <UniqueId>4829781f-0e1b-4b56-99a3-1cdc1f8dfaf4</UniqueId>
     <Map>Felucca</Map>
     <X>5668</X>
@@ -5504,7 +5461,7 @@
     <Objects2>StoneGargoyle:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>401 Cat</Name>
+    <Name>286 Cat</Name>
     <UniqueId>4a6fdba5-0590-46e4-a880-578b3a34ca30</UniqueId>
     <Map>Felucca</Map>
     <X>1333</X>
@@ -5547,7 +5504,7 @@
     <Objects2>Cat:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>148 Brigand</Name>
+    <Name>281 Brigand</Name>
     <UniqueId>4afe7f0b-59a0-419d-805b-d247ed42870b</UniqueId>
     <Map>Felucca</Map>
     <X>1652</X>
@@ -5590,7 +5547,7 @@
     <Objects2>Brigand:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>109 WanderingHealer</Name>
+    <Name>282 WanderingHealer</Name>
     <UniqueId>4b039906-54e3-438d-a5d9-7d7e20e6c00a</UniqueId>
     <Map>Felucca</Map>
     <X>2085</X>
@@ -5633,7 +5590,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>400 Walrus</Name>
+    <Name>304 Walrus</Name>
     <UniqueId>4b3f2ddc-1c9d-40fb-a304-5dfc8a729295</UniqueId>
     <Map>Felucca</Map>
     <X>5917</X>
@@ -5676,7 +5633,7 @@
     <Objects2>Walrus:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>198 Brigand</Name>
+    <Name>303 Brigand</Name>
     <UniqueId>4b4ce45e-9b2a-4f59-8481-dc80337c9a72</UniqueId>
     <Map>Felucca</Map>
     <X>6067</X>
@@ -5719,50 +5676,7 @@
     <Objects2>Brigand:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>159 Skeleton</Name>
-    <UniqueId>4bc06117-93a5-4f72-8d21-f545bb1d59bc</UniqueId>
-    <Map>Felucca</Map>
-    <X>712</X>
-    <Y>1109</Y>
-    <Width>20</Width>
-    <Height>20</Height>
-    <CentreX>722</CentreX>
-    <CentreY>1119</CentreY>
-    <CentreZ>0</CentreZ>
-    <Range>20</Range>
-    <MaxCount>9</MaxCount>
-    <MinDelay>5</MinDelay>
-    <MaxDelay>10</MaxDelay>
-    <DelayInSec>False</DelayInSec>
-    <Duration>0</Duration>
-    <DespawnTime>0</DespawnTime>
-    <ProximityRange>-1</ProximityRange>
-    <ProximityTriggerSound>500</ProximityTriggerSound>
-    <TriggerProbability>1</TriggerProbability>
-    <InContainer>False</InContainer>
-    <MinRefractory>0</MinRefractory>
-    <MaxRefractory>0</MaxRefractory>
-    <TODStart>0</TODStart>
-    <TODEnd>0</TODEnd>
-    <TODMode>0</TODMode>
-    <KillReset>1</KillReset>
-    <ExternalTriggering>False</ExternalTriggering>
-    <SequentialSpawning>-1</SequentialSpawning>
-    <AllowGhostTriggering>False</AllowGhostTriggering>
-    <AllowNPCTriggering>False</AllowNPCTriggering>
-    <SpawnOnTrigger>False</SpawnOnTrigger>
-    <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
-    <TickReset>False</TickReset>
-    <Team>0</Team>
-    <Amount>1</Amount>
-    <IsGroup>False</IsGroup>
-    <IsRunning>True</IsRunning>
-    <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Skeleton:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
-  </Points>
-  <Points>
-    <Name>50 PolarBear</Name>
+    <Name>302 PolarBear</Name>
     <UniqueId>4c45731b-4cdb-4b83-a77e-9499adb82db8</UniqueId>
     <Map>Felucca</Map>
     <X>5143</X>
@@ -5805,7 +5719,7 @@
     <Objects2>PolarBear:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>399 Orc</Name>
+    <Name>305 Orc</Name>
     <UniqueId>4c49caaf-5dcd-4154-992c-4f226509433e</UniqueId>
     <Map>Felucca</Map>
     <X>624</X>
@@ -5848,7 +5762,7 @@
     <Objects2>Orc:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>309 Cat</Name>
+    <Name>300 Cat</Name>
     <UniqueId>4cb4831f-dc02-4587-9acd-0405650e581e</UniqueId>
     <Map>Felucca</Map>
     <X>1333</X>
@@ -5891,7 +5805,7 @@
     <Objects2>Cat:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>310 Ogre</Name>
+    <Name>301 Ogre</Name>
     <UniqueId>4d862619-dcd8-44c8-8719-d73d13501736</UniqueId>
     <Map>Felucca</Map>
     <X>1508</X>
@@ -5934,7 +5848,7 @@
     <Objects2>Ogre:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>244 StonePaversDark</Name>
+    <Name>313 StonePaversDark</Name>
     <UniqueId>4d895d23-f787-4e4a-a179-a5b9e33be527</UniqueId>
     <Map>Felucca</Map>
     <X>5415</X>
@@ -5977,7 +5891,7 @@
     <Objects2>StonePaversDark:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>430 IceSnake</Name>
+    <Name>312 IceSnake</Name>
     <UniqueId>4d90bd2b-5330-4a94-90c6-43683d69e6c1</UniqueId>
     <Map>Felucca</Map>
     <X>5311</X>
@@ -6020,7 +5934,7 @@
     <Objects2>IceSnake:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>429 LavaLizard</Name>
+    <Name>311 LavaLizard</Name>
     <UniqueId>4da3de46-b406-4ae3-b04e-ea989ac622e6</UniqueId>
     <Map>Felucca</Map>
     <X>2058</X>
@@ -6063,7 +5977,7 @@
     <Objects2>LavaLizard:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>99 AncientLich</Name>
+    <Name>314 AncientLich</Name>
     <UniqueId>4ee38550-5298-40e8-a191-d98e1b077d06</UniqueId>
     <Map>Felucca</Map>
     <X>982</X>
@@ -6106,7 +6020,7 @@
     <Objects2>AncientLich:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>343 FrostTroll</Name>
+    <Name>309 FrostTroll</Name>
     <UniqueId>4f2d3ed4-d6ed-436c-8b2c-b31cc8f8ed52</UniqueId>
     <Map>Felucca</Map>
     <X>5143</X>
@@ -6149,7 +6063,7 @@
     <Objects2>FrostTroll:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>243 PolarBear</Name>
+    <Name>310 PolarBear</Name>
     <UniqueId>500a44f8-8086-4ad1-b8ec-7f811145e2f8</UniqueId>
     <Map>Felucca</Map>
     <X>5917</X>
@@ -6192,7 +6106,7 @@
     <Objects2>PolarBear:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>304 Lich</Name>
+    <Name>333 Lich</Name>
     <UniqueId>5115a7ec-5481-48c7-89d6-7a8f0321c0ea</UniqueId>
     <Map>Felucca</Map>
     <X>5232</X>
@@ -6235,7 +6149,7 @@
     <Objects2>Lich:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>10 Brigand</Name>
+    <Name>332 Brigand</Name>
     <UniqueId>514a1e41-0d07-4247-ad37-00a360fc4660</UniqueId>
     <Map>Felucca</Map>
     <X>1650</X>
@@ -6278,7 +6192,7 @@
     <Objects2>Brigand:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>158 Imp</Name>
+    <Name>331 Imp</Name>
     <UniqueId>518c229e-8e81-4d7a-b02b-a5000e4a9a49</UniqueId>
     <Map>Felucca</Map>
     <X>5762</X>
@@ -6321,7 +6235,7 @@
     <Objects2>Imp:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>66 BoneMagi</Name>
+    <Name>328 BoneMagi</Name>
     <UniqueId>51c886f3-70eb-4a32-a4f8-04c50c532817</UniqueId>
     <Map>Felucca</Map>
     <X>5200</X>
@@ -6364,7 +6278,7 @@
     <Objects2>BoneMagi:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>242 LavaLizard</Name>
+    <Name>329 LavaLizard</Name>
     <UniqueId>52ac535e-9970-445f-a501-b1ca5bceb5cd</UniqueId>
     <Map>Felucca</Map>
     <X>1899</X>
@@ -6407,7 +6321,7 @@
     <Objects2>LavaLizard:MX=8:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>398 Gazer</Name>
+    <Name>330 Gazer</Name>
     <UniqueId>52c631c5-9e3c-4a57-a4a1-841472ab41c2</UniqueId>
     <Map>Felucca</Map>
     <X>1338</X>
@@ -6450,7 +6364,7 @@
     <Objects2>Gazer:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>111 AncientLich</Name>
+    <Name>344 AncientLich</Name>
     <UniqueId>5397631f-6b2c-4381-b9d2-56d590d7c434</UniqueId>
     <Map>Felucca</Map>
     <X>986</X>
@@ -6493,7 +6407,7 @@
     <Objects2>AncientLich:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>229 Grizelda</Name>
+    <Name>343 Grizelda</Name>
     <UniqueId>53f3f5cd-9c03-44bf-91c0-5d73aba6eed1</UniqueId>
     <Map>Felucca</Map>
     <X>854</X>
@@ -6536,7 +6450,7 @@
     <Objects2>Grizelda:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>212 Ettin</Name>
+    <Name>342 Ettin</Name>
     <UniqueId>5510f8e1-0483-4bdf-aece-881cc0291800</UniqueId>
     <Map>Felucca</Map>
     <X>2393</X>
@@ -6579,7 +6493,7 @@
     <Objects2>Ettin:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>397 LichLord</Name>
+    <Name>345 LichLord</Name>
     <UniqueId>56558089-7c9e-4c30-84aa-9cc4f712d40f</UniqueId>
     <Map>Felucca</Map>
     <X>1163</X>
@@ -6622,7 +6536,7 @@
     <Objects2>LichLord:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>288 Daemon</Name>
+    <Name>340 Daemon</Name>
     <UniqueId>56c6a72b-dc7f-44b1-8c5d-af8a145bf189</UniqueId>
     <Map>Felucca</Map>
     <X>1065</X>
@@ -6665,7 +6579,7 @@
     <Objects2>Daemon:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>240 AirElemental</Name>
+    <Name>341 AirElemental</Name>
     <UniqueId>571a236b-3038-4b85-a152-ff9693586bda</UniqueId>
     <Map>Felucca</Map>
     <X>2138</X>
@@ -6708,7 +6622,7 @@
     <Objects2>AirElemental:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>24 Orc</Name>
+    <Name>358 Orc</Name>
     <UniqueId>5775d1cc-9d3b-4a19-8b08-bccf48b05950</UniqueId>
     <Map>Felucca</Map>
     <X>5669</X>
@@ -6751,7 +6665,7 @@
     <Objects2>Orc:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>23 IceElemental</Name>
+    <Name>357 IceElemental</Name>
     <UniqueId>5842db06-0402-42a9-a37c-4da9eba7c078</UniqueId>
     <Map>Felucca</Map>
     <X>1047</X>
@@ -6794,50 +6708,7 @@
     <Objects2>IceElemental:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>31 LichLord</Name>
-    <UniqueId>585bc04d-d9bc-42b6-9178-5ebcb6a09fef</UniqueId>
-    <Map>Felucca</Map>
-    <X>4552</X>
-    <Y>1301</Y>
-    <Width>0</Width>
-    <Height>0</Height>
-    <CentreX>4552</CentreX>
-    <CentreY>1301</CentreY>
-    <CentreZ>18</CentreZ>
-    <Range>5</Range>
-    <MaxCount>3</MaxCount>
-    <MinDelay>10</MinDelay>
-    <MaxDelay>20</MaxDelay>
-    <DelayInSec>False</DelayInSec>
-    <Duration>0</Duration>
-    <DespawnTime>0</DespawnTime>
-    <ProximityRange>-1</ProximityRange>
-    <ProximityTriggerSound>500</ProximityTriggerSound>
-    <TriggerProbability>1</TriggerProbability>
-    <InContainer>False</InContainer>
-    <MinRefractory>0</MinRefractory>
-    <MaxRefractory>0</MaxRefractory>
-    <TODStart>0</TODStart>
-    <TODEnd>0</TODEnd>
-    <TODMode>0</TODMode>
-    <KillReset>1</KillReset>
-    <ExternalTriggering>False</ExternalTriggering>
-    <SequentialSpawning>-1</SequentialSpawning>
-    <AllowGhostTriggering>False</AllowGhostTriggering>
-    <AllowNPCTriggering>False</AllowNPCTriggering>
-    <SpawnOnTrigger>False</SpawnOnTrigger>
-    <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
-    <TickReset>False</TickReset>
-    <Team>0</Team>
-    <Amount>1</Amount>
-    <IsGroup>False</IsGroup>
-    <IsRunning>True</IsRunning>
-    <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>LichLord:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
-  </Points>
-  <Points>
-    <Name>30 LavaLizard</Name>
+    <Name>356 LavaLizard</Name>
     <UniqueId>5877fe81-718f-4a21-9382-a700e4e4b2e0</UniqueId>
     <Map>Felucca</Map>
     <X>2020</X>
@@ -6880,7 +6751,7 @@
     <Objects2>LavaLizard:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>27 Alligator</Name>
+    <Name>359 Alligator</Name>
     <UniqueId>58944433-1b52-4fa0-bb64-ffd7b1d1c811</UniqueId>
     <Map>Felucca</Map>
     <X>5906</X>
@@ -6923,7 +6794,7 @@
     <Objects2>Alligator:MX=64:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>26 Imp</Name>
+    <Name>354 Imp</Name>
     <UniqueId>58e7242a-373a-491e-aabf-8d5ca89deec4</UniqueId>
     <Map>Felucca</Map>
     <X>1196</X>
@@ -6966,7 +6837,7 @@
     <Objects2>Imp:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>396 GiantSpider</Name>
+    <Name>355 GiantSpider</Name>
     <UniqueId>59c74921-300a-43ed-9340-44dc2224fa88</UniqueId>
     <Map>Felucca</Map>
     <X>5753</X>
@@ -7009,7 +6880,7 @@
     <Objects2>GiantSpider:MX=33:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>127 Skeleton</Name>
+    <Name>377 Skeleton</Name>
     <UniqueId>59ccd3e4-e847-4823-a75c-a4a3b6f93ea7</UniqueId>
     <Map>Felucca</Map>
     <X>1984</X>
@@ -7052,50 +6923,7 @@
     <Objects2>Skeleton:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>132 LichLord</Name>
-    <UniqueId>59daeb8a-39aa-4177-b18e-81dbfb05852b</UniqueId>
-    <Map>Felucca</Map>
-    <X>2440</X>
-    <Y>1099</Y>
-    <Width>6</Width>
-    <Height>6</Height>
-    <CentreX>2443</CentreX>
-    <CentreY>1102</CentreY>
-    <CentreZ>8</CentreZ>
-    <Range>5</Range>
-    <MaxCount>2</MaxCount>
-    <MinDelay>5</MinDelay>
-    <MaxDelay>10</MaxDelay>
-    <DelayInSec>False</DelayInSec>
-    <Duration>0</Duration>
-    <DespawnTime>0</DespawnTime>
-    <ProximityRange>-1</ProximityRange>
-    <ProximityTriggerSound>500</ProximityTriggerSound>
-    <TriggerProbability>1</TriggerProbability>
-    <InContainer>False</InContainer>
-    <MinRefractory>0</MinRefractory>
-    <MaxRefractory>0</MaxRefractory>
-    <TODStart>0</TODStart>
-    <TODEnd>0</TODEnd>
-    <TODMode>0</TODMode>
-    <KillReset>1</KillReset>
-    <ExternalTriggering>False</ExternalTriggering>
-    <SequentialSpawning>-1</SequentialSpawning>
-    <AllowGhostTriggering>False</AllowGhostTriggering>
-    <AllowNPCTriggering>False</AllowNPCTriggering>
-    <SpawnOnTrigger>False</SpawnOnTrigger>
-    <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
-    <TickReset>False</TickReset>
-    <Team>0</Team>
-    <Amount>1</Amount>
-    <IsGroup>False</IsGroup>
-    <IsRunning>True</IsRunning>
-    <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>LichLord:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
-  </Points>
-  <Points>
-    <Name>129 Gargoyle</Name>
+    <Name>376 Gargoyle</Name>
     <UniqueId>5c1461d8-809e-4827-be7f-6bfae53512be</UniqueId>
     <Map>Felucca</Map>
     <X>5657</X>
@@ -7138,7 +6966,7 @@
     <Objects2>Gargoyle:MX=13:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>395 OrcishMage</Name>
+    <Name>375 OrcishMage</Name>
     <UniqueId>5d43ccbe-ecc9-4f06-832e-61afd5d0ac69</UniqueId>
     <Map>Felucca</Map>
     <X>1710</X>
@@ -7181,7 +7009,7 @@
     <Objects2>OrcishMage:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>87 Lich</Name>
+    <Name>378 Lich</Name>
     <UniqueId>5d8d1df2-91d1-48b2-b45d-9901dfa67834</UniqueId>
     <Map>Felucca</Map>
     <X>1984</X>
@@ -7224,7 +7052,7 @@
     <Objects2>Lich:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>239 Banker</Name>
+    <Name>373 Banker</Name>
     <UniqueId>5da7c325-f7fc-442f-9121-9425de938d14</UniqueId>
     <Map>Felucca</Map>
     <X>3130</X>
@@ -7267,7 +7095,7 @@
     <Objects2>Banker:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>46 Teleporter</Name>
+    <Name>374 Teleporter</Name>
     <UniqueId>5dbb53eb-4902-4b47-b177-ddc5df842453</UniqueId>
     <Map>Felucca</Map>
     <X>5181</X>
@@ -7310,7 +7138,7 @@
     <Objects2>Teleporter:MX=17:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>394 PolarBear</Name>
+    <Name>24 PolarBear</Name>
     <UniqueId>5ee7667f-69ca-4ff2-90e6-f542aed55661</UniqueId>
     <Map>Felucca</Map>
     <X>1342</X>
@@ -7353,7 +7181,7 @@
     <Objects2>PolarBear:MX=12:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>322 LichLord</Name>
+    <Name>12 LichLord</Name>
     <UniqueId>5fa89228-15ca-4dbe-a6ab-d7c62df5e32b</UniqueId>
     <Map>Felucca</Map>
     <X>2442</X>
@@ -7396,7 +7224,7 @@
     <Objects2>LichLord:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>323 Fisherman</Name>
+    <Name>48 Fisherman</Name>
     <UniqueId>604eee0a-2925-406f-ad54-80ad2e1cbbfc</UniqueId>
     <Map>Felucca</Map>
     <X>2736</X>
@@ -7439,7 +7267,7 @@
     <Objects2>Fisherman:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>324 WanderingHealer</Name>
+    <Name>68 WanderingHealer</Name>
     <UniqueId>60a2c717-2b28-4be4-82f6-0517d6236b0c</UniqueId>
     <Map>Felucca</Map>
     <X>5676</X>
@@ -7482,7 +7310,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>325 Dolphin</Name>
+    <Name>99 Dolphin</Name>
     <UniqueId>60c543c8-0f15-43b5-80b7-821d21b5aa96</UniqueId>
     <Map>Felucca</Map>
     <X>4552</X>
@@ -7525,7 +7353,7 @@
     <Objects2>Dolphin:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>326 FrostTroll</Name>
+    <Name>6 FrostTroll</Name>
     <UniqueId>613cdae6-8bb2-4bd5-b804-163f177ac09b</UniqueId>
     <Map>Felucca</Map>
     <X>5311</X>
@@ -7568,7 +7396,7 @@
     <Objects2>FrostTroll:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>327 LavaLizard</Name>
+    <Name>1 LavaLizard</Name>
     <UniqueId>621b37e4-7997-443c-b763-d7612d9fc269</UniqueId>
     <Map>Felucca</Map>
     <X>1834</X>
@@ -7611,7 +7439,7 @@
     <Objects2>LavaLizard:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>328 LavaLizard</Name>
+    <Name>25 LavaLizard</Name>
     <UniqueId>62c7ba89-538e-4f28-a5ec-8aadf3f2ba00</UniqueId>
     <Map>Felucca</Map>
     <X>6045</X>
@@ -7654,7 +7482,7 @@
     <Objects2>LavaLizard:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>293 StonePaversDark</Name>
+    <Name>42 StonePaversDark</Name>
     <UniqueId>62d3f585-cddb-4361-a2ad-83af39462b64</UniqueId>
     <Map>Felucca</Map>
     <X>5426</X>
@@ -7697,7 +7525,7 @@
     <Objects2>StonePaversDark:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>329 Teleporter</Name>
+    <Name>9 Teleporter</Name>
     <UniqueId>63662bd3-5b0d-45b8-8ddc-361697b5e6ca</UniqueId>
     <Map>Felucca</Map>
     <X>5236</X>
@@ -7740,7 +7568,7 @@
     <Objects2>Teleporter:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>173 StrongMongbat</Name>
+    <Name>147 StrongMongbat</Name>
     <UniqueId>63c8cd1b-a537-4f35-8cb8-17c70617c94a</UniqueId>
     <Map>Felucca</Map>
     <X>1524</X>
@@ -7783,7 +7611,7 @@
     <Objects2>StrongMongbat:MX=30:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>292 OphidianMage</Name>
+    <Name>146 OphidianMage</Name>
     <UniqueId>642ca4df-7bf1-4864-9eb1-7aae57633f5b</UniqueId>
     <Map>Felucca</Map>
     <X>5441</X>
@@ -7826,7 +7654,7 @@
     <Objects2>OphidianMage:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>294 OphidianMatriarch</Name>
+    <Name>145 OphidianMatriarch</Name>
     <UniqueId>6576b74c-4c96-40d5-928c-383f7f62945a</UniqueId>
     <Map>Felucca</Map>
     <X>5427</X>
@@ -7869,7 +7697,7 @@
     <Objects2>OphidianMatriarch:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>295 Fisherman</Name>
+    <Name>122 Fisherman</Name>
     <UniqueId>65c534ed-9664-4163-ac16-1c52fd3bc22c</UniqueId>
     <Map>Felucca</Map>
     <X>2384</X>
@@ -7912,7 +7740,7 @@
     <Objects2>Fisherman:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>393 Armorer</Name>
+    <Name>33 Armorer</Name>
     <UniqueId>661d435c-e5e2-4743-a88a-3deda3271d4a</UniqueId>
     <Map>Felucca</Map>
     <X>2003</X>
@@ -7955,7 +7783,7 @@
     <Objects2>Armorer:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>392 Orc</Name>
+    <Name>49 Orc</Name>
     <UniqueId>66764216-e8b0-4cbf-b5c3-20cf1d3899bb</UniqueId>
     <Map>Felucca</Map>
     <X>1708</X>
@@ -7998,7 +7826,7 @@
     <Objects2>Orc:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>149 SeaSerpent</Name>
+    <Name>63 SeaSerpent</Name>
     <UniqueId>667c9040-4774-407d-b2ae-918f2f733811</UniqueId>
     <Map>Felucca</Map>
     <X>2391</X>
@@ -8041,7 +7869,7 @@
     <Objects2>SeaSerpent:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>70 SkeletalKnight</Name>
+    <Name>62 SkeletalKnight</Name>
     <UniqueId>672ca3cc-411b-4c22-ba2c-1ba2421f6816</UniqueId>
     <Map>Felucca</Map>
     <X>1982</X>
@@ -8084,7 +7912,7 @@
     <Objects2>SkeletalKnight:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>255 Nightmare</Name>
+    <Name>266 Nightmare</Name>
     <UniqueId>6780b2ff-9f75-46b0-b37d-b00adad4ee9a</UniqueId>
     <Map>Felucca</Map>
     <X>848</X>
@@ -8127,7 +7955,7 @@
     <Objects2>Nightmare:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>68 Teleporter</Name>
+    <Name>265 Teleporter</Name>
     <UniqueId>6c884f79-3f64-4a5a-a6c6-4a2f34475361</UniqueId>
     <Map>Felucca</Map>
     <X>5230</X>
@@ -8170,7 +7998,7 @@
     <Objects2>Teleporter:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>128 ElderGazer</Name>
+    <Name>264 ElderGazer</Name>
     <UniqueId>6d13be46-5e21-4ee5-bf67-45f213581289</UniqueId>
     <Map>Felucca</Map>
     <X>5362</X>
@@ -8213,7 +8041,7 @@
     <Objects2>ElderGazer:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>238 Mongbat</Name>
+    <Name>262 Mongbat</Name>
     <UniqueId>6f6c8184-f9b0-4856-8caf-66483f073001</UniqueId>
     <Map>Felucca</Map>
     <X>5511</X>
@@ -8256,7 +8084,7 @@
     <Objects2>Mongbat:MX=15:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>299 StoneHarpy</Name>
+    <Name>263 StoneHarpy</Name>
     <UniqueId>6fd718b1-7328-4c6e-a117-12daea2f0c3a</UniqueId>
     <Map>Felucca</Map>
     <X>5360</X>
@@ -8299,7 +8127,7 @@
     <Objects2>StoneHarpy:MX=12:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>391 Daemon</Name>
+    <Name>271 Daemon</Name>
     <UniqueId>70dd9b8a-f5e3-4b8c-9778-b353d3b3a802</UniqueId>
     <Map>Felucca</Map>
     <X>1183</X>
@@ -8342,7 +8170,7 @@
     <Objects2>Daemon:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>107 Ettin</Name>
+    <Name>270 Ettin</Name>
     <UniqueId>70f2e6dd-f117-4080-9cb0-e35bc60b5aa2</UniqueId>
     <Map>Felucca</Map>
     <X>2438</X>
@@ -8385,7 +8213,7 @@
     <Objects2>Ettin:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>119 StoneHarpy</Name>
+    <Name>269 StoneHarpy</Name>
     <UniqueId>7188a694-ce98-4421-83fd-dffdf8e12c84</UniqueId>
     <Map>Felucca</Map>
     <X>5668</X>
@@ -8428,7 +8256,7 @@
     <Objects2>StoneHarpy:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>241 WanderingHealer</Name>
+    <Name>267 WanderingHealer</Name>
     <UniqueId>719abc8f-4b66-4f1d-8bba-76ea4a3d76a0</UniqueId>
     <Map>Felucca</Map>
     <X>2368</X>
@@ -8471,7 +8299,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>237 OphidianKnight</Name>
+    <Name>268 OphidianKnight</Name>
     <UniqueId>71be7f1e-fea9-43e1-b134-e5cec1b0272a</UniqueId>
     <Map>Felucca</Map>
     <X>5462</X>
@@ -8514,7 +8342,7 @@
     <Objects2>OphidianKnight:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>438 Titan</Name>
+    <Name>217 Titan</Name>
     <UniqueId>720eb192-2db4-4bc0-b60a-09c5e4544224</UniqueId>
     <Map>Felucca</Map>
     <X>5230</X>
@@ -8557,7 +8385,7 @@
     <Objects2>Titan:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>145 OrcishLord</Name>
+    <Name>129 OrcishLord</Name>
     <UniqueId>7234b5be-9932-4976-a840-479c6bc5f7d7</UniqueId>
     <Map>Felucca</Map>
     <X>1719</X>
@@ -8600,7 +8428,7 @@
     <Objects2>OrcishLord:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>390 Mummy</Name>
+    <Name>128 Mummy</Name>
     <UniqueId>727c54b1-1bbe-41b2-abbc-84d5732603fa</UniqueId>
     <Map>Felucca</Map>
     <X>1984</X>
@@ -8643,7 +8471,7 @@
     <Objects2>Mummy:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>236 Reaper</Name>
+    <Name>257 Reaper</Name>
     <UniqueId>733a03d7-5ca6-48d2-94fa-c890d30f78e3</UniqueId>
     <Map>Felucca</Map>
     <X>5303</X>
@@ -8676,7 +8504,7 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
+    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -8686,7 +8514,7 @@
     <Objects2>Reaper:MX=40:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>257 Cougar</Name>
+    <Name>258 Cougar</Name>
     <UniqueId>73c9d1da-9bba-4f0f-8d04-94b3b0b9bd8c</UniqueId>
     <Map>Felucca</Map>
     <X>3143</X>
@@ -8729,7 +8557,7 @@
     <Objects2>Cougar:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>314 EvilWanderingHealer</Name>
+    <Name>135 EvilWanderingHealer</Name>
     <UniqueId>749820c0-dfe6-4b2d-b0f8-ab6cb3cb320d</UniqueId>
     <Map>Felucca</Map>
     <X>1545</X>
@@ -8772,7 +8600,7 @@
     <Objects2>EvilWanderingHealer:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>315 Cat</Name>
+    <Name>134 Cat</Name>
     <UniqueId>75f533b4-e935-476c-adfa-bec6cc4aff80</UniqueId>
     <Map>Felucca</Map>
     <X>1333</X>
@@ -8815,7 +8643,7 @@
     <Objects2>Cat:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>318 LavaLizard</Name>
+    <Name>133 LavaLizard</Name>
     <UniqueId>77945f9a-4120-4f47-90bd-403f3f79927d</UniqueId>
     <Map>Felucca</Map>
     <X>5988</X>
@@ -8858,7 +8686,7 @@
     <Objects2>LavaLizard:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>316 GreatHart</Name>
+    <Name>69 GreatHart</Name>
     <UniqueId>77a054a6-2784-4502-bc77-4a505a39fdba</UniqueId>
     <Map>Felucca</Map>
     <X>5316</X>
@@ -8901,7 +8729,7 @@
     <Objects2>GreatHart:MX=30:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>317 Imp</Name>
+    <Name>132 Imp</Name>
     <UniqueId>77fe0ef7-2ba2-4b4f-9cad-e77b7bf348af</UniqueId>
     <Map>Felucca</Map>
     <X>1043</X>
@@ -8944,7 +8772,7 @@
     <Objects2>Imp:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>319 Cow</Name>
+    <Name>322 Cow</Name>
     <UniqueId>78cfa2c9-2bd1-4c1d-8d4d-4e461d0a740c</UniqueId>
     <Map>Felucca</Map>
     <X>5160</X>
@@ -8987,7 +8815,7 @@
     <Objects2>Cow:MX=27:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>235 SkeletalKnight</Name>
+    <Name>321 SkeletalKnight</Name>
     <UniqueId>78d9ddb1-1ac4-461d-9f89-e4eabdfdc4ed</UniqueId>
     <Map>Felucca</Map>
     <X>1015</X>
@@ -9073,7 +8901,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>303 Daemon</Name>
+    <Name>318 Daemon</Name>
     <UniqueId>7a52b0f1-231b-4b47-a33b-0b0c34696d05</UniqueId>
     <Map>Felucca</Map>
     <X>1198</X>
@@ -9116,7 +8944,7 @@
     <Objects2>Daemon:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>302 StonePaversDark</Name>
+    <Name>319 StonePaversDark</Name>
     <UniqueId>7ab57d25-c92f-4ea2-aefe-44c34d1742de</UniqueId>
     <Map>Felucca</Map>
     <X>5433</X>
@@ -9159,7 +8987,7 @@
     <Objects2>StonePaversDark:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>234 Cougar</Name>
+    <Name>352 Cougar</Name>
     <UniqueId>7ab97903-3a7d-4149-a1a3-dc70786a22af</UniqueId>
     <Map>Felucca</Map>
     <X>3107</X>
@@ -9202,7 +9030,7 @@
     <Objects2>Cougar:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>276 Hind</Name>
+    <Name>351 Hind</Name>
     <UniqueId>7b6fd250-95cd-46ed-a016-35c5e5bced9f</UniqueId>
     <Map>Felucca</Map>
     <X>4542</X>
@@ -9245,7 +9073,7 @@
     <Objects2>Hind:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>389 InnKeeper</Name>
+    <Name>350 InnKeeper</Name>
     <UniqueId>7b86d40e-a636-4364-9c4c-ce75a7b1aea2</UniqueId>
     <Map>Felucca</Map>
     <X>3108</X>
@@ -9288,7 +9116,7 @@
     <Objects2>InnKeeper:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>275 OphidianMage</Name>
+    <Name>348 OphidianMage</Name>
     <UniqueId>7b9af2eb-8505-4379-a913-9cf262abb287</UniqueId>
     <Map>Felucca</Map>
     <X>5403</X>
@@ -9331,7 +9159,7 @@
     <Objects2>OphidianMage:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>125 WanderingHealer</Name>
+    <Name>349 WanderingHealer</Name>
     <UniqueId>7bac6b03-2f71-40e1-abb8-e9c80c9d2050</UniqueId>
     <Map>Felucca</Map>
     <X>485</X>
@@ -9374,7 +9202,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>88 Tailor</Name>
+    <Name>372 Tailor</Name>
     <UniqueId>7c0ce970-952d-4850-b437-3b5c0b2b1fc6</UniqueId>
     <Map>Felucca</Map>
     <X>1970</X>
@@ -9417,7 +9245,7 @@
     <Objects2>Tailor:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>98 Titan</Name>
+    <Name>371 Titan</Name>
     <UniqueId>7c53ac10-8857-41eb-8bea-72bcc727d846</UniqueId>
     <Map>Felucca</Map>
     <X>4063</X>
@@ -9460,7 +9288,7 @@
     <Objects2>Titan:MX=11:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>135 OrcishLord</Name>
+    <Name>370 OrcishLord</Name>
     <UniqueId>7e8c49e4-9ba6-4b81-a450-557a894431f7</UniqueId>
     <Map>Felucca</Map>
     <X>1719</X>
@@ -9503,7 +9331,7 @@
     <Objects2>OrcishLord:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>233 Imp</Name>
+    <Name>368 Imp</Name>
     <UniqueId>8087182c-6be6-4b3e-96ac-1337d334b570</UniqueId>
     <Map>Felucca</Map>
     <X>5695</X>
@@ -9546,7 +9374,7 @@
     <Objects2>Imp:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>388 RedAmbitiousSolenQueen</Name>
+    <Name>369 RedAmbitiousSolenQueen</Name>
     <UniqueId>80afc6e3-eb8d-4ab6-876a-ecb3ea585dac</UniqueId>
     <Map>Felucca</Map>
     <X>5788</X>
@@ -9589,7 +9417,7 @@
     <Objects2>RedAmbitiousSolenQueen:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>34 Fisherman</Name>
+    <Name>383 Fisherman</Name>
     <UniqueId>80c6ce5b-c9e0-480c-9801-374dd0de3d40</UniqueId>
     <Map>Felucca</Map>
     <X>1927</X>
@@ -9632,7 +9460,7 @@
     <Objects2>Fisherman:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>232 Walrus</Name>
+    <Name>382 Walrus</Name>
     <UniqueId>8120cce6-2c13-4729-b55b-675af683eb8e</UniqueId>
     <Map>Felucca</Map>
     <X>5143</X>
@@ -9675,7 +9503,7 @@
     <Objects2>Walrus:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>144 IceSerpent</Name>
+    <Name>381 IceSerpent</Name>
     <UniqueId>82bfc473-5285-47cb-91f8-a25891748da9</UniqueId>
     <Map>Felucca</Map>
     <X>5311</X>
@@ -9718,7 +9546,7 @@
     <Objects2>IceSerpent:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>387 LavaLizard</Name>
+    <Name>379 LavaLizard</Name>
     <UniqueId>83492933-f0a6-4774-a416-864b75e4ad8e</UniqueId>
     <Map>Felucca</Map>
     <X>1980</X>
@@ -9761,7 +9589,7 @@
     <Objects2>LavaLizard:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>4 SkeletalKnight</Name>
+    <Name>380 SkeletalKnight</Name>
     <UniqueId>8354693d-75da-4c37-9c4d-db81f1f1527e</UniqueId>
     <Map>Felucca</Map>
     <X>1975</X>
@@ -9804,7 +9632,7 @@
     <Objects2>SkeletalKnight:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>231 EvilWanderingHealer</Name>
+    <Name>291 EvilWanderingHealer</Name>
     <UniqueId>83c92673-5de4-434f-a24d-f61cbe7042d4</UniqueId>
     <Map>Felucca</Map>
     <X>3392</X>
@@ -9847,7 +9675,7 @@
     <Objects2>EvilWanderingHealer:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>35 OrcishLord</Name>
+    <Name>290 OrcishLord</Name>
     <UniqueId>8458613d-b37b-4fcd-b519-9c22d63502e3</UniqueId>
     <Map>Felucca</Map>
     <X>624</X>
@@ -9890,7 +9718,7 @@
     <Objects2>OrcishLord:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>386 StonePaversDark</Name>
+    <Name>289 StonePaversDark</Name>
     <UniqueId>850f6453-2b5f-4b23-b619-7e1a5e5f62cc</UniqueId>
     <Map>Felucca</Map>
     <X>5431</X>
@@ -9933,7 +9761,7 @@
     <Objects2>StonePaversDark:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>228 Mummy</Name>
+    <Name>61 Mummy</Name>
     <UniqueId>8536fdb2-454c-400e-940d-655222adaf3b</UniqueId>
     <Map>Felucca</Map>
     <X>5668</X>
@@ -9976,7 +9804,7 @@
     <Objects2>Mummy:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>150 Cyclops</Name>
+    <Name>112 Cyclops</Name>
     <UniqueId>859e876f-d485-4fdd-b977-da78d899a1bd</UniqueId>
     <Map>Felucca</Map>
     <X>5605</X>
@@ -10019,7 +9847,7 @@
     <Objects2>Cyclops:MX=8:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>79 Butcher</Name>
+    <Name>26 Butcher</Name>
     <UniqueId>85d36617-f7a0-458c-9fb1-aadbbecb6bac</UniqueId>
     <Map>Felucca</Map>
     <X>3122</X>
@@ -10062,7 +9890,7 @@
     <Objects2>Butcher:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>338 IceSerpent</Name>
+    <Name>56 IceSerpent</Name>
     <UniqueId>85f61bd2-7120-4cb5-8d37-70ea200b0d51</UniqueId>
     <Map>Felucca</Map>
     <X>5461</X>
@@ -10105,7 +9933,7 @@
     <Objects2>IceSerpent:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>246 OgreLord</Name>
+    <Name>57 OgreLord</Name>
     <UniqueId>86d565b0-3e55-4a06-9b43-e05d8f45b591</UniqueId>
     <Map>Felucca</Map>
     <X>1258</X>
@@ -10148,7 +9976,7 @@
     <Objects2>OgreLord:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>227 Gazer</Name>
+    <Name>55 Gazer</Name>
     <UniqueId>87ccc72a-2510-4cdb-84e2-02cd803aade1</UniqueId>
     <Map>Felucca</Map>
     <X>416</X>
@@ -10191,7 +10019,7 @@
     <Objects2>Gazer:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>143 Orc</Name>
+    <Name>85 Orc</Name>
     <UniqueId>87de875a-00c4-48a3-80dd-367c0094299d</UniqueId>
     <Map>Felucca</Map>
     <X>1726</X>
@@ -10234,7 +10062,7 @@
     <Objects2>Orc:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>385 Llama</Name>
+    <Name>84 Llama</Name>
     <UniqueId>882f1ec0-bd9e-418a-a82d-541d1f4a2a0e</UniqueId>
     <Map>Felucca</Map>
     <X>5866</X>
@@ -10277,7 +10105,7 @@
     <Objects2>Llama:MX=31:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>225 OrcBomber</Name>
+    <Name>125 OrcBomber</Name>
     <UniqueId>892beefe-e4b6-4ba1-85f8-d1f010d2f292</UniqueId>
     <Map>Felucca</Map>
     <X>1716</X>
@@ -10320,7 +10148,7 @@
     <Objects2>OrcBomber:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>432 OphidianMage</Name>
+    <Name>126 OphidianMage</Name>
     <UniqueId>897e8d18-207f-45d4-8553-9a7c238de2ad</UniqueId>
     <Map>Felucca</Map>
     <X>5462</X>
@@ -10363,7 +10191,7 @@
     <Objects2>OphidianMage:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>433 Cat</Name>
+    <Name>127 Cat</Name>
     <UniqueId>89815c0a-94ba-49fb-8188-416b6fdcdae7</UniqueId>
     <Map>Felucca</Map>
     <X>1333</X>
@@ -10406,7 +10234,7 @@
     <Objects2>Cat:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>434 OphidianMage</Name>
+    <Name>162 OphidianMage</Name>
     <UniqueId>8a3edbd1-11e2-43ff-b223-d707733f6648</UniqueId>
     <Map>Felucca</Map>
     <X>5485</X>
@@ -10449,7 +10277,7 @@
     <Objects2>OphidianMage:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>435 WanderingHealer</Name>
+    <Name>154 WanderingHealer</Name>
     <UniqueId>8a5b6518-5dd7-4280-a690-8934e6ae48be</UniqueId>
     <Map>Felucca</Map>
     <X>4560</X>
@@ -10492,7 +10320,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>340 AncientLich</Name>
+    <Name>160 AncientLich</Name>
     <UniqueId>8aec6438-2806-4802-ad92-6ce16c12f2f6</UniqueId>
     <Map>Felucca</Map>
     <X>974</X>
@@ -10535,7 +10363,7 @@
     <Objects2>AncientLich:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>142 Daemon</Name>
+    <Name>161 Daemon</Name>
     <UniqueId>8b0f0e48-07c6-430b-a89f-73b6c999167c</UniqueId>
     <Map>Felucca</Map>
     <X>4582</X>
@@ -10578,7 +10406,7 @@
     <Objects2>Daemon:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>384 LichLord</Name>
+    <Name>169 LichLord</Name>
     <UniqueId>8b28623a-802f-49fa-8a26-8a68119a5685</UniqueId>
     <Map>Felucca</Map>
     <X>1971</X>
@@ -10621,7 +10449,7 @@
     <Objects2>LichLord:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>54 Rat</Name>
+    <Name>168 Rat</Name>
     <UniqueId>8c7775ab-021b-436f-8715-96c4f6bec7c6</UniqueId>
     <Map>Felucca</Map>
     <X>5752</X>
@@ -10664,7 +10492,7 @@
     <Objects2>Rat:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>41 SwampTentacle</Name>
+    <Name>167 SwampTentacle</Name>
     <UniqueId>8e1d809d-7d2f-4100-a5ef-d35c07e29d81</UniqueId>
     <Map>Felucca</Map>
     <X>5773</X>
@@ -10707,7 +10535,7 @@
     <Objects2>SwampTentacle:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>161 Titan</Name>
+    <Name>23 Titan</Name>
     <UniqueId>8e3eca64-c678-421e-9e6f-f61edd07b773</UniqueId>
     <Map>Felucca</Map>
     <X>5373</X>
@@ -10750,7 +10578,7 @@
     <Objects2>Titan:MX=8:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>47 Orc</Name>
+    <Name>229 Orc</Name>
     <UniqueId>8e849a9a-1709-454a-ba13-28dfe9b7e850</UniqueId>
     <Map>Felucca</Map>
     <X>624</X>
@@ -10793,7 +10621,7 @@
     <Objects2>Orc:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>443 Cow</Name>
+    <Name>239 Cow</Name>
     <UniqueId>8e84f148-9515-4686-aa84-99dcd9a50a45</UniqueId>
     <Map>Felucca</Map>
     <X>1314</X>
@@ -10836,7 +10664,7 @@
     <Objects2>Cow:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>162 Ogre</Name>
+    <Name>228 Ogre</Name>
     <UniqueId>8f598884-9122-46c0-af52-c47b8977fa06</UniqueId>
     <Map>Felucca</Map>
     <X>2519</X>
@@ -10879,7 +10707,7 @@
     <Objects2>Ogre:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>383 Skeleton</Name>
+    <Name>227 Skeleton</Name>
     <UniqueId>9032aab7-caa0-4feb-b8fc-a7c5ccf92e6a</UniqueId>
     <Map>Felucca</Map>
     <X>3603</X>
@@ -10922,7 +10750,7 @@
     <Objects2>Skeleton:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>100 EvilWanderingHealer</Name>
+    <Name>226 EvilWanderingHealer</Name>
     <UniqueId>9032c616-d0c0-4e17-a8d0-799adb768307</UniqueId>
     <Map>Felucca</Map>
     <X>5892</X>
@@ -10965,7 +10793,7 @@
     <Objects2>EvilWanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>165 LavaLizard</Name>
+    <Name>222 LavaLizard</Name>
     <UniqueId>9256886f-03db-4f79-bee4-553d711d0897</UniqueId>
     <Map>Felucca</Map>
     <X>2062</X>
@@ -11008,7 +10836,7 @@
     <Objects2>LavaLizard:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>12 Walrus</Name>
+    <Name>225 Walrus</Name>
     <UniqueId>92a7f5b7-6a6e-4d58-8b94-9b55f5c600ec</UniqueId>
     <Map>Felucca</Map>
     <X>4036</X>
@@ -11051,7 +10879,7 @@
     <Objects2>Walrus:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>382 OrcishLord</Name>
+    <Name>224 OrcishLord</Name>
     <UniqueId>92b5832b-49e0-4bd9-a51c-f20c4dee9675</UniqueId>
     <Map>Felucca</Map>
     <X>624</X>
@@ -11094,7 +10922,7 @@
     <Objects2>OrcishLord:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>126 Bull</Name>
+    <Name>223 Bull</Name>
     <UniqueId>93ceca07-66c0-4572-8cfe-9261882a7716</UniqueId>
     <Map>Felucca</Map>
     <X>1296</X>
@@ -11137,7 +10965,7 @@
     <Objects2>Bull:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>223 Mummy</Name>
+    <Name>252 Mummy</Name>
     <UniqueId>93ebfa01-c3bb-452b-b914-8b086db24a9c</UniqueId>
     <Map>Felucca</Map>
     <X>1973</X>
@@ -11180,7 +11008,7 @@
     <Objects2>Mummy:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>141 Harpy</Name>
+    <Name>253 Harpy</Name>
     <UniqueId>944b488a-1c60-4359-bb93-15b77973804b</UniqueId>
     <Map>Felucca</Map>
     <X>5656</X>
@@ -11223,7 +11051,7 @@
     <Objects2>Harpy:MX=31:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>381 Blacksmith</Name>
+    <Name>251 Blacksmith</Name>
     <UniqueId>946a66c7-995d-404f-8651-18a40673b67c</UniqueId>
     <Map>Felucca</Map>
     <X>1832</X>
@@ -11266,7 +11094,7 @@
     <Objects2>Blacksmith:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>39 Skeleton</Name>
+    <Name>250 Skeleton</Name>
     <UniqueId>9522c71e-3cee-43ca-918c-28f71c08b4c5</UniqueId>
     <Map>Felucca</Map>
     <X>5200</X>
@@ -11309,7 +11137,7 @@
     <Objects2>Skeleton:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>121 Skeleton</Name>
+    <Name>248 Skeleton</Name>
     <UniqueId>956df9b0-4dd4-4c08-be72-19e2077d4ee3</UniqueId>
     <Map>Felucca</Map>
     <X>1988</X>
@@ -11352,7 +11180,7 @@
     <Objects2>Skeleton:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>181 Lich</Name>
+    <Name>249 Lich</Name>
     <UniqueId>96171829-5906-4b14-9a4c-6140109a0596</UniqueId>
     <Map>Felucca</Map>
     <X>5238</X>
@@ -11395,7 +11223,7 @@
     <Objects2>Lich:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>222 Cat</Name>
+    <Name>247 Cat</Name>
     <UniqueId>96333e86-3c71-4be4-9a03-ee186894f8b4</UniqueId>
     <Map>Felucca</Map>
     <X>1333</X>
@@ -11438,7 +11266,7 @@
     <Objects2>Cat:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>176 WanderingHealer</Name>
+    <Name>246 WanderingHealer</Name>
     <UniqueId>977065fa-254b-4c3c-9071-485c4dd51cfb</UniqueId>
     <Map>Felucca</Map>
     <X>4336</X>
@@ -11481,7 +11309,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>175 AncientLich</Name>
+    <Name>245 AncientLich</Name>
     <UniqueId>977443aa-2f2c-44e0-8170-db77cc1755ac</UniqueId>
     <Map>Felucca</Map>
     <X>5234</X>
@@ -11524,7 +11352,7 @@
     <Objects2>AncientLich:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>312 Teleporter</Name>
+    <Name>298 Teleporter</Name>
     <UniqueId>979a9781-4d5d-489b-b950-e1dbd6433eab</UniqueId>
     <Map>Felucca</Map>
     <X>5233</X>
@@ -11567,7 +11395,7 @@
     <Objects2>Teleporter:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>380 Ettin</Name>
+    <Name>299 Ettin</Name>
     <UniqueId>9828ece2-74f8-43e2-aee1-96f4307bc1c6</UniqueId>
     <Map>Felucca</Map>
     <X>1745</X>
@@ -11610,7 +11438,7 @@
     <Objects2>Ettin:MX=30:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>140 Llama</Name>
+    <Name>297 Llama</Name>
     <UniqueId>98fe0d58-9066-4e41-9d31-bb1cacf0f9eb</UniqueId>
     <Map>Felucca</Map>
     <X>5258</X>
@@ -11653,50 +11481,7 @@
     <Objects2>Llama:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>14 Skeleton</Name>
-    <UniqueId>990ed026-b789-4e76-925a-addcd8a96447</UniqueId>
-    <Map>Felucca</Map>
-    <X>4549</X>
-    <Y>1315</Y>
-    <Width>0</Width>
-    <Height>0</Height>
-    <CentreX>4549</CentreX>
-    <CentreY>1315</CentreY>
-    <CentreZ>8</CentreZ>
-    <Range>30</Range>
-    <MaxCount>3</MaxCount>
-    <MinDelay>30</MinDelay>
-    <MaxDelay>60</MaxDelay>
-    <DelayInSec>False</DelayInSec>
-    <Duration>0</Duration>
-    <DespawnTime>0</DespawnTime>
-    <ProximityRange>-1</ProximityRange>
-    <ProximityTriggerSound>500</ProximityTriggerSound>
-    <TriggerProbability>1</TriggerProbability>
-    <InContainer>False</InContainer>
-    <MinRefractory>0</MinRefractory>
-    <MaxRefractory>0</MaxRefractory>
-    <TODStart>0</TODStart>
-    <TODEnd>0</TODEnd>
-    <TODMode>0</TODMode>
-    <KillReset>1</KillReset>
-    <ExternalTriggering>False</ExternalTriggering>
-    <SequentialSpawning>-1</SequentialSpawning>
-    <AllowGhostTriggering>False</AllowGhostTriggering>
-    <AllowNPCTriggering>False</AllowNPCTriggering>
-    <SpawnOnTrigger>False</SpawnOnTrigger>
-    <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
-    <TickReset>False</TickReset>
-    <Team>0</Team>
-    <Amount>1</Amount>
-    <IsGroup>False</IsGroup>
-    <IsRunning>True</IsRunning>
-    <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Skeleton:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
-  </Points>
-  <Points>
-    <Name>379 Spectre</Name>
+    <Name>296 Spectre</Name>
     <UniqueId>99581ebb-5c8a-4aaf-8053-c1faa3fc6c96</UniqueId>
     <Map>Felucca</Map>
     <X>2127</X>
@@ -11739,7 +11524,7 @@
     <Objects2>Spectre:MX=30:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>82 Healer</Name>
+    <Name>295 Healer</Name>
     <UniqueId>99692fee-d9d2-4efd-94fe-5963d125b729</UniqueId>
     <Map>Felucca</Map>
     <X>5250</X>
@@ -11782,7 +11567,7 @@
     <Objects2>Healer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>22 ElderGazer</Name>
+    <Name>294 ElderGazer</Name>
     <UniqueId>9a2c01e2-ce6b-4a34-94dd-378cdb46feda</UniqueId>
     <Map>Felucca</Map>
     <X>5364</X>
@@ -11825,7 +11610,7 @@
     <Objects2>ElderGazer:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>170 Lizardman</Name>
+    <Name>293 Lizardman</Name>
     <UniqueId>9b5a6e77-7a84-4580-950d-466f6d99d930</UniqueId>
     <Map>Felucca</Map>
     <X>1941</X>
@@ -11868,7 +11653,7 @@
     <Objects2>Lizardman:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>61 OphidianArchmage</Name>
+    <Name>292 OphidianArchmage</Name>
     <UniqueId>9be81c1c-30ab-4fd7-bf96-abd8854ab314</UniqueId>
     <Map>Felucca</Map>
     <X>5441</X>
@@ -11911,7 +11696,7 @@
     <Objects2>OphidianArchmage:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>221 Brigand</Name>
+    <Name>27 Brigand</Name>
     <UniqueId>9da94505-0b45-40ba-b229-86aa852d1632</UniqueId>
     <Map>Felucca</Map>
     <X>6045</X>
@@ -11954,7 +11739,7 @@
     <Objects2>Brigand:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>104 Bird</Name>
+    <Name>98 Bird</Name>
     <UniqueId>9db5e247-40f6-4ae1-abfd-cd71ffb1d951</UniqueId>
     <Map>Felucca</Map>
     <X>5155</X>
@@ -11997,7 +11782,7 @@
     <Objects2>Bird:MX=30:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>220 MetalChest</Name>
+    <Name>90 MetalChest</Name>
     <UniqueId>9dcd2949-c47e-480f-8440-580105565319</UniqueId>
     <Map>Felucca</Map>
     <X>5251</X>
@@ -12040,7 +11825,7 @@
     <Objects2>MetalChest:MX=100:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>123 OphidianMatriarch</Name>
+    <Name>103 OphidianMatriarch</Name>
     <UniqueId>9f71d806-8ba3-48a5-9d3c-58966784b42c</UniqueId>
     <Map>Felucca</Map>
     <X>5462</X>
@@ -12083,7 +11868,7 @@
     <Objects2>OphidianMatriarch:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 Cougar</Name>
+    <Name>215 Cougar</Name>
     <UniqueId>a13f9985-c542-4620-86ed-8c6da868adbe</UniqueId>
     <Map>Felucca</Map>
     <X>3138</X>
@@ -12126,7 +11911,7 @@
     <Objects2>Cougar:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>94 RuneBeetle</Name>
+    <Name>213 RuneBeetle</Name>
     <UniqueId>a1ee14a4-8279-476f-8036-28721716a217</UniqueId>
     <Map>Felucca</Map>
     <X>5774</X>
@@ -12169,50 +11954,7 @@
     <Objects2>RuneBeetle:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>131 Skeleton</Name>
-    <UniqueId>a20698fb-5d6c-4df3-8568-e39290eafada</UniqueId>
-    <Map>Felucca</Map>
-    <X>2428</X>
-    <Y>1100</Y>
-    <Width>6</Width>
-    <Height>6</Height>
-    <CentreX>2431</CentreX>
-    <CentreY>1103</CentreY>
-    <CentreZ>8</CentreZ>
-    <Range>5</Range>
-    <MaxCount>5</MaxCount>
-    <MinDelay>5</MinDelay>
-    <MaxDelay>10</MaxDelay>
-    <DelayInSec>False</DelayInSec>
-    <Duration>0</Duration>
-    <DespawnTime>0</DespawnTime>
-    <ProximityRange>-1</ProximityRange>
-    <ProximityTriggerSound>500</ProximityTriggerSound>
-    <TriggerProbability>1</TriggerProbability>
-    <InContainer>False</InContainer>
-    <MinRefractory>0</MinRefractory>
-    <MaxRefractory>0</MaxRefractory>
-    <TODStart>0</TODStart>
-    <TODEnd>0</TODEnd>
-    <TODMode>0</TODMode>
-    <KillReset>1</KillReset>
-    <ExternalTriggering>False</ExternalTriggering>
-    <SequentialSpawning>-1</SequentialSpawning>
-    <AllowGhostTriggering>False</AllowGhostTriggering>
-    <AllowNPCTriggering>False</AllowNPCTriggering>
-    <SpawnOnTrigger>False</SpawnOnTrigger>
-    <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
-    <TickReset>False</TickReset>
-    <Team>0</Team>
-    <Amount>1</Amount>
-    <IsGroup>False</IsGroup>
-    <IsRunning>True</IsRunning>
-    <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Skeleton:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
-  </Points>
-  <Points>
-    <Name>120 Sheep</Name>
+    <Name>214 Sheep</Name>
     <UniqueId>a3e1fbc8-1ede-4fb6-a298-2e4625893071</UniqueId>
     <Map>Felucca</Map>
     <X>922</X>
@@ -12255,7 +11997,7 @@
     <Objects2>Sheep:MX=55:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>378 StonePaversDark</Name>
+    <Name>216 StonePaversDark</Name>
     <UniqueId>a40afd85-fe02-4a79-8f00-9bf8955424c6</UniqueId>
     <Map>Felucca</Map>
     <X>5416</X>
@@ -12298,7 +12040,7 @@
     <Objects2>StonePaversDark:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>43 Imp</Name>
+    <Name>60 Imp</Name>
     <UniqueId>a4aecf99-50af-485b-ac5e-eeb42ec10e1f</UniqueId>
     <Map>Felucca</Map>
     <X>5669</X>
@@ -12341,7 +12083,7 @@
     <Objects2>Imp:MX=8:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>218 AnimalTrainer</Name>
+    <Name>4 AnimalTrainer</Name>
     <UniqueId>a5128686-92ad-40af-a0c6-1eecb1b5d94e</UniqueId>
     <Map>Felucca</Map>
     <X>5217</X>
@@ -12384,7 +12126,7 @@
     <Objects2>AnimalTrainer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>217 Scorpion</Name>
+    <Name>221 Scorpion</Name>
     <UniqueId>a56b0cdf-ae15-4ea4-a887-b6436a040b08</UniqueId>
     <Map>Felucca</Map>
     <X>5564</X>
@@ -12427,7 +12169,7 @@
     <Objects2>Scorpion:MX=11:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>188 AncientLich</Name>
+    <Name>219 AncientLich</Name>
     <UniqueId>a63faac8-3ab6-437f-b7d0-73bf9fa8c4b6</UniqueId>
     <Map>Felucca</Map>
     <X>5200</X>
@@ -12470,7 +12212,7 @@
     <Objects2>AncientLich:MX=8:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>444 EvilWanderingHealer</Name>
+    <Name>220 EvilWanderingHealer</Name>
     <UniqueId>a6a59b42-3533-4bae-b1df-95afd1195878</UniqueId>
     <Map>Felucca</Map>
     <X>2630</X>
@@ -12513,7 +12255,7 @@
     <Objects2>EvilWanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>439 Lizardman</Name>
+    <Name>218 Lizardman</Name>
     <UniqueId>a6b7a2ab-9832-4a7d-ab6e-f0a1cef12c31</UniqueId>
     <Map>Felucca</Map>
     <X>3414</X>
@@ -12556,7 +12298,7 @@
     <Objects2>Lizardman:MX=14:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>440 LavaLizard</Name>
+    <Name>240 LavaLizard</Name>
     <UniqueId>a71913c1-9325-480f-a737-c9b34fb30435</UniqueId>
     <Map>Felucca</Map>
     <X>2062</X>
@@ -12599,7 +12341,7 @@
     <Objects2>LavaLizard:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>377 Horse</Name>
+    <Name>241 Horse</Name>
     <UniqueId>a75b5626-eb19-4a5c-9dd0-4309722470b4</UniqueId>
     <Map>Felucca</Map>
     <X>2289</X>
@@ -12642,7 +12384,7 @@
     <Objects2>Horse:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>254 OrcishMage</Name>
+    <Name>275 OrcishMage</Name>
     <UniqueId>a78d1dda-8dd4-4fa6-b15f-c658eea262df</UniqueId>
     <Map>Felucca</Map>
     <X>623</X>
@@ -12685,7 +12427,7 @@
     <Objects2>OrcishMage:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>93 PolarBear</Name>
+    <Name>276 PolarBear</Name>
     <UniqueId>a8f63a7e-d765-493a-a053-0bd7e7ef36e3</UniqueId>
     <Map>Felucca</Map>
     <X>5461</X>
@@ -12728,7 +12470,7 @@
     <Objects2>PolarBear:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 IceSnake</Name>
+    <Name>70 IceSnake</Name>
     <UniqueId>a902a113-9c16-4b0c-af47-a2a52778040b</UniqueId>
     <Map>Felucca</Map>
     <X>5143</X>
@@ -12771,7 +12513,7 @@
     <Objects2>IceSnake:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>376 GreatHart</Name>
+    <Name>402 GreatHart</Name>
     <UniqueId>aa14e132-1b57-4f55-be38-ca30b43b8b58</UniqueId>
     <Map>Felucca</Map>
     <X>5959</X>
@@ -12814,7 +12556,7 @@
     <Objects2>GreatHart:MX=21:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>122 Cougar</Name>
+    <Name>97 Cougar</Name>
     <UniqueId>aa5823ee-1fee-4d13-b6aa-7e65874021c7</UniqueId>
     <Map>Felucca</Map>
     <X>3147</X>
@@ -12857,7 +12599,7 @@
     <Objects2>Cougar:MX=8:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>115 Healer</Name>
+    <Name>159 Healer</Name>
     <UniqueId>aac0b461-a865-40d0-af27-46a15d145cbb</UniqueId>
     <Map>Felucca</Map>
     <X>3341</X>
@@ -12900,7 +12642,7 @@
     <Objects2>Healer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>169 ChaosGuard</Name>
+    <Name>158 ChaosGuard</Name>
     <UniqueId>aafeff86-62eb-4abb-a117-51590ce1fdc7</UniqueId>
     <Map>Felucca</Map>
     <X>2003</X>
@@ -12943,7 +12685,7 @@
     <Objects2>ChaosGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>90 Hind</Name>
+    <Name>150 Hind</Name>
     <UniqueId>acac4442-eabc-478f-a65e-3a8079e1733a</UniqueId>
     <Map>Felucca</Map>
     <X>3662</X>
@@ -12986,7 +12728,7 @@
     <Objects2>Hind:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>55 Wyvern</Name>
+    <Name>149 Wyvern</Name>
     <UniqueId>af3f5a36-a6fe-4dd5-9676-7dae28c1fe61</UniqueId>
     <Map>Felucca</Map>
     <X>5668</X>
@@ -13029,7 +12771,7 @@
     <Objects2>Wyvern:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>20 Healer</Name>
+    <Name>151 Healer</Name>
     <UniqueId>b0ae958d-df0e-48b8-aab9-65e912178aa2</UniqueId>
     <Map>Felucca</Map>
     <X>2787</X>
@@ -13072,7 +12814,7 @@
     <Objects2>Healer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>375 Zombie</Name>
+    <Name>152 Zombie</Name>
     <UniqueId>b190314e-c7cf-4b22-916a-8fd7ab4e9721</UniqueId>
     <Map>Felucca</Map>
     <X>776</X>
@@ -13115,7 +12857,7 @@
     <Objects2>Zombie:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>182 Chicken</Name>
+    <Name>148 Chicken</Name>
     <UniqueId>b22d6205-a50b-4d09-8467-9a1e501eb32a</UniqueId>
     <Map>Felucca</Map>
     <X>3344</X>
@@ -13158,7 +12900,7 @@
     <Objects2>Chicken:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>374 Dolphin</Name>
+    <Name>96 Dolphin</Name>
     <UniqueId>b243bb76-584f-4aeb-8939-eb20fdb78158</UniqueId>
     <Map>Felucca</Map>
     <X>1985</X>
@@ -13201,7 +12943,7 @@
     <Objects2>Dolphin:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>9 WanderingHealer</Name>
+    <Name>279 WanderingHealer</Name>
     <UniqueId>b28e7f62-c7e9-4bd1-a24b-a8b53973cc4e</UniqueId>
     <Map>Felucca</Map>
     <X>2796</X>
@@ -13244,7 +12986,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>226 WanderingHealer</Name>
+    <Name>278 WanderingHealer</Name>
     <UniqueId>b2955178-002f-4a2c-bbac-0a048a1a1d6c</UniqueId>
     <Map>Felucca</Map>
     <X>3546</X>
@@ -13287,7 +13029,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>137 WanderingHealer</Name>
+    <Name>280 WanderingHealer</Name>
     <UniqueId>b2ed3db5-586f-4d46-bfff-1b9ce62f8c11</UniqueId>
     <Map>Felucca</Map>
     <X>3292</X>
@@ -13330,7 +13072,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>373 Cook</Name>
+    <Name>401 Cook</Name>
     <UniqueId>b31ef2db-30cb-44cc-ade0-3085cca52a0b</UniqueId>
     <Map>Felucca</Map>
     <X>1995</X>
@@ -13373,7 +13115,7 @@
     <Objects2>Cook:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>216 SnowElemental</Name>
+    <Name>400 SnowElemental</Name>
     <UniqueId>b362891e-d8da-48e4-b0a3-1fc62a4e94ba</UniqueId>
     <Map>Felucca</Map>
     <X>5461</X>
@@ -13416,7 +13158,7 @@
     <Objects2>SnowElemental:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>247 Lich</Name>
+    <Name>164 Lich</Name>
     <UniqueId>b38c30b5-869b-4694-b0cf-75da6732268c</UniqueId>
     <Map>Felucca</Map>
     <X>1986</X>
@@ -13459,7 +13201,7 @@
     <Objects2>Lich:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>372 Succubus</Name>
+    <Name>165 Succubus</Name>
     <UniqueId>b3ff6cc5-57fd-4158-8e7b-c87549043656</UniqueId>
     <Map>Felucca</Map>
     <X>6057</X>
@@ -13502,7 +13244,7 @@
     <Objects2>Succubus:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>445 OrcishMage</Name>
+    <Name>438 OrcishMage</Name>
     <UniqueId>b4489e71-75c1-4d58-9acd-e4737afb5db3</UniqueId>
     <Map>Felucca</Map>
     <X>2425</X>
@@ -13545,7 +13287,7 @@
     <Objects2>OrcishMage:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>446 Wyvern</Name>
+    <Name>396 Wyvern</Name>
     <UniqueId>b53cba0c-7fc9-4853-aca7-9a1dfbf7fcc8</UniqueId>
     <Map>Felucca</Map>
     <X>5456</X>
@@ -13588,7 +13330,7 @@
     <Objects2>Wyvern:MX=20:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>84 Ogre</Name>
+    <Name>395 Ogre</Name>
     <UniqueId>b689c684-9033-4967-9413-6002b140d4f9</UniqueId>
     <Map>Felucca</Map>
     <X>5769</X>
@@ -13631,7 +13373,7 @@
     <Objects2>Ogre:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>106 Healer</Name>
+    <Name>277 Healer</Name>
     <UniqueId>b754b3ff-2788-471c-b27b-636752ffd7b7</UniqueId>
     <Map>Felucca</Map>
     <X>979</X>
@@ -13674,7 +13416,7 @@
     <Objects2>Healer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>83 Daemon</Name>
+    <Name>72 Daemon</Name>
     <UniqueId>b7b93615-2023-4b83-9085-62cad5aaf23d</UniqueId>
     <Map>Felucca</Map>
     <X>1219</X>
@@ -13717,7 +13459,7 @@
     <Objects2>Daemon:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>60 TimberWolf</Name>
+    <Name>437 TimberWolf</Name>
     <UniqueId>b7b93a5d-2a55-424d-af99-31f7bcac2aac</UniqueId>
     <Map>Felucca</Map>
     <X>5319</X>
@@ -13760,7 +13502,7 @@
     <Objects2>TimberWolf:MX=31:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>197 OphidianWarrior</Name>
+    <Name>259 OphidianWarrior</Name>
     <UniqueId>b80e4b69-5060-48aa-9d25-482f575a07d4</UniqueId>
     <Map>Felucca</Map>
     <X>5403</X>
@@ -13803,7 +13545,7 @@
     <Objects2>OphidianWarrior:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>28 Skeleton</Name>
+    <Name>260 Skeleton</Name>
     <UniqueId>b890a6cc-f879-4eef-b26c-307a08e3b63d</UniqueId>
     <Map>Felucca</Map>
     <X>1973</X>
@@ -13846,7 +13588,7 @@
     <Objects2>Skeleton:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>371 Cougar</Name>
+    <Name>436 Cougar</Name>
     <UniqueId>b9018776-449e-4299-84db-d6c16e5c405f</UniqueId>
     <Map>Felucca</Map>
     <X>3143</X>
@@ -13889,7 +13631,7 @@
     <Objects2>Cougar:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>33 Drake</Name>
+    <Name>394 Drake</Name>
     <UniqueId>b9937ac6-20f5-4f05-9c0d-96e60adfe7fd</UniqueId>
     <Map>Felucca</Map>
     <X>4565</X>
@@ -13932,7 +13674,7 @@
     <Objects2>Drake:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>370 WanderingHealer</Name>
+    <Name>261 WanderingHealer</Name>
     <UniqueId>babcf4b7-627e-4093-82be-b3089fc46e73</UniqueId>
     <Map>Felucca</Map>
     <X>1894</X>
@@ -13975,7 +13717,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>286 Daemon</Name>
+    <Name>107 Daemon</Name>
     <UniqueId>bb067e7a-2903-4956-8d60-57a887a5340e</UniqueId>
     <Map>Felucca</Map>
     <X>1144</X>
@@ -14018,7 +13760,7 @@
     <Objects2>Daemon:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>287 OrcCaptain</Name>
+    <Name>106 OrcCaptain</Name>
     <UniqueId>bb281294-9fb6-4296-b6ff-c7fc73697a65</UniqueId>
     <Map>Felucca</Map>
     <X>1229</X>
@@ -14061,7 +13803,7 @@
     <Objects2>OrcCaptain:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>42 Healer</Name>
+    <Name>101 Healer</Name>
     <UniqueId>bb3ecab3-5bd0-477d-9071-6da127bb3f9d</UniqueId>
     <Map>Felucca</Map>
     <X>1963</X>
@@ -14104,7 +13846,7 @@
     <Objects2>Healer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>15 Mummy</Name>
+    <Name>89 Mummy</Name>
     <UniqueId>bb734a27-140c-4460-b2ca-ec477d27a25d</UniqueId>
     <Map>Felucca</Map>
     <X>1002</X>
@@ -14147,7 +13889,7 @@
     <Objects2>Mummy:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>369 Brigand</Name>
+    <Name>100 Brigand</Name>
     <UniqueId>bbd2e7a7-f0af-48db-8879-34c272c2af70</UniqueId>
     <Map>Felucca</Map>
     <X>6054</X>
@@ -14190,7 +13932,7 @@
     <Objects2>Brigand:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>211 Healer</Name>
+    <Name>71 Healer</Name>
     <UniqueId>bbfac7af-b8e0-487d-9077-e3d91098b72f</UniqueId>
     <Map>Felucca</Map>
     <X>4190</X>
@@ -14233,50 +13975,7 @@
     <Objects2>Healer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>85 Zombie</Name>
-    <UniqueId>bcc3a461-9d7a-4872-87e3-36f7f9974a65</UniqueId>
-    <Map>Felucca</Map>
-    <X>2427</X>
-    <Y>1106</Y>
-    <Width>6</Width>
-    <Height>6</Height>
-    <CentreX>2430</CentreX>
-    <CentreY>1109</CentreY>
-    <CentreZ>8</CentreZ>
-    <Range>8</Range>
-    <MaxCount>4</MaxCount>
-    <MinDelay>5</MinDelay>
-    <MaxDelay>10</MaxDelay>
-    <DelayInSec>False</DelayInSec>
-    <Duration>0</Duration>
-    <DespawnTime>0</DespawnTime>
-    <ProximityRange>-1</ProximityRange>
-    <ProximityTriggerSound>500</ProximityTriggerSound>
-    <TriggerProbability>1</TriggerProbability>
-    <InContainer>False</InContainer>
-    <MinRefractory>0</MinRefractory>
-    <MaxRefractory>0</MaxRefractory>
-    <TODStart>0</TODStart>
-    <TODEnd>0</TODEnd>
-    <TODMode>0</TODMode>
-    <KillReset>1</KillReset>
-    <ExternalTriggering>False</ExternalTriggering>
-    <SequentialSpawning>-1</SequentialSpawning>
-    <AllowGhostTriggering>False</AllowGhostTriggering>
-    <AllowNPCTriggering>False</AllowNPCTriggering>
-    <SpawnOnTrigger>False</SpawnOnTrigger>
-    <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
-    <TickReset>False</TickReset>
-    <Team>0</Team>
-    <Amount>1</Amount>
-    <IsGroup>False</IsGroup>
-    <IsRunning>True</IsRunning>
-    <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Zombie:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
-  </Points>
-  <Points>
-    <Name>139 WanderingHealer</Name>
+    <Name>393 WanderingHealer</Name>
     <UniqueId>bcc801a3-2a13-4f49-93b9-0046362415f1</UniqueId>
     <Map>Felucca</Map>
     <X>5724</X>
@@ -14319,7 +14018,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>367 Teleporter</Name>
+    <Name>138 Teleporter</Name>
     <UniqueId>bd6004e8-6ff1-43fb-9468-4aa7298568f6</UniqueId>
     <Map>Felucca</Map>
     <X>5232</X>
@@ -14362,7 +14061,7 @@
     <Objects2>Teleporter:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>147 AncientLich</Name>
+    <Name>392 AncientLich</Name>
     <UniqueId>bded25f3-8c76-4191-a130-09a140570d09</UniqueId>
     <Map>Felucca</Map>
     <X>978</X>
@@ -14405,7 +14104,7 @@
     <Objects2>AncientLich:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>146 InnKeeper</Name>
+    <Name>120 InnKeeper</Name>
     <UniqueId>be6dfbd3-9d06-4f9f-9ed2-a8a34180f6db</UniqueId>
     <Map>Felucca</Map>
     <X>1230</X>
@@ -14448,7 +14147,7 @@
     <Objects2>InnKeeper:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>38 Kraken</Name>
+    <Name>137 Kraken</Name>
     <UniqueId>bf606d61-deec-4c6b-b974-b03fd0efc01a</UniqueId>
     <Map>Felucca</Map>
     <X>4832</X>
@@ -14491,7 +14190,7 @@
     <Objects2>Kraken:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>199 Lich</Name>
+    <Name>435 Lich</Name>
     <UniqueId>bf619bbc-4c6e-475d-853d-a1ff949c69e4</UniqueId>
     <Map>Felucca</Map>
     <X>5232</X>
@@ -14534,7 +14233,7 @@
     <Objects2>Lich:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>215 IceSerpent</Name>
+    <Name>336 IceSerpent</Name>
     <UniqueId>bfb61b54-5721-4fcc-ac30-a99ca7a1ee9b</UniqueId>
     <Map>Felucca</Map>
     <X>5774</X>
@@ -14577,7 +14276,7 @@
     <Objects2>IceSerpent:MX=21:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>124 OrcishLord</Name>
+    <Name>334 OrcishLord</Name>
     <UniqueId>c0ceffc6-a573-4ac3-974e-54107c90711f</UniqueId>
     <Map>Felucca</Map>
     <X>5779</X>
@@ -14620,7 +14319,7 @@
     <Objects2>OrcishLord:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>138 OrcishMage</Name>
+    <Name>434 OrcishMage</Name>
     <UniqueId>c0cf4825-43e0-4881-b4b3-03f562c9877c</UniqueId>
     <Map>Felucca</Map>
     <X>634</X>
@@ -14663,7 +14362,7 @@
     <Objects2>OrcishMage:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>366 StonePaversDark</Name>
+    <Name>335 StonePaversDark</Name>
     <UniqueId>c0d537a8-e567-4fe9-a71f-b505ad9bd23d</UniqueId>
     <Map>Felucca</Map>
     <X>5418</X>
@@ -14706,7 +14405,7 @@
     <Objects2>StonePaversDark:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>157 Skeleton</Name>
+    <Name>362 Skeleton</Name>
     <UniqueId>c1b36f90-63a1-4895-b894-cfb892556381</UniqueId>
     <Map>Felucca</Map>
     <X>3601</X>
@@ -14749,7 +14448,7 @@
     <Objects2>Skeleton:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>40 Succubus</Name>
+    <Name>433 Succubus</Name>
     <UniqueId>c1fe4e42-52d4-46d2-9c23-a3da9bda22de</UniqueId>
     <Map>Felucca</Map>
     <X>852</X>
@@ -14792,7 +14491,7 @@
     <Objects2>Succubus:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>53 Skeleton</Name>
+    <Name>360 Skeleton</Name>
     <UniqueId>c2a70116-95c6-4730-a5ad-90947bfdcd81</UniqueId>
     <Map>Felucca</Map>
     <X>5182</X>
@@ -14835,7 +14534,7 @@
     <Objects2>Skeleton:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>95 EvilWanderingHealer</Name>
+    <Name>361 EvilWanderingHealer</Name>
     <UniqueId>c4294597-f357-42de-a58c-afffc41cd958</UniqueId>
     <Map>Felucca</Map>
     <X>2735</X>
@@ -14878,7 +14577,7 @@
     <Objects2>EvilWanderingHealer:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>209 OrcishLord</Name>
+    <Name>432 OrcishLord</Name>
     <UniqueId>c5385618-e2cf-44b5-b2c4-655bce866fc3</UniqueId>
     <Map>Felucca</Map>
     <X>5200</X>
@@ -14921,7 +14620,7 @@
     <Objects2>OrcishLord:MX=37:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>208 Chicken</Name>
+    <Name>405 Chicken</Name>
     <UniqueId>c5c083cd-9481-4442-87b9-2fbac7f9b6b3</UniqueId>
     <Map>Felucca</Map>
     <X>1136</X>
@@ -14964,50 +14663,7 @@
     <Objects2>Chicken:MX=18:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>156 Wraith</Name>
-    <UniqueId>c6511ae9-ad6a-432f-9a4b-359a327f2949</UniqueId>
-    <Map>Felucca</Map>
-    <X>4535</X>
-    <Y>1307</Y>
-    <Width>20</Width>
-    <Height>20</Height>
-    <CentreX>4545</CentreX>
-    <CentreY>1317</CentreY>
-    <CentreZ>8</CentreZ>
-    <Range>20</Range>
-    <MaxCount>7</MaxCount>
-    <MinDelay>12</MinDelay>
-    <MaxDelay>18</MaxDelay>
-    <DelayInSec>False</DelayInSec>
-    <Duration>0</Duration>
-    <DespawnTime>0</DespawnTime>
-    <ProximityRange>-1</ProximityRange>
-    <ProximityTriggerSound>500</ProximityTriggerSound>
-    <TriggerProbability>1</TriggerProbability>
-    <InContainer>False</InContainer>
-    <MinRefractory>0</MinRefractory>
-    <MaxRefractory>0</MaxRefractory>
-    <TODStart>0</TODStart>
-    <TODEnd>0</TODEnd>
-    <TODMode>0</TODMode>
-    <KillReset>1</KillReset>
-    <ExternalTriggering>False</ExternalTriggering>
-    <SequentialSpawning>-1</SequentialSpawning>
-    <AllowGhostTriggering>False</AllowGhostTriggering>
-    <AllowNPCTriggering>False</AllowNPCTriggering>
-    <SpawnOnTrigger>False</SpawnOnTrigger>
-    <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
-    <TickReset>False</TickReset>
-    <Team>0</Team>
-    <Amount>1</Amount>
-    <IsGroup>False</IsGroup>
-    <IsRunning>True</IsRunning>
-    <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Wraith:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
-  </Points>
-  <Points>
-    <Name>365 FarmableCotton</Name>
+    <Name>403 FarmableCotton</Name>
     <UniqueId>c659008d-7d55-42fe-8212-3225ce1d35e1</UniqueId>
     <Map>Felucca</Map>
     <X>4626</X>
@@ -15050,7 +14706,7 @@
     <Objects2>FarmableCotton:MX=12:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>59 LichLord</Name>
+    <Name>431 LichLord</Name>
     <UniqueId>c6793b0e-b3b6-4401-b87c-a681d4a9b4f8</UniqueId>
     <Map>Felucca</Map>
     <X>1971</X>
@@ -15093,7 +14749,7 @@
     <Objects2>LichLord:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>136 OrcCaptain</Name>
+    <Name>404 OrcCaptain</Name>
     <UniqueId>c6edd47b-6f12-464a-bfe7-622b003a34e9</UniqueId>
     <Map>Felucca</Map>
     <X>1734</X>
@@ -15136,7 +14792,7 @@
     <Objects2>OrcCaptain:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>364 GiantSerpent</Name>
+    <Name>317 GiantSerpent</Name>
     <UniqueId>c7477769-be0d-4526-b449-2ec630a496e2</UniqueId>
     <Map>Felucca</Map>
     <X>5662</X>
@@ -15179,7 +14835,7 @@
     <Objects2>GiantSerpent:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>21 Teleporter</Name>
+    <Name>430 Teleporter</Name>
     <UniqueId>c76a7c22-6d36-4d49-8fbc-e111b01caab9</UniqueId>
     <Map>Felucca</Map>
     <X>5235</X>
@@ -15222,7 +14878,7 @@
     <Objects2>Teleporter:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>36 Alchemist</Name>
+    <Name>315 Alchemist</Name>
     <UniqueId>c801a877-3425-43e3-8122-86696d28cba5</UniqueId>
     <Map>Felucca</Map>
     <X>2003</X>
@@ -15265,7 +14921,7 @@
     <Objects2>Alchemist:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>344 HellSteed</Name>
+    <Name>316 HellSteed</Name>
     <UniqueId>c81c37ce-0e04-472a-89c5-376e0d074ffa</UniqueId>
     <Map>Felucca</Map>
     <X>2133</X>
@@ -15308,7 +14964,7 @@
     <Objects2>HellSteed:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>103 AncientLich</Name>
+    <Name>429 AncientLich</Name>
     <UniqueId>c85a1a66-6052-4638-a6bf-03783f829105</UniqueId>
     <Map>Felucca</Map>
     <X>5226</X>
@@ -15351,7 +15007,7 @@
     <Objects2>AncientLich:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>363 Skeleton</Name>
+    <Name>28 Skeleton</Name>
     <UniqueId>c89e5330-6db0-474e-bff4-7a12e10b71ef</UniqueId>
     <Map>Felucca</Map>
     <X>3601</X>
@@ -15394,7 +15050,7 @@
     <Objects2>Skeleton:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>285 Troll</Name>
+    <Name>144 Troll</Name>
     <UniqueId>c8e2846e-aaa5-4d5a-96a3-64a7e1c02255</UniqueId>
     <Map>Felucca</Map>
     <X>5466</X>
@@ -15437,7 +15093,7 @@
     <Objects2>Troll:MX=29:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>362 OrderGuard</Name>
+    <Name>428 OrderGuard</Name>
     <UniqueId>c9d29f47-df8d-4e12-99b8-59166e1fbb51</UniqueId>
     <Map>Felucca</Map>
     <X>1687</X>
@@ -15480,7 +15136,7 @@
     <Objects2>OrderGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>311 StonePaversDark</Name>
+    <Name>155 StonePaversDark</Name>
     <UniqueId>c9d94ec4-e551-4eca-9f72-4e5eacc6a5e3</UniqueId>
     <Map>Felucca</Map>
     <X>5422</X>
@@ -15523,7 +15179,7 @@
     <Objects2>StonePaversDark:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>361 WanderingHealer</Name>
+    <Name>73 WanderingHealer</Name>
     <UniqueId>ca211f5a-5d56-420b-aa2f-e73b0e36492c</UniqueId>
     <Map>Felucca</Map>
     <X>1634</X>
@@ -15566,7 +15222,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>298 SnowElemental</Name>
+    <Name>427 SnowElemental</Name>
     <UniqueId>ca535be4-1040-4c24-83de-53fdc190e367</UniqueId>
     <Map>Felucca</Map>
     <X>5143</X>
@@ -15609,7 +15265,7 @@
     <Objects2>SnowElemental:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>207 OrcishMage</Name>
+    <Name>131 OrcishMage</Name>
     <UniqueId>ca74832e-88dd-4dea-b3e1-ab61b6d38f4c</UniqueId>
     <Map>Felucca</Map>
     <X>624</X>
@@ -15652,7 +15308,7 @@
     <Objects2>OrcishMage:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>185 StoneHarpy</Name>
+    <Name>353 StoneHarpy</Name>
     <UniqueId>cae125b5-4532-4fbd-950b-72b5810bfda5</UniqueId>
     <Map>Felucca</Map>
     <X>996</X>
@@ -15695,7 +15351,7 @@
     <Objects2>StoneHarpy:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>184 Peach</Name>
+    <Name>426 Peach</Name>
     <UniqueId>cb729504-2262-4582-a95a-c7b04fb1423f</UniqueId>
     <Map>Felucca</Map>
     <X>2095</X>
@@ -15738,7 +15394,7 @@
     <Objects2>Peach:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>206 Cat</Name>
+    <Name>75 Cat</Name>
     <UniqueId>cb804bbc-a0d4-4529-a6b3-2e5cac0e8cd8</UniqueId>
     <Map>Felucca</Map>
     <X>2503</X>
@@ -15781,50 +15437,7 @@
     <Objects2>Cat:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>11 Spectre</Name>
-    <UniqueId>cc3e5309-f601-46ac-b80a-67a3db12159d</UniqueId>
-    <Map>Felucca</Map>
-    <X>2441</X>
-    <Y>1106</Y>
-    <Width>6</Width>
-    <Height>6</Height>
-    <CentreX>2444</CentreX>
-    <CentreY>1109</CentreY>
-    <CentreZ>8</CentreZ>
-    <Range>5</Range>
-    <MaxCount>6</MaxCount>
-    <MinDelay>5</MinDelay>
-    <MaxDelay>10</MaxDelay>
-    <DelayInSec>False</DelayInSec>
-    <Duration>0</Duration>
-    <DespawnTime>0</DespawnTime>
-    <ProximityRange>-1</ProximityRange>
-    <ProximityTriggerSound>500</ProximityTriggerSound>
-    <TriggerProbability>1</TriggerProbability>
-    <InContainer>False</InContainer>
-    <MinRefractory>0</MinRefractory>
-    <MaxRefractory>0</MaxRefractory>
-    <TODStart>0</TODStart>
-    <TODEnd>0</TODEnd>
-    <TODMode>0</TODMode>
-    <KillReset>1</KillReset>
-    <ExternalTriggering>False</ExternalTriggering>
-    <SequentialSpawning>-1</SequentialSpawning>
-    <AllowGhostTriggering>False</AllowGhostTriggering>
-    <AllowNPCTriggering>False</AllowNPCTriggering>
-    <SpawnOnTrigger>False</SpawnOnTrigger>
-    <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
-    <TickReset>False</TickReset>
-    <Team>0</Team>
-    <Amount>1</Amount>
-    <IsGroup>False</IsGroup>
-    <IsRunning>True</IsRunning>
-    <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Spectre:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
-  </Points>
-  <Points>
-    <Name>177 OphidianWarrior</Name>
+    <Name>54 OphidianWarrior</Name>
     <UniqueId>cca9faf8-08a8-4e00-8a67-cc7f2cef5b5c</UniqueId>
     <Map>Felucca</Map>
     <X>5741</X>
@@ -15867,7 +15480,7 @@
     <Objects2>OphidianWarrior:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>268 WanderingHealer</Name>
+    <Name>425 WanderingHealer</Name>
     <UniqueId>ccbd74a5-6d78-4a6f-a34b-b2eff339cf7d</UniqueId>
     <Map>Felucca</Map>
     <X>2418</X>
@@ -15910,7 +15523,7 @@
     <Objects2>WanderingHealer:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>178 OphidianMatriarch</Name>
+    <Name>391 OphidianMatriarch</Name>
     <UniqueId>cd900d38-8009-4fea-b0ba-7b4797e32186</UniqueId>
     <Map>Felucca</Map>
     <X>5403</X>
@@ -15953,7 +15566,7 @@
     <Objects2>OphidianMatriarch:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>360 EvilWanderingHealer</Name>
+    <Name>196 EvilWanderingHealer</Name>
     <UniqueId>cdfae5f4-f7ec-45c9-837a-21fbb4797593</UniqueId>
     <Map>Felucca</Map>
     <X>1404</X>
@@ -15996,7 +15609,7 @@
     <Objects2>EvilWanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>342 WanderingHealer</Name>
+    <Name>34 WanderingHealer</Name>
     <UniqueId>cecbf871-8cf1-4ccd-8540-25583d4db2cb</UniqueId>
     <Map>Felucca</Map>
     <X>2669</X>
@@ -16039,7 +15652,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>359 EvilMageLord</Name>
+    <Name>39 EvilMageLord</Name>
     <UniqueId>cef7ba2a-00ef-4f82-ab24-3e2cb4a9550f</UniqueId>
     <Map>Felucca</Map>
     <X>1968</X>
@@ -16082,7 +15695,7 @@
     <Objects2>EvilMageLord:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>116 PolarBear</Name>
+    <Name>79 PolarBear</Name>
     <UniqueId>cefeb927-a924-4004-8317-3ff6db04e0b8</UniqueId>
     <Map>Felucca</Map>
     <X>1081</X>
@@ -16125,50 +15738,7 @@
     <Objects2>PolarBear:MX=12:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>289 Skeleton</Name>
-    <UniqueId>cf86dad7-4189-4544-a576-264dd4513a2b</UniqueId>
-    <Map>Felucca</Map>
-    <X>721</X>
-    <Y>1117</Y>
-    <Width>4</Width>
-    <Height>4</Height>
-    <CentreX>723</CentreX>
-    <CentreY>1119</CentreY>
-    <CentreZ>0</CentreZ>
-    <Range>15</Range>
-    <MaxCount>3</MaxCount>
-    <MinDelay>30</MinDelay>
-    <MaxDelay>60</MaxDelay>
-    <DelayInSec>False</DelayInSec>
-    <Duration>0</Duration>
-    <DespawnTime>0</DespawnTime>
-    <ProximityRange>-1</ProximityRange>
-    <ProximityTriggerSound>500</ProximityTriggerSound>
-    <TriggerProbability>1</TriggerProbability>
-    <InContainer>False</InContainer>
-    <MinRefractory>0</MinRefractory>
-    <MaxRefractory>0</MaxRefractory>
-    <TODStart>0</TODStart>
-    <TODEnd>0</TODEnd>
-    <TODMode>0</TODMode>
-    <KillReset>1</KillReset>
-    <ExternalTriggering>False</ExternalTriggering>
-    <SequentialSpawning>-1</SequentialSpawning>
-    <AllowGhostTriggering>False</AllowGhostTriggering>
-    <AllowNPCTriggering>False</AllowNPCTriggering>
-    <SpawnOnTrigger>False</SpawnOnTrigger>
-    <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
-    <TickReset>False</TickReset>
-    <Team>0</Team>
-    <Amount>1</Amount>
-    <IsGroup>False</IsGroup>
-    <IsRunning>True</IsRunning>
-    <IsHomeRangeRelative>False</IsHomeRangeRelative>
-    <Objects2>Skeleton:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
-  </Points>
-  <Points>
-    <Name>279 WanderingHealer</Name>
+    <Name>80 WanderingHealer</Name>
     <UniqueId>d0d27bc2-cdae-4013-b64d-85202d94eaff</UniqueId>
     <Map>Felucca</Map>
     <X>2098</X>
@@ -16211,7 +15781,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>278 OrcBomber</Name>
+    <Name>37 OrcBomber</Name>
     <UniqueId>d14db199-10df-4a9b-bb85-6031fc024a92</UniqueId>
     <Map>Felucca</Map>
     <X>1739</X>
@@ -16254,7 +15824,7 @@
     <Objects2>OrcBomber:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>426 StonePaversDark</Name>
+    <Name>31 StonePaversDark</Name>
     <UniqueId>d28fd4a1-22ab-42df-8801-91e4ea63cb25</UniqueId>
     <Map>Felucca</Map>
     <X>5433</X>
@@ -16297,7 +15867,7 @@
     <Objects2>StonePaversDark:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>205 SnowElemental</Name>
+    <Name>95 SnowElemental</Name>
     <UniqueId>d300728e-63e9-4422-8ce2-2006d1380ebd</UniqueId>
     <Map>Felucca</Map>
     <X>5311</X>
@@ -16340,7 +15910,7 @@
     <Objects2>SnowElemental:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>274 Harpy</Name>
+    <Name>390 Harpy</Name>
     <UniqueId>d32b1b4c-22b2-4832-9883-3874d8f0a2c7</UniqueId>
     <Map>Felucca</Map>
     <X>434</X>
@@ -16383,7 +15953,7 @@
     <Objects2>Harpy:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>204 Cougar</Name>
+    <Name>423 Cougar</Name>
     <UniqueId>d45a57f2-34ba-4b2e-8102-9144214b8df9</UniqueId>
     <Map>Felucca</Map>
     <X>5450</X>
@@ -16426,7 +15996,7 @@
     <Objects2>Cougar:MX=30:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>64 Daemon</Name>
+    <Name>424 Daemon</Name>
     <UniqueId>d5167b66-ac11-419b-bec7-7858a02b7880</UniqueId>
     <Map>Felucca</Map>
     <X>1092</X>
@@ -16469,7 +16039,7 @@
     <Objects2>Daemon:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>172 GreatHart</Name>
+    <Name>421 GreatHart</Name>
     <UniqueId>d5a5a88d-3be2-4c5f-b69b-9d30f6c6eb88</UniqueId>
     <Map>Felucca</Map>
     <X>5759</X>
@@ -16512,7 +16082,7 @@
     <Objects2>GreatHart:MX=21:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>171 AncientWyrm</Name>
+    <Name>422 AncientWyrm</Name>
     <UniqueId>d5f4d8ab-ebd2-4a7c-bf70-3aeb8c4063b0</UniqueId>
     <Map>Felucca</Map>
     <X>874</X>
@@ -16555,7 +16125,7 @@
     <Objects2>AncientWyrm:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>290 Phoenix</Name>
+    <Name>419 Phoenix</Name>
     <UniqueId>d6c9ce6c-23cc-47c1-921c-8b975485581f</UniqueId>
     <Map>Felucca</Map>
     <X>5728</X>
@@ -16598,7 +16168,7 @@
     <Objects2>Phoenix:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>291 LavaLizard</Name>
+    <Name>420 LavaLizard</Name>
     <UniqueId>d73e9f3d-5229-4146-b399-880439dd456d</UniqueId>
     <Map>Felucca</Map>
     <X>5820</X>
@@ -16641,7 +16211,7 @@
     <Objects2>LavaLizard:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>358 Ogre</Name>
+    <Name>417 Ogre</Name>
     <UniqueId>d7d7ee7b-ddf3-4491-9baf-cfef9f675f53</UniqueId>
     <Map>Felucca</Map>
     <X>1798</X>
@@ -16684,7 +16254,7 @@
     <Objects2>Ogre:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>203 Blacksmith</Name>
+    <Name>418 Blacksmith</Name>
     <UniqueId>d8123eb6-ac3f-424e-a134-e771ea846b8b</UniqueId>
     <Map>Felucca</Map>
     <X>2001</X>
@@ -16727,7 +16297,7 @@
     <Objects2>Blacksmith:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>32 GrammarOfOrcish</Name>
+    <Name>415 GrammarOfOrcish</Name>
     <UniqueId>daa27177-8f50-4623-9acf-22bda48cdd8f</UniqueId>
     <Map>Felucca</Map>
     <X>5773</X>
@@ -16770,7 +16340,7 @@
     <Objects2>GrammarOfOrcish:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>77 Cougar</Name>
+    <Name>416 Cougar</Name>
     <UniqueId>db1efafc-da48-4028-8e26-f0aecea0de4f</UniqueId>
     <Map>Felucca</Map>
     <X>3108</X>
@@ -16813,7 +16383,7 @@
     <Objects2>Cougar:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>113 Skeleton</Name>
+    <Name>413 Skeleton</Name>
     <UniqueId>db9247f8-a1ee-4a39-90b7-97f865cfdc4e</UniqueId>
     <Map>Felucca</Map>
     <X>3599</X>
@@ -16856,7 +16426,7 @@
     <Objects2>Skeleton:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>114 AncientLich</Name>
+    <Name>414 AncientLich</Name>
     <UniqueId>ddea4901-0b90-4e3b-a03f-c6ab06b8f53d</UniqueId>
     <Map>Felucca</Map>
     <X>1135</X>
@@ -16899,7 +16469,50 @@
     <Objects2>AncientLich:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>13 Brigand</Name>
+    <Name>411 EvilHealer</Name>
+    <UniqueId>df2bbe16-f589-4bac-9266-d50dc2912d9d</UniqueId>
+    <Map>Felucca</Map>
+    <X>1300</X>
+    <Y>1069</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>1300</CentreX>
+    <CentreY>1069</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>5</Range>
+    <MaxCount>1</MaxCount>
+    <MinDelay>5</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>EvilHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>412 Brigand</Name>
     <UniqueId>dfc15dd1-e299-437c-b2c3-504c2db7f480</UniqueId>
     <Map>Felucca</Map>
     <X>3339</X>
@@ -16942,7 +16555,7 @@
     <Objects2>Brigand:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>130 OphidianWarrior</Name>
+    <Name>409 OphidianWarrior</Name>
     <UniqueId>e1f52c45-442f-46fd-bb2b-84c54d9da5c1</UniqueId>
     <Map>Felucca</Map>
     <X>5427</X>
@@ -16985,7 +16598,7 @@
     <Objects2>OphidianWarrior:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>357 HellHound</Name>
+    <Name>410 HellHound</Name>
     <UniqueId>e239e59e-96ed-4d1c-9fef-6eeab397733b</UniqueId>
     <Map>Felucca</Map>
     <X>5261</X>
@@ -17028,7 +16641,7 @@
     <Objects2>HellHound:MX=100:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>356 Scorpion</Name>
+    <Name>389 Scorpion</Name>
     <UniqueId>e299c701-e4ee-42b6-af0b-b0daf64f92f8</UniqueId>
     <Map>Felucca</Map>
     <X>5669</X>
@@ -17071,7 +16684,7 @@
     <Objects2>Scorpion:MX=8:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>108 Phoenix</Name>
+    <Name>388 Phoenix</Name>
     <UniqueId>e2b05f05-2308-4c75-9ca2-c94f486ecb9d</UniqueId>
     <Map>Felucca</Map>
     <X>5728</X>
@@ -17114,7 +16727,7 @@
     <Objects2>Phoenix:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>51 FrostTroll</Name>
+    <Name>175 FrostTroll</Name>
     <UniqueId>e339e7c6-f680-41e5-9b05-2a2c4738c849</UniqueId>
     <Map>Felucca</Map>
     <X>5917</X>
@@ -17157,7 +16770,7 @@
     <Objects2>FrostTroll:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>355 Imp</Name>
+    <Name>387 Imp</Name>
     <UniqueId>e42a116e-c2eb-46c0-9a27-e18e2d3d4690</UniqueId>
     <Map>Felucca</Map>
     <X>1195</X>
@@ -17200,7 +16813,7 @@
     <Objects2>Imp:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>49 EvilMageLord</Name>
+    <Name>194 EvilMageLord</Name>
     <UniqueId>e4ac7892-0152-4fd8-8d26-867e850fe88f</UniqueId>
     <Map>Felucca</Map>
     <X>1163</X>
@@ -17243,7 +16856,7 @@
     <Objects2>EvilMageLord:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>71 FarmableCarrot</Name>
+    <Name>195 FarmableCarrot</Name>
     <UniqueId>e4c2c767-2f49-4eb6-87dc-3830ade5eac9</UniqueId>
     <Map>Felucca</Map>
     <X>4625</X>
@@ -17286,7 +16899,7 @@
     <Objects2>FarmableCarrot:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>354 IceSnake</Name>
+    <Name>130 IceSnake</Name>
     <UniqueId>e57ff3f4-2076-4ac8-b3d6-9049b83e0028</UniqueId>
     <Map>Felucca</Map>
     <X>5461</X>
@@ -17329,7 +16942,7 @@
     <Objects2>IceSnake:MX=8:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>219 OphidianKnight</Name>
+    <Name>408 OphidianKnight</Name>
     <UniqueId>e634d9a6-0ad5-4828-b1b2-b53978048fb5</UniqueId>
     <Map>Felucca</Map>
     <X>5441</X>
@@ -17372,7 +16985,7 @@
     <Objects2>OphidianKnight:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>368 Skeleton</Name>
+    <Name>386 Skeleton</Name>
     <UniqueId>e664ba53-76d4-4d60-a046-626778e5b16e</UniqueId>
     <Map>Felucca</Map>
     <X>3603</X>
@@ -17415,7 +17028,7 @@
     <Objects2>Skeleton:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>202 Drake</Name>
+    <Name>385 Drake</Name>
     <UniqueId>e7560095-c474-41b5-86f5-ce1e1e742d32</UniqueId>
     <Map>Felucca</Map>
     <X>5468</X>
@@ -17458,7 +17071,7 @@
     <Objects2>Drake:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>277 Brigand</Name>
+    <Name>406 Brigand</Name>
     <UniqueId>e77680cb-491e-4179-be72-cecbb9c937fb</UniqueId>
     <Map>Felucca</Map>
     <X>1650</X>
@@ -17501,7 +17114,7 @@
     <Objects2>Brigand:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>447 Orc</Name>
+    <Name>407 Orc</Name>
     <UniqueId>e7c3204a-ba2b-4dfc-a02d-ead662fbea4c</UniqueId>
     <Map>Felucca</Map>
     <X>623</X>
@@ -17544,7 +17157,7 @@
     <Objects2>Orc:MX=8:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>300 AdmiralsHeartyRum</Name>
+    <Name>384 AdmiralsHeartyRum</Name>
     <UniqueId>e7d7ad2a-8d6d-4b6d-8852-151cf44312be</UniqueId>
     <Map>Felucca</Map>
     <X>1325</X>
@@ -17587,7 +17200,7 @@
     <Objects2>AdmiralsHeartyRum:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>201 WanderingHealer</Name>
+    <Name>45 WanderingHealer</Name>
     <UniqueId>e825f972-964f-406d-8abd-767fc60c9152</UniqueId>
     <Map>Felucca</Map>
     <X>2513</X>
@@ -17630,7 +17243,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>353 SkeletalKnight</Name>
+    <Name>29 SkeletalKnight</Name>
     <UniqueId>e841a466-ae24-4f59-a13b-55121a77d77e</UniqueId>
     <Map>Felucca</Map>
     <X>1975</X>
@@ -17673,7 +17286,7 @@
     <Objects2>SkeletalKnight:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>196 HeadlessOne</Name>
+    <Name>199 HeadlessOne</Name>
     <UniqueId>e98e0bb1-58f3-4404-885d-6602cc36a4f6</UniqueId>
     <Map>Felucca</Map>
     <X>5760</X>
@@ -17716,7 +17329,7 @@
     <Objects2>HeadlessOne:MX=20:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>333 WanderingHealer</Name>
+    <Name>200 WanderingHealer</Name>
     <UniqueId>e9b54651-ca54-42fb-a329-8e536388bee2</UniqueId>
     <Map>Felucca</Map>
     <X>1715</X>
@@ -17759,7 +17372,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>334 OrderGuard</Name>
+    <Name>197 OrderGuard</Name>
     <UniqueId>ea03535a-686a-4a8e-871a-2a7d8cd325ed</UniqueId>
     <Map>Felucca</Map>
     <X>1687</X>
@@ -17802,7 +17415,7 @@
     <Objects2>OrderGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>118 Wyvern</Name>
+    <Name>198 Wyvern</Name>
     <UniqueId>ebecd2a6-ef6f-4cde-9cc9-1b9fcdea94a1</UniqueId>
     <Map>Felucca</Map>
     <X>5695</X>
@@ -17845,7 +17458,7 @@
     <Objects2>Wyvern:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>195 SkeletalKnight</Name>
+    <Name>203 SkeletalKnight</Name>
     <UniqueId>ec189561-5cfd-4a15-9f51-6607f3a076de</UniqueId>
     <Map>Felucca</Map>
     <X>961</X>
@@ -17888,7 +17501,7 @@
     <Objects2>SkeletalKnight:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>117 EvilMage</Name>
+    <Name>204 EvilMage</Name>
     <UniqueId>edd2aa37-04b8-47ad-a050-296fe47373d0</UniqueId>
     <Map>Felucca</Map>
     <X>1411</X>
@@ -17931,7 +17544,7 @@
     <Objects2>EvilMage:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>352 Chicken</Name>
+    <Name>202 Chicken</Name>
     <UniqueId>ee892c09-717a-40ba-92c7-e8aedd876125</UniqueId>
     <Map>Felucca</Map>
     <X>4624</X>
@@ -17974,7 +17587,7 @@
     <Objects2>Chicken:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>210 Cat</Name>
+    <Name>201 Cat</Name>
     <UniqueId>eeae5acc-415a-4f17-aaf2-8e76773bd6a7</UniqueId>
     <Map>Felucca</Map>
     <X>1333</X>
@@ -18017,7 +17630,7 @@
     <Objects2>Cat:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>194 Dolphin</Name>
+    <Name>171 Dolphin</Name>
     <UniqueId>eed0c131-8b19-4320-918b-38562c09b67f</UniqueId>
     <Map>Felucca</Map>
     <X>3114</X>
@@ -18060,7 +17673,7 @@
     <Objects2>Dolphin:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>19 ElderGazer</Name>
+    <Name>172 ElderGazer</Name>
     <UniqueId>ef85e763-debb-4684-ba55-d09fcc9add61</UniqueId>
     <Map>Felucca</Map>
     <X>3593</X>
@@ -18103,7 +17716,7 @@
     <Objects2>ElderGazer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>351 Mongbat</Name>
+    <Name>173 Mongbat</Name>
     <UniqueId>f0c5ecb7-34d2-4179-b149-3c0cb4a93510</UniqueId>
     <Map>Felucca</Map>
     <X>5762</X>
@@ -18146,7 +17759,7 @@
     <Objects2>Mongbat:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>301 Healer</Name>
+    <Name>174 Healer</Name>
     <UniqueId>f1ac55c2-5a94-4b7a-832f-9064c5a07a92</UniqueId>
     <Map>Felucca</Map>
     <X>750</X>
@@ -18189,7 +17802,7 @@
     <Objects2>Healer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>193 SkeletalKnight</Name>
+    <Name>58 SkeletalKnight</Name>
     <UniqueId>f1c58742-1ee0-4662-a39d-09ba6dbf2ce8</UniqueId>
     <Map>Felucca</Map>
     <X>1982</X>
@@ -18232,7 +17845,7 @@
     <Objects2>SkeletalKnight:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>80 WanderingHealer</Name>
+    <Name>44 WanderingHealer</Name>
     <UniqueId>f1f4fcff-1408-4384-86ed-c68cc97f0710</UniqueId>
     <Map>Felucca</Map>
     <X>1798</X>
@@ -18275,7 +17888,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>164 LavaLizard</Name>
+    <Name>64 LavaLizard</Name>
     <UniqueId>f25728d2-4618-4ff1-a76f-375948756459</UniqueId>
     <Map>Felucca</Map>
     <X>6065</X>
@@ -18318,7 +17931,7 @@
     <Objects2>LavaLizard:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>250 TimberWolf</Name>
+    <Name>59 TimberWolf</Name>
     <UniqueId>f27033e2-e85b-4b11-92c0-048dfe2c647b</UniqueId>
     <Map>Felucca</Map>
     <X>5670</X>
@@ -18361,7 +17974,7 @@
     <Objects2>TimberWolf:MX=22:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>191 Daemon</Name>
+    <Name>192 Daemon</Name>
     <UniqueId>f2892bc5-e9d4-4ca1-8acf-c75142398bed</UniqueId>
     <Map>Felucca</Map>
     <X>1214</X>
@@ -18404,7 +18017,7 @@
     <Objects2>Daemon:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>296 StonePaversDark</Name>
+    <Name>193 StonePaversDark</Name>
     <UniqueId>f2cb0c9b-8a3c-4deb-9969-6efe72f08144</UniqueId>
     <Map>Felucca</Map>
     <X>5415</X>
@@ -18447,7 +18060,7 @@
     <Objects2>StonePaversDark:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>297 BoneKnight</Name>
+    <Name>191 BoneKnight</Name>
     <UniqueId>f3d5594a-3ac9-4ca5-8e96-a705f367edeb</UniqueId>
     <Map>Felucca</Map>
     <X>5200</X>
@@ -18490,7 +18103,7 @@
     <Objects2>BoneKnight:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>48 Corpser</Name>
+    <Name>190 Corpser</Name>
     <UniqueId>f401db9b-61cc-4a4b-b5fa-a57ede04300b</UniqueId>
     <Map>Felucca</Map>
     <X>5910</X>
@@ -18533,7 +18146,7 @@
     <Objects2>Corpser:MX=23:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>190 Cat</Name>
+    <Name>189 Cat</Name>
     <UniqueId>f4655879-f2e4-4ab4-9d3c-bbf7a91382dc</UniqueId>
     <Map>Felucca</Map>
     <X>5311</X>
@@ -18576,7 +18189,7 @@
     <Objects2>Cat:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>2 Rat</Name>
+    <Name>188 Rat</Name>
     <UniqueId>f48b247f-29f9-4d06-9de7-02f10bf7ba9a</UniqueId>
     <Map>Felucca</Map>
     <X>5952</X>
@@ -18619,7 +18232,7 @@
     <Objects2>Rat:MX=35:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>168 Miner</Name>
+    <Name>187 Miner</Name>
     <UniqueId>f4e078b3-c430-4203-94fa-d74734b27821</UniqueId>
     <Map>Felucca</Map>
     <X>1258</X>
@@ -18662,7 +18275,7 @@
     <Objects2>Miner:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>89 WanderingHealer</Name>
+    <Name>186 WanderingHealer</Name>
     <UniqueId>f5eaab23-7ac1-47ba-90e6-cc6b43b8e351</UniqueId>
     <Map>Felucca</Map>
     <X>398</X>
@@ -18705,7 +18318,7 @@
     <Objects2>WanderingHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>160 Farmer</Name>
+    <Name>185 Farmer</Name>
     <UniqueId>f6d6ac0c-ec22-4de1-9bed-25d7514cd9bd</UniqueId>
     <Map>Felucca</Map>
     <X>1249</X>
@@ -18748,7 +18361,7 @@
     <Objects2>Farmer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>350 IceSnake</Name>
+    <Name>183 IceSnake</Name>
     <UniqueId>f7807096-d4ce-41d2-bca4-b5ba42872176</UniqueId>
     <Map>Felucca</Map>
     <X>5917</X>
@@ -18791,7 +18404,7 @@
     <Objects2>IceSnake:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>155 Mummy</Name>
+    <Name>184 Mummy</Name>
     <UniqueId>f7b7e2f7-3104-4369-a5c1-4d57fc6fa967</UniqueId>
     <Map>Felucca</Map>
     <X>5228</X>
@@ -18834,7 +18447,7 @@
     <Objects2>Mummy:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>189 Cat</Name>
+    <Name>182 Cat</Name>
     <UniqueId>f8683a9f-68e9-4113-b02d-843a16e92523</UniqueId>
     <Map>Felucca</Map>
     <X>1333</X>
@@ -18877,7 +18490,7 @@
     <Objects2>Cat:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>313 Wraith</Name>
+    <Name>181 Wraith</Name>
     <UniqueId>fa1a4462-884b-4f87-b577-e616549c71f4</UniqueId>
     <Map>Felucca</Map>
     <X>5200</X>
@@ -18920,7 +18533,7 @@
     <Objects2>Wraith:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>163 IceSerpent</Name>
+    <Name>180 IceSerpent</Name>
     <UniqueId>fb1505cd-d47a-4c33-a49b-a1089520d86d</UniqueId>
     <Map>Felucca</Map>
     <X>5143</X>
@@ -18963,7 +18576,7 @@
     <Objects2>IceSerpent:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>187 Kraken</Name>
+    <Name>179 Kraken</Name>
     <UniqueId>fb26fa33-99ca-4365-ab70-be7a6846e063</UniqueId>
     <Map>Felucca</Map>
     <X>5210</X>
@@ -19006,7 +18619,7 @@
     <Objects2>Kraken:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>81 LichLord</Name>
+    <Name>178 LichLord</Name>
     <UniqueId>fb5342a1-14e2-4a4b-8ae3-3e3e655175cd</UniqueId>
     <Map>Felucca</Map>
     <X>757</X>
@@ -19049,7 +18662,7 @@
     <Objects2>LichLord:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>57 IceSerpent</Name>
+    <Name>177 IceSerpent</Name>
     <UniqueId>fd6969cd-f4be-44da-bae7-e12a096f881a</UniqueId>
     <Map>Felucca</Map>
     <X>5917</X>
@@ -19092,7 +18705,7 @@
     <Objects2>IceSerpent:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>186 Farmer</Name>
+    <Name>176 Farmer</Name>
     <UniqueId>fee36bd3-fb46-4309-84ba-f8d79d0371e3</UniqueId>
     <Map>Felucca</Map>
     <X>1188</X>
@@ -19135,7 +18748,7 @@
     <Objects2>Farmer:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>348 GreatHart</Name>
+    <Name>30 GreatHart</Name>
     <UniqueId>ff6d31c1-2849-4312-9655-bded2a819ae2</UniqueId>
     <Map>Felucca</Map>
     <X>2744</X>
@@ -19178,7 +18791,7 @@
     <Objects2>GreatHart:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>97 SeaSerpent</Name>
+    <Name>143 SeaSerpent</Name>
     <UniqueId>ff9d90cd-792c-4f06-83cb-0f6ac113f3c9</UniqueId>
     <Map>Felucca</Map>
     <X>3486</X>

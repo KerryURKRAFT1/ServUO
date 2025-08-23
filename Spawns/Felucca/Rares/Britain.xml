@@ -1,6 +1,6 @@
 <Spawns>
   <Points>
-    <Name>3 StealableBananas-StealableCheeseWedge-Etc</Name>
+    <Name>4 StealableBananas-StealableCheeseWedge-Etc</Name>
     <UniqueId>00916961-c0e9-48c0-ad50-3799e707c571</UniqueId>
     <Map>Felucca</Map>
     <X>60</X>
@@ -46,7 +46,7 @@
     <Objects2>StealableBananas:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableCheeseWedge:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableLemons:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableLimes:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableBaconSlab:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 StealableEmptyBasin-StealableWaterBasin-Etc</Name>
+    <Name>2 StealableEmptyBasin-StealableWaterBasin-Etc</Name>
     <UniqueId>1e490764-4ac6-4d6a-969d-abaff64922af</UniqueId>
     <Map>Felucca</Map>
     <X>0</X>
@@ -89,7 +89,7 @@
     <Objects2>StealableEmptyBasin:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableWaterBasin:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>2 StealableBananas-StealableCheeseWedge-Etc</Name>
+    <Name>3 StealableBananas-StealableCheeseWedge-Etc</Name>
     <UniqueId>5f636090-7830-437c-9742-8d042fc0acd9</UniqueId>
     <Map>Felucca</Map>
     <X>60</X>
@@ -135,7 +135,7 @@
     <Objects2>StealableBananas:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableCheeseWedge:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableLemons:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableLimes:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableBaconSlab:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>4 ProvisionersMetalBox</Name>
+    <Name>1 ProvisionersMetalBox</Name>
     <UniqueId>ec9df140-40ea-43e5-9a73-60b4483b39c0</UniqueId>
     <Map>Felucca</Map>
     <X>0</X>

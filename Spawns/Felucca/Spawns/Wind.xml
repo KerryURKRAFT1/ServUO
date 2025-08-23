@@ -1,6 +1,6 @@
 <Spawns>
   <Points>
-    <Name>5 OrderGuard</Name>
+    <Name>4 OrderGuard</Name>
     <UniqueId>05366f21-8669-4d12-a982-715a41bf478b</UniqueId>
     <Map>Felucca</Map>
     <X>5309</X>
@@ -43,7 +43,7 @@
     <Objects2>OrderGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>6 OrderGuard</Name>
+    <Name>20 OrderGuard</Name>
     <UniqueId>078c634d-a97c-4e98-9366-366c950c674b</UniqueId>
     <Map>Felucca</Map>
     <X>5319</X>
@@ -129,7 +129,7 @@
     <Objects2>OrderGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>8 MageGuildmaster</Name>
+    <Name>1 MageGuildmaster</Name>
     <UniqueId>192478b8-4673-4163-958d-e55cfb1d519d</UniqueId>
     <Map>Felucca</Map>
     <X>5147</X>
@@ -215,7 +215,7 @@
     <Objects2>OrderGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>20 Scribe</Name>
+    <Name>23 Scribe</Name>
     <UniqueId>2a07a842-e604-438c-8823-f5d5f77536b7</UniqueId>
     <Map>Felucca</Map>
     <X>5242</X>
@@ -258,7 +258,7 @@
     <Objects2>Scribe:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>23 Mage</Name>
+    <Name>22 Mage</Name>
     <UniqueId>30fafe58-96d9-493d-a5ea-1faf98b5ed65</UniqueId>
     <Map>Felucca</Map>
     <X>5314</X>
@@ -301,7 +301,7 @@
     <Objects2>Mage:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>24 OrderGuard</Name>
+    <Name>25 OrderGuard</Name>
     <UniqueId>322afcc7-1d88-4837-876a-cab8eec1b4a6</UniqueId>
     <Map>Felucca</Map>
     <X>5154</X>
@@ -344,7 +344,7 @@
     <Objects2>OrderGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>4 Mage</Name>
+    <Name>24 Mage</Name>
     <UniqueId>37925a41-e017-4c40-aebe-36079b50b7df</UniqueId>
     <Map>Felucca</Map>
     <X>5180</X>
@@ -387,7 +387,7 @@
     <Objects2>Mage:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>12 Herbalist</Name>
+    <Name>27 Herbalist</Name>
     <UniqueId>3973e9e0-db46-4084-8f69-2d56dbd5bf4f</UniqueId>
     <Map>Felucca</Map>
     <X>5215</X>
@@ -430,7 +430,7 @@
     <Objects2>Herbalist:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>11 Scribe</Name>
+    <Name>26 Scribe</Name>
     <UniqueId>50828ba8-9f46-49fa-a665-f982a6fa31de</UniqueId>
     <Map>Felucca</Map>
     <X>5236</X>
@@ -473,7 +473,7 @@
     <Objects2>Scribe:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>22 InnKeeper</Name>
+    <Name>3 InnKeeper</Name>
     <UniqueId>5124e244-53e3-474d-aa61-a961f820331a</UniqueId>
     <Map>Felucca</Map>
     <X>5218</X>
@@ -516,7 +516,7 @@
     <Objects2>InnKeeper:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 Cobbler</Name>
+    <Name>17 Cobbler</Name>
     <UniqueId>545ea3ad-96fc-4002-9b66-f31c89089e04</UniqueId>
     <Map>Felucca</Map>
     <X>5154</X>
@@ -559,7 +559,7 @@
     <Objects2>Cobbler:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>19 Mage</Name>
+    <Name>18 Mage</Name>
     <UniqueId>60b0ed46-b390-4282-a6e0-deed178c6f67</UniqueId>
     <Map>Felucca</Map>
     <X>5301</X>
@@ -602,7 +602,7 @@
     <Objects2>Mage:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>25 Banker</Name>
+    <Name>16 Banker</Name>
     <UniqueId>6f809a0a-dd1d-4d1e-9781-fc6e4f2eabe4</UniqueId>
     <Map>Felucca</Map>
     <X>5347</X>
@@ -645,7 +645,7 @@
     <Objects2>Banker:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>10 Mage-Alchemist-Etc</Name>
+    <Name>15 Mage-Alchemist-Etc</Name>
     <UniqueId>782436ac-0191-4185-9ded-009d087bf511</UniqueId>
     <Map>Felucca</Map>
     <X>5149</X>
@@ -688,7 +688,7 @@
     <Objects2>Mage:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Alchemist:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>7 HealerGuildmaster</Name>
+    <Name>14 HealerGuildmaster</Name>
     <UniqueId>79ee07d1-6de4-4cd3-bc91-5a39e311a72d</UniqueId>
     <Map>Felucca</Map>
     <X>5263</X>
@@ -731,7 +731,7 @@
     <Objects2>HealerGuildmaster:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>9 TailorGuildmaster</Name>
+    <Name>13 TailorGuildmaster</Name>
     <UniqueId>7d77990f-3a15-4458-932b-d316185e92fe</UniqueId>
     <Map>Felucca</Map>
     <X>5201</X>
@@ -774,7 +774,7 @@
     <Objects2>TailorGuildmaster:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 InnKeeper</Name>
+    <Name>12 InnKeeper</Name>
     <UniqueId>84020301-204b-4a66-8c69-65f1b750cfd9</UniqueId>
     <Map>Felucca</Map>
     <X>5161</X>
@@ -817,7 +817,7 @@
     <Objects2>InnKeeper:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>16 Cook</Name>
+    <Name>11 Cook</Name>
     <UniqueId>9eac5a04-cc12-45c0-a8a9-6730d11cb387</UniqueId>
     <Map>Felucca</Map>
     <X>5351</X>
@@ -860,7 +860,7 @@
     <Objects2>Cook:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>14 Minter</Name>
+    <Name>10 Minter</Name>
     <UniqueId>a70a6ec3-9dbe-473e-9a93-4ebbc768a3cc</UniqueId>
     <Map>Felucca</Map>
     <X>5347</X>
@@ -903,7 +903,7 @@
     <Objects2>Minter:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>15 Healer</Name>
+    <Name>8 Healer</Name>
     <UniqueId>acf5fca0-633d-4203-95cd-02522917d367</UniqueId>
     <Map>Felucca</Map>
     <X>5263</X>
@@ -946,7 +946,7 @@
     <Objects2>Healer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>18 OrderGuard</Name>
+    <Name>6 OrderGuard</Name>
     <UniqueId>b5194326-4819-49bb-b232-fb96a26299b6</UniqueId>
     <Map>Felucca</Map>
     <X>5186</X>
@@ -989,7 +989,7 @@
     <Objects2>OrderGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>27 OrderGuard</Name>
+    <Name>5 OrderGuard</Name>
     <UniqueId>be45f7fa-d005-45df-b86c-5a3c5609c5ab</UniqueId>
     <Map>Felucca</Map>
     <X>5261</X>
@@ -1032,7 +1032,7 @@
     <Objects2>OrderGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>26 Alchemist</Name>
+    <Name>19 Alchemist</Name>
     <UniqueId>c13bd8b7-55ae-4e1f-99a8-db75fa2df7b0</UniqueId>
     <Map>Felucca</Map>
     <X>5215</X>
@@ -1075,7 +1075,7 @@
     <Objects2>Alchemist:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>17 OrderGuard</Name>
+    <Name>7 OrderGuard</Name>
     <UniqueId>d878e592-3b29-414b-b35c-2946f3a2161e</UniqueId>
     <Map>Felucca</Map>
     <X>5217</X>
@@ -1118,7 +1118,7 @@
     <Objects2>OrderGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>13 Provisioner</Name>
+    <Name>9 Provisioner</Name>
     <UniqueId>d940e6f0-b35b-4f0b-8274-bff403b52f51</UniqueId>
     <Map>Felucca</Map>
     <X>5154</X>

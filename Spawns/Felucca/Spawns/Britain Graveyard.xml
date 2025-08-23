@@ -1,6 +1,6 @@
 <Spawns>
   <Points>
-    <Name>8 Zombie</Name>
+    <Name>1 Zombie</Name>
     <UniqueId>1e715375-1e41-42c4-91c4-63264c90b9a7</UniqueId>
     <Map>Felucca</Map>
     <X>1349</X>
@@ -43,7 +43,7 @@
     <Objects2>Zombie:MX=11:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>6 Zombie</Name>
+    <Name>9 Zombie</Name>
     <UniqueId>236a7723-d69a-40b4-83cf-e645111c7c0a</UniqueId>
     <Map>Felucca</Map>
     <X>1360</X>
@@ -86,7 +86,7 @@
     <Objects2>Zombie:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>7 Mummy</Name>
+    <Name>2 Mummy</Name>
     <UniqueId>35e4983b-6a7f-4a4d-8cd8-971b0d960483</UniqueId>
     <Map>Felucca</Map>
     <X>1384</X>
@@ -129,7 +129,7 @@
     <Objects2>Mummy:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 Zombie</Name>
+    <Name>8 Zombie</Name>
     <UniqueId>37f47fa5-7678-4e1f-bb3f-9bab9d57cf98</UniqueId>
     <Map>Felucca</Map>
     <X>1359</X>
@@ -172,7 +172,7 @@
     <Objects2>Zombie:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>4 Zombie</Name>
+    <Name>3 Zombie</Name>
     <UniqueId>9affb8aa-8323-4df3-bc27-5ab4d1845149</UniqueId>
     <Map>Felucca</Map>
     <X>1342</X>
@@ -215,7 +215,7 @@
     <Objects2>Zombie:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 Skeleton</Name>
+    <Name>7 Skeleton</Name>
     <UniqueId>b8fb7dc5-4fe3-4614-b3ad-a7226871a589</UniqueId>
     <Map>Felucca</Map>
     <X>1371</X>
@@ -258,7 +258,7 @@
     <Objects2>Skeleton:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>2 Zombie</Name>
+    <Name>4 Zombie</Name>
     <UniqueId>e628fb73-887c-41d8-9c78-fab42c4ee765</UniqueId>
     <Map>Felucca</Map>
     <X>1337</X>
@@ -301,7 +301,7 @@
     <Objects2>Zombie:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>5 Wraith</Name>
+    <Name>6 Wraith</Name>
     <UniqueId>f4fe0cf2-2371-4259-89d8-00d8d561837e</UniqueId>
     <Map>Felucca</Map>
     <X>1349</X>
@@ -344,7 +344,7 @@
     <Objects2>Wraith:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>9 Skeleton</Name>
+    <Name>5 Skeleton</Name>
     <UniqueId>f94543fc-9625-430d-81b3-e5702d6ae576</UniqueId>
     <Map>Felucca</Map>
     <X>1345</X>

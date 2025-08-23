@@ -1,6 +1,6 @@
 <Spawns>
   <Points>
-    <Name>1 Peasant</Name>
+    <Name>14 Peasant</Name>
     <UniqueId>0f5c2c1a-b683-465a-9454-ef3244d2c593</UniqueId>
     <Map>Felucca</Map>
     <X>2283</X>
@@ -86,7 +86,7 @@
     <Objects2>OrderGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>14 Dog</Name>
+    <Name>13 Dog</Name>
     <UniqueId>35b9d9c4-9710-4714-897f-cf6731827e18</UniqueId>
     <Map>Felucca</Map>
     <X>2192</X>
@@ -129,7 +129,7 @@
     <Objects2>Dog:MX=16:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>4 Healer</Name>
+    <Name>1 Healer</Name>
     <UniqueId>54b0e083-f1dd-4d06-8c35-27b62dc97fb1</UniqueId>
     <Map>Felucca</Map>
     <X>2242</X>
@@ -172,7 +172,7 @@
     <Objects2>Healer:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 Mage</Name>
+    <Name>12 Mage</Name>
     <UniqueId>696e1396-7d9f-4fbb-aee3-9ef6c19d7d89</UniqueId>
     <Map>Felucca</Map>
     <X>2259</X>
@@ -215,7 +215,7 @@
     <Objects2>Mage:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>13 Bowyer</Name>
+    <Name>3 Bowyer</Name>
     <UniqueId>763b2e95-a583-4337-9d32-95b68e6aaaa1</UniqueId>
     <Map>Felucca</Map>
     <X>2212</X>
@@ -258,7 +258,7 @@
     <Objects2>Bowyer:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>6 Scribe</Name>
+    <Name>11 Scribe</Name>
     <UniqueId>7a5a682b-9b99-49b3-892c-c58acc9b0fbd</UniqueId>
     <Map>Felucca</Map>
     <X>2212</X>
@@ -301,7 +301,7 @@
     <Objects2>Scribe:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>10 Carpenter</Name>
+    <Name>7 Carpenter</Name>
     <UniqueId>84e90785-2768-4a62-a1d9-f8b3e35d32f3</UniqueId>
     <Map>Felucca</Map>
     <X>2214</X>
@@ -344,7 +344,7 @@
     <Objects2>Carpenter:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>9 OrderGuard</Name>
+    <Name>10 OrderGuard</Name>
     <UniqueId>94d713aa-5a40-4d9d-a3f5-475f095d08c5</UniqueId>
     <Map>Felucca</Map>
     <X>2243</X>
@@ -387,7 +387,7 @@
     <Objects2>OrderGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>5 Mapmaker</Name>
+    <Name>4 Mapmaker</Name>
     <UniqueId>aa7a3a16-0091-42c5-ac38-77366e90d22d</UniqueId>
     <Map>Felucca</Map>
     <X>2243</X>
@@ -430,7 +430,7 @@
     <Objects2>Mapmaker:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>12 Cat</Name>
+    <Name>9 Cat</Name>
     <UniqueId>ab264a67-74a9-48d3-bab2-0e7f4ef02dfa</UniqueId>
     <Map>Felucca</Map>
     <X>2242</X>
@@ -473,7 +473,7 @@
     <Objects2>Cat:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>8 FishMonger-MLQuester</Name>
+    <Name>5 FishMonger-MLQuester</Name>
     <UniqueId>c8679776-3f0d-4a7a-998b-f54c0a70ba70</UniqueId>
     <Map>Felucca</Map>
     <X>2256</X>
@@ -516,7 +516,7 @@
     <Objects2>FishMonger:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>7 OrderGuard</Name>
+    <Name>8 OrderGuard</Name>
     <UniqueId>e2c63b04-1b05-49c9-bda5-2a72b708eb22</UniqueId>
     <Map>Felucca</Map>
     <X>2250</X>
@@ -559,7 +559,7 @@
     <Objects2>OrderGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>11 OrderGuard</Name>
+    <Name>6 OrderGuard</Name>
     <UniqueId>fb2292a4-d4f7-4643-91ac-418f6925741b</UniqueId>
     <Map>Felucca</Map>
     <X>2269</X>

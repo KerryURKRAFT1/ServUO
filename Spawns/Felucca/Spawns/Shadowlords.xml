@@ -1,6 +1,6 @@
 <Spawns>
   <Points>
-    <Name>1 Brigand</Name>
+    <Name>2 Brigand</Name>
     <UniqueId>9584c5b2-835b-476a-a738-31b1c2b38a40</UniqueId>
     <Map>Felucca</Map>
     <X>954</X>
@@ -43,7 +43,7 @@
     <Objects2>Brigand:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 Mummy</Name>
+    <Name>1 Mummy</Name>
     <UniqueId>d2bd0fbe-5fe2-4fa5-b5a6-2037a8f0042d</UniqueId>
     <Map>Felucca</Map>
     <X>960</X>
@@ -86,7 +86,7 @@
     <Objects2>Mummy:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>2 Shade</Name>
+    <Name>3 Shade</Name>
     <UniqueId>ed22e5a1-94c7-4eaf-a912-dd230626c007</UniqueId>
     <Map>Felucca</Map>
     <X>962</X>

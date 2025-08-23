@@ -1,6 +1,6 @@
 <Spawns>
   <Points>
-    <Name>5 ChaosGuard</Name>
+    <Name>8 ChaosGuard</Name>
     <UniqueId>0779d64d-726d-425e-aadf-2d320c8b1e99</UniqueId>
     <Map>Felucca</Map>
     <X>5178</X>
@@ -86,7 +86,7 @@
     <Objects2>Sheep:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>13 Cobbler</Name>
+    <Name>1 Cobbler</Name>
     <UniqueId>1f96363e-73bf-4b76-b7d6-5fccc7e59d84</UniqueId>
     <Map>Felucca</Map>
     <X>5219</X>
@@ -129,7 +129,7 @@
     <Objects2>Cobbler:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>8 Mage</Name>
+    <Name>16 Mage</Name>
     <UniqueId>2c7317c0-2a5b-4fde-9c89-6b1d67df051a</UniqueId>
     <Map>Felucca</Map>
     <X>5285</X>
@@ -172,7 +172,7 @@
     <Objects2>Mage:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 ChaosGuard</Name>
+    <Name>4 ChaosGuard</Name>
     <UniqueId>3eca7a1c-8cd0-4422-9dd0-6242e39dfbf3</UniqueId>
     <Map>Felucca</Map>
     <X>5305</X>
@@ -215,7 +215,7 @@
     <Objects2>ChaosGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>11 Banker</Name>
+    <Name>15 Banker</Name>
     <UniqueId>5f7c9308-b2a6-46bd-bb40-d7ccab4f5bb1</UniqueId>
     <Map>Felucca</Map>
     <X>5273</X>
@@ -258,7 +258,7 @@
     <Objects2>Banker:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>2 Blacksmith</Name>
+    <Name>5 Blacksmith</Name>
     <UniqueId>709b9600-4034-405b-bf8e-f7c92fd60615</UniqueId>
     <Map>Felucca</Map>
     <X>5224</X>
@@ -301,7 +301,7 @@
     <Objects2>Blacksmith:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>6 ChaosGuard</Name>
+    <Name>14 ChaosGuard</Name>
     <UniqueId>74799744-70f8-43e4-9a4c-d58383786dba</UniqueId>
     <Map>Felucca</Map>
     <X>5243</X>
@@ -344,7 +344,7 @@
     <Objects2>ChaosGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>12 ChaosGuard</Name>
+    <Name>2 ChaosGuard</Name>
     <UniqueId>79443b99-204b-46a9-b711-739d493cf5cd</UniqueId>
     <Map>Felucca</Map>
     <X>5241</X>
@@ -387,7 +387,7 @@
     <Objects2>ChaosGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>16 ChaosGuard</Name>
+    <Name>13 ChaosGuard</Name>
     <UniqueId>9358726a-7175-4815-9b01-1bcc55e233e7</UniqueId>
     <Map>Felucca</Map>
     <X>5207</X>
@@ -430,7 +430,7 @@
     <Objects2>ChaosGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>7 ChaosGuard</Name>
+    <Name>3 ChaosGuard</Name>
     <UniqueId>9daefc89-13c7-4633-bf81-e129d1259905</UniqueId>
     <Map>Felucca</Map>
     <X>5200</X>
@@ -473,7 +473,7 @@
     <Objects2>ChaosGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>4 ChaosGuard</Name>
+    <Name>12 ChaosGuard</Name>
     <UniqueId>a1481e7a-399e-4d31-8784-6c7d79bd5f8b</UniqueId>
     <Map>Felucca</Map>
     <X>5305</X>
@@ -516,7 +516,7 @@
     <Objects2>ChaosGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>15 AnimalTrainer</Name>
+    <Name>6 AnimalTrainer</Name>
     <UniqueId>ad44b141-7ce2-432f-977c-f8d38e6e0836</UniqueId>
     <Map>Felucca</Map>
     <X>5297</X>
@@ -559,7 +559,7 @@
     <Objects2>AnimalTrainer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 ChaosGuard</Name>
+    <Name>11 ChaosGuard</Name>
     <UniqueId>c3c1d59a-f712-4c20-b3c8-e8913e35f6c2</UniqueId>
     <Map>Felucca</Map>
     <X>5299</X>
@@ -602,7 +602,7 @@
     <Objects2>ChaosGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>10 ChaosGuard</Name>
+    <Name>7 ChaosGuard</Name>
     <UniqueId>da30af97-6426-4236-9d5f-a4777dddf046</UniqueId>
     <Map>Felucca</Map>
     <X>5211</X>
@@ -645,7 +645,7 @@
     <Objects2>ChaosGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>9 Healer</Name>
+    <Name>10 Healer</Name>
     <UniqueId>eb0dfd73-9f2a-40e7-a75e-ea2f34bdb60c</UniqueId>
     <Map>Felucca</Map>
     <X>5191</X>
@@ -688,7 +688,7 @@
     <Objects2>Healer:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>14 Banker</Name>
+    <Name>9 Banker</Name>
     <UniqueId>f0f4d366-7d79-4705-9070-c956385ec3a0</UniqueId>
     <Map>Felucca</Map>
     <X>5275</X>
