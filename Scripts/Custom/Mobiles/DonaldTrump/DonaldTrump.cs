@@ -123,9 +123,7 @@ namespace Server.Mobiles
 
         public override void OnMovement(Mobile m, Point3D oldLocation)
         {
-            if (Utility.RandomBool() && !m.Player) return;
-
-            if (!Hidden && Utility.RandomDouble() < 0.35 && m.Alive && !m.Hidden && m.InRange(this, 2))
+            if (Utility.RandomBool() && m.Player && m.Alive && !m.Hidden && m.InRange(this, 2) && !Hidden)
             {
 				if (!m_BlockGreet)
 				{
@@ -135,8 +133,6 @@ namespace Server.Mobiles
 
 					Timer.DelayCall (TimeSpan.FromSeconds(10.0), () => { m_BlockGreet = false; });
 				}
-
-                return;
             }
         }
 
