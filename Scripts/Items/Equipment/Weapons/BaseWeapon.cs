@@ -38,6 +38,10 @@ namespace Server.Items
 
 	public abstract class BaseWeapon : Item, IWeapon, IFactionItem, ICraftable, ISlayer, IDurability, ISetItem, IVvVItem, IOwnerRestricted
 	{
+		private static readonly double m_MultiplerVsMob = Config.Get("Custom_Settings.MultiplerVsMob", 1.5);
+		private static readonly double m_MultiplerVsPlayer = Config.Get("Custom_Settings.MultiplerVsPlayer", 2.0);
+
+
 		private string m_EngravedText;
 
 		[CommandProperty(AccessLevel.GameMaster)]
@@ -1879,6 +1883,8 @@ namespace Server.Items
 			Layer.Shirt
 		};
 
+/*			OLD ABSORB DAMAGE 
+
 		public virtual int AbsorbDamage(Mobile attacker, Mobile defender, int damage)
 		{
 			if (Core.AOS)
@@ -1966,6 +1972,90 @@ namespace Server.Items
 
 			return damage;
 		}
+		*/
+
+
+			public virtual int AbsorbDamage(Mobile attacker, Mobile defender, int damage)
+			{
+				if (Core.AOS)
+					return AbsorbDamageAOS(attacker, defender, damage);
+
+				// Check shield reduction (classic Sphere logic)
+				BaseShield shield = defender.FindItemOnLayer(Layer.TwoHanded) as BaseShield;
+				if (shield != null)
+					damage = shield.OnHit(this, damage);
+
+				// Hit location logic (Sphere51a style)
+				HitLocation hitLoc = HitLocationHelper.GetRandomLocation();
+				Layer[] armorLayers = HitLocationHelper.GetLayersForLocation(hitLoc); // Array of all possible layers - IN Mobile.cs
+				Item armorItem = null;
+				foreach (var layer in armorLayers)
+				{
+					armorItem = defender.FindItemOnLayer(layer);
+					if (armorItem != null)
+						break;
+				}
+				IWearableDurability armor = armorItem as IWearableDurability;
+
+				int initialDamage = damage;
+				int armorReduction = 0;
+				int virtualArmor = defender.VirtualArmor + defender.VirtualArmorMod;
+				int totalAR = (int)defender.ArmorRating; 
+
+
+				// Reduction ONLY from the hit piece
+				if (armor != null)
+				{
+					armor.OnHit(this, damage); // decreases durability
+					//damage -= XmlAttach.OnArmorHit(attacker, defender, armorItem, this, initialDamage); // xml effects
+
+					int ar = GetArmorRating(armorItem); // GET real AR of the equipped piece
+					armorReduction = ar;
+
+					// DMG = piece AR - TOTAL AR / 2
+					damage -= (ar + (int)(defender.ArmorRating / 2));
+
+				}
+				else
+				{
+					// If there is no armor on the location and NOT a player, halve virtualArmor (Sphere style)
+					if (!defender.Player && virtualArmor > 0)
+					{
+						damage -= (int)(virtualArmor / 2.0);
+					}
+				}
+
+				// Minimum damage is 1
+				if (damage < 1)
+					damage = 1;
+
+				// Debug output
+
+				/*
+				Console.WriteLine(
+					$"[HitLocation Debug] Defender: {defender.Name}, " +
+					$"Hit location: {hitLoc}, " +
+					$"Armor: {(armorItem != null ? armorItem.Name : "None")}, " +
+					$"Initial Damage: {initialDamage}, " +
+					$"Armor Reduction: {armorReduction}, " +
+					$"TotalAR/2.5: {(int)(defender.ArmorRating / 2.5)}, " +
+					$"TotalReduction: {armorReduction + (int)(defender.ArmorRating / 2.5)}, " +
+					$"VirtualArmor: {virtualArmor}, " +
+					$"Final Damage: {damage}"
+				);*/
+
+				return damage;
+			}
+
+			// Function to get the AR of the hit piece
+			private int GetArmorRating(Item armorItem)
+			{
+				if (armorItem is BaseArmor baseArmor)
+					return (int)baseArmor.ArmorRatingScaled; 
+				return 0;
+			}
+
+
 
 		public virtual int GetPackInstinctBonus(Mobile attacker, Mobile defender)
 		{
@@ -3533,6 +3623,8 @@ namespace Server.Items
 			return AOS.Scale(damage, scale);
 		}
 
+		/* 			OLD ComputeDamage
+
 		public virtual int ComputeDamage(Mobile attacker, Mobile defender)
 		{
 			if (Core.AOS)
@@ -3554,7 +3646,67 @@ namespace Server.Items
 			}
 
 			return damage;
+		}  */
+
+ublic virtual int ComputeDamage(Mobile attacker, Mobile defender)
+		{
+			if (Core.AOS)
+			{
+				return ComputeDamageAOS(attacker, defender);
+			}
+
+			int damage = (int)ScaleDamageOld(attacker, GetBaseDamage(attacker), true);
+
+/*
+			// pre-AOS, halve damage if the defender is a player or the attacker is not a player
+			// Plater vs player : half dmg - Player Vs Mob : Full dmg
+			if (defender is PlayerMobile || !(attacker is PlayerMobile))
+			{
+				//damage = (int)(damage / m_MultiplerVsPlayer); // Default 2.0
+				damage = (int)(damage / 2.0 ); 
+			} */
+
+
+				// Player vs Player
+			if (attacker is PlayerMobile && defender is PlayerMobile)
+			{
+				damage = (int)(damage / m_MultiplerVsPlayer); // / 2 Default
+			}
+							// Player vs Mob
+			else if (attacker is PlayerMobile && defender is BaseCreature)
+			{
+				damage = (int)(damage / m_MultiplerVsMob);  // / 1.5  Default
+			}
+							// Mob vs Player
+			else if (!(attacker is PlayerMobile) && defender is PlayerMobile)
+			{
+				damage = (int)(damage / m_MultiplerVsPlayer ); // / 2 Default
+			}
+							// Mob vs Mob
+			else if (!(attacker is PlayerMobile) && defender is BaseCreature)
+			{
+				damage = (int)(damage / 2.0); 
+			}
+
+
+			// FOR TESTING OR ADJUSTMENT PURPOSE halve damage against mobs too??
+			//else if (!(defender is PlayerMobile) && attacker is PlayerMobile)
+			//{
+			//	damage = (int)(damage / m_MultiplerVsMob); // Default 1.5
+			//}
+
+			
+			if(attacker.IsStaff())
+			{
+				attacker.SendMessage($"Dam: {damage}");
+				
+			}
+
+			return damage;
 		}
+
+
+
 
 		public virtual void PlayHurtAnimation(Mobile from)
 		{

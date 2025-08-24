@@ -1012,7 +1012,7 @@ namespace Server.Network
 	//debug
     if (state == null || state.Menus == null)
     {
-        Console.WriteLine("DEBUG: 'state' o 'state.Menus' è null.");
+        //Console.WriteLine("DEBUG: 'state' o 'state.Menus' è null.");
         return;
     }
 
@@ -1020,7 +1020,7 @@ namespace Server.Network
 			{
 				        if (menu == null)
 						{
-							Console.WriteLine("DEBUG: Un menu è null.");
+							//Console.WriteLine("DEBUG: Un menu è null.");
 							continue;
 						}
 				if (menu.Serial == serial)
@@ -1029,12 +1029,12 @@ namespace Server.Network
 
 					if (index >= 0 && index < menu.EntryLength)
 					{
-						Console.WriteLine("DEBUG: Invocazione di OnResponse con index={index}.");
+						//Console.WriteLine("DEBUG: Invocazione di OnResponse con index={index}.");
 						menu.OnResponse(state, index);
 					}
 					else
 					{
-						Console.WriteLine("DEBUG: Invocazione di OnCancel.");
+						//Console.WriteLine("DEBUG: Invocazione di OnCancel.");
 						menu.OnCancel(state);
 					}
 

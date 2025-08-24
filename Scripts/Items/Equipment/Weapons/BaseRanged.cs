@@ -104,14 +104,16 @@ namespace Server.Items
 								}
 	
 								attacker.Send(new Swing(0, attacker, damageable));
-	
-								if (CheckHit(attacker, damageable))
+								if (OnFired(attacker, damageable))
 								{
-									OnHit(attacker, damageable, 1.0);
-								}
-								else
-								{
-									OnMiss(attacker, damageable);
+									if (CheckHit(attacker, damageable))
+									{
+										OnHit(attacker, damageable, 1.0);
+									}
+									else
+									{
+										OnMiss(attacker, damageable);
+									}
 								}
 							}
 							else
