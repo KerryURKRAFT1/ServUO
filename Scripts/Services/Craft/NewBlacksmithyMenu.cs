@@ -1292,7 +1292,7 @@ namespace Server.Engines.Craft
                 m_CraftSystem = craftSystem;
                 m_Tool = tool;
                 this.isPreAoS = isPreAoS;
-                Console.WriteLine("SpecialWeaponsMenu instantiated with material.");
+                //Console.WriteLine("SpecialWeaponsMenu instantiated with material.");
             }
 
             private static ItemListEntryWithType[] GetSpecialWeaponMaterials(Mobile from, CraftSystem craftSystem)
@@ -1325,14 +1325,14 @@ namespace Server.Engines.Craft
 
             public override void OnResponse(NetState state, int index)
             {
-                Console.WriteLine("SpecialWeaponsMenu.OnResponse called with index: " + index);
+                //Console.WriteLine("SpecialWeaponsMenu.OnResponse called with index: " + index);
                 var items = GetSpecialWeaponMaterials(m_From, m_CraftSystem);
                 if (index >= 0 && index < items.Length)
                 {
                     string selectedMaterial = items[index].Name;
-                    Console.WriteLine("Selected Material: " + selectedMaterial);
+                    //Console.WriteLine("Selected Material: " + selectedMaterial);
                     m_From.SendMenu(new WeaponItemsMenu(m_From, m_CraftSystem, m_Tool, selectedMaterial, isPreAoS));
-                    Console.WriteLine("Sent WeaponItemsMenu with selected material: " + selectedMaterial);
+                    //Console.WriteLine("Sent WeaponItemsMenu with selected material: " + selectedMaterial);
                 }
                 else
                 {

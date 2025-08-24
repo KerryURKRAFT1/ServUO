@@ -43,7 +43,7 @@ namespace Server.Engines.Craft
             }
 
                     // Debug: Output the message value
-                 Console.WriteLine("Crafting Menu Message: " + m_Message);
+                 //Console.WriteLine("Crafting Menu Message: " + m_Message);
 
             if (m_Message != 0)
             {
@@ -273,9 +273,9 @@ namespace Server.Engines.Craft
                         CraftItem craftItem = m_CraftSystem.CraftItems.SearchFor(itemType);
 
                         // Debugging output
-                        Console.WriteLine("Crafting item: " + itemType);
-                        Console.WriteLine("Using tool: " + m_Tool);
-                        Console.WriteLine("Craft item found: " + (craftItem != null));
+                        //Console.WriteLine("Crafting item: " + itemType);
+                        //Console.WriteLine("Using tool: " + m_Tool);
+                        //Console.WriteLine("Craft item found: " + (craftItem != null));
                         if (craftItem != null)
                         {
                             craftItem.Craft(m_From, m_CraftSystem, null, m_Tool); // Updated to use 4 parameters
