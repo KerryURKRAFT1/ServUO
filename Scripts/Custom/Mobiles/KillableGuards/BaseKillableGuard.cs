@@ -50,6 +50,7 @@ namespace Server.Mobiles
 		public bool Bandaging = false;
 		public bool BlockTeleport = false;
 		public bool BlockCall = false;
+		public bool BlockGreet = false;
 		
 		private Timer m_AttackTimer, m_IdleTimer;
 		
@@ -345,7 +346,7 @@ namespace Server.Mobiles
 						
 						BlockCall = true;
 
-						Timer.DelayCall (TimeSpan.FromSeconds(20.0), () => EndCallLock());
+						Timer.DelayCall (TimeSpan.FromSeconds(20.0), () => { BlockCall = false; });
 					}
 					
 					if (m_AttackTimer != null)
@@ -390,11 +391,6 @@ namespace Server.Mobiles
 				}
 			}
 		}
-
-		private void EndCallLock()
-		{
-			BlockCall = false;
-		}
 				
 		public override void OnAfterDelete()
 		{
@@ -415,7 +411,7 @@ namespace Server.Mobiles
 			base.OnAfterDelete();
 		}
 
-		public override bool HandlesOnSpeech(Mobile from) { return true; }
+        public override bool HandlesOnSpeech(Mobile from) { return true; }
 
 		public override void OnSpeech(SpeechEventArgs e)
 		{
@@ -437,11 +433,35 @@ namespace Server.Mobiles
 				else
 				{
 					Emote("looks around");
-										
+					
 					m_Focus = null;;
+
+					if (e.Mobile is BaseKillableGuard bkg)
+					{
+						bkg.LooksAround();
+					}
 				}
 			}
 		}
+
+        public override void OnMovement(Mobile m, Point3D oldLocation)
+        {
+            if (Utility.RandomBool() && !m.Player) return;
+
+            if (!Hidden && Utility.RandomDouble() < 0.35 && m.Alive && !m.Hidden && m.InRange(this, 3))
+            {
+				if (!BlockGreet)
+				{
+                	Say(greet[Utility.Random(greet.Length)]);
+					
+					BlockGreet = true;
+
+					Timer.DelayCall (TimeSpan.FromSeconds(5.0), () => { BlockGreet = false; });
+				}
+
+                return;
+            }
+        }
 
 		public override bool OnBeforeDeath()
 		{
@@ -486,6 +506,31 @@ namespace Server.Mobiles
 					caller.Region.MakeGuard(target, amount);
 				}
 			}
+		}
+
+		public void LooksAround()
+		{
+			m_Focus = null;;
+
+		   	IPooledEnumerable eable = GetMobilesInRange(18);
+
+			foreach (Mobile m in eable)
+			{
+				if (m is BaseKillableGuard bkg && bkg.Focus != null && InLOS(bkg) && InLOS(m))
+				{
+					m_Focus = bkg.Focus;
+					
+					m_IdleTimer?.Stop();
+				}
+				else if (IsEnemy(m))
+				{
+					m_Focus = m;
+					
+					m_IdleTimer?.Stop();
+				}
+			}
+
+			eable.Free();
 		}
 
 		public BaseKillableGuard( Serial serial ) : base( serial )
@@ -702,7 +747,7 @@ namespace Server.Mobiles
 			{
 				m_Owner = owner;
 				
-				m_End = DateTime.UtcNow + TimeSpan.FromMinutes(Utility.RandomMinMax(1, 10));
+				m_End = DateTime.UtcNow + TimeSpan.FromMinutes(Utility.RandomMinMax(2, 5));
 
 				Priority = TimerPriority.FiveSeconds;
 			}
@@ -744,28 +789,38 @@ namespace Server.Mobiles
 					Effects.SendLocationParticles(EffectItem.Create(m_Owner.Location, m_Owner.Map, EffectItem.DefaultDuration), 0x3728, 10, 10, 2023);
 									
 					m_Owner.Delete();
+					
+					Stop();
 				}
 				
 				m_Owner.Focus = null;
 				
 				m_Owner.Combatant = null;
 
-			   	IPooledEnumerable eable = m_Owner.GetMobilesInRange(18);
-	
-				foreach (Mobile m in eable)
-				{
-					if ((m is BaseKillableGuard bg && bg.Focus != null) || m_Owner.IsEnemy(m))
-					{
-						m_Owner.Focus = m;
-						
-						Stop();
-					}
-				}
-	
-				eable.Free();
+				m_Owner.LooksAround();
 			}
 		}
 		
+		static string[] greet =
+		{
+			"To the fight!",
+			"To arms!",
+			"Where away!",
+			"The battle awaits!",
+			"Mind your weapons!",
+			"I keep my eye on my enemy!",
+			"Now is the time to fight!",
+			"Nothing walks away!",
+			"We must defend our land!",
+			"Fight for our people!",
+			"Out of my Way!",
+			"Move aside!",
+			"*Mumbles*",
+			"Beware!",
+			"Watch out!",
+			"Coming through!"
+		};
+
 		static string[] speech =
 		{
 			"To the fight!",
