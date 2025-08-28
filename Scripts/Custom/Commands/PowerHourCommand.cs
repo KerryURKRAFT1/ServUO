@@ -6,8 +6,11 @@ namespace Server.Commands
 	{
 		public static void Initialize()
 		{
-			if (PlayerMobile.PowerHourEnabled)				
+			if (PlayerMobile.PowerHourEnabled)
+			{
+				CommandSystem.Register("PH", AccessLevel.Player, new CommandEventHandler(OnPowerHourCommand));
 				CommandSystem.Register("PowerHour", AccessLevel.Player, new CommandEventHandler(OnPowerHourCommand));
+			}
 		}
 
 		public static void OnPowerHourCommand(CommandEventArgs e)
@@ -17,9 +20,9 @@ namespace Server.Commands
 			if (pm != null)
 			{
 				if (e.ArgString.ToLower() == "start")
-					pm.PowerHourReadySequence();
+					pm.PowerHourCommandSequence();
 				else
-					pm.PowerHourQuerySequence();
+					pm.PowerHourStatusMessage();
 			}
 		}
 	}
