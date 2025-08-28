@@ -104,7 +104,7 @@ namespace Server.Items
 		{
 			get{ return m_IsDeed; }
 			set
-			{ 
+			{
 				m_IsDeed = value;
 				if ( m_IsDeed == true )
 				{
@@ -123,7 +123,7 @@ namespace Server.Items
 				{
 					if ( m_Mob != null )
 					{
-						ItemID =  ShrinkTable.Lookup( m_Mob ); 
+						ItemID =  ShrinkTable.Lookup( m_Mob );
 						Name = "a shrunken pet";
 					}
 					else
@@ -132,7 +132,7 @@ namespace Server.Items
 						Name = "Unlinked Shrink Item!";
 					}
 				}
-			}	
+			}
 		}
 
 		[CommandProperty( AccessLevel.GameMaster )]
@@ -140,11 +140,11 @@ namespace Server.Items
 		{
 			get{ return m_Mob; }
 			set
-			{ 
+			{
 				m_Mob = value;
 				if ( m_IsDeed != true )
 				{
-					ItemID =  ShrinkTable.Lookup( m_Mob ); 
+					ItemID =  ShrinkTable.Lookup( m_Mob );
 					Name = "a shrunken pet";
 				}
 				else
@@ -176,7 +176,7 @@ namespace Server.Items
 				}
 
 				if ( m_Mob is BaseMount )
-				{	
+				{
 					BaseMount mount = (BaseMount)m_Mob;
 					m_MountID = mount.ItemID;
 				}
@@ -273,9 +273,9 @@ namespace Server.Items
 		{
 			get{ return m_PetHue; }
 			set
-			{ 
+			{
 				m_PetHue = value;
-				Hue = m_PetHue; 
+				Hue = m_PetHue;
 			}
 		}
 
@@ -284,9 +284,9 @@ namespace Server.Items
 		{
 			get{ return m_MobType; }
 			set
-			{ 
+			{
 				m_MobType = value;
-				m_MobTypeString = m_MobType.Name; 
+				m_MobTypeString = m_MobType.Name;
 			}
 		}
 
@@ -300,7 +300,7 @@ namespace Server.Items
 		public bool PetBonded
 		{
 			get{ return m_PetBonded; }
-			set{ m_PetBonded = value; }	
+			set{ m_PetBonded = value; }
 		}
 
 		[CommandProperty( AccessLevel.GameMaster )]
@@ -595,9 +595,9 @@ namespace Server.Items
 			set{ m_PetTitle = value; }
 		}
 
-      		[Constructable]
-      		public ShrinkItem() : base()
-      		{
+	  	[Constructable]
+	  	public ShrinkItem() : base()
+	  	{
 			if ( m_Mob != null )
 			{
 				if ( m_IsDeed != false )
@@ -611,26 +611,23 @@ namespace Server.Items
 					Name = "a shrunken pet";
 				}
 
-         			Movable = true;
-         			LootType=LootType.Blessed;
+		 			Movable = true;
+		 			LootType=LootType.Blessed;
 				Hue = m_PetHue;
 			}
 			else
 			{
 				ItemID = 0xFAA;
-         			Movable = true;
-         			Name = "Unlinked Shirnk Item!";
-         			LootType=LootType.Blessed;
+		 			Movable = true;
+		 			Name = "Unlinked Shirnk Item!";
+		 			LootType=LootType.Blessed;
 			}
 
 			Weight = 25.0;
-      		}
+	  	}
 
-      		public override void OnDoubleClick( Mobile from )
-      		{
-
-			bool notame = false;
-
+	  	public override void OnDoubleClick( Mobile from )
+	  	{
 			if ( !IsChildOf( from.Backpack ) )
 			{
 				from.SendLocalizedMessage( 1042001 ); // That must be in your pack for you to use it.
@@ -645,11 +642,6 @@ namespace Server.Items
 				from.SendMessage( "This item is now being returned to its owner." );
 				m_PetOwner.AddToBackpack( this );
 				m_PetOwner.SendMessage( "You pet {0} has been returned to you because it was locked and {1} was trying to claim the pet.", m_MobTypeString, from.Name );
-			}
-			else if ( from.Skills[SkillName.AnimalTaming].Value < m_PetMinTame && notame != true )
-			{
-				from.SendMessage( "You do not have the required taming to control this pet.");
-				from.SendMessage( "You must have {0} animal taming to reclaim this pet.", m_PetMinTame );
 			}
 			else if ( from.Followers + m_PetControlSlots > from.FollowersMax )
 			{
@@ -693,9 +685,9 @@ namespace Server.Items
 						Type type = SpawnerType.GetType( m_MobTypeString );
 
 						if( type != null )
-						{				
+						{
 							object o = Activator.CreateInstance( type );
-        						pet = o as BaseCreature;
+							pet = o as BaseCreature;
 						}
 					}
 
@@ -732,11 +724,11 @@ namespace Server.Items
 						pet.Title = m_PetTitle;
 
 						if ( pet is BaseMount )
-						{	
+						{
 							BaseMount mount = pet as BaseMount;
 							if ( m_MountID >= 0 )
 								mount.ItemID = m_MountID;
-						}	
+						}
 
 						if ( m_PetBonded == true && m_PetOwner == from )
 						{
@@ -862,19 +854,12 @@ namespace Server.Items
 							pet.Skills[SkillName.Meditation].Base = m_PetMed;
 
 						pet.Skills[SkillName.Wrestling].Cap = m_CapWrestling;
-
 						pet.Skills[SkillName.Tactics].Cap = m_CapTactics;
-
 						pet.Skills[SkillName.MagicResist].Cap = m_CapResist;
-
 						pet.Skills[SkillName.Anatomy].Cap = m_CapAnatomy;
-	
-						pet.Skills[SkillName.Poisoning].Cap = m_CapPoisoning;
-		
+						pet.Skills[SkillName.Poisoning].Cap = m_CapPoisoning;	
 						pet.Skills[SkillName.Magery].Cap = m_CapMagery;
-
 						pet.Skills[SkillName.EvalInt].Cap = m_CapEvalInt;
-
 						pet.Skills[SkillName.Meditation].Cap = m_CapMed;
 
 						//End Setting Skills
@@ -895,17 +880,17 @@ namespace Server.Items
 						Effects.SendMovingParticles( p1, p2, ShrinkTable.Lookup( m_PetBody ), 1, 0, true, false, 0, 3, 1153, 1, 0, EffectLayer.Head, 0x100 );
 						from.PlaySound( 492 );
 
-        					pet.Controlled = true;
-        					pet.ControlMaster = from;
-        					pet.Location = from.Location;
+						pet.Controlled = true;
+						pet.ControlMaster = from;
+						pet.Location = from.Location;
 						pet.ControlOrder = OrderType.Follow;
 						pet.ControlTarget = from;
-        					pet.Map = from.Map;
+						pet.Map = from.Map;
 
 						if ( pet.IsParagon )
 							pet.IsParagon = false;
 
-       					World.AddMobile( pet );
+	   					World.AddMobile( pet );
 
 						ArrayList equipitems = new ArrayList( pet.Items );
 
@@ -921,7 +906,7 @@ namespace Server.Items
 					}
 				}
 			}
-      		}
+	  	}
 
 		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
 		{
@@ -987,11 +972,11 @@ namespace Server.Items
 
   		public override void Serialize( GenericWriter writer )
   		{
-    	 	base.Serialize( writer );
+		 	base.Serialize( writer );
 
-     		writer.Write( (int) 10 ); // version
+	 		writer.Write( (int) 10 ); // version
 
-         	//version 10	
+		 	//version 10
 			writer.Write( m_PetTitle );
 			//version 9
 			Faction.WriteReference( writer, m_Faction );
@@ -1068,9 +1053,9 @@ namespace Server.Items
 
   		public override void Deserialize( GenericReader reader )
   		{
-     		base.Deserialize( reader );
+	 		base.Deserialize( reader );
 
-     		int version = reader.ReadInt();
+	 		int version = reader.ReadInt();
 
 			switch ( version )
 			{
@@ -1109,7 +1094,7 @@ namespace Server.Items
 					m_CapEvalInt = reader.ReadDouble();
 					m_CapMed = reader.ReadDouble();
 					goto case 5;
-				} 
+				}
 				case 5: // Sheep Wool Fix
 				{
 					m_SheepWool = reader.ReadDeltaTime();
@@ -1136,7 +1121,7 @@ namespace Server.Items
 				{
 					m_MountID = reader.ReadInt();
 					goto case 0;
-				}	
+				}
 				case 0: // Initial Release
 				{
 					m_IsDeed = reader.ReadBool();
@@ -1181,6 +1166,6 @@ namespace Server.Items
 					break;
 				}
 			}
-      	}
+	  	}
    	}
 }
