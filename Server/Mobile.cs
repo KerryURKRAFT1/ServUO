@@ -35,68 +35,65 @@ namespace Server
 	/// <summary>
 	///     UOR SPHERE HIT SYSTEM
 	/// </summary>
-		public enum HitLocation
+	public enum HitLocation
+	{
+		Head,
+		Neck,
+		Back,
+		Chest,
+		Arms,
+		Hands,
+		Legs,
+		Feet
+	}
+
+	public static class HitLocationHelper
+	{
+		private static readonly List<(HitLocation location, int percent)> Table = new List<(HitLocation, int)>
 		{
-			Head,
-			Neck,
-			Back,
-			Chest,
-			Arms,
-			Hands,
-			Legs,
-			Feet
+			(HitLocation.Head, 15),
+			(HitLocation.Neck, 7),
+			(HitLocation.Back, 5),
+			(HitLocation.Chest, 25),
+			(HitLocation.Arms, 14),
+			(HitLocation.Hands, 7),
+			(HitLocation.Legs, 22),
+			(HitLocation.Feet, 5),
+		};
+
+		public static HitLocation GetRandomLocation()
+		{
+			int roll = Utility.Random(100); // 0-99
+			int sum = 0;
+			
+			foreach (var entry in Table)
+			{
+				sum += entry.percent;
+				
+				if (roll < sum)
+					return entry.location;
+			}
+			
+			return HitLocation.Feet; // fallback
 		}
 
-		public static class HitLocationHelper
+		public static List<Layer> GetLayersForLocation(HitLocation loc)
 		{
-			private static readonly (HitLocation location, int percent)[] Table = new[]
+			switch (loc)
 			{
-				(HitLocation.Head, 15),
-				(HitLocation.Neck, 7),
-				(HitLocation.Back, 5),
-				(HitLocation.Chest, 25),
-				(HitLocation.Arms, 14),
-				(HitLocation.Hands, 7),
-				(HitLocation.Legs, 22),
-				(HitLocation.Feet, 5),
-			};
-
-			public static HitLocation GetRandomLocation()
-			{
-				int roll = Utility.Random(100); // 0-99
-				int sum = 0;
-				foreach (var entry in Table)
-				{
-					sum += entry.percent;
-					if (roll < sum)
-						return entry.location;
-				}
-				return HitLocation.Feet; // fallback
+				case HitLocation.Head:   return new List<Layer> { Layer.Helm }; 
+				case HitLocation.Neck:   return new List<Layer> { Layer.Neck};
+				case HitLocation.Back:   return new List<Layer> { Layer.Cloak, Layer.Shirt, Layer.InnerTorso, Layer.OuterTorso};
+				case HitLocation.Chest:  return new List<Layer> { Layer.Shirt, Layer.InnerTorso, Layer.OuterTorso};
+				case HitLocation.Arms:   return new List<Layer> { Layer.Arms};
+				case HitLocation.Hands:  return new List<Layer> { Layer.Gloves };
+				case HitLocation.Legs:   return new List<Layer> { Layer.InnerLegs, Layer.OuterLegs, Layer.Pants};
+				case HitLocation.Feet:   return new List<Layer> { Layer.Shoes, Layer.InnerLegs, Layer.OuterLegs, Layer.Pants };
+				default: return new List<Layer> { Layer.Invalid };
 			}
-
-
-			public static Layer[] GetLayersForLocation(HitLocation loc)
-			{
-				switch (loc)
-				{
-					case HitLocation.Head:   return new[] { Layer.Helm }; 
-					case HitLocation.Neck:   return new[] { Layer.Neck};
-					case HitLocation.Back:   return new[] { Layer.Cloak, Layer.Shirt, Layer.InnerTorso, Layer.OuterTorso};
-					case HitLocation.Chest:  return new[] { Layer.Shirt, Layer.InnerTorso, Layer.OuterTorso};
-					case HitLocation.Arms:   return new[] { Layer.Arms};
-					case HitLocation.Hands:  return new[] { Layer.Gloves };
-					case HitLocation.Legs:   return new[] { Layer.InnerLegs, Layer.OuterLegs, Layer.Pants};
-					case HitLocation.Feet:   return new[] { Layer.Shoes, Layer.InnerLegs, Layer.OuterLegs, Layer.Pants };
-					default: return new Layer[0];
-				}
-			}
-
-
-
 		}
-
-			///////
-
+	}
+	///////
 
 	#region Callbacks
 	public delegate void TargetCallback(Mobile from, object targeted);
