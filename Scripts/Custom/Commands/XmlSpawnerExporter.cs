@@ -94,10 +94,7 @@ namespace Server.Misc
 					
 	            	if (sp != null && !sp.Deleted && !(sp.RootParent is Mobile))
 					{
-						if (DoRegionFix(sp))
-						{
-							xml.Add(sp);
-						}
+						xml.Add(sp);
 					}
             	}
  			}
@@ -149,24 +146,7 @@ namespace Server.Misc
 
 			return sb.ToString();
 		}
-				
-		private static bool DoRegionFix(XmlSpawner spawner)
-		{
-			if (spawner.RootParent == null)
-			{
-				Region reg = Region.Find (spawner.Location, spawner.Map);
-
-				GuardedRegion region = reg.GetRegion(typeof(GuardedRegion)) as GuardedRegion;
-		   	
-			   	if (region != null && !spawner.IsGuardExempt)
-		   		{
-		   			spawner.IsGuardExempt = true;
-		   		}
-			}
-			
-		   	return true;
-		}
-		
+						
  		private static string GetRegionName(XmlSpawner spawner)
  		{			
 			var loc = spawner.Location;
@@ -187,13 +167,15 @@ namespace Server.Misc
 			}
 
  			Region reg = Region.Find (loc, map);
-				
-			string region = "Wilderness";
 
-			if (reg.ToString() != "Region") //omg jumping through hoops to get region name
-			{
-				region = reg.ToString();
-			
+            string region = reg.ToString();
+            
+            if (reg.ToString() == "Region")
+            {
+            	region = "Wilderness";
+            }
+			else if (reg.ToString() == "BaseRegion") //omg jumping through hoops to get region name
+			{		
 				if (!reg.IsDefault)
                 {
                     reg = reg.Parent;
@@ -206,7 +188,7 @@ namespace Server.Misc
                 }
 			}
 			
-			if (!m_RegionList.Contains(region))
+            if (!m_RegionList.Contains(region))
 		    {
 		    	m_RegionList.Add(region);
 		    }
