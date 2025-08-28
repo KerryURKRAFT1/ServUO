@@ -72,7 +72,7 @@ namespace Server.Items
 	
 			if (Core.UOR)
 			{
-				canMove = m_ArchersCanMove || Core.TickCount - attacker.LastMoveTime >= (1000);
+				canMove = m_ArchersCanMove || Core.TickCount - attacker.LastMoveTime >= 25;
 			}
 			else
 			{
@@ -83,49 +83,39 @@ namespace Server.Items
 			if (canMove)
 			{				
 				// ======= SWING FOR UOR SPHERE-STYLE =======
-				if (CanSwing(attacker) && attacker.HarmfulCheck(damageable))
+				if (CanSwing(attacker, damageable as Mobile) && attacker.HarmfulCheck(damageable))
 				{
 					TimeSpan swingDelay = GetDelay(attacker);
 					
-					if (attacker.InRange(damageable.Location, MaxRange))
+					Timer.DelayCall(swingDelay, () =>
 					{
-						Timer.DelayCall(swingDelay, () =>
+						if (CanSwing(attacker, damageable as Mobile))
 						{
-							if (CanSwing(attacker) && attacker.InRange(damageable.Location, MaxRange))
+							if (damageable is Mobile mobileTarget)
 							{
-								if (damageable is Mobile mobileTarget)
+								if (mobileTarget.Deleted || !mobileTarget.Alive || mobileTarget.Body.IsGhost)
+									return;
+							}
+							else if (damageable is Item itemTarget)
+							{
+								// Add item controls here if needed
+							}
+
+							attacker.Send(new Swing(0, attacker, damageable));
+							
+							if (OnFired(attacker, damageable))
+							{
+								if (CheckHit(attacker, damageable))
 								{
-									if (mobileTarget.Deleted || !mobileTarget.Alive || mobileTarget.Body.IsGhost)
-										return;
+									OnHit(attacker, damageable, 1.0);
 								}
-								else if (damageable is Item itemTarget)
+								else
 								{
-									// Add item controls here if needed
-								}
-	
-								attacker.Send(new Swing(0, attacker, damageable));
-								if (OnFired(attacker, damageable))
-								{
-									if (CheckHit(attacker, damageable))
-									{
-										OnHit(attacker, damageable, 1.0);
-									}
-									else
-									{
-										OnMiss(attacker, damageable);
-									}
+									OnMiss(attacker, damageable);
 								}
 							}
-							else
-							{
-								// Target out of range: do nothing, no miss, no attack!
-							}
-						});
-					}
-					else
-					{
-						// Target is out of range: do not swing, do not start swing timer
-					}
+						}
+					});
 	
 					attacker.RevealingAction();
 		
