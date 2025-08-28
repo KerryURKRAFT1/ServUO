@@ -171,18 +171,15 @@ namespace Server.Misc
 
             gc *= skill.Info.GainFactor;
 
-			#region Power Hour
-			if (from is PlayerMobile pm)
-            {
-            	gc = pm.PowerHourRunning(skill, gc);
-            }
-            #endregion
-
 			if (gc < 0.01)
                 gc = 0.01;
 
-			//boost
-			//end
+			#region Power Hour
+			if (from is PlayerMobile ph)
+            {
+            	gc = ph.PowerHourBonus(skill, gc);
+            }
+            #endregion
 			
             if (from is BaseCreature && ((BaseCreature)from).Controlled)
                 gc *= 2;
@@ -282,8 +279,15 @@ namespace Server.Misc
             {
                 int toGain = 1;
 
+				#region Power Hour
+				if (from is PlayerMobile ph)
+	            {
+					toGain = ph.PowerHourGain(skill, toGain);
+	            }
+				#endregion
+
                 if (skill.Base <= 10.0)
-                    toGain = Utility.Random(4) + 1;
+                    toGain = Utility.Random(5) + 1;
 
                 Skills skills = from.Skills;
 
@@ -294,7 +298,6 @@ namespace Server.Misc
                 #endregion
 
                 #region Scroll of Alacrity
-
                 if (from is PlayerMobile)
                 {
                     PlayerMobile pm = from as PlayerMobile;
