@@ -308,25 +308,6 @@
 				<logoutDelay active="false" />
 			</region>
 		</region>
-		<region type="TownRegion" priority="50" name="Delucia">
-			<rect x="5123" y="3942" width="192" height="122" />
-			<rect x="5147" y="4064" width="125" height="20" />
-			<rect x="5235" y="3930" width="80" height="12" />
-			<go x="5228" y="3978" z="37" />
-			<region>
-				<rect x="5194" y="4053" width="10" height="20" />
-				<logoutDelay active="false" />
-			</region>
-		</region>
-		<region type="TownRegion" priority="50" name="Papua">
-			<rect x="5639" y="3095" width="192" height="223" />
-			<rect x="5831" y="3237" width="20" height="30" />
-			<go x="5769" y="3176" z="0" />
-			<region>
-				<rect x="5757" y="3150" width="24" height="24" />
-				<logoutDelay active="false" />
-			</region>
-		</region>
 		<!-- TOWNS -->
 
 		<!-- GRAVEYARDS -->
@@ -537,13 +518,6 @@
 		<region type="DungeonRegion" priority="50" name="Shame Level 4">
 			<rect x="5638" y="0" width="252" height="127" />
 			<music name="Dungeon9" />
-		</region>
-		<region type="DungeonRegion" priority="50" name="Terathan Keep">
-			<rect x="5404" y="3099" width="77" height="68" />
-			<rect x="5120" y="1530" width="254" height="258" />
-			<go x="5451" y="3143" z="-60" />
-			<music name="Dungeon9" />
-			<entrance x="5426" y="3120" />
 		</region>
 		<region type="NoHousingRegion" priority="50" name="Wrong Entrance">
 			<rect x="2030" y="212" width="26" height="23" />
@@ -919,6 +893,71 @@
 		  <go x="2496" y="3932" z="0" />
 		</region>
 		<!-- SHRINES -->
+		
+		<!-- LOSTLANDS -->
+		<!-- TOWNS -->
+		<region type="TownRegion" priority="50" name="Delucia">
+			<rect x="5123" y="3942" width="192" height="122" />
+			<rect x="5147" y="4064" width="125" height="20" />
+			<rect x="5235" y="3930" width="80" height="12" />
+			<go x="5228" y="3978" z="37" />
+			<region>
+				<rect x="5194" y="4053" width="10" height="20" />
+				<logoutDelay active="false" />
+			</region>
+		</region>
+		<region type="TownRegion" priority="50" name="Papua">
+			<rect x="5639" y="3095" width="192" height="223" />
+			<rect x="5831" y="3237" width="20" height="30" />
+			<go x="5769" y="3176" z="0" />
+			<region>
+				<rect x="5757" y="3150" width="24" height="24" />
+				<logoutDelay active="false" />
+			</region>
+		</region>
+		<!-- TOWNS -->
+		<!-- DUNGEONS -->
+		<region type="DungeonRegion" priority="50" name="Terathan Keep">
+			<rect x="5404" y="3099" width="77" height="68" />
+			<rect x="5120" y="1530" width="254" height="258" />
+			<go x="5451" y="3143" z="-60" />
+			<music name="Dungeon9" />
+			<entrance x="5426" y="3120" />
+		</region>
+		<!-- DUNGEONS -->		
+		<!-- ENTRANCES -->
+		<region priority="50" name="Trinsic Passage">
+			<rect x="5134" y="3659" width="16" height="17" />
+			<rect x="5147" y="4057" width="11" height="18" />
+		</region>
+		<!-- ENTRANCES -->		
+		<!-- CEMETARYS -->		
+		<region priority="50" name="South Papua Cemetary">
+			<rect x="5691" y="3656" width="14" height="14" />
+		  <go x="5695" y="3650" z="-3" />		
+		</region>					
+		<!-- CEMETARYS -->		
+		<region priority="50" name="Cyclops Valley">
+			<rect x="5123" y="2821" width="92" height="250" />
+		  <go x="5151" y="2948" z="19" />		
+		</region>					
+		<region priority="50" name="Ophidian Lair">
+			<rect x="5642" y="2604" width="211" height="220" />
+		  <go x="5767" y="2635" z="40" />		
+		</region>					
+		<region priority="50" name="Ruins">
+			<rect x="5377" y="3221" width="26" height="26" />
+		  <go x="5393" y="3244" z="2" />		
+		</region>					
+		<region priority="50" name="Orc Fort">
+			<rect x="5195" y="3606" width="22" height="26" />		
+		  <go x="5210" y="3628" z="-1" />		
+		</region>					
+		<region priority="50" name="City Of The Dead">
+			<rect x="5193" y="3643" width="50" height="40" />
+		  <go x="5232" y="3647" z="0" />		
+		</region>					
+		<!-- LOSTLANDS -->
 		
 		<!--ADMIN AREAS-->
 		<region type="Jail" priority="50" name="Jail">
