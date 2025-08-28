@@ -67,7 +67,7 @@ namespace Server.Gumps
                 this.AddHtml(70, 36 + (line++ * 20), 200, 20, this.Color(String.Format("{0} (0x{1:X})", m.Name, m.Serial.Value), LabelColor32), false, false);
 
                 this.AddHtml(14, 36 + (line * 20), 200, 20, this.Color("Location:", LabelColor32), false, false);
-                this.AddHtml(70, 36 + (line++ * 20), 200, 20, this.Color(String.Format("{0} [{1}]", m.Location, m.Map), LabelColor32), false, false);
+                this.AddHtml(70, 36 + (line++ * 20), 400, 20, this.Color(String.Format("{0} {1} [{2}]", m.Location, GetRegionName(m), m.Map), LabelColor32), false, false);
 
                 this.AddButton(13, 157, 0xFAB, 0xFAD, 1, GumpButtonType.Reply, 0);
                 this.AddHtml(48, 158, 200, 20, this.Color("Send Message", LabelColor32), false, false);
@@ -76,10 +76,10 @@ namespace Server.Gumps
                 this.AddImageTiled(13, 183, 374, 78, 0xBBC);
                 this.AddTextEntry(15, 183, 372, 78, 0x480, 0, "");
 
-                this.AddImageTiled(245, 35, 142, 144, 5058);
+                this.AddImageTiled(245, 35, 142, 94, 5058);
 
-                this.AddImageTiled(246, 36, 140, 142, 0xA40);
-                this.AddAlphaRegion(246, 36, 140, 142);
+                this.AddImageTiled(246, 36, 140, 92, 0xA40);
+                this.AddAlphaRegion(246, 36, 140, 92);
 
                 line = 0;
 
@@ -293,5 +293,35 @@ namespace Server.Gumps
 
             to.SendGump(new ClientGump(to, this.m_State, te == null ? "" : te.Text));
         }
+
+ 		private static string GetRegionName(Mobile from)
+ 		{			
+			var loc = from.Location;
+			var map = from.Map;
+
+ 			Region reg = Region.Find (loc, map);
+
+            string region = reg.ToString();
+            
+            if (reg.ToString() == "Region")
+            {
+            	region = "Wilderness";
+            }
+			else if (reg.ToString() == "BaseRegion") //omg jumping through hoops to get region name
+			{		
+				if (!reg.IsDefault)
+                {
+                    reg = reg.Parent;
+
+                    while (reg != null)
+                    {
+                    	region = reg.ToString();
+                        reg = reg.Parent;
+                    }
+                }
+			}
+			
+			return region;
+ 		}
     }
 }
