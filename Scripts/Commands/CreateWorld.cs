@@ -52,17 +52,18 @@ namespace Server.Commands
 			new CommandEntry("Signs",           	"SignGen",							103, 	true),
 			new CommandEntry("Teleporters",     	"TelGen",							104, 	true),
 			new CommandEntry("Decorations",     	"Decorate",         				105, 	true),
+			new CommandEntry("NightMares",   		"GenNightmareSpawner",				106, 	true),
 			new CommandEntry("Factions",        	"GenerateFactions",					201, 	true),
 			new CommandEntry(300), //Spacer			
 			new CommandEntry("Regular Spawners",	"XmlLoad Spawns/Felucca/Spawns",	301, 	true),
-			new CommandEntry("Reagent Spawners",	"XmlLoad Spawns/Felucca/Reagents",	302, 	false),
-			new CommandEntry("Rares Spawners",		"XmlLoad Spawns/Felucca/Rares",		303, 	false),
-			new CommandEntry("Stealable Spawners",	"XmlLoad Spawns/Felucca/Stealables",304, 	false),
+			new CommandEntry("Reagent Spawners",	"XmlLoad Spawns/Felucca/Reagents",	302, 	true),
+			new CommandEntry("Rares Spawners",		"XmlLoad Spawns/Felucca/Rares",		303, 	true),
+			new CommandEntry("Stealable Spawners",	"XmlLoad Spawns/Felucca/Stealables",304, 	true),
 			new CommandEntry(400), //Spacer
-			new CommandEntry("Khaldun",     	 	"GenKhaldun",       		   	   	401, 	false),
-			new CommandEntry("Khaldun Spawners", 	"XmlLoad Spawns/Felucca/Khaldun", 	402, 	false),
+			new CommandEntry("Khaldun",     	 	"GenKhaldun",       		   	   	401, 	true),
+			new CommandEntry("Khaldun Spawners", 	"XmlLoad Spawns/Felucca/Khaldun", 	402, 	true),
 			new CommandEntry(500), //Spacer
-			new CommandEntry("SmartSpawn",			"OptimalSmartSpawning 100",		   	501, 	false),
+			new CommandEntry("SmartSpawn",			"OptimalSmartSpawning 100",		   	501, 	true),
 		});
 
 		public static List<CommandEntry> DeleteCommands = new List<CommandEntry>(new CommandEntry[]
@@ -72,6 +73,7 @@ namespace Server.Commands
 			new CommandEntry("Signs",           	"SignGenDelete",		103),
 			new CommandEntry("Teleporters",     	"TelGenDelete",			104),
 			new CommandEntry("Decorations",     	"DecorateDelete",		105),
+			new CommandEntry("NightMares",    		"DelNightmareSpawner",	106),
 			new CommandEntry("Factions",        	"DeleteFactions",		201),		
 			new CommandEntry("Khaldun",     	 	"DeleteKhaldun",     	301),
 			new CommandEntry(400), //Spacer
@@ -81,6 +83,7 @@ namespace Server.Commands
 		public static List<CommandEntry> XmlSpawnersCommand = new List<CommandEntry>(new CommandEntry[]
 		{
 			new CommandEntry("Regular Spawners",	"XmlLoad Spawns/Felucca/Spawns",	101, 	true),
+			new CommandEntry("NightMare Spawner",   "GenNightmareSpawner",				102,	true),
 			new CommandEntry(200), //Spacer
 			new CommandEntry("Khaldun Spawners", 	"XmlLoad Spawns/Felucca/Khaldun", 	302, 	false),
 			new CommandEntry(400), //Spacer
@@ -162,7 +165,7 @@ namespace Server.Commands
 		
 		public static void DoCommands(int[] selections, GumpType type, Mobile from)
 		{
-			World.Broadcast(0x35, false, "The dark side is generating. This may take some time...");
+			World.Broadcast(0x35, false, "The server is generating. This may take some time...");
 			
 			string prefix = Server.Commands.CommandSystem.Prefix;
 			
@@ -203,7 +206,7 @@ namespace Server.Commands
 				}
 			}
 			
-			World.Broadcast(0x35, false, "Dark side generation complete.");
+			World.Broadcast(0x35, false, "Server generation complete.");
 		}
 	}
 }
