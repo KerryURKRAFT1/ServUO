@@ -90,7 +90,8 @@ namespace Server.Commands
 
             try
             {
-                m_Output.WriteLine("{0}: {1}: {2}", DateTime.UtcNow, from.NetState, text);
+			    m_Output.WriteLine("{0}: {1}: {2}", DateTime.UtcNow, from.NetState, text);
+//                m_Output.WriteLine("{0}: {1}: {2} ({3}:{4}:{5}})", DateTime.UtcNow, from.NetState, text, from.X, from.Y, from.Z);
 
                 string path = Core.BaseDirectory;
 
@@ -105,6 +106,8 @@ namespace Server.Commands
 
                 using (StreamWriter sw = new StreamWriter(path, true))
                     sw.WriteLine("{0}: {1}: {2}", DateTime.UtcNow, from.NetState, text);
+
+//                    sw.WriteLine("{0}: {1}: {2} ({3}:{4}:{5}})", DateTime.UtcNow, from.NetState, text, from.X, from.Y, from.Z);
             }
             catch
             {
