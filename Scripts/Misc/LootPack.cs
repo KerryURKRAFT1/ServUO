@@ -537,6 +537,13 @@ namespace Server
 
 					instr.Quality = InstrumentQuality.Regular;
 					instr.Slayer = slayer;
+
+					// REMOVE SLAYER FROM LOOT 
+					if (Core.UOR)
+					{
+						instr.Slayer = SlayerName.None;
+						instr.Slayer2 = SlayerName.None;
+					}
 				}
 
 				if (item.Stackable)

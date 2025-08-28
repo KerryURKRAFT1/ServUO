@@ -27,27 +27,28 @@ namespace Server.StaticHouse
             AddPage(0);
 
             AddBackground(0, 0, 320, 220, 9200);
-
+            AddBackground(10, 10, 300, 200, 3000);
+            AddImage(90, -50, 100);
             AddButton(285, 10, 4017, 4018, 0, GumpButtonType.Reply, 0);
 
-            AddLabel(80, 10, 1152, "Town House");
+            AddLabel(125, -10 , 1152, "Town House");
 
-            AddLabel(20, 40, 0, "Name:");
-            AddLabel(90, 40, 33, m_Sign.HouseName != null ? m_Sign.HouseName : "N/A");
+            AddLabel(20, 60, 0, "Name:");
+            AddLabel(150, 60, 1152, m_Sign.HouseName != null ? m_Sign.HouseName : "N/A");
 
             // Show required title (Karma/Fame)
             string requiredTitle = StaticHouseSign.GetTitleFromKarmaFame(m_Sign.RequiredKarma, m_Sign.RequiredFame);
-            AddLabel(20, 65, 0, "Required Title:");
-            AddLabel(150, 65, 88, requiredTitle);
+            AddLabel(20, 85, 0, "Required Title:");
+            AddLabel(150, 85, 88, requiredTitle);
 
-            int y = 90;
+            int y = 110;
 
             if (m_Sign.ForSale)
             {
                 AddLabel(20, y, 0, "Sale Price:");
-                AddLabel(150, y, 33, m_Sign.SalePrice.ToString() + " gp");
-                AddButton(50, y + 55, 247, 248, 1, GumpButtonType.Reply, 0); // Buy
-                AddLabel(150, y + 55, 0, "Buy");
+                AddLabel(150, y, 1152, m_Sign.SalePrice.ToString() + " gp");
+                AddButton(150, y + 50, 2152, 2153, 1, GumpButtonType.Reply, 0); // Buy
+                AddLabel(120, y + 55, 0, "Buy");
             }
             else if (m_Sign.ForRent)
             {
