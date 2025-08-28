@@ -42,8 +42,12 @@ namespace Server.Mobiles
 				{
 					var player = registry[i];
 
-					if (player.PowerHourChangeSequence())
+					if (player.PowerHourTime <= DateTime.Now)
+					{
+						player.PowerHourChangeSequence();
+						
 						registry.RemoveAt(i);
+					}
 				}
 			}
 		}

@@ -7,7 +7,11 @@ namespace Server.Mobiles
 {
 	public enum PowerHourActions
 	{
-		Initial, Activate, Start, Delay, DeActivate
+		Initial, 	//0
+		Start,		//1
+		Activate,	//2
+		Delay,		//3
+		DeActivate	//4
 	}
 
 	public partial class PlayerMobile : Mobile
@@ -25,12 +29,13 @@ namespace Server.Mobiles
 		public static double PowerHourFastGainMultiplier = Config.Get("Custom_PowerHour.PowerHourFastGainMultiplier", 500.0);
 		
 		private bool m_PowerHourActive;
-		private bool PowerHourConfigured = false;
 		private DateTime m_PowerHourTime = DateTime.MinValue;
 		
 		public bool PowerHourActive { get { return m_PowerHourActive; } set { m_PowerHourActive = value; } }
 		public DateTime PowerHourTime { get { return m_PowerHourTime; } set { m_PowerHourTime = value; } }
 		
+		public int PowerHourLoad { get; set; }
+
 		private PowerHourActions m_PowerHourAction;
 
 		public PowerHourActions PowerHourAction
@@ -39,156 +44,144 @@ namespace Server.Mobiles
 			set
 			{
 				m_PowerHourAction = value;
-				
-				PowerHourActive = false;
 
+				m_PowerHourActive = false;
+												
 				switch (m_PowerHourAction)
 				{
 					case PowerHourActions.Initial:
 						PowerHourTime = DateTime.Now + PowerHourDelayInit;
-						goto case PowerHourActions.DeActivate;
-					case PowerHourActions.Activate:
-						PowerHourReadyMessage();
+						PowerHourAction = PowerHourActions.DeActivate;
 						return;
 					case PowerHourActions.Start:
-						PowerHourTime = DateTime.Now + PowerHourDuration;
+						break;
+					case PowerHourActions.Activate:
+						PowerHourTime = DateTime.Now + PowerHourDuration;		
+						PowerHourTimer.AddTimer(this);
 						PowerHourActive = true;
-						PowerHourActiveMessage();
 						break;
 					case PowerHourActions.Delay:
 						PowerHourTime = DateTime.Now + PowerHourDelay;
-						PowerHourDelayMessage();
-						goto case PowerHourActions.DeActivate;
+						PowerHourAction = PowerHourActions.DeActivate;
+						return;
 					case PowerHourActions.DeActivate:
-						PowerHourDeActivateMessage();
+						PowerHourTimer.AddTimer(this);
 						break;
 				}
 				
-				PowerHourTimer.AddTimer(this);
+				PowerHourStatusMessage();
 			}
 		}
 		#endregion
 				
 		#region Sequence
-		public void PowerHourConfigureSequence() //triggered by startup (Configure it)
+		public void PowerHourConfigureSequence()
 		{
-			if (!PowerHourEnabled || (IsStaff() && !PowerHourStaffEnabled))
-				return;
-						
-			if (PowerHourTime <= DateTime.MinValue) //detect new start
-				PowerHourAction = PowerHourActions.Initial; 
-			else if (PowerHourTime > DateTime.Now + PowerHourDelay) //incase delay is changed to a shorter value
-				PowerHourAction = PowerHourActions.Delay;
-			else if (PowerHourActive || PowerHourTime < DateTime.Now) // if Active or deactive then continue
-				PowerHourAction = PowerHourActions.Activate;
-			else
-				PowerHourAction = PowerHourActions.DeActivate;
-
-			PowerHourConfigured = true; //loading message off
+			if (PowerHourEnabled || (IsStaff() && PowerHourStaffEnabled))
+			{
+				if (PowerHourLoad == 2) //if active restart it
+					PowerHourAction = PowerHourActions.Start;
+				else 
+					PowerHourAction = (PowerHourActions)PowerHourLoad;
+			}
 		}
 		
-		public bool PowerHourChangeSequence() //triggered by Timer (Swap Status)
+		public void PowerHourStatusMessage()
 		{
-			if (PowerHourTime > DateTime.Now)
-				return false;
-							
-			if (PowerHourActive)
-				PowerHourAction = PowerHourActions.Delay; //if active move to delay
-			else
-				PowerHourAction = PowerHourActions.Activate; //otherwise activate
-
-			return true;
-		}
-
-		public void PowerHourReadySequence() //triggered by command (Activate it)
-		{
-			if (!PowerHourActive)
+			switch (PowerHourAction)
 			{
-				if (PowerHourAction == PowerHourActions.Activate)
-				{
-					PowerHourStartMessage();
-					
-					PowerHourAction = PowerHourActions.Start;
-				}
-				else
-					PowerHourDeActivateMessage();
+				case PowerHourActions.Initial: 
+					PowerHourLoadingMessage(); break;
+				case PowerHourActions.Start: 
+					PowerHourReadyMessage(); break;
+				case PowerHourActions.Activate: 
+					PowerHourActiveMessage(); break;
+				default: 
+					PowerHourDeActivateMessage(); break;
 			}
-			else
-				PowerHourActiveMessage();
 		}
 
-		public void PowerHourQuerySequence() //triggered by command (Answer it)
-		{
-			if (!PowerHourConfigured)
-				PowerHourLoadingMessage();
-			else if (PowerHourAction == PowerHourActions.Activate)
-				PowerHourReadyMessage();
-			else if (PowerHourAction == PowerHourActions.DeActivate)
-				PowerHourDeActivateMessage();
-			else if (PowerHourAction == PowerHourActions.Start)
-				PowerHourActiveMessage();
+		public void PowerHourChangeSequence()
+		{						
+			if (!PowerHourActive)
+				PowerHourAction = PowerHourActions.Start;
 			else
-				PowerHourDeActivateMessage();
+				PowerHourAction = PowerHourActions.Delay;
+		}
+
+		public void PowerHourCommandSequence() //called by command
+		{			
+			if (PowerHourAction == PowerHourActions.Start)
+				PowerHourAction = PowerHourActions.Activate;
+			else
+				PowerHourStatusMessage();	
 		}
 		#endregion
 		
 		#region Messages
-		public void PowerHourReadyMessage()
+		private void PowerHourLoadingMessage()
 		{
-			if (PowerHourAction == PowerHourActions.Activate)
+			SendMessage (48, "Your power hour is loading, please wait a few seconds...");
+		}
+
+		private void PowerHourReadyMessage()
+		{
+			if (PowerHourAction == PowerHourActions.Start)
 			{
-				SendMessage (48, "Your power hour is ready (command [PowerHour Start)");
-				
+				SendMessage (48, "Your power hour is ready (command [powerHour start)");				
 				Timer.DelayCall (TimeSpan.FromMinutes(5.0), () => PowerHourReadyMessage());				
 			}
 		}
 
-		public void PowerHourActiveMessage()
-		{
-			string minutes = (PowerHourTime - DateTime.Now).TotalMinutes.ToString("N0");
-			
-			if (minutes != "0")
-				SendMessage (48, $"Your power hour has {minutes:F0} minutes remaining");
-			else
-				SendMessage (48, $"Your power hour is ending");				
+		private void PowerHourActiveMessage()
+		{		
+			SendMessage (60, $"Your power hour has {FormatTime(PowerHourTime - DateTime.Now)} remaining");
 		}
 
-		public void PowerHourStartMessage()
+		private void PowerHourDeActivateMessage()
 		{
-			SendMessage (48, "Your power hour has started");
-		}
-
-		public void PowerHourDelayMessage()
-		{
-			SendMessage (48, "Your power hour is over");
-		}
-
-		public void PowerHourDeActivateMessage()
-		{
-			string minutes = (PowerHourTime - DateTime.Now).TotalMinutes.ToString("N0");
-			
-			if (minutes != "0")
-				SendMessage (48, $"Your next power hour is in {minutes:F0} minutes");
-			else
-				SendMessage (48, $"Your power hour is preparing");				
-		}
-
-		public void PowerHourLoadingMessage()
-		{
-			SendMessage (48, "Your power hour is loading, please wait a few seconds...");
+			SendMessage (60, $"Your next power hour is in {FormatTime(PowerHourTime - DateTime.Now)}");
 		}
 		#endregion
-				
+			
+		#region format TimeSpan
+		public static string FormatTime( TimeSpan t)
+		{
+			double minutes = (t.Minutes % 60) + 1;			
+			double hours = (t.Hours % 60); 
+			
+			if (t.Days > 0)
+				return String.Format("{0} day {1} hour{2}", t.Days, hours, (hours != 1 ? "s":""));
+			else if (t.Hours > 0)
+				return String.Format("{0} hour{1} {2} minute{3}", hours, (hours != 1 ? "s":""), minutes, (minutes != 1 ? "s":""));
+			else if (t.Minutes > 0)
+				return String.Format("{0} minute{1}", minutes, (minutes != 1 ? "s":""));			
+
+			return "< 1 minute";
+		}
+		#endregion
+		
 		#region Gains
-		public double PowerHourRunning(Skill skill, double gc)
+		public double PowerHourBonus(Skill skill, double gc)
 		{
 			if (CanGain())
-				gc *= (PowerHourGainFactor / 100);			
+				gc *= (PowerHourGainFactor / 100);
 
 			if (PowerHourFastGain && skill.Value < 90.0)			
 				gc *= (6.0 - (skill.Value / 18)) * (PowerHourFastGainMultiplier / 100);
-
+			
 			return gc;
+		}
+
+		public int PowerHourGain(Skill skill, int toGain)
+		{
+			if (CanGain())
+                toGain += Utility.Random(2);
+			
+			if (PowerHourFastGain && skill.Value < 90.0)			
+                toGain += Utility.Random(2) + 1;
+				
+			return toGain;
 		}
 
 		private bool CanGain() //add constraints here
@@ -202,9 +195,12 @@ namespace Server.Mobiles
 		
 		public void SerializeExt(GenericWriter writer)
 		{
-			writer.Write(0); // version
+			writer.Write(1); // version
 
-			writer.Write(PowerHourActive);
+			//version 1
+			writer.Write((int)PowerHourAction);
+			//version 0
+			writer.Write(false);
 			writer.Write(PowerHourTime);
 		}
 
@@ -214,6 +210,12 @@ namespace Server.Mobiles
 
 			switch (version)
 			{
+				case 1:
+				{
+					PowerHourLoad = reader.ReadInt();
+					
+					goto case 0;
+				}
 				case 0:
 				{
 					PowerHourActive = reader.ReadBool();
