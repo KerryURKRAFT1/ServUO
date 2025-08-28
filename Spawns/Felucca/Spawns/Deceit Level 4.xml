@@ -1,6 +1,6 @@
 <Spawns>
   <Points>
-    <Name>5 FireElemental</Name>
+    <Name>1 FireElemental</Name>
     <UniqueId>228aa425-5384-4302-a23c-f16fe1ec19a5</UniqueId>
     <Map>Felucca</Map>
     <X>5270</X>
@@ -33,7 +33,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -43,7 +42,7 @@
     <Objects2>FireElemental:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 TreasureLevel3-TreasureLevel4-Etc</Name>
+    <Name>3 TreasureLevel3-TreasureLevel4-Etc</Name>
     <UniqueId>24fd94f6-7948-4ddf-aea9-7e08c9f1f973</UniqueId>
     <Map>Felucca</Map>
     <X>5306</X>
@@ -76,7 +75,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -86,7 +84,7 @@
     <Objects2>TreasureLevel3:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TreasureLevel4:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Lich:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=LichLord:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>4 TreasureLevel2-TreasureLevel3-Etc</Name>
+    <Name>2 TreasureLevel2-TreasureLevel3-Etc</Name>
     <UniqueId>260206e3-ab4e-49f3-8d64-f5ed43168994</UniqueId>
     <Map>Felucca</Map>
     <X>5265</X>
@@ -119,7 +117,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -129,7 +126,7 @@
     <Objects2>TreasureLevel2:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TreasureLevel3:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Lich:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>2 Lich</Name>
+    <Name>5 Lich</Name>
     <UniqueId>4ac24ff0-727b-4e6f-80bd-9d40997774a4</UniqueId>
     <Map>Felucca</Map>
     <X>5310</X>
@@ -162,7 +159,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -172,7 +168,7 @@
     <Objects2>Lich:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 Ghoul-Lich-Etc</Name>
+    <Name>4 Ghoul-Lich-Etc</Name>
     <UniqueId>83c90e3f-4200-42f2-a7c7-dbf486553c1a</UniqueId>
     <Map>Felucca</Map>
     <X>5297</X>
@@ -205,7 +201,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>

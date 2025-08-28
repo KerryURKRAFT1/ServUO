@@ -1,6 +1,6 @@
 <Spawns>
   <Points>
-    <Name>9 PDMetalChest</Name>
+    <Name>1 PDMetalChest</Name>
     <UniqueId>099fe26f-bffb-4cc9-a162-337217c4cd2f</UniqueId>
     <Map>Felucca</Map>
     <X>0</X>
@@ -43,7 +43,7 @@
     <Objects2>PDMetalChest:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 StealableBananas-StealableCheeseWedge-Etc</Name>
+    <Name>6 StealableBananas-StealableCheeseWedge-Etc</Name>
     <UniqueId>1ff7da80-b9c0-402c-b496-516780a666e2</UniqueId>
     <Map>Felucca</Map>
     <X>60</X>
@@ -63,7 +63,10 @@
     <ProximityRange>-1</ProximityRange>
     <ProximityTriggerSound>500</ProximityTriggerSound>
     <TriggerProbability>1</TriggerProbability>
-    <InContainer>False</InContainer>
+    <InContainer>True</InContainer>
+    <ContainerX>60</ContainerX>
+    <ContainerY>90</ContainerY>
+    <ContainerZ>0</ContainerZ>
     <MinRefractory>0</MinRefractory>
     <MaxRefractory>0</MaxRefractory>
     <TODStart>0</TODStart>
@@ -76,7 +79,7 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
+    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -86,7 +89,7 @@
     <Objects2>StealableBananas:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableCheeseWedge:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableLemons:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableLimes:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableBaconSlab:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>8 StealableIronWire-StealableSilverWire-Etc</Name>
+    <Name>7 StealableIronWire-StealableSilverWire-Etc</Name>
     <UniqueId>49b174f9-ed5c-415e-a747-2f96764ef893</UniqueId>
     <Map>Felucca</Map>
     <X>60</X>
@@ -132,7 +135,7 @@
     <Objects2>StealableIronWire:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableSilverWire:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableGoldWire:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableCopperWire:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 StealableBananas-StealableCheeseWedge-Etc</Name>
+    <Name>5 StealableBananas-StealableCheeseWedge-Etc</Name>
     <UniqueId>ab25e8f1-8c0a-4454-ae42-30a1ade5ecd9</UniqueId>
     <Map>Felucca</Map>
     <X>60</X>
@@ -152,7 +155,10 @@
     <ProximityRange>-1</ProximityRange>
     <ProximityTriggerSound>500</ProximityTriggerSound>
     <TriggerProbability>1</TriggerProbability>
-    <InContainer>False</InContainer>
+    <InContainer>True</InContainer>
+    <ContainerX>60</ContainerX>
+    <ContainerY>90</ContainerY>
+    <ContainerZ>0</ContainerZ>
     <MinRefractory>0</MinRefractory>
     <MaxRefractory>0</MaxRefractory>
     <TODStart>0</TODStart>
@@ -165,7 +171,7 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
+    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -175,7 +181,7 @@
     <Objects2>StealableBananas:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableCheeseWedge:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableLemons:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableLimes:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableBaconSlab:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>7 StealableBasketOfFruit</Name>
+    <Name>8 StealableBasketOfFruit</Name>
     <UniqueId>b3f3c2c3-2031-45a9-bad8-d657811ae68e</UniqueId>
     <Map>Felucca</Map>
     <X>0</X>
@@ -261,7 +267,7 @@
     <Objects2>PDMetalChest:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>6 PDMetalChest</Name>
+    <Name>9 PDMetalChest</Name>
     <UniqueId>c7f637f7-301d-4b60-8fcf-3d2173c25543</UniqueId>
     <Map>Felucca</Map>
     <X>0</X>
@@ -304,7 +310,7 @@
     <Objects2>PDMetalChest:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>4 ProvisionersMetalBox</Name>
+    <Name>3 ProvisionersMetalBox</Name>
     <UniqueId>f6c82371-fb53-427c-bb13-11943d134b70</UniqueId>
     <Map>Felucca</Map>
     <X>0</X>
@@ -347,7 +353,7 @@
     <Objects2>ProvisionersMetalBox:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>5 StealableIronWire-StealableSilverWire-Etc</Name>
+    <Name>4 StealableIronWire-StealableSilverWire-Etc</Name>
     <UniqueId>fe8e6b10-55cf-429b-b08c-b1dbb196f264</UniqueId>
     <Map>Felucca</Map>
     <X>60</X>

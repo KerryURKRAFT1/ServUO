@@ -1,6 +1,6 @@
 <Spawns>
   <Points>
-    <Name>58 Brigand</Name>
+    <Name>22 Brigand</Name>
     <UniqueId>027bd7e2-d198-4f3d-932d-5c29784edb55</UniqueId>
     <Map>Felucca</Map>
     <X>269</X>
@@ -33,7 +33,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -43,7 +42,7 @@
     <Objects2>Brigand:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>59 OrderGuard</Name>
+    <Name>55 OrderGuard</Name>
     <UniqueId>02d37e75-331e-4899-9408-a4d17747c89a</UniqueId>
     <Map>Felucca</Map>
     <X>564</X>
@@ -76,7 +75,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -86,7 +84,49 @@
     <Objects2>OrderGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>60 Healer</Name>
+    <Name>30 Sheep</Name>
+    <UniqueId>02fad4fd-980b-4b47-b61a-a32615174b02</UniqueId>
+    <Map>Felucca</Map>
+    <X>675</X>
+    <Y>938</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>675</CentreX>
+    <CentreY>938</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>15</Range>
+    <MaxCount>18</MaxCount>
+    <MinDelay>5</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Sheep:MX=18:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>39 Healer</Name>
     <UniqueId>048ba4d9-877c-4c52-be16-bfafc65ba53f</UniqueId>
     <Map>Felucca</Map>
     <X>540</X>
@@ -119,7 +159,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -129,7 +168,7 @@
     <Objects2>Healer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>48 Bowyer</Name>
+    <Name>52 Bowyer</Name>
     <UniqueId>051af6e2-44da-4361-88e4-cdbb3b893f0d</UniqueId>
     <Map>Felucca</Map>
     <X>570</X>
@@ -162,7 +201,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -172,7 +210,7 @@
     <Objects2>Bowyer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>56 Healer</Name>
+    <Name>63 Healer</Name>
     <UniqueId>0b71b8d8-1048-478d-be98-6a6335d607dc</UniqueId>
     <Map>Felucca</Map>
     <X>331</X>
@@ -205,7 +243,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -215,7 +252,7 @@
     <Objects2>Healer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>57 Brigand</Name>
+    <Name>7 Brigand</Name>
     <UniqueId>0df220a0-97d0-44fc-b0ed-f175130c40db</UniqueId>
     <Map>Felucca</Map>
     <X>261</X>
@@ -248,7 +285,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -258,7 +294,7 @@
     <Objects2>Brigand:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>54 Brigand</Name>
+    <Name>11 Brigand</Name>
     <UniqueId>0e50571d-0a13-4158-99d5-0733f38fca3d</UniqueId>
     <Map>Felucca</Map>
     <X>287</X>
@@ -291,7 +327,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -301,7 +336,7 @@
     <Objects2>Brigand:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>55 Tanner</Name>
+    <Name>6 Tanner</Name>
     <UniqueId>1073fec5-81fa-48fc-8f47-441bd1555fdc</UniqueId>
     <Map>Felucca</Map>
     <X>517</X>
@@ -334,7 +369,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -344,7 +378,7 @@
     <Objects2>Tanner:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>52 Brigand</Name>
+    <Name>24 Brigand</Name>
     <UniqueId>1af8cfdf-b469-46b5-a332-42bd594407cd</UniqueId>
     <Map>Felucca</Map>
     <X>269</X>
@@ -377,7 +411,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -387,7 +420,7 @@
     <Objects2>Brigand:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>53 Bowyer</Name>
+    <Name>13 Bowyer</Name>
     <UniqueId>201afc6f-0dfc-4097-b9ab-ca30372dc8a6</UniqueId>
     <Map>Felucca</Map>
     <X>624</X>
@@ -420,7 +453,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -430,7 +462,7 @@
     <Objects2>Bowyer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>50 ChaosGuard</Name>
+    <Name>2 ChaosGuard</Name>
     <UniqueId>2207da6a-0237-426e-8d3e-37ad7c58e670</UniqueId>
     <Map>Felucca</Map>
     <X>332</X>
@@ -463,7 +495,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -473,7 +504,7 @@
     <Objects2>ChaosGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>51 ChaosGuard</Name>
+    <Name>37 ChaosGuard</Name>
     <UniqueId>27dbe108-f717-4ea8-8611-14d6b70b4198</UniqueId>
     <Map>Felucca</Map>
     <X>317</X>
@@ -506,7 +537,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -516,7 +546,7 @@
     <Objects2>ChaosGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>47 Brigand</Name>
+    <Name>29 Brigand</Name>
     <UniqueId>27f8f96a-948d-43c6-9a95-f1abd5fec922</UniqueId>
     <Map>Felucca</Map>
     <X>281</X>
@@ -549,7 +579,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -559,7 +588,7 @@
     <Objects2>Brigand:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>10 OrderGuard</Name>
+    <Name>32 OrderGuard</Name>
     <UniqueId>3065d4ab-ece0-4084-8d34-1d0dc9aae663</UniqueId>
     <Map>Felucca</Map>
     <X>483</X>
@@ -592,7 +621,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -602,7 +630,7 @@
     <Objects2>OrderGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>11 Brigand</Name>
+    <Name>57 Brigand</Name>
     <UniqueId>31431214-0730-4e47-9277-b6184164031c</UniqueId>
     <Map>Felucca</Map>
     <X>263</X>
@@ -635,7 +663,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -645,7 +672,7 @@
     <Objects2>Brigand:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>12 Brigand</Name>
+    <Name>10 Brigand</Name>
     <UniqueId>3b5e15d8-bded-4a87-83eb-06735ba1c325</UniqueId>
     <Map>Felucca</Map>
     <X>261</X>
@@ -678,7 +705,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -688,7 +714,7 @@
     <Objects2>Brigand:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>49 Brigand</Name>
+    <Name>42 Brigand</Name>
     <UniqueId>41fc6827-ba71-4de5-ba15-4e469f4e9131</UniqueId>
     <Map>Felucca</Map>
     <X>279</X>
@@ -721,7 +747,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -731,7 +756,49 @@
     <Objects2>Brigand:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>46 ChaosGuard</Name>
+    <Name>31 Sheep</Name>
+    <UniqueId>4257eece-0d16-4498-8e56-251a6f318405</UniqueId>
+    <Map>Felucca</Map>
+    <X>666</X>
+    <Y>1169</Y>
+    <Width>18</Width>
+    <Height>18</Height>
+    <CentreX>675</CentreX>
+    <CentreY>1178</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>20</Range>
+    <MaxCount>10</MaxCount>
+    <MinDelay>5</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Sheep:MX=23:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>18 ChaosGuard</Name>
     <UniqueId>46bb9d69-9a07-40b9-a71e-d4bcdcc10db2</UniqueId>
     <Map>Felucca</Map>
     <X>260</X>
@@ -764,7 +831,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -774,7 +840,7 @@
     <Objects2>ChaosGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>45 ChaosGuard</Name>
+    <Name>41 ChaosGuard</Name>
     <UniqueId>46c676f2-a5b9-4920-9238-7c9c2226cccb</UniqueId>
     <Map>Felucca</Map>
     <X>311</X>
@@ -807,7 +873,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -817,7 +882,7 @@
     <Objects2>ChaosGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 ChaosGuard</Name>
+    <Name>4 ChaosGuard</Name>
     <UniqueId>47c833a9-2651-4114-a89c-0f10c3292896</UniqueId>
     <Map>Felucca</Map>
     <X>291</X>
@@ -850,7 +915,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -860,7 +924,7 @@
     <Objects2>ChaosGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>13 OrderGuard</Name>
+    <Name>9 OrderGuard</Name>
     <UniqueId>493a0b99-efad-4eb3-b574-fdc6113f85cc</UniqueId>
     <Map>Felucca</Map>
     <X>609</X>
@@ -893,7 +957,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -903,7 +966,7 @@
     <Objects2>OrderGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>14 OrderGuard</Name>
+    <Name>27 OrderGuard</Name>
     <UniqueId>52c6d37f-08de-42c2-9c8a-c78d643d3316</UniqueId>
     <Map>Felucca</Map>
     <X>621</X>
@@ -936,7 +999,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -946,7 +1008,7 @@
     <Objects2>OrderGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>15 OrderGuard</Name>
+    <Name>62 OrderGuard</Name>
     <UniqueId>605b5618-58ac-4a14-9aeb-2711e9f0f973</UniqueId>
     <Map>Felucca</Map>
     <X>599</X>
@@ -979,7 +1041,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -989,7 +1050,7 @@
     <Objects2>OrderGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>17 HealerGuildmaster</Name>
+    <Name>48 HealerGuildmaster</Name>
     <UniqueId>619d2b9c-ad60-4ccd-b618-89240f6b2d48</UniqueId>
     <Map>Felucca</Map>
     <X>540</X>
@@ -1022,7 +1083,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -1032,7 +1092,7 @@
     <Objects2>HealerGuildmaster:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>16 Healer</Name>
+    <Name>21 Healer</Name>
     <UniqueId>66fdb5e4-8ddb-4630-8f8c-b7dcdb7a470a</UniqueId>
     <Map>Felucca</Map>
     <X>643</X>
@@ -1065,7 +1125,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -1075,7 +1134,7 @@
     <Objects2>Healer:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>28 ChaosGuard</Name>
+    <Name>40 ChaosGuard</Name>
     <UniqueId>6dbeafad-6bf4-4407-b463-78bcf10fe665</UniqueId>
     <Map>Felucca</Map>
     <X>355</X>
@@ -1108,7 +1167,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -1118,7 +1176,7 @@
     <Objects2>ChaosGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>29 Rat</Name>
+    <Name>49 Rat</Name>
     <UniqueId>6fca905b-1282-41de-898f-ee869e6370a1</UniqueId>
     <Map>Felucca</Map>
     <X>285</X>
@@ -1151,7 +1209,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -1161,7 +1218,7 @@
     <Objects2>Rat:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>30 OrderGuard</Name>
+    <Name>47 OrderGuard</Name>
     <UniqueId>73240cca-9d04-4132-bd64-4cf6dc86ae45</UniqueId>
     <Map>Felucca</Map>
     <X>568</X>
@@ -1194,7 +1251,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -1204,7 +1260,7 @@
     <Objects2>OrderGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>24 Brigand</Name>
+    <Name>56 Brigand</Name>
     <UniqueId>747974bf-f768-4bf5-b47e-377083370f27</UniqueId>
     <Map>Felucca</Map>
     <X>279</X>
@@ -1237,7 +1293,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -1247,7 +1302,7 @@
     <Objects2>Brigand:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>23 Brigand</Name>
+    <Name>1 Brigand</Name>
     <UniqueId>75a839d7-1276-4d82-8a33-bffe1f29a27e</UniqueId>
     <Map>Felucca</Map>
     <X>285</X>
@@ -1280,7 +1335,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -1290,7 +1344,7 @@
     <Objects2>Brigand:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>25 Brigand</Name>
+    <Name>26 Brigand</Name>
     <UniqueId>7619f8c7-c926-48b7-9eac-7a9c74bfbc2a</UniqueId>
     <Map>Felucca</Map>
     <X>273</X>
@@ -1323,7 +1377,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -1333,7 +1386,7 @@
     <Objects2>Brigand:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>44 ChaosGuard</Name>
+    <Name>17 ChaosGuard</Name>
     <UniqueId>78afd9bd-932e-44d7-b379-87049cb81fea</UniqueId>
     <Map>Felucca</Map>
     <X>260</X>
@@ -1366,7 +1419,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -1376,7 +1428,7 @@
     <Objects2>ChaosGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>31 Bowyer</Name>
+    <Name>34 Bowyer</Name>
     <UniqueId>7ca78005-084f-4c29-8124-e3a1cff77448</UniqueId>
     <Map>Felucca</Map>
     <X>567</X>
@@ -1409,7 +1461,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -1419,7 +1470,7 @@
     <Objects2>Bowyer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>33 Furtrader</Name>
+    <Name>3 Furtrader</Name>
     <UniqueId>7f564cd5-7c82-46d8-ab47-fba4ad41778e</UniqueId>
     <Map>Felucca</Map>
     <X>517</X>
@@ -1452,7 +1503,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -1462,7 +1512,7 @@
     <Objects2>Furtrader:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>34 Brigand</Name>
+    <Name>35 Brigand</Name>
     <UniqueId>806edbb5-8c87-429c-9fc2-eda968174bfc</UniqueId>
     <Map>Felucca</Map>
     <X>267</X>
@@ -1495,7 +1545,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -1505,7 +1554,7 @@
     <Objects2>Brigand:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>35 ChaosGuard</Name>
+    <Name>36 ChaosGuard</Name>
     <UniqueId>8a346e33-ccd7-4b38-9658-238a21aa2908</UniqueId>
     <Map>Felucca</Map>
     <X>338</X>
@@ -1538,7 +1587,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -1548,7 +1596,7 @@
     <Objects2>ChaosGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>26 OrderGuard</Name>
+    <Name>25 OrderGuard</Name>
     <UniqueId>9573eddb-8a00-4490-b64b-028a21f5b609</UniqueId>
     <Map>Felucca</Map>
     <X>384</X>
@@ -1581,7 +1629,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -1591,13 +1638,13 @@
     <Objects2>OrderGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>9 Horse</Name>
+    <Name>50 Horse</Name>
     <UniqueId>9d57b08c-206a-4bcd-ac04-11171770380e</UniqueId>
     <Map>Felucca</Map>
-    <X>536</X>
-    <Y>1016</Y>
-    <Width>0</Width>
-    <Height>0</Height>
+    <X>486</X>
+    <Y>966</Y>
+    <Width>100</Width>
+    <Height>100</Height>
     <CentreX>536</CentreX>
     <CentreY>1016</CentreY>
     <CentreZ>0</CentreZ>
@@ -1624,7 +1671,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -1634,7 +1680,7 @@
     <Objects2>Horse:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>27 Brigand</Name>
+    <Name>5 Brigand</Name>
     <UniqueId>a28eb323-8585-4546-9c70-5764370857a3</UniqueId>
     <Map>Felucca</Map>
     <X>275</X>
@@ -1667,7 +1713,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -1677,7 +1722,7 @@
     <Objects2>Brigand:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>43 Brigand</Name>
+    <Name>12 Brigand</Name>
     <UniqueId>aa806b21-e077-41c3-a060-4c34b7690639</UniqueId>
     <Map>Felucca</Map>
     <X>267</X>
@@ -1710,7 +1755,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -1720,7 +1764,7 @@
     <Objects2>Brigand:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>21 Mapmaker</Name>
+    <Name>61 Mapmaker</Name>
     <UniqueId>b02b82e2-dc86-467d-8d7e-38b0b98f651c</UniqueId>
     <Map>Felucca</Map>
     <X>631</X>
@@ -1753,7 +1797,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -1763,7 +1806,7 @@
     <Objects2>Mapmaker:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>22 Brigand</Name>
+    <Name>60 Brigand</Name>
     <UniqueId>b951c481-e9b1-43f8-9508-d99f9ea09fe9</UniqueId>
     <Map>Felucca</Map>
     <X>263</X>
@@ -1796,7 +1839,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -1806,7 +1848,7 @@
     <Objects2>Brigand:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>19 OrderGuard</Name>
+    <Name>8 OrderGuard</Name>
     <UniqueId>c5b41bb3-101c-4384-b1fc-b9810d25e244</UniqueId>
     <Map>Felucca</Map>
     <X>443</X>
@@ -1839,7 +1881,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -1849,7 +1890,7 @@
     <Objects2>OrderGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>18 Brigand</Name>
+    <Name>43 Brigand</Name>
     <UniqueId>ca0befb9-d678-4fd4-b46b-302c442f5d72</UniqueId>
     <Map>Felucca</Map>
     <X>281</X>
@@ -1882,7 +1923,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -1892,7 +1932,7 @@
     <Objects2>Brigand:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>20 Brigand</Name>
+    <Name>33 Brigand</Name>
     <UniqueId>d089d7b6-3f4d-4eb5-9783-a7126a162ed9</UniqueId>
     <Map>Felucca</Map>
     <X>275</X>
@@ -1925,7 +1965,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -1935,7 +1974,7 @@
     <Objects2>Brigand:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>4 Farmer</Name>
+    <Name>23 Farmer</Name>
     <UniqueId>d318df01-b2cf-4ef4-a297-d8659b413be6</UniqueId>
     <Map>Felucca</Map>
     <X>396</X>
@@ -1968,7 +2007,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -1978,7 +2016,7 @@
     <Objects2>Farmer:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 ChaosGuard</Name>
+    <Name>45 ChaosGuard</Name>
     <UniqueId>daecfd0f-1228-4440-bb38-2fad224d17f9</UniqueId>
     <Map>Felucca</Map>
     <X>343</X>
@@ -2011,7 +2049,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -2021,7 +2058,7 @@
     <Objects2>ChaosGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>42 Brigand</Name>
+    <Name>28 Brigand</Name>
     <UniqueId>dd5b1f87-a5b6-4644-b2e1-4f170bce7daa</UniqueId>
     <Map>Felucca</Map>
     <X>287</X>
@@ -2054,7 +2091,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -2064,7 +2100,7 @@
     <Objects2>Brigand:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>2 OrderGuard</Name>
+    <Name>46 OrderGuard</Name>
     <UniqueId>e548db8d-552b-422a-b086-887336e00fb5</UniqueId>
     <Map>Felucca</Map>
     <X>546</X>
@@ -2097,7 +2133,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -2107,7 +2142,7 @@
     <Objects2>OrderGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>5 OrderGuard</Name>
+    <Name>38 OrderGuard</Name>
     <UniqueId>ebbeae7f-36f0-4cf8-b499-7723d916be16</UniqueId>
     <Map>Felucca</Map>
     <X>639</X>
@@ -2140,7 +2175,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -2150,7 +2184,7 @@
     <Objects2>OrderGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>37 ChaosGuard</Name>
+    <Name>44 ChaosGuard</Name>
     <UniqueId>ec1ffc00-c0de-4503-a478-b7563c3236a6</UniqueId>
     <Map>Felucca</Map>
     <X>318</X>
@@ -2183,7 +2217,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -2193,7 +2226,7 @@
     <Objects2>ChaosGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>36 Brigand</Name>
+    <Name>20 Brigand</Name>
     <UniqueId>ecf89012-f9a0-4ab0-88df-22ae93058617</UniqueId>
     <Map>Felucca</Map>
     <X>273</X>
@@ -2226,7 +2259,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -2236,7 +2268,7 @@
     <Objects2>Brigand:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>38 ChaosGuard</Name>
+    <Name>54 ChaosGuard</Name>
     <UniqueId>ed21a324-08ac-496a-a937-b3e155071b72</UniqueId>
     <Map>Felucca</Map>
     <X>297</X>
@@ -2269,7 +2301,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -2279,7 +2310,7 @@
     <Objects2>ChaosGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>39 Waiter</Name>
+    <Name>58 Waiter</Name>
     <UniqueId>ed63f1ac-c864-4ee9-92d9-7a5038a436be</UniqueId>
     <Map>Felucca</Map>
     <X>634</X>
@@ -2312,7 +2343,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -2322,7 +2352,7 @@
     <Objects2>Waiter:MX=16:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>40 Butcher</Name>
+    <Name>14 Butcher</Name>
     <UniqueId>f0d6d2c6-aaf5-44d6-ba5e-d8e9f0f1b9dd</UniqueId>
     <Map>Felucca</Map>
     <X>529</X>
@@ -2355,7 +2385,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -2365,7 +2394,49 @@
     <Objects2>Butcher:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>32 Carpenter</Name>
+    <Name>19 Sheep</Name>
+    <UniqueId>f16ec266-ac7e-4128-94a5-c35ddc811faa</UniqueId>
+    <Map>Felucca</Map>
+    <X>560</X>
+    <Y>1089</Y>
+    <Width>20</Width>
+    <Height>20</Height>
+    <CentreX>570</CentreX>
+    <CentreY>1099</CentreY>
+    <CentreZ>0</CentreZ>
+    <Range>15</Range>
+    <MaxCount>8</MaxCount>
+    <MinDelay>5</MinDelay>
+    <MaxDelay>10</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>0</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>False</InContainer>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>False</IsHomeRangeRelative>
+    <Objects2>Sheep:MX=18:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>51 Carpenter</Name>
     <UniqueId>f6ad8d9d-d85b-4203-a649-b16627181cc0</UniqueId>
     <Map>Felucca</Map>
     <X>565</X>
@@ -2398,7 +2469,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -2408,7 +2478,7 @@
     <Objects2>Carpenter:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>41 Shipwright</Name>
+    <Name>15 Shipwright</Name>
     <UniqueId>f8bbf570-c84d-4b3c-ba14-bafd6b2a0384</UniqueId>
     <Map>Felucca</Map>
     <X>631</X>
@@ -2441,7 +2511,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -2451,7 +2520,7 @@
     <Objects2>Shipwright:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>6 Cook</Name>
+    <Name>16 Cook</Name>
     <UniqueId>f90e4245-b6cb-416e-986e-aabc55567206</UniqueId>
     <Map>Felucca</Map>
     <X>553</X>
@@ -2484,7 +2553,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -2494,7 +2562,7 @@
     <Objects2>Cook:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>8 OrderGuard</Name>
+    <Name>59 OrderGuard</Name>
     <UniqueId>fa238cbd-f297-43ce-9d0e-5ec78cbec362</UniqueId>
     <Map>Felucca</Map>
     <X>546</X>
@@ -2527,7 +2595,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -2537,7 +2604,7 @@
     <Objects2>OrderGuard:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>7 Reaper</Name>
+    <Name>53 Reaper</Name>
     <UniqueId>fcd0fab5-e762-4864-9e64-01d40d587714</UniqueId>
     <Map>Felucca</Map>
     <X>218</X>
@@ -2570,7 +2637,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>

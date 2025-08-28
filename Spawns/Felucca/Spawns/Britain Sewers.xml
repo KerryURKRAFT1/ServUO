@@ -1,6 +1,6 @@
 <Spawns>
   <Points>
-    <Name>21 BullFrog</Name>
+    <Name>16 BullFrog</Name>
     <UniqueId>116ee522-cbfd-4be6-b236-18ffb75f6f26</UniqueId>
     <Map>Felucca</Map>
     <X>6046</X>
@@ -33,7 +33,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -43,7 +42,7 @@
     <Objects2>BullFrog:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>9 BullFrog</Name>
+    <Name>2 BullFrog</Name>
     <UniqueId>2d627e06-563d-452f-94da-320b378c6a0a</UniqueId>
     <Map>Felucca</Map>
     <X>6039</X>
@@ -76,7 +75,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -86,7 +84,7 @@
     <Objects2>BullFrog:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>20 BullFrog</Name>
+    <Name>7 BullFrog</Name>
     <UniqueId>3070079b-fad7-418f-9b24-d617803be952</UniqueId>
     <Map>Felucca</Map>
     <X>6057</X>
@@ -119,7 +117,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -129,7 +126,7 @@
     <Objects2>BullFrog:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>8 Sewerrat</Name>
+    <Name>17 Sewerrat</Name>
     <UniqueId>33f5dadd-f33b-4a6e-8639-612f9a149d84</UniqueId>
     <Map>Felucca</Map>
     <X>6105</X>
@@ -162,7 +159,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -172,7 +168,7 @@
     <Objects2>Sewerrat:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>19 Sewerrat</Name>
+    <Name>21 Sewerrat</Name>
     <UniqueId>451d55e1-7b6c-42ac-8896-314a8a464c0c</UniqueId>
     <Map>Felucca</Map>
     <X>6057</X>
@@ -205,7 +201,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -215,7 +210,7 @@
     <Objects2>Sewerrat:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>2 BullFrog</Name>
+    <Name>5 BullFrog</Name>
     <UniqueId>59fbe47d-f029-4dc3-a0fb-70eabb549a17</UniqueId>
     <Map>Felucca</Map>
     <X>6105</X>
@@ -248,7 +243,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -258,7 +252,7 @@
     <Objects2>BullFrog:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>18 BullFrog</Name>
+    <Name>9 BullFrog</Name>
     <UniqueId>6516a61e-9d6b-4680-ad74-2dbe3dc93a5a</UniqueId>
     <Map>Felucca</Map>
     <X>6110</X>
@@ -291,7 +285,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -301,7 +294,7 @@
     <Objects2>BullFrog:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 Sewerrat</Name>
+    <Name>4 Sewerrat</Name>
     <UniqueId>666a28c1-e605-42b3-a8ec-29e86a8b8f2a</UniqueId>
     <Map>Felucca</Map>
     <X>6063</X>
@@ -334,7 +327,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -344,7 +336,7 @@
     <Objects2>Sewerrat:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>17 BullFrog</Name>
+    <Name>14 BullFrog</Name>
     <UniqueId>7c22177a-dc60-4746-b828-b920695f7db8</UniqueId>
     <Map>Felucca</Map>
     <X>6089</X>
@@ -377,7 +369,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -387,7 +378,7 @@
     <Objects2>BullFrog:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>10 Sewerrat</Name>
+    <Name>13 Sewerrat</Name>
     <UniqueId>7eea32a5-f01d-4d5f-b30a-5b7fd0277084</UniqueId>
     <Map>Felucca</Map>
     <X>6032</X>
@@ -420,7 +411,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -430,7 +420,7 @@
     <Objects2>Sewerrat:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>16 BullFrog</Name>
+    <Name>10 BullFrog</Name>
     <UniqueId>88817ff6-e8b9-4098-bb2a-c2ec6d821a61</UniqueId>
     <Map>Felucca</Map>
     <X>6032</X>
@@ -463,7 +453,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -473,7 +462,7 @@
     <Objects2>BullFrog:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>4 BullFrog</Name>
+    <Name>18 BullFrog</Name>
     <UniqueId>900ed187-b1d0-4018-ba4b-ed8296b44965</UniqueId>
     <Map>Felucca</Map>
     <X>6063</X>
@@ -506,7 +495,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -516,7 +504,7 @@
     <Objects2>BullFrog:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>15 BullFrog</Name>
+    <Name>3 BullFrog</Name>
     <UniqueId>9211b3ba-a2ab-4ea0-9d2e-53890e56b9d5</UniqueId>
     <Map>Felucca</Map>
     <X>6059</X>
@@ -549,7 +537,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -559,7 +546,7 @@
     <Objects2>BullFrog:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>5 Sewerrat</Name>
+    <Name>6 Sewerrat</Name>
     <UniqueId>a3929f6c-8725-4e2b-8cb4-3a1f0c6ffd5d</UniqueId>
     <Map>Felucca</Map>
     <X>6039</X>
@@ -592,7 +579,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -602,7 +588,7 @@
     <Objects2>Sewerrat:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>14 Sewerrat</Name>
+    <Name>19 Sewerrat</Name>
     <UniqueId>b06da412-60ca-465b-9383-70d14eed762d</UniqueId>
     <Map>Felucca</Map>
     <X>6090</X>
@@ -635,7 +621,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -645,7 +630,7 @@
     <Objects2>Sewerrat:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 BullFrog</Name>
+    <Name>11 BullFrog</Name>
     <UniqueId>b2177a85-e7c4-406b-8fe1-a9917dc19a1e</UniqueId>
     <Map>Felucca</Map>
     <X>6046</X>
@@ -678,7 +663,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -688,7 +672,7 @@
     <Objects2>BullFrog:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>13 BullFrog</Name>
+    <Name>1 BullFrog</Name>
     <UniqueId>d9222ba3-0589-4ef5-9e60-8d823a947967</UniqueId>
     <Map>Felucca</Map>
     <X>6090</X>
@@ -721,7 +705,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -731,7 +714,7 @@
     <Objects2>BullFrog:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>6 Sewerrat</Name>
+    <Name>8 Sewerrat</Name>
     <UniqueId>e39aea91-0bbb-4409-9b77-fa1bd200c17e</UniqueId>
     <Map>Felucca</Map>
     <X>6059</X>
@@ -764,7 +747,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -774,7 +756,7 @@
     <Objects2>Sewerrat:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>12 Sewerrat</Name>
+    <Name>20 Sewerrat</Name>
     <UniqueId>f61cd3d6-4f1c-46c4-b7a3-3ff3c6457b7b</UniqueId>
     <Map>Felucca</Map>
     <X>6089</X>
@@ -807,7 +789,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -817,7 +798,7 @@
     <Objects2>Sewerrat:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>7 Sewerrat</Name>
+    <Name>12 Sewerrat</Name>
     <UniqueId>f99b0120-d622-4830-a0f5-9d66ff15e321</UniqueId>
     <Map>Felucca</Map>
     <X>6110</X>
@@ -850,7 +831,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -860,7 +840,7 @@
     <Objects2>Sewerrat:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>11 Sewerrat</Name>
+    <Name>15 Sewerrat</Name>
     <UniqueId>ff38472f-e808-4cde-96c2-1769f1fe8e1c</UniqueId>
     <Map>Felucca</Map>
     <X>6046</X>
@@ -893,7 +873,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>

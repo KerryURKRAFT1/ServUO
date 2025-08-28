@@ -1,6 +1,6 @@
 <Spawns>
   <Points>
-    <Name>15 TreasureLevel4</Name>
+    <Name>1 TreasureLevel4</Name>
     <UniqueId>0e2554d4-57a0-4634-8851-4ce5987456ce</UniqueId>
     <Map>Felucca</Map>
     <X>6032</X>
@@ -33,7 +33,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -43,7 +42,7 @@
     <Objects2>TreasureLevel4:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>16 TreasureLevel4</Name>
+    <Name>2 TreasureLevel4</Name>
     <UniqueId>0e393b95-e0f2-48b8-b4c8-44041fd83546</UniqueId>
     <Map>Felucca</Map>
     <X>6057</X>
@@ -76,7 +75,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -86,7 +84,7 @@
     <Objects2>TreasureLevel4:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>14 TreasureLevel3</Name>
+    <Name>3 TreasureLevel3</Name>
     <UniqueId>12b1ed2d-91bf-4013-91c5-d58cd6e5d1b1</UniqueId>
     <Map>Felucca</Map>
     <X>6040</X>
@@ -119,7 +117,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -129,7 +126,7 @@
     <Objects2>TreasureLevel3:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 TreasureLevel4</Name>
+    <Name>4 TreasureLevel4</Name>
     <UniqueId>13d6c953-ac7c-4921-858e-87eb072d956b</UniqueId>
     <Map>Felucca</Map>
     <X>6040</X>
@@ -162,7 +159,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -172,7 +168,7 @@
     <Objects2>TreasureLevel4:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>13 TreasureLevel4</Name>
+    <Name>19 TreasureLevel4</Name>
     <UniqueId>1fbdbc82-475f-44ff-861d-d61355de916d</UniqueId>
     <Map>Felucca</Map>
     <X>6119</X>
@@ -205,7 +201,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -215,7 +210,7 @@
     <Objects2>TreasureLevel4:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>2 TreasureLevel3</Name>
+    <Name>7 TreasureLevel3</Name>
     <UniqueId>26c92d96-c56c-463a-900e-d8c4d8d572a5</UniqueId>
     <Map>Felucca</Map>
     <X>6123</X>
@@ -248,7 +243,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -291,7 +285,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -301,7 +294,7 @@
     <Objects2>TreasureLevel2:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>17 TreasureLevel3</Name>
+    <Name>18 TreasureLevel3</Name>
     <UniqueId>3e4ef3df-f562-451b-8f79-70cc9532088b</UniqueId>
     <Map>Felucca</Map>
     <X>6124</X>
@@ -334,7 +327,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -344,7 +336,7 @@
     <Objects2>TreasureLevel3:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>11 Imp-HellHound-Etc</Name>
+    <Name>17 Imp-HellHound-Etc</Name>
     <UniqueId>5980f425-c92d-4153-a5c4-5ffc7bf61f75</UniqueId>
     <Map>Felucca</Map>
     <X>6084</X>
@@ -377,7 +369,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -387,7 +378,7 @@
     <Objects2>Imp:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=HellHound:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Gargoyle:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>5 ElderGazer-Gazer-Etc</Name>
+    <Name>14 ElderGazer-Gazer-Etc</Name>
     <UniqueId>5c4ea98d-90e9-4f66-b512-57cd9218e73d</UniqueId>
     <Map>Felucca</Map>
     <X>6112</X>
@@ -420,7 +411,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -430,7 +420,7 @@
     <Objects2>ElderGazer:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Gazer:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>10 TreasureLevel3</Name>
+    <Name>13 TreasureLevel3</Name>
     <UniqueId>741ec2a6-71af-4838-82f6-13c8773cfc03</UniqueId>
     <Map>Felucca</Map>
     <X>6045</X>
@@ -463,7 +453,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -473,7 +462,7 @@
     <Objects2>TreasureLevel3:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 Balron-Gargoyle-Etc</Name>
+    <Name>10 Balron-Gargoyle-Etc</Name>
     <UniqueId>7b8ccd8d-3936-4849-9cd8-2ee8a8eec478</UniqueId>
     <Map>Felucca</Map>
     <X>6076</X>
@@ -506,7 +495,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -516,7 +504,7 @@
     <Objects2>Balron:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Gargoyle:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Gazer:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>9 Daemon-Gazer-Etc</Name>
+    <Name>16 Daemon-Gazer-Etc</Name>
     <UniqueId>82520714-cb5d-46fe-a167-5e112ec0a1fa</UniqueId>
     <Map>Felucca</Map>
     <X>6109</X>
@@ -549,7 +537,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -559,7 +546,7 @@
     <Objects2>Daemon:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Gazer:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>18 Daemon-Gazer-Etc</Name>
+    <Name>15 Daemon-Gazer-Etc</Name>
     <UniqueId>8ca17891-f7dc-431f-8a34-cb2d9c7dd65e</UniqueId>
     <Map>Felucca</Map>
     <X>6042</X>
@@ -592,7 +579,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -602,7 +588,7 @@
     <Objects2>Daemon:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Gazer:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>8 Daemon</Name>
+    <Name>6 Daemon</Name>
     <UniqueId>9b57cd30-223f-45ff-b602-c8aa5a3ba42f</UniqueId>
     <Map>Felucca</Map>
     <X>6023</X>
@@ -635,7 +621,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -645,7 +630,7 @@
     <Objects2>Daemon:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>4 Gargoyle</Name>
+    <Name>5 Gargoyle</Name>
     <UniqueId>aa4e85c5-92e5-44d0-aef9-8607e830f4aa</UniqueId>
     <Map>Felucca</Map>
     <X>6048</X>
@@ -678,7 +663,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -688,7 +672,7 @@
     <Objects2>Gargoyle:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>7 TreasureLevel3</Name>
+    <Name>11 TreasureLevel3</Name>
     <UniqueId>c5b804ca-cbc0-4cd7-95e4-04d8fc4594d6</UniqueId>
     <Map>Felucca</Map>
     <X>6059</X>
@@ -721,7 +705,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -731,7 +714,7 @@
     <Objects2>TreasureLevel3:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>19 TreasureLevel4</Name>
+    <Name>9 TreasureLevel4</Name>
     <UniqueId>f659d72c-2fe5-474e-8d39-c1c85f469e48</UniqueId>
     <Map>Felucca</Map>
     <X>6091</X>
@@ -764,7 +747,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -774,7 +756,7 @@
     <Objects2>TreasureLevel4:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>6 TreasureLevel3</Name>
+    <Name>8 TreasureLevel3</Name>
     <UniqueId>fc192285-1645-4a7e-b875-2b82823a1691</UniqueId>
     <Map>Felucca</Map>
     <X>6086</X>
@@ -807,7 +789,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>

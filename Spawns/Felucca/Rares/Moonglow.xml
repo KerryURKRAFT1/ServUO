@@ -1,6 +1,6 @@
 <Spawns>
   <Points>
-    <Name>7 HSMetalBox</Name>
+    <Name>3 HSMetalBox</Name>
     <UniqueId>6b89c37b-082d-43df-8a08-31d85b895d83</UniqueId>
     <Map>Felucca</Map>
     <X>0</X>
@@ -43,7 +43,7 @@
     <Objects2>HSMetalBox:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 StealableGreenDriedFlowers-StealableWhiteDriedFlowers-Etc</Name>
+    <Name>4 StealableGreenDriedFlowers-StealableWhiteDriedFlowers-Etc</Name>
     <UniqueId>7c1fe155-bd29-4065-926c-26b10325b322</UniqueId>
     <Map>Felucca</Map>
     <X>60</X>
@@ -63,7 +63,10 @@
     <ProximityRange>-1</ProximityRange>
     <ProximityTriggerSound>500</ProximityTriggerSound>
     <TriggerProbability>1</TriggerProbability>
-    <InContainer>False</InContainer>
+    <InContainer>True</InContainer>
+    <ContainerX>60</ContainerX>
+    <ContainerY>90</ContainerY>
+    <ContainerZ>0</ContainerZ>
     <MinRefractory>0</MinRefractory>
     <MaxRefractory>0</MaxRefractory>
     <TODStart>0</TODStart>
@@ -76,7 +79,7 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
+    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -86,7 +89,7 @@
     <Objects2>StealableGreenDriedFlowers:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableWhiteDriedFlowers:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>6 ProvisionersMetalBox</Name>
+    <Name>7 ProvisionersMetalBox</Name>
     <UniqueId>b0384ca6-bdc3-4b1f-83ba-8c89f152dcc5</UniqueId>
     <Map>Felucca</Map>
     <X>0</X>
@@ -129,7 +132,7 @@
     <Objects2>ProvisionersMetalBox:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 StealableBananas-StealableCheeseWedge-Etc</Name>
+    <Name>5 StealableBananas-StealableCheeseWedge-Etc</Name>
     <UniqueId>b70df5de-5328-465e-ab1a-cf6c6fc64ff3</UniqueId>
     <Map>Felucca</Map>
     <X>60</X>
@@ -175,7 +178,7 @@
     <Objects2>StealableBananas:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableCheeseWedge:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableLemons:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableLimes:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableBaconSlab:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>5 StealableTarot1-StealableTarot2-Etc</Name>
+    <Name>6 StealableTarot1-StealableTarot2-Etc</Name>
     <UniqueId>d64d2962-a3ba-44ad-82b3-7f6e97d1060a</UniqueId>
     <Map>Felucca</Map>
     <X>60</X>
@@ -221,7 +224,7 @@
     <Objects2>StealableTarot1:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableTarot2:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableTarot3:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableTarotDeck:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>2 StealableWhiteDriedFlowers-StealableGreenDriedFlowers-Etc</Name>
+    <Name>1 StealableWhiteDriedFlowers-StealableGreenDriedFlowers-Etc</Name>
     <UniqueId>e6f59e43-18b7-46db-a6af-04e35a503237</UniqueId>
     <Map>Felucca</Map>
     <X>60</X>
@@ -241,7 +244,10 @@
     <ProximityRange>-1</ProximityRange>
     <ProximityTriggerSound>500</ProximityTriggerSound>
     <TriggerProbability>1</TriggerProbability>
-    <InContainer>False</InContainer>
+    <InContainer>True</InContainer>
+    <ContainerX>60</ContainerX>
+    <ContainerY>90</ContainerY>
+    <ContainerZ>0</ContainerZ>
     <MinRefractory>0</MinRefractory>
     <MaxRefractory>0</MaxRefractory>
     <TODStart>0</TODStart>
@@ -254,7 +260,7 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>True</IsGuardExempt>
+    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -264,7 +270,7 @@
     <Objects2>StealableWhiteDriedFlowers:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableGreenDriedFlowers:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>4 StealableBananas-StealableCheeseWedge-Etc</Name>
+    <Name>2 StealableBananas-StealableCheeseWedge-Etc</Name>
     <UniqueId>ebae2eb1-7cb3-428e-8ef4-c8b87aa591ef</UniqueId>
     <Map>Felucca</Map>
     <X>60</X>

@@ -3,8 +3,8 @@
     <Name>5 AirElemental-Gazer-Etc</Name>
     <UniqueId>193b8722-0195-43db-b267-259f8ed2babb</UniqueId>
     <Map>Felucca</Map>
-    <X>1443</X>
-    <Y>199</Y>
+    <X>1423</X>
+    <Y>207</Y>
     <Width>60</Width>
     <Height>60</Height>
     <CentreX>1473</CentreX>
@@ -33,7 +33,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -46,8 +45,8 @@
     <Name>3 Boar-Goat-Etc</Name>
     <UniqueId>3bff7aac-bac8-4b21-8ba8-b43b3398717b</UniqueId>
     <Map>Felucca</Map>
-    <X>2138</X>
-    <Y>1936</Y>
+    <X>2134</X>
+    <Y>1956</Y>
     <Width>100</Width>
     <Height>100</Height>
     <CentreX>2188</CentreX>
@@ -76,7 +75,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -86,11 +84,11 @@
     <Objects2>Boar:MX=19:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Goat:MX=19:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Horse:MX=19:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Panther:MX=19:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Sheep:MX=19:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=BlackBear:MX=19:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=GrizzlyBear:MX=19:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=BrownBear:MX=19:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bull:MX=19:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>4 Boar-Cougar-Etc</Name>
+    <Name>1 Boar-Cougar-Etc</Name>
     <UniqueId>7dadd709-e9b1-47a5-8fa3-3a125db580e5</UniqueId>
     <Map>Felucca</Map>
-    <X>2462</X>
-    <Y>1016</Y>
+    <X>2444</X>
+    <Y>1000</Y>
     <Width>100</Width>
     <Height>100</Height>
     <CentreX>2512</CentreX>
@@ -119,7 +117,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -132,8 +129,8 @@
     <Name>2 Cougar-Goat-Etc</Name>
     <UniqueId>c083d595-eced-4c89-9285-123ac2483336</UniqueId>
     <Map>Felucca</Map>
-    <X>160</X>
-    <Y>1397</Y>
+    <X>189</X>
+    <Y>1380</Y>
     <Width>100</Width>
     <Height>100</Height>
     <CentreX>210</CentreX>
@@ -162,7 +159,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>
@@ -172,11 +168,11 @@
     <Objects2>Cougar:MX=19:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Goat:MX=19:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Panther:MX=19:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Pig:MX=19:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Sheep:MX=19:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=BlackBear:MX=19:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=GrizzlyBear:MX=19:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=BrownBear:MX=19:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TimberWolf:MX=19:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Cow:MX=19:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 Alligator-Lizardman-Etc</Name>
+    <Name>4 Alligator-Lizardman-Etc</Name>
     <UniqueId>da9a0b1d-b196-4613-92da-c81416018199</UniqueId>
     <Map>Felucca</Map>
-    <X>2339</X>
-    <Y>3400</Y>
+    <X>2366</X>
+    <Y>3411</Y>
     <Width>60</Width>
     <Height>60</Height>
     <CentreX>2369</CentreX>
@@ -205,7 +201,6 @@
     <AllowNPCTriggering>False</AllowNPCTriggering>
     <SpawnOnTrigger>False</SpawnOnTrigger>
     <SmartSpawning>False</SmartSpawning>
-    <IsGuardExempt>False</IsGuardExempt>
     <TickReset>False</TickReset>
     <Team>0</Team>
     <Amount>1</Amount>

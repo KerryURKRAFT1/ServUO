@@ -1,6 +1,6 @@
 <Spawns>
   <Points>
-    <Name>2 StealableChisel</Name>
+    <Name>3 StealableChisel</Name>
     <UniqueId>27f15614-8473-48c4-93ad-75b900f25e53</UniqueId>
     <Map>Felucca</Map>
     <X>0</X>
@@ -41,6 +41,52 @@
     <IsRunning>True</IsRunning>
     <IsHomeRangeRelative>True</IsHomeRangeRelative>
     <Objects2>StealableChisel:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
+  </Points>
+  <Points>
+    <Name>2 StealableBananas-StealableCheeseWedge-Etc</Name>
+    <UniqueId>3047cf69-3c01-441b-8c4e-8b51118b9748</UniqueId>
+    <Map>Felucca</Map>
+    <X>60</X>
+    <Y>90</Y>
+    <Width>0</Width>
+    <Height>0</Height>
+    <CentreX>586</CentreX>
+    <CentreY>2225</CentreY>
+    <CentreZ>3</CentreZ>
+    <Range>0</Range>
+    <MaxCount>2</MaxCount>
+    <MinDelay>60</MinDelay>
+    <MaxDelay>120</MaxDelay>
+    <DelayInSec>False</DelayInSec>
+    <Duration>60</Duration>
+    <DespawnTime>0</DespawnTime>
+    <ProximityRange>-1</ProximityRange>
+    <ProximityTriggerSound>500</ProximityTriggerSound>
+    <TriggerProbability>1</TriggerProbability>
+    <InContainer>True</InContainer>
+    <ContainerX>60</ContainerX>
+    <ContainerY>90</ContainerY>
+    <ContainerZ>0</ContainerZ>
+    <MinRefractory>0</MinRefractory>
+    <MaxRefractory>0</MaxRefractory>
+    <TODStart>0</TODStart>
+    <TODEnd>0</TODEnd>
+    <TODMode>0</TODMode>
+    <KillReset>1</KillReset>
+    <ExternalTriggering>False</ExternalTriggering>
+    <SequentialSpawning>-1</SequentialSpawning>
+    <AllowGhostTriggering>False</AllowGhostTriggering>
+    <AllowNPCTriggering>False</AllowNPCTriggering>
+    <SpawnOnTrigger>False</SpawnOnTrigger>
+    <SmartSpawning>False</SmartSpawning>
+    <IsGuardExempt>False</IsGuardExempt>
+    <TickReset>False</TickReset>
+    <Team>0</Team>
+    <Amount>1</Amount>
+    <IsGroup>False</IsGroup>
+    <IsRunning>True</IsRunning>
+    <IsHomeRangeRelative>True</IsHomeRangeRelative>
+    <Objects2>StealableBananas:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableCheeseWedge:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableLemons:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableLimes:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StealableBaconSlab:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
     <Name>1 ProvisionersMetalBox</Name>

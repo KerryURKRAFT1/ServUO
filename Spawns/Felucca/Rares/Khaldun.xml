@@ -20,7 +20,10 @@
     <ProximityRange>-1</ProximityRange>
     <ProximityTriggerSound>500</ProximityTriggerSound>
     <TriggerProbability>1</TriggerProbability>
-    <InContainer>False</InContainer>
+    <InContainer>True</InContainer>
+    <ContainerX>60</ContainerX>
+    <ContainerY>90</ContainerY>
+    <ContainerZ>0</ContainerZ>
     <MinRefractory>0</MinRefractory>
     <MaxRefractory>0</MaxRefractory>
     <TODStart>0</TODStart>

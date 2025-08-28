@@ -1,6 +1,6 @@
 <Spawns>
   <Points>
-    <Name>4 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>42 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>01cd2140-bf31-44e4-83f2-9878b210e968</UniqueId>
     <Map>Felucca</Map>
     <X>5274</X>
@@ -43,7 +43,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>19 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>08b171d5-017c-49e8-8654-bdc9d5079a9d</UniqueId>
     <Map>Felucca</Map>
     <X>934</X>
@@ -86,7 +86,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>48 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>15 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>0c8692d0-5d2a-4006-aeca-6636d2d01723</UniqueId>
     <Map>Felucca</Map>
     <X>5252</X>
@@ -129,7 +129,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>28 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>11 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>0f9ce6ed-72c0-4825-9ce2-51fa9e941c16</UniqueId>
     <Map>Felucca</Map>
     <X>1363</X>
@@ -172,7 +172,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>6 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>20 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>1054cbef-e78d-4a4f-b785-5b508b852eaa</UniqueId>
     <Map>Felucca</Map>
     <X>1290</X>
@@ -215,7 +215,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>7 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>12 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>107a8259-7083-418e-8024-dfda440717fd</UniqueId>
     <Map>Felucca</Map>
     <X>3443</X>
@@ -258,7 +258,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>8 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>25 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>1540465d-b412-4c9a-989d-5423a86bd009</UniqueId>
     <Map>Felucca</Map>
     <X>4070</X>
@@ -301,7 +301,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>9 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>10 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>159292ae-fdbd-46dd-945d-d66023a44748</UniqueId>
     <Map>Felucca</Map>
     <X>5784</X>
@@ -344,7 +344,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>10 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>41 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>2920486e-115f-4d4b-a2c4-47ce7a7980fb</UniqueId>
     <Map>Felucca</Map>
     <X>5730</X>
@@ -387,7 +387,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>46 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>29 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>2a9f5dd2-d2d8-4029-ad8e-c8164500cded</UniqueId>
     <Map>Felucca</Map>
     <X>5046</X>
@@ -430,7 +430,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>47 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>22 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>2cfa246f-3526-402a-8a30-12de4f2301c6</UniqueId>
     <Map>Felucca</Map>
     <X>946</X>
@@ -473,7 +473,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>2 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>17 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>327d7652-77ff-46b9-a164-b090a1ae7427</UniqueId>
     <Map>Felucca</Map>
     <X>1869</X>
@@ -516,7 +516,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>15 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>44 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>39daf545-cbff-44a9-879a-ef88658dd360</UniqueId>
     <Map>Felucca</Map>
     <X>5126</X>
@@ -559,7 +559,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>13 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>34 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>46ab2861-4fda-422f-9c00-b9d802dd88d0</UniqueId>
     <Map>Felucca</Map>
     <X>1734</X>
@@ -602,7 +602,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>43 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>4a96ffe3-49fc-4c62-86e4-c6e84030e9b3</UniqueId>
     <Map>Felucca</Map>
     <X>2290</X>
@@ -645,7 +645,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>5 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>45 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>4cc31829-a326-4272-867c-b5ddea19c2a0</UniqueId>
     <Map>Felucca</Map>
     <X>4370</X>
@@ -688,7 +688,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>44 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>46 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>529cdcf9-5954-429d-911e-2644695091e6</UniqueId>
     <Map>Felucca</Map>
     <X>2544</X>
@@ -731,7 +731,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>45 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>40 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>553e8b88-b063-4a24-9d02-a6f749915640</UniqueId>
     <Map>Felucca</Map>
     <X>2174</X>
@@ -774,7 +774,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>18 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>21 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>56d9a7dc-4898-4bd3-ba1f-c77320798676</UniqueId>
     <Map>Felucca</Map>
     <X>2322</X>
@@ -817,7 +817,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>17 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>26 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>62628dc5-6c5d-4060-ae81-195941a8b33d</UniqueId>
     <Map>Felucca</Map>
     <X>872</X>
@@ -860,7 +860,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>19 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>8 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>688abda7-aca1-4e11-8a00-6c677fe2784b</UniqueId>
     <Map>Felucca</Map>
     <X>2009</X>
@@ -903,7 +903,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>20 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>31 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>6c2ea55a-75ae-4e82-8e4d-fb3bafe4187a</UniqueId>
     <Map>Felucca</Map>
     <X>518</X>
@@ -946,7 +946,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>24 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>27 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>6e4d41ee-e509-4ddb-813e-ac1270307720</UniqueId>
     <Map>Felucca</Map>
     <X>1862</X>
@@ -989,7 +989,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>42 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>23 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>706cfe4c-3ce7-4b21-9343-bc36691df690</UniqueId>
     <Map>Felucca</Map>
     <X>943</X>
@@ -1032,7 +1032,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>43 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>4 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>723bb4bf-9907-4b76-93c6-d99d2f59b00c</UniqueId>
     <Map>Felucca</Map>
     <X>922</X>
@@ -1075,7 +1075,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>27 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>39 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>7732e1e2-9c39-47c3-9233-be08e8e69c7e</UniqueId>
     <Map>Felucca</Map>
     <X>546</X>
@@ -1118,7 +1118,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>39 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>18 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>7f5fd8bf-f29f-4bf2-80d3-ddb94c14a1d2</UniqueId>
     <Map>Felucca</Map>
     <X>5734</X>
@@ -1161,7 +1161,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>40 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>7 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>9336ba9e-6f0e-41c1-b242-9573396f9d48</UniqueId>
     <Map>Felucca</Map>
     <X>1738</X>
@@ -1204,7 +1204,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>34 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>3 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>939a86f7-0fad-4f72-94f5-43f8c6ff8e47</UniqueId>
     <Map>Felucca</Map>
     <X>3338</X>
@@ -1247,7 +1247,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>35 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>2 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>9883489e-40dd-40aa-89cc-05908d41e8c8</UniqueId>
     <Map>Felucca</Map>
     <X>2930</X>
@@ -1290,7 +1290,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>36 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>16 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>a319172f-df0c-4e93-b1a8-5a9a7ca47d71</UniqueId>
     <Map>Felucca</Map>
     <X>870</X>
@@ -1333,7 +1333,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>37 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>6 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>a3a428c2-0997-4b2e-83ec-8b325e713284</UniqueId>
     <Map>Felucca</Map>
     <X>5846</X>
@@ -1376,7 +1376,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>12 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>35 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>b090a38f-84e8-45b9-b282-6ff10e02ce59</UniqueId>
     <Map>Felucca</Map>
     <X>4467</X>
@@ -1419,7 +1419,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>11 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>38 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>b8cec99a-3fe0-4a12-be94-b3c961f5b984</UniqueId>
     <Map>Felucca</Map>
     <X>2269</X>
@@ -1462,7 +1462,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>41 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>9 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>c1d5e315-d8e0-4304-a91c-0a3eafbce6cf</UniqueId>
     <Map>Felucca</Map>
     <X>1491</X>
@@ -1505,7 +1505,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>22 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>28 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>cd48fddf-73d1-419e-acb4-a0aa105796cc</UniqueId>
     <Map>Felucca</Map>
     <X>1401</X>
@@ -1548,7 +1548,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>23 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>32 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>d5228b37-c3c5-41d9-b104-9f8c42e4e06e</UniqueId>
     <Map>Felucca</Map>
     <X>3966</X>
@@ -1591,7 +1591,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>38 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>30 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>d6962a55-4607-462e-ba4c-b745e4bea79a</UniqueId>
     <Map>Felucca</Map>
     <X>3794</X>
@@ -1634,7 +1634,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>26 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>24 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>d9a7e3c3-b9b2-4ea4-9ba3-e9854268bd77</UniqueId>
     <Map>Felucca</Map>
     <X>1644</X>
@@ -1677,7 +1677,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>16 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>37 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>e1d7b55b-85d4-42c8-aaf8-0be0262dd958</UniqueId>
     <Map>Felucca</Map>
     <X>2998</X>
@@ -1720,7 +1720,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>14 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>47 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>e1fe41bd-14e9-4a3b-853a-253d0ed05206</UniqueId>
     <Map>Felucca</Map>
     <X>1073</X>
@@ -1763,7 +1763,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>31 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>48 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>e7ddca11-2575-4e14-9561-d352cf53da74</UniqueId>
     <Map>Felucca</Map>
     <X>1854</X>
@@ -1806,7 +1806,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>25 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>33 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>ecec88d6-9ca2-406c-bd86-79b180ce2a5f</UniqueId>
     <Map>Felucca</Map>
     <X>5418</X>
@@ -1849,7 +1849,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>21 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>13 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>ef33fc9b-d798-4c03-bf19-14c6a8e45f84</UniqueId>
     <Map>Felucca</Map>
     <X>1266</X>
@@ -1892,7 +1892,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>30 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>14 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>f0a0f9e1-968c-4d16-ac4e-4c56f91397b5</UniqueId>
     <Map>Felucca</Map>
     <X>4390</X>
@@ -1935,7 +1935,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>32 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>1 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>f1eee5b8-a325-4076-b60b-4239db317923</UniqueId>
     <Map>Felucca</Map>
     <X>167</X>
@@ -1978,7 +1978,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>33 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>5 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>f498d7ad-6f16-47c4-ad08-0d453613d6a0</UniqueId>
     <Map>Felucca</Map>
     <X>1458</X>
@@ -2021,7 +2021,7 @@
     <Objects2>BlackPearl:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bloodmoss:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SpidersSilk:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SulfurousAsh:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Garlic:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ginseng:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Nightshade:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=MandrakeRoot:MX=160:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>29 BlackPearl-Bloodmoss-Etc</Name>
+    <Name>36 BlackPearl-Bloodmoss-Etc</Name>
     <UniqueId>fa1f1831-a8de-42fd-89c8-a3f5fa82ca57</UniqueId>
     <Map>Felucca</Map>
     <X>518</X>
