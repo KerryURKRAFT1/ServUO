@@ -144,7 +144,7 @@
 5705,625,0,Felucca,5703,639,0,Felucca,True
 5698,662,0,Felucca,5793,527,10,Felucca,True
 5733,554,20,Felucca,5829,595,0,Felucca,True
-5690,569,25,Felucca,5829,595,0,Felucca,True#
+5690,569,25,Felucca,5829,595,0,Felucca,True
 # Deceit
 4110,430,5,Felucca,5187,639,0,Felucca,False
 4111,430,5,Felucca,5188,639,0,Felucca,False
@@ -211,8 +211,8 @@
 5133,987,22,Felucca,5152,811,-19,Felucca,False
 #
 # Bucs Portal
-2618,977,5,Felucca,2727,2133,5,Felucca
-2727,2133,5,Felucca,2618,977,5,Felucca
+2618,977,5,Felucca,2727,2133,5,Felucca,True
+2727,2133,5,Felucca,2618,977,5,Felucca,True
 #
 # Buccaneer's Den underground tunnels
 2666,2073,5,Felucca,2668,2070,-20,Felucca,False
