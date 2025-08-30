@@ -30,8 +30,8 @@ namespace Server.Commands
 
             m_Mobile.SendMessage("Generating world decoration, please wait.");
 
-            Generate("deco", "Data/Decoration/Britannia", Map.Trammel, Map.Felucca);
-            Generate("deco", "Data/Decoration/Magincia/Felucca", Map.Trammel, Map.Felucca);
+            Generate("deco", "Data/Decoration/Felucca", Map.Trammel, Map.Felucca);
+            //Generate("deco", "Data/Decoration/Magincia/Felucca", Map.Trammel, Map.Felucca);
 			//Generate("deco", "Data/Decoration/Trammel", Map.Trammel);
 			//Generate("deco", "Data/Decoration/Felucca", Map.Felucca);
 			//Generate("deco", "Data/Decoration/Ilshenar", Map.Ilshenar);
