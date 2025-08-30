@@ -344,197 +344,197 @@
 		<!-- GRAVEYARDS -->
 		
 		<!-- DUNGEONS -->
-		<region type="NoHousingRegion" priority="50" name="Covetous Entrance">
+		<region type="NoHousingRegion" priority="50" name="Covetous">
 			<rect x="2433" y="846" width="128" height="128" />
 			<go x="5457" y="1861" z="0" />
 			<music name="Vesper" />
+			<region type="DungeonRegion" priority="50" name="Covetous Level 1">
+				<rect x="5376" y="1793" width="141" height="255" />
+				<rect x="5387" y="1947" width="15" height="15" />
+				<music name="Dungeon9" />
+			</region>
+			<region type="DungeonRegion" priority="50" name="Covetous Level 2">
+				<rect x="5384" y="1960" width="231" height="80" />
+				<rect x="5426" y="1946" width="19" height="14" />
+				<music name="Dungeon9" />
+			</region>
+			<region type="DungeonRegion" priority="50" name="Covetous Level 3">
+				<rect x="5535" y="1823" width="97" height="105" />
+				<music name="Dungeon9" />
+			</region>
+			<region type="DungeonRegion" priority="50" name="Covetous Torture Chambers">
+				<rect x="5498" y="1792" width="57" height="29" />
+				<music name="Dungeon9" />
+			</region>
+			<region type="DungeonRegion" priority="50" name="Covetous Lake Cave">
+				<rect x="5392" y="1792" width="91" height="40" />
+				<music name="Dungeon9" />
+			</region>
 		</region>
-		<region type="DungeonRegion" priority="50" name="Covetous Level 1">
-			<rect x="5376" y="1793" width="141" height="255" />
-			<rect x="5387" y="1947" width="15" height="15" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="DungeonRegion" priority="50" name="Covetous Level 2">
-			<rect x="5384" y="1960" width="231" height="80" />
-			<rect x="5426" y="1946" width="19" height="14" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="DungeonRegion" priority="50" name="Covetous Level 3">
-			<rect x="5535" y="1823" width="97" height="105" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="DungeonRegion" priority="50" name="Covetous Torture Chambers">
-			<rect x="5498" y="1792" width="57" height="29" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="DungeonRegion" priority="50" name="Covetous Lake Cave">
-			<rect x="5392" y="1792" width="91" height="40" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="NoHousingRegion" priority="50" name="Deceit Entrance">
+		<region type="NoHousingRegion" priority="50" name="Deceit">
 			<rect x="4103" y="430" width="18" height="19" />
 			<go x="5187" y="635" z="0" />
 			<music name="Mountn_a" />
-		</region>
-		<region type="DungeonRegion" priority="50" name="Deceit Level 1">
-			<rect x="5133" y="526" width="100" height="114" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="DungeonRegion" priority="50" name="Deceit Level 2">
-			<rect x="5275" y="525" width="78" height="108" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="DungeonRegion" priority="50" name="Deceit Level 3">
-			<rect x="5124" y="645" width="109" height="123" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="DungeonRegion" priority="50" name="Deceit Level 4">
-			<rect x="5253" y="646" width="78" height="117" />
-			<music name="Dungeon9" />
-		</region>
+			<region type="DungeonRegion" priority="50" name="Deceit Level 1">
+				<rect x="5133" y="526" width="100" height="114" />
+				<music name="Dungeon9" />
+			</region>
+			<region type="DungeonRegion" priority="50" name="Deceit Level 2">
+				<rect x="5275" y="525" width="78" height="108" />
+				<music name="Dungeon9" />
+			</region>
+			<region type="DungeonRegion" priority="50" name="Deceit Level 3">
+				<rect x="5124" y="645" width="109" height="123" />
+				<music name="Dungeon9" />
+			</region>
+			<region type="DungeonRegion" priority="50" name="Deceit Level 4">
+				<rect x="5253" y="646" width="78" height="117" />
+				<music name="Dungeon9" />
+			</region>
+		</region>			
 		<region type="NoHousingRegion" priority="50" name="Despise Passage">
 			<rect x="1338" y="1060" width="51" height="62" />
 			<rect x="1354" y="1122" width="42" height="121" />
 			<rect x="1349" y="1122" width="5" height="102" />
 			<go x="1380" y="1114" z="0" />
 		</region>
-		<region type="DungeonRegion" priority="50" name="Despise Entrance">
+		<region type="DungeonRegion" priority="50" name="Despise">
 			<rect x="5566" y="622" width="23" height="19" />		
 			<go x="5580" y="632" z="30" />
+			<region type="DungeonRegion" priority="50" name="Despise Level 1">
+				<rect x="5380" y="515" width="133" height="127" />
+				<music name="Dungeon9" />
+			</region>
+			<region type="DungeonRegion" priority="50" name="Despise Level 2">
+				<rect x="5378" y="652" width="160" height="110" />
+				<music name="Dungeon9" />
+			</region>
+			<region type="DungeonRegion" priority="50" name="Despise Level 3">
+				<rect x="5387" y="771" width="240" height="241" />
+				<music name="Dungeon9" />
+			</region>
 		</region>
-		<region type="DungeonRegion" priority="50" name="Despise Level 1">
-			<rect x="5380" y="515" width="133" height="127" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="DungeonRegion" priority="50" name="Despise Level 2">
-			<rect x="5378" y="652" width="160" height="110" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="DungeonRegion" priority="50" name="Despise Level 3">
-			<rect x="5387" y="771" width="240" height="241" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="NoHousingRegion" priority="50" name="Destard Entrance">
+		<region type="NoHousingRegion" priority="50" name="Destard">
 			<rect x="1162" y="2636" width="30" height="20" />			
 			<go x="5243" y="1004" z="0" />
 			<music name="Mountn_a" />
+			<region type="DungeonRegion" priority="50" name="Destard Level 1">
+				<rect x="5121" y="890" width="50" height="38" />
+				<rect x="5158" y="928" width="18" height="44" />
+				<rect x="5200" y="770" width="168" height="240" />
+				
+				<rect x="5303" y="912" width="65" height="80" />
+				<rect x="5187" y="768" width="116" height="224" />
+				<music name="Dungeon9" />
+			</region>
+			<region type="DungeonRegion" priority="50" name="Destard Level 2">
+				<rect x="5122" y="792" width="60" height="95" />
+				<music name="Dungeon9" />
+			</region>
+			<region type="DungeonRegion" priority="50" name="Destard Level 3">
+				<rect x="5127" y="955" width="25" height="53" />
+				<rect x="5151" y="976" width="25" height="44" />
+				<rect x="5174" y="992" width="21" height="27" />
+				<music name="Dungeon9" />
+			</region>
 		</region>
-		<region type="DungeonRegion" priority="50" name="Destard Level 1">
-			<rect x="5121" y="890" width="50" height="38" />
-			<rect x="5158" y="928" width="18" height="44" />
-			<rect x="5200" y="770" width="168" height="240" />
-			
-			<rect x="5303" y="912" width="65" height="80" />
-			<rect x="5187" y="768" width="116" height="224" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="DungeonRegion" priority="50" name="Destard Level 2">
-			<rect x="5122" y="792" width="60" height="95" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="DungeonRegion" priority="50" name="Destard Level 3">
-			<rect x="5127" y="955" width="25" height="53" />
-			<rect x="5151" y="976" width="25" height="44" />
-			<rect x="5174" y="992" width="21" height="27" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="NoHousingRegion" priority="50" name="Fire Entrance">
+		<region type="NoHousingRegion" priority="50" name="Fire">
 			<rect x="5755" y="2905" width="11" height="5" />		
 			<rect x="2920" y="3404" width="7" height="7" />			
 			<go x="5760" y="2908" z="15" />
 			<music name="Mountn_a" />
+			<region type="DungeonRegion" priority="50" name="Fire Level 1">
+				<rect x="5631" y="1282" width="256" height="249" />
+				<music name="Dungeon9" />
+			</region>
+			<region type="DungeonRegion" priority="50" name="Fire Level 2">
+				<rect x="5632" y="1282" width="130" height="119" />
+				<rect x="5631" y="1392" width="31" height="63" />
+				<music name="Dungeon9" />
+			</region>
 		</region>
-		<region type="DungeonRegion" priority="50" name="Fire Level 1">
-			<rect x="5631" y="1282" width="256" height="249" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="DungeonRegion" priority="50" name="Fire Level 2">
-			<rect x="5632" y="1282" width="130" height="119" />
-			<rect x="5631" y="1392" width="31" height="63" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="NoHousingRegion" priority="50" name="Hythloth Entrance">
+		<region type="NoHousingRegion" priority="50" name="Hythloth">
 			<rect x="4701" y="3812" width="40" height="29" />		
 			<go x="5905" y="22" z="44" />
 			<music name="Mountn_a" />
+			<region type="DungeonRegion" priority="50" name="Hythloth Level 1">
+				<rect x="5901" y="13" width="102" height="112" />
+				<music name="Dungeon9" />
+			</region>
+			<region type="DungeonRegion" priority="50" name="Hythloth Level 2">
+				<rect x="5903" y="138" width="91" height="105" />
+				<music name="Dungeon9" />
+			</region>
+			<region type="DungeonRegion" priority="50" name="Hythloth Level 3">
+				<rect x="6022" y="147" width="109" height="88" />
+				<music name="Dungeon9" />
+			</region>
+			<region type="DungeonRegion" priority="50" name="Hythloth Level 4">
+				<rect x="6039" y="26" width="86" height="83" />
+				<music name="Dungeon9" />
+			</region>
 		</region>
-		<region type="DungeonRegion" priority="50" name="Hythloth Level 1">
-			<rect x="5901" y="13" width="102" height="112" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="DungeonRegion" priority="50" name="Hythloth Level 2">
-			<rect x="5903" y="138" width="91" height="105" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="DungeonRegion" priority="50" name="Hythloth Level 3">
-			<rect x="6022" y="147" width="109" height="88" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="DungeonRegion" priority="50" name="Hythloth Level 4">
-			<rect x="6039" y="26" width="86" height="83" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="NoHousingRegion" priority="50" name="Ice Entrance">
+		<region type="NoHousingRegion" priority="50" name="Ice">
 			<rect x="5204" y="2320" width="6" height="11" />			
 			<rect x="4994" y="76" width="11" height="11" />
 			<go x="5210" y="2322" z="30" />
 			<music name="Mountn_a" />
-		</region>
-		<region type="DungeonRegion" priority="50" name="Ice Level 1">
-			<rect x="5663" y="130" width="232" height="133" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="DungeonRegion" priority="50" name="Ice Ratman Room">
-			<rect x="5799" y="312" width="64" height="71" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="DungeonRegion" priority="50" name="Ice Daemon Layer">
-			<rect x="5650" y="296" width="62" height="45" />
-			<music name="Dungeon9" />
-		</region>
+			<region type="DungeonRegion" priority="50" name="Ice Level 1">
+				<rect x="5663" y="130" width="232" height="133" />
+				<music name="Dungeon9" />
+			</region>
+			<region type="DungeonRegion" priority="50" name="Ice Ratman Room">
+				<rect x="5799" y="312" width="64" height="71" />
+				<music name="Dungeon9" />
+			</region>
+			<region type="DungeonRegion" priority="50" name="Ice Daemon Layer">
+				<rect x="5650" y="296" width="62" height="45" />
+				<music name="Dungeon9" />
+			</region>
+		</region>			
 		<region type="DungeonRegion" priority="50" name="Khaldun">
 			<rect x="5381" y="1284" width="247" height="225" />
 			<go x="5571" y="1302" z="0" />
 			<music name="Dungeon9" />
 			<entrance x="5882" y="3819" />
 		</region>
-		<region type="NoHousingRegion" priority="50" name="Shame Entrance">
+		<region type="NoHousingRegion" priority="50" name="Shame">
 			<rect x="495" y="1552" width="50" height="24" />
 			<go x="5395" y="126" z="0" />
 			<music name="Mountn_a" />
+			<region type="DungeonRegion" priority="50" name="Shame Level 1">
+				<rect x="5375" y="1" width="125" height="128" />
+				<music name="Dungeon9" />
+			</region>
+			<region type="DungeonRegion" priority="50" name="Shame Level 2">
+				<rect x="5506" y="1" width="127" height="126" />
+				<music name="Dungeon9" />
+			</region>
+			<region type="DungeonRegion" priority="50" name="Shame Level 3">
+				<rect x="5375" y="135" width="261" height="123" />
+				<music name="Dungeon9" />
+			</region>
+			<region type="DungeonRegion" priority="50" name="Shame Level 4">
+				<rect x="5638" y="0" width="252" height="127" />
+				<music name="Dungeon9" />
+			</region>
 		</region>
-		<region type="DungeonRegion" priority="50" name="Shame Level 1">
-			<rect x="5375" y="1" width="125" height="128" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="DungeonRegion" priority="50" name="Shame Level 2">
-			<rect x="5506" y="1" width="127" height="126" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="DungeonRegion" priority="50" name="Shame Level 3">
-			<rect x="5375" y="135" width="261" height="123" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="DungeonRegion" priority="50" name="Shame Level 4">
-			<rect x="5638" y="0" width="252" height="127" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="NoHousingRegion" priority="50" name="Wrong Entrance">
+		<region type="NoHousingRegion" priority="50" name="Wrong">
 			<rect x="2030" y="212" width="26" height="23" />
 			<go x="2043" y="236" z="13" />
 			<music name="Mountn_a" />
-		</region>
-		<region type="DungeonRegion" priority="50" name="Wrong Level 1">
-			<rect x="5776" y="512" width="111" height="122" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="DungeonRegion" priority="50" name="Wrong Level 2">
-			<rect x="5640" y="511" width="103" height="77" />
-			<music name="Dungeon9" />
-		</region>
-		<region type="DungeonRegion" priority="50" name="Wrong Level 3">
-			<rect x="5685" y="621" width="47" height="50" />
-			<music name="Dungeon9" />
+			<region type="DungeonRegion" priority="50" name="Wrong Level 1">
+				<rect x="5776" y="512" width="111" height="122" />
+				<music name="Dungeon9" />
+			</region>
+			<region type="DungeonRegion" priority="50" name="Wrong Level 2">
+				<rect x="5640" y="511" width="103" height="77" />
+				<music name="Dungeon9" />
+			</region>
+			<region type="DungeonRegion" priority="50" name="Wrong Level 3">
+				<rect x="5685" y="621" width="47" height="50" />
+				<music name="Dungeon9" />
+			</region>
 		</region>
 		<!-- DUNGEONS -->
 
@@ -849,10 +849,13 @@
 				<object id="312" type="FarmableCotton" minSpawnTime="PT10S" maxSpawnTime="PT30S" amount="6" />
 			</spawning>
 		</region>
+		<!-- FIELDS -->
+
+		<!-- FOREST -->
 		<region priority="50" name="Huntsman's Forest">
 			<rect x="1595" y="550" width="120" height="120" />
 		</region>
-		<!-- FIELDS -->
+		<!-- FOREST -->
 		
 		<!-- SHRINES -->
 		<region priority="50" name="Shrine of Compassion">
@@ -895,68 +898,71 @@
 		<!-- SHRINES -->
 		
 		<!-- LOSTLANDS -->
-		<!-- TOWNS -->
-		<region type="TownRegion" priority="50" name="Delucia">
-			<rect x="5123" y="3942" width="192" height="122" />
-			<rect x="5147" y="4064" width="125" height="20" />
-			<rect x="5235" y="3930" width="80" height="12" />
-			<go x="5228" y="3978" z="37" />
-			<region>
-				<rect x="5194" y="4053" width="10" height="20" />
-				<logoutDelay active="false" />
+       	<region priority="50" name="Lost Lands">
+		  	<rect x="5116" y="2300" width="1026" height="1794" />
+			<!-- TOWNS -->
+			<region type="TownRegion" priority="50" name="Delucia">
+				<rect x="5123" y="3942" width="192" height="122" />
+				<rect x="5147" y="4064" width="125" height="20" />
+				<rect x="5235" y="3930" width="80" height="12" />
+				<go x="5228" y="3978" z="37" />
+				<region>
+					<rect x="5194" y="4053" width="10" height="20" />
+					<logoutDelay active="false" />
+				</region>
 			</region>
-		</region>
-		<region type="TownRegion" priority="50" name="Papua">
-			<rect x="5639" y="3095" width="192" height="223" />
-			<rect x="5831" y="3237" width="20" height="30" />
-			<go x="5769" y="3176" z="0" />
-			<region>
-				<rect x="5757" y="3150" width="24" height="24" />
-				<logoutDelay active="false" />
+			<region type="TownRegion" priority="50" name="Papua">
+				<rect x="5639" y="3095" width="192" height="223" />
+				<rect x="5831" y="3237" width="20" height="30" />
+				<go x="5769" y="3176" z="0" />
+				<region>
+					<rect x="5757" y="3150" width="24" height="24" />
+					<logoutDelay active="false" />
+				</region>
 			</region>
+			<!-- TOWNS -->
+			<!-- DUNGEONS -->
+			<region type="DungeonRegion" priority="50" name="Terathan Keep">
+				<rect x="5404" y="3099" width="77" height="68" />
+				<rect x="5120" y="1530" width="254" height="258" />
+				<go x="5451" y="3143" z="-60" />
+				<music name="Dungeon9" />
+				<entrance x="5426" y="3120" />
+			</region>
+			<!-- DUNGEONS -->		
+			<!-- ENTRANCES -->
+			<region priority="50" name="Trinsic Passage">
+				<rect x="5134" y="3659" width="16" height="17" />
+				<rect x="5147" y="4057" width="11" height="18" />
+			</region>
+			<!-- ENTRANCES -->		
+			<!-- CEMETARYS -->		
+			<region priority="50" name="South Papua Cemetary">
+				<rect x="5691" y="3656" width="14" height="14" />
+			  <go x="5695" y="3650" z="-3" />		
+			</region>					
+			<!-- CEMETARYS -->		
+			<region priority="50" name="Cyclops Valley">
+				<rect x="5123" y="2821" width="92" height="250" />
+			  <go x="5151" y="2948" z="19" />		
+			</region>					
+			<region priority="50" name="Ophidian Lair">
+				<rect x="5642" y="2604" width="211" height="220" />
+			  <go x="5767" y="2635" z="40" />		
+			</region>					
+			<region priority="50" name="Ruins">
+				<rect x="5377" y="3221" width="26" height="26" />
+			  <go x="5393" y="3244" z="2" />		
+			</region>					
+			<region priority="50" name="Orc Fort">
+				<rect x="5195" y="3606" width="22" height="26" />		
+			  <go x="5210" y="3628" z="-1" />		
+			</region>					
+			<region priority="50" name="City Of The Dead">
+				<rect x="5193" y="3643" width="50" height="40" />
+			  <go x="5232" y="3647" z="0" />		
+			</region>					
 		</region>
-		<!-- TOWNS -->
-		<!-- DUNGEONS -->
-		<region type="DungeonRegion" priority="50" name="Terathan Keep">
-			<rect x="5404" y="3099" width="77" height="68" />
-			<rect x="5120" y="1530" width="254" height="258" />
-			<go x="5451" y="3143" z="-60" />
-			<music name="Dungeon9" />
-			<entrance x="5426" y="3120" />
-		</region>
-		<!-- DUNGEONS -->		
-		<!-- ENTRANCES -->
-		<region priority="50" name="Trinsic Passage">
-			<rect x="5134" y="3659" width="16" height="17" />
-			<rect x="5147" y="4057" width="11" height="18" />
-		</region>
-		<!-- ENTRANCES -->		
-		<!-- CEMETARYS -->		
-		<region priority="50" name="South Papua Cemetary">
-			<rect x="5691" y="3656" width="14" height="14" />
-		  <go x="5695" y="3650" z="-3" />		
-		</region>					
-		<!-- CEMETARYS -->		
-		<region priority="50" name="Cyclops Valley">
-			<rect x="5123" y="2821" width="92" height="250" />
-		  <go x="5151" y="2948" z="19" />		
-		</region>					
-		<region priority="50" name="Ophidian Lair">
-			<rect x="5642" y="2604" width="211" height="220" />
-		  <go x="5767" y="2635" z="40" />		
-		</region>					
-		<region priority="50" name="Ruins">
-			<rect x="5377" y="3221" width="26" height="26" />
-		  <go x="5393" y="3244" z="2" />		
-		</region>					
-		<region priority="50" name="Orc Fort">
-			<rect x="5195" y="3606" width="22" height="26" />		
-		  <go x="5210" y="3628" z="-1" />		
-		</region>					
-		<region priority="50" name="City Of The Dead">
-			<rect x="5193" y="3643" width="50" height="40" />
-		  <go x="5232" y="3647" z="0" />		
-		</region>					
 		<!-- LOSTLANDS -->
 		
 		<!--ADMIN AREAS-->
