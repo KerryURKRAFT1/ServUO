@@ -1,4 +1,35 @@
-﻿# Shame
+﻿# Hedgemaze
+1166,2237,60,Felucca,1163,2205,0,Felucca,True
+1165,2204,40,Felucca,1163,2211,60,Felucca,True
+1163,2208,0,Felucca,1165,2214,19,Felucca,True
+1163,2204,60,Felucca,1171,2202,0,Felucca,True
+#
+# Fire
+5691,1348,0,Felucca,5690,1352,-26,Felucca,True
+5690,1352,-26,Felucca,5691,1348,0,Felucca,True
+#
+# Orc Cave
+1013,1433,0,Felucca,5138,2016,0,Felucca,True
+1013,1434,0,Felucca,5138,2016,0,Felucca,True
+5139,2015,0,Felucca,1014,1434,0,Felucca,True
+5139,2016,0,Felucca,1014,1434,0,Felucca,True
+5139,2017,0,Felucca,1014,1434,0,Felucca,True
+5132,1946,0,Felucca,5332,1379,0,Felucca,True
+5133,1946,0,Felucca,5332,1379,0,Felucca,True
+5134,1946,0,Felucca,5332,1379,0,Felucca,True
+5135,1946,0,Felucca,5332,1379,0,Felucca,True
+5329,1381,10,Felucca,5134,1947,0,Felucca,True
+5330,1381,10,Felucca,5134,1947,0,Felucca,True
+5331,1381,10,Felucca,5134,1947,0,Felucca,True
+5332,1381,10,Felucca,5134,1947,0,Felucca,True
+5333,1381,10,Felucca,5134,1947,0,Felucca,True
+5334,1381,10,Felucca,5134,1947,0,Felucca,True
+5363,1289,4,Felucca,5272,2041,4,Felucca,True
+5364,1289,4,Felucca,5272,2041,4,Felucca,True
+5272,2043,4,Felucca,5363,1290,4,Felucca,True
+5273,2043,4,Felucca,5363,1290,4,Felucca,True
+#
+# Shame
 512,1559,0,Felucca,5394,127,0,Felucca,True
 513,1559,0,Felucca,5395,127,0,Felucca,True
 514,1559,0,Felucca,5396,127,0,Felucca,True
@@ -17,9 +48,36 @@
 6040,193,12,Felucca,6059,89,24,Felucca,True
 6040,194,12,Felucca,6059,90,24,Felucca,True
 #
-# DestroyTeleporter(5920,168,16,Felucca
-# DestroyTeleporter(5920,169,17,Felucca
-# DestroyTeleporter(5920,170,16,Felucca
+# Hythloth 2
+5926,145,22,Felucca,5970,147,22,Felucca,True
+5926,146,22,Felucca,5970,147,22,Felucca,True
+5926,147,22,Felucca,5970,147,22,Felucca,True
+5926,148,22,Felucca,5970,147,22,Felucca,True
+5926,149,22,Felucca,5970,147,22,Felucca,True
+5933,146,22,Felucca,5970,147,22,Felucca,True
+5933,145,22,Felucca,5970,147,22,Felucca,True
+5933,149,22,Felucca,5970,147,22,Felucca,True
+5944,148,22,Felucca,5970,147,22,Felucca,True
+5944,147,22,Felucca,5970,147,22,Felucca,True
+5944,146,22,Felucca,5970,147,22,Felucca,True
+5944,145,22,Felucca,5970,147,22,Felucca,True
+5944,144,22,Felucca,5970,147,22,Felucca,True
+5955,148,22,Felucca,5970,147,22,Felucca,True
+5955,146,22,Felucca,5970,147,22,Felucca,True
+5955,145,22,Felucca,5970,147,22,Felucca,True
+5955,144,22,Felucca,5970,147,22,Felucca,True
+5955,149,22,Felucca,5970,147,22,Felucca,True
+5955,150,22,Felucca,5970,147,22,Felucca,True
+5963,146,22,Felucca,5970,147,22,Felucca,True
+5963,145,22,Felucca,5970,147,22,Felucca,True
+5963,144,22,Felucca,5970,147,22,Felucca,True
+5933,147,22,Felucca,5970,147,22,Felucca,True
+5963,148,22,Felucca,5970,147,22,Felucca,True
+5963,147,22,Felucca,5970,147,22,Felucca,True
+6044,226,44,Felucca,6041,204,22,Felucca,True
+6039,204,22,Felucca,6050,227,44,Felucca,True
+6115,176,0,Felucca,6107,176,0,Felucca,True
+6107,179,0,Felucca,6124,155,0,Felucca,True
 #
 5920,168,16,Felucca,6083,144,-20,Felucca,False
 5920,169,16,Felucca,6083,145,-20,Felucca,False
@@ -28,8 +86,6 @@
 6083,144,-20,Felucca,5920,168,22,Felucca,False
 6083,145,-20,Felucca,5920,169,22,Felucca,False
 6083,146,-20,Felucca,5920,170,22,Felucca,False
-#
-# DestroyTeleporter(5906,96,0,Felucca
 #
 5972,168,0,Felucca,5905,100,0,Felucca,False
 5906,96,0,Felucca,5977,169,0,Felucca,False
@@ -55,29 +111,12 @@
 5552,1805,12,Felucca,5557,1825,-3,Felucca,False
 5553,1805,12,Felucca,5557,1825,-3,Felucca,False
 #
-# DestroyTeleporter(5551,1807,0,Felucca
-# DestroyTeleporter(5552,1807,0,Felucca
-# DestroyTeleporter(5553,1807,0,Felucca
-#
 5556,1826,-10,Felucca,5551,1806,7,Felucca,False
 5557,1826,-10,Felucca,5552,1806,7,Felucca,False
-#
-# DestroyTeleporter(5556,1825,-7,Felucca
-# DestroyTeleporter(5556,1827,-13,Felucca
-# DestroyTeleporter(5557,1825,-7,Felucca
-# DestroyTeleporter(5557,1827,-13,Felucca
-# DestroyTeleporter(5558,1825,-7,Felucca
-#
-# DestroyTeleporter(5468,1804,0,Felucca
-# DestroyTeleporter(5468,1805,0,Felucca
-# DestroyTeleporter(5468,1806,0,Felucca
 #
 5466,1804,12,Felucca,5593,1840,-3,Felucca,False
 5466,1805,12,Felucca,5593,1841,-3,Felucca,False
 5466,1806,12,Felucca,5593,1842,-3,Felucca,False
-#
-# DestroyTeleporter(5595,1840,-14,Felucca
-# DestroyTeleporter(5595,1840,-14,Felucca
 #
 5594,1840,-9,Felucca,5467,1804,7,Felucca,False
 5594,1841,-9,Felucca,5467,1805,7,Felucca,False
@@ -91,15 +130,21 @@
 5826,631,0,Felucca,2043,215,14,Felucca,True
 5698,662,0,Felucca,5793,527,10,Felucca,False
 #
-# DestroyTeleporter(5863,525,15,Felucca
-# DestroyTeleporter(5863,526,15,Felucca
-# DestroyTeleporter(5863,527,15,Felucca
-# DestroyTeleporter(5868,537,15,Felucca
-# DestroyTeleporter(5868,538,15,Felucca
-# DestroyTeleporter(5869,538,15,Felucca
-# DestroyTeleporter(5733,554,20,Felucca
-# DestroyTeleporter(5862,527,15,Felucca
-#
+# Wrong 2
+5827,593,0,Felucca,5690,569,25,Felucca,True
+5829,593,0,Felucca,5690,569,25,Felucca,True
+5871,531,15,Felucca,5690,569,25,Felucca,True
+5870,530,15,Felucca,5690,569,25,Felucca,True
+5871,530,15,Felucca,5690,569,25,Felucca,True
+5870,531,15,Felucca,5690,569,25,Felucca,True
+5867,528,15,Felucca,5703,639,0,Felucca,True
+5868,528,15,Felucca,5703,639,0,Felucca,True
+5868,529,15,Felucca,5703,639,0,Felucca,True
+5867,529,15,Felucca,5703,639,0,Felucca,True
+5705,625,0,Felucca,5703,639,0,Felucca,True
+5698,662,0,Felucca,5793,527,10,Felucca,True
+5733,554,20,Felucca,5829,595,0,Felucca,True
+5690,569,25,Felucca,5829,595,0,Felucca,True#
 # Deceit
 4110,430,5,Felucca,5187,639,0,Felucca,False
 4111,430,5,Felucca,5188,639,0,Felucca,False
@@ -165,10 +210,14 @@
 5133,986,22,Felucca,5152,810,-19,Felucca,False
 5133,987,22,Felucca,5152,811,-19,Felucca,False
 #
+# Bucs Portal
+2618,977,5,Felucca,2727,2133,5,Felucca
+2727,2133,5,Felucca,2618,977,5,Felucca
+#
 # Buccaneer's Den underground tunnels
-2666,2073,5,Felucca,2668,2070,-20,Felucca, False
-2672,2246,2,Felucca,2604,2118,-20,Felucca, False
-2649,2194,4,Felucca,2649,2195,-14,Felucca, False
+2666,2073,5,Felucca,2668,2070,-20,Felucca,False
+2672,2246,2,Felucca,2604,2118,-20,Felucca,False
+2649,2194,4,Felucca,2649,2195,-14,Felucca,False
 #
 2603,2121,-20,Felucca,2605,2130,8,Felucca,False
 2603,2120,-20,Felucca,2605,2130,8,Felucca,False
@@ -197,9 +246,6 @@
 5923,169,1,Felucca,5925,171,22,Felucca,False
 2399,198,0,Felucca,5753,436,79,Felucca,False
 2400,198,0,Felucca,5754,436,80,Felucca,False
-#
-# DestroyTeleporter(5166,245,15,Felucca
-# DestroyTeleporter(1361,883,0,Felucca
 #
 5191,152,0,Felucca,1367,891,0,Felucca,False
 5849,239,-25,Felucca,5831,324,27,Felucca,False
@@ -239,8 +285,6 @@
 2776,895,-23,Felucca,5685,387,2,Felucca,False
 #
 # 4545,851,30,Felucca,5736,3196,8,Felucca,False
-#
-# DestroyTeleporter(4545,851,30,Felucca
 #
 4540,898,32,Felucca,4442,1122,5,Felucca,False
 4300,968,5,Felucca,4442,1122,5,Felucca,False
@@ -284,8 +328,6 @@
 1491,1640,24,Felucca,6032,1499,31,Felucca,False
 1491,1642,24,Felucca,6032,1501,31,Felucca,False
 #
-# DestroyTeleporter(5341,1602,0,Felucca
-#
 5340,1599,40,Felucca,5426,3122,-74,Felucca,False
 5341,1599,40,Felucca,5426,3122,-74,Felucca,False
 1987,2062,-40,Felucca,5826,464,0,Felucca,False
@@ -306,8 +348,6 @@
 5126,3143,99,Felucca,5849,432,1,Felucca,False
 #
 # 5736,3196,8,Felucca,4545,851,30,Felucca,False
-#
-# DestroyTeleporter(5736,3196,8,Felucca
 #
 424,3283,35,Felucca,5267,2757,35,Felucca,False
 1629,3320,0,Felucca,5899,1411,43,Felucca,False
