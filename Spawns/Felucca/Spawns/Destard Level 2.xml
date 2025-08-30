@@ -42,7 +42,7 @@
     <Objects2>ShadowWyrm:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 TreasureLevel4-TreasureLevel3-Etc</Name>
+    <Name>3 TreasureLevel4-TreasureLevel3-Etc</Name>
     <UniqueId>5cb905f1-e9f6-4403-841f-0bd86d05223f</UniqueId>
     <Map>Felucca</Map>
     <X>5113</X>
@@ -126,7 +126,7 @@
     <Objects2>Drake:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=ShadowWyrm:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 Daemon-EvilMage-Etc</Name>
+    <Name>1 Daemon-EvilMage-Etc</Name>
     <UniqueId>dbc8e92e-cf00-4653-b7f4-85a10c630fb9</UniqueId>
     <Map>Felucca</Map>
     <X>5139</X>

@@ -1,6 +1,6 @@
 <Spawns>
   <Points>
-    <Name>8 Harpy</Name>
+    <Name>10 Harpy</Name>
     <UniqueId>0c9e7dd4-5f5b-48ea-b0e2-e816af63de25</UniqueId>
     <Map>Felucca</Map>
     <X>5462</X>
@@ -42,7 +42,7 @@
     <Objects2>Harpy:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>10 Gazer</Name>
+    <Name>9 Gazer</Name>
     <UniqueId>1d714c8a-32d1-4757-a75a-b20851663ed2</UniqueId>
     <Map>Felucca</Map>
     <X>5383</X>
@@ -126,7 +126,7 @@
     <Objects2>Gazer:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>16 TreasureLevel4</Name>
+    <Name>5 TreasureLevel4</Name>
     <UniqueId>31bca024-ee9c-4b83-9c2a-233eca93b56e</UniqueId>
     <Map>Felucca</Map>
     <X>5501</X>
@@ -168,7 +168,7 @@
     <Objects2>TreasureLevel4:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>7 HeadlessOne</Name>
+    <Name>21 HeadlessOne</Name>
     <UniqueId>3faee28a-04bf-44b5-a53e-656a45789775</UniqueId>
     <Map>Felucca</Map>
     <X>5448</X>
@@ -210,7 +210,7 @@
     <Objects2>HeadlessOne:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>24 TreasureLevel1-TreasureLevel2-Etc</Name>
+    <Name>14 TreasureLevel1-TreasureLevel2-Etc</Name>
     <UniqueId>43aa913a-75c1-49dd-afb5-ea07eb953524</UniqueId>
     <Map>Felucca</Map>
     <X>5385</X>
@@ -252,7 +252,7 @@
     <Objects2>TreasureLevel1:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TreasureLevel2:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>11 Corpser</Name>
+    <Name>8 Corpser</Name>
     <UniqueId>44028b54-26be-4fd4-90a1-eeec76735ea7</UniqueId>
     <Map>Felucca</Map>
     <X>5395</X>
@@ -294,7 +294,7 @@
     <Objects2>Corpser:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>23 Corpser</Name>
+    <Name>6 Corpser</Name>
     <UniqueId>457cd9e8-6130-450d-8b98-be224f70424f</UniqueId>
     <Map>Felucca</Map>
     <X>5388</X>
@@ -336,7 +336,7 @@
     <Objects2>Corpser:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>26 TreasureLevel2-TreasureLevel3-Etc</Name>
+    <Name>18 TreasureLevel2-TreasureLevel3-Etc</Name>
     <UniqueId>462bef18-30a5-4af3-8c89-3cc03770349d</UniqueId>
     <Map>Felucca</Map>
     <X>5498</X>
@@ -378,7 +378,7 @@
     <Objects2>TreasureLevel2:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TreasureLevel3:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>22 Corpser</Name>
+    <Name>24 Corpser</Name>
     <UniqueId>4aff88d7-46c2-4781-ba3a-a9bd0003ec23</UniqueId>
     <Map>Felucca</Map>
     <X>5420</X>
@@ -420,7 +420,7 @@
     <Objects2>Corpser:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>30 Gazer-ElderGazer-Etc</Name>
+    <Name>29 Gazer-ElderGazer-Etc</Name>
     <UniqueId>5657786c-9602-4c4a-99ec-69e777500508</UniqueId>
     <Map>Felucca</Map>
     <X>5442</X>
@@ -462,7 +462,7 @@
     <Objects2>Gazer:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=ElderGazer:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>19 GiantSpider</Name>
+    <Name>30 GiantSpider</Name>
     <UniqueId>5b15a59f-cf29-43ba-9337-1cf605b71455</UniqueId>
     <Map>Felucca</Map>
     <X>5464</X>
@@ -504,7 +504,7 @@
     <Objects2>GiantSpider:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>5 Harpy-StoneHarpy-Etc</Name>
+    <Name>22 Harpy-StoneHarpy-Etc</Name>
     <UniqueId>6c6ecbaf-16a8-4c3f-9eab-83fd435b7071</UniqueId>
     <Map>Felucca</Map>
     <X>5483</X>
@@ -546,7 +546,7 @@
     <Objects2>Harpy:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StoneHarpy:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>14 TreasureLevel2-Corpser-Etc</Name>
+    <Name>16 TreasureLevel2-Corpser-Etc</Name>
     <UniqueId>6d61dd17-ff36-4ee6-be48-c907ddadca76</UniqueId>
     <Map>Felucca</Map>
     <X>5403</X>
@@ -588,7 +588,7 @@
     <Objects2>TreasureLevel2:MX=8:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Corpser:MX=8:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>2 Corpser</Name>
+    <Name>11 Corpser</Name>
     <UniqueId>7782f99a-6d42-4980-951c-f42b0f428212</UniqueId>
     <Map>Felucca</Map>
     <X>5431</X>
@@ -630,7 +630,7 @@
     <Objects2>Corpser:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>15 TreasureLevel2-TreasureLevel3-Etc</Name>
+    <Name>3 TreasureLevel2-TreasureLevel3-Etc</Name>
     <UniqueId>88f62502-b08f-4f0c-8c8f-25c0bd69a16e</UniqueId>
     <Map>Felucca</Map>
     <X>5404</X>
@@ -672,7 +672,7 @@
     <Objects2>TreasureLevel2:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TreasureLevel3:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Corpser:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>20 Corpser</Name>
+    <Name>19 Corpser</Name>
     <UniqueId>892956a9-72bf-4e9d-a7dd-064a5e60fca3</UniqueId>
     <Map>Felucca</Map>
     <X>5412</X>
@@ -714,7 +714,7 @@
     <Objects2>Corpser:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>9 Dragon-Drake-Etc</Name>
+    <Name>17 Dragon-Drake-Etc</Name>
     <UniqueId>9d5efbde-368c-475a-a3a5-e196bd222706</UniqueId>
     <Map>Felucca</Map>
     <X>5432</X>
@@ -756,7 +756,7 @@
     <Objects2>Dragon:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Drake:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 TreasureLevel2</Name>
+    <Name>4 TreasureLevel2</Name>
     <UniqueId>ab122a70-9fc7-4fea-9af0-858ae878bb1a</UniqueId>
     <Map>Felucca</Map>
     <X>5394</X>
@@ -798,7 +798,7 @@
     <Objects2>TreasureLevel2:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>25 GiantSpider</Name>
+    <Name>12 GiantSpider</Name>
     <UniqueId>b0f8c1ca-4543-4314-b314-7e070826f39f</UniqueId>
     <Map>Felucca</Map>
     <X>5464</X>
@@ -840,7 +840,7 @@
     <Objects2>GiantSpider:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>18 TreasureLevel2-TreasureLevel3-Etc</Name>
+    <Name>23 TreasureLevel2-TreasureLevel3-Etc</Name>
     <UniqueId>bab1e34b-fa80-4829-94bb-b64b7d4eff5a</UniqueId>
     <Map>Felucca</Map>
     <X>5453</X>
@@ -882,7 +882,7 @@
     <Objects2>TreasureLevel2:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TreasureLevel3:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>13 GiantSpider</Name>
+    <Name>20 GiantSpider</Name>
     <UniqueId>be481ba9-4acb-4a28-9e84-8b686ee27dff</UniqueId>
     <Map>Felucca</Map>
     <X>5425</X>
@@ -924,7 +924,7 @@
     <Objects2>GiantSpider:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>6 TreasureLevel1-TreasureLevel2-Etc</Name>
+    <Name>1 TreasureLevel1-TreasureLevel2-Etc</Name>
     <UniqueId>c271e3fb-58c7-4bf3-95ee-5b299a466b4c</UniqueId>
     <Map>Felucca</Map>
     <X>5450</X>
@@ -966,7 +966,7 @@
     <Objects2>TreasureLevel1:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TreasureLevel2:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>12 Gazer</Name>
+    <Name>2 Gazer</Name>
     <UniqueId>d5441683-2f46-4b88-a2b9-8c79f22cc504</UniqueId>
     <Map>Felucca</Map>
     <X>5408</X>
@@ -1050,7 +1050,7 @@
     <Objects2>WaterElemental:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 Gazer</Name>
+    <Name>13 Gazer</Name>
     <UniqueId>dcbd8c20-e0b2-4b58-a830-cd3e4ee30e9e</UniqueId>
     <Map>Felucca</Map>
     <X>5401</X>
@@ -1092,7 +1092,7 @@
     <Objects2>Gazer:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>17 StoneHarpy</Name>
+    <Name>26 StoneHarpy</Name>
     <UniqueId>dcf0dfda-dd17-47fb-aa60-b9380e1d9b3f</UniqueId>
     <Map>Felucca</Map>
     <X>5436</X>
@@ -1134,7 +1134,7 @@
     <Objects2>StoneHarpy:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>29 TreasureLevel3-TreasureLevel4-Etc</Name>
+    <Name>15 TreasureLevel3-TreasureLevel4-Etc</Name>
     <UniqueId>e6935960-76ac-44c7-a72d-053d99d69876</UniqueId>
     <Map>Felucca</Map>
     <X>5440</X>
@@ -1176,7 +1176,7 @@
     <Objects2>TreasureLevel3:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TreasureLevel4:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>21 TreasureLevel3</Name>
+    <Name>7 TreasureLevel3</Name>
     <UniqueId>f47d402d-9842-4527-b148-05aa629a4165</UniqueId>
     <Map>Felucca</Map>
     <X>5453</X>
@@ -1218,7 +1218,7 @@
     <Objects2>TreasureLevel3:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>4 Slime</Name>
+    <Name>25 Slime</Name>
     <UniqueId>f77ec99c-70a5-44d2-b0a5-86f66b01d9f9</UniqueId>
     <Map>Felucca</Map>
     <X>5459</X>

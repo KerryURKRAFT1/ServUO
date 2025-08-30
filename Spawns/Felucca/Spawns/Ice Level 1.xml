@@ -1,6 +1,6 @@
 <Spawns>
   <Points>
-    <Name>21 IceSerpent-SnowElemental-Etc</Name>
+    <Name>7 IceSerpent-SnowElemental-Etc</Name>
     <UniqueId>09af3d46-d193-4603-9aa1-708f55208c5a</UniqueId>
     <Map>Felucca</Map>
     <X>5789</X>
@@ -42,7 +42,7 @@
     <Objects2>IceSerpent:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SnowElemental:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=FrostTroll:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>11 TreasureLevel4</Name>
+    <Name>21 TreasureLevel4</Name>
     <UniqueId>0c8a360e-60c3-4734-9c2c-19dc4a11c6e0</UniqueId>
     <Map>Felucca</Map>
     <X>5683</X>
@@ -84,7 +84,7 @@
     <Objects2>TreasureLevel4:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>7 TreasureLevel3</Name>
+    <Name>16 TreasureLevel3</Name>
     <UniqueId>0fe82b42-360d-43f5-a2b9-fa009aca8b6e</UniqueId>
     <Map>Felucca</Map>
     <X>5682</X>
@@ -126,7 +126,7 @@
     <Objects2>TreasureLevel3:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>16 TreasureLevel3</Name>
+    <Name>4 TreasureLevel3</Name>
     <UniqueId>263e92ce-9e63-4f61-91e7-a6db6bb723e1</UniqueId>
     <Map>Felucca</Map>
     <X>5853</X>
@@ -168,7 +168,7 @@
     <Objects2>TreasureLevel3:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>18 FrostOoze-FrostSpider-Etc</Name>
+    <Name>9 FrostOoze-FrostSpider-Etc</Name>
     <UniqueId>29538016-f570-4d67-988f-7cff77ed02a7</UniqueId>
     <Map>Felucca</Map>
     <X>5767</X>
@@ -210,7 +210,7 @@
     <Objects2>FrostOoze:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=FrostSpider:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SnowElemental:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=FrostTroll:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>15 TreasureLevel4</Name>
+    <Name>13 TreasureLevel4</Name>
     <UniqueId>2a9675a9-7833-4d93-aeff-ec284ef8bba8</UniqueId>
     <Map>Felucca</Map>
     <X>5755</X>
@@ -252,7 +252,7 @@
     <Objects2>TreasureLevel4:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>9 SnowElemental-IceElemental-Etc</Name>
+    <Name>2 SnowElemental-IceElemental-Etc</Name>
     <UniqueId>39a91e40-8778-493d-b268-93cf5ef5ae8e</UniqueId>
     <Map>Felucca</Map>
     <X>5666</X>
@@ -294,7 +294,7 @@
     <Objects2>SnowElemental:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=IceElemental:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ratman:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>4 FrostSpider-IceElemental-Etc</Name>
+    <Name>15 FrostSpider-IceElemental-Etc</Name>
     <UniqueId>4afa506d-ed5c-4a9c-9d3e-5bb6d8a81b35</UniqueId>
     <Map>Felucca</Map>
     <X>5824</X>
@@ -336,7 +336,7 @@
     <Objects2>FrostSpider:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=IceElemental:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SnowElemental:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=FrostTroll:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>2 TreasureLevel4</Name>
+    <Name>6 TreasureLevel4</Name>
     <UniqueId>4f0709c6-de3f-4834-b6af-98fa0cac9e1d</UniqueId>
     <Map>Felucca</Map>
     <X>5750</X>
@@ -378,7 +378,7 @@
     <Objects2>TreasureLevel4:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>8 TreasureLevel3</Name>
+    <Name>12 TreasureLevel3</Name>
     <UniqueId>6b3646b2-ea98-4b8a-9a0b-c720ef1ebdd2</UniqueId>
     <Map>Felucca</Map>
     <X>5757</X>
@@ -420,7 +420,7 @@
     <Objects2>TreasureLevel3:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>12 TreasureLevel3</Name>
+    <Name>3 TreasureLevel3</Name>
     <UniqueId>6bcd0724-fb4e-4f6b-8ffa-cf72aaf69f2a</UniqueId>
     <Map>Felucca</Map>
     <X>5771</X>
@@ -462,7 +462,7 @@
     <Objects2>TreasureLevel3:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 IceSerpent-Ratman-Etc</Name>
+    <Name>8 IceSerpent-Ratman-Etc</Name>
     <UniqueId>8b2f6fc0-c922-4f83-b9d9-05c836359b7e</UniqueId>
     <Map>Felucca</Map>
     <X>5742</X>
@@ -504,7 +504,7 @@
     <Objects2>IceSerpent:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Ratman:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SnowElemental:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=IceElemental:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>5 TreasureLevel3</Name>
+    <Name>14 TreasureLevel3</Name>
     <UniqueId>94b5739f-7d1f-4d6e-9cc2-527f92200aec</UniqueId>
     <Map>Felucca</Map>
     <X>5832</X>
@@ -546,7 +546,7 @@
     <Objects2>TreasureLevel3:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>20 TreasureLevel4</Name>
+    <Name>19 TreasureLevel4</Name>
     <UniqueId>9d6179b6-cb63-4046-94bf-8c1413090b1f</UniqueId>
     <Map>Felucca</Map>
     <X>5762</X>
@@ -588,7 +588,7 @@
     <Objects2>TreasureLevel4:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 RatmanMage</Name>
+    <Name>10 RatmanMage</Name>
     <UniqueId>9fd03541-814e-46aa-8b11-ba78e287e511</UniqueId>
     <Map>Felucca</Map>
     <X>5840</X>
@@ -630,7 +630,7 @@
     <Objects2>RatmanMage:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>10 FrostSpider-FrostOoze-Etc</Name>
+    <Name>1 FrostSpider-FrostOoze-Etc</Name>
     <UniqueId>aa5a16fd-653d-4586-886e-8a375e33819c</UniqueId>
     <Map>Felucca</Map>
     <X>5852</X>
@@ -672,7 +672,7 @@
     <Objects2>FrostSpider:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=FrostOoze:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=IceSnake:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>14 TreasureLevel4</Name>
+    <Name>18 TreasureLevel4</Name>
     <UniqueId>b04a8500-1727-4ed2-b5f0-76f00c1087aa</UniqueId>
     <Map>Felucca</Map>
     <X>5711</X>
@@ -714,7 +714,7 @@
     <Objects2>TreasureLevel4:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>13 IceSerpent-SnowElemental-Etc</Name>
+    <Name>20 IceSerpent-SnowElemental-Etc</Name>
     <UniqueId>b9e12844-91d8-49a5-ba70-7ee8d33aa08b</UniqueId>
     <Map>Felucca</Map>
     <X>5706</X>
@@ -798,7 +798,7 @@
     <Objects2>WhiteWyrm:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>6 TreasureLevel3</Name>
+    <Name>11 TreasureLevel3</Name>
     <UniqueId>c48ebed0-1387-45ca-8469-a4b3469d795b</UniqueId>
     <Map>Felucca</Map>
     <X>5720</X>
@@ -840,7 +840,7 @@
     <Objects2>TreasureLevel3:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>23 TreasureLevel4</Name>
+    <Name>22 TreasureLevel4</Name>
     <UniqueId>d1bd58ce-ffec-4e95-b20c-1d76c1977c56</UniqueId>
     <Map>Felucca</Map>
     <X>5836</X>
@@ -882,7 +882,7 @@
     <Objects2>TreasureLevel4:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>22 TreasureLevel2</Name>
+    <Name>5 TreasureLevel2</Name>
     <UniqueId>e375b833-8bfe-443c-95f6-84f236e285ed</UniqueId>
     <Map>Felucca</Map>
     <X>5847</X>
@@ -924,7 +924,7 @@
     <Objects2>TreasureLevel2:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>19 TreasureLevel3</Name>
+    <Name>23 TreasureLevel3</Name>
     <UniqueId>ff8924a3-9964-49c2-8712-8ddfc1e1ddc9</UniqueId>
     <Map>Felucca</Map>
     <X>5753</X>

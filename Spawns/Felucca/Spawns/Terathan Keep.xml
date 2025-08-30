@@ -1,6 +1,6 @@
 <Spawns>
   <Points>
-    <Name>9 TerathanAvenger-TerathanWarrior-Etc</Name>
+    <Name>13 TerathanAvenger-TerathanWarrior-Etc</Name>
     <UniqueId>08e592d8-54ee-462c-b322-e80f3064d552</UniqueId>
     <Map>Felucca</Map>
     <X>5108</X>
@@ -42,7 +42,7 @@
     <Objects2>TerathanAvenger:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TerathanWarrior:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TerathanDrone:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>18 Balron-Dragon-Etc</Name>
+    <Name>16 Balron-Dragon-Etc</Name>
     <UniqueId>0a5ff337-d95e-4a35-8334-4bdbfc57c18b</UniqueId>
     <Map>Felucca</Map>
     <X>5337</X>
@@ -84,7 +84,7 @@
     <Objects2>Balron:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Dragon:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Drake:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>19 TerathanAvenger-TerathanWarrior-Etc</Name>
+    <Name>5 TerathanAvenger-TerathanWarrior-Etc</Name>
     <UniqueId>32ec4bcd-a3c7-4b58-a3a7-6d3e7dcffe48</UniqueId>
     <Map>Felucca</Map>
     <X>5151</X>
@@ -126,7 +126,7 @@
     <Objects2>TerathanAvenger:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TerathanWarrior:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>10 TerathanMatriarch-TerathanAvenger-Etc</Name>
+    <Name>15 TerathanMatriarch-TerathanAvenger-Etc</Name>
     <UniqueId>47cf4985-f2cf-4566-9d52-54ed7732ef70</UniqueId>
     <Map>Felucca</Map>
     <X>5429</X>
@@ -168,7 +168,7 @@
     <Objects2>TerathanMatriarch:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TerathanAvenger:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TerathanDrone:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TerathanWarrior:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>25 TreasureLevel3</Name>
+    <Name>3 TreasureLevel3</Name>
     <UniqueId>489c0f9a-67a2-4cbd-8fba-43793415f2fe</UniqueId>
     <Map>Felucca</Map>
     <X>5364</X>
@@ -210,7 +210,7 @@
     <Objects2>TreasureLevel3:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>24 PoisonElemental-Slime-Etc</Name>
+    <Name>14 PoisonElemental-Slime-Etc</Name>
     <UniqueId>572b5942-13d3-4beb-87e5-ab51571537c2</UniqueId>
     <Map>Felucca</Map>
     <X>5256</X>
@@ -252,7 +252,7 @@
     <Objects2>PoisonElemental:MX=8:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Slime:MX=8:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Alligator:MX=8:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>5 TerathanAvenger-TerathanDrone-Etc</Name>
+    <Name>7 TerathanAvenger-TerathanDrone-Etc</Name>
     <UniqueId>5a138d7a-c9af-459b-8d04-acf930b2cf22</UniqueId>
     <Map>Felucca</Map>
     <X>5287</X>
@@ -294,7 +294,7 @@
     <Objects2>TerathanAvenger:MX=0:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TerathanDrone:MX=0:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TerathanWarrior:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>22 Drake</Name>
+    <Name>20 Drake</Name>
     <UniqueId>5a8da640-4177-4008-b114-2235251ab64a</UniqueId>
     <Map>Felucca</Map>
     <X>5332</X>
@@ -336,7 +336,7 @@
     <Objects2>Drake:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 OphidianMage-OphidianWarrior-Etc</Name>
+    <Name>21 OphidianMage-OphidianWarrior-Etc</Name>
     <UniqueId>5aec9e87-b9d3-4bb4-a93b-51a9e4f98a46</UniqueId>
     <Map>Felucca</Map>
     <X>5335</X>
@@ -378,7 +378,7 @@
     <Objects2>OphidianMage:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=OphidianWarrior:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=OphidianMatriarch:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>14 TerathanAvenger-TerathanDrone-Etc</Name>
+    <Name>23 TerathanAvenger-TerathanDrone-Etc</Name>
     <UniqueId>607bfa92-bd65-46f6-8f58-336078342208</UniqueId>
     <Map>Felucca</Map>
     <X>5168</X>
@@ -420,7 +420,7 @@
     <Objects2>TerathanAvenger:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TerathanDrone:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TerathanWarrior:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>20 TreasureLevel4</Name>
+    <Name>22 TreasureLevel4</Name>
     <UniqueId>6519c85e-c710-476d-83fd-2fff729be78a</UniqueId>
     <Map>Felucca</Map>
     <X>5362</X>
@@ -462,7 +462,7 @@
     <Objects2>TreasureLevel4:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>13 Balron-Dragon-Etc</Name>
+    <Name>2 Balron-Dragon-Etc</Name>
     <UniqueId>6a672fb0-0887-4cd7-8019-59bb9e93a896</UniqueId>
     <Map>Felucca</Map>
     <X>5334</X>
@@ -504,7 +504,7 @@
     <Objects2>Balron:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Dragon:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Drake:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>15 TerathanWarrior-TerathanDrone-Etc</Name>
+    <Name>17 TerathanWarrior-TerathanDrone-Etc</Name>
     <UniqueId>7b478525-f616-4eab-9315-39458045fbce</UniqueId>
     <Map>Felucca</Map>
     <X>5149</X>
@@ -588,7 +588,7 @@
     <Objects2>OphidianKnight:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=OphidianMatriarch:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=OphidianMage:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>21 TerathanDrone-TerathanWarrior-Etc</Name>
+    <Name>9 TerathanDrone-TerathanWarrior-Etc</Name>
     <UniqueId>82179387-a673-4682-819c-f9451b6ad436</UniqueId>
     <Map>Felucca</Map>
     <X>5160</X>
@@ -630,7 +630,7 @@
     <Objects2>TerathanDrone:MX=0:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TerathanWarrior:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>2 OphidianKnight-OphidianMage-Etc</Name>
+    <Name>10 OphidianKnight-OphidianMage-Etc</Name>
     <UniqueId>8b874b90-5b52-48e3-b9d7-141c7326d348</UniqueId>
     <Map>Felucca</Map>
     <X>5300</X>
@@ -672,7 +672,7 @@
     <Objects2>OphidianKnight:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=OphidianMage:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=OphidianWarrior:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>7 TerathanMatriarch-TerathanWarrior-Etc</Name>
+    <Name>11 TerathanMatriarch-TerathanWarrior-Etc</Name>
     <UniqueId>9ca39a1d-2c95-40ed-bd55-845563a32128</UniqueId>
     <Map>Felucca</Map>
     <X>5190</X>
@@ -714,7 +714,7 @@
     <Objects2>TerathanMatriarch:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TerathanWarrior:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TerathanDrone:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>11 TreasureLevel3</Name>
+    <Name>18 TreasureLevel3</Name>
     <UniqueId>a10995b2-da0e-488f-9529-ed82cad2c9a7</UniqueId>
     <Map>Felucca</Map>
     <X>5347</X>
@@ -756,7 +756,7 @@
     <Objects2>TreasureLevel3:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>23 TreasureLevel4</Name>
+    <Name>4 TreasureLevel4</Name>
     <UniqueId>af316d19-fb90-4f72-904d-2e5c9c5cde47</UniqueId>
     <Map>Felucca</Map>
     <X>5344</X>
@@ -798,7 +798,7 @@
     <Objects2>TreasureLevel4:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>17 EvilHealer</Name>
+    <Name>6 EvilHealer</Name>
     <UniqueId>c0b22f22-8e1e-469c-b96e-622296181c50</UniqueId>
     <Map>Felucca</Map>
     <X>5468</X>
@@ -840,7 +840,7 @@
     <Objects2>EvilHealer:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>8 TerathanAvenger-TerathanDrone-Etc</Name>
+    <Name>1 TerathanAvenger-TerathanDrone-Etc</Name>
     <UniqueId>d612f4b7-34d0-4f69-9f1e-3c0ba7d27303</UniqueId>
     <Map>Felucca</Map>
     <X>5094</X>
@@ -882,7 +882,7 @@
     <Objects2>TerathanAvenger:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TerathanDrone:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TerathanWarrior:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>6 Brigand</Name>
+    <Name>8 Brigand</Name>
     <UniqueId>ec146544-35c2-45a6-a970-529d696e4ad1</UniqueId>
     <Map>Felucca</Map>
     <X>5182</X>
@@ -924,7 +924,7 @@
     <Objects2>Brigand:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>16 OphidianWarrior-OphidianMage-Etc</Name>
+    <Name>19 OphidianWarrior-OphidianMage-Etc</Name>
     <UniqueId>ec4eb602-6815-4db7-b329-64c66c64fd6b</UniqueId>
     <Map>Felucca</Map>
     <X>5165</X>
@@ -966,7 +966,7 @@
     <Objects2>OphidianWarrior:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=OphidianMage:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=OphidianKnight:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=OphidianMatriarchCostume:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 Ferret-Bird-Etc</Name>
+    <Name>24 Ferret-Bird-Etc</Name>
     <UniqueId>f68e407f-2cfe-413a-9ad8-dedf5e1c1c19</UniqueId>
     <Map>Felucca</Map>
     <X>5205</X>
@@ -1008,7 +1008,7 @@
     <Objects2>Ferret:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Bird:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>4 TerathanAvenger-TerathanDrone-Etc</Name>
+    <Name>25 TerathanAvenger-TerathanDrone-Etc</Name>
     <UniqueId>f82b75a7-569f-4677-b4e9-f1dbbf770b18</UniqueId>
     <Map>Felucca</Map>
     <X>5295</X>

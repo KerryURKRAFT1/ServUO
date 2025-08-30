@@ -1,6 +1,6 @@
 <Spawns>
   <Points>
-    <Name>8 Shade-SkeletalKnight-Etc</Name>
+    <Name>2 Shade-SkeletalKnight-Etc</Name>
     <UniqueId>2bd9746c-15f3-49cf-8451-d7623b496d53</UniqueId>
     <Map>Felucca</Map>
     <X>5545</X>
@@ -42,7 +42,7 @@
     <Objects2>Shade:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=SkeletalKnight:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Skeleton:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Spectre:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Wraith:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>6 Lich-LichLord-Etc</Name>
+    <Name>9 Lich-LichLord-Etc</Name>
     <UniqueId>5851f692-b25b-4f47-8acb-86a3bb3c17db</UniqueId>
     <Map>Felucca</Map>
     <X>5566</X>
@@ -84,7 +84,7 @@
     <Objects2>Lich:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=LichLord:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>9 BoneKnight-Skeleton-Etc</Name>
+    <Name>7 BoneKnight-Skeleton-Etc</Name>
     <UniqueId>5e2f8b0d-d7ac-4add-b49b-fece7f270101</UniqueId>
     <Map>Felucca</Map>
     <X>5595</X>
@@ -126,7 +126,7 @@
     <Objects2>BoneKnight:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Skeleton:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Zombie:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Shade:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 Shade-Zombie-Etc</Name>
+    <Name>5 Shade-Zombie-Etc</Name>
     <UniqueId>656d24b5-d5f4-4854-83d5-d9bab056a931</UniqueId>
     <Map>Felucca</Map>
     <X>5581</X>
@@ -168,7 +168,7 @@
     <Objects2>Shade:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Zombie:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Spectre:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Wraith:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>7 BoneKnight-Skeleton-Etc</Name>
+    <Name>3 BoneKnight-Skeleton-Etc</Name>
     <UniqueId>7764e738-2c69-444c-94c2-ff6d17be1dbe</UniqueId>
     <Map>Felucca</Map>
     <X>5609</X>
@@ -210,7 +210,7 @@
     <Objects2>BoneKnight:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Skeleton:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Zombie:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Shade:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>5 Skeleton-Zombie-Etc</Name>
+    <Name>8 Skeleton-Zombie-Etc</Name>
     <UniqueId>8466d73a-de85-48eb-bddf-99bd8efbae4b</UniqueId>
     <Map>Felucca</Map>
     <X>5545</X>
@@ -294,7 +294,7 @@
     <Objects2>SkeletalKnight:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Skeleton:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Zombie:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>2 Skeleton-Zombie-Etc</Name>
+    <Name>1 Skeleton-Zombie-Etc</Name>
     <UniqueId>886c6b11-d126-41b7-9740-fe5ca5d29d7b</UniqueId>
     <Map>Felucca</Map>
     <X>5607</X>
@@ -336,7 +336,7 @@
     <Objects2>Skeleton:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Zombie:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TreasureLevel3:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TreasureLevel4:MX=9:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 Lich-Spectre-Etc</Name>
+    <Name>6 Lich-Spectre-Etc</Name>
     <UniqueId>dbd68185-9b2e-48be-ae79-240116fefd9a</UniqueId>
     <Map>Felucca</Map>
     <X>5568</X>

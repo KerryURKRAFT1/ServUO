@@ -1,6 +1,6 @@
 <Spawns>
   <Points>
-    <Name>4 TreasureLevel2-TreasureLevel3-Etc</Name>
+    <Name>7 TreasureLevel2-TreasureLevel3-Etc</Name>
     <UniqueId>1efeed04-428d-4fb2-80d2-d12252b008a8</UniqueId>
     <Map>Felucca</Map>
     <X>5147</X>
@@ -42,7 +42,7 @@
     <Objects2>TreasureLevel2:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TreasureLevel3:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Lich:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 Lich</Name>
+    <Name>4 Lich</Name>
     <UniqueId>2552b7ed-a1c5-472e-be39-4c950be2d234</UniqueId>
     <Map>Felucca</Map>
     <X>5180</X>
@@ -84,7 +84,7 @@
     <Objects2>Lich:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>7 PoisonElemental</Name>
+    <Name>5 PoisonElemental</Name>
     <UniqueId>41a06ecf-68db-470f-b64b-cdc96cbdc443</UniqueId>
     <Map>Felucca</Map>
     <X>5173</X>
@@ -126,7 +126,7 @@
     <Objects2>PoisonElemental:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>2 Lich</Name>
+    <Name>6 Lich</Name>
     <UniqueId>4384ca56-4937-4b8f-948c-6013c8928f4e</UniqueId>
     <Map>Felucca</Map>
     <X>5204</X>
@@ -168,7 +168,7 @@
     <Objects2>Lich:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>5 Ghoul</Name>
+    <Name>8 Ghoul</Name>
     <UniqueId>6711b88d-5100-4429-a2ba-d979b9ece500</UniqueId>
     <Map>Felucca</Map>
     <X>5182</X>
@@ -252,7 +252,7 @@
     <Objects2>Shade:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Spectre:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Wraith:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>6 Spectre-Wraith-Etc</Name>
+    <Name>3 Spectre-Wraith-Etc</Name>
     <UniqueId>97d42369-f86a-47ab-8353-9271c9a08f6e</UniqueId>
     <Map>Felucca</Map>
     <X>5160</X>
@@ -294,7 +294,7 @@
     <Objects2>Spectre:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Wraith:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>8 Ghoul-Shade-Etc</Name>
+    <Name>1 Ghoul-Shade-Etc</Name>
     <UniqueId>bfaaa881-0a7c-441b-8d01-c3265df51a13</UniqueId>
     <Map>Felucca</Map>
     <X>5124</X>
@@ -336,7 +336,7 @@
     <Objects2>Ghoul:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Shade:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Spectre:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Wraith:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 Ghoul-Lich-Etc</Name>
+    <Name>2 Ghoul-Lich-Etc</Name>
     <UniqueId>ea20a93d-f33e-4b71-983d-f272f1aceaf6</UniqueId>
     <Map>Felucca</Map>
     <X>5141</X>

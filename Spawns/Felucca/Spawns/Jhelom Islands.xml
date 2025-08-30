@@ -1,6 +1,6 @@
 <Spawns>
   <Points>
-    <Name>5 InnKeeper</Name>
+    <Name>2 InnKeeper</Name>
     <UniqueId>0485a617-93c7-4b75-9273-8c3cfae25d0e</UniqueId>
     <Map>Felucca</Map>
     <X>1360</X>
@@ -42,7 +42,7 @@
     <Objects2>InnKeeper:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>4 Sheep</Name>
+    <Name>3 Sheep</Name>
     <UniqueId>0b49aacf-d94e-4823-80db-394812adc567</UniqueId>
     <Map>Felucca</Map>
     <X>1173</X>
@@ -126,7 +126,7 @@
     <Objects2>Fisherman:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>13 Zombie</Name>
+    <Name>6 Zombie</Name>
     <UniqueId>35e385ab-09dd-40d7-b031-6dd764f93df8</UniqueId>
     <Map>Felucca</Map>
     <X>1287</X>
@@ -168,7 +168,7 @@
     <Objects2>Zombie:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>7 Spectre</Name>
+    <Name>5 Spectre</Name>
     <UniqueId>4a9ea102-eb36-4000-b538-ad116f35aede</UniqueId>
     <Map>Felucca</Map>
     <X>1291</X>
@@ -210,7 +210,7 @@
     <Objects2>Spectre:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>9 Zombie</Name>
+    <Name>4 Zombie</Name>
     <UniqueId>6bd57075-afa2-40ad-8e96-299e2378c082</UniqueId>
     <Map>Felucca</Map>
     <X>1292</X>
@@ -252,7 +252,7 @@
     <Objects2>Zombie:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>12 Sheep</Name>
+    <Name>7 Sheep</Name>
     <UniqueId>6cb4a456-7898-4df7-922a-5eb4568ce9c7</UniqueId>
     <Map>Felucca</Map>
     <X>1117</X>
@@ -336,7 +336,7 @@
     <Objects2>Fisherman:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 Waiter</Name>
+    <Name>12 Waiter</Name>
     <UniqueId>a0e0c0ed-223a-43cb-9989-f574c8a73c17</UniqueId>
     <Map>Felucca</Map>
     <X>1448</X>
@@ -378,7 +378,7 @@
     <Objects2>Waiter:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>8 Spectre</Name>
+    <Name>13 Spectre</Name>
     <UniqueId>b49c909b-9c80-4a74-aa76-85eeac42ae7f</UniqueId>
     <Map>Felucca</Map>
     <X>1276</X>
@@ -420,7 +420,7 @@
     <Objects2>Spectre:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>2 Zombie</Name>
+    <Name>9 Zombie</Name>
     <UniqueId>e3a99265-61dd-4e40-ba9b-46d62338854a</UniqueId>
     <Map>Felucca</Map>
     <X>1287</X>
@@ -462,7 +462,7 @@
     <Objects2>Zombie:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 FishMonger-MLQuester</Name>
+    <Name>8 FishMonger-MLQuester</Name>
     <UniqueId>ea7805ee-7c36-44f1-9610-6947ab2bb054</UniqueId>
     <Map>Felucca</Map>
     <X>1495</X>
@@ -504,7 +504,7 @@
     <Objects2>FishMonger:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>6 Fisherman</Name>
+    <Name>1 Fisherman</Name>
     <UniqueId>ee1e28a9-6240-4084-a60a-3022c755555d</UniqueId>
     <Map>Felucca</Map>
     <X>1512</X>

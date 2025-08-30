@@ -1,6 +1,6 @@
 <Spawns>
   <Points>
-    <Name>16 TreasureLevel2</Name>
+    <Name>12 TreasureLevel2</Name>
     <UniqueId>1398fbc1-690d-41c9-8ee2-0697d2133b2a</UniqueId>
     <Map>Felucca</Map>
     <X>5961</X>
@@ -42,7 +42,7 @@
     <Objects2>TreasureLevel2:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>13 Imp-HellHound-Etc</Name>
+    <Name>14 Imp-HellHound-Etc</Name>
     <UniqueId>211d1d26-564f-43b6-84d6-e28ed50c4ad7</UniqueId>
     <Map>Felucca</Map>
     <X>5951</X>
@@ -126,7 +126,7 @@
     <Objects2>Daemon:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>4 Gazer</Name>
+    <Name>16 Gazer</Name>
     <UniqueId>4b1452a6-8315-4c84-ad05-547a03b9f9ad</UniqueId>
     <Map>Felucca</Map>
     <X>5974</X>
@@ -168,7 +168,7 @@
     <Objects2>Gazer:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>10 TreasureLevel2</Name>
+    <Name>2 TreasureLevel2</Name>
     <UniqueId>62df611c-f76d-42de-b6ed-0f7659bc91ea</UniqueId>
     <Map>Felucca</Map>
     <X>5977</X>
@@ -210,7 +210,7 @@
     <Objects2>TreasureLevel2:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>2 Gargoyle</Name>
+    <Name>7 Gargoyle</Name>
     <UniqueId>67c4e0d4-17b9-4ef3-b3e8-c01ee109911f</UniqueId>
     <Map>Felucca</Map>
     <X>5907</X>
@@ -252,7 +252,7 @@
     <Objects2>Gargoyle:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>17 TreasureLevel1</Name>
+    <Name>9 TreasureLevel1</Name>
     <UniqueId>68a3a182-f9de-4ca8-95d0-026da4e7905e</UniqueId>
     <Map>Felucca</Map>
     <X>5982</X>
@@ -294,7 +294,7 @@
     <Objects2>TreasureLevel1:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>8 TreasureLevel2</Name>
+    <Name>5 TreasureLevel2</Name>
     <UniqueId>78be2cf0-8dd0-4d0b-b1be-881980a8d3e5</UniqueId>
     <Map>Felucca</Map>
     <X>5969</X>
@@ -336,7 +336,7 @@
     <Objects2>TreasureLevel2:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>5 Gargoyle</Name>
+    <Name>6 Gargoyle</Name>
     <UniqueId>96028f38-d768-4bda-9c6f-40c902619f51</UniqueId>
     <Map>Felucca</Map>
     <X>5946</X>
@@ -378,7 +378,7 @@
     <Objects2>Gargoyle:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>6 Imp-HellHound-Etc</Name>
+    <Name>3 Imp-HellHound-Etc</Name>
     <UniqueId>97287b57-0d09-45af-9bf2-68efe5d398c5</UniqueId>
     <Map>Felucca</Map>
     <X>5904</X>
@@ -420,7 +420,7 @@
     <Objects2>Imp:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=HellHound:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 Gargoyle</Name>
+    <Name>8 Gargoyle</Name>
     <UniqueId>a85f5e61-423c-4d26-a1ec-c347fc3105fa</UniqueId>
     <Map>Felucca</Map>
     <X>5908</X>
@@ -462,7 +462,7 @@
     <Objects2>Gargoyle:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>11 TreasureLevel3</Name>
+    <Name>4 TreasureLevel3</Name>
     <UniqueId>ac1729a0-cfcb-4658-b157-15a9e9c2c77f</UniqueId>
     <Map>Felucca</Map>
     <X>5988</X>
@@ -504,7 +504,7 @@
     <Objects2>TreasureLevel3:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>9 Gargoyle-TreasureLevel3-Etc</Name>
+    <Name>10 Gargoyle-TreasureLevel3-Etc</Name>
     <UniqueId>b3c8e6ae-c08a-40fa-b1be-56a4b2737102</UniqueId>
     <Map>Felucca</Map>
     <X>5942</X>
@@ -546,7 +546,7 @@
     <Objects2>Gargoyle:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TreasureLevel3:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 TreasureLevel1</Name>
+    <Name>11 TreasureLevel1</Name>
     <UniqueId>bd32d8ca-33f9-442f-a6d1-bbc137e1d9a0</UniqueId>
     <Map>Felucca</Map>
     <X>5991</X>
@@ -588,7 +588,7 @@
     <Objects2>TreasureLevel1:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>14 TreasureLevel3</Name>
+    <Name>1 TreasureLevel3</Name>
     <UniqueId>d41285c7-4d70-4218-b786-5753bc2f02e5</UniqueId>
     <Map>Felucca</Map>
     <X>5925</X>
@@ -630,7 +630,7 @@
     <Objects2>TreasureLevel3:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>12 Imp-HellHound-Etc</Name>
+    <Name>13 Imp-HellHound-Etc</Name>
     <UniqueId>e8544493-bbce-4745-8c6b-bfbc6c013e0c</UniqueId>
     <Map>Felucca</Map>
     <X>5935</X>
@@ -672,7 +672,7 @@
     <Objects2>Imp:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=HellHound:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>7 Daemon-TreasureLevel4-Etc</Name>
+    <Name>17 Daemon-TreasureLevel4-Etc</Name>
     <UniqueId>f424acc5-9be2-4e89-97d2-8090a1cfa3ba</UniqueId>
     <Map>Felucca</Map>
     <X>5908</X>

@@ -1,6 +1,6 @@
 <Spawns>
   <Points>
-    <Name>3 Orc</Name>
+    <Name>11 Orc</Name>
     <UniqueId>0b5a1554-ad93-40a9-b13a-1c84413084db</UniqueId>
     <Map>Felucca</Map>
     <X>5336</X>
@@ -42,7 +42,7 @@
     <Objects2>Orc:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>29 Orc</Name>
+    <Name>13 Orc</Name>
     <UniqueId>104b2a62-d8b6-45b8-bacf-f05fde435a1d</UniqueId>
     <Map>Felucca</Map>
     <X>5310</X>
@@ -84,7 +84,7 @@
     <Objects2>Orc:MX=12:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>18 SkeletalKnight</Name>
+    <Name>29 SkeletalKnight</Name>
     <UniqueId>12214b07-193b-47dc-801f-3c40f3a9339c</UniqueId>
     <Map>Felucca</Map>
     <X>5302</X>
@@ -126,7 +126,7 @@
     <Objects2>SkeletalKnight:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>22 Corpser</Name>
+    <Name>7 Corpser</Name>
     <UniqueId>171d9717-d23e-4448-8512-20d26a34228e</UniqueId>
     <Map>Felucca</Map>
     <X>5292</X>
@@ -168,7 +168,7 @@
     <Objects2>Corpser:MX=8:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>4 Orc</Name>
+    <Name>23 Orc</Name>
     <UniqueId>35e85848-635a-4391-ab13-c6a76ad0f48c</UniqueId>
     <Map>Felucca</Map>
     <X>5310</X>
@@ -210,7 +210,7 @@
     <Objects2>Orc:MX=12:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>31 Orc</Name>
+    <Name>30 Orc</Name>
     <UniqueId>38ee4b5c-b9ca-479b-9889-8fc6fe433233</UniqueId>
     <Map>Felucca</Map>
     <X>5281</X>
@@ -252,7 +252,7 @@
     <Objects2>Orc:MX=8:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>30 Orc</Name>
+    <Name>16 Orc</Name>
     <UniqueId>39999abd-0b28-489c-8741-2ff94ec7a241</UniqueId>
     <Map>Felucca</Map>
     <X>5308</X>
@@ -294,7 +294,7 @@
     <Objects2>Orc:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>34 DireWolf</Name>
+    <Name>3 DireWolf</Name>
     <UniqueId>3bd29974-0759-4523-bb9f-bee2c6a0bdf3</UniqueId>
     <Map>Felucca</Map>
     <X>5148</X>
@@ -336,7 +336,7 @@
     <Objects2>DireWolf:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>16 Orc</Name>
+    <Name>12 Orc</Name>
     <UniqueId>3dd88ea0-520d-4da3-97fd-fa8100647468</UniqueId>
     <Map>Felucca</Map>
     <X>5312</X>
@@ -378,7 +378,7 @@
     <Objects2>Orc:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>17 EarthElemental</Name>
+    <Name>38 EarthElemental</Name>
     <UniqueId>3e508b3a-d402-4950-9f1f-29311ac833eb</UniqueId>
     <Map>Felucca</Map>
     <X>5348</X>
@@ -420,7 +420,7 @@
     <Objects2>EarthElemental:MX=15:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>26 Noble</Name>
+    <Name>36 Noble</Name>
     <UniqueId>4679849f-ddf5-4b5c-a413-473656c9c6a5</UniqueId>
     <Map>Felucca</Map>
     <X>5303</X>
@@ -462,7 +462,7 @@
     <Objects2>Noble:MX=8:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>40 Ogre</Name>
+    <Name>39 Ogre</Name>
     <UniqueId>4cb9ade1-7c77-417a-a4d8-d073e5f67ace</UniqueId>
     <Map>Felucca</Map>
     <X>5326</X>
@@ -546,7 +546,7 @@
     <Objects2>Orc:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>5 Orc</Name>
+    <Name>40 Orc</Name>
     <UniqueId>51e5bb4b-e345-4193-aa11-a0cd2f67ef99</UniqueId>
     <Map>Felucca</Map>
     <X>5297</X>
@@ -588,7 +588,7 @@
     <Objects2>Orc:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 Brigand</Name>
+    <Name>15 Brigand</Name>
     <UniqueId>542ee30c-d0c9-4fb4-98f6-40313eb17eb0</UniqueId>
     <Map>Felucca</Map>
     <X>5288</X>
@@ -630,7 +630,7 @@
     <Objects2>Brigand:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>6 Orc</Name>
+    <Name>27 Orc</Name>
     <UniqueId>7275d082-1ca5-4b5e-9344-39185123c9f4</UniqueId>
     <Map>Felucca</Map>
     <X>5350</X>
@@ -672,7 +672,7 @@
     <Objects2>Orc:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>7 Skeleton</Name>
+    <Name>8 Skeleton</Name>
     <UniqueId>73890d0b-b42d-4238-91e6-49af5f8f3a37</UniqueId>
     <Map>Felucca</Map>
     <X>5357</X>
@@ -714,7 +714,7 @@
     <Objects2>Skeleton:MX=7:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>14 Orc</Name>
+    <Name>6 Orc</Name>
     <UniqueId>74423089-3392-4c7b-af0c-032b70567dbf</UniqueId>
     <Map>Felucca</Map>
     <X>5146</X>
@@ -756,7 +756,7 @@
     <Objects2>Orc:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>27 ShadowIronElemental</Name>
+    <Name>22 ShadowIronElemental</Name>
     <UniqueId>7518e6f6-0b83-496d-a5d6-6082b6c0ab79</UniqueId>
     <Map>Felucca</Map>
     <X>5288</X>
@@ -798,7 +798,7 @@
     <Objects2>ShadowIronElemental:MX=12:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>23 OrcBomber</Name>
+    <Name>37 OrcBomber</Name>
     <UniqueId>86d88e48-b62b-4ac9-9180-adc7f6aa457f</UniqueId>
     <Map>Felucca</Map>
     <X>5141</X>
@@ -840,7 +840,7 @@
     <Objects2>OrcBomber:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>39 OrcBrute</Name>
+    <Name>21 OrcBrute</Name>
     <UniqueId>8ccb41ad-8dca-405f-92a7-d434a692e6e3</UniqueId>
     <Map>Felucca</Map>
     <X>5143</X>
@@ -882,7 +882,7 @@
     <Objects2>OrcBrute:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>11 Orc</Name>
+    <Name>2 Orc</Name>
     <UniqueId>921f33b5-0004-48ce-be69-50e29747e4ce</UniqueId>
     <Map>Felucca</Map>
     <X>5353</X>
@@ -924,7 +924,7 @@
     <Objects2>Orc:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>15 Skeleton</Name>
+    <Name>17 Skeleton</Name>
     <UniqueId>9330fa4f-41e5-40b0-b50a-ad589daaf708</UniqueId>
     <Map>Felucca</Map>
     <X>5343</X>
@@ -966,7 +966,7 @@
     <Objects2>Skeleton:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>8 Orc</Name>
+    <Name>31 Orc</Name>
     <UniqueId>95ffd9b2-aa8b-4232-83c5-d24baa7e027c</UniqueId>
     <Map>Felucca</Map>
     <X>5156</X>
@@ -1008,7 +1008,7 @@
     <Objects2>Orc:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>9 Orc</Name>
+    <Name>19 Orc</Name>
     <UniqueId>969bd4a3-a70f-4761-a030-02280b2e05b1</UniqueId>
     <Map>Felucca</Map>
     <X>5308</X>
@@ -1050,7 +1050,7 @@
     <Objects2>Orc:MX=12:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>25 Orc</Name>
+    <Name>24 Orc</Name>
     <UniqueId>a2b99b7f-c4d6-4e62-a36f-c7e5bf23e670</UniqueId>
     <Map>Felucca</Map>
     <X>5348</X>
@@ -1092,7 +1092,7 @@
     <Objects2>Orc:MX=15:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>2 Ettin</Name>
+    <Name>5 Ettin</Name>
     <UniqueId>a59b0814-2646-41bc-8380-31918710742c</UniqueId>
     <Map>Felucca</Map>
     <X>5312</X>
@@ -1134,7 +1134,7 @@
     <Objects2>Ettin:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>28 Skeleton</Name>
+    <Name>34 Skeleton</Name>
     <UniqueId>a5df8979-3e2d-486a-b4d0-2192631dd510</UniqueId>
     <Map>Felucca</Map>
     <X>5358</X>
@@ -1176,7 +1176,7 @@
     <Objects2>Skeleton:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>33 GiantRat</Name>
+    <Name>28 GiantRat</Name>
     <UniqueId>a8cdaaaf-e713-4aba-9241-75bd621f44ab</UniqueId>
     <Map>Felucca</Map>
     <X>5311</X>
@@ -1218,7 +1218,7 @@
     <Objects2>GiantRat:MX=8:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>24 Orc</Name>
+    <Name>32 Orc</Name>
     <UniqueId>b192ccfb-503d-4d7c-b97c-441245d15692</UniqueId>
     <Map>Felucca</Map>
     <X>5308</X>
@@ -1260,7 +1260,7 @@
     <Objects2>Orc:MX=12:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>36 HeadlessOne</Name>
+    <Name>26 HeadlessOne</Name>
     <UniqueId>b29f4ddf-6803-4e33-821a-c80966cfabf7</UniqueId>
     <Map>Felucca</Map>
     <X>5295</X>
@@ -1302,7 +1302,7 @@
     <Objects2>HeadlessOne:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>12 Lich</Name>
+    <Name>18 Lich</Name>
     <UniqueId>b69bf041-1571-4d56-a112-83c3656dd3f7</UniqueId>
     <Map>Felucca</Map>
     <X>5316</X>
@@ -1344,7 +1344,7 @@
     <Objects2>Lich:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>10 Skeleton</Name>
+    <Name>14 Skeleton</Name>
     <UniqueId>bd93b66f-9469-4dcc-967c-dec9a611190b</UniqueId>
     <Map>Felucca</Map>
     <X>5336</X>
@@ -1386,7 +1386,7 @@
     <Objects2>Skeleton:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>37 Orc</Name>
+    <Name>4 Orc</Name>
     <UniqueId>bf52f5e5-bd0e-4715-ba0d-c9695be23d21</UniqueId>
     <Map>Felucca</Map>
     <X>5148</X>
@@ -1428,7 +1428,7 @@
     <Objects2>Orc:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>19 Orc</Name>
+    <Name>33 Orc</Name>
     <UniqueId>c329dde7-f972-4bc8-ab4a-6e5cd9c2eef8</UniqueId>
     <Map>Felucca</Map>
     <X>5136</X>
@@ -1470,7 +1470,7 @@
     <Objects2>Orc:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>38 Orc</Name>
+    <Name>25 Orc</Name>
     <UniqueId>c495f365-52bf-417b-a508-d53c54a90db5</UniqueId>
     <Map>Felucca</Map>
     <X>5310</X>
@@ -1512,7 +1512,7 @@
     <Objects2>Orc:MX=10:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>32 Orc</Name>
+    <Name>1 Orc</Name>
     <UniqueId>da8d701c-a3ab-450e-b044-85318ca048f1</UniqueId>
     <Map>Felucca</Map>
     <X>5295</X>
@@ -1554,7 +1554,7 @@
     <Objects2>Orc:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>20 Skeleton</Name>
+    <Name>9 Skeleton</Name>
     <UniqueId>ef33b42d-144b-4d62-828f-a02ee94ff273</UniqueId>
     <Map>Felucca</Map>
     <X>5308</X>
@@ -1596,7 +1596,7 @@
     <Objects2>Skeleton:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>13 Orc</Name>
+    <Name>20 Orc</Name>
     <UniqueId>f2ed89c9-888d-45ae-9a59-2030d010103d</UniqueId>
     <Map>Felucca</Map>
     <X>5327</X>
@@ -1638,7 +1638,7 @@
     <Objects2>Orc:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>21 DireWolf</Name>
+    <Name>10 DireWolf</Name>
     <UniqueId>f8a5851c-a723-406c-bb0e-4248bbbe8a61</UniqueId>
     <Map>Felucca</Map>
     <X>5326</X>

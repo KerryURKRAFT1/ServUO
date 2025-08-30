@@ -1,6 +1,6 @@
 <Spawns>
   <Points>
-    <Name>2 FireGargoyle</Name>
+    <Name>3 FireGargoyle</Name>
     <UniqueId>03a43280-b421-4c27-a73a-f1476dd45dcd</UniqueId>
     <Map>Felucca</Map>
     <X>6106</X>
@@ -42,7 +42,7 @@
     <Objects2>FireGargoyle:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>9 TreasureLevel2</Name>
+    <Name>2 TreasureLevel2</Name>
     <UniqueId>2cc9bf73-dca9-4f49-938a-26acfeb5ec68</UniqueId>
     <Map>Felucca</Map>
     <X>6116</X>
@@ -84,7 +84,7 @@
     <Objects2>TreasureLevel2:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>18 HellHound-Imp-Etc</Name>
+    <Name>1 HellHound-Imp-Etc</Name>
     <UniqueId>4a858a8a-88ac-41ac-bbf8-652f3763079e</UniqueId>
     <Map>Felucca</Map>
     <X>6054</X>
@@ -126,7 +126,7 @@
     <Objects2>HellHound:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Imp:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>15 TreasureLevel3</Name>
+    <Name>18 TreasureLevel3</Name>
     <UniqueId>4ac32b9f-a4af-4b3c-ac4c-723e903187d2</UniqueId>
     <Map>Felucca</Map>
     <X>6057</X>
@@ -168,7 +168,7 @@
     <Objects2>TreasureLevel3:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>13 TreasureLevel3</Name>
+    <Name>17 TreasureLevel3</Name>
     <UniqueId>5433b883-b60f-474f-8eed-b067df0e26de</UniqueId>
     <Map>Felucca</Map>
     <X>6096</X>
@@ -210,7 +210,7 @@
     <Objects2>TreasureLevel3:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 TreasureLevel2</Name>
+    <Name>5 TreasureLevel2</Name>
     <UniqueId>6a9b319c-5bd3-4821-9062-9998a5bbcc54</UniqueId>
     <Map>Felucca</Map>
     <X>6107</X>
@@ -252,7 +252,7 @@
     <Objects2>TreasureLevel2:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>14 Gargoyle</Name>
+    <Name>9 Gargoyle</Name>
     <UniqueId>6e27a444-a592-4182-ab90-0ccfbdb8f0c5</UniqueId>
     <Map>Felucca</Map>
     <X>6096</X>
@@ -294,7 +294,7 @@
     <Objects2>Gargoyle:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>5 Gargoyle</Name>
+    <Name>6 Gargoyle</Name>
     <UniqueId>70176f53-62d6-4016-accd-93a489a1e131</UniqueId>
     <Map>Felucca</Map>
     <X>6089</X>
@@ -336,7 +336,7 @@
     <Objects2>Gargoyle:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>16 Gazer-StoneGargoyle-Etc</Name>
+    <Name>12 Gazer-StoneGargoyle-Etc</Name>
     <UniqueId>7173db7e-853e-4625-817b-db3a6e2cc36d</UniqueId>
     <Map>Felucca</Map>
     <X>6044</X>
@@ -378,7 +378,7 @@
     <Objects2>Gazer:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=StoneGargoyle:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>17 Balron</Name>
+    <Name>11 Balron</Name>
     <UniqueId>80dc38e8-9be6-4f44-a7e9-649622b50889</UniqueId>
     <Map>Felucca</Map>
     <X>6097</X>
@@ -420,7 +420,7 @@
     <Objects2>Balron:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>10 TreasureLevel3</Name>
+    <Name>13 TreasureLevel3</Name>
     <UniqueId>8443c3c7-8af0-46ef-a98e-9677b5b4a065</UniqueId>
     <Map>Felucca</Map>
     <X>6080</X>
@@ -462,7 +462,7 @@
     <Objects2>TreasureLevel3:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>6 TreasureLevel4</Name>
+    <Name>10 TreasureLevel4</Name>
     <UniqueId>899548fb-2ebd-4d8e-894c-23d463837078</UniqueId>
     <Map>Felucca</Map>
     <X>6107</X>
@@ -504,7 +504,7 @@
     <Objects2>TreasureLevel4:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>8 TreasureLevel4</Name>
+    <Name>7 TreasureLevel4</Name>
     <UniqueId>8fddd8c7-ac00-4b39-99a7-b5cd18e9dabc</UniqueId>
     <Map>Felucca</Map>
     <X>6085</X>
@@ -546,7 +546,7 @@
     <Objects2>TreasureLevel4:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 Gargoyle</Name>
+    <Name>8 Gargoyle</Name>
     <UniqueId>973ffa6d-ec09-4b6f-80a0-cde0923f6895</UniqueId>
     <Map>Felucca</Map>
     <X>6074</X>
@@ -630,7 +630,7 @@
     <Objects2>TreasureLevel3:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>12 TreasureLevel3</Name>
+    <Name>16 TreasureLevel3</Name>
     <UniqueId>b8ad8bd7-25ea-49ef-8f02-90f94f377bdd</UniqueId>
     <Map>Felucca</Map>
     <X>6106</X>
@@ -672,7 +672,7 @@
     <Objects2>TreasureLevel3:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>11 Gargoyle</Name>
+    <Name>14 Gargoyle</Name>
     <UniqueId>d90a97e8-4162-415c-b354-4be2e3552a2a</UniqueId>
     <Map>Felucca</Map>
     <X>6071</X>
@@ -714,7 +714,7 @@
     <Objects2>Gargoyle:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>7 TreasureLevel4</Name>
+    <Name>15 TreasureLevel4</Name>
     <UniqueId>ec7de7aa-9b15-4cf9-8f0a-2981cbeb7de6</UniqueId>
     <Map>Felucca</Map>
     <X>6063</X>

@@ -1,6 +1,6 @@
 <Spawns>
   <Points>
-    <Name>9 TreasureLevel3-TreasureLevel4-Etc</Name>
+    <Name>16 TreasureLevel3-TreasureLevel4-Etc</Name>
     <UniqueId>15ddc016-1cfb-425b-b04d-ef263821c8b4</UniqueId>
     <Map>Felucca</Map>
     <X>5310</X>
@@ -42,7 +42,7 @@
     <Objects2>TreasureLevel3:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TreasureLevel4:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>8 Dragon-Drake-Etc</Name>
+    <Name>15 Dragon-Drake-Etc</Name>
     <UniqueId>1e83be41-8e5c-4c62-9250-0e328e4bcd06</UniqueId>
     <Map>Felucca</Map>
     <X>5179</X>
@@ -84,7 +84,7 @@
     <Objects2>Dragon:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Drake:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Wyvern:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>4 Drake-Wyvern-Etc</Name>
+    <Name>12 Drake-Wyvern-Etc</Name>
     <UniqueId>25c1b188-f67c-4697-9a90-10f6de11adfe</UniqueId>
     <Map>Felucca</Map>
     <X>5196</X>
@@ -126,7 +126,7 @@
     <Objects2>Drake:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Wyvern:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>7 Drake-Wyvern-Etc</Name>
+    <Name>19 Drake-Wyvern-Etc</Name>
     <UniqueId>3750afdc-5395-4b73-bd77-b3a43f81ae10</UniqueId>
     <Map>Felucca</Map>
     <X>5277</X>
@@ -168,7 +168,7 @@
     <Objects2>Drake:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Wyvern:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>10 TreasureLevel2-TreasureLevel3-Etc</Name>
+    <Name>8 TreasureLevel2-TreasureLevel3-Etc</Name>
     <UniqueId>4b498311-ba86-4153-9129-58199c24b520</UniqueId>
     <Map>Felucca</Map>
     <X>5219</X>
@@ -210,7 +210,7 @@
     <Objects2>TreasureLevel2:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TreasureLevel3:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>19 Dragon-Drake-Etc</Name>
+    <Name>4 Dragon-Drake-Etc</Name>
     <UniqueId>6b5be050-1cf1-4116-a6d6-ef2ea8e2514a</UniqueId>
     <Map>Felucca</Map>
     <X>5250</X>
@@ -252,7 +252,7 @@
     <Objects2>Dragon:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Drake:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Wyvern:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>16 WaterElemental</Name>
+    <Name>10 WaterElemental</Name>
     <UniqueId>71401ab9-9d1b-47ba-8fa3-68157aa682fd</UniqueId>
     <Map>Felucca</Map>
     <X>5191</X>
@@ -294,7 +294,7 @@
     <Objects2>WaterElemental:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>15 Dragon-Drake-Etc</Name>
+    <Name>1 Dragon-Drake-Etc</Name>
     <UniqueId>73a8d46a-4eeb-4cbe-9e76-97b80b038431</UniqueId>
     <Map>Felucca</Map>
     <X>5184</X>
@@ -378,7 +378,7 @@
     <Objects2>WaterElemental:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>14 TreasureLevel2-TreasureLevel3-Etc</Name>
+    <Name>6 TreasureLevel2-TreasureLevel3-Etc</Name>
     <UniqueId>861e3841-c15a-4a2d-9fac-295ad700c560</UniqueId>
     <Map>Felucca</Map>
     <X>5116</X>
@@ -420,7 +420,7 @@
     <Objects2>TreasureLevel2:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=TreasureLevel3:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 Dragon-Drake-Etc</Name>
+    <Name>11 Dragon-Drake-Etc</Name>
     <UniqueId>88939de5-eab0-4bed-9834-7b875b825cc1</UniqueId>
     <Map>Felucca</Map>
     <X>5217</X>
@@ -462,7 +462,7 @@
     <Objects2>Dragon:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Drake:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>13 Dragon-Drake-Etc</Name>
+    <Name>5 Dragon-Drake-Etc</Name>
     <UniqueId>8e306ba3-b025-47eb-89bd-0c10fe2fd93c</UniqueId>
     <Map>Felucca</Map>
     <X>5134</X>
@@ -504,7 +504,7 @@
     <Objects2>Dragon:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Drake:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>12 WaterElemental</Name>
+    <Name>18 WaterElemental</Name>
     <UniqueId>92127791-af73-449d-8e97-0c522c78aaf6</UniqueId>
     <Map>Felucca</Map>
     <X>5342</X>
@@ -546,7 +546,7 @@
     <Objects2>WaterElemental:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>18 TreasureLevel3</Name>
+    <Name>9 TreasureLevel3</Name>
     <UniqueId>93fbb62c-b2a8-4bdf-b652-578e641884f1</UniqueId>
     <Map>Felucca</Map>
     <X>5198</X>
@@ -588,7 +588,7 @@
     <Objects2>TreasureLevel3:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 GiantSerpent</Name>
+    <Name>2 GiantSerpent</Name>
     <UniqueId>9c123f54-4ee3-457f-b165-d3873aea9a30</UniqueId>
     <Map>Felucca</Map>
     <X>5141</X>
@@ -630,7 +630,7 @@
     <Objects2>GiantSerpent:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>2 Dragon-Drake-Etc</Name>
+    <Name>7 Dragon-Drake-Etc</Name>
     <UniqueId>b3ea61db-9ad8-4e16-94c6-7b88056dde2d</UniqueId>
     <Map>Felucca</Map>
     <X>5239</X>
@@ -672,7 +672,7 @@
     <Objects2>Dragon:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Drake:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Wyvern:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>5 GiantSerpent</Name>
+    <Name>3 GiantSerpent</Name>
     <UniqueId>c311b0bd-2058-470b-889c-d4e0505f5431</UniqueId>
     <Map>Felucca</Map>
     <X>5220</X>
@@ -714,7 +714,7 @@
     <Objects2>GiantSerpent:MX=6:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>11 Dragon-Wyvern-Etc</Name>
+    <Name>14 Dragon-Wyvern-Etc</Name>
     <UniqueId>c4bdc6aa-dff8-4287-98a2-92b581b66890</UniqueId>
     <Map>Felucca</Map>
     <X>5254</X>
@@ -756,7 +756,7 @@
     <Objects2>Dragon:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Wyvern:MX=4:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>6 TreasureLevel3-TreasureLevel4-Etc</Name>
+    <Name>13 TreasureLevel3-TreasureLevel4-Etc</Name>
     <UniqueId>fc983d2e-49b7-4a5a-a24a-dd7cead45fe1</UniqueId>
     <Map>Felucca</Map>
     <X>5231</X>

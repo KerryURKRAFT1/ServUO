@@ -1,6 +1,6 @@
 <Spawns>
   <Points>
-    <Name>14 Lich</Name>
+    <Name>8 Lich</Name>
     <UniqueId>0370d45d-38be-4b37-b320-4e508667b0cd</UniqueId>
     <Map>Felucca</Map>
     <X>5650</X>
@@ -42,7 +42,7 @@
     <Objects2>Lich:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>7 Lich</Name>
+    <Name>17 Lich</Name>
     <UniqueId>069a790d-65fb-4593-8db6-214972c2f0fb</UniqueId>
     <Map>Felucca</Map>
     <X>5718</X>
@@ -84,7 +84,7 @@
     <Objects2>Lich:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>13 Skeleton</Name>
+    <Name>10 Skeleton</Name>
     <UniqueId>0e1cf844-454d-4d3f-87a1-5c82ca0e905b</UniqueId>
     <Map>Felucca</Map>
     <X>5651</X>
@@ -126,7 +126,7 @@
     <Objects2>Skeleton:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>12 Lich</Name>
+    <Name>15 Lich</Name>
     <UniqueId>1477cf9e-1c45-4dd0-a2ee-eae9de62c7b4</UniqueId>
     <Map>Felucca</Map>
     <X>5702</X>
@@ -168,7 +168,7 @@
     <Objects2>Lich:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>8 Slime</Name>
+    <Name>19 Slime</Name>
     <UniqueId>37c18262-fb0f-430d-87a3-602f6ee0df72</UniqueId>
     <Map>Felucca</Map>
     <X>5654</X>
@@ -210,7 +210,7 @@
     <Objects2>Slime:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>18 Zombie</Name>
+    <Name>9 Zombie</Name>
     <UniqueId>436d68cc-83f8-411a-813a-f23005be81f9</UniqueId>
     <Map>Felucca</Map>
     <X>5678</X>
@@ -252,7 +252,7 @@
     <Objects2>Zombie:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>17 Zombie</Name>
+    <Name>14 Zombie</Name>
     <UniqueId>4a00ed90-dac7-410f-9924-1955f1caff79</UniqueId>
     <Map>Felucca</Map>
     <X>5673</X>
@@ -294,7 +294,7 @@
     <Objects2>Zombie:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 SkeletalKnight-Zombie-Etc</Name>
+    <Name>13 SkeletalKnight-Zombie-Etc</Name>
     <UniqueId>53c8b8a0-3672-468b-8da2-21ca719362a4</UniqueId>
     <Map>Felucca</Map>
     <X>5665</X>
@@ -336,7 +336,7 @@
     <Objects2>SkeletalKnight:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1:OBJ=Zombie:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>4 Zombie</Name>
+    <Name>18 Zombie</Name>
     <UniqueId>5b971982-a46c-44d7-859a-c7698e39058c</UniqueId>
     <Map>Felucca</Map>
     <X>5688</X>
@@ -378,7 +378,7 @@
     <Objects2>Zombie:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>6 Zombie</Name>
+    <Name>12 Zombie</Name>
     <UniqueId>60e596db-0f1c-4134-916c-eab5b8d35a6f</UniqueId>
     <Map>Felucca</Map>
     <X>5650</X>
@@ -420,7 +420,7 @@
     <Objects2>Zombie:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>3 Ratman</Name>
+    <Name>16 Ratman</Name>
     <UniqueId>8c56a7f8-0d2e-4b85-bbd0-c415fe2f0714</UniqueId>
     <Map>Felucca</Map>
     <X>5687</X>
@@ -462,7 +462,7 @@
     <Objects2>Ratman:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>15 Zombie</Name>
+    <Name>7 Zombie</Name>
     <UniqueId>95513724-7c65-4c76-becb-8e3ca0c7edb0</UniqueId>
     <Map>Felucca</Map>
     <X>5718</X>
@@ -504,7 +504,7 @@
     <Objects2>Zombie:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>5 LichLord</Name>
+    <Name>3 LichLord</Name>
     <UniqueId>9cd02749-d6e0-4f8f-86b1-bbedd0cbc34c</UniqueId>
     <Map>Felucca</Map>
     <X>5688</X>
@@ -546,7 +546,7 @@
     <Objects2>LichLord:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>9 Skeleton</Name>
+    <Name>4 Skeleton</Name>
     <UniqueId>9cdd55b5-5e96-4a1b-b08c-c51e7c70448a</UniqueId>
     <Map>Felucca</Map>
     <X>5717</X>
@@ -588,7 +588,7 @@
     <Objects2>Skeleton:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>11 Zombie</Name>
+    <Name>1 Zombie</Name>
     <UniqueId>bc51d77a-ccd7-4e41-b697-95c41374f1da</UniqueId>
     <Map>Felucca</Map>
     <X>5657</X>
@@ -630,7 +630,7 @@
     <Objects2>Zombie:MX=5:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>19 Lich</Name>
+    <Name>2 Lich</Name>
     <UniqueId>c391901c-832f-4c3f-bd16-6ee18fbac54b</UniqueId>
     <Map>Felucca</Map>
     <X>5675</X>
@@ -672,7 +672,7 @@
     <Objects2>Lich:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>10 Zombie</Name>
+    <Name>11 Zombie</Name>
     <UniqueId>cded5232-e1d2-4430-ba67-48e3407e417c</UniqueId>
     <Map>Felucca</Map>
     <X>5665</X>
@@ -714,7 +714,7 @@
     <Objects2>Zombie:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>16 Zombie</Name>
+    <Name>6 Zombie</Name>
     <UniqueId>eb0109ea-1cb2-4de7-add2-f06c9e448dc5</UniqueId>
     <Map>Felucca</Map>
     <X>5673</X>
@@ -756,7 +756,7 @@
     <Objects2>Zombie:MX=2:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>2 Zombie</Name>
+    <Name>5 Zombie</Name>
     <UniqueId>f90831bd-3e63-43a9-91e8-8c4566321321</UniqueId>
     <Map>Felucca</Map>
     <X>5702</X>

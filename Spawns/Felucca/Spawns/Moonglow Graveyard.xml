@@ -42,7 +42,7 @@
     <Objects2>LichLord:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>5 Lich</Name>
+    <Name>1 Lich</Name>
     <UniqueId>86f0a2ff-b096-4f92-bd48-5b437663814b</UniqueId>
     <Map>Felucca</Map>
     <X>4533</X>
@@ -84,7 +84,7 @@
     <Objects2>Lich:MX=1:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>4 Skeleton</Name>
+    <Name>5 Skeleton</Name>
     <UniqueId>990ed026-b789-4e76-925a-addcd8a96447</UniqueId>
     <Map>Felucca</Map>
     <X>4541</X>
@@ -126,7 +126,7 @@
     <Objects2>Skeleton:MX=3:SB=0:RT=0:TO=0:KL=0:RK=0:CA=1:DN=-1:DX=-1:SP=1:PR=-1</Objects2>
   </Points>
   <Points>
-    <Name>1 Wraith</Name>
+    <Name>4 Wraith</Name>
     <UniqueId>c6511ae9-ad6a-432f-9a4b-359a327f2949</UniqueId>
     <Map>Felucca</Map>
     <X>4535</X>
