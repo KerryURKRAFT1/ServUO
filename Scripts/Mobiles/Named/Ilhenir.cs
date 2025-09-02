@@ -356,7 +356,7 @@ namespace Server.Mobiles
 
         private int RandomPoint(int mid)
         {
-            return (mid + Utility.RandomMinMax(-2, 2));
+            return (mid + Utility.Random(4) - 2);
         }
     }
 

@@ -111,7 +111,7 @@ namespace Server.Spells.SkillMasteries
                 }
 
                 Ticks++;
-                Defender.Stam = Math.Max(0, Defender.Stam - ((ToDrain / 10) + Utility.RandomMinMax(-2, 2)));
+                Defender.Stam = Math.Max(0, Defender.Stam - ((ToDrain / 10) + Utility.Random(4) - 2));
             }
         }
     }

@@ -2595,7 +2595,7 @@ namespace Server.Mobiles
 				{
 					Direction d = combatant.GetDirectionTo(m_Mobile);
 
-					d = (Direction)((int)d + Utility.RandomMinMax(-1, +1));
+					d = (Direction)((int)d + Utility.Random(2) - 1);
 
 					m_Mobile.Direction = d;
 					m_Mobile.Move(d);

@@ -225,7 +225,7 @@ namespace Server.Items
 						
             for (int count = Utility.Random(3); count > 0; count--)
             { 
-                IPoint3D location = new Point3D(target.X + Utility.RandomMinMax(-1, 1), target.Y + Utility.RandomMinMax(-1, 1), target.Z);
+                IPoint3D location = new Point3D(target.X + Utility.Random(2) - 1, target.Y + Utility.Random(2) - 1, target.Z);
                 int effect = Utility.RandomList(m_Effects);
                 Effects.SendLocationEffect(location, map, effect, 16, 1);
             }

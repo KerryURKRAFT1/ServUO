@@ -52,8 +52,8 @@ namespace Server.Mobiles
 
 						for (int i = 0; i < 10; i++)
 						{
-							m_Loc.X = x + Utility.RandomMinMax(-1, 1);
-							m_Loc.Y = y + Utility.RandomMinMax(-1, 1);
+							m_Loc.X = x + Utility.Random(2) - 1;
+							m_Loc.Y = y + Utility.Random(2) - 1;
 
 							m_Loc.Z = Map.GetAverageZ(m_Loc.X, m_Loc.Y);
 

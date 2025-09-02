@@ -240,7 +240,7 @@ namespace Server.Mobiles
 
             int whichone = (int)(this.m_Mobile.Skills[SkillName.Magery].Value / 14.2) - 1;
 
-            whichone += Utility.RandomMinMax(-2, -0);
+            whichone += Utility.Random(2) - 2;
 
             if (whichone > 6)
                 whichone = 6;

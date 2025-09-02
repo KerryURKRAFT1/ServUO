@@ -329,8 +329,8 @@ namespace Server.Items
         {
             for (int i = 0; i < 5; i++) // Try 5 times
             {
-                int x = this.Location.X + Utility.RandomMinMax(-1, 1);
-                int y = this.Location.Y + Utility.RandomMinMax(-1, 1);
+                int x = this.Location.X + Utility.Random(2) - 1;
+                int y = this.Location.Y + Utility.Random(2) - 1;
                 int z = this.Map.GetAverageZ(x, y);
 
                 if (this.Map.CanFit(x, y, this.Location.Z, 1))
@@ -352,8 +352,8 @@ namespace Server.Items
         {
             for (int i = 0; i < 5; i++) // Try 5 times
             {
-                int x = this.Location.X + Utility.RandomMinMax(-1, 1);
-                int y = this.Location.Y + Utility.RandomMinMax(-1, 1);
+                int x = this.Location.X + Utility.Random(2) - 1;
+                int y = this.Location.Y + Utility.Random(2) - 1;
                 int z = this.Map.GetAverageZ(x, y);
 
                 if (this.Map.CanSpawnMobile(x, y, this.Location.Z))

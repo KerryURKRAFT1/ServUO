@@ -72,7 +72,7 @@ namespace Server.Spells.SkillMasteries
 				double skill = BaseSkillBonus;
 				
 				TimeSpan duration = TimeSpan.FromSeconds(skill);
-				_MaxAdd = (int)(skill / 10) + Utility.RandomMinMax(-1, 0);
+				_MaxAdd = (int)(skill / 10) - Utility.Random(1);
 				
 				Expires = DateTime.UtcNow + duration;
 				BeginTimer();

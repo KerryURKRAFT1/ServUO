@@ -195,7 +195,7 @@ namespace Server.Spells.SkillMasteries
                     double skill = ((Caster.Skills[SkillName.Mysticism].Value) + Caster.Skills[damageSkill].Value * 2) / 3;
                     skill /= m.Player ? 3.5 : 2;
 
-                    int damage = (int)skill + Utility.RandomMinMax(-3, 3);
+                    int damage = (int)skill + Utility.Random(6) - 3;
 
                     AOS.Damage(m, Caster, damage, 0, 0, 0, 0, 0, 100, 0);
                 }

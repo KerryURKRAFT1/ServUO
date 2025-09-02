@@ -65,69 +65,76 @@ namespace Server.Commands
 
         public static void Invoke(Mobile from, Point3D start, Point3D end, string[] args, List<Container> packs, bool outline, bool mapAvg)
         {
-            StringBuilder sb = new StringBuilder();
-
-            sb.AppendFormat("{0} {1} building ", from.AccessLevel, CommandLogging.Format(from));
-
-            if (start == end)
-                sb.AppendFormat("at {0} in {1}", start, from.Map);
-            else
-                sb.AppendFormat("from {0} to {1} in {2}", start, end, from.Map);
-
-            sb.Append(":");
-
-            for (int i = 0; i < args.Length; ++i)
-                sb.AppendFormat(" \"{0}\"", args[i]);
-
-            CommandLogging.WriteLine(from, sb.ToString());
-
-            string name = args[0];
-
-            FixArgs(ref args);
-
-            string[,] props = null;
-
-            for (int i = 0; i < args.Length; ++i)
-            {
-                if (Insensitive.Equals(args[i], "set"))
-                {
-                    int remains = args.Length - i - 1;
-
-                    if (remains >= 2)
-                    {
-                        props = new string[remains / 2, 2];
-
-                        remains /= 2;
-
-                        for (int j = 0; j < remains; ++j)
-                        {
-                            props[j, 0] = args[i + (j * 2) + 1];
-                            props[j, 1] = args[i + (j * 2) + 2];
-                        }
-
-                        FixSetString(ref args, i);
-                    }
-
-                    break;
-                }
-            }
-
-            Type type = ScriptCompiler.FindTypeByName(name);
-
-            if (!IsEntity(type))
-            {
-                from.SendMessage("No type with that name was found.");
-                return;
-            }
-
-            DateTime time = DateTime.UtcNow;
-
-            int built = BuildObjects(from, type, start, end, args, props, packs, outline, mapAvg);
-
-            if (built > 0)
-                from.SendMessage("{0} object{1} generated in {2:F1} seconds.", built, built != 1 ? "s" : "", (DateTime.UtcNow - time).TotalSeconds);
-            else
-                SendUsage(type, from);
+			try
+			{
+	        	StringBuilder sb = new StringBuilder();
+	
+	            sb.AppendFormat("{0} {1} building ", from.AccessLevel, CommandLogging.Format(from));
+	
+	            if (start == end)
+	                sb.AppendFormat("at {0} in {1}", start, from.Map);
+	            else
+	                sb.AppendFormat("from {0} to {1} in {2}", start, end, from.Map);
+	
+	            sb.Append(":");
+	
+	            for (int i = 0; i < args.Length; ++i)
+	                sb.AppendFormat(" \"{0}\"", args[i]);
+	
+	            CommandLogging.WriteLine(from, sb.ToString());
+	
+	            string name = args[0];
+	
+	            FixArgs(ref args);
+	
+	            string[,] props = null;
+	
+	            for (int i = 0; i < args.Length; ++i)
+	            {
+	                if (Insensitive.Equals(args[i], "set"))
+	                {
+	                    int remains = args.Length - i - 1;
+	
+	                    if (remains >= 2)
+	                    {
+	                        props = new string[remains / 2, 2];
+	
+	                        remains /= 2;
+	
+	                        for (int j = 0; j < remains; ++j)
+	                        {
+	                            props[j, 0] = args[i + (j * 2) + 1];
+	                            props[j, 1] = args[i + (j * 2) + 2];
+	                        }
+	
+	                        FixSetString(ref args, i);
+	                    }
+	
+	                    break;
+	                }
+	            }
+	
+	            Type type = ScriptCompiler.FindTypeByName(name);
+	
+	            if (!IsEntity(type))
+	            {
+	                from.SendMessage("No type with that name was found.");
+	                return;
+	            }
+	
+	            DateTime time = DateTime.UtcNow;
+	
+	            int built = BuildObjects(from, type, start, end, args, props, packs, outline, mapAvg);
+	
+	            if (built > 0)
+	                from.SendMessage("{0} object{1} generated in {2:F1} seconds.", built, built != 1 ? "s" : "", (DateTime.UtcNow - time).TotalSeconds);
+	            else
+	                SendUsage(type, from);
+			}
+			catch
+			{
+				Console.WriteLine($"Crash on Invoke");
+			}
         }
 
         public static void FixSetString(ref string[] args, int index)
@@ -153,73 +160,80 @@ namespace Server.Commands
 
         public static int BuildObjects(Mobile from, Type type, Point3D start, Point3D end, string[] args, string[,] props, List<Container> packs, bool outline, bool mapAvg)
         {
-            Utility.FixPoints(ref start, ref end);
-
-            PropertyInfo[] realProps = null;
-
-            if (props != null)
-            {
-                realProps = new PropertyInfo[props.GetLength(0)];
-
-                PropertyInfo[] allProps = type.GetProperties(BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public);
-
-                for (int i = 0; i < realProps.Length; ++i)
-                {
-                    PropertyInfo thisProp = null;
-
-                    string propName = props[i, 0];
-
-                    for (int j = 0; thisProp == null && j < allProps.Length; ++j)
-                    {
-                        if (Insensitive.Equals(propName, allProps[j].Name))
-                            thisProp = allProps[j];
-                    }
-
-                    if (thisProp == null)
-                    {
-                        from.SendMessage("Property not found: {0}", propName);
-                    }
-                    else
-                    {
-                        CPA attr = Properties.GetCPA(thisProp);
-
-                        if (attr == null)
-                            from.SendMessage("Property ({0}) not found.", propName);
-                        else if (from.AccessLevel < attr.WriteLevel)
-                            from.SendMessage("Setting this property ({0}) requires at least {1} access level.", propName, Mobile.GetAccessLevelName(attr.WriteLevel));
-                        else if (!thisProp.CanWrite || attr.ReadOnly)
-                            from.SendMessage("Property ({0}) is read only.", propName);
-                        else
-                            realProps[i] = thisProp;
-                    }
-                }
-            }
-
-            ConstructorInfo[] ctors = type.GetConstructors();
-
-            for (int i = 0; i < ctors.Length; ++i)
-            {
-                ConstructorInfo ctor = ctors[i];
-
-                if (!IsConstructable(ctor, from.AccessLevel))
-                    continue;
-
-                ParameterInfo[] paramList = ctor.GetParameters();
-
-                if (args.Length == paramList.Length)
-                {
-                    object[] paramValues = ParseValues(paramList, args);
-
-                    if (paramValues == null)
-                        continue;
-
-                    int built = Build(from, start, end, ctor, paramValues, props, realProps, packs, outline, mapAvg);
-
-                    if (built > 0)
-                        return built;
-                }
-            }
-
+			try
+			{
+	        	Utility.FixPoints(ref start, ref end);
+	
+	            PropertyInfo[] realProps = null;
+	
+	            if (props != null)
+	            {
+	                realProps = new PropertyInfo[props.GetLength(0)];
+	
+	                PropertyInfo[] allProps = type.GetProperties(BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public);
+	
+	                for (int i = 0; i < realProps.Length; ++i)
+	                {
+	                    PropertyInfo thisProp = null;
+	
+	                    string propName = props[i, 0];
+	
+	                    for (int j = 0; thisProp == null && j < allProps.Length; ++j)
+	                    {
+	                        if (Insensitive.Equals(propName, allProps[j].Name))
+	                            thisProp = allProps[j];
+	                    }
+	
+	                    if (thisProp == null)
+	                    {
+	                        from.SendMessage("Property not found: {0}", propName);
+	                    }
+	                    else
+	                    {
+	                        CPA attr = Properties.GetCPA(thisProp);
+	
+	                        if (attr == null)
+	                            from.SendMessage("Property ({0}) not found.", propName);
+	                        else if (from.AccessLevel < attr.WriteLevel)
+	                            from.SendMessage("Setting this property ({0}) requires at least {1} access level.", propName, Mobile.GetAccessLevelName(attr.WriteLevel));
+	                        else if (!thisProp.CanWrite || attr.ReadOnly)
+	                            from.SendMessage("Property ({0}) is read only.", propName);
+	                        else
+	                            realProps[i] = thisProp;
+	                    }
+	                }
+	            }
+	
+	            ConstructorInfo[] ctors = type.GetConstructors();
+	
+	            for (int i = 0; i < ctors.Length; ++i)
+	            {
+	                ConstructorInfo ctor = ctors[i];
+	
+	                if (!IsConstructable(ctor, from.AccessLevel))
+	                    continue;
+	
+	                ParameterInfo[] paramList = ctor.GetParameters();
+	
+	                if (args.Length == paramList.Length)
+	                {
+	                    object[] paramValues = ParseValues(paramList, args);
+	
+	                    if (paramValues == null)
+	                        continue;
+	
+	                    int built = Build(from, start, end, ctor, paramValues, props, realProps, packs, outline, mapAvg);
+	
+	                    if (built > 0)
+	                        return built;
+	                }
+	            }
+			}
+			catch
+			{
+				Console.WriteLine($"Crash on Construct");
+			}
+	
             return 0;
         }
 

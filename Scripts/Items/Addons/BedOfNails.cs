@@ -145,8 +145,8 @@ namespace Server.Items
 
                         for (int i = 0; i < amount; i++)
                         {
-                            int x = this.m_Mobile.X + Utility.RandomMinMax(-1, 1);
-                            int y = this.m_Mobile.Y + Utility.RandomMinMax(-1, 1);
+                            int x = this.m_Mobile.X + Utility.Random(2) - 1;
+                            int y = this.m_Mobile.Y + Utility.Random(2) - 1;
                             int z = this.m_Mobile.Z;
 
                             if (!this.m_Mobile.Map.CanFit(x, y, z, 1, false, false, true))

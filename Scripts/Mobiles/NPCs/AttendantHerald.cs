@@ -115,7 +115,7 @@ namespace Server.Mobiles
                 if (this.ControlOrder == OrderType.Follow && this.m_NextYell < DateTime.UtcNow && m != this.ControlMaster && this.m_Announcement != null)
                 {
                     this.m_Announcement.Say(this, m);
-                    this.m_NextYell = DateTime.UtcNow + this.YellDelay + TimeSpan.FromSeconds(Utility.RandomMinMax(-2, 2));
+                    this.m_NextYell = DateTime.UtcNow + this.YellDelay + TimeSpan.FromSeconds(Utility.Random(4) - 2);
                 }
                 else if (this.ControlOrder == OrderType.Stay && this.m_Greeting != null)
                 {

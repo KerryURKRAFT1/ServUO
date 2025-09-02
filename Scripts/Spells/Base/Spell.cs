@@ -348,9 +348,7 @@ namespace Server.Spells
 
 		public virtual bool ConsumeReagents()
 		{			
-            GMRobe robe = m_Caster.FindItemOnLayer(Layer.OuterTorso) as GMRobe; 
-			
-            if (robe != null)
+			if (m_Caster.IsStaff())
             {
             	return true;
             }

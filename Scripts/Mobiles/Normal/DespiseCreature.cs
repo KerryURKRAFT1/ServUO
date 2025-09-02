@@ -269,16 +269,16 @@ namespace Server.Engines.Despise
             {
                 if (skill != null && skill.Base > 0 && skill.Base < SkillMax)
                 {
-                    double toRaise = ((SkillMax / m_MaxPower) * m_Power) + Utility.RandomMinMax(-5, 5);
+                    double toRaise = ((SkillMax / m_MaxPower) * m_Power) + Utility.Random(10) - 5;
 
                     if (toRaise > skill.Base)
                         skill.Base = Math.Min(SkillMax, toRaise);
                 }
             }
 
-            int strRaise = ((StrMax / 15) * m_Power) + Utility.RandomMinMax(-5, 5);
-            int dexRaise = ((DexMax / 15) * m_Power) + Utility.RandomMinMax(-5, 5);
-            int intRaise = ((IntMax / 15) * m_Power) + Utility.RandomMinMax(-5, 5);
+            int strRaise = ((StrMax / 15) * m_Power) + Utility.Random(10) - 5;
+            int dexRaise = ((DexMax / 15) * m_Power) + Utility.Random(10) - 5;
+            int intRaise = ((IntMax / 15) * m_Power) + Utility.Random(10) - 5;
 
             if (strRaise > RawStr)
                 SetStr(Math.Min(StrMax, strRaise));
@@ -289,9 +289,9 @@ namespace Server.Engines.Despise
             if (intRaise > RawInt)
                 SetInt(Math.Min(IntMax, intRaise));
 
-            int hitsRaise = ((MaxHits / 15) * m_Power) + Utility.RandomMinMax(-5, 5);
-            int stamRaise = ((MaxStam / 15) * m_Power) + Utility.RandomMinMax(-5, 5);
-            int manaRaise = ((MaxMana / 15) * m_Power) + Utility.RandomMinMax(-5, 5);
+            int hitsRaise = ((MaxHits / 15) * m_Power) + Utility.Random(10) - 5;
+            int stamRaise = ((MaxStam / 15) * m_Power) + Utility.Random(10) - 5;
+            int manaRaise = ((MaxMana / 15) * m_Power) + Utility.Random(10) - 5;
 
             if (hitsRaise > HitsMax)
                 SetHits(Math.Min(MaxHits, hitsRaise));

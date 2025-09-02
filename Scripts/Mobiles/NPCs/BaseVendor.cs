@@ -2676,6 +2676,8 @@ namespace Server.Mobiles
 
         #endregion
 
+		public bool BlockGuards = false;
+
         #region SpeechHandlers
         public override void OnMovement(Mobile m, Point3D oldLocation)
         {
@@ -2685,7 +2687,23 @@ namespace Server.Mobiles
             {
 	          	try 
 	          	{
-                	Say(m_greetings[Utility.Random(m_greetings.Length)]);
+	          		if (!BlockGuards && m.Kills >= 5 && Utility.RandomBool())
+	          		{
+					   	GuardedRegion region = Region.GetRegion(typeof(GuardedRegion)) as GuardedRegion;
+			   	
+					   	if (region != null && !region.Disabled)
+					   	{
+		          			Say("!!! guards! help! murder! !!!");
+	          			
+		          			region.CallGuards(m.Location);
+		          			
+							BlockGuards = true;
+		
+							Timer.DelayCall (TimeSpan.FromSeconds(30.0), () => { BlockGuards = false; });		          			
+					   	}
+				    }
+	          		else
+	          			Say(m_greetings[Utility.Random(m_greetings.Length)]);
  	          	}
 	          	catch {}
 

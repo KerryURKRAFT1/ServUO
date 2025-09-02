@@ -115,9 +115,9 @@ namespace Server.SkillHandlers
 				{
 					int marginOfError = Math.Max(0, 25 - (int)(m_Owner.Skills[SkillName.Anatomy].Value / 4));
 	
-	                str = m_Targ.Str + Utility.RandomMinMax(-marginOfError, +marginOfError);
-	                dex = m_Targ.Dex + Utility.RandomMinMax(-marginOfError, +marginOfError);
-	                stm = ((m_Targ.Stam * 100) / Math.Max(m_Targ.StamMax, 1)) + Utility.RandomMinMax(-marginOfError, +marginOfError);
+	                str = m_Targ.Str + Utility.Random(marginOfError * 2) - marginOfError;
+	                dex = m_Targ.Dex + Utility.Random(marginOfError * 2) - marginOfError;
+	                stm = ((m_Targ.Stam * 100) / Math.Max(m_Targ.StamMax, 1)) + Utility.Random(marginOfError * 2) - marginOfError;
 				}
 				catch{}
 

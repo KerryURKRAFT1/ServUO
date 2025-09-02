@@ -209,7 +209,7 @@ namespace Server.Mobiles
 
                     int damage = (int)(m.Hits * scalar);
 
-                    damage += Utility.RandomMinMax(-5, 5);
+                    damage += Utility.Random(10) - 5;
 
                     if (damage < 1)
                         damage = 1;

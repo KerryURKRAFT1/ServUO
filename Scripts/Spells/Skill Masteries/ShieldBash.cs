@@ -101,7 +101,7 @@ namespace Server.Spells.SkillMasteries
             Caster.SendLocalizedMessage(1156027); // You bash you target with your shield!
             bool pvp = defender is PlayerMobile;
 
-            damage = (pvp ? damage * 2 : damage * 5) + Utility.RandomMinMax(-4, 4);
+            damage = (pvp ? damage * 2 : damage * 5) +Utility.Random(8) - 4;
 
             if (pvp && damage > 35)
                 damage = 35;

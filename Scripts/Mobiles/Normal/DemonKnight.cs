@@ -291,8 +291,8 @@ namespace Server.Mobiles
 
             for (int i = 0; i < count; ++i)
             {
-                int x = from.X + Utility.RandomMinMax(-1, 1);
-                int y = from.Y + Utility.RandomMinMax(-1, 1);
+                int x = from.X + Utility.Random(2) - 1;
+                int y = from.Y + Utility.Random(2) - 1;
                 int z = from.Z;
 
                 if (!map.CanFit(x, y, z, 16, false, true))

@@ -155,8 +155,8 @@ namespace Server
 
                         for (int j = 0; j < effects; j++)
                         {
-                            x = Utility.RandomMinMax(-1, 2);
-                            y = Utility.RandomMinMax(-1, 2);
+                            x = Utility.Random(4) - 2;
+                            y = Utility.Random(4) - 2;
 
                             //TODO Match the look
                             Effects.SendMovingParticles(
@@ -463,8 +463,8 @@ namespace Server
                                 
                 while (tries < 5)
                 {
-                    point.X = this.m_ShowerLocation.X += Utility.RandomMinMax(-5, 5);
-                    point.Y = this.m_ShowerLocation.Y += Utility.RandomMinMax(-5, 5);
+                    point.X = this.m_ShowerLocation.X += Utility.Random(10) - 5;
+                    point.Y = this.m_ShowerLocation.Y += Utility.Random(10) - 5;
                     point.Z = this.m_From.Map.GetAverageZ(point.X, point.Y);
 
                     if (this.m_From.CanSee(point))
@@ -501,7 +501,7 @@ namespace Server
 
         public static Direction JaggedLine(Direction d)
         {
-            int number = (int)d + Utility.RandomMinMax(-1, 1);
+            int number = (int)d + Utility.Random(2) - 1;
 
             if (number < 0)
                 number = 8;

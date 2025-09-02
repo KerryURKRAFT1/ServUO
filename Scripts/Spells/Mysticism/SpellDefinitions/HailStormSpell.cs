@@ -135,7 +135,7 @@ namespace Server.Spells.Mystic
                 int y = m_EffectArea.Y + Utility.Random(m_EffectArea.Height);
                 int z = m_Map.GetAverageZ(x, y);
 
-                int fromX = x + Utility.RandomMinMax(-8, 8);
+                int fromX = x + Utility.Random(16) - 8;
                 int fromY = y - 10;
                 int fromZ = z + 30;
 

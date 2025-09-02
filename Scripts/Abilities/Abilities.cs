@@ -1073,8 +1073,8 @@ namespace Server
             for (int i = 0; !canfit && i < 10; i++)
             {
                 point = target.Location;
-                point.X += Utility.RandomMinMax(-range, range);
-                point.Y += Utility.RandomMinMax(-range, range);
+                point.X += Utility.Random(range * 2) - range;
+                point.Y += Utility.Random(range * 2) - range;
                 point.Z = target.Map.GetAverageZ(point.X, point.Y);
 
                 canfit = target.Map.CanFit(point.X, point.Y, point.Z, 16, false, false);

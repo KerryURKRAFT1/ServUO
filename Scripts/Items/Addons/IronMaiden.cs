@@ -67,8 +67,8 @@ namespace Server.Items
 
                 for (int i = 0; i < amount; i++)
                 {
-                    int x = c.X + Utility.RandomMinMax(-1, 1);
-                    int y = c.Y + Utility.RandomMinMax(-1, 1);
+                    int x = c.X + Utility.Random(2) - 1;
+                    int y = c.Y + Utility.Random(2) - 1;
                     int z = c.Z;
 
                     if (!c.Map.CanFit(x, y, z, 1, false, false, true))
