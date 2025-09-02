@@ -1131,8 +1131,8 @@ namespace Server.Mobiles
 			if (from is PlayerMobile pm)
 			{
 				pm.ClaimAutoStabledPets();
-
-				Timer.DelayCall (TimeSpan.FromSeconds(10.0), () => pm.PowerHourConfigureSequence());
+				
+				pm.PowerHourConfigureSequence();
 			}
 		}
 
