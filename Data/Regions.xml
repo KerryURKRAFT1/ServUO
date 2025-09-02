@@ -555,13 +555,6 @@
 		</region>
 		<!-- ORC CAVE-->
 		
-		<!-- DELUCIA PASSAGE -->
-		<region type="DungeonRegion" priority="50" name="Delucia Passage">
-			<rect x="5886" y="1281" width="153" height="135" />
-			<music name="Dungeon9" />
-		</region>
-		<!-- DELUCIA PASSAGE -->
-
 		<!-- BRITAIN SEWERS -->
 		<region type="DungeonRegion" priority="50" name="Britain Sewers">
 			<rect x="6024" y="1423" width="119" height="89" />
@@ -898,7 +891,7 @@
 		<!-- SHRINES -->
 		
 		<!-- LOSTLANDS -->
-       	<region priority="50" name="Lost Lands">
+		<region priority="50" name="Lost Lands">
 		  	<rect x="5116" y="2300" width="1026" height="1794" />
 			<!-- TOWNS -->
 			<region type="TownRegion" priority="50" name="Delucia">
@@ -935,7 +928,17 @@
 				<rect x="5134" y="3659" width="16" height="17" />
 				<rect x="5147" y="4057" width="11" height="18" />
 			</region>
+			<region priority="50" name="Britain Passage">
+				<rect x="6073" y="3330" width="5" height="5" />
+				<rect x="6121" y="1394" width="23" height="22" />
+			</region>
 			<!-- ENTRANCES -->		
+			<!-- PASSAGES -->		
+			<region type="DungeonRegion" priority="50" name="Delucia Passage">
+				<rect x="5886" y="1281" width="153" height="135" />
+				<music name="Dungeon9" />
+			</region>
+			<!-- PASSAGES -->		
 			<!-- CEMETARYS -->		
 			<region priority="50" name="South Papua Cemetary">
 				<rect x="5691" y="3656" width="14" height="14" />
