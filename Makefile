@@ -1,5 +1,5 @@
 MCS=mcs
-EXENAME=ServUO-MONO
+EXENAME=ServUO
 CURPATH=`pwd`
 SRVPATH=${CURPATH}/Server
 SDKPATH=${CURPATH}/Ultima
@@ -21,7 +21,7 @@ run: build
 build: ${EXENAME}.sh
 
 clean:
-	rm -f ${EXENAME}.sh
+#	rm -f ${EXENAME}.sh
 	rm -f ${EXENAME}.exe
 	rm -f ${EXENAME}.exe.mdb
 	rm -f Ultima.dll
@@ -34,8 +34,8 @@ Ultima.dll: Ultima/*.cs
 ${EXENAME}.exe: Ultima.dll Server/*.cs
 	${MCS} -win32icon:${SRVPATH}/servuo.ico -r:${CURPATH}/Ultima.dll,${REFS} -nowarn:${NOWARNS} -target:exe -out:${CURPATH}/${EXENAME}.exe -d:MONO -d:ServUO -d:NEWTIMERS -nologo -optimize -unsafe -recurse:${SRVPATH}/*.cs
 
-${EXENAME}.sh: ${EXENAME}.exe
-	echo "#!/bin/sh" > ${CURPATH}/${EXENAME}.sh
-	echo "mono ${CURPATH}/${EXENAME}.exe" >> ${CURPATH}/${EXENAME}.sh
-	chmod a+x ${CURPATH}/${EXENAME}.sh
-	sed -i.bak -e 's/<!--//g; s/-->//g' ${EXENAME}.exe.config
+# ${EXENAME}.sh: ${EXENAME}.exe
+#	echo "#!/bin/sh" > ${CURPATH}/${EXENAME}.sh
+#	echo "mono ${CURPATH}/${EXENAME}.exe" >> ${CURPATH}/${EXENAME}.sh
+#	chmod a+x ${CURPATH}/${EXENAME}.sh
+#	sed -i.bak -e 's/<!--//g; s/-->//g' ${EXENAME}.exe.config
