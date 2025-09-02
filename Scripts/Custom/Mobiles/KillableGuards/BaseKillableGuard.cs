@@ -16,35 +16,50 @@ namespace Server.Mobiles
 	{
 		public override bool IsEnemy(Mobile m)
 		{
-			if (m.Deleted || !m.Alive || m.Blessed || m.Hidden || AlwaysInnocent || m.IsStaff())
-			{
-				return false;
-			}
-				
 			if (!InLOS(m))
 			{
 				return false;
 			}
+
+			PlayerMobile pm = m as PlayerMobile;
 			
-			if (m is BaseCreature bc)
-			{	
-				if (InitialInnocent && !bc.IsInitialInnocent)
-				{
-					return true;
-				}
-				
-			    if (bc.IsGuardExempt)
+			BaseCreature bc = m as BaseCreature;		
+
+			if (pm != null || (bc != null && (bc.Controlled || bc.Summoned || bc.InitialInnocent)))
+			{
+				if (m.IsStaff() || m.Deleted)
 				{
 					return false;
 				}
 
-			    if ((bc.Controlled || bc.Summoned) && bc.ControlMaster.Kills >= 5)
+				if (m.AlwaysInnocent || !m.Alive || m.Blessed || m.Hidden)
 				{
-					return true;
+					return false;
 				}
-			}
 
-			return m.Kills >= 5 || m.Karma < 0 || m.Criminal;
+				if (bc != null)
+				{	
+					if (bc.InitialInnocent && !bc.IsInitialInnocent)
+					{
+//						Console.WriteLine($"II: {m.Name}");
+						return true;
+					}
+					
+				    if (bc.IsGuardExempt)
+					{
+//						Console.WriteLine($"IGE: {m.Name}");
+						return false;
+					}
+	
+				    if ((bc.Controlled || bc.Summoned) && bc.ControlMaster.Kills >= 5)
+					{
+//						Console.WriteLine($"CM: {m.Name}");
+						return true;
+					}
+				}
+			}										
+							
+			return (m.Kills >= 5 || m.Karma < 0 || m.Criminal);
 		}
 
 		public bool Bandaging = false;
@@ -430,36 +445,26 @@ namespace Server.Mobiles
 										
 					m_Focus = e.Mobile.Combatant as Mobile;
 				}
-				else
-				{
-					Emote("looks around");
-					
-					m_Focus = null;;
-
-					if (e.Mobile is BaseKillableGuard bkg)
-					{
-						bkg.LooksAround();
-					}
-				}
 			}
 		}
 
         public override void OnMovement(Mobile m, Point3D oldLocation)
         {
-            if (Utility.RandomBool() && !m.Player) return;
+            if (Utility.RandomBool() || !m.Player) return;
 
-            if (!Hidden && Utility.RandomDouble() < 0.35 && m.Alive && !m.Hidden && m.InRange(this, 3))
-            {
-				if (!BlockGreet)
-				{
-                	Say(greet[Utility.Random(greet.Length)]);
-					
-					BlockGreet = true;
-
-					Timer.DelayCall (TimeSpan.FromSeconds(5.0), () => { BlockGreet = false; });
-				}
-
-                return;
+            if (!Hidden && Utility.RandomDouble() < 0.35 && m.Alive && !m.Hidden)
+            {           	
+        	    if( InRange(m, 3))
+        		{
+					if (!BlockGreet)
+					{
+	                	Say(greet[Utility.Random(greet.Length)]);
+						
+						BlockGreet = true;
+	
+						Timer.DelayCall (TimeSpan.FromSeconds(5.0), () => { BlockGreet = false; });
+					}
+        	    }
             }
         }
 
@@ -506,31 +511,6 @@ namespace Server.Mobiles
 					caller.Region.MakeGuard(target, amount);
 				}
 			}
-		}
-
-		public void LooksAround()
-		{
-			m_Focus = null;;
-
-		   	IPooledEnumerable eable = GetMobilesInRange(18);
-
-			foreach (Mobile m in eable)
-			{
-				if (m is BaseKillableGuard bkg && bkg.Focus != null && InLOS(bkg) && InLOS(m))
-				{
-					m_Focus = bkg.Focus;
-					
-					m_IdleTimer?.Stop();
-				}
-				else if (IsEnemy(m))
-				{
-					m_Focus = m;
-					
-					m_IdleTimer?.Stop();
-				}
-			}
-
-			eable.Free();
 		}
 
 		public BaseKillableGuard( Serial serial ) : base( serial )
@@ -797,7 +777,31 @@ namespace Server.Mobiles
 				
 				m_Owner.Combatant = null;
 
-				m_Owner.LooksAround();
+			   	IPooledEnumerable eable = m_Owner.GetMobilesInRange(10);
+	
+				foreach (Mobile m in eable)
+				{
+					if (m is BaseKillableGuard bkg && bkg != m_Owner && bkg.Focus != null && m_Owner.InLOS(bkg) && m_Owner.InLOS(m))
+					{
+						Stop();
+
+						m_Owner.Focus = bkg.Focus;
+						
+						m_Owner.Combatant = bkg.Focus;
+					}
+					else if (m_Owner.IsEnemy(m))
+					{
+						Stop();
+
+						m_Owner.Say(speech[Utility.Random(speech.Length)]);
+						
+						m_Owner.Focus = m;
+						
+						m_Owner.Combatant = m;
+					}
+				}
+	
+				eable.Free();			
 			}
 		}
 		
