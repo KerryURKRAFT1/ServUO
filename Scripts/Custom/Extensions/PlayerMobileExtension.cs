@@ -11,12 +11,14 @@ namespace Server.Mobiles
 		Start,		//1
 		Activate,	//2
 		Delay,		//3
-		DeActivate	//4
+		DeActivate,	//4
+		Stop,		//5
+		ReStart,	//6
 	}
 
 	public partial class PlayerMobile : Mobile
 	{
-		#region configure			
+		#region configure
 		public static bool PowerHourEnabled = Config.Get("Custom_PowerHour.PowerHourEnabled", true);
 		public static bool PowerHourStaffEnabled = Config.Get("Custom_PowerHour.PowerHourStaffEnabled", false);
 		
@@ -31,10 +33,34 @@ namespace Server.Mobiles
 		private bool m_PowerHourActive;
 		private DateTime m_PowerHourTime = DateTime.MinValue;
 		
+		private bool m_PowerHourStop = false;
+
 		public bool PowerHourActive { get { return m_PowerHourActive; } set { m_PowerHourActive = value; } }
 		public DateTime PowerHourTime { get { return m_PowerHourTime; } set { m_PowerHourTime = value; } }
 		
 		public int PowerHourLoad { get; set; }
+
+		public bool PowerHourStop
+		{
+			get { return m_PowerHourStop; }
+			set
+			{			
+				if (m_PowerHourStop != value)
+				{
+					if (value)
+					{
+						if (PowerHourActive)
+							PowerHourTime = DateTime.Now + PowerHourDelay;
+						
+						PowerHourAction = PowerHourActions.Stop;
+					}
+					else
+						PowerHourAction = PowerHourActions.ReStart;
+				}
+
+				m_PowerHourStop = value;
+			}
+		}
 
 		private PowerHourActions m_PowerHourAction;
 
@@ -56,7 +82,7 @@ namespace Server.Mobiles
 					case PowerHourActions.Start:
 						break;
 					case PowerHourActions.Activate:
-						PowerHourTime = DateTime.Now + PowerHourDuration;		
+						PowerHourTime = DateTime.Now + PowerHourDuration;
 						PowerHourTimer.AddTimer(this);
 						PowerHourActive = true;
 						break;
@@ -67,6 +93,14 @@ namespace Server.Mobiles
 					case PowerHourActions.DeActivate:
 						PowerHourTimer.AddTimer(this);
 						break;
+					case PowerHourActions.Stop:
+						break;
+					case PowerHourActions.ReStart:
+						if (PowerHourTime > DateTime.Now)
+							PowerHourAction = PowerHourActions.DeActivate;
+						else
+							PowerHourAction = PowerHourActions.Initial;
+						return;
 				}
 				
 				PowerHourStatusMessage();
@@ -76,12 +110,15 @@ namespace Server.Mobiles
 				
 		#region Sequence
 		public void PowerHourConfigureSequence()
-		{
+		{		
 			if (PowerHourEnabled || (IsStaff() && PowerHourStaffEnabled))
 			{
+				if (PowerHourTime > DateTime.Now + PowerHourDelay) //incase delay changed
+					PowerHourTime = DateTime.Now + PowerHourDelay;
+				
 				if (PowerHourLoad == 2) //if active restart it
 					PowerHourAction = PowerHourActions.Start;
-				else 
+				else
 					PowerHourAction = (PowerHourActions)PowerHourLoad;
 			}
 		}
@@ -90,19 +127,21 @@ namespace Server.Mobiles
 		{
 			switch (PowerHourAction)
 			{
-				case PowerHourActions.Initial: 
+				case PowerHourActions.Initial:
 					PowerHourLoadingMessage(); break;
-				case PowerHourActions.Start: 
+				case PowerHourActions.Start:
 					PowerHourReadyMessage(); break;
-				case PowerHourActions.Activate: 
+				case PowerHourActions.Activate:
 					PowerHourActiveMessage(); break;
-				default: 
+				case PowerHourActions.Stop:
+					PowerHourStoppedMessage(); break;
+				default:
 					PowerHourDeActivateMessage(); break;
 			}
 		}
 
 		public void PowerHourChangeSequence()
-		{						
+		{
 			if (!PowerHourActive)
 				PowerHourAction = PowerHourActions.Start;
 			else
@@ -110,11 +149,13 @@ namespace Server.Mobiles
 		}
 
 		public void PowerHourCommandSequence() //called by command
-		{			
-			if (PowerHourAction == PowerHourActions.Start)
+		{
+			if (PowerHourAction == PowerHourActions.Stop)
+				PowerHourStop = false;
+			else if (PowerHourAction == PowerHourActions.Start)
 				PowerHourAction = PowerHourActions.Activate;
 			else
-				PowerHourStatusMessage();	
+				PowerHourStatusMessage();
 		}
 		#endregion
 		
@@ -128,13 +169,13 @@ namespace Server.Mobiles
 		{
 			if (PowerHourAction == PowerHourActions.Start)
 			{
-				SendMessage (48, "Your power hour is ready (command [powerHour start)");				
-				Timer.DelayCall (TimeSpan.FromMinutes(5.0), () => PowerHourReadyMessage());				
+				SendMessage (48, "Your power hour is ready (command [powerhour start)");
+				Timer.DelayCall (TimeSpan.FromMinutes(5.0), () => PowerHourReadyMessage());
 			}
 		}
 
 		private void PowerHourActiveMessage()
-		{		
+		{
 			SendMessage (60, $"Your power hour has {FormatTime(PowerHourTime - DateTime.Now)} remaining");
 		}
 
@@ -142,20 +183,25 @@ namespace Server.Mobiles
 		{
 			SendMessage (60, $"Your next power hour is in {FormatTime(PowerHourTime - DateTime.Now)}");
 		}
+
+		private void PowerHourStoppedMessage()
+		{
+			SendMessage (60, $"Your power hour has been stopped (command [powerhour start)");
+		}
 		#endregion
 			
 		#region format TimeSpan
 		public static string FormatTime( TimeSpan t)
 		{
-			double minutes = (t.Minutes % 60) + 1;			
-			double hours = (t.Hours % 60); 
+			double minutes = (t.Minutes % 60);
+			double hours = (t.Hours % 60);
 			
 			if (t.Days > 0)
 				return String.Format("{0} day {1} hour{2}", t.Days, hours, (hours != 1 ? "s":""));
 			else if (t.Hours > 0)
 				return String.Format("{0} hour{1} {2} minute{3}", hours, (hours != 1 ? "s":""), minutes, (minutes != 1 ? "s":""));
 			else if (t.Minutes > 0)
-				return String.Format("{0} minute{1}", minutes, (minutes != 1 ? "s":""));			
+				return String.Format("{0} minute{1}", (minutes + 1), (minutes != 1 ? "s":""));
 
 			return "< 1 minute";
 		}
@@ -167,7 +213,7 @@ namespace Server.Mobiles
 			if (CanGain())
 				gc *= (PowerHourGainFactor / 100);
 
-			if (PowerHourFastGain && skill.Value < 90.0)			
+			if (PowerHourFastGain && skill.Value < 90.0)
 				gc *= (6.0 - (skill.Value / 18)) * (PowerHourFastGainMultiplier / 100);
 			
 			return gc;
@@ -176,10 +222,10 @@ namespace Server.Mobiles
 		public int PowerHourGain(Skill skill, int toGain)
 		{
 			if (CanGain())
-                toGain += Utility.Random(2);
+				toGain += Utility.Random(2);
 			
-			if (PowerHourFastGain && skill.Value < 90.0)			
-                toGain += Utility.Random(2) + 1;
+			if (PowerHourFastGain && skill.Value < 90.0)
+				toGain += Utility.Random(2) + 1;
 				
 			return toGain;
 		}
