@@ -312,12 +312,15 @@ namespace Server
 		{
 			HandleClosed();
 
+			if (!Core.Unix)
+			{
+				Process.Kill();
+			}
+
 			if (restart)
 			{
 				Process.Start(ExePath, Arguments);
 			}
-
-			Process.Kill();
 		}
 
 		private static void HandleClosed()
