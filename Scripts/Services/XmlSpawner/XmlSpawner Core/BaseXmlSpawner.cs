@@ -10702,8 +10702,8 @@ namespace Server.Mobiles
 											// pick a random point around the caster
 											int range = keywordarg2;
 											if (range == 0) range = 1;
-											int randx = Utility.RandomMinMax(-range, range);
-											int randy = Utility.RandomMinMax(-range, range);
+											int randx = Utility.Random(range * 2) - range;
+											int randy = Utility.Random(range * 2) - range;
 											if (randx == 0 && randy == 0) randx = 1;
 											targetargs[0] = new Point3D(triggermob.Location.X + randx,
 												triggermob.Location.Y + randy,

@@ -185,7 +185,7 @@ namespace Server.Engines.VvV
                 return;
 
             Point3D startLoc = new Point3D(p.X, p.Y, p.Z + 10);
-            Point3D endLoc = new Point3D(p.X + Utility.RandomMinMax(-1, 1), p.Y + Utility.RandomMinMax(-1, 1), p.Z + 32);
+            Point3D endLoc = new Point3D(p.X + Utility.Random(2) - 1, p.Y + Utility.Random(2) - 1, p.Z + 32);
 
             Effects.SendMovingEffect(new Entity(Serial.Zero, startLoc, map), new Entity(Serial.Zero, endLoc, map),
                 0x36E4, 5, 0, false, false);

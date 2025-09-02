@@ -175,22 +175,22 @@ using Server.Items;
             {
                 if (skill != null && skill.Base > 0 && skill.Base < SkillMax)
                 {
-                    double toRaise = ((SkillMax / MaxStage) * Stage) + Utility.RandomMinMax(-5, 5);
+                    double toRaise = ((SkillMax / MaxStage) * Stage) + Utility.Random(10) - 5;
 
                     if (toRaise > skill.Base)
                         skill.Base = Math.Min(SkillMax, toRaise);
                 }
             }
 
-            SetResistance(ResistanceType.Physical, ((ResistMax / MaxStage) * Stage) + Utility.RandomMinMax(-5, 5));
-            SetResistance(ResistanceType.Fire, ((ResistMax / MaxStage) * Stage) + Utility.RandomMinMax(-5, 5));
-            SetResistance(ResistanceType.Cold, ((ResistMax / MaxStage) * Stage) + Utility.RandomMinMax(-5, 5));
-            SetResistance(ResistanceType.Poison, ((ResistMax / MaxStage) * Stage) + Utility.RandomMinMax(-5, 5));
-            SetResistance(ResistanceType.Energy, ((ResistMax / MaxStage) * Stage) + Utility.RandomMinMax(-5, 5));
+            SetResistance(ResistanceType.Physical, ((ResistMax / MaxStage) * Stage) + Utility.Random(10) - 5);
+            SetResistance(ResistanceType.Fire, ((ResistMax / MaxStage) * Stage) + Utility.Random(10) - 5);
+            SetResistance(ResistanceType.Cold, ((ResistMax / MaxStage) * Stage) + Utility.Random(10) - 5);
+            SetResistance(ResistanceType.Poison, ((ResistMax / MaxStage) * Stage) + Utility.Random(10) - 5);
+            SetResistance(ResistanceType.Energy, ((ResistMax / MaxStage) * Stage) + Utility.Random(10) - 5);
 
-            int strRaise = ((StrMax / MaxStage) * Stage) + Utility.RandomMinMax(-5, 5);
-            int dexRaise = ((DexMax / MaxStage) * Stage) + Utility.RandomMinMax(-5, 5);
-            int intRaise = ((IntMax / MaxStage) * Stage) + Utility.RandomMinMax(-5, 5);
+            int strRaise = ((StrMax / MaxStage) * Stage) + Utility.Random(10) - 5;
+            int dexRaise = ((DexMax / MaxStage) * Stage) + Utility.Random(10) - 5;
+            int intRaise = ((IntMax / MaxStage) * Stage) + Utility.Random(10) - 5;
 
             if (strRaise > RawStr)
                 SetStr(Math.Min(StrMax, strRaise));
@@ -201,9 +201,9 @@ using Server.Items;
             if (intRaise > RawInt)
                 SetInt(Math.Min(IntMax, intRaise));
 
-            int hitsRaise = ((MaxHits / 60) * Level) + Utility.RandomMinMax(-5, 5);
-            int stamRaise = ((MaxStam / 60) * Level) + Utility.RandomMinMax(-5, 5);
-            int manaRaise = ((MaxMana / 60) * Level) + Utility.RandomMinMax(-5, 5);
+            int hitsRaise = ((MaxHits / 60) * Level) + Utility.Random(10) - 5;
+            int stamRaise = ((MaxStam / 60) * Level) + Utility.Random(10) - 5;
+            int manaRaise = ((MaxMana / 60) * Level) + Utility.Random(10) - 5;
 
             if (hitsRaise > HitsMax)
                 SetHits(Math.Min(MaxHits, hitsRaise));

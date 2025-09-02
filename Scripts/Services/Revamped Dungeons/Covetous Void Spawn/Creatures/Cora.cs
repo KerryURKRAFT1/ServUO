@@ -110,20 +110,20 @@ using Server.Engines.VoidPool;
             switch (d)
             {
                 case Direction.North:
-                    x = this.X + Utility.RandomMinMax(-offset, offset);
+                    x = this.X + Utility.Random(offset * 2) - offset;
                     y = this.Y - range;
                     break;
                 case Direction.West:
                     x = this.X - range;
-                    y = this.Y + Utility.RandomMinMax(-offset, offset); 
+                    y = this.Y + Utility.Random(offset * 2) - offset; 
                     break;
                 case Direction.South:
-                    x = this.X + Utility.RandomMinMax(-offset, offset);
+                    x = this.X + Utility.Random(offset * 2) - offset;
                     y = this.Y + range;
                     break;
                 case Direction.East:
                     x = this.X + range;
-                    y = this.Y + Utility.RandomMinMax(-offset, offset); 
+                    y = this.Y + Utility.Random(offset * 2) - offset; 
                     break;
             }
 

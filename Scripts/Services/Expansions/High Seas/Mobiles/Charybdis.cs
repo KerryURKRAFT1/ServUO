@@ -144,8 +144,8 @@ namespace Server.Mobiles
                     newLoc = GetValidPoint(boat, map, 10);
                 else
                 {
-                    int x = focusLoc.X + Utility.RandomMinMax(-12, 12);
-                    int y = focusLoc.Y + Utility.RandomMinMax(-12, 12);
+                    int x = focusLoc.X + Utility.Random(24) - 12;
+                    int y = focusLoc.Y + Utility.Random(24) - 12;
                     int z = map.GetAverageZ(x, y);
 
                     newLoc = new Point3D(x, y, z);

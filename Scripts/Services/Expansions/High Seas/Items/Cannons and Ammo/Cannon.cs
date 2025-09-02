@@ -546,23 +546,23 @@ namespace Server.Items
                     {
                         default:
                         case Direction.North:
-                            xOffset = Utility.RandomMinMax(-1, 1);
-                            yOffset = Utility.RandomMinMax(-2, 0);
+                            xOffset = Utility.Random(2) - 1;
+                            yOffset = Utility.Random(2) - 2;
                             hit = new Point3D(pnt.X + xOffset, pnt.Y + yOffset, z);
                             break;
                         case Direction.South:
-                            xOffset = Utility.RandomMinMax(-1, 1);
+                            xOffset = Utility.Random(2) - 1;
                             yOffset = Utility.RandomMinMax(0, 2);
                             hit = new Point3D(pnt.X + xOffset, pnt.Y + yOffset, z);
                             break;
                         case Direction.East:
                             xOffset = Utility.RandomMinMax(0, 2);
-                            yOffset = Utility.RandomMinMax(-1, 1);
+                            yOffset = Utility.Random(2) - 1;
                             hit = new Point3D(pnt.X + xOffset, pnt.Y + yOffset, z);
                             break;
                         case Direction.West:
-                            xOffset = Utility.RandomMinMax(-2, 0);
-                            yOffset = Utility.RandomMinMax(-1, 1);
+                            xOffset = Utility.Random(2) - 2;
+                            yOffset = Utility.Random(2) - 1;
                             hit = new Point3D(pnt.X + xOffset, pnt.Y + yOffset, z);
                             break;
                     }

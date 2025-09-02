@@ -214,7 +214,7 @@ namespace Server.Mobiles
         public Point3D GetValidPoint(BaseBoat boat, Map map, int distance)
         {
             if (boat == null || map == null || map == Map.Internal)
-                return new Point3D(this.X + Utility.RandomMinMax(-1, 1), this.Y + Utility.RandomMinMax(-1, 1), this.Z);
+                return new Point3D(this.X + Utility.Random(2) - 1, this.Y + Utility.Random(2) - 1, this.Z);
 
             if (distance < 5) distance = 5;
             if (distance > 15) distance = 15;

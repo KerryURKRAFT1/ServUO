@@ -123,8 +123,8 @@ namespace Server.Items
                         case Direction.South:
                             do  
                             {  
-                                x = g.X + Utility.RandomMinMax(-d, d);
-                                y = g.Y + Utility.RandomMinMax(-1, 1);
+                                x = g.X + Utility.Random(d * 2) - d;
+                                y = g.Y + Utility.Random(2) - 1;
                             }
                             while (x == g.X);
                             break;
@@ -132,8 +132,8 @@ namespace Server.Items
                         case Direction.West:
                             do 
                             {
-                                x = g.X + Utility.RandomMinMax(-1, 1);
-                                y = g.Y + Utility.RandomMinMax(-d, d);
+                                x = g.X + Utility.Random(2) - 1;
+                                y = g.Y + Utility.Random(d * 2) - d;
                             }
                             while (y == g.Y);
                                 

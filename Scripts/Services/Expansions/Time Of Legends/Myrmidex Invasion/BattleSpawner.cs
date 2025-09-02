@@ -487,7 +487,7 @@ namespace Server.Engines.MyrmidexInvasion
                     }
                     else
                     {
-                        point.X = point.X + (Utility.RandomMinMax(-2, 2));
+                        point.X = point.X + (Utility.Random(4) - 2);
                     }
                 });
 
