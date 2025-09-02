@@ -4010,7 +4010,7 @@ namespace Server.Mobiles
                     }
                 case 33:
                     {
-                        m_ExploringTheDeepQuest = (ExploringTheDeepQuestChain)reader.ReadInt();
+                        reader.ReadInt();
                         goto case 31;
                     }
                 case 32:
@@ -4449,7 +4449,7 @@ namespace Server.Mobiles
 			SerializeExt(writer);
 			
 			//version 33
-			writer.Write((int)m_ExploringTheDeepQuest);
+			writer.Write(0);
 
             // Version 31/32 Titles
             writer.Write(m_ShowGuildAbbreviation);
@@ -6475,13 +6475,6 @@ namespace Server.Mobiles
 				m_BuffTable = null;
 			}
 		}
-        #endregion
-
-        #region Exploring the Deep
-        private ExploringTheDeepQuestChain m_ExploringTheDeepQuest;
-
-        [CommandProperty(AccessLevel.GameMaster)]
-        public ExploringTheDeepQuestChain ExploringTheDeepQuest { get { return m_ExploringTheDeepQuest; } set { m_ExploringTheDeepQuest = value; } }
         #endregion
 
         public void AutoStablePets()
