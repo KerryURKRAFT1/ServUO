@@ -876,6 +876,11 @@ namespace Server.Commands.Generic
                 else
                 {
                     CommandLogging.WriteLine(from, "{0} {1} killing {2}", from.AccessLevel, CommandLogging.Format(from), CommandLogging.Format(mob));
+                    
+                    // Lightning effect
+                    Effects.SendBoltEffect(mob);
+                    mob.PlaySound(0x29);
+                    
                     mob.Kill();
 
                     this.AddResponse("They have been killed.");
