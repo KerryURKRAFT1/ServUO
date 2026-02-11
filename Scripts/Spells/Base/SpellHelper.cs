@@ -146,6 +146,10 @@ namespace Server.Spells
 
         public static void Turn(Mobile from, object to)
         {
+            // Don't turn the caster if they are moving (running while casting)
+            if (IsCasterMoving(from))
+                return;
+
             IPoint3D target = to as IPoint3D;
 
             if (target == null)
@@ -162,6 +166,18 @@ namespace Server.Spells
             {
                 from.Direction = from.GetDirectionTo(target);
             }
+        }
+
+        // Akiranyadev
+        // Determines if the caster is currently moving based on their last movement time.
+        private static bool IsCasterMoving(Mobile from)
+        {
+            if (from == null)
+                return false;
+
+            // Check if the caster has moved within the last 200 milliseconds
+            // This allows players to cast while running without constantly rotating
+            return (Core.TickCount - from.LastMoveTime) < 200;
         }
 
         private static readonly TimeSpan CombatHeatDelay = TimeSpan.FromSeconds(30.0);
