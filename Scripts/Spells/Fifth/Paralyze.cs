@@ -15,6 +15,7 @@ namespace Server.Spells.Fifth
             Reagent.Garlic,
             Reagent.MandrakeRoot,
             Reagent.SpidersSilk);
+        
         public ParalyzeSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {
@@ -30,19 +31,19 @@ namespace Server.Spells.Fifth
 
         public override bool Cast()
         {
-        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
-        	{
-        		return (this.Caster.Target = new InternalTarget(this)) != null;
-        	}
+            if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+            {
+                return (this.Caster.Target = new InternalTarget(this)) != null;
+            }
 
-        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
-        	
-        	return false;
-       }
+            this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+            
+            return false;
+        }
 
         public override void OnCast()
         {
-        	Target ((Mobile)ObjectTargeted);
+            Target((Mobile)ObjectTargeted);
         }
 
         public void Target(Mobile m)
@@ -59,14 +60,33 @@ namespace Server.Spells.Fifth
             {
                 SpellHelper.Turn(this.Caster, m);
 
-                SpellHelper.CheckReflect((int)this.Circle, this.Caster, ref m);
+                if (Core.UOR)
+                {
+                    // Effetti visivi e sonori PRIMA del check reflect
+                    m.PlaySound(0x204);
+                    m.FixedEffect(0x376A, 6, 1);
 
+                    // PATCH UOR: riflesso diretto (DOPO gli effetti)
+                    if (SpellHelper.CheckReflectUOR(this, this.Caster, ref m))
+                    {
+                        // Spell neutralizzata (entrambi avevano reflect)
+                        this.FinishSequence();
+                        return;
+                    }
+                    // Se riflessa, m è ora this.Caster e verrà paralizzato
+                }
+                else
+                {
+                    // AOS/Post-AOS reflection
+                    SpellHelper.CheckReflect((int)this.Circle, this.Caster, ref m);
+                }
+                
                 double duration;
-				
+                
                 if (Core.AOS)
                 {
                     int secs = (int)((this.GetDamageSkill(this.Caster) / 10) - (this.GetResistSkill(m) / 10));
-					
+                    
                     if (!Core.SE)
                         secs += 2;
 
@@ -86,8 +106,8 @@ namespace Server.Spells.Fifth
                     if (this.CheckResisted(m))
                         duration *= 0.75;
 
-					if (m.Spell != null)
-	                    m.Spell.OnCasterHurt();
+                    if (m.Spell != null)
+                        m.Spell.OnCasterHurt();
                 }
 
                 if (m is PlagueBeastLord)
@@ -98,8 +118,12 @@ namespace Server.Spells.Fifth
 
                 m.Paralyze(TimeSpan.FromSeconds(duration));
 
-                m.PlaySound(0x204);
-                m.FixedEffect(0x376A, 6, 1);
+                // Effetti visivi e sonori per AOS/Old (NON UOR)
+                if (!Core.UOR)
+                {
+                    m.PlaySound(0x204);
+                    m.FixedEffect(0x376A, 6, 1);
+                }
 
                 this.HarmfulSpell(m);
             }
@@ -110,6 +134,7 @@ namespace Server.Spells.Fifth
         public class InternalTarget : Target
         {
             private readonly ParalyzeSpell m_Owner;
+            
             public InternalTarget(ParalyzeSpell owner)
                 : base(Core.ML ? 10 : 12, true, TargetFlags.Harmful)
             {
@@ -120,21 +145,22 @@ namespace Server.Spells.Fifth
             {
                 if (o is Mobile)
                 {
-                	if (!this.m_Owner.StartSequence(o))
-                	{
-                		this.m_Owner.FinishSequence();
-                	}
+                    if (!this.m_Owner.StartSequence(o))
+                    {
+                        this.m_Owner.FinishSequence();
+                    }
                 }
                 else
                 {
-	              	from.SendLocalizedMessage(1005213); // You can't do that
+                    from.SendLocalizedMessage(1005213); // You can't do that
                 }
             }
-	        protected override void OnTargetOutOfLOS(Mobile from, object o)
-	        {
-	            from.Target = new InternalTarget(m_Owner);
-				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
-	        }
+            
+            protected override void OnTargetOutOfLOS(Mobile from, object o)
+            {
+                from.Target = new InternalTarget(m_Owner);
+                from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
+            }
         }
     }
 }

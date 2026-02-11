@@ -12,6 +12,7 @@ namespace Server.Spells.Third
             203,
             9041,
             Reagent.BlackPearl);
+        
         public FireballSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {
@@ -24,6 +25,7 @@ namespace Server.Spells.Third
                 return SpellCircle.Third;
             }
         }
+        
         public override bool DelayedDamage
         {
             get
@@ -34,39 +36,43 @@ namespace Server.Spells.Third
 
         public override bool Cast()
         {
-        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
-        	{
-        		return (this.Caster.Target = new InternalTarget(this)) != null;
-        	}
+            if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+            {
+                return (this.Caster.Target = new InternalTarget(this)) != null;
+            }
 
-        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
-        	
-        	return false;
+            this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+            
+            return false;
         }
 
         public override void OnCast()
         {
-        	if (ObjectTargeted is BaseExplosionPotion)
-        	{
-        		Explode ((BaseExplosionPotion)ObjectTargeted);
-        	}
-        	else
-        	{
-        		Target ((IDamageable)ObjectTargeted);
-        	}
+            if (ObjectTargeted is BaseExplosionPotion)
+            {
+                Explode((BaseExplosionPotion)ObjectTargeted);
+            }
+            else
+            {
+                Target((IDamageable)ObjectTargeted);
+            }
         }
 
         public void Target(IDamageable m)
         {
+            Mobile mob = m as Mobile;
+
             if (this.CheckHSequence(m))
             {
-                Mobile source = this.Caster;
-                Mobile target = m as Mobile;
+                SpellHelper.Turn(this.Caster, m);
 
-                SpellHelper.Turn(source, m);
-                
-                if(target != null)
-                  SpellHelper.CheckReflect((int)this.Circle, ref source, ref target);
+                // CheckReflect classico (AOS/Pre-AOS)
+                if (mob != null && !Core.UOR)
+                    SpellHelper.CheckReflect((int)this.Circle, this.Caster, ref mob);
+
+                // Spell interruption
+                if (mob != null && mob.Spell != null)
+                    mob.Spell.OnCasterHurt();
 
                 double damage = 0;
 
@@ -74,26 +80,66 @@ namespace Server.Spells.Third
                 {
                     damage = this.GetNewAosDamage(19, 1, 5, m);
                 }
-                else if (target != null)
+                else if (Core.UOR)
                 {
-					if (target.Spell != null)
-	                    target.Spell.OnCasterHurt();
+                    damage = Utility.Random(10, 6); // 10-6
+                    
+                    // Effetti visivi e sonori PRIMA del check reflect
+                    if (mob != null)
+                    {
+                        this.Caster.MovingParticles(mob, 0x36D4, 7, 0, false, true, 9502, 4019, 0x160);
+                        this.Caster.PlaySound(0x44B);
+                    }
+                    else
+                    {
+                        this.Caster.MovingParticles(m, 0x36D4, 7, 0, false, true, 9502, 4019, 0x160);
+                        this.Caster.PlaySound(0x44B);
+                    }
+                    
+                    // PATCH UOR: riflesso diretto (DOPO gli effetti)
+                    if (mob != null && SpellHelper.CheckReflectUOR(this, this.Caster, mob, damage))
+                    {
+                        this.FinishSequence();
+                        return;
+                    }
+                    
+                    // Magic Resistance (DOPO il check reflection)
+                    if (mob != null && this.CheckResisted(mob))
+                    {
+                        damage /= 2.0;
+                        mob.SendMessage(0x22, "You resist the spell!");
+                    }
+                }
+                else if (mob != null)
+                {
+                    damage = Utility.Random(10, 7);
 
-					damage = Utility.Random(10, 7);
-
-                    if (this.CheckResisted(target))
+                    if (this.CheckResisted(mob))
                     {
                         damage *= 0.75;
                     }
 
-                    damage *= this.GetDamageScalar(target);
+                    damage *= this.GetDamageScalar(mob);
                 }
 
+                // Effetti visivi per AOS/Old (NON UOR)
+                if (!Core.UOR)
+                {
+                    if (mob != null)
+                    {
+                        this.Caster.MovingParticles(mob, 0x36D4, 7, 0, false, true, 9502, 4019, 0x160);
+                        this.Caster.PlaySound(Core.AOS ? 0x15E : 0x44B);
+                    }
+                    else
+                    {
+                        this.Caster.MovingParticles(m, 0x36D4, 7, 0, false, true, 9502, 4019, 0x160);
+                        this.Caster.PlaySound(Core.AOS ? 0x15E : 0x44B);
+                    }
+                }
+
+                // Danno
                 if (damage > 0)
                 {
-                    source.MovingParticles(m, 0x36D4, 7, 0, false, true, 9502, 4019, 0x160);
-                    source.PlaySound(Core.AOS ? 0x15E : 0x44B);
-
                     SpellHelper.Damage(this, m, damage, 0, 100, 0, 0, 0);
                 }
             }
@@ -104,6 +150,7 @@ namespace Server.Spells.Third
         private class InternalTarget : Target
         {
             private readonly FireballSpell m_Owner;
+            
             public InternalTarget(FireballSpell owner)
                 : base(Core.ML ? 10 : 12, true, TargetFlags.Harmful)
             {
@@ -114,21 +161,22 @@ namespace Server.Spells.Third
             {
                 if (o is IDamageable || o is BaseExplosionPotion)
                 {
-                   	if (!this.m_Owner.StartSequence(o))
-                	{
-                		this.m_Owner.FinishSequence();
-                	}
+                    if (!this.m_Owner.StartSequence(o))
+                    {
+                        this.m_Owner.FinishSequence();
+                    }
                 }
                 else
                 {
-	              	from.SendLocalizedMessage(1005213); // You can't do that
+                    from.SendLocalizedMessage(1005213); // You can't do that
                 }
             }
-	        protected override void OnTargetOutOfLOS(Mobile from, object o)
-	        {
-	            from.Target = new InternalTarget(m_Owner);
-				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
-	        }
+            
+            protected override void OnTargetOutOfLOS(Mobile from, object o)
+            {
+                from.Target = new InternalTarget(m_Owner);
+                from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
+            }
         }
     }
 }

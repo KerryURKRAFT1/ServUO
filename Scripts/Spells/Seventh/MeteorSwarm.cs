@@ -55,84 +55,130 @@ namespace Server.Spells.Seventh
 
         public void Target(IPoint3D p)
         {
-            if (!this.Caster.CanSee(p))
-            {
-                this.Caster.SendLocalizedMessage(500237); // Target can not be seen.
-            }
-            else if (SpellHelper.CheckTown(p, this.Caster) && this.CheckSequence())
+            if (Core.UOR)
             {
                 SpellHelper.Turn(this.Caster, p);
-
                 if (p is Item)
                     p = ((Item)p).GetWorldLocation();
-
                 List<IDamageable> targets = new List<IDamageable>();
-
                 Map map = this.Caster.Map;
-
                 if (map != null)
                 {
                     IPooledEnumerable eable = map.GetObjectsInRange(new Point3D(p), 2);
-
                     foreach (object o in eable)
                     {
                         IDamageable id = o as IDamageable;
-
-                        if (id == null || (Core.AOS && id is Mobile && (Mobile)id == this.Caster))
+                        if (id == null || (id is Mobile && (Mobile)id == this.Caster))
                             continue;
-
-                        if ((!(id is Mobile) || SpellHelper.ValidIndirectTarget(this.Caster, id as Mobile)) && this.Caster.CanBeHarmful(id, false))
-                        {
-                            if (Core.AOS && !this.Caster.InLOS(id))
-                                continue;
-
-                            targets.Add(id);
-                        }
+                        targets.Add(id);
                     }
-
                     eable.Free();
                 }
-
-                double damage;
-
-                if (targets.Count > 0)
+                double damage = 0;
+                Effects.PlaySound(p, this.Caster.Map, 0x160);
+                bool reflected = false;
+                for (int i = 0; i < targets.Count; ++i)
                 {
-                    Effects.PlaySound(p, this.Caster.Map, 0x160);
-
-                    for (int i = 0; i < targets.Count; ++i)
+                    IDamageable id = targets[i];
+                    Mobile m = id as Mobile;
+                    damage = Utility.Random(58, 7); // 58-64
+                    damage /= targets.Count > 0 ? targets.Count : 1;
+                    // Effetti visivi e sonori PRIMA del check reflect
+                    this.Caster.DoHarmful(id);
+                    if (m != null)
                     {
-                        IDamageable id = targets[i];
-                        Mobile m = id as Mobile;
-
-                        if (Core.AOS)
-                            damage = this.GetNewAosDamage(51, 1, 5, id is PlayerMobile, id);
-                        else
-                            damage = Utility.Random(27, 22);
-
-                        if (Core.AOS && targets.Count > 2)
-                            damage = (damage * 2) / targets.Count;
-                        else if (!Core.AOS)
-                            damage /= targets.Count;
-
-                        if (!Core.AOS && m != null && this.CheckResisted(m))
-                        {
-                            damage *= 0.5;
-                        }
-
-                        if(m != null)
-                            damage *= this.GetDamageScalar(m);
-
-                        this.Caster.DoHarmful(id);
-                        SpellHelper.Damage(this, id, damage, 0, 100, 0, 0, 0);
-
-                        this.Caster.MovingParticles(id, 0x36D4, 7, 0, false, true, 9501, 1, 0, 0x100);
+                        Effects.SendLocationParticles(m, 0x36BD, 20, 10, 5044);
+                        Effects.PlaySound(m.Location, m.Map, 0x307);
                     }
+                    else
+                    {
+                        Effects.SendLocationParticles(this.Caster, 0x36BD, 20, 10, 5044);
+                        Effects.PlaySound(this.Caster.Location, this.Caster.Map, 0x307);
+                    }
+                    // PATCH UOR: riflesso diretto (DOPO gli effetti)
+                    if (m != null && SpellHelper.CheckReflectUOR(this, this.Caster, m, damage))
+                    {
+                        reflected = true;
+                        continue; // Il danno è già stato riflesso dalla funzione, non fare altro
+                    }
+                    // Magic Resistance (DOPO il check reflection)
+                    if (m != null && this.CheckResisted(m))
+                    {
+                        damage *= 0.5;
+                        m.SendMessage(0x22, "You resist the spell!");
+                    }
+                    if (m != null)
+                        damage *= this.GetDamageScalar(m);
+                    SpellHelper.Damage(this, id, damage, 0, 100, 0, 0, 0);
                 }
-
                 targets.Clear();
                 targets.TrimExcess();
+                this.FinishSequence();
+                return;
             }
-
+            // --- LOGICA ORIGINALE (AOS e altro) ---
+            if (!this.Caster.CanSee(p))
+            {
+                this.Caster.SendLocalizedMessage(500237); // Target can not be seen.
+                this.FinishSequence();
+                return;
+            }
+            if (!SpellHelper.CheckTown(p, this.Caster) || !this.CheckSequence())
+            {
+                this.FinishSequence();
+                return;
+            }
+            SpellHelper.Turn(this.Caster, p);
+            if (p is Item)
+                p = ((Item)p).GetWorldLocation();
+            List<IDamageable> targetsAos = new List<IDamageable>();
+            Map mapAos = this.Caster.Map;
+            if (mapAos != null)
+            {
+                IPooledEnumerable eable = mapAos.GetObjectsInRange(new Point3D(p), 2);
+                foreach (object o in eable)
+                {
+                    IDamageable id = o as IDamageable;
+                    if (id == null || (Core.AOS && id is Mobile && (Mobile)id == this.Caster))
+                        continue;
+                    if ((!(id is Mobile) || SpellHelper.ValidIndirectTarget(this.Caster, id as Mobile)) && this.Caster.CanBeHarmful(id, false))
+                    {
+                        if (Core.AOS && !this.Caster.InLOS(id))
+                            continue;
+                        targetsAos.Add(id);
+                    }
+                }
+                eable.Free();
+            }
+            double damageAos;
+            if (targetsAos.Count > 0)
+            {
+                Effects.PlaySound(p, this.Caster.Map, 0x160);
+                for (int i = 0; i < targetsAos.Count; ++i)
+                {
+                    IDamageable id = targetsAos[i];
+                    Mobile m = id as Mobile;
+                    if (Core.AOS)
+                        damageAos = this.GetNewAosDamage(51, 1, 5, id is PlayerMobile, id);
+                    else
+                        damageAos = Utility.Random(27, 22);
+                    if (Core.AOS && targetsAos.Count > 2)
+                        damageAos = (damageAos * 2) / targetsAos.Count;
+                    else if (!Core.AOS)
+                        damageAos /= targetsAos.Count;
+                    if (!Core.AOS && m != null && this.CheckResisted(m))
+                    {
+                        damageAos *= 0.5;
+                    }
+                    if(m != null)
+                        damageAos *= this.GetDamageScalar(m);
+                    this.Caster.DoHarmful(id);
+                    SpellHelper.Damage(this, id, damageAos, 0, 100, 0, 0, 0);
+                    this.Caster.MovingParticles(id, 0x36D4, 7, 0, false, true, 9501, 1, 0, 0x100);
+                }
+            }
+            targetsAos.Clear();
+            targetsAos.TrimExcess();
             this.FinishSequence();
         }
 

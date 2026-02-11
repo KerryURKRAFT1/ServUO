@@ -12,6 +12,7 @@ namespace Server.Spells.Fourth
             9021,
             Reagent.MandrakeRoot,
             Reagent.SulfurousAsh);
+        
         public LightningSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {
@@ -24,6 +25,7 @@ namespace Server.Spells.Fourth
                 return SpellCircle.Fourth;
             }
         }
+        
         public override bool DelayedDamage
         {
             get
@@ -34,19 +36,19 @@ namespace Server.Spells.Fourth
 
         public override bool Cast()
         {
-        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
-        	{
-        		return (this.Caster.Target = new InternalTarget(this)) != null;
-        	}
+            if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+            {
+                return (this.Caster.Target = new InternalTarget(this)) != null;
+            }
 
-        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
-        	
-        	return false;
+            this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+            
+            return false;
         }
 
         public override void OnCast()
         {
-        	Target ((IDamageable)ObjectTargeted);
+            Target((IDamageable)ObjectTargeted);
         }
         
         public void Target(IDamageable m)
@@ -61,14 +63,40 @@ namespace Server.Spells.Fourth
             {
                 SpellHelper.Turn(this.Caster, m);
 
-                if(mob != null)
+                // CheckReflect classico (AOS/Pre-AOS)
+                if (mob != null && !Core.UOR)
                     SpellHelper.CheckReflect((int)this.Circle, this.Caster, ref mob);
+
+                // Spell interruption
+                if (mob != null && mob.Spell != null)
+                    mob.Spell.OnCasterHurt();
 
                 double damage = 0;
 
                 if (Core.AOS)
                 {
                     damage = this.GetNewAosDamage(23, 1, 4, m);
+                }
+                else if (Core.UOR)
+                {
+                    damage = Utility.Random(20, 5); // 20-24
+                    
+                    // Effetti visivi PRIMA del check reflect
+                    Effects.SendBoltEffect(m, true, 0);
+                    
+                    // PATCH UOR: riflesso diretto (DOPO gli effetti)
+                    if (mob != null && SpellHelper.CheckReflectUOR(this, this.Caster, mob, damage))
+                    {
+                        this.FinishSequence();
+                        return;
+                    }
+                    
+                    // Magic Resistance (DOPO il check reflection)
+                    if (mob != null && this.CheckResisted(mob))
+                    {
+                        damage /= 2.0;
+                        mob.SendMessage(0x22, "You resist the spell!");
+                    }
                 }
                 else if (mob != null)
                 {
@@ -79,14 +107,16 @@ namespace Server.Spells.Fourth
                         damage *= 0.75;
                     }
 
-					if (mob.Spell != null)
-	                    mob.Spell.OnCasterHurt();
-
-					damage *= this.GetDamageScalar(mob);
+                    damage *= this.GetDamageScalar(mob);
                 }
 
-                Effects.SendBoltEffect(m, true, 0);
+                // Effetti visivi per AOS/Old (NON UOR)
+                if (!Core.UOR)
+                {
+                    Effects.SendBoltEffect(m, true, 0);
+                }
 
+                // Danno
                 if (damage > 0)
                 {
                     SpellHelper.Damage(this, m, damage, 0, 0, 0, 0, 100);
@@ -99,6 +129,7 @@ namespace Server.Spells.Fourth
         private class InternalTarget : Target
         {
             private readonly LightningSpell m_Owner;
+            
             public InternalTarget(LightningSpell owner)
                 : base(Core.ML ? 10 : 12, true, TargetFlags.Harmful)
             {
@@ -109,21 +140,22 @@ namespace Server.Spells.Fourth
             {
                 if (o is IDamageable)
                 {
-                	if (!this.m_Owner.StartSequence(o))
-                	{
-                		this.m_Owner.FinishSequence();
-                	}
+                    if (!this.m_Owner.StartSequence(o))
+                    {
+                        this.m_Owner.FinishSequence();
+                    }
                 }
                 else
                 {
-	              	from.SendLocalizedMessage(1005213); // You can't do that
+                    from.SendLocalizedMessage(1005213); // You can't do that
                 }
             }
-	        protected override void OnTargetOutOfLOS(Mobile from, object o)
-	        {
-	            from.Target = new InternalTarget(m_Owner);
-				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
-	        }
+            
+            protected override void OnTargetOutOfLOS(Mobile from, object o)
+            {
+                from.Target = new InternalTarget(m_Owner);
+                from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
+            }
         }
     }
 }
