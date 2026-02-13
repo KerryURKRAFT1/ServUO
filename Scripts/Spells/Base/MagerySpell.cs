@@ -127,6 +127,20 @@ namespace Server.Spells
 
         public virtual double GetResistPercentForCircle(Mobile target, SpellCircle circle)
         {
+            if (Core.UOR)
+            {
+                // SPHERE 51-55 STYLE
+                double resistSkill = target.Skills[SkillName.MagicResist].Value;
+                double circleModifier = ((int)circle + 1) * 10.0;
+                double resistChance = (resistSkill / circleModifier) * 100.0;
+                
+                if (resistChance > 70.0)
+                    resistChance = 70.0;
+                
+                return resistChance;
+            }
+
+
             double firstPercent = target.Skills[SkillName.MagicResist].Value / 5.0;
 			
             double secondPercent = target.Skills[SkillName.MagicResist].Value - (((this.Caster.Skills[this.CastSkill].Value - 20.0) / 5.0) + (1 + (int)circle) * 5.0);

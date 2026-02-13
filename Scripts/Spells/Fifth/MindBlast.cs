@@ -14,6 +14,7 @@ namespace Server.Spells.Fifth
             Reagent.MandrakeRoot,
             Reagent.Nightshade,
             Reagent.SulfurousAsh);
+
         public MindBlastSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {
@@ -28,6 +29,7 @@ namespace Server.Spells.Fifth
                 return SpellCircle.Fifth;
             }
         }
+
         public override bool DelayedDamage
         {
             get
@@ -38,19 +40,19 @@ namespace Server.Spells.Fifth
 
         public override bool Cast()
         {
-        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
-        	{
-        		return (this.Caster.Target = new InternalTarget(this)) != null;
-        	}
+            if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+            {
+                return (this.Caster.Target = new InternalTarget(this)) != null;
+            }
 
-        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
-        	
-        	return false;
+            this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+            
+            return false;
         }
 
         public override void OnCast()
         {
-        	Target ((Mobile)ObjectTargeted);
+            Target((Mobile)ObjectTargeted);
         }
 
         public void Target(Mobile m)
@@ -70,7 +72,7 @@ namespace Server.Spells.Fifth
                     SpellHelper.CheckReflect((int)this.Circle, ref from, ref target);
 
                     int damage = (int)((this.Caster.Skills[SkillName.Magery].Value + this.Caster.Int) / 5);
-					
+                    
                     if (damage > 60)
                         damage = 60;
 
@@ -85,10 +87,15 @@ namespace Server.Spells.Fifth
 
                 SpellHelper.Turn(from, target);
 
-                SpellHelper.CheckReflect((int)this.Circle, ref from, ref target);
+                // CheckReflect classico (Pre-AOS)
+                if (!Core.UOR)
+                    SpellHelper.CheckReflect((int)this.Circle, ref from, ref target);
+
+                // Spell interruption
+                if (m.Spell != null)
+                    m.Spell.OnCasterHurt();
 
                 // Algorithm: (highestStat - lowestStat) / 2 [- 50% if resisted]
-
                 int highestStat = target.Str, lowestStat = target.Str;
 
                 if (target.Dex > highestStat)
@@ -109,31 +116,44 @@ namespace Server.Spells.Fifth
                 if (lowestStat > 150) 
                     lowestStat = 150;
 
-				if (m.Spell != null)
-                    m.Spell.OnCasterHurt();
+                double damage = this.GetDamageScalar(m) * (highestStat - lowestStat) / 2;
 
-				double damage;
-
-                if (Core.AOS)
-                {
-                    damage = this.GetDamageScalar(m)*(highestStat - lowestStat)/4; //less damage
-                }
-                else
-                {
-                    damage = this.GetDamageScalar(m) * (highestStat - lowestStat) / 2; //less damage
-                }
                 if (damage > 45)
                     damage = 45;
 
-                if (this.CheckResisted(target))
+                if (Core.UOR)
                 {
-                    damage /= 2;
+                    // Effetti visivi e sonori PRIMA del check reflect
+                    from.FixedParticles(0x374A, 10, 15, 2038, EffectLayer.Head);
+                    target.FixedParticles(0x374A, 10, 15, 5038, EffectLayer.Head);
+                    target.PlaySound(0x213);
+
+                    // PATCH UOR: riflesso diretto (DOPO gli effetti)
+                    if (SpellHelper.CheckReflectUOR(this, from, target, damage))
+                    {
+                        this.FinishSequence();
+                        return;
+                    }
+
+                    // Magic Resistance (DOPO il check reflection)
+                    if (this.CheckResisted(target))
+                    {
+                        damage /= 2;
+                    }
                 }
+                else
+                {
+                    // Pre-AOS resistance check
+                    if (this.CheckResisted(target))
+                    {
+                        damage /= 2;
+                    }
 
-                from.FixedParticles(0x374A, 10, 15, 2038, EffectLayer.Head);
-
-                target.FixedParticles(0x374A, 10, 15, 5038, EffectLayer.Head);
-                target.PlaySound(0x213);
+                    // Effetti per Pre-AOS
+                    from.FixedParticles(0x374A, 10, 15, 2038, EffectLayer.Head);
+                    target.FixedParticles(0x374A, 10, 15, 5038, EffectLayer.Head);
+                    target.PlaySound(0x213);
+                }
 
                 SpellHelper.Damage(this, target, damage, 0, 0, 100, 0, 0);
             }
@@ -143,7 +163,7 @@ namespace Server.Spells.Fifth
 
         public override double GetSlayerDamageScalar(Mobile target)
         {
-            return 1.0; //This spell isn't affected by slayer spellbooks
+            return 1.0; // This spell isn't affected by slayer spellbooks
         }
 
         private void AosDelay_Callback(object state)
@@ -166,6 +186,7 @@ namespace Server.Spells.Fifth
         private class InternalTarget : Target
         {
             private readonly MindBlastSpell m_Owner;
+
             public InternalTarget(MindBlastSpell owner)
                 : base(Core.ML ? 10 : 12, true, TargetFlags.Harmful)
             {
@@ -176,21 +197,22 @@ namespace Server.Spells.Fifth
             {
                 if (o is Mobile)
                 {
-                 	if (!this.m_Owner.StartSequence(o))
-                	{
-                		this.m_Owner.FinishSequence();
-                	}
+                    if (!this.m_Owner.StartSequence(o))
+                    {
+                        this.m_Owner.FinishSequence();
+                    }
                 }
                 else
                 {
-	              	from.SendLocalizedMessage(1005213); // You can't do that
+                    from.SendLocalizedMessage(1005213); // You can't do that
                 }
             }
-            	        protected override void OnTargetOutOfLOS(Mobile from, object o)
-	        {
-	            from.Target = new InternalTarget(m_Owner);
-				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
-	        }
+
+            protected override void OnTargetOutOfLOS(Mobile from, object o)
+            {
+                from.Target = new InternalTarget(m_Owner);
+                from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
+            }
         }
     }
 }

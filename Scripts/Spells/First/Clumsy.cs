@@ -12,6 +12,7 @@ namespace Server.Spells.First
             9031,
             Reagent.Bloodmoss,
             Reagent.Nightshade);
+
         public ClumsySpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {
@@ -27,19 +28,19 @@ namespace Server.Spells.First
 
         public override bool Cast()
         {
-        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
-        	{
-        		return (this.Caster.Target = new InternalTarget(this)) != null;
-        	}
+            if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+            {
+                return (this.Caster.Target = new InternalTarget(this)) != null;
+            }
 
-        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
-        	
-        	return false;
-       }
+            this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+            
+            return false;
+        }
 
         public override void OnCast()
         {
-        	Target ((Mobile)ObjectTargeted);
+            Target((Mobile)ObjectTargeted);
         }
 
         public void Target(Mobile m)
@@ -52,20 +53,42 @@ namespace Server.Spells.First
             {
                 SpellHelper.Turn(this.Caster, m);
 
-                SpellHelper.CheckReflect((int)this.Circle, this.Caster, ref m);
+                // CheckReflect classico (AOS/Pre-AOS)
+                if (!Core.UOR)
+                    SpellHelper.CheckReflect((int)this.Circle, this.Caster, ref m);
 
-				SpellHelper.AddStatCurse(this.Caster, m, StatType.Dex);
-				int percentage = (int)(SpellHelper.GetOffsetScalar(this.Caster, m, true) * 100);
-				TimeSpan length = SpellHelper.GetDuration(this.Caster, m);
-				BuffInfo.AddBuff(m, new BuffInfo(BuffIcon.Clumsy, 1075831, length, m, percentage.ToString()));
-
-				if (m.Spell != null)
+                // Spell interruption
+                if (m.Spell != null)
                     m.Spell.OnCasterHurt();
+
+                if (Core.UOR)
+                {
+                    // Effetti visivi e sonori PRIMA del check reflect
+                    m.FixedParticles(0x3779, 10, 15, 5002, EffectLayer.Head);
+                    m.PlaySound(0x1DF);
+
+                    // PATCH UOR: riflesso diretto (DOPO gli effetti)
+                    if (SpellHelper.CheckReflectUOR(this, this.Caster, ref m))
+                    {
+                        this.FinishSequence();
+                        return;
+                    }
+                }
+
+                // Applica l'effetto Clumsy
+                SpellHelper.AddStatCurse(this.Caster, m, StatType.Dex);
+                int percentage = (int)(SpellHelper.GetOffsetScalar(this.Caster, m, true) * 100);
+                TimeSpan length = SpellHelper.GetDuration(this.Caster, m);
+                BuffInfo.AddBuff(m, new BuffInfo(BuffIcon.Clumsy, 1075831, length, m, percentage.ToString()));
 
                 m.Paralyzed = false;
 
-                m.FixedParticles(0x3779, 10, 15, 5002, EffectLayer.Head);
-                m.PlaySound(0x1DF);
+                // Effetti visivi e sonori per AOS/Old (NON UOR)
+                if (!Core.UOR)
+                {
+                    m.FixedParticles(0x3779, 10, 15, 5002, EffectLayer.Head);
+                    m.PlaySound(0x1DF);
+                }
 
                 this.HarmfulSpell(m);
             }
@@ -76,6 +99,7 @@ namespace Server.Spells.First
         private class InternalTarget : Target
         {
             private readonly ClumsySpell m_Owner;
+
             public InternalTarget(ClumsySpell owner)
                 : base(Core.ML ? 10 : 12, true, TargetFlags.Harmful)
             {
@@ -86,21 +110,22 @@ namespace Server.Spells.First
             {
                 if (o is Mobile)
                 {
-                	if (!this.m_Owner.StartSequence(o))
-                	{
-                		this.m_Owner.FinishSequence();
-                	}
+                    if (!this.m_Owner.StartSequence(o))
+                    {
+                        this.m_Owner.FinishSequence();
+                    }
                 }
                 else
                 {
-	              	from.SendLocalizedMessage(1005213); // You can't do that
+                    from.SendLocalizedMessage(1005213); // You can't do that
                 }
             }
-	        protected override void OnTargetOutOfLOS(Mobile from, object o)
-	        {
-	            from.Target = new InternalTarget(m_Owner);
-				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
-	        }
+
+            protected override void OnTargetOutOfLOS(Mobile from, object o)
+            {
+                from.Target = new InternalTarget(m_Owner);
+                from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
+            }
         }
     }
 }

@@ -3,50 +3,52 @@
 // ServUO - Spell.cs
 // **********
 #endregion
-
+/*
 #region PlayerMobile Mods
-//
-//		public override void OnDamage(int amount, Mobile from, bool willKill)
-//		{
-//			int disruptThreshold;
-//
-//			if (!Core.AOS)
-//			{
-//				//threshold for preAOS
-//				disruptThreshold = 0;
-//			}
-//			else if (from != null && from.Player)
-//			{
-//				disruptThreshold = 19;
-//			}
-//			else
-//			{
-//				disruptThreshold = 26;
-//			}
-//
-//			if (amount > disruptThreshold)
-//			{
-//				BandageContext c = BandageContext.GetContext(this);
-//
-//				if (c != null)
-//				{
-//					c.Slip();
-//				}
-//
-//				//Disturb mod
-//				if (this.Spell != null && this.Spell.IsCasting)
-//            	{
-//					((Spell)this.Spell).Disturb(DisturbType.Hurt);
-//				}
-//				//end
-//			}
-//
-//			. . .
-//
-//			base.OnDamage(amount, from, willKill);
-//		}
-//
+
+		public override void OnDamage(int amount, Mobile from, bool willKill)
+		{
+			int disruptThreshold;
+
+			if (!Core.AOS)
+			{
+				//threshold for preAOS
+				disruptThreshold = 0;
+			}
+			else if (from != null && from.Player)
+			{
+				disruptThreshold = 19;
+			}
+			else
+			{
+				disruptThreshold = 26;
+			}
+
+			if (amount > disruptThreshold)
+			{
+				BandageContext c = BandageContext.GetContext(this);
+
+				if (c != null)
+				{
+					c.Slip();
+				}
+
+				//Disturb mod
+				if (this.Spell != null && this.Spell.IsCasting)
+            	{
+					((Spell)this.Spell).Disturb(DisturbType.Hurt);
+				}
+				//end
+			}
+
+			. . .
+
+			base.OnDamage(amount, from, willKill);
+		}
+
 #endregion
+*/
+
 
 #region References
 using System;
@@ -138,6 +140,16 @@ namespace Server.Spells
 				m_Contexts.Remove(d);
 			}
 		}
+
+
+		// UOR REFLECT
+
+		public virtual void OnReflected(Mobile from, Mobile to)
+		{
+			// Default: nessun effetto (override negli spell che lo necessitano)
+		}
+
+
 
         public void StartDelayedDamageContext(IDamageable d, Timer t)
 		{
@@ -348,7 +360,9 @@ namespace Server.Spells
 
 		public virtual bool ConsumeReagents()
 		{			
-			if (m_Caster.IsStaff())
+            GMRobe robe = m_Caster.FindItemOnLayer(Layer.OuterTorso) as GMRobe; 
+			
+            if (robe != null)
             {
             	return true;
             }
@@ -416,6 +430,14 @@ namespace Server.Spells
 
 		public virtual double GetDamageScalar(Mobile target)
 		{
+
+			if( Core.UOR )
+			{
+				// SPHERE 51-55: Eval Int NON influenza il danno diretto
+				return 1.0; // Sempre 1.0, nessun bonus
+			}
+
+
 			double scalar = 1.0;
 
             if (target == null)

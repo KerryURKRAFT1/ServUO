@@ -148,7 +148,7 @@ namespace Server.Spells
         {
             // Don't turn the caster if they are moving (running while casting)
             if (IsCasterMoving(from))
-                return;
+            return;
 
             IPoint3D target = to as IPoint3D;
 
@@ -1084,49 +1084,118 @@ namespace Server.Spells
         }
 
         // UOR STYLE - SPELL REFLECT
-            public static bool CheckReflectUOR(Spell spell, Mobile caster, Mobile target, double damage)
+        public static bool CheckReflectUOR(Spell spell, Mobile caster, Mobile target, double damage)
+        {
+            
+            if (!Core.UOR)
+                return false;
+
+            // Se il target ha Reflection attivo
+            if (target.MagicDamageAbsorb > 0)
             {
-                // Funziona solo su Core.UOR
-                if (!Core.UOR)
-                    return false;
+                // Check se creature ha logica speciale
+                bool shouldReflect = true;
+                if (target is BaseCreature)
+                    ((BaseCreature)target).CheckReflect(caster, ref shouldReflect);
 
-                // Se il target ha Reflection attivo
-                if (target.MagicDamageAbsorb > 0)
+                // Consuma Reflection dal target
+                MagicReflectSpell.EndReflect(target);
+                
+                if (shouldReflect)
                 {
-                    // Consuma Reflection dal target (include effetti/sonoro/messaggio standard)
-                    MagicReflectSpell.EndReflect(target);
-
-                    // Effetto e suono della Magic Arrow che colpisce il target
-                    caster.MovingParticles(target, 0x36E4, 5, 0, false, false, 3006, 0, 0);
-                    caster.PlaySound(0x1E5);
+                    //  SHIELD sul target (SEMPRE)
+                    
+                    target.FixedEffect(0x375A, 10, 5);
 
                     // Se anche il caster ha Reflection attivo
                     if (caster.MagicDamageAbsorb > 0)
                     {
-                        // Consuma Reflection dal caster (include effetti/sonoro/messaggio standard)
+                        // Check se caster ha logica speciale
+                        bool casterReflect = true;
+                        if (caster is BaseCreature)
+                            ((BaseCreature)caster).CheckReflect(target, ref casterReflect);
+
+                        // Consuma Reflection dal caster
                         MagicReflectSpell.EndReflect(caster);
+                        
+                        if (casterReflect)
+                        {
+                            //  SCENARIO 2: Entrambi hanno reflection
+                            caster.FixedEffect(0x375A, 10, 5);
 
-                        // Effetto e suono della Magic Arrow che colpisce il caster
-                        target.MovingParticles(caster, 0x36E4, 5, 0, false, false, 3006, 0, 0);
-                        target.PlaySound(0x1E5);
-
-                        // Spell neutralizzata, non infliggere danno a nessuno
+                        }
+                        
+                        // Spell neutralizzata, nessun danno
                         return true;
                     }
                     else
                     {
-                        // Magic Arrow riflessa: effetto e suono su caster
-                        target.MovingParticles(caster, 0x36E4, 5, 0, false, false, 3006, 0, 0);
-                        target.PlaySound(0x1E5);
-
+                        //  SCENARIO 1: Solo target ha reflection
+                        
+                        // Danno al caster
                         SpellHelper.Damage(spell, caster, damage);
                         return true;
                     }
                 }
-
-                // Nessun reflect: la spell va avanti normalmente
-                return false;
             }
+
+            // Nessun reflect: la spell va avanti normalmente
+            return false;
+        }
+
+
+
+        // UOR STYLE - SPELL REFLECT (per spell SENZA danno - Paralyze, Mana Drain, ecc.)
+        // Modifica il parametro target passato per reference
+        
+        public static bool CheckReflectUOR(Spell spell, Mobile caster, ref Mobile target)
+        {
+            if (!Core.UOR)
+                return false;
+
+            Mobile originalTarget = target;
+
+            if (target.MagicDamageAbsorb > 0)
+            {
+                bool shouldReflect = true;
+                if (target is BaseCreature)
+                    ((BaseCreature)target).CheckReflect(caster, ref shouldReflect);
+
+                MagicReflectSpell.EndReflect(target);
+                
+                if (shouldReflect)
+                {
+                    target.FixedEffect(0x375A, 10, 5);
+
+                    if (caster.MagicDamageAbsorb > 0)
+                    {
+                        bool casterReflect = true;
+                        if (caster is BaseCreature)
+                            ((BaseCreature)caster).CheckReflect(originalTarget, ref casterReflect);
+
+                        MagicReflectSpell.EndReflect(caster);
+                        
+                        if (casterReflect)
+                        {
+                            caster.FixedEffect(0x375A, 10, 5);
+                        }
+                        
+                        // Spell neutralizzata
+                        return true;
+                    }
+                    else
+                    {
+                        // Riflessa: cambia target al caster
+                        target = caster;
+                        
+                        // Ritorna false: la spell continua ma sul nuovo target (caster)
+                        return false;
+                    }
+                }
+            }
+
+            return false;
+        }
 
         /*
         public static bool CheckReflectUOR(Spell spell, ref Mobile caster, ref Mobile target, double damage)

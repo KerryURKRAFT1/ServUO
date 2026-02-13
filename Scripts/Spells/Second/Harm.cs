@@ -12,6 +12,7 @@ namespace Server.Spells.Second
             Core.AOS ? 9001 : 9041,
             Reagent.Nightshade,
             Reagent.SpidersSilk);
+        
         public HarmSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {
@@ -24,6 +25,7 @@ namespace Server.Spells.Second
                 return SpellCircle.Second;
             }
         }
+        
         public override bool DelayedDamage
         {
             get
@@ -34,24 +36,24 @@ namespace Server.Spells.Second
 
         public override bool Cast()
         {
-        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
-        	{
-        		return (this.Caster.Target = new InternalTarget(this)) != null;
-        	}
+            if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+            {
+                return (this.Caster.Target = new InternalTarget(this)) != null;
+            }
 
-        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
-        	
-        	return false;
+            this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+            
+            return false;
         }
 
         public override void OnCast()
         {
-        	Target ((IDamageable)ObjectTargeted);
+            Target((IDamageable)ObjectTargeted);
         }
 
         public override double GetSlayerDamageScalar(Mobile target)
         {
-            return 1.0; //This spell isn't affected by slayer spellbooks
+            return 1.0; // This spell isn't affected by slayer spellbooks
         }
 
         public void Target(IDamageable m)
@@ -66,14 +68,55 @@ namespace Server.Spells.Second
             {
                 SpellHelper.Turn(this.Caster, m);
 
-                if(mob != null)
+                // CheckReflect classico (AOS/Pre-AOS)
+                if (mob != null && !Core.UOR)
                     SpellHelper.CheckReflect((int)this.Circle, this.Caster, ref mob);
 
+                // Spell interruption
+                if (mob != null && mob.Spell != null)
+                    mob.Spell.OnCasterHurt();
+
                 double damage = 0;
-				
+                
                 if (Core.AOS)
                 {
                     damage = this.GetNewAosDamage(17, 1, 5, m);
+                }
+                else if (Core.UOR)
+                {
+                    damage = Utility.Random(10, 5); // 10-15
+                    
+                    // Range modifier (Harm ha penalità distanza!)
+                    if (!this.Caster.InRange(m, 2))
+                        damage *= 0.25; // 1/4 damage at > 2 tile range
+                    else if (!this.Caster.InRange(m, 1))
+                        damage *= 0.50; // 1/2 damage at 2 tile range
+                    
+                    // Effetti visivi e sonori PRIMA del check reflect
+                    if (mob != null)
+                    {
+                        mob.FixedParticles(0x374A, 10, 15, 5013, EffectLayer.Waist);
+                        mob.PlaySound(0x1F1);
+                    }
+                    else
+                    {
+                        Effects.SendLocationParticles(m, 0x374A, 10, 15, 5013);
+                        Effects.PlaySound(m.Location, m.Map, 0x1F1);
+                    }
+                    
+                    // PATCH UOR: riflesso diretto (DOPO gli effetti)
+                    if (mob != null && SpellHelper.CheckReflectUOR(this, this.Caster, mob, damage))
+                    {
+                        this.FinishSequence();
+                        return;
+                    }
+                    
+                    // Magic Resistance (DOPO il check reflection)
+                    if (mob != null && this.CheckResisted(mob))
+                    {
+                        damage /= 2.0;
+                        mob.SendMessage(0x22, "You resist the spell!");
+                    }
                 }
                 else if (mob != null)
                 {
@@ -84,17 +127,19 @@ namespace Server.Spells.Second
                         damage *= 0.75;
                     }
 
-					if (mob.Spell != null)
-	                    mob.Spell.OnCasterHurt();
-
-					damage *= this.GetDamageScalar(mob);
+                    damage *= this.GetDamageScalar(mob);
                 }
 
-                if (!this.Caster.InRange(m, 2))
-                    damage *= 0.25; // 1/4 damage at > 2 tile range
-                else if (!this.Caster.InRange(m, 1))
-                    damage *= 0.50; // 1/2 damage at 2 tile range
+                // Range modifier per Pre-AOS
+                if (!Core.AOS && !Core.UOR)
+                {
+                    if (!this.Caster.InRange(m, 2))
+                        damage *= 0.25;
+                    else if (!this.Caster.InRange(m, 1))
+                        damage *= 0.50;
+                }
 
+                // Effetti visivi per AOS/Old (NON UOR)
                 if (Core.AOS)
                 {
                     if (mob != null)
@@ -108,12 +153,21 @@ namespace Server.Spells.Second
                         Effects.PlaySound(m.Location, m.Map, 0x0FC);
                     }
                 }
-                else if (mob != null)
+                else if (!Core.UOR)
                 {
-                    mob.FixedParticles(0x374A, 10, 15, 5013, EffectLayer.Waist);
-                    mob.PlaySound(0x1F1);
+                    if (mob != null)
+                    {
+                        mob.FixedParticles(0x374A, 10, 15, 5013, EffectLayer.Waist);
+                        mob.PlaySound(0x1F1);
+                    }
+                    else
+                    {
+                        Effects.SendLocationParticles(m, 0x374A, 10, 15, 5013);
+                        Effects.PlaySound(m.Location, m.Map, 0x1F1);
+                    }
                 }
 
+                // Danno
                 if (damage > 0)
                 {
                     SpellHelper.Damage(this, m, damage, 0, 0, 100, 0, 0);
@@ -126,6 +180,7 @@ namespace Server.Spells.Second
         private class InternalTarget : Target
         {
             private readonly HarmSpell m_Owner;
+            
             public InternalTarget(HarmSpell owner)
                 : base(Core.ML ? 10 : 12, true, TargetFlags.Harmful)
             {
@@ -136,21 +191,22 @@ namespace Server.Spells.Second
             {
                 if (o is IDamageable)
                 {
-	            	if (!this.m_Owner.StartSequence(o))
-	            	{
-	            		this.m_Owner.FinishSequence();
-	            	}
+                    if (!this.m_Owner.StartSequence(o))
+                    {
+                        this.m_Owner.FinishSequence();
+                    }
                 }
                 else
                 {
-	              	from.SendLocalizedMessage(1005213); // You can't do that
+                    from.SendLocalizedMessage(1005213); // You can't do that
                 }
             }
-	        protected override void OnTargetOutOfLOS(Mobile from, object o)
-	        {
-	            from.Target = new InternalTarget(m_Owner);
-				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
-	        }
+            
+            protected override void OnTargetOutOfLOS(Mobile from, object o)
+            {
+                from.Target = new InternalTarget(m_Owner);
+                from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
+            }
         }
     }
 }

@@ -12,6 +12,7 @@ namespace Server.Spells.Sixth
             9022,
             Reagent.BlackPearl,
             Reagent.Nightshade);
+        
         public EnergyBoltSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {
@@ -24,6 +25,7 @@ namespace Server.Spells.Sixth
                 return SpellCircle.Sixth;
             }
         }
+        
         public override bool DelayedDamage
         {
             get
@@ -34,19 +36,19 @@ namespace Server.Spells.Sixth
 
         public override bool Cast()
         {
-        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
-        	{
-        		return (this.Caster.Target = new InternalTarget(this)) != null;
-        	}
+            if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+            {
+                return (this.Caster.Target = new InternalTarget(this)) != null;
+            }
 
-        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
-        	
-        	return false;
+            this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+            
+            return false;
         }
 
         public override void OnCast()
         {
-        	Target ((IDamageable)ObjectTargeted);
+            Target((IDamageable)ObjectTargeted);
         }
 
         public void Target(IDamageable m)
@@ -59,12 +61,15 @@ namespace Server.Spells.Sixth
             }
             else if (this.CheckHSequence(m))
             {
-                Mobile source = this.Caster;
-
                 SpellHelper.Turn(this.Caster, m);
 
-                if(mob != null)
-                    SpellHelper.CheckReflect((int)this.Circle, ref source, ref mob);
+                // CheckReflect classico (AOS/Pre-AOS)
+                if (mob != null && !Core.UOR)
+                    SpellHelper.CheckReflect((int)this.Circle, this.Caster, ref mob);
+
+                // Spell interruption
+                if (mob != null && mob.Spell != null)
+                    mob.Spell.OnCasterHurt();
 
                 double damage = 0;
 
@@ -72,29 +77,66 @@ namespace Server.Spells.Sixth
                 {
                     damage = this.GetNewAosDamage(40, 1, 5, m);
                 }
+                else if (Core.UOR)
+                {
+                    damage = Utility.Random(40, 5); // 40-44
+
+                    // Effetti visivi e sonori PRIMA del check reflect
+                    if (mob != null)
+                    {
+                        this.Caster.MovingParticles(mob, 0x379F, 7, 0, false, true, 3043, 4043, 0x211);
+                        this.Caster.PlaySound(0x20A);
+                    }
+                    else
+                    {
+                        this.Caster.MovingParticles(m, 0x379F, 7, 0, false, true, 3043, 4043, 0x211);
+                        this.Caster.PlaySound(0x20A);
+                    }
+                    
+                    // PATCH UOR: riflesso diretto (DOPO gli effetti)
+                    if (mob != null && SpellHelper.CheckReflectUOR(this, this.Caster, mob, damage))
+                    {
+                        this.FinishSequence();
+                        return;
+                    }
+                    
+                    // Magic Resistance (DOPO il check reflection)
+                    if (mob != null && this.CheckResisted(mob))
+                    {
+                        damage /= 2.0;
+                        mob.SendMessage(0x22, "You resist the spell!");
+                    }
+                }
                 else if (mob != null)
                 {
                     damage = Utility.Random(24, 18);
 
-					if (mob.Spell != null)
-	                    mob.Spell.OnCasterHurt();
-	
-					if (this.CheckResisted(mob))
+                    if (this.CheckResisted(mob))
                     {
                         damage *= 0.75;
                     }
 
-                    // Scale damage based on evalint and resist
                     damage *= this.GetDamageScalar(mob);
                 }
 
-                // Do the effects
-                source.MovingParticles(m, 0x379F, 7, 0, false, true, 3043, 4043, 0x211);
-                source.PlaySound(0x20A);
+                // Effetti visivi e sonori per AOS/Old (NON UOR)
+                if (!Core.UOR)
+                {
+                    if (mob != null)
+                    {
+                        this.Caster.MovingParticles(mob, 0x379F, 7, 0, false, true, 3043, 4043, 0x211);
+                        this.Caster.PlaySound(0x20A);
+                    }
+                    else
+                    {
+                        this.Caster.MovingParticles(m, 0x379F, 7, 0, false, true, 3043, 4043, 0x211);
+                        this.Caster.PlaySound(0x20A);
+                    }
+                }
 
+                // Danno
                 if (damage > 0)
                 {
-                    // Deal the damage
                     SpellHelper.Damage(this, m, damage, 0, 0, 0, 0, 100);
                 }
             }
@@ -105,6 +147,7 @@ namespace Server.Spells.Sixth
         private class InternalTarget : Target
         {
             private readonly EnergyBoltSpell m_Owner;
+            
             public InternalTarget(EnergyBoltSpell owner)
                 : base(Core.ML ? 10 : 12, true, TargetFlags.Harmful)
             {
@@ -115,21 +158,22 @@ namespace Server.Spells.Sixth
             {
                 if (o is IDamageable)
                 {
-                	if (!this.m_Owner.StartSequence(o))
-                	{
-                		this.m_Owner.FinishSequence();
-                	}
+                    if (!this.m_Owner.StartSequence(o))
+                    {
+                        this.m_Owner.FinishSequence();
+                    }
                 }
                 else
                 {
-	              	from.SendLocalizedMessage(1005213); // You can't do that
+                    from.SendLocalizedMessage(1005213); // You can't do that
                 }
             }
-	        protected override void OnTargetOutOfLOS(Mobile from, object o)
-	        {
-	            from.Target = new InternalTarget(m_Owner);
-				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
+            
+            protected override void OnTargetOutOfLOS(Mobile from, object o)
+            {
+                from.Target = new InternalTarget(m_Owner);
+                from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
+            }
         }
-       }
     }
 }

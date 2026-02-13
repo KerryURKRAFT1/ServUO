@@ -1,8 +1,8 @@
 using System;
+using System.Collections.Generic;
 using Server.Targeting;
 using Server.Network;
 using Server.Items;
-using System.Collections.Generic;
 
 namespace Server.Spells.Sixth
 {
@@ -14,10 +14,6 @@ namespace Server.Spells.Sixth
             9041,
             Reagent.Bloodmoss,
             Reagent.MandrakeRoot);
-        public ExplosionSpell(Mobile caster, Item scroll)
-            : base(caster, scroll, m_Info)
-        {
-        }
 
         public override SpellCircle Circle
         {
@@ -27,84 +23,154 @@ namespace Server.Spells.Sixth
             }
         }
 
-        public override bool Cast()
+        public ExplosionSpell(Mobile caster, Item scroll)
+            : base(caster, scroll, m_Info)
         {
-        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
-        	{
-        		return (this.Caster.Target = new InternalTarget(this)) != null;
-        	}
- 
-        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
-        	
-        	return false;
         }
 
-        private List<Mobile> Targets = new List<Mobile>();
+        public override bool Cast()
+        {
+            if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+            {
+                return (this.Caster.Target = new InternalTarget(this)) != null;
+            }
+
+            this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+
+            return false;
+        }
 
         public override void OnCast()
         {
-        	if (ObjectTargeted is BaseExplosionPotion)
-        	{
-        		Explode ((BaseExplosionPotion)ObjectTargeted);
-        	}
-        	else
-        	{
-        		Target ((Mobile)ObjectTargeted);
-        	}
+            if (ObjectTargeted is BaseExplosionPotion)
+            {
+                Explode((BaseExplosionPotion)ObjectTargeted);
+            }
+            else
+            {
+                Target((Mobile)ObjectTargeted);
+            }
         }
 
-        public void Target(Mobile defender) //changed to mobile and now has area damage also removed damage delay
+        public void Target(Mobile defender)
         {
-            if (CheckHSequence(defender))
+            if (!this.Caster.CanSee(defender))
             {
-            	Targets.Add(defender);
-            	
-	            foreach (Mobile targ in this.Caster.Map.GetMobilesInRange(defender.Location, 2)) //2? maybe 3
-	            {
-	            	if (SpellHelper.ValidIndirectTarget(this.Caster, targ) && this.Caster.CanBeHarmful(targ, false))
-	                {
-	                    Targets.Add(targ);
-	                }
-	            }
-	
-                for (int i = 0; i < Targets.Count; ++i)
-                {
-                    Mobile target = Targets[i];
-
-		            if (CheckHSequence(target))
-		            {
-	                    double damage = Utility.Random(23, 22);
-	
-	                    if (CheckResisted(target))
-	                    {
-	                        damage *= 0.75;
-	                    }
-	
-						if (target.Spell != null)
-		                    target.Spell.OnCasterHurt();
-						
-	                    damage *= GetDamageScalar(target);
-	
-                        this.Caster.DoHarmful(target);
-	                    Effects.SendLocationParticles(target, 0x36BD, 20, 10, 5044);
-	                    Effects.PlaySound(target.Location, target.Map, 0x307);
-		
-		                if (damage > 0)
-		                {
-		                    SpellHelper.Damage(this, target, damage, 0, 100, 0, 0, 0);
-		                }		
-	                }	                
-	            }
-
-                Targets.Clear();
+                this.Caster.SendLocalizedMessage(500237); // Target can not be seen.
             }
-            
+            else if (CheckHSequence(defender))
+            {
+                SpellHelper.Turn(this.Caster, defender);
+
+                Mobile originalTarget = defender;
+
+                // CheckReflect classico (AOS/Pre-AOS)
+                if (!Core.UOR)
+                    SpellHelper.CheckReflect((int)this.Circle, this.Caster, ref defender);
+
+                // Spell interruption
+                if (defender != null && defender.Spell != null)
+                    defender.Spell.OnCasterHurt();
+
+                // Delay timer (2.5 sec per UOR/Pre-AOS, 3.0 sec per AOS)
+                InternalTimer t = new InternalTimer(this, this.Caster, defender, originalTarget);
+                t.Start();
+            }
+
             FinishSequence();
+        }
+
+        private class InternalTimer : Timer
+        {
+            private readonly ExplosionSpell m_Spell;
+            private readonly Mobile m_Caster;
+            private Mobile m_Target;
+            private readonly Mobile m_OriginalTarget;
+
+            public InternalTimer(ExplosionSpell spell, Mobile caster, Mobile target, Mobile originalTarget)
+                : base(TimeSpan.FromSeconds(Core.AOS ? 3.0 : 2.5))
+            {
+                m_Spell = spell;
+                m_Caster = caster;
+                m_Target = target;
+                m_OriginalTarget = originalTarget;
+
+                Priority = TimerPriority.FiftyMS;
+            }
+
+            protected override void OnTick()
+            {
+                if (m_Caster == null || m_Target == null)
+                    return;
+
+                if (m_Caster.HarmfulCheck(m_Target))
+                {
+                    double damage = 0;
+
+                    if (Core.AOS)
+                    {
+                        damage = Utility.Random(23, 22);
+                    }
+                    else if (Core.UOR)
+                    {
+                        damage = Utility.Random(33, 18); // 33-45
+
+                        // Effetti visivi e sonori PRIMA del check reflect
+                        m_Caster.DoHarmful(m_Target);
+                        Effects.SendLocationParticles(
+                            EffectItem.Create(m_Target.Location, m_Target.Map, EffectItem.DefaultDuration),
+                            0x36BD, 20, 10, 5044);
+                        Effects.PlaySound(m_Target.Location, m_Target.Map, 0x307);
+
+                        // PATCH UOR: riflesso diretto (DOPO gli effetti)
+                        if (m_Target != null && SpellHelper.CheckReflectUOR(m_Spell, m_Caster, m_Target, damage))
+                        {
+                            // Riflessa o neutralizzata
+                            return;
+                        }
+
+                        // Magic Resistance (DOPO il check reflection)
+                        if (m_Target != null && m_Spell.CheckResisted(m_Target))
+                        {
+                            damage /= 2.0;
+                            m_Target.SendMessage(0x22, "You resist the spell!");
+                        }
+                    }
+                    else
+                    {
+                        damage = Utility.Random(23, 22);
+
+                        if (m_Spell.CheckResisted(m_Target))
+                        {
+                            damage *= 0.75;
+                        }
+
+                        damage *= m_Spell.GetDamageScalar(m_Target);
+                    }
+
+                    // Effetti visivi per AOS/Pre-AOS (NON UOR)
+                    if (!Core.UOR)
+                    {
+                        m_Caster.DoHarmful(m_Target);
+                        Effects.SendLocationParticles(
+                            EffectItem.Create(m_Target.Location, m_Target.Map, EffectItem.DefaultDuration),
+                            0x36BD, 20, 10, 5044);
+                        Effects.PlaySound(m_Target.Location, m_Target.Map, 0x307);
+                    }
+
+                    // Danno
+                    if (damage > 0)
+                    {
+                        SpellHelper.Damage(m_Spell, m_Target, damage, 0, 100, 0, 0, 0);
+                    }
+                }
+            }
         }
 
         private class InternalTarget : Target
         {
             private readonly ExplosionSpell m_Owner;
+
             public InternalTarget(ExplosionSpell owner)
                 : base(Core.ML ? 10 : 12, true, TargetFlags.Harmful)
             {
@@ -115,21 +181,22 @@ namespace Server.Spells.Sixth
             {
                 if (o is Mobile || o is BaseExplosionPotion)
                 {
-                	if (!this.m_Owner.StartSequence(o))
-                	{
-                		this.m_Owner.FinishSequence();
-                	}
+                    if (!this.m_Owner.StartSequence(o))
+                    {
+                        this.m_Owner.FinishSequence();
+                    }
                 }
                 else
                 {
-	              	from.SendLocalizedMessage(1005213); // You can't do that
+                    from.SendLocalizedMessage(1005213); // You can't do that
                 }
             }
-	        protected override void OnTargetOutOfLOS(Mobile from, object o)
-	        {
-	            from.Target = new InternalTarget(m_Owner);
-				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
-	        }
+
+            protected override void OnTargetOutOfLOS(Mobile from, object o)
+            {
+                from.Target = new InternalTarget(m_Owner);
+                from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
+            }
         }
     }
 }

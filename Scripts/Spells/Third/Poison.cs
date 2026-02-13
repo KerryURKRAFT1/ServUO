@@ -27,19 +27,19 @@ namespace Server.Spells.Third
 
         public override bool Cast()
         {
-        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
-        	{
-        		return (this.Caster.Target = new InternalTarget(this)) != null;
-        	}
+            if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+            {
+                return (this.Caster.Target = new InternalTarget(this)) != null;
+            }
 
-        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
-        	
-        	return false;
+            this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+            
+            return false;
         }
 
         public override void OnCast()
         {
-        	Target ((Mobile)ObjectTargeted);
+            Target((Mobile)ObjectTargeted);
         }
 
         public void Target(Mobile m)
@@ -52,10 +52,27 @@ namespace Server.Spells.Third
             {
                 SpellHelper.Turn(this.Caster, m);
 
-                SpellHelper.CheckReflect((int)this.Circle, this.Caster, ref m);
+                // CheckReflect classico (AOS/Pre-AOS)
+                if (!Core.UOR)
+                    SpellHelper.CheckReflect((int)this.Circle, this.Caster, ref m);
 
+                // Spell interruption
                 if (m.Spell != null)
                     m.Spell.OnCasterHurt();
+
+                if (Core.UOR)
+                {
+                    // Effetti visivi e sonori PRIMA del check reflect
+                    m.FixedParticles(0x374A, 10, 15, 5021, EffectLayer.Waist);
+                    m.PlaySound(0x205);
+
+                    // PATCH UOR: riflesso diretto (DOPO gli effetti)
+                    if (SpellHelper.CheckReflectUOR(this, this.Caster, ref m))
+                    {
+                        this.FinishSequence();
+                        return;
+                    }
+                }
 
                 m.Paralyzed = false;
 
@@ -85,7 +102,6 @@ namespace Server.Spells.Third
                     }
                     else
                     {
-                        //double total = Caster.Skills[SkillName.Magery].Value + Caster.Skills[SkillName.Poisoning].Value;
                         #region Dueling
                         double total = this.Caster.Skills[SkillName.Magery].Value;
 
@@ -125,8 +141,12 @@ namespace Server.Spells.Third
                     m.ApplyPoison(this.Caster, Poison.GetPoison(level));
                 }
 
-                m.FixedParticles(0x374A, 10, 15, 5021, EffectLayer.Waist);
-                m.PlaySound(0x205);
+                // Effetti visivi e sonori per AOS/Old (NON UOR)
+                if (!Core.UOR)
+                {
+                    m.FixedParticles(0x374A, 10, 15, 5021, EffectLayer.Waist);
+                    m.PlaySound(0x205);
+                }
 
                 this.HarmfulSpell(m);
             }
@@ -148,21 +168,22 @@ namespace Server.Spells.Third
             {
                 if (o is Mobile)
                 {
-                   	if (!this.m_Owner.StartSequence(o))
-                	{
-                		this.m_Owner.FinishSequence();
-                	}
+                    if (!this.m_Owner.StartSequence(o))
+                    {
+                        this.m_Owner.FinishSequence();
+                    }
                 }
                 else
                 {
-	              	from.SendLocalizedMessage(1005213); // You can't do that
+                    from.SendLocalizedMessage(1005213); // You can't do that
                 }
             }
-	        protected override void OnTargetOutOfLOS(Mobile from, object o)
-	        {
-	            from.Target = new InternalTarget(m_Owner);
-				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
-	        }
-	    }
+
+            protected override void OnTargetOutOfLOS(Mobile from, object o)
+            {
+                from.Target = new InternalTarget(m_Owner);
+                from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
+            }
+        }
     }
 }

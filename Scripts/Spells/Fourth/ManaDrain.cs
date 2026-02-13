@@ -15,6 +15,7 @@ namespace Server.Spells.Fourth
             Reagent.MandrakeRoot,
             Reagent.SpidersSilk);
         private static readonly Dictionary<Mobile, Timer> m_Table = new Dictionary<Mobile, Timer>();
+
         public ManaDrainSpell(Mobile caster, Item scroll)
             : base(caster, scroll, m_Info)
         {
@@ -30,19 +31,19 @@ namespace Server.Spells.Fourth
 
         public override bool Cast()
         {
-        	if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
-        	{
-        		return (this.Caster.Target = new InternalTarget(this)) != null;
-        	}
+            if (this.Caster.Mana > (Mana = ScaleMana(GetMana())))
+            {
+                return (this.Caster.Target = new InternalTarget(this)) != null;
+            }
 
-        	this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
-        	
-        	return false;
+            this.Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+            
+            return false;
         }
 
         public override void OnCast()
         {
-        	Target ((Mobile)ObjectTargeted);
+            Target((Mobile)ObjectTargeted);
         }
         
         public void Target(Mobile m)
@@ -55,14 +56,36 @@ namespace Server.Spells.Fourth
             {
                 SpellHelper.Turn(this.Caster, m);
 
-                SpellHelper.CheckReflect((int)this.Circle, this.Caster, ref m);
+                // CheckReflect classico (AOS/Pre-AOS)
+                if (!Core.UOR)
+                    SpellHelper.CheckReflect((int)this.Circle, this.Caster, ref m);
 
+                // Spell interruption
                 if (m.Spell != null)
                     m.Spell.OnCasterHurt();
 
-                m.Paralyzed = false;
+                if (Core.UOR)
+                {
+                    // Effetti visivi e sonori PRIMA del check reflect
+                    m.FixedParticles(0x374A, 10, 15, 5032, EffectLayer.Head);
+                    m.PlaySound(0x1F8);
 
-                if (Core.AOS)
+                    // PATCH UOR: riflesso diretto (DOPO gli effetti)
+                    if (SpellHelper.CheckReflectUOR(this, this.Caster, ref m))
+                    {
+                        this.FinishSequence();
+                        return;
+                    }
+
+                    // Logica UOR Mana Drain
+                    this.CheckResisted(m);
+
+                    if (m.Mana >= 100)
+                        m.Mana -= Utility.Random(1, 100);
+                    else
+                        m.Mana -= Utility.Random(1, m.Mana);
+                }
+                else if (Core.AOS)
                 {
                     int toDrain = 40 + (int)(this.GetDamageSkill(this.Caster) - this.GetResistSkill(m));
 
@@ -80,12 +103,12 @@ namespace Server.Spells.Fourth
                     if (toDrain > 0)
                     {
                         m.Mana -= toDrain;
-
                         m_Table[m] = Timer.DelayCall(TimeSpan.FromSeconds(5.0), new TimerStateCallback(AosDelay_Callback), new object[] { m, toDrain });
                     }
                 }
                 else
                 {
+                    // Pre-AOS
                     this.CheckResisted(m);
 
                     if (m.Mana >= 100)
@@ -93,12 +116,11 @@ namespace Server.Spells.Fourth
                     else
                         m.Mana -= Utility.Random(1, m.Mana);
 
-					if (m.Spell != null)
-	                    m.Spell.OnCasterHurt();
-
-					m.FixedParticles(0x374A, 10, 15, 5032, EffectLayer.Head);
+                    m.FixedParticles(0x374A, 10, 15, 5032, EffectLayer.Head);
                     m.PlaySound(0x1F8);
                 }
+
+                m.Paralyzed = false;
 
                 this.HarmfulSpell(m);
             }
@@ -132,6 +154,7 @@ namespace Server.Spells.Fourth
         private class InternalTarget : Target
         {
             private readonly ManaDrainSpell m_Owner;
+
             public InternalTarget(ManaDrainSpell owner)
                 : base(Core.ML ? 10 : 12, true, TargetFlags.Harmful)
             {
@@ -142,21 +165,22 @@ namespace Server.Spells.Fourth
             {
                 if (o is Mobile)
                 {
-                	if (!this.m_Owner.StartSequence(o))
-                	{
-                		this.m_Owner.FinishSequence();
-                	}
+                    if (!this.m_Owner.StartSequence(o))
+                    {
+                        this.m_Owner.FinishSequence();
+                    }
                 }
                 else
                 {
-	              	from.SendLocalizedMessage(1005213); // You can't do that
+                    from.SendLocalizedMessage(1005213); // You can't do that
                 }
             }
-	        protected override void OnTargetOutOfLOS(Mobile from, object o)
-	        {
-	            from.Target = new InternalTarget(m_Owner);
-				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
-	        }
+
+            protected override void OnTargetOutOfLOS(Mobile from, object o)
+            {
+                from.Target = new InternalTarget(m_Owner);
+                from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
+            }
         }
     }
 }

@@ -12,6 +12,7 @@ namespace Server.Spells.Seventh
             "Chain Lightning", "Vas Ort Grav",
             209,
             9022,
+            false,
             Reagent.BlackPearl,
             Reagent.Bloodmoss,
             Reagent.MandrakeRoot,
@@ -55,90 +56,117 @@ namespace Server.Spells.Seventh
 
         public void Target(IPoint3D p)
         {
-            if (!this.Caster.CanSee(p))
-            {
-                this.Caster.SendLocalizedMessage(500237); // Target can not be seen.
-            }
-            else if (SpellHelper.CheckTown(p, this.Caster) && this.CheckSequence())
+            if (Core.UOR)
             {
                 SpellHelper.Turn(this.Caster, p);
-
                 if (p is Item)
                     p = ((Item)p).GetWorldLocation();
-
                 List<IDamageable> targets = new List<IDamageable>();
-
                 Map map = this.Caster.Map;
-
                 if (map != null)
                 {
                     IPooledEnumerable eable = map.GetObjectsInRange(new Point3D(p), 2);
-
                     foreach (object o in eable)
                     {
                         IDamageable id = o as IDamageable;
-
-                        if (id == null || (Core.AOS && id is Mobile && (Mobile)id == this.Caster))
+                        if (id == null || (id is Mobile && (Mobile)id == this.Caster))
                             continue;
-
-                        if ((!(id is Mobile) || SpellHelper.ValidIndirectTarget(this.Caster, id as Mobile)) && this.Caster.CanBeHarmful(id, false))
-                        {
-                            if (Core.AOS && !this.Caster.InLOS(id))
-                                continue;
-
-                            targets.Add(id);
-                        }
+                        targets.Add(id);
                     }
-
                     eable.Free();
                 }
-
-                double damage;
-
-                if (targets.Count > 0)
+                double damage = 0;
+                Effects.PlaySound(p, this.Caster.Map, 0x29);
+                bool reflected = false;
+                for (int i = 0; i < targets.Count; ++i)
                 {
-                    for (int i = 0; i < targets.Count; ++i)
+                    IDamageable id = targets[i];
+                    Mobile m = id as Mobile;
+                    damage = Utility.Random(43, 13); // 43-56
+                    damage /= targets.Count > 0 ? targets.Count : 1;
+                    this.Caster.DoHarmful(id);
+                    Effects.SendBoltEffect(id, true, 0);
+                    if (m != null && SpellHelper.CheckReflectUOR(this, this.Caster, m, damage))
                     {
-                        IDamageable id = targets[i];
-
-			            if (CheckLOS(id))
-			            {
-	                        Mobile m = id as Mobile;
-	                        
-	                        if (Core.AOS)
-	                            damage = this.GetNewAosDamage(51, 1, 5, id is PlayerMobile, id);
-	                        else
-	                            damage = Utility.Random(27, 22);
-	
-	                        if (Core.AOS && targets.Count > 2)
-	                            damage = (damage * 2) / targets.Count;
-	                        else if (!Core.AOS)
-	                            damage /= targets.Count;
-	
-	                        if (!Core.AOS && m != null && this.CheckResisted(m))
-	                        {
-	                            damage *= 0.5;
-	                        }
-	
-	                        if(m != null)
-	                            damage *= this.GetDamageScalar(m);
-	
-	                        this.Caster.DoHarmful(id);
-	                        SpellHelper.Damage(this, id, damage, 0, 0, 0, 0, 100);
-	
-	                        Effects.SendBoltEffect(id, true, 0);
-	                    }
+                        reflected = true;
+                        continue;
                     }
+                    if (m != null && this.CheckResisted(m))
+                    {
+                        damage *= 0.5;
+                        m.SendMessage(0x22, "You resist the spell!");
+                    }
+                    if (m != null)
+                        damage *= this.GetDamageScalar(m);
+                    SpellHelper.Damage(this, id, damage, 0, 0, 0, 0, 100);
                 }
-                else
-                {
-                    this.Caster.PlaySound(0x29);
-                }
-
                 targets.Clear();
                 targets.TrimExcess();
+                this.FinishSequence();
+                return;
             }
-
+            // --- LOGICA ORIGINALE (AOS e altro) ---
+            if (!this.Caster.CanSee(p))
+            {
+                this.Caster.SendLocalizedMessage(500237); // Target can not be seen.
+                this.FinishSequence();
+                return;
+            }
+            if (!SpellHelper.CheckTown(p, this.Caster) || !this.CheckSequence())
+            {
+                this.FinishSequence();
+                return;
+            }
+            SpellHelper.Turn(this.Caster, p);
+            if (p is Item)
+                p = ((Item)p).GetWorldLocation();
+            List<IDamageable> targetsAos = new List<IDamageable>();
+            Map mapAos = this.Caster.Map;
+            if (mapAos != null)
+            {
+                IPooledEnumerable eable = mapAos.GetObjectsInRange(new Point3D(p), 2);
+                foreach (object o in eable)
+                {
+                    IDamageable id = o as IDamageable;
+                    if (id == null || (Core.AOS && id is Mobile && (Mobile)id == this.Caster))
+                        continue;
+                    if ((!(id is Mobile) || SpellHelper.ValidIndirectTarget(this.Caster, id as Mobile)) && this.Caster.CanBeHarmful(id, false))
+                    {
+                        if (Core.AOS && !this.Caster.InLOS(id))
+                            continue;
+                        targetsAos.Add(id);
+                    }
+                }
+                eable.Free();
+            }
+            double damageAos;
+            if (targetsAos.Count > 0)
+            {
+                for (int i = 0; i < targetsAos.Count; ++i)
+                {
+                    IDamageable id = targetsAos[i];
+                    Mobile m = id as Mobile;
+                    if (Core.AOS)
+                        damageAos = this.GetNewAosDamage(51, 1, 5, id is PlayerMobile, id);
+                    else
+                        damageAos = Utility.Random(27, 22);
+                    if (Core.AOS && targetsAos.Count > 2)
+                        damageAos = (damageAos * 2) / targetsAos.Count;
+                    else if (!Core.AOS)
+                        damageAos /= targetsAos.Count;
+                    if (!Core.AOS && m != null && this.CheckResisted(m))
+                    {
+                        damageAos *= 0.5;
+                    }
+                    if(m != null)
+                        damageAos *= this.GetDamageScalar(m);
+                    this.Caster.DoHarmful(id);
+                    SpellHelper.Damage(this, id, damageAos, 0, 0, 0, 0, 100);
+                    Effects.SendBoltEffect(id, true, 0);
+                }
+            }
+            targetsAos.Clear();
+            targetsAos.TrimExcess();
             this.FinishSequence();
         }
 
@@ -153,23 +181,31 @@ namespace Server.Spells.Seventh
 
             protected override void OnTarget(Mobile from, object o)
             {
-            	if (o is IPoint3D)
+                if (o is IPoint3D)
                 {
-                	if (!this.m_Owner.StartSequence(o))
-                	{
-                		this.m_Owner.FinishSequence();
-                	}
+                    if (Core.UOR)
+                    {
+                        // In UOR non chiamare StartSequence, targeting libero
+                        m_Owner.Target((IPoint3D)o);
+                    }
+                    else
+                    {
+                        if (!this.m_Owner.StartSequence(o))
+                        {
+                            this.m_Owner.FinishSequence();
+                        }
+                    }
                 }
                 else
                 {
-	              	from.SendLocalizedMessage(1005213); // You can't do that
+                    from.SendLocalizedMessage(1005213); // You can't do that
                 }
             }
-	        protected override void OnTargetOutOfLOS(Mobile from, object o)
-	        {
-	            from.Target = new InternalTarget(m_Owner);
-				from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
+            protected override void OnTargetOutOfLOS(Mobile from, object o)
+            {
+                from.Target = new InternalTarget(m_Owner);
+                from.LocalOverheadMessage(MessageType.Regular, 0x3B2, 500237); // Target can not be seen.
+            }
         }
-       }
     }
 }
