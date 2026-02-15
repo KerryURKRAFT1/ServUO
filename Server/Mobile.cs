@@ -94,6 +94,10 @@ namespace Server
 		}
 	}
 	///////
+	/// 
+
+
+
 
 	#region Callbacks
 	public delegate void TargetCallback(Mobile from, object targeted);
@@ -7175,10 +7179,13 @@ public ContextMenu ContextMenu
 			DisruptiveAction("OnRevealingAction"); // Anything that unhides you will also distrupt meditation
 		}
 
+
+
 		#region Say/SayTo/Emote/Whisper/Yell
 		public void SayTo(Mobile to, bool ascii, string text)
 		{
-			PrivateOverheadMessage(MessageType.Regular, m_SpeechHue, ascii, text, to.NetState);
+			//PrivateOverheadMessage(MessageType.Regular, m_SpeechHue, ascii, text, to.NetState);
+			PrivateOverheadMessage(MessageType.Regular, SpeechHue, ascii, text, to.NetState);
 		}
 
 		public void SayTo(Mobile to, string text)
@@ -7198,22 +7205,26 @@ public ContextMenu ContextMenu
 
 		public void SayTo(Mobile to, int number)
 		{
-			to.Send(new MessageLocalized(m_Serial, Body, MessageType.Regular, m_SpeechHue, 3, number, Name, ""));
+			//to.Send(new MessageLocalized(m_Serial, Body, MessageType.Regular, m_SpeechHue, 3, number, Name, ""));
+			to.Send(new MessageLocalized(m_Serial, Body, MessageType.Regular, SpeechHue, 3, number, Name, ""));
 		}
 
 		public void SayTo(Mobile to, int number, string args)
 		{
-			to.Send(new MessageLocalized(m_Serial, Body, MessageType.Regular, m_SpeechHue, 3, number, Name, args));
+			//to.Send(new MessageLocalized(m_Serial, Body, MessageType.Regular, m_SpeechHue, 3, number, Name, args));
+			to.Send(new MessageLocalized(m_Serial, Body, MessageType.Regular, SpeechHue, 3, number, Name, args));
 		}
 
 		public void Say(bool ascii, string text)
 		{
-			PublicOverheadMessage(MessageType.Regular, m_SpeechHue, ascii, text);
+			//PublicOverheadMessage(MessageType.Regular, m_SpeechHue, ascii, text);
+			PublicOverheadMessage(MessageType.Regular, SpeechHue, ascii, text);
 		}
 
 		public void Say(string text)
 		{
-			PublicOverheadMessage(MessageType.Regular, m_SpeechHue, false, text);
+			//PublicOverheadMessage(MessageType.Regular, m_SpeechHue, false, text);
+			PublicOverheadMessage(MessageType.Regular, SpeechHue, false, text);
 		}
 
 		public void Say(string format, params object[] args)
@@ -7223,7 +7234,8 @@ public ContextMenu ContextMenu
 
 		public void Say(int number, AffixType type, string affix, string args)
 		{
-			PublicOverheadMessage(MessageType.Regular, m_SpeechHue, number, type, affix, args);
+			//PublicOverheadMessage(MessageType.Regular, m_SpeechHue, number, type, affix, args);
+			PublicOverheadMessage(MessageType.Regular, SpeechHue, number, type, affix, args);
 		}
 
 		public void Say(int number)
@@ -7233,7 +7245,8 @@ public ContextMenu ContextMenu
 
 		public void Say(int number, string args)
 		{
-			PublicOverheadMessage(MessageType.Regular, m_SpeechHue, number, args);
+			//PublicOverheadMessage(MessageType.Regular, m_SpeechHue, number, args);
+			PublicOverheadMessage(MessageType.Regular, SpeechHue, number, args);
 		}
 
 		public void Emote(string text)
@@ -9196,8 +9209,39 @@ public ContextMenu ContextMenu
 			}
 		}
 
+		// UOR NPC SPEECH COLOR FOR SPHERE LIKE
+
 		[CommandProperty(AccessLevel.Decorator)]
-		public int SpeechHue { get { return m_SpeechHue; } set { m_SpeechHue = value; } }
+		//public int SpeechHue { get { return m_SpeechHue; } set { m_SpeechHue = value; } }
+
+		public int SpeechHue
+		{
+			// Return the effective speech hue for this mobile.
+			// Reads existing Custom_Settings keys from Custom Settings
+			// Players always keep their own speech hue. NPCs will use the configured gray hue
+			// when the toggle is off.
+			get
+			{
+				// Default behavior preserves current colors.
+				bool enableNpcSpeechColors = Config.Get("Custom_Settings.EnableNpcSpeechColors", true);
+				int npcGrayHue = Config.Get("Custom_Settings.NpcSpeechGrayHue", 2402);
+
+				// If the feature is enabled, return the stored hue.
+				if (enableNpcSpeechColors)
+					return m_SpeechHue;
+
+				// Players keep their speech hue regardless of the toggle.
+				if (this.Player)
+					return m_SpeechHue;
+
+				// Non-player mobiles: return configured gray hue.
+				return npcGrayHue;
+			}
+			set
+			{
+				m_SpeechHue = value;
+			}
+		}
 
 		[CommandProperty(AccessLevel.Decorator)]
 		public int EmoteHue { get { return m_EmoteHue; } set { m_EmoteHue = value; } }
