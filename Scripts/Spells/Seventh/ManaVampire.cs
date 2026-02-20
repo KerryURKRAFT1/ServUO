@@ -43,9 +43,11 @@ namespace Server.Spells.Seventh
         {
         	Target ((Mobile)ObjectTargeted);
         }
-
+/*
         public void Target(Mobile m)
         {
+          
+
             if (!this.Caster.CanSee(m))
             {
                 this.Caster.SendLocalizedMessage(500237); // Target can not be seen.
@@ -63,6 +65,8 @@ namespace Server.Spells.Seventh
 
                 int toDrain = 0;
 
+
+
                 if (Core.AOS)
                 {
                     toDrain = (int)(this.GetDamageSkill(this.Caster) - this.GetResistSkill(m));
@@ -79,6 +83,10 @@ namespace Server.Spells.Seventh
                 {
                     if (!this.CheckResisted(m))
                         toDrain = m.Mana;
+                        
+
+        
+
 
 					if (m.Spell != null)
 	                    m.Spell.OnCasterHurt();
@@ -87,8 +95,13 @@ namespace Server.Spells.Seventh
                 if (toDrain > (this.Caster.ManaMax - this.Caster.Mana))
                     toDrain = this.Caster.ManaMax - this.Caster.Mana;
 
+
+
                 m.Mana -= toDrain;
                 this.Caster.Mana += toDrain;
+
+
+
 
                 if (Core.AOS)
                 {
@@ -108,10 +121,91 @@ namespace Server.Spells.Seventh
 
             this.FinishSequence();
         }
+        */
+        public void Target(Mobile m)
+        {
+
+
+    if (!this.Caster.CanSee(m))
+    {
+        this.Caster.SendLocalizedMessage(500237); // Target can not be seen.
+        
+    }
+    else if (this.CheckHSequence(m))
+    {
+        SpellHelper.Turn(this.Caster, m);
+        SpellHelper.CheckReflect((int)this.Circle, this.Caster, ref m);
+
+        if (m.Spell != null)
+            m.Spell.OnCasterHurt();
+
+        m.Paralyzed = false;
+
+        int toDrain = 0;
+
+        if (Core.AOS)
+        {
+            toDrain = (int)(this.GetDamageSkill(this.Caster) - this.GetResistSkill(m));
+            if (!m.Player)
+                toDrain /= 2;
+
+            if (toDrain < 0)
+                toDrain = 0;
+            else if (toDrain > m.Mana)
+                toDrain = m.Mana;
+        }
+        else
+        {
+            bool resisted = this.CheckResisted(m);
+            
+            if (!resisted)
+                toDrain = m.Mana;
+
+            
+
+            if (m.Spell != null)
+                m.Spell.OnCasterHurt();
+        }
+
+        int casterRoom = this.Caster.ManaMax - this.Caster.Mana;
+        if (toDrain > casterRoom)
+            toDrain = casterRoom;
+
+        int manaPrimaTarget = m.Mana;
+        int manaPrimaCaster = this.Caster.Mana;
+
+        m.Mana -= toDrain;
+        this.Caster.Mana += toDrain;
+
+
+        if (Core.AOS)
+        {
+            m.FixedParticles(0x374A, 1, 15, 5054, 23, 7, EffectLayer.Head);
+            m.PlaySound(0x1F9);
+
+            this.Caster.FixedParticles(0x0000, 10, 5, 2054, EffectLayer.Head);
+        }
+        else
+        {
+            m.FixedParticles(0x374A, 10, 15, 5054, EffectLayer.Head);
+            m.PlaySound(0x1F9);
+        }
+
+        this.HarmfulSpell(m);
+    }
+
+    this.FinishSequence();
+}
+
 
         public override double GetResistPercent(Mobile target)
         {
-            return 98.0;
+            //return 98.0;
+
+            // WITH 100 SKILL 80% of resistance
+            double resistSkill = target.Skills[SkillName.MagicResist].Value;
+            return Math.Min(80.0, resistSkill * 0.8);
+            
         }
 
         private class InternalTarget : Target

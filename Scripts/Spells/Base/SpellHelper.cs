@@ -1059,11 +1059,24 @@ namespace Server.Spells
 
                 if (reflect)
                 {
+                    if (Core.UOR)
+                    {
+                    target.FixedEffect(0x375A, 10, 5);
+
+                    Mobile temp = caster;
+                    caster = target;
+                    target = temp;
+                    }
+                    else
+                    {
+
+                    
                     target.FixedEffect(0x37B9, 10, 5);
 
                     Mobile temp = caster;
                     caster = target;
                     target = temp;
+                    }
                 }
             }
             else if (target is BaseCreature)
