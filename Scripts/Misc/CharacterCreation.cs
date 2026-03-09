@@ -44,12 +44,8 @@ namespace Server.Misc
                 m.AddItem(pack);
             }
 
-            PackItem(new Gold(1000)); // Starting gold can be customized here
-            PackItem(new BankCheck(30000)); 
-            
-            PackItem(new SpellbookFull());             
-            PackItem(new Runebook());             
-         }
+            PackItem(new Gold(1000)); // Starting gold
+        }
 
         private static void AddShirt(Mobile m, int shirtHue)
         {
@@ -1358,13 +1354,7 @@ namespace Server.Misc
                     }
                 case SkillName.Tactics:
                     {
-                        if (elf)
-                            EquipItem(new RuneBlade());
-                        else if (human)
-                            EquipItem(new Katana());
-                        else if (gargoyle)
-                            EquipItem(new GlassSword());
-
+                        // Tactics is a passive skill - no weapon assigned at character creation
                         break;
                     }
                 case SkillName.Tailoring:
