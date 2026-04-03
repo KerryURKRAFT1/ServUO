@@ -1,6 +1,14 @@
 using System;
 using Server.Network;
 
+// MODIFICA: Il decremento della FAME è stato rimosso da questo timer.
+// La logica di decremento della fame (e il relativo sistema di malus alle skill)
+// è ora gestita interamente da HungerMalusSystem (Scripts/Custom/Systems/HungerSystem).
+// Questo timer gestisce SOLO il decremento della SETE.
+//
+// TODO [TasteID]: Se in futuro si implementa il bonus TasteID, si potrà valutare
+// se aggiungere un effetto anche sulla velocità di decadimento della sete.
+
 namespace Server.Misc
 {
     public class FoodDecayTimer : Timer
@@ -16,21 +24,7 @@ namespace Server.Misc
             new FoodDecayTimer().Start();
         }
 
-        public static void FoodDecay()
-        {
-            foreach (NetState state in NetState.Instances)
-            {
-                HungerDecay(state.Mobile);
-                ThirstDecay(state.Mobile);
-            }
-        }
-
-        public static void HungerDecay(Mobile m)
-        {
-            if (m != null && m.Hunger >= 1)
-                m.Hunger -= 1;
-        }
-
+        // Decrementa la sete del mobile di 1 ogni 5 minuti.
         public static void ThirstDecay(Mobile m)
         {
             if (m != null && m.Thirst >= 1)
@@ -39,7 +33,11 @@ namespace Server.Misc
 
         protected override void OnTick()
         {
-            FoodDecay();			
+            // Solo decremento della sete: la fame è gestita da HungerMalusSystem.
+            foreach (NetState state in NetState.Instances)
+            {
+                ThirstDecay(state.Mobile);
+            }
         }
     }
 }
